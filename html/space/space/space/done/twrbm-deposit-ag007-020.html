@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .main_container {
+      background: #e4f0ef;
+      min-height: calc(100vh);
+    }
+
+    .vi-page-header-fix .overview-info {
+      padding-top: 52px;
+    }
+    .overview-info {
+      background: #0F8F88;
+    }
+
+
+    .gray-mask {
+      filter: grayscale(100%);
+    }
+
+
+    .vi-overview-card .vi-card-header .vi-txt-headline {
+      width: calc(100% - 20px);
+    }
+    .vi-overview-card .vi-card-body {
+      display: flex;
+      padding-bottom: 16px;
+    }
+    .vi-overview-card .vi-card-body .vi-txt-fc {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+    .vi-overview-card .vi-card-footer {
+      padding: 16px;
+      text-align: unset;
+    }
+    .vi-overview-card .vi-card-footer {
+      background: rgb(246,246,246);
+      background: linear-gradient(180deg, rgba(246,246,246,1) 0%, rgba(246,246,246,0.4) 40%, rgba(246,246,246,0) 100%);
+    }
+    .vi-overview-card .vi-card-footer .vi-list.vi-list-noline .vi-list-item:last-child {
+      padding-bottom: 0;
+    }
+    
+    .vi-overview-card .vi-select-link:after {
+      position: relative;
+      top: -4px;
+    }
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<body class="vi-bg-mint vi-page-header-fix">
+
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <!-- 新增 .vi-page-header-green 綠色 header，ios 瀏海也要改成綠的 #0F8F88 -->
+    <div class="container-header vi-page-header vi-page-header-green">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">錢寶寶定存查詢與變更</h1>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap scroll vi-bg-g550">
+    
+    <div class="main_container has-foot-btn">
+
+      <!-- scroll down fixed 效果同 通知中心，可參考 notice-qu001-010.component 與 nav-tabs-notice.component，但需要確認 nav-scroll 碰到頂端的事件是否正常，fixed 時綁定樣式同下方 [ngClass] 規則 -->
+      <!-- 新增 .nav-tab-green 綠色 tab -->
+      <div class="nav-scroll has-tab-info js_scroll_fixed_top nav-tab-green fixed-top fixed-position-1">
+      <!-- <div class="nav-scroll has-tab-info js_scroll_fixed_top nav-tab-green fixed-top fixed-position-1" [ngClass]="{'fixed-top': fixTab, 'fixed-position-1': fixTab}"> -->
+        <div class="nav-scroll-bg"></div>
+        <div class="vi-tab-line-area">
+          <div class="vi-tab-line">
+            <ul class="nav" role="tablist">
+              <li>
+                <a class="btn">
+                  <span>未到期</span>
+                </a>
+              </li>
+              <li class="active">
+                <a class="btn">
+                  <span>已到期</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="">
+        <div class="tab-content">
+          <div class="tab-pane active">
+
+            <div class="overview-info">
+              <div class="overview-info-content"></div>
+            </div>
+
+            <div class="overview-content pt-0">
+
+              <div class="vi-container pad_top24">
+                  
+                <!-- id 是 demo 用的，開發請拉掉 -->
+                <div id="not-empty-block" class="mb24">
+                  <div class="vi-line-title mb12 vi-dis-flex">
+                    已到期
+                  </div>
+                  
+                  
+                  <div class="vi-card vi-overview-card">
+                    <a class="vi-card-header vi-select-link">
+                      <div class="vi-txt-headline mr-auto dis-flex align-items-center">
+                        <span class="vi-flag vi-flag-usd mr8"></span>
+                        美元
+                        <div class="vi-tag-group ml12">
+                          <div class="vi-tag vi-tag-g200">
+                            <div class="vi-txt">0/10次</div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="vi-card-body">
+                      <div class="mr-auto moneybaby-img">
+                        <img src="../../../../../inc/img/img/moneybaby/usd-10.svg" alt="">
+                      </div>
+                      <div class="ml-auto rt">
+                        <div class="vi-txt-body vi-txt-b600 mb4">已累積金額</div>
+                        <div class="vi-txt-fc mb4">
+                          <span class="txt_normal vi-txt-callout vi-txt-b600 currency mr4">EUR</span>
+                          <span class="vi-txt-headline vi-txt-b600">300.00</span>
+                        </div>
+                        <div class="vi-txt-callout vi-txt-b500 mt4">
+                        (約當新臺幣 1,000,000)
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vi-card-footer">
+                      <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">定存到期日</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body-bold vi-txt-b600">2023/01/22</div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+                
+                <!-- id 是 demo 用的，開發請拉掉 -->
+                <div id="empty-block" class="hide">
+                  <div class="vi-empty pad_top16">
+                    <span class="vi-empty-img"></span>  
+                    <div class="vi-txt-body vi-txt-b600">您尚無已到期的錢寶寶定存喔～</div>
+                    <div class="vi-btn-group mt24">
+                      <!-- 只有一顆 加 vi-btn-m -->
+                      <div class="btn vi-btn vi-btn-secondary vi-btn-m">養一隻錢寶寶</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div><!-- end tab -->
+
+
+        </div>
+        
+      </div>
+      
+      
+      <div id="footer">
+        <div class="vi-page-footer">
+          <div class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-l vi-btn-primary">再養一隻錢寶寶</div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="trigger-empty" class="vi-txt-g500 mb16">-> 空值 demo 切換</div>
+    
+    </div>
+    <!-- main_container -->
+  </div>
+
+</body>
+<!-- body-wrap -->
+</html>
+
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// 空值 demo
+document.getElementById('trigger-empty').addEventListener('click', function() {
+  event.preventDefault();
+  document.getElementById('not-empty-block').classList.toggle('hide');
+  document.getElementById('empty-block').classList.toggle('hide');
+});
+
+</script>

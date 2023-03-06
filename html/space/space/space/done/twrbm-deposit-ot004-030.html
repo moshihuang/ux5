@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-card,
+    .vi-card.vi-card-status {
+        overflow: hidden;
+    }
+    .vi-card.vi-card-status.success,
+    .vi-card.vi-card-status.success-and-fail,
+    .vi-card.vi-card-status.fail {
+        position: relative;
+        z-index: 1;
+    }
+    .vi-card.vi-card-status.success,
+    .vi-card.vi-card-status.success-and-fail {
+        background: rgb(255,255,255);
+        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 70%, rgba(233,255,253,1) 90%);
+    }
+    .vi-card.vi-card-status.fail {
+        background: rgb(255,255,255);
+        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 70%, rgba(255,245,245,1) 90%);
+    }
+
+    .vi-card.vi-card-status.success:after,
+    .vi-card.vi-card-status.success-and-fail:after,
+    .vi-card.vi-card-status.fail:after {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: "";
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-position: right bottom -1px;
+    }
+    .vi-card.vi-card-status.success-and-fail:after,
+    .vi-card.vi-card-status.success:after {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjE2MiIgdmlld0JveD0iMCAwIDEyMCAxNjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0zOCA0NS4zNzc2TDU4LjMxMDEgNjUuNDQ5MUM1OS4xNTA4IDY2LjI3OTkgNjAuNTI0NyA2Ni4yMDQ0IDYxLjI2OTIgNjUuMjg2NEw5OCAyMCIgc3Ryb2tlPSIjREZGN0Y1IiBzdHJva2Utd2lkdGg9IjE0IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzg0MF81MzA3NikiPgo8cGF0aCBkPSJNNjcuNDk3OCAxMjkuMDg3QzY0LjcyMzQgMTI3LjM2OSA0OS4zNzcyIDEyMC4wNCAzNi4yNzA3IDEyNy42NjNDMjUuNTU5MSAxMzMuOTMyIDM3Ljg3NDYgMTM2LjU3NSA0Mi4xMTIgMTM1LjYxOEM0Mi4xMTIgMTM1LjYxOCAzOC45NzkgMTM2LjM0NSAzOS40ODc1IDEzOC41OTFDMzkuOTU0OSAxNDAuODAyIDQ1LjM5NjggMTQ0LjAzIDUxLjM1MiAxNDAuODVDNTEuMzUyIDE0MC44NSA0Ni4zNjIgMTQzLjc5OCA1MC4xMjMxIDE0Ny41MjZDNTMuODg0MiAxNTEuMjU0IDYxLjM0MTYgMTUwLjA1NCA2Ny45NDc1IDE0NS4wODlDNzQuNTUzNCAxNDAuMTIzIDcwLjMwMDcgMTMwLjc3IDY3LjQ5NzggMTI5LjA4N1oiIGZpbGw9IiM5ODk4OTkiLz4KPHBhdGggZD0iTTgwLjExMzMgOTIuNTUxQzgwLjExMzMgOTIuNTUxIDgwLjE3NjkgODkuMDUyMiA4MS43MDM2IDg2LjI1MzFDODIuNTMwNiA4NC42NjI4IDgzLjEwMzEgODMuNDU0MSA4Mi4xNDg5IDgzLjQ1NDFDODAuMzA0MSA4My41MTc3IDc5LjE1OSA4Ni4xMjU5IDgwLjExMzMgOTIuNTUxWiIgZmlsbD0iIzk4OTg5OSIvPgo8cGF0aCBkPSJNMTQ1IDEyOS4wMDJDMTQ1IDEyOS4wMDIgMTM5LjIxMSAxMzAuMzM3IDEzNS41MjEgMTI2LjIwM0MxMjguMjA2IDExNi4wMjQgMTE5Ljc0NSA4NS42MTY1IDkyLjI2MzUgODguMDk3NUM1NS4zMDM1IDkxLjQ2OSA1Ni42Mzk0IDEyMS42ODYgNjMuOTU1MSAxMzQuMDI3QzYzLjEyODEgMTM3LjkwOCA2My45NTUxIDE0NC43MTQgNjQuOTcyOSAxNDguMTVDNjguOTE3IDE2MS40NDUgODMuNjc1NiAxNjcuNjc5IDEwMi4zNzggMTY1LjU4QzEwNi4xMzIgMTY1LjEzNSAxMTAuMDc2IDE2NC43NTMgMTEzLjI1NiAxNjMuODYyQzE0NS4xOTEgMTU0LjgyOSAxNDUgMTI5LjAwMiAxNDUgMTI5LjAwMloiIGZpbGw9IiNEN0Q3RDciLz4KPHBhdGggZD0iTTU5LjE4MzQgMTE4LjU2OUM1OC42NzQ1IDEyOS4zODMgNjMuOTU0NSAxMzUuMyA2My45NTQ1IDEzNS4zQzYzLjk1NDUgMTM1LjMgNjYuODgwOCAxMzQuODU0IDcwLjYzNCAxMzYuMDYzQzc2LjgwNDcgMTM4LjAzNSA5NS4xODkzIDEzNy40NjIgOTguMTc5MSAxMjAuMTU5QzEwMC40NjkgMTA3LjE4MiA4OS4zMzY3IDk0LjAxMzcgNzcuMzEzNiA5NC44NDA3QzY2LjI0NDYgOTUuNjY3NyA2MC4wMTA0IDEwMS40NTcgNTkuMTgzNCAxMTguNTY5WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTU4LjQ5OTMgMTE3LjQ4NUM1OC40OTkzIDExNy40ODUgNTguMTgyMyAxMTguMzEgNTYuODU1NCAxMTkuMjc0QzU2Ljg1NTQgMTE5LjI3NCA2Mi40Mzc4IDEyMC4xMDYgNjIuNDg1MyAxMTQuMDE2TDYwLjkxNzEgMTEzLjAwMUw1OC40OTkzIDExNy40ODVaIiBmaWxsPSIjRUM4ODIyIi8+CjxwYXRoIGQ9Ik01OS42MjQ2IDExMy4yNzhDNTkuNjI0NiAxMTMuMjc4IDU5LjAyMzggMTE2Ljc4NCA1OC4wMDg4IDExOC4zNTJDNTkuNDM4OCAxMTguNzIxIDYxLjg4NDQgMTE3LjUyMyA2MS43MDA4IDExMy41MDlMNTkuNjI0NiAxMTMuMjc4WiIgZmlsbD0iI0QzMkUyRSIvPgo8cGF0aCBkPSJNNTkuNzY1IDExMC41NjRDNTkuNzY1IDExMC41NjQgNTcuNzgzMSAxMTAuOTg4IDU0LjgyNjMgMTEyLjk1M0M1NC44MjYzIDExMi45NTMgNjAuMjcwMSAxMTMuMTM5IDYyLjQ4NDQgMTE0LjAxNkM2Mi40NTY5IDExNC4wODEgNjIuNTc3NSAxMTEuMjk0IDU5Ljc2NSAxMTAuNTY0WiIgZmlsbD0iI0VDODgyMiIvPgo8cGF0aCBkPSJNODIuNzg2IDkwLjgzMjhDODIuNzg2IDkwLjgzMjggODYuMDMwMyA4Ny43MTU3IDg5LjUyOTEgODcuMTQzMUM5Mi43MDk4IDg2LjU3MDYgOTEuMTE5NSA4NC4xNTMyIDg4LjE5MzIgODUuNDI1NUM4NS41ODUgODYuNjM0MiA4Mi43ODYgOTAuODMyOCA4Mi43ODYgOTAuODMyOFoiIGZpbGw9IiM5ODk4OTkiLz4KPHBhdGggZD0iTTgxLjA2NzUgOTEuNDA1NEM4MS4wNjc1IDkxLjQwNTQgODIuNTk0MyA4Ny4zOTc3IDg2LjE1NjcgODUuMjM0OEM4OS4xNDY2IDgzLjQ1MzYgODkuNzgyNyA4MS42NzI0IDg4LjgyODUgODEuMjI3MUM4Ni45MjAxIDgwLjMzNjUgODMuMjMwNCA4MS43MzYgODEuMDY3NSA5MS40MDU0WiIgZmlsbD0iIzk4OTg5OSIvPgo8cGF0aCBkPSJNODIuMjc2MyAxNTUuNDAyQzgzLjYxMjIgMTU0LjU3NSA4NC4zNzU2IDE1My4xMTIgODQuNDM5MiAxNTEuNjQ4Qzg1LjUyMDYgMTUzLjQzIDg1LjAxMTcgMTU1LjcyIDgzLjIzMDUgMTU2Ljg2NUM4MS40NDkzIDE1OC4wMSA3OS4wOTU2IDE1Ny41MDEgNzcuODg2OSAxNTUuNzgzQzc5LjI4NjQgMTU2LjM1NiA4MC45NDA0IDE1Ni4yMjkgODIuMjc2MyAxNTUuNDAyWiIgZmlsbD0iIzk4OTg5OSIvPgo8cGF0aCBkPSJNODMuNTQ3OSAxNDQuNzc4Qzg1LjAxMTEgMTQzLjU2OSA4NS42NDcyIDE0MS44NTEgODUuNTIgMTQwLjEzNEM4Ny4wNDY3IDE0Mi4wNDIgODYuNzkyMyAxNDQuNzc4IDg0Ljg4MzggMTQ2LjMwNEM4My4wMzkgMTQ3LjgzMSA4MC4yNCAxNDcuNjQgNzguNTg2IDE0NS44NTlDODAuMjQgMTQ2LjMwNCA4Mi4wODQ4IDE0NS45MjMgODMuNTQ3OSAxNDQuNzc4WiIgZmlsbD0iIzk4OTg5OSIvPgo8cGF0aCBkPSJNNzEuODQzMSAxNTAuNTY3QzczLjYyNDMgMTQ5LjkzMSA3NC44MzMgMTQ4LjQ2NyA3NS4yNzgzIDE0Ni44MTNDNzYuMDQxNyAxNDkuMTA0IDc0LjgzMyAxNTEuNTg1IDcyLjU0MjkgMTUyLjQxMkM3MC4yNTI3IDE1My4yMzkgNjcuNzA4MiAxNTIuMTU3IDY2Ljc1MzkgMTQ5LjkzMUM2OC4yMTcxIDE1MC45NDggNzAuMTI1NSAxNTEuMjY3IDcxLjg0MzEgMTUwLjU2N1oiIGZpbGw9IiM5ODk4OTkiLz4KPHBhdGggZD0iTTc0LjU3OSAxNTcuMzczQzc0LjU3OSAxNTcuMzczIDc1Ljc4NzYgMTU5LjQ3MiA3NS40MDU5IDE2MC43NDVDNzUuNDA1OSAxNjAuNzQ1IDc0LjEzMzcgMTYwLjgwOCA3My4yNDMxIDE1OS41MzZDNzMuMjQzMSAxNTkuNTM2IDc0LjEzMzcgMTU5LjYgNzQuNTc5IDE1Ny4zNzNaIiBmaWxsPSIjOTg5ODk5Ii8+CjxwYXRoIGQ9Ik05NS4xMjU4IDE0MC44OThDOTUuODI1NSAxMzcuMDgxIDEwMi4wNiAxMTcuNjE1IDEyMi40OCAxMTEuNTA4QzEzOS4yMTEgMTA2LjU0NiAxMzAuNjg2IDExOS43MTQgMTI1LjcyNCAxMjIuODMxQzEyNS43MjQgMTIyLjgzMSAxMjkuNDE0IDEyMC41NDEgMTMxLjM4NiAxMjIuNzA0QzEzMy4zNTggMTI0LjgwMyAxMzEuODMxIDEzMi4xODMgMTIyLjg2MiAxMzUuMTcyQzEyMi44NjIgMTM1LjE3MiAxMzAuNjg2IDEzMi44ODIgMTMxLjI1OSAxMzkuMTE3QzEzMS44MzEgMTQ1LjM1MSAxMjMuNjI1IDE1MS4yMDMgMTEyLjExMSAxNTMuNDNDMTAwLjU5NyAxNTUuNjU2IDk0LjM2MjQgMTQ0LjcxNSA5NS4xMjU4IDE0MC44OThaIiBmaWxsPSIjOTg5ODk5Ii8+CjxwYXRoIGQ9Ik02Ny4zNDg1IDEwOS4yOTdDNjguNTM1IDEwNi4xMzkgNzAuNzc2NyAxMDQuMDYxIDcyLjM1NTMgMTA0LjY1NEM3My45MzQgMTA1LjI0NyA3NC4yNTE5IDEwOC4yODggNzMuMDY1NCAxMTEuNDQ1QzcxLjg3ODkgMTE0LjYwMyA2OS42MzcyIDExNi42ODEgNjguMDU4NiAxMTYuMDg4QzY2LjQ3OTkgMTE1LjQ5NSA2Ni4xNjIgMTEyLjQ1NCA2Ny4zNDg1IDEwOS4yOTdaIiBmaWxsPSIjMjMxRjIwIi8+CjxwYXRoIGQ9Ik02OC4zODI5IDEwOC4zNjNDNjguODE1NSAxMDcuMjEyIDY5LjcyNjEgMTA2LjQ5IDcwLjQxNjggMTA2Ljc0OUM3MS4xMDc0IDEwNy4wMDkgNzEuMzE2NiAxMDguMTUyIDcwLjg4NCAxMDkuMzAzQzcwLjQ1MTMgMTEwLjQ1NSA2OS41NDA3IDExMS4xNzcgNjguODUgMTEwLjkxOEM2OC4xNTk0IDExMC42NTggNjcuOTUwMiAxMDkuNTE1IDY4LjM4MjkgMTA4LjM2M1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik01MC44MjM3IDk4LjU2OTJMNDkuMTE3MyAxMDIuNTc3TDQ2LjI4NjIgMTAzLjc3NEw0Ny43MDQ2IDk4LjY2NzFMNTAuODIzNyA5OC41NjkyWiIgZmlsbD0iIzEzQzdFRiIvPgo8cGF0aCBkPSJNMzIuODc1OCAxMTIuNzc1TDM2LjAzNjggMTEyLjM5MUwzNy40NjYzIDExMy42MDNMMzMuNTk2OCAxMTQuNTI2TDMyLjg3NTggMTEyLjc3NVoiIGZpbGw9IiNFNTUyNEIiLz4KPHBhdGggZD0iTTM2Ljk3NDQgOTguOTM5TDM4LjY5MjggOTkuMTQ0NUwzOS42NzQgMTAwLjE3NEwzNy42MzY5IDEwMC4yMjdMMzYuOTc0NCA5OC45MzlaIiBmaWxsPSIjRkZBRDU5Ii8+CjxwYXRoIGQ9Ik00OS43OTg2IDEyOC44NjJMNTEuNTE3IDEyOS4wNjdMNTIuNDk4MyAxMzAuMDk3TDUwLjQ2MTEgMTMwLjE1TDQ5Ljc5ODYgMTI4Ljg2MloiIGZpbGw9IiNGQ0ZGNTkiLz4KPHBhdGggZD0iTTQyLjY0ODQgMTIzLjcyM0w0My44NDc0IDEyNi44MzNMNDIuMDA2NiAxMjkuMDQzTDM5Ljk4NDcgMTI1LjkxM0w0Mi42NDg0IDEyMy43MjNaIiBmaWxsPSIjQTJEMTY3Ii8+CjxwYXRoIGQ9Ik0yNCAxMjIuMjk5SDI2Ljg0OThWMTI1LjE0OUwyNC40NzUgMTI0LjY3NEwyNCAxMjIuMjk5WiIgZmlsbD0iI0VGOTExMyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTI5LjA3NTQgOTYuNjk3MkMyOS4wMTgxIDk2Ljc0NjkgMjguOTg4OSA5Ni44MjE0IDI4Ljk5NzMgOTYuODk2NkwyOS4wODA4IDk3LjY0NDFDMjkuMTAxOSA5Ny44MzMzIDI4Ljg5NjQgOTcuOTY1MSAyOC43MzMgOTcuODY3TDI4LjA4NzEgOTcuNDc5MkMyOC4wMjIyIDk3LjQ0MDMgMjcuOTQyMyA5Ny40MzU3IDI3Ljg3MzMgOTcuNDY3TDI3LjE4NTkgOTcuNzc4NkMyNy4wMTIxIDk3Ljg1NzQgMjYuODIzNiA5Ny43MDMzIDI2Ljg2NjkgOTcuNTE3OEwyNy4wMzc5IDk2Ljc4NDZDMjcuMDU1MSA5Ni43MTA5IDI3LjAzNDkgOTYuNjMzNSAyNi45ODM4IDk2LjU3NzdMMjYuNDc1OCA5Ni4wMjI3QzI2LjM0NzIgOTUuODgyMiAyNi40MzYyIDk1LjY1NTIgMjYuNjI2MyA5NS42Mzg2TDI3LjM3NzYgOTUuNTczMkMyNy40NTMyIDk1LjU2NjYgMjcuNTIwNyA5NS41MjM0IDI3LjU1ODIgOTUuNDU3NkwyNy45MzEyIDk0LjgwMjlDMjguMDI1NiA5NC42MzczIDI4LjI2OTEgOTQuNjUxMSAyOC4zNDM0IDk0LjgyNjRMMjguNjM2OSA5NS41MTkzQzI4LjY2NjMgOTUuNTg4OSAyOC43MjgyIDk1LjYzOTUgMjguODAyNCA5NS42NTQ2TDI5LjU0MTMgOTUuODA1M0MyOS43MjgyIDk1Ljg0MzQgMjkuNzg5NyA5Ni4wNzg5IDI5LjY0NTQgOTYuMjAzOUwyOS4wNzU0IDk2LjY5NzJaIiBmaWxsPSIjRDg0NDczIi8+CjxwYXRoIGQ9Ik00MC4zOTUyIDg3LjI4NDNMNDEuODE1MSA4Ni4xMDk2QzQwLjQ1MjMgODQuMDEzOCAzOC4wMDUxIDgyLjk1MzMgMzYuODgxNCA4Mi40MjQ4TDM3LjM1ODIgODMuNzQxN0MzNy4wMjMyIDgzLjg0NDkgMzYuMTcyMiA4NC4xMTM2IDM1LjQ0ODIgODQuMzYyNkMzNy41MzEzIDg0LjEzNzMgMzkuNjE0MSA4Ni4yMTY1IDQwLjM5NTIgODcuMjg0M1oiIGZpbGw9IiNFNTUyNEIiLz4KPHBhdGggZD0iTTQ0LjEzMTggMTE4LjI5OUw0Mi45MTg3IDExNi40NTlDNDUuMjA5OSAxMTQuNTM5IDQ4LjM3OSAxMTQuMTgyIDQ5Ljg0ODcgMTEzLjk3TDQ4Ljg0MzEgMTE1LjMxQzQ5LjE5MDEgMTE1LjU0NSA1MC4wNjkzIDExNi4xNSA1MC44MTAyIDExNi42ODdDNDguNTA2OSAxMTUuNzAyIDQ1LjM5ODIgMTE3LjM1MSA0NC4xMzE4IDExOC4yOTlaIiBmaWxsPSIjRkY4Qzg3Ii8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfODQwXzUzMDc2Ij4KPHJlY3Qgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxNjIiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==");
+    }
+    .vi-card.vi-card-status.fail:after {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjE2MiIgdmlld0JveD0iMCAwIDEyMCAxNjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF84NDBfNTU2NjgpIj4KPHBhdGggZD0iTTcwLjI2MjQgMzIuMDgyQzcwLjc2NDkgMjcuODkzMSA3NC44MjcgMjUuMDk0IDc4LjkyMDMgMjYuMTE2MkM4My4xMTg0IDI3LjE2NDYgODUuMzczMyAzMS43Mjg3IDgzLjY1NTIgMzUuN0w3Mi45NDQ2IDYwLjQ1N0M3Mi4zMTk1IDYxLjkwMTkgNzAuNzA2OCA2Mi42NDQzIDY5LjIwMjYgNjIuMTc5N0M2Ny43Nzg0IDYxLjczOTggNjYuODcyMyA2MC4zNDQ1IDY3LjA0OTkgNTguODY0NUw3MC4yNjI0IDMyLjA4MloiIGZpbGw9IiNGRkRBRDgiLz4KPGNpcmNsZSBjeD0iNjYuNjI2MiIgY3k9IjcyLjE5MzIiIHI9IjUuMDM4NTEiIHRyYW5zZm9ybT0icm90YXRlKDExLjEzNjUgNjYuNjI2MiA3Mi4xOTMyKSIgZmlsbD0iI0ZGREFEOCIvPgo8cGF0aCBkPSJNODUuNzc1MiAxNzMuMzc3Qzg1Ljc3NTIgMTczLjM3NyA5MS4zMDE0IDE3Ny41NDIgOTcuMDg1MyAxNzcuMDM5QzEwMy40MTggMTc2LjU3IDEwOC45NDkgMTcxLjE2MyAxMDguMTc0IDE2NC45ODFMODUuNzc1MiAxNzMuMzc3WiIgZmlsbD0iI0Q3RDdENyIvPgo8cGF0aCBkPSJNNzIuNzE3NyA5Ni4yMjYxQzcyLjcxNzcgOTYuMjI2MSA3Mi42ODc5IDkyLjQ3NjIgNzQuMjQ1MSA4OS40MzVDNzUuMDg2NSA4Ny43MDgyIDc1LjY2NiA4Ni4zOTczIDc0LjY0MzggODYuNDI0MUM3Mi42NjkzIDg2LjU0MzggNzEuNTE1NyA4OS4zNjk5IDcyLjcxNzcgOTYuMjI2MVoiIGZpbGw9IiM5ODk4OTkiLz4KPHBhdGggZD0iTTE0NC4zNzMgMTIzLjQ5NEMxNDQuMzczIDEyMy40OTQgMTMzLjM0OSAxMzMuMDIgMTI4LjA1MiAxMjYuMDQyQzExOS45MyAxMTUuMzQ0IDExMy4xMTEgODkuMjY3NCA4NS42MDk1IDkxLjExNkM0Ni4xMTA1IDk1Ljc2MjMgNDguMzg3MyAxMjguMDk1IDU2LjU2OTcgMTQxLjExQzU1Ljc5MjQgMTQ1LjI5MSA1Ni44Njg4IDE1Mi41NTkgNTguMDU1MyAxNTYuMjExQzYyLjY1MjYgMTcwLjM0MyA3OC42MzcyIDE3Ni42MDggOTguNjEzNiAxNzMuODM2QzEwMi42MjIgMTczLjI1NCAxMDYuODM2IDE3Mi43MzQgMTEwLjIxOSAxNzEuNjkxQzE0NC4xNzYgMTYxLjEyMSAxNDQuMzczIDEyMy40OTQgMTQ0LjM3MyAxMjMuNDk0WiIgZmlsbD0iI0Q3RDdENyIvPgo8cGF0aCBkPSJNNTEuMDI1OCAxMjQuNjg0QzUwLjc4MzMgMTM2LjI4NCA1Ni42MDUxIDE0Mi40NzQgNTYuNjA1MSAxNDIuNDc0QzU2LjYwNTEgMTQyLjQ3NCA1OS43Mjc0IDE0MS45MTUgNjMuNzgxOSAxNDMuMTA0QzcwLjQ0NzQgMTQ1LjA0NCA5MC4xMjU4IDE0My45MTYgOTIuODQ0NCAxMjUuMjk3Qzk0LjkzNDUgMTExLjMzIDgyLjY0MDIgOTcuNTM1NyA2OS43ODM1IDk4Ljc1ODFDNTcuOTQ5MSA5OS45NTM4IDUxLjQzMjggMTA2LjMzIDUxLjAyNTggMTI0LjY4NFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik02NC45ODAxIDEwNC44ODVDNjMuNjM4MiAxMDUuMjYyIDU3LjYyNiAxMDYuNzc5IDU1LjkxMDEgMTA1LjQyM0M1My4yNjQ0IDEwOC41NjEgNTEuNDA4NyAxMTUuODM4IDUxLjQ4NyAxMTguODM3QzUyLjE1OTYgMTE4LjQ3OCA1Ni4zMTk2IDEyMS4wOTcgNTcuMzUwOCAxMjEuNDExQzU4LjM4MTkgMTIxLjcyNSA1OS4wMTg4IDEyMC4wMDQgNjAuMzgxOCAxMTkuOTY4QzYxLjc0NDggMTE5LjkzMyA2My4xNTIxIDEyMS42MDEgNjQuODQ2OSAxMjEuMjE1QzY0LjgyMDIgMTIwLjE5MyA1Ny41NDkgMTE1Ljk1MSA1Ny4xOTA1IDExNS4yNzhDNTYuODMyIDExNC42MDYgNTguMTk0OSAxMTQuNTcgNTguMTU5MyAxMTMuMjA3QzU4LjA5ODcgMTEwLjg4NyA2My40NDEzIDEwNS41MjQgNjQuOTgwMSAxMDQuODg1QzY1LjI3MTggMTA0LjgwMyA2NS4zNDI5IDEwNC43NzUgNjUuMTAxMSAxMDQuODQyQzY1LjA2MzkgMTA0Ljg1MyA2NS4wMjM1IDEwNC44NjcgNjQuOTgwMSAxMDQuODg1WiIgZmlsbD0iI0UxRTJFQyIvPgo8cGF0aCBkPSJNNzUuNTMyIDk0LjMxMThDNzUuNTMyIDk0LjMxMTggNzguOTIwMiA5MC44ODE4IDgyLjY1MjMgOTAuMTcwNUM4Ni4wNDM2IDg5LjQ2ODIgODQuMjcyMyA4Ni45MjMxIDgxLjE3MzEgODguMzY3OUM3OC40MTI5IDg5LjczNTcgNzUuNTMyIDk0LjMxMTggNzUuNTMyIDk0LjMxMThaIiBmaWxsPSIjOTg5ODk5Ii8+CjxwYXRoIGQ9Ik03My43MDc3IDk0Ljk3MjJDNzMuNzA3NyA5NC45NzIyIDc1LjIzMTEgOTAuNjM2MiA3OC45ODY4IDg4LjIxOTVDODIuMTM5OCA4Ni4yMjc3IDgyLjc3MTQgODQuMzAxOCA4MS43MzY4IDgzLjg1MTVDNzkuNjY3NCA4Mi45NTA4IDc1Ljc1NDEgODQuNTUzMyA3My43MDc3IDk0Ljk3MjJaIiBmaWxsPSIjOTg5ODk5Ii8+CjxwYXRoIGQ9Ik03Ni43OTM5IDE2My40OTNDNzguMjAxOSAxNjIuNTY5IDc4Ljk3ODcgMTYwLjk4IDc5LjAwNTkgMTU5LjQxMUM4MC4yMTQyIDE2MS4yODkgNzkuNzMzMiAxNjMuNzU3IDc3Ljg1NzEgMTY1LjAzM0M3NS45ODEgMTY2LjMxIDczLjQ0NTQgMTY1LjgzIDcyLjEwMjUgMTY0LjAyNEM3My42MTc3IDE2NC41OTggNzUuMzg2IDE2NC40MTYgNzYuNzkzOSAxNjMuNDkzWiIgZmlsbD0iIzk4OTg5OSIvPgo8cGF0aCBkPSJNNzcuODU5MyAxNTIuMDc3Qzc5LjM5MjkgMTUwLjc0MSA4MC4wMjYzIDE0OC44ODQgNzkuODQxOSAxNDcuMDQ3QzgxLjUzMDggMTQ5LjA0OSA4MS4zMzQ4IDE1MS45ODYgNzkuMzMzMiAxNTMuNjc1Qzc3LjM5OTYgMTU1LjM2MyA3NC4zOTU4IDE1NS4yMzYgNzIuNTc0MSAxNTMuMzc1Qzc0LjM1ODQgMTUzLjgwNSA3Ni4zMjQgMTUzLjM0NSA3Ny44NTkzIDE1Mi4wNzdaIiBmaWxsPSIjOTg5ODk5Ii8+CjxwYXRoIGQ9Ik02NS40ODI1IDE1OC42MDZDNjcuMzcyOCAxNTcuODc0IDY4LjYyNjcgMTU2LjI3MyA2OS4wNTc0IDE1NC40ODlDNjkuOTM5MyAxNTYuOTIxIDY4LjcxMzkgMTU5LjYxMiA2Ni4yODM4IDE2MC41NjJDNjMuODUzNiAxNjEuNTEyIDYxLjA5NzUgMTYwLjQyNSA2MC4wMTMgMTU4LjA2N0M2MS42MDg4IDE1OS4xMTYgNjMuNjYyMiAxNTkuNDAzIDY1LjQ4MjUgMTU4LjYwNloiIGZpbGw9IiM5ODk4OTkiLz4KPHBhdGggZD0iTTUxLjkzNDYgMTE1LjA3N0w1Mi4wNTMgMTE0LjM5MkM1NC40NTYgMTE1LjAxMSA1Ni45MDM1IDExNy4zMzQgNTcuMjYyIDExOC4wMDdDNTUuMzExMSAxMTYuNDIxIDUyLjk2NTcgMTE1LjM5MSA1MS45MzQ2IDExNS4wNzdaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNNTEuNTc5MyAxMTcuMTMzTDUxLjY4NDIgMTE2LjQ0OEM1My4zODc5IDExNi40MDMgNTcuOTcwNCAxMTkuMDExIDU5LjA1NDkgMTIxLjM3QzU2Ljk0NTQgMTE4LjkyOSA1My4yOTQ5IDExNy41NDIgNTEuNTc5MyAxMTcuMTMzWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTUzLjkxNjcgMTI5LjE3NUM1NC45MjczIDEyNy40NjUgNTUuMDc3NCAxMjIuMDEzIDU0LjE0MjggMTIwLjk2NUM1My43MjAxIDEyMC41ODUgNTIuNTU1MiAxMjAuNTY4IDUwLjc4MTUgMTIyLjA1NEM0OS45NzQ0IDEyNC45OTQgNTAuMTIxNyAxMjkuNTI0IDUwLjQ2MTIgMTI5LjU1NEM1MS40Nzk4IDEyOS42NDQgNTMuMjk2MiAxMzAuMjI0IDUzLjkxNjcgMTI5LjE3NVoiIGZpbGw9IiNFMDQ0NDQiLz4KPHBhdGggZD0iTTUxLjYwNjEgMTE4LjUxMkM1MS42MDYxIDExOC41MTIgNDcuNTIzMyAxMTguMjA2IDQ0LjgyOTQgMTIzLjU4MkM1MC4xMDIzIDEyMS45OTQgNTQuNjk5MSAxMjMuMzY3IDU0LjY5OTEgMTIzLjM2N0M1NC42OTkxIDEyMy4zNjcgNTQuODExNCAxMTkuMjc4IDUxLjYwNjEgMTE4LjUxMloiIGZpbGw9IiNFQzg4MjIiLz4KPHBhdGggZD0iTTQ3LjgwNDYgMTI4LjYzNEM0Ny44MDQ2IDEyOC42MzQgNTIuMDgzMyAxMjkuNjAzIDU0LjIxODEgMTI4LjQ2OEM1NC4xNTgxIDEyOS4xNDcgNTMuMTY4NCAxMzAuMTY1IDUyLjc5ODkgMTMwLjQ3NEM0OC42MTgyIDEzMC45NzEgNDcuODA0NiAxMjguNjM0IDQ3LjgwNDYgMTI4LjYzNFoiIGZpbGw9IiNFQzZDMjIiLz4KPGVsbGlwc2Ugcng9IjEuMjQwMDgiIHJ5PSIxLjQ0Njc2IiB0cmFuc2Zvcm09Im1hdHJpeCgtMC45NDQzNTIgLTAuMzI4OTM3IC0wLjMyODkzNyAwLjk0NDM1MiA2NC45NjUzIDExMi42OTEpIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNNTYuODUzOCAxMTUuNDI3TDU3LjE4MjEgMTE0Ljk0MUM2Ni4xOTI1IDEyMC41MDIgNjYuOTQ1MiAxMjMuMjEgNjYuOTQ1MiAxMjMuMjFDNjYuOTQ1MiAxMjMuMjEgNjQuNjQ1NSAxMjAuMzc4IDU2Ljg1MzggMTE1LjQyN1oiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik02Ni44NjQzIDEyMC4xNDFDNjcuNjgyMSAxMjAuMTIgNjkuMjE5OCAxMTguOTQzIDY5Ljg4NjQgMTE4LjM1OEM2OS44ODY0IDExOC4zNTggNjguNjU2MiAxMTguNzA0IDY3LjE2OTQgMTE4Ljc3QzYzLjU4ODggMTE4LjkyOCA1Ny41MzA5IDExNS4yNzEgNTcuNTMwOSAxMTUuMjcxQzU4LjI1NjkgMTE2Ljk1NyA2Ni4wNDY1IDEyMC4xNjMgNjYuODY0MyAxMjAuMTQxWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTYzLjExOSAxMDcuMjgzQzYyLjMwNzUgMTA3LjM4NiA2MC40Mzc3IDEwOS4wNTggNTguNDczNCAxMTIuMTc4QzU5LjA0ODcgMTEwLjI4OSA2MC41NzI1IDEwNy4yMTQgNjMuNDMzMSAxMDYuMjUyQzY5LjI1MjMgMTA3LjEyMyA3My4xNDI4IDExMi40NzcgNzMuMTQyOCAxMTIuNDc3QzczLjE0MjggMTEyLjQ3NyA2Ni41MTc1IDEwNi44NTQgNjMuMTE5IDEwNy4yODNaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNNTguNDczMyAxMTIuMTc5QzU4Ljk3ODkgMTA5Ljc3OSA2MS4zNjE5IDEwNS4yODQgNjcuNDU5NSAxMDMuNzYxQzY1Ljc5MTQgMTA1LjE2OCA2MC4zOTMxIDEwNy4zNTUgNTguNDczMyAxMTIuMTc5WiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTgxLjk1OCAxMTAuNTQxQzg0LjQ1ODkgMTE0LjkwOSA4NS4yMzgzIDExOC42MzkgODIuNTEyNCAxMTguNzFDNzkuNzg2NSAxMTguNzgxIDgxLjIzMTIgMTEzLjE3NCA4MS45NTggMTEwLjU0MVoiIGZpbGw9IiNCM0U5RkEiLz4KPHBhdGggZD0iTTk2LjM4OCA5OC4xMTY0QzEwMC41MjggMTA1LjM5NiAxMDEuODE5IDExMS42MTMgOTcuMzA4IDExMS43MzFDOTIuNzk3MiAxMTEuODQ5IDk1LjE4NjEgMTAyLjUwNSA5Ni4zODggOTguMTE2NFoiIGZpbGw9IiNCM0U5RkEiLz4KPHBhdGggZD0iTTUwLjY4NjUgMTAyLjc3MkM0NS41NzQ1IDk2LjEzODkgNDMuNDMxNCA5MC4xNjE1IDQ3Ljg4MTkgODkuNDE3NEM1Mi4zMzI1IDg4LjY3MzMgNTEuMjY2NCA5OC4yNTkxIDUwLjY4NjUgMTAyLjc3MloiIGZpbGw9IiNCM0U5RkEiLz4KPHBhdGggZD0iTTQ5Ljc0NjEgMTA2LjU0M0M0My44NjcyIDEwNi42MzMgMzkuNjA0MSAxMDUuMzI5IDQxLjA1NDYgMTAyLjUxMkM0Mi41MDUgOTkuNjk1NyA0Ny40NTA2IDEwNC4zMjEgNDkuNzQ2MSAxMDYuNTQzWiIgZmlsbD0iI0IzRTlGQSIvPgo8cGF0aCBkPSJNMTA5LjIzNCAxMTIuMjA3QzExMS43MzUgMTE2LjU3NSAxMTIuNTE0IDEyMC4zMDUgMTA5Ljc4OCAxMjAuMzc2QzEwNy4wNjIgMTIwLjQ0NyAxMDguNTA3IDExNC44NCAxMDkuMjM0IDExMi4yMDdaIiBmaWxsPSIjQjNFOUZBIi8+CjxwYXRoIGQ9Ik03Ni40MzgyIDEyMi42MTlDNzguNDk4NSAxMjUuODg5IDc5LjEzNTggMTI4LjY4NiA3Ni44ODA0IDEyOC43NDVDNzQuNjI0OSAxMjguODA0IDc1LjgzMTUgMTI0LjU5NSA3Ni40MzgyIDEyMi42MTlaIiBmaWxsPSIjQjNFOUZBIi8+CjxwYXRoIGQ9Ik0xMDIuNjk0IDEyMS40NzlDMTA3Ljg1NSAxMjMuMiAxMjguNjY1IDEzNi4xOTQgMTI5Ljc5MiAxNjIuMzdDMTMwLjY2NSAxODMuODA0IDExNy40OTUgMTY5LjY1MSAxMTUuMjY4IDE2Mi43OTRDMTE1LjI2OCAxNjIuNzk0IDExNi44OTEgMTY3Ljg4NSAxMTMuNzA4IDE2OS41NzZDMTEwLjYgMTcxLjI4NyAxMDIuMjM3IDE2Ny4yMjggMTAxLjM3NCAxNTUuNjM2QzEwMS4zNzQgMTU1LjYzNiAxMDEuNzQ2IDE2NS42NTEgOTQuMTE3IDE2NC40NEM4Ni40ODc5IDE2My4yMjggODEuOTcwOCAxNTEuNjc2IDgyLjc5MDkgMTM3LjI4NkM4My42MTEgMTIyLjg5NiA5Ni4yNTU3IDExOS4zMzMgMTAyLjY5NCAxMjEuNDc5WiIgZmlsbD0iIzk4OTg5OSIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzg0MF81NTY2OCI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTYyIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=");
+    }
+
+    .vi-card.vi-card-status.fail .vi-card-body,
+    .vi-card.vi-card-status.success-and-fail .vi-card-body {
+        min-height: 80px;
+    }
+
+    .vi-card.vi-card-status .vi-card-body .vi-status-list {
+        margin-bottom: 8px;
+    }
+
+    .vi-card.vi-card-status .vi-card-body .vi-status-list.success, 
+    .vi-card.vi-card-status .vi-card-body .vi-status-list.fail {
+        padding-left: 24px;
+        background-repeat: no-repeat;
+        background-position: left center;
+    }
+    .vi-card.vi-card-status .vi-card-body .vi-status-list.success {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMuMjAwMiA4LjQxNjVMNi4zMTY3MiAxMS4zMzMyTDEyLjE2MDIgNC42NjY1IiBzdHJva2U9IiMwMDk4OTEiIHN0cm9rZS13aWR0aD0iMi4wNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=");
+    }
+    .vi-card.vi-card-status .vi-card-body .vi-status-list.fail {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNyAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iOC45NDgwMiIgY3k9IjcuOTk5NzgiIHI9IjcuMTExMTEiIGZpbGw9IiNGRjU0NDEiLz4KPHJlY3QgeD0iOC4wNTk1NyIgeT0iMy41NTU2NiIgd2lkdGg9IjEuNzc3NzgiIGhlaWdodD0iNi4yMjIyMiIgcng9IjAuODg4ODg5IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSI4LjA1OTU3IiB5PSIxMC42NjciIHdpZHRoPSIxLjc3Nzc4IiBoZWlnaHQ9IjEuNzc3NzgiIHJ4PSIwLjg4ODg4OSIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==");
+    }
+
+    .vi-card.vi-card-status .vi-card-body .vi-btn {
+        margin-top: 8px;
+        margin-bottom: 16px;
+    }
+    .vi-card.vi-card-status .vi-card-footer {
+        padding: 0;
+    }
+
+    .vi-card.vi-card-status.without-note {
+        border-radius: 12px 0 12px 0;
+    }
+    .vi-card.vi-card-status.with-note {
+        margin-bottom: 0;
+        border-radius: 12px 0 0 0;
+        box-shadow: none;
+    }
+    .vi-card-status-note {
+        margin-bottom: 16px;
+        padding: 12px 16px;
+        background: #FFEEED;
+        border-radius: 0 0 12px 0;
+        box-shadow: 0 4px 20px rgb(0 128 121 / 15%);
+    }
+
+    .vi-card.vi-card-statu .vi-btn-xs {
+        height: 36px;
+    }
+
+    .reupload-step-info {
+        padding: 16px;
+        position: relative;
+        background: rgb(255,255,255);
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 70%, rgba(255,248,240,1) 95%);
+    }
+    .reupload-step-info:before {
+        content: "";
+        width: 48px;
+        height: 17px;
+        position: absolute;
+        top: -16px;
+        right: 12%;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCA0OCAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMyLjIzMjQgMTAuMTExTDIzLjMzIDBMMTUuNDU1OCA5LjU4NzlDMTEuNjU2OSAxNC4yMTM2IDUuOTg1NzYgMTYuODk0NiAwIDE2Ljg5NDZINDcuMjQzMkM0MS40OTc0IDE2Ljg5NDYgMzYuMDI5MyAxNC40MjM1IDMyLjIzMjQgMTAuMTExWiIgZmlsbD0iI0ZGRjhGMSIvPgo8L3N2Zz4K");
+    }
+
+    /* .vi-photo-step */
+    .vi-photo-step {
+        padding: 12px;
+    }
+    .vi-photo-step li .vi-photo-step-label span {
+        margin-top: 4px;	
+    }
+
+    .vi-photo-step li:last-child:before {
+        background: #fff;
+    }
+
+    .vi-photo-step li .vi-photo-step-label span {
+        color: #C0C0C0;
+        font-size: 17px;
+    }
+    .vi-photo-step li.is-visited .vi-photo-step-label span,
+    .vi-photo-step li.is-current .vi-photo-step-label span {
+        color: #757575;
+        font-weight: 700;
+    }
+
+    .vi-photo-step li.is-processing .vi-photo-step-label:after {
+        width: 20px;
+        height: 20px;
+        color: #FF5441;
+        background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDMgMTMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyLjY2NjY3IiBoZWlnaHQ9IjguODg4ODkiIHJ4PSIxLjMzMzMzIiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB5PSIxMC4xNTg3IiB3aWR0aD0iMi42NjY2NyIgaGVpZ2h0PSIyLjUzOTY4IiByeD0iMS4yNjk4NCIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==") #FF5441 center center no-repeat;
+    }
+
+    .vi-photo-step li.is-processing .vi-photo-step-label span {
+        color: #FF5441;
+        font-weight: 700;
+    }
+
+    .vi-photo-step li .vi-photo-step-label .date {
+        font-weight: 700;
+        text-align: center;
+        color: #324148 !important;
+        font-size: 14px !important;
+    }
+  </style>
+</head>
+
+<!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+<header class="">
+    <div class="vi-page-header-normal">
+        <div class="vi-page-header-lt">
+            <button class="vi-btn" ontouchstart="">
+                <span class="vi-icon vi-icon-base icon-page-back"></span>
+            </button>
+        </div>
+        <div class="vi-page-header-ct">
+            <h1 class="vi-page-title">數位帳戶進度查詢</h1>
+        </div>
+        <!-- <div class="vi-page-header-rt">
+            <span class="vi-icon vi-icon-base vi-modal-close"></span>
+        </div> -->
+    </div>
+</header>
+
+<body class="body-wrap scroll vi-bg-mint">
+    <div class="main_container vi-has-foot-btn">
+        
+        <!--
+            參考 04RC 遠距投保 
+            twrbm-invest-ag008-070.component
+            twrbm-deposit-ot002-063.component.html
+            
+            相機 component
+            web-ui\EBMW\webapp\src\app\ng\view\ui-2022\camera\camera.component.html
+        -->
+
+        <div class="vi-container pad_top12">
+
+            <!-- 無待補案件 -->
+            <ng-container>
+                <div class="vi-txt-title vi-txt-b900 mb16 pad_top12">近一個月內申請進度查詢</div>
+
+                <div class="vi-card">
+                    <div class="vi-card-header">
+                        <div>
+                            <div class="vi-line-title">開立 My Way 臺幣帳戶 </div>
+                            <div class="vi-txt-body vi-txt-b600 mt8">系統處理中，約需要 1-3 個工作天</div>
+                        </div>
+                    </div>
+                    <div class="vi-card-body">
+                        <!-- component vi-photo-step -->
+                        <div class="vi-photo-step">
+                            <ul>
+                                <!-- 這個狀態原本的 component 裡沒有 -->
+                                <li class="is-processing">
+                                    <div class="vi-photo-step-label">
+                                        <span>收件中</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date">2021/12/24</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="vi-photo-step-label" data-count="2">
+                                        <span>審核中</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="vi-photo-step-label">
+                                        <span>開戶成功</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vi-card">
+                    <div class="vi-card-header">
+                        <div>
+                            <div class="vi-line-title">開立 My Way 臺幣帳戶 </div>
+                            <div class="vi-txt-body vi-txt-b600 mt8">系統處理中，約需要 1-3 個工作天</div>
+                        </div>
+                    </div>
+                    <div class="vi-card-body">
+                        <!-- component vi-photo-step -->
+                        <div class="vi-photo-step">
+                            <ul>
+                                <li class="is-current">
+                                    <div class="vi-photo-step-label" data-count="1">
+                                        <span>已收件</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date">2021/12/24</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="vi-photo-step-label">
+                                        <span>審核中</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="vi-photo-step-label">
+                                        <span>開戶成功</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vi-card">
+                    <div class="vi-card-header">
+                        <div>
+                            <div class="vi-line-title">開立 My Way 臺幣帳戶 </div>
+                            <div class="vi-txt-body vi-txt-b600 mt8">系統處理中，約需要 1-3 個工作天</div>
+                        </div>
+                    </div>
+                    <div class="vi-card-body">
+                        <!-- component vi-photo-step -->
+                        <div class="vi-photo-step">
+                            <ul>
+                                <li class="is-visited">
+                                    <div class="vi-photo-step-label">
+                                        <span>已收件</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date">2021/12/24</div>
+                                    </div>
+                                </li>
+                                <li class="is-current">
+                                    <div class="vi-photo-step-label" data-count="2">
+                                        <span>審核中</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="vi-photo-step-label">
+                                        <span>開戶成功</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- status success, without note-->
+                <div class="vi-card vi-card-status success without-note">
+                    <div class="vi-card-header">
+                        <div>
+                            <div class="vi-line-title">開立 My Way 外幣帳戶</div>
+                            <div class="vi-txt-body vi-txt-b600 mt8">恭喜您！2021/12/29 已成功開戶</div>
+                        </div>
+                    </div>
+                    <div class="vi-card-body">
+                        <div class="vi-status-list success">My Way 臺幣帳戶</div>
+                        <button class="vi-btn vi-btn-xs vi-btn-secondary">開始使用</button>
+                    </div>
+                </div>
+
+                <!-- status fail, with note-->
+                <div class="vi-card vi-card-status fail with-note">
+                    <div class="vi-card-header">
+                        <div>
+                            <div class="vi-line-title">開立好證點數位臺幣帳戶</div>
+                            <div class="vi-txt-body vi-txt-b600 mt8">很抱歉！2022/01/12 申請失敗</div>
+                        </div>
+                    </div>
+                    <div class="vi-card-body">
+                        <div class="vi-status-list fail">好證點數位臺幣帳戶</div>
+                    </div>
+                </div>
+                <div class="vi-card-status-note vi-txt-r500">未符合線上開戶資格證件姓名與本行留存不符</div>
+
+                <!-- status fail, with note-->
+                <div class="vi-card vi-card-status fail with-note">
+                    <div class="vi-card-header">
+                        <div>
+                            <div class="vi-line-title">開立好證點數位臺幣帳戶</div>
+                            <div class="vi-txt-body vi-txt-b600 mt8">很抱歉！2022/01/12 申請失敗</div>
+                        </div>
+                    </div>
+                    <div class="vi-card-body">
+                        <div class="vi-status-list fail">好證點數位臺幣帳戶</div>
+                    </div>
+                </div>
+                <div class="vi-card-status-note vi-txt-r500">逾期未補件或未符合開戶資格</div>
+
+                <!-- status success & fail, with note-->
+                <div class="vi-card vi-card-status success-and-fail with-note">
+                    <div class="vi-card-header">
+                        <div>
+                            <div class="vi-line-title">開立 MyWay 臺幣帳戶、 MyWay 外幣帳戶、 好證點數位臺幣帳戶</div>
+                            <div class="vi-txt-body vi-txt-b600 mt8">恭喜您！2021/12/29 已成功開戶</div>
+                        </div>
+                    </div>
+                    <div class="vi-card-body">
+                        <div class="vi-status-list success">My Way 臺幣帳戶</div>
+                        <div class="vi-status-list success">My Way 外幣帳戶</div>
+                        <div class="vi-status-list fail">好證點數位臺幣帳戶</div>
+                        <button class="vi-btn vi-btn-xs vi-btn-secondary">開始使用</button>
+                    </div>
+                </div>
+                <div class="vi-card-status-note vi-txt-r500">無法完成申請，如有疑問請詢問客服</div>
+                
+            </ng-container>
+            <!-- 無待補案件 end -->
+        
+
+            <!-- 有待補案件 -->
+            <ng-container>
+                <div class="vi-txt-title vi-txt-b900 mb8 pad_top24">近一個月內申請進度查詢</div>
+                <div class="vi-txt-body vi-txt-b600 mb16">有 <span class="vi-txt-r500 vi-txt-body-bold">4 個補件文件</span>等待上傳</div>
+
+                <div class="vi-card">
+                    <div class="vi-card-header">
+                        <div>
+                            <div class="vi-line-title">開立 My Way 臺幣帳戶 </div>
+                            <div class="vi-txt-body vi-txt-b600 mt8">系統處理中，約需要 1-3 個工作天</div>
+                        </div>
+                    </div>
+                    <div class="vi-card-body">
+                        <!-- component vi-photo-step -->
+                        <div class="vi-photo-step">
+                            <ul>
+                                <li class="is-visited">
+                                    <div class="vi-photo-step-label" data-count="1">
+                                        <span>已收件</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date">2021/12/24</div>
+                                    </div>
+                                </li>
+                                <li class="is-visited">
+                                    <div class="vi-photo-step-label" data-count="2">
+                                        <span>審核完成</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date">2021/12/28</div>
+                                    </div>
+                                </li>
+                                <li class="is-processing">
+                                    <div class="vi-photo-step-label">
+                                        <span>待補件</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="reupload-step-info">
+                        <div class="vi-txt-body mb12">以下文件需重新上傳：</div>
+
+                        <!--04RC 遠距投保有類似的-->
+                        <!-- component -->
+                        <ul class="vi-list-px0">
+                            <div class="vi-list-item flex-nowrap">
+                                <div class="vi-rank-mark flex-shrink-0 mr8">1</div>
+                                <div class="vi-idimg-area">
+                                    <img src="../../../../../inc/img/img/icon/bi-id-card.png">
+                                </div>
+                                <!-- 這裡和原 component 比，有多紅字，結構有多一層 -->
+                                <div class="vi-txt-body vi-txt-b600">
+                                    <div>身分證正面</div>
+                                    <div class="vi-txt-callout vi-txt-r500 mt4">照片非最新或拍攝不清楚，請重新拍照</div>
+                                </div>
+                            </div>
+                            <div class="vi-list-item flex-nowrap">
+                                <div class="vi-rank-mark flex-shrink-0 mr8">2</div>
+                                <div class="vi-idimg-area">
+                                    <img src="../../../../../inc/img/img/icon/bi-idcard-back.png">
+                                </div>
+                                <!-- 這裡和原 component 比，有多紅字，結構有多一層 -->
+                                <div class="vi-txt-body vi-txt-b600">
+                                    <div>身分證正面</div>
+                                    <div class="vi-txt-callout vi-txt-r500 mt4">照片非最新或拍攝不清楚，請重新拍照</div>
+                                </div>
+                            </div>
+                            <div class="vi-list-item flex-nowrap">
+                                <div class="vi-rank-mark flex-shrink-0 mr8">3</div>
+                                <div class="vi-idimg-area">
+                                    <img src="../../../../../inc/img/img/icon/bi-health-card.png">
+                                </div>
+                                <!-- 這裡和原 component 比，有多紅字，結構有多一層 -->
+                                <div class="vi-txt-body vi-txt-b600">
+                                    <div>第二證件 (健保卡、駕照或護照)</div>
+                                    <div class="vi-txt-callout vi-txt-r500 mt4">照片不合規定，請重新上傳有照片之健保卡、駕照或護照</div>
+                                </div>
+                            </div>
+                            <div class="vi-list-item flex-nowrap">
+                                <div class="vi-rank-mark flex-shrink-0 mr8">4</div>
+                                <div class="vi-idimg-area">
+                                    <img src="../../../../../inc/img/img/icon/bi-account-book.png">
+                                </div>
+                                <!-- 這裡和原 component 比，有多紅字，結構有多一層 -->
+                                <div class="vi-txt-body vi-txt-b600">
+                                    <div>新式戶口名簿或電子戶籍謄本</div>
+                                    <div class="vi-txt-callout vi-txt-r500 mt4">上傳文件並非最新，請重新拍照</div>
+                                </div>
+                            </div>
+
+                            <div class="vi-list-item flex-nowrap">
+                                <div class="vi-rank-mark flex-shrink-0 mr8">5</div>
+                                <div class="vi-idimg-area">
+                                    <img src="../../../../../inc/img/img/icon/bi-insure-default.png">
+                                </div>
+                                <!-- 這裡和原 component 比，有多紅字，結構有多一層 -->
+                                <div class="vi-txt-body vi-txt-b600">
+                                    <div>電信帳單</div>
+                                    <div class="vi-txt-callout vi-txt-r500 mt4">因與他人共用行動號碼，需補包含本人姓名與電話號碼的電信帳單以茲證明</div>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="vi-card">
+                    <div class="vi-card-header">
+                        <div>
+                            <div class="vi-line-title">( 未成年 ) 開立 My Way 臺幣帳戶</div>
+                            <div class="vi-txt-body vi-txt-b600 mt8">未成年開戶，請法定代理人提供補件資料</div>
+                        </div>
+                    </div>
+                    <div class="vi-card-body">
+                        <!-- component vi-photo-step -->
+                        <div class="vi-photo-step">
+                            <ul>
+                                <li class="is-visited">
+                                    <div class="vi-photo-step-label" data-count="1">
+                                        <span>已收件</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date">2021/12/24</div>
+                                    </div>
+                                </li>
+                                <li class="is-visited">
+                                    <div class="vi-photo-step-label" data-count="2">
+                                        <span>審核完成</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date">2021/12/28</div>
+                                    </div>
+                                </li>
+                                <li class="is-processing">
+                                    <div class="vi-photo-step-label">
+                                        <span>待補件</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="reupload-step-info">
+                        <div class="vi-txt-body mb12">以下文件需重新上傳：</div>
+
+                        <!--04RC 遠距投保有類似的-->
+                        <!-- component -->
+                        <ul class="vi-list-px0">
+                            <div class="vi-list-item flex-nowrap">
+                                <div class="vi-rank-mark flex-shrink-0 mr8">1</div>
+                                <div class="vi-idimg-area">
+                                    <img src="../../../../../inc/img/img/icon/bi-id-card.png">
+                                </div>
+                                <!-- 這裡和原 component 比，有多紅字，結構有多一層 -->
+                                <div class="vi-txt-body vi-txt-b600">
+                                    <div>身分證正面</div>
+                                    <div class="vi-txt-callout vi-txt-r500 mt4">照片非最新或拍攝不清楚，請重新拍照</div>
+                                </div>
+                            </div>
+                            <div class="vi-list-item flex-nowrap">
+                                <div class="vi-rank-mark flex-shrink-0 mr8">2</div>
+                                <div class="vi-idimg-area">
+                                    <img src="../../../../../inc/img/img/icon/bi-account-book.png">
+                                </div>
+                                <!-- 這裡和原 component 比，有多紅字，結構有多一層 -->
+                                <div class="vi-txt-body vi-txt-b600">
+                                    <div>新式戶口名簿或電子戶籍謄本</div>
+                                    <div class="vi-txt-callout vi-txt-r500 mt4">上傳文件並非最新，請重新拍照</div>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="vi-card">
+                    <div class="vi-card-header">
+                        <div>
+                            <div class="vi-line-title">開立 My Way 臺幣帳戶</div>
+                            <div class="vi-txt-body vi-txt-b600 mt8">尚未進件，請法定代理人先完成身分認證</div>
+                        </div>
+                    </div>
+                    <div class="vi-card-body">
+                        <div class="vi-btn-group mb24">
+                            <button class="vi-btn vi-btn-primary vi-btn-l">查詢認證進度</button>
+                        </div>
+                        <!-- component vi-photo-step -->
+                        <div class="vi-photo-step">
+                            <ul>
+                                <li class="is-visited">
+                                    <div class="vi-photo-step-label" data-count="1">
+                                        <span>已收件</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date">2021/12/24</div>
+                                    </div>
+                                </li>
+                                <li class="is-current">
+                                    <div class="vi-photo-step-label" data-count="2">
+                                        <span>審核完成</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date">2021/12/28</div>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="vi-photo-step-label">
+                                        <span>開戶成功</span>
+                                        <!-- 這個日期原本的 component 裡沒有 -->
+                                        <div class="date"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </ng-container>
+            <!-- 有待補案件 end -->
+
+            
+            
+        </div><!-- END container -->
+    </div>
+    <!-- main_container -->
+
+    <div id="footer">
+        <!-- 小針Footer -->
+        <div class="vi-page-footer">
+            <div class="vi-btn-group">
+                <button class="vi-btn vi-btn-primary vi-btn-l vi-btn-shadow">開始上傳補件資料</button>
+            </div>
+        </div>
+    </div>    
+  
+  </div>
+  <!-- body-wrap -->  
+
+</html>
+
+
+<!-- 請選擇上傳檔案方式 demo 用，加 .vi-modal-in 來看 -->
+<!-- 參考 import { SlidePanelButtonListWidgetModule } from 'app/ng/view/ui-2022/slide-panel/button-list/slide-panel-button-list.widget'; -->
+<!-- <div class="vi-modal vi-modal-in" #modal>
+  <div class="vi-modal-backdrop" (bindClick)="onClickBackDrop($event)"></div>
+  <div class="super-card">
+    <div class="super-card-header">
+      <div class="super-card-header-lt"></div>
+      <div class="super-card-header-ct">
+        <span class="super-card-title">請選擇上傳檔案方式</span>
+      </div>
+      <div class="super-card-header-rt">
+        <button class="vi-modal-close" ontouchstart (bindClick)="onClickClose($event)"></button>
+      </div>
+    </div>
+    <div class="super-card-body">
+      <div class="vi-button-list">
+        <a class="button-item" (bindClick)="onClickItem($event, i)">
+          <div class="button-area">
+            <div class="vi-button-icon">
+              <img src="../../../../../inc/img/img/icon/photo-g.svg" alt="" />
+            </div>
+          </div>
+          <p class="vi-txt-callout vi-txt-b600">從相簿上傳</p>
+        </a>
+        <a class="button-item" (bindClick)="onClickItem($event, i)">
+          <div class="button-area">
+            <div class="vi-button-icon">
+              <img src="../../../../../inc/img/img/icon/camera-g.svg" alt="" />
+            </div>
+          </div>
+          <p class="vi-txt-callout vi-txt-b600">開相機拍照</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- 確認訊息 vi-modal component．demo 用，加 .vi-modal-in 來看，內容請自行置換-->
+<!-- <modal-confirm>
+    <div class="vi-modal vi-modal-in" style="z-index: 99989; display: block;">
+        <div class="vi-modal-backdrop"></div>
+        <div class="popup">
+            <div class="popup-header">
+                <div class="popup-header-ct">
+                    <span class="popup-title">確認訊息</span>
+                </div>
+            </div>
+            <div class="popup-body forAEM">
+                <div class="forAEM">
+                    您已於今日上傳過補件資料，是否要清除之前的補件並重新上傳新照片？
+                </div>
+            </div>
+            <div class="popup-footer">
+                <div class="vi-btn-group">
+                    <button class="vi-btn vi-btn-secondary" ontouchstart="">取消</button>
+                    <button class="vi-btn vi-btn-primary" ontouchstart="">重新上傳</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</modal-confirm> -->

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19" height="49" viewBox="0 0 19 49">
+    <g fill="none" fill-rule="evenodd">
+        <g fill="#FEC602">
+            <g>
+                <g>
+                    <g transform="translate(-2 -117) translate(0 84) translate(0 1) translate(2 32)">
+                        <path d="M2.083 37h14.866c.552 0 1 .448 1 1 0 .223-.075.44-.213.616l-6.564 8.394c-.68.87-1.937 1.024-2.807.343-.122-.095-.232-.204-.329-.325l-6.734-8.403c-.345-.43-.276-1.06.155-1.405.178-.143.398-.22.626-.22z"/>
+                        <rect width="7" height="40" x="6" rx="2"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

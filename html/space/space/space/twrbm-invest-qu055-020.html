@@ -1,0 +1,2462 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+    .bg-light-gray-gradient {
+      background: linear-gradient(180deg, rgba(247,247,247,1) 0%, rgba(247,247,247,0) 48px, rgba(247,247,247,0) 100%);
+    }
+    
+    
+    .vi-points-balance .vi-item {
+      height: auto;
+      border-left: 1px dashed #C0C0C0;
+    }
+    
+    .highcharts-label.highcharts-tooltip { 
+      filter: none; 
+    }
+
+    
+    
+    .radius-square-color-mark {
+      display: flex;
+      justify-content: center;
+    }
+    .radius-square-color-mark .radius-square-color {
+      width: 10px;
+      height: 10px;
+      margin-right: 8px;
+      border-radius: 3px;
+    }
+    .radius-square-color-mark.circle .radius-square-color {
+      border-radius: 50%;
+    }
+    .radius-square-color-mark .radius-square-color.line {
+      width: 10px;
+      height: 2px;
+      margin-right: 8px;
+      border-radius: 3px;
+      background: #757575;
+    }
+    .radius-square-color-mark .radius-square-color.green {
+      background: #009891;
+    }
+    .radius-square-color-mark .radius-square-color.gray {
+      background: #C2D2D3;
+    }
+    .radius-square-color-mark .radius-square-color.yellow {
+      background: rgba(255, 163, 26, 0.8);
+    }
+    .radius-square-color-mark .radius-square-color.blue {
+      background: rgba(67, 131, 227, 0.8);
+    }
+    
+    
+    
+    /* ETF 相關標的 原頁面有css 這裡只是為了正確顯示才複製過來的 */
+    .vi-fund-trend-block .vi-line-title + .ml-auto {
+      position: relative;
+      top: 2px;
+    }
+    .vi-fund-trend-block .vi-line-title + .ml-auto div {
+      display: inline-flex;
+    }
+    .vi-fund-trend-block .vi-line-title + .ml-auto .chart {
+      flex-basis: 86px;
+    }
+    .vi-fund-trend-block .vi-line-title + .ml-auto .rate {
+      flex-basis: 110px;
+    }
+
+    .vi-fund-trend-block .vi-fund-info {
+      flex-basis: 100%;
+    }
+    .vi-fund-trend-block .vi-fund-chart {
+      margin-left: 4px;
+      flex-basis: 86px;
+    }
+    .vi-fund-trend-block .vi-fund-rate {
+      flex-basis: 110px;
+      text-align: right;
+    }
+    .vi-fund-trend-block .vi-fund-rate .txt-rate {
+      padding: 1px 8px;
+      display: inline-block;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 16px;
+    }
+    .vi-fund-trend-block .vi-fund-rate .increase {
+      background: #21941D;
+    }
+    .vi-fund-trend-block .vi-fund-rate .decrease {
+      background: #FF5441;
+    }
+    
+    .highcharts-wrap {
+      width: 100%;
+    }
+    .highcharts-wrap .highcharts-yaxis-labels span .yaxis-label {
+      padding: 40px 4px 40px 12px;
+      margin-left: -12px;
+      background: #fff;
+      position: relative;
+    }
+    .highcharts-wrap .highcharts-yaxis-labels span:first-child .yaxis-label {
+      padding-bottom: 0;
+    }
+    .highcharts-wrap .highcharts-yaxis-labels span:not(:first-child) .yaxis-label:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -36px;
+      width: 36px;
+      height: 120px;
+      background: #fff;
+    }
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<!-- -->
+<body class="vi-bg-mint-only">
+  
+  <header class="">
+    <!-- 如果 rt 有二顆 icon，加上 .vi-page-header-two-icons -->
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">產業投資策略</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <!-- <a class="btn vi-icon vi-icon-base icon-start-default-w"></a> -->
+        <!-- <a class="btn vi-icon vi-icon-base icon-start-default-w ml24"></a> -->
+        <!-- <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-white">動作</a> -->
+      </div>
+    </div>
+  </header>
+
+  <!-- EBMW content start from here -->
+  <div class="body-wrap vi-bg-mint">
+    
+    <div class="main_container">
+      
+      <div class="vi-container">
+        
+        <!-- 預設 fixed -->
+        <div class="nav-scroll nav-detail-fixed-top fixed-top fixed-position-1">
+          <ul class="vi-tab">
+            <li class="vi-tab-item active" href="#tab1-1" data-toggle="tab">
+              <a class="vi-tab-link"><span>能源</span></a>
+            </li>
+            <li class="vi-tab-item" href="#tab1-2" data-toggle="tab">
+              <a class="vi-tab-link"><span>公用事業</span></a>
+            </li>
+            <li class="vi-tab-item" href="#tab1-3" data-toggle="tab">
+              <a class="vi-tab-link"><span>金融</span></a>
+            </li>
+            <li class="vi-tab-item" href="#tab1-4" data-toggle="tab">
+              <a class="vi-tab-link"><span>原物料</span></a>
+            </li>
+            <li class="vi-tab-item" href="#tab1-5" data-toggle="tab">
+              <a class="vi-tab-link"><span>健護</span></a>
+            </li>
+            <li class="vi-tab-item" href="#tab1-6" data-toggle="tab">
+              <a class="vi-tab-link"><span>工業</span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content pad_top44">
+          <div id="tab1-1" class="tab-pane active" role="tabpanel">
+            
+            <div class="pad_top24">
+              <!-- 參考 vi-module-02 現有版型 這裡僅示意 -->
+              <div class="vi-module-02">
+                <div class="vi-blog-article js_blog_article">
+                  <a href="#">
+                    <div class="vi-blog-article-pic">
+                      <!-- <img src="#" alt=""> -->
+                    </div>
+                    <div class="vi-blog-article-title">
+                      <p>文字1 文字1 文字1 文字1 文字1</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <div class="vi-blog-article-pic">
+                      <!-- <img src="#" alt=""> -->
+                    </div>
+                    <div class="vi-blog-article-title">
+                      <p>文字2 文字2 文字2 文字2 文字2 文字2 文字2 文字2 文字2 文字2 文字2 文字2 </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="vi-card mb12">
+              <div class="vi-card-body">
+                <div class="dis-flex pad_top16 pad_btm8">
+                  <div class="mr-auto">
+                    <div class="vi-txt-body-bold vi-txt-b900">能源中長期展望</div>
+                  </div>
+                  <div class="ml-auto">
+                    <a href="">
+                      <span class="vi-icon vi-icon-xs icon-question-mark-g top-2px mr4"></span>
+                      <span class="vi-txt-body-bold vi-txt-g500">指數說明</span>
+                    </a>
+                  </div>
+                </div>
+                <ul class="vi-list vi-list-dot vi-list-noline">
+                  <li class="vi-list-item vi-txt-callout vi-txt-b600">美歐俄能源戰持續，然對俄制裁與俄國制，反易使能源價格上揚。</li>
+                  <!-- id 是 demo 用的，開發請拉掉 -->
+                  <div id="target-more1" class="hide" style="">
+                    <li class="vi-list-item vi-txt-callout vi-txt-b600">OPEC+閒置產能偏低，增產遠低於預期，結構性問題短期難解</li>
+                    <li class="vi-list-item vi-txt-callout vi-txt-b600">在能源安全考量下，經合組織成員國仍須回補戰備儲油將支撐油市下檔空間</li>
+                    <li class="vi-list-item vi-txt-callout vi-txt-b600">美國境內打壓通膨的能源政策恐壓低美煉油廠的超額利潤</li>
+                    <li class="vi-list-item vi-txt-callout vi-txt-b600">下行風險為放寬對產油國的制裁供給增加、中國受疫情干擾擴大動態清零或歐美經濟衰退壓抑需求。能源業受政策及對需求的擔憂拉扯，股價波動仍高</li>
+                    
+                    <div class="vi-txt-callout vi-txt-b500 mt8 mb8">資料來源：中國信託智能量化模型, 截至 2022/01/19</div>
+                  </div>
+                </ul>
+                <!-- id 是 demo 用的，開發請拉掉 -->
+                <div id="trigger-more1" class="dis-flex flex-justify-around pad_btm16">
+                  <div class="vi-icon vi-icon-xs icon-arrow-up-green rotate180"></div>
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="vi-row">
+              <!-- id 是 demo 用的，開發請拉掉 -->
+              <div id="target-etf-block-1">
+                <div class="vi-card-s pad_top24 pad_btm24 mb12">
+                  <div class="vi-container">
+                    <div class="vi-line-title mb16">近 1 年${能源}指數與看漲信心</div>
+                    <div class="radius-square-color-mark circle flex-justify-end mb16">
+                      <div class="d-flex align-items-center mr12">
+                        <span class="radius-square-color line"></span>
+                        <span class="vi-txt-callout vi-txt-b600">指數走勢</span>
+                      </div>
+                      <div class="d-flex align-items-center mr12">
+                        <span class="radius-square-color yellow"></span>
+                        <span class="vi-txt-callout vi-txt-b600">看漲信心轉強</span>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="radius-square-color blue"></span>
+                        <span class="vi-txt-callout vi-txt-b600">看漲信心轉弱</span>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <div>
+                    <!-- id 是 demo 用的，開發請拉掉 -->
+                    <div id="highchartsContainer" class="highcharts-wrap"></div>
+                  </div>
+
+                  <div class="vi-container">
+                    <div class="vi-dashed-divider mt16 mb16"></div>
+                      
+                    <div class="vi-txt-callout vi-txt-b500 mb16">資料來源：彭博 Bloomberg, 截至：2021/08/03</div>
+                    
+                    <!-- vi-module-07 -->
+                    <div class="vi-module-07">
+                      <div class="vi-card-column">
+                        <a class="btn vi-card-xs vi-bg-mint-light" href="javascript:;">
+                          <div class="list-item-block">
+                            <div class="item-icon">
+                              <span class="vi-icon vi-icon-base vi-icon-fx-history"></span>
+                            </div>
+                            <div class="item-title-block">
+                              <div class="vi-txt-body-bold vi-txt-b600">取得專家推薦 ETF</div>
+                            </div>
+                            <div class="item-block-right">
+                              <span class="vi-icon vi-icon-xs icon-right-green"></span>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- id 是 demo 用的，開發請拉掉 -->
+              <div id="target-etf-block-2" class="hide">
+                <div class="vi-card-s pad_top24 pad_btm24 mb12">
+                  <div class="vi-container">
+                    <div class="vi-line-title mb16">精選ETF</div>
+                    
+                    <div class="vi-row">
+                      <div class="bg-light-gray-gradient pad_top16">
+                        <div class="vi-container">
+                          <div class="dis-flex flex-justify-between align-items-center mb8">
+                            <div class="mr-auto">
+                              <div class="vi-txt-title vi-txt-b900">BNO</div>
+                            </div>
+                            <div class="ml-auto">
+                              <a href="#">
+                                <span class="vi-txt-body-bold vi-txt-b600">標的資訊</span>
+                                <span class="vi-icon vi-icon-xs vi-icon-direction-right top-2px"></span>
+                              </a>
+                            </div>
+                          </div>
+                          
+                          <div class="vi-txt-callout vi-txt-b600 mb16">Ｕｎｉｔｅｄ Ｓｔａｔｅｓ布蘭特原油ＥＴＦ</div>
+                          
+                          <div class="vi-points-balance">
+                            <div class="vi-item">
+                              <div class="vi-txt-title vi-txt-g400">+12%</div>
+                              <a class="d-flex align-items-center mt4">
+                                <span class="vi-txt-callout vi-txt-b500" click="">年化報酬</span>
+                                <span class="vi-icon vi-icon-xs icon-info-mark-g ml8"></span>
+                              </a> 
+                            </div>
+                            <div class="vi-item">
+                              <div class="vi-txt-title vi-txt-r500">-25%</div>
+                              <a class="d-flex align-items-center mt4">
+                                <span class="vi-txt-callout vi-txt-b500" click="">最大回檔</span>
+                                <span class="vi-icon vi-icon-xs icon-info-mark-g ml8"></span>
+                              </a>  
+                            </div>
+                          </div>
+                          
+                          <div class="vi-dashed-divider"></div>
+                          
+                          
+                          <div class="vi-txt-body-bold vi-txt-b600 ct mb16">近一年 ETF 走勢與看漲信心強弱</div>
+                          
+                          <div class="radius-square-color-mark circle flex-justify-end mb16">
+                            <div class="d-flex align-items-center mr12">
+                              <span class="radius-square-color line"></span>
+                              <span class="vi-txt-callout vi-txt-b600">指數走勢</span>
+                            </div>
+                            <div class="d-flex align-items-center mr12">
+                              <span class="radius-square-color yellow"></span>
+                              <span class="vi-txt-callout vi-txt-b600">看漲信心轉強</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                              <span class="radius-square-color blue"></span>
+                              <span class="vi-txt-callout vi-txt-b600">看漲信心轉弱</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- id 是 demo 用的，開發請拉掉 -->
+                      <div id="highchartsContainer2" class="highcharts-wrap"></div>
+                    </div>
+
+                    <div class="vi-dashed-divider mt16 mb16"></div>
+                      
+                    <div class="vi-txt-callout vi-txt-b500 mb16">資料來源：彭博 Bloomberg, 截至：2021/08/03</div>
+                    
+                    <div class="vi-btn-group">
+                      <div class="vi-btn vi-btn-primary">申購</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="vi-card-s pad_top24 pad_btm16">
+                <div class="vi-container">
+                  <!-- 可參考 網銀 網銀 網銀 twrbo-invest-qu055-020.component 基金/投資  市場氣象台  ETF動能投資  非核心消費 -->
+                  <div class="vi-fund-trend-block">   
+                    <div class="dis-flex">
+                      <div class="vi-line-title">相關標的</div>
+                      <div class="ml-auto flex-shrink-0">
+                        <div class="vi-txt-body vi-txt-b500 mr4 recent">近一年走勢</div>
+                        <div class="vi-txt-body vi-txt-b500 rate">收盤價/漲跌幅</div>
+                      </div>
+                    </div>                 
+                    <div class="vi-list-px0 vi-btm-line mt16">
+                      <div class="vi-list-item">
+                        <a class="vi-w-100">
+                          <div class="dis-flex">
+                            <div class="dis-flex flex-grow">
+                              <div class="vi-fund-info">
+                                <div class="vi-txt-body-bold vi-txt-b600 vi-fund-name">EBC</div>
+                                <div class="vi-fund-desc">ＥＢＣＥＡＳＴＥＲＮ ＢＡＮＫＳＨＡＲＥＳ ＩＮＣ</div>
+                              </div>
+                              <div class="vi-fund-chart">
+                                <div class="ml-auto wid_70px">
+                                  <!--請置換成 chart-->
+                                  <img src="https://via.placeholder.com/70" class="wid_100per" />
+                                </div>
+                              </div>
+                              <div class="flex-shrink-0 vi-fund-rate">
+                                <div class="vi-txt-body-bold value">27.3900</div>
+                                <div class="txt-rate decrease">-12.00%</div>
+                              </div>
+                            </div>
+                            <div class="ml-auto">
+                              <div class="vi-icon vi-icon-xs icon-arrow-next-g"></div>
+                            </div>
+                          </div>
+                          <div class="vi-txt-hashtag mt8">
+                            <div class="vi-txt-callout vi-txt-br500">#嚴選定期 #定期(不)定額5折起</div>
+                          </div>
+                        </a>
+                        <div class="vi-list-full dis-flex mt16">
+                          <label class="vi-post-fav">
+                            <span></span>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="vi-list-item">
+                        <a class="vi-w-100">
+                          <div class="dis-flex">
+                            <div class="dis-flex flex-grow">
+                              <div class="vi-fund-info">
+                                <div class="vi-txt-body-bold vi-txt-b600 vi-fund-name">0050</div>
+                                <div class="vi-fund-desc">元大台灣卓越５０</div>
+                              </div>
+                              <div class="vi-fund-chart">
+                                <div class="ml-auto wid_70px">
+                                  <!--請置換成 chart-->
+                                  <img src="https://via.placeholder.com/70" class="wid_100per" />
+                                </div>
+                              </div>
+                              <div class="flex-shrink-0 vi-fund-rate">
+                                <div class="vi-txt-body-bold value">27.3900</div>
+                                <div class="txt-rate increase">+150.00%</div>
+                              </div>
+                            </div>
+                            <div class="ml-auto">
+                              <div class="vi-icon vi-icon-xs icon-arrow-next-g"></div>
+                            </div>
+                          </div>
+                          <div class="vi-txt-hashtag mt8">
+                            <div class="vi-txt-callout vi-txt-br500">#嚴選定期 #定期(不)定額5折起</div>
+                          </div>
+                        </a>
+
+                        <div class="vi-list-full dis-flex mt16">
+                          <label class="vi-post-fav">
+                            <span></span>
+                          </label>
+                        </div>
+                      </div>
+                      
+                      <!-- id 是 demo 用的，開發請拉掉 -->
+                      <div id="target-more2" class="hide" style="">
+                        <div class="vi-list-item">
+                          <a class="vi-w-100">
+                            <div class="dis-flex">
+                              <div class="dis-flex flex-grow">
+                                <div class="vi-fund-info">
+                                  <div class="vi-txt-body-bold vi-txt-b600 vi-fund-name">0050</div>
+                                  <div class="vi-fund-desc">元大台灣卓越５００</div>
+                                </div>
+                                <div class="vi-fund-chart">
+                                  <div class="ml-auto wid_70px">
+                                    <!--請置換成 chart-->
+                                    <img src="https://via.placeholder.com/70" class="wid_100per" />
+                                  </div>
+                                </div>
+                                <div class="flex-shrink-0 vi-fund-rate">
+                                  <div class="vi-txt-body-bold value">27.3900</div>
+                                  <div class="txt-rate increase">+150.00%</div>
+                                </div>
+                              </div>
+                              <div class="ml-auto">
+                                <div class="vi-icon vi-icon-xs icon-arrow-next-g"></div>
+                              </div>
+                            </div>
+                            <div class="vi-txt-hashtag mt8">
+                              <div class="vi-txt-callout vi-txt-br500">#嚴選定期 #定期(不)定額5折起</div>
+                            </div>
+                          </a>
+
+                          <div class="vi-list-full dis-flex mt16">
+                            <label class="vi-post-fav">
+                              <span></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="vi-list-item">
+                          <a class="vi-w-100">
+                            <div class="dis-flex">
+                              <div class="dis-flex flex-grow">
+                                <div class="vi-fund-info">
+                                  <div class="vi-txt-body-bold vi-txt-b600 vi-fund-name">0050</div>
+                                  <div class="vi-fund-desc">元大台灣卓越５０００</div>
+                                </div>
+                                <div class="vi-fund-chart">
+                                  <div class="ml-auto wid_70px">
+                                    <!--請置換成 chart-->
+                                    <img src="https://via.placeholder.com/70" class="wid_100per" />
+                                  </div>
+                                </div>
+                                <div class="flex-shrink-0 vi-fund-rate">
+                                  <div class="vi-txt-body-bold value">27.3900</div>
+                                  <div class="txt-rate increase">+150.00%</div>
+                                </div>
+                              </div>
+                              <div class="ml-auto">
+                                <div class="vi-icon vi-icon-xs icon-arrow-next-g"></div>
+                              </div>
+                            </div>
+                            <div class="vi-txt-hashtag mt8">
+                              <div class="vi-txt-callout vi-txt-br500">#嚴選定期 #定期(不)定額5折起</div>
+                            </div>
+                          </a>
+
+                          <div class="vi-list-full dis-flex mt16">
+                            <label class="vi-post-fav">
+                              <span></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="dis-flex mt16">
+                    <div class="vi-txt-callout vi-txt-b500">
+                      資料來源：證券商，截至：2021/12/28
+                    </div>
+                  </div>
+                  
+                  <!-- id 是 demo 用的，開發請拉掉 -->
+                  <a id="trigger-more2" class="vi-icon-link flex-justify-center w-100 pad_top16">
+                    <span class="vi-icon vi-icon-xs icon-arrow-up-green rotate180"></span>
+                    <span class="vi-txt-body-bold vi-txt-g500 ml4">看更多</span>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div id="tab1-2" class="tab-pane" role="tabpanel">
+          </div>
+          
+          
+          <div id="tab1-3" class="tab-pane" role="tabpanel">
+          </div>
+          
+          
+          <div id="tab1-4" class="tab-pane" role="tabpanel">
+          </div>
+          
+          
+          <div id="tab1-5" class="tab-pane" role="tabpanel">
+          </div>
+          
+          
+          <div id="tab1-6" class="tab-pane" role="tabpanel">
+          </div>
+        </div>
+
+
+        <div class="vi-container">
+          <!-- 備註 現有版型 這裡僅示意 -->
+          <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+          <div class="mt16">
+            <div class="vi-note-accordion">
+              <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+                <div class="forAEM base-style break-word mr4">
+                  標題
+                </div>
+                <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+              </div>
+              <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                <div class="vi-card-body forAEM base-style break-word">
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+      <div id="trigger-etf-block" class="vi-txt-g500 mb40 pad_btm16"> -> 切換 取得專家推薦 ETF</div>
+      
+      
+    </div>
+    <!-- main_container -->
+    
+    <!-- 現有元件 這裡僅示意 -->
+    <div class="vi-gotop" style="bottom: 84px;"></div>
+  </div>
+
+</body>
+<!-- body-wrap -->
+</html>
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+const chartConfig = {
+  title: '',
+  chart: {
+    type: 'line',
+    // width: 680,
+    marginRight: 48,
+    selectionMarkerFill: 'none',
+    zoomType: 'x',
+    scrollablePlotArea: {
+      minWidth: 600,
+      opacity: 0,
+      scrollPositionX: 0
+    }
+  },
+  tooltip: {
+    enabled: true,
+    shared: true,
+    borderWidth: 0,
+    backgroundColor: "#ffffff",
+    borderRadius: 12,
+    crosshairs: true,
+    useHTML: true,
+    headerFormat: '<table>',
+    // TS 請再處理 vi-txt-y500 或 vi-txt-bl500， icon-high-confidence-face 或 icon-low-confidence-face
+    pointFormat: '<div class="vi-txt-footnote vi-txt-b600">{point.date}</div><div class="dis-flex vi-txt-footnote vi-txt-b600">看漲信心：<span class="vi-icon vi-icon-xs icon-high-confidence-face mr4"></span><span class="vi-txt-y500">{point.trend}</span></div><div class="vi-txt-footnote vi-txt-b600">收盤價：{point.y}</div>',
+    footerFormat: '</table>',
+    // followTouchMove: false,
+  },
+  exporting: {
+    enabled: false,
+  },
+  credits: {
+    enabled: false
+  },
+  series: [{
+    type: 'spline',
+    showInLegend: false,
+    allowPointSelect: false,
+    data: [
+      {
+      x: Date.UTC(2021, 8, 1),
+      y: 29.89,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/20',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 8, 2),
+      y: 29.90,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/21',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 8, 3),
+      y: 29.76,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/22',
+      icon: 'cry',
+      trend: 6,
+    }, {
+      x: Date.UTC(2021, 8, 4),
+      y: 29.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/23',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 8, 5),
+      y: 29.99,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/24',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 8, 6),
+      y: 29.67,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/25',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2021, 8, 7),
+      y: 29.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/26',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 8, 8),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/27',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 8, 9),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/28',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2021, 8, 10),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/29',
+      icon: 'smile',
+      trend: 10,
+    }, {
+      x: Date.UTC(2021, 8, 11),
+      y: 30.39,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/30',
+      icon: 'smile',
+      trend: 10,
+    }, {
+      x: Date.UTC(2021, 8, 12),
+      y: 30.89,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/20',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 8, 13),
+      y: 29.00,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/21',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 8, 14),
+      y: 29.76,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/22',
+      icon: 'cry',
+      trend: 6,
+    }, {
+      x: Date.UTC(2021, 8, 15),
+      y: 29.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/23',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 8, 16),
+      y: 29.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/24',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 8, 17),
+      y: 29.67,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/25',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2021, 8, 18),
+      y: 29.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/26',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 8, 19),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/27',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 8, 20),
+      y: 30.89,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/20',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 8, 21),
+      y: 30.00,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/21',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 8, 22),
+      y: 29.76,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/22',
+      icon: 'cry',
+      trend: 6,
+    }, {
+      x: Date.UTC(2021, 8, 23),
+      y: 29.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/23',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 8, 24),
+      y: 29.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/24',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 8, 25),
+      y: 29.67,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/25',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2021, 8, 26),
+      y: 29.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/26',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 8, 27),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/27',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 8, 28),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/28',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2021, 8, 29),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/29',
+      icon: 'smile',
+      trend: 10,
+    }, {
+      x: Date.UTC(2021, 8, 30),
+      y: 30.39,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/30',
+      icon: 'smile',
+      trend: 10,
+    }, {
+      x: Date.UTC(2021, 9, 1),
+      y: 30.11,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/01',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 9, 2),
+      y: 30.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/02',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 9, 3),
+      y: 30.11,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/03',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 9, 4),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/04',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 9, 5),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/05',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 9, 6),
+      y: 30.22,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/06',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 9, 7),
+      y: 30.25,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/07',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 9, 8),
+      y: 30.55,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/08',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 9, 9),
+      y: 30.25,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/09',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 9, 10),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/10',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 9, 11),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/11',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 9, 12),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/12',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 9, 13),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/13',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 9, 14),
+      y: 30.99,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/14',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 9, 15),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/15',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 9, 16),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/16',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 9, 17),
+      y: 30.05,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/17',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 9, 18),
+      y: 30.31,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/18',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 9, 19),
+      y: 30.05,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/19',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 9, 20),
+      y: 30.89,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/20',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 9, 21),
+      y: 30.00,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/21',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 9, 22),
+      y: 30.76,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/22',
+      icon: 'cry',
+      trend: 6,
+    }, {
+      x: Date.UTC(2021, 9, 23),
+      y: 30.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/23',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 9, 24),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/24',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 9, 25),
+      y: 30.67,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/25',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2021, 9, 26),
+      y: 30.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/26',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 9, 27),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/27',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 9, 28),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/28',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2021, 9, 29),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/29',
+      icon: 'smile',
+      trend: 10,
+    }, {
+      x: Date.UTC(2021, 9, 30),
+      y: 30.39,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/30',
+      icon: 'smile',
+      trend: 10,
+    }, {
+      x: Date.UTC(2021, 10, 1),
+      y: 30.11,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/01',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 10, 2),
+      y: 30.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/02',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 10, 3),
+      y: 30.11,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/03',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 10, 4),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/04',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 10, 5),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/05',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 10, 6),
+      y: 30.22,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/06',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 10, 7),
+      y: 30.25,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/07',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 10, 8),
+      y: 30.55,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/08',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 10, 9),
+      y: 30.25,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/09',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 10, 10),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/10',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 10, 11),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/11',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 10, 12),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/12',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 10, 13),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/13',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 10, 14),
+      y: 30.99,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/14',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 10, 15),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/15',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 10, 16),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/16',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 10, 17),
+      y: 30.05,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/17',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 10, 18),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/18',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 10, 19),
+      y: 30.05,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/19',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 10, 20),
+      y: 30.89,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/20',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 10, 21),
+      y: 30.00,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/21',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 10, 22),
+      y: 30.76,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/22',
+      icon: 'cry',
+      trend: 6,
+    }, {
+      x: Date.UTC(2021, 10, 23),
+      y: 30.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/23',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 10, 24),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/24',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 10, 25),
+      y: 30.67,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/25',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2021, 10, 26),
+      y: 30.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/26',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 10, 27),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/27',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 10, 28),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/28',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2021, 10, 29),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/29',
+      icon: 'smile',
+      trend: 10,
+    }, {
+      x: Date.UTC(2021, 10, 30),
+      y: 30.39,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/30',
+      icon: 'smile',
+      trend: 10,
+    }, {
+      x: Date.UTC(2021, 11, 1),
+      y: 30.11,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/01',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 11, 2),
+      y: 30.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/02',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 11, 3),
+      y: 30.11,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/03',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 11, 4),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/04',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 11, 5),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/05',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 11, 6),
+      y: 30.22,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/06',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 11, 7),
+      y: 30.25,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/07',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 11, 8),
+      y: 30.55,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/08',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 11, 9),
+      y: 30.25,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/09',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 11, 10),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/10',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 11, 11),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/11',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 11, 12),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/12',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 11, 13),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/13',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 11, 14),
+      y: 30.99,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/14',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 11, 15),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/15',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 11, 16),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/16',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 11, 17),
+      y: 30.05,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/17',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 11, 18),
+      y: 29.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/18',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 11, 19),
+      y: 30.05,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/19',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 11, 20),
+      y: 29.89,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/20',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 11, 21),
+      y: 30.00,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/21',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 11, 22),
+      y: 30.36,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/22',
+      icon: 'cry',
+      trend: 6,
+    }, {
+      x: Date.UTC(2021, 11, 23),
+      y: 30.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/23',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 11, 24),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/24',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 11, 25),
+      y: 30.67,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/25',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2021, 11, 26),
+      y: 30.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/26',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 11, 27),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/27',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 11, 28),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/28',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2021, 11, 29),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/29',
+      icon: 'smile',
+      trend: 10,
+    }, {
+      x: Date.UTC(2021, 11, 30),
+      y: 30.39,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/30',
+      icon: 'smile',
+      trend: 10,
+    }, {
+      x: Date.UTC(2021, 12, 1),
+      y: 30.11,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/01',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 12, 2),
+      y: 30.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/02',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 12, 3),
+      y: 30.11,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/03',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 12, 4),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/04',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 12, 5),
+      y: 30.31,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/05',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 12, 6),
+      y: 30.22,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/06',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 12, 7),
+      y: 30.25,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/07',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 12, 8),
+      y: 30.55,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/08',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 12, 9),
+      y: 30.25,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/09',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 12, 10),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/10',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 12, 11),
+      y: 30.21,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/11',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 12, 12),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/12',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 12, 13),
+      y: 30.11,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/13',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 12, 14),
+      y: 30.49,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/14',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 12, 15),
+      y: 30.51,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/15',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 12, 16),
+      y: 30.31,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/16',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 12, 17),
+      y: 30.05,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/17',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 12, 18),
+      y: 30.22,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/18',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 12, 19),
+      y: 30.05,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/19',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2021, 12, 20),
+      y: 29.99,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/20',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 12, 21),
+      y: 29.90,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/21',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 12, 22),
+      y: 29.76,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/22',
+      icon: 'cry',
+      trend: 6,
+    }, {
+      x: Date.UTC(2021, 12, 23),
+      y: 29.96,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/23',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 12, 24),
+      y: 29.89,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/24',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 12, 25),
+      y: 29.67,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/25',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2021, 12, 26),
+      y: 29.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/26',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2021, 12, 27),
+      y: 29.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/27',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2021, 12, 28),
+      y: 29.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/28',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2021, 12, 29),
+      y: 29.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/29',
+      icon: 'smile',
+      trend: 10,
+    }, {
+      x: Date.UTC(2021, 12, 30),
+      y: 29.39,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/30',
+      icon: 'smile',
+      trend: 10,
+    }, {
+      x: Date.UTC(2022, 1, 1),
+      y: 29.11,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/01',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 1, 2),
+      y: 29.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/02',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 1, 3),
+      y: 29.11,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/03',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 1, 4),
+      y: 29.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/04',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 1, 5),
+      y: 29.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/05',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 1, 6),
+      y: 30.22,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/06',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 1, 7),
+      y: 30.25,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/07',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 1, 8),
+      y: 30.55,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/08',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 1, 9),
+      y: 30.25,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/09',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 1, 10),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/10',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 1, 11),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/11',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 1, 12),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/12',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 1, 13),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/13',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 1, 14),
+      y: 30.99,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/14',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 1, 15),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/15',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 1, 16),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/16',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 1, 17),
+      y: 30.05,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/17',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 1, 18),
+      y: 30.91,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/18',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 1, 19),
+      y: 30.05,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/19',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 1, 20),
+      y: 30.89,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/20',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 1, 21),
+      y: 29.00,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/21',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2022, 1, 22),
+      y: 29.76,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/22',
+      icon: 'cry',
+      trend: 6,
+    }, {
+      x: Date.UTC(2022, 1, 23),
+      y: 29.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/23',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2022, 1, 24),
+      y: 29.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/24',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 1, 25),
+      y: 29.67,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/25',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2022, 1, 26),
+      y: 29.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/26',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2022, 1, 27),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/27',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 1, 28),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/28',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2022, 1, 29),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/29',
+      icon: 'smile',
+      trend: 10,
+    }, {
+      x: Date.UTC(2022, 1, 30),
+      y: 30.39,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/30',
+      icon: 'smile',
+      trend: 10,
+    }, {
+      x: Date.UTC(2022, 2, 1),
+      y: 30.11,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/01',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 2, 2),
+      y: 30.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/02',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 2, 3),
+      y: 30.11,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/03',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 2, 4),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/04',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 2, 5),
+      y: 30.21,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/05',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 2, 6),
+      y: 30.22,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/06',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 2, 7),
+      y: 30.25,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/07',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 2, 8),
+      y: 30.15,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/08',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 2, 9),
+      y: 30.25,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/09',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 2, 10),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/10',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 2, 11),
+      y: 30.22,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/11',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 2, 12),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/12',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 2, 13),
+      y: 30.11,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/13',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 2, 14),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/14',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 2, 15),
+      y: 30.01,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/15',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 2, 16),
+      y: 30.02,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/16',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 2, 17),
+      y: 30.05,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/17',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 2, 18),
+      y: 30.07,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/18',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 2, 19),
+      y: 30.05,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/19',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 2, 20),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/20',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 2, 21),
+      y: 29.90,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/21',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2022, 2, 22),
+      y: 29.76,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/22',
+      icon: 'cry',
+      trend: 6,
+    }, {
+      x: Date.UTC(2022, 2, 23),
+      y: 29.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/23',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2022, 2, 24),
+      y: 29.79,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/24',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 2, 25),
+      y: 29.67,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/25',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2022, 2, 26),
+      y: 29.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/26',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2022, 2, 27),
+      y: 29.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/27',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 2, 28),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/28',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2022, 3, 1),
+      y: 30.11,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/01',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 3, 2),
+      y: 30.16,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/02',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 3, 3),
+      y: 30.11,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/03',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 3, 4),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/04',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 3, 5),
+      y: 30.08,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/05',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 3, 6),
+      y: 30.22,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/06',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 3, 7),
+      y: 30.25,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/07',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 3, 8),
+      y: 30.25,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/08',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 3, 9),
+      y: 30.25,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/09',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 3, 10),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/10',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 3, 11),
+      y: 30.06,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/11',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 3, 12),
+      y: 30.06,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/12',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 3, 13),
+      y: 30.01,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/13',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 3, 14),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/14',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 3, 15),
+      y: 30.03,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/15',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 3, 16),
+      y: 30.00,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/16',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 3, 17),
+      y: 30.05,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/17',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 3, 18),
+      y: 30.05,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/10/18',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 3, 19),
+      y: 30.05,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/10/19',
+      icon: 'cry',
+      trend: 5,
+    }, {
+      x: Date.UTC(2022, 3, 20),
+      y: 30.01,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/20',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 3, 21),
+      y: 29.00,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/21',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2022, 3, 22),
+      y: 29.76,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/22',
+      icon: 'cry',
+      trend: 6,
+    }, {
+      x: Date.UTC(2022, 3, 23),
+      y: 29.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/23',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2022, 3, 24),
+      y: 29.79,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/24',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 3, 25),
+      y: 29.67,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/25',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2022, 3, 26),
+      y: 29.56,
+      color: 'rgba(67, 131, 227, 0.8)',
+      date: '2021/09/26',
+      icon: 'cry',
+      trend: 7,
+    }, {
+      x: Date.UTC(2022, 3, 27),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/27',
+      icon: 'smile',
+      trend: 8,
+    }, {
+      x: Date.UTC(2022, 3, 28),
+      y: 30.09,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/28',
+      icon: 'smile',
+      trend: 9,
+    }, {
+      x: Date.UTC(2022, 3, 29),
+      y: 30.08,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/29',
+      icon: 'smile',
+      trend: 10,
+    }, {
+      x: Date.UTC(2022, 3, 30),
+      y: 30.39,
+      color: 'rgba(255, 163, 26, 0.8)',
+      date: '2021/09/30',
+      icon: 'smile',
+      trend: 10,
+    }, 
+    ],
+  }],
+  xAxis: {
+    type: "datetime",
+    labels: {
+      format: '{value: %Y/%m/%d}',
+      style: {
+        color: '#36444D',
+        fontSize: '13px',
+        'x': 3,
+        'y': -5,
+        textOverflow: 'none'
+      },
+      overflow: "allow",
+    },
+    min: Date.UTC(2021, 8, 1),
+    max: Date.UTC(2022, 3, 30),
+    tickPositions: [
+      Date.UTC(2021, 8, 1),
+      Date.UTC(2021, 11, 15),
+      Date.UTC(2022, 3, 30)
+    ],
+    startOnTick: true,
+    crosshair: {
+      width: 2,
+      color: '#FFA31A'
+    },
+    tickLength: 0,
+    scrollbar: {
+      enabled: true
+    }
+  },
+  yAxis: {
+    title: '',
+    labels: {
+      style: {
+        color: '#36444D',
+        fontSize: '15px'
+      },
+      useHTML: true,
+      formatter: function() {
+        return '<span class="yaxis-label">' + this.value + '</span>';
+      }
+    },
+  },
+  plotOptions: {
+    series: {
+      width: 4,
+      height: 4,
+      color: '#757575',
+      borderWidth: 0,
+      marker: {
+        enabled: true,
+        radius: 4
+      },
+      states: {
+        hover: {
+          color: '#757575',
+          lineWidth: 2,
+        }
+      },
+    },
+  },
+}
+
+// highcharts demo 注意這裡是改用 Goodcharts
+Goodcharts.chart('highchartsContainer', chartConfig);
+// highcharts demo 注意這裡是改用 Goodcharts
+Goodcharts.chart('highchartsContainer2', chartConfig);
+
+
+$(document).ready(function(){
+  
+  // 取得專家推薦 ETF demo 
+  $('#trigger-etf-block').on('click', function() {
+    $('#target-etf-block-1, #target-etf-block-2').toggleClass('hide');
+  });
+  
+  // vi-module-02 demo
+  $(".vi-blog-article").owlCarousel({
+    nav: false,
+    dots: true,
+    items: 1
+  });
+  
+  // 漲跌幅 modal demo
+  $('#trigger-sort-option').on('click', function() {
+    $('#target-select-supercard').toggleClass('hide vi-modal-in');
+  });
+  
+  // modal close demo，關閉時的動態效果依照現行
+  $('.vi-modal .popup-footer .vi-btn').on('click', function() {
+    $(this).closest('.vi-modal').toggleClass('vi-modal-in');
+  });
+  
+  // 看更多
+  $('#trigger-more1').on('click', function(e) {
+    e.preventDefault();
+    $('#target-more1').toggleClass('hide');
+    $(this).find('.vi-icon').toggleClass('rotate180');
+  });
+  
+  // 看更多
+  $('#trigger-more2').on('click', function(e) {
+    e.preventDefault();
+    $(this).addClass('hide')
+    $('#target-more2').removeClass('hide');
+  });
+  
+  // 自動幫 .highcharts scroll 到右邊
+  $('.highcharts-scrolling').scrollLeft( 9999 );
+  
+  // scroll to fixed header
+  $(window).scroll(function(){
+    const scrollTop = $(document).scrollTop();
+    
+    if ( scrollTop >= 1 ) {
+      $('body').addClass('vi-page-header-fix');
+      // $('.main_container').removeClass('add-title-space');
+      $('.nav-tab-green').addClass('fixed-top fixed-position-1');
+    }
+    else {
+      $('body').removeClass('vi-page-header-fix');
+      // $('.main_container').addClass('add-title-space');
+      $('.nav-tab-green').removeClass('fixed-top fixed-position-1');
+    }
+    
+    // show vi-gotop
+    // console.log(window.scrollY, window.innerHeight)
+    if (window.scrollY >= window.innerHeight) {
+      $('.vi-gotop').addClass('vi-gotop-show');
+    }
+    else {
+      $('.vi-gotop').removeClass('vi-gotop-show');
+    }
+  });
+  
+});
+</script>

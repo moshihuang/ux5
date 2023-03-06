@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<!-- 不需要 scroll 事件，預設 fixed header -->
+<body class="vi-bg-g550 vi-page-header-fix en">
+
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <!-- 新增 .vi-page-header-green 綠色 header，ios 瀏海也要改成綠的 #0F8F88 -->
+    <!-- 如果 rt 有二顆 icon，加上 .vi-page-header-two-icons -->
+    <div class="container-header vi-page-header vi-page-header-green">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">Account Information</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <!-- <a class="btn vi-icon vi-icon-base icon-start-default-w"></a> -->
+        <!-- <a class="btn vi-icon vi-icon-base icon-start-default-w ml24"></a> -->
+        <!-- <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-white">動作</a> -->
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content start from here -->
+  <!-- 新增 .vi-bg-green-gradient 漸層背景 -->
+  <div class="body-wrap scroll vi-bg-mint vi-bg-green-gradient">
+    
+    <div class="main_container main_container_overview_nt_fx">
+      
+      <!-- toast, 參考 import { CTBCMBToastWidget } from '../view/ui-2022/toast/ctbc-mb-toast.widget';-->
+      <div class="toast">
+        <span>複製成功</span>
+      </div>
+      
+
+      <!-- scroll down fixed 效果同 通知中心，可參考 notice-qu001-010.component 與 nav-tabs-notice.component，但需要確認 nav-scroll 碰到頂端的事件是否正常，fixed 時綁定 .fixed-top.fixed-position-1 -->
+      <!-- 新增 .nav-tab-green 綠色 tab -->
+      <div class="nav-scroll has-tab-info js_scroll_fixed_top nav-tab-green">
+        <div class="nav-scroll-bg"></div>
+        <div class="vi-tab-line-area">
+          <div class="vi-tab-line">
+            <ul class="nav" role="tablist">
+              <li class="active">
+                <a class="btn">
+                  <span>NTD Account</span>
+                </a>
+              </li>
+              <li>
+                <a class="btn">
+                  <span>Foreign Deposit Acount</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 如果上方 nav fixed，加 .nav-tab-green-fixed -->
+      <div class="tab-content pad_top24">
+        <div class="tab-pane active">
+          <div class="vi-container">
+            
+            <div class="vi-card">
+              <div class="vi-card-header flex-wrap">
+                <div class="vi-line-title">活存帳戶</div>
+                <div class="ml-auto">
+                  <i class="vi-icon vi-icon-base icon-pencil-g"></i>
+                </div>
+              </div>
+
+              <div class="vi-card-body pad_btm16">
+                <ul class="vi-detail-list">
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">Account Name</div>
+                    <div class="vi-list-rt">金*五</div>
+                  </li>
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">Bank</div>
+                    <div class="vi-list-rt">中國信託商業銀行 (822)</div>
+                  </li>
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">Branch</div>
+                    <div class="vi-list-rt">延吉分行 (1241)</div>
+                  </li>
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">Account No.</div>
+                    <div class="vi-list-rt has-copy">
+                      <div>498827784920</div>
+                      <div class="vi-icon vi-icon-base icon-copy-g ml8"></div>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="vi-btn-group mt24">
+                  <!-- 英文版不顯示 -->
+                  <!-- <div class="btn vi-btn vi-btn-secondary">存摺/明細下載</div> -->
+                  <div class="btn vi-btn vi-btn-primary">Share</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="vi-card">
+              <div class="vi-card-header flex-wrap">
+                <div class="vi-line-title">MyWay 帳戶</div>
+                <div class="ml-auto">
+                  <i class="vi-icon vi-icon-base icon-pencil-g"></i>
+                </div>
+              </div>
+
+              <div class="vi-card-body pad_btm16">
+                <ul class="vi-detail-list">
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">Account Name</div>
+                    <div class="vi-list-rt">金*五</div>
+                  </li>
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">Bank</div>
+                    <div class="vi-list-rt">中國信託商業銀行 (822)</div>
+                  </li>
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">Branch</div>
+                    <div class="vi-list-rt">延吉分行 (1241)</div>
+                  </li>
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">Account No.</div>
+                    <div class="vi-list-rt has-copy">
+                      <div>498827784920</div>
+                      <div class="vi-icon vi-icon-base icon-copy-g ml8"></div>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="vi-btn-group mt24">
+                  <!-- 英文版不顯示 -->
+                  <!-- <div class="btn vi-btn vi-btn-secondary">存摺/明細下載</div> -->
+                  <div class="btn vi-btn vi-btn-primary">Share</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- end tab -->
+
+
+        <div class="tab-pane"></div>
+
+      </div>
+       
+      <div class="vi-container"> 
+        <!-- 備註 現有版型 這裡僅示意 -->
+        <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+        <div class="mt16">
+          <div class="vi-note-accordion">
+            <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+              <div class="forAEM base-style break-word mr4">
+                Remarks
+              </div>
+              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+            </div>
+            <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+              <div class="vi-card-body forAEM base-style break-word">
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mb60"></div>
+        
+      </div>
+      
+      <!-- <div id="trigger-header-fixed" class="vi-txt-g500 mb16 pad_btm24">-> header fixed 切換</div> -->
+    
+    </div>
+    <!-- main_container -->
+  </div>
+
+</body>
+<!-- body-wrap -->
+</html>
+
+
+<!-- 編輯帳戶暱稱 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-edit-account-nickname-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">Edit Account Name</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-form-group mt0">
+          <div class="vi-input-group">
+            <span class="title">Name</span>
+            <input type="text" maxlength="15" value="MyWay 帳戶" placeholder="請輸入內容">
+          </div>
+          <div class="vi-form-info">0/15</div>
+          <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div>
+        </div>
+
+        <div class="vi-btn-group mt8">
+          <div class="btn vi-btn vi-btn-secondary">Cancel</div>
+          <div class="btn vi-btn vi-btn-primary">Confirm</div>
+        </div>
+
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// 編輯帳戶暱稱 demo
+const pencil = document.getElementsByClassName('icon-pencil-g');
+for (var i = 0; i < pencil.length; i++){
+  pencil[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('target-edit-account-nickname-supercard').classList.toggle('hide');
+    document.getElementById('target-edit-account-nickname-supercard').classList.toggle('vi-modal-in');
+  });
+}
+
+// 複製帳號 demo
+const copy = document.getElementsByClassName('icon-copy-g');
+for (var i = 0; i < copy.length; i++){
+  copy[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementsByClassName('toast')[0].classList.toggle('show');
+    // toast 消失時間依現行 這裡僅示意
+    setTimeout(() => {
+      document.getElementsByClassName('toast')[0].classList.remove('show');
+    }, 3000)
+  });
+}
+
+// 超人卡片 close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('vi-modal-close');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+  });
+}
+
+
+$(document).ready(function(){
+  
+  // scroll to fixed header
+  $(window).scroll(function(){
+    const scrollTop = $(document).scrollTop();
+    
+    if ( scrollTop >= 1 ) {
+      $('body').addClass('vi-page-header-fix');
+      $('.main_container').removeClass('add-title-space');
+      $('.nav-tab-green').addClass('fixed-top fixed-position-1');
+      $('.tab-content').addClass('nav-tab-green-fixed')
+    }
+    else {
+      // $('body').removeClass('vi-page-header-fix');
+      // $('.main_container').addClass('add-title-space');
+      $('.nav-tab-green').removeClass('fixed-top fixed-position-1');
+      $('.tab-content').removeClass('nav-tab-green-fixed')
+    }
+  });
+  
+});
+</script>

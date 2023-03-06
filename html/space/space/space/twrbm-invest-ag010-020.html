@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+    .txt-blue {
+      color: #3C82FC;
+    }
+    .bg-blue {
+      background: #3C82FC;
+    }
+    .bg-light-brown {
+      background: #FFF8F0;
+    }
+    
+    
+    
+    .status-wrap {
+      position: relative;
+    }
+    .status-wrap.status-done {
+      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM1IiBoZWlnaHQ9IjEyNSIgdmlld0JveD0iMCAwIDEzNSAxMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8zMzc2XzEyMjk3NikiPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTgwLjU2NTMgNi41NDYwOEM4MC42MjYzIDcuNDgxMjMgNzkuOTE3NyA4LjI4ODgxIDc4Ljk4MjYgOC4zNDk4N0M3OC4wNDc1IDguNDEwOTMgNzcuMjM5OSA3LjcwMjM1IDc3LjE3ODggNi43NjcyMUM3Ny4xMTc3IDUuODMyMDcgNzcuODI2MyA1LjAyNDQ5IDc4Ljc2MTUgNC45NjM0M0M3OS42OTY2IDQuOTAyMzYgODAuNTA0MiA1LjYxMDk0IDgwLjU2NTMgNi41NDYwOFpNMTIuNzg5OSA0NC45ODAyQzEyLjg1MDkgNDUuOTE1MyAxMi4xNDIzIDQ2LjcyMjkgMTEuMjA3MiA0Ni43ODRDMTAuODU1MiA0Ni44MDY5IDEwLjUyMTQgNDYuNzIwOSAxMC4yMzg1IDQ2LjU1NDhDNC4yMzMxMSA1OC41ODYgMS4yMzkwMyA3Mi4zMjAxIDIuMTc4NDEgODYuNzA2QzIuMzM1MDUgODkuMTA0OSAyLjU5Nzc4IDkxLjQ3MTYgMi45NjE3MyA5My44MDE4QzMuMjY0NjYgOTMuNzkyOCAzLjUyMjU5IDk0LjAyNTUgMy41NDI1IDk0LjMzMDNDMy41NTk5NyA5NC41OTc4IDMuMzg4NTYgOTQuODMzOSAzLjE0MjYzIDk0LjkwODVDOS44MzEyMSAxMzQuMDc0IDQ1LjE4MTcgMTYyLjYzOSA4NS43MDUxIDE1OS45OTNDMTI5LjAwOCAxNTcuMTY1IDE2MS44MiAxMTkuNzY5IDE1OC45OTIgNzYuNDY2NEMxNTYuMTY0IDMzLjE2MzUgMTE4Ljc2OCAwLjM1MTc5IDc1LjQ2NTQgMy4xNzkzOUM0Ny43NTkgNC45ODg1NiAyNC4zNDc1IDIwLjk0OTQgMTEuODE3OSA0My41NTQ1QzEyLjM1ODUgNDMuODA4OSAxMi43NDgyIDQ0LjM0MTggMTIuNzg5OSA0NC45ODAyWk0xMTIuNTc3IDEwLjY5MTFDMTEyLjYxOCAxMS4zMTQ2IDExMi4xNDYgMTEuODUyOSAxMTEuNTIyIDExLjg5MzdDMTEwLjg5OSAxMS45MzQ0IDExMC4zNiAxMS40NjIgMTEwLjMyIDEwLjgzODVDMTEwLjI3OSAxMC4yMTUxIDExMC43NTEgOS42NzY3MyAxMTEuMzc1IDkuNjM2MDJDMTExLjk5OCA5LjU5NTMyIDExMi41MzcgMTAuMDY3NyAxMTIuNTc3IDEwLjY5MTFaTTQ1LjI2NDkgMTIuODE4OEM0NS41NzY3IDEyLjc5ODQgNDUuODEyOSAxMi41MjkyIDQ1Ljc5MjUgMTIuMjE3NUM0NS43NzIxIDExLjkwNTggNDUuNTAzIDExLjY2OTYgNDUuMTkxMiAxMS42OUM0NC44Nzk1IDExLjcxMDMgNDQuNjQzMyAxMS45Nzk1IDQ0LjY2MzcgMTIuMjkxMkM0NC42ODQgMTIuNjAyOSA0NC45NTMyIDEyLjgzOTEgNDUuMjY0OSAxMi44MTg4Wk0yMS41MzY0IDMxLjM3MkMyMS44NDgxIDMxLjM1MTcgMjIuMDg0MyAzMS4wODI1IDIyLjA2NCAzMC43NzA3QzIyLjA0MzYgMzAuNDU5IDIxLjc3NDQgMzAuMjIyOCAyMS40NjI3IDMwLjI0MzJDMjEuMTUxIDMwLjI2MzUgMjAuOTE0OCAzMC41MzI3IDIwLjkzNTIgMzAuODQ0NUMyMC45NTU1IDMxLjE1NjIgMjEuMjI0NyAzMS4zOTI0IDIxLjUzNjQgMzEuMzcyWk04NS4wMzI4IDE1My4zNDZDMTIyLjY1IDE1MC44OSAxNTQuODAyIDExNC43NTYgMTUyLjM0NSA3Ny4xMzg2QzE0OS44ODkgMzkuNTIxNCAxMTMuNzU1IDcuMzY5ODQgNzYuMTM3NyA5LjgyNjE3QzM4LjUyMDQgMTIuMjgyNSA2LjM2ODg2IDQ4LjQxNjUgOC44MjUyIDg2LjAzMzhDMTEuMjgxNSAxMjMuNjUxIDQ3LjQxNTYgMTU1LjgwMyA4NS4wMzI4IDE1My4zNDZaTTg0LjY3ODggMTQ0LjE5NEMxMTkuMjU1IDE0MS45MzYgMTQ1LjQ1NCAxMTIuMDc3IDE0My4xOTYgNzcuNTAwN0MxNDAuOTM4IDQyLjkyNDggMTExLjA3OSAxNi43MjU3IDc2LjUwMjggMTguOTgzNEM0MS45MjY4IDIxLjI0MTIgMTUuNzI3NyA1MS4xMDA4IDE3Ljk4NTUgODUuNjc2N0MyMC4yNDMyIDEyMC4yNTMgNTAuMTAyOCAxNDYuNDUyIDg0LjY3ODggMTQ0LjE5NFpNODQuNzUwNCAxNDUuMjkxQzExOS45MzIgMTQyLjk5NCAxNDYuNTkxIDExMi42MTEgMTQ0LjI5MyA3Ny40MjkxQzE0MS45OTYgNDIuMjQ3MSAxMTEuNjEzIDE1LjU4ODggNzYuNDMxMSAxNy44ODYxQzQxLjI0OTEgMjAuMTgzNCAxNC41OTA5IDUwLjU2NjQgMTYuODg4MiA4NS43NDg0QzE5LjE4NTUgMTIwLjkzIDQ5LjU2ODUgMTQ3LjU4OSA4NC43NTA0IDE0NS4yOTFaIiBmaWxsPSIjRjJGMkYyIi8+CjxwYXRoIGQ9Ik01OS45OTEgNDAuNjk4OEw1NC4zMTczIDQwLjgxOTVMNTQuMzc2MyA0My41OTM5TDU3LjE3NTcgNDMuNTM0M0w1Ny4zMTI0IDQ5Ljk1NzhMNjAuMTg2NyA0OS44OTY3TDU5Ljk5MSA0MC42OTg4Wk02MC4xNjE3IDQ4LjcyMkw1Ny41NjIzIDQ4Ljc3NzNDNTYuNDgyMiA0OS43MjU1IDU1LjI3NjYgNTAuNjUxMyA1NC4yNDEyIDUxLjM0ODVMNTUuNzI5MiA1NC4yOTI1QzU2Ljk1NiA1My4xOTEyIDU3Ljk4NTYgNTIuMjE5IDU4Ljk2NDYgNTEuMjIzQzYwLjUwNTIgNTMuMTE1NyA2Mi41NDUyIDUzLjc5NzQgNjUuNTQ3MiA1My44NTg2QzY4LjU5OTcgNTMuOTQzNyA3My45MjI0IDUzLjc4MDQgNzcuMDQzNSA1My41NjRDNzcuMTQ5OSA1Mi42ODY1IDc3LjU5NTUgNTEuMzAxNyA3Ny45MDYxIDUwLjYyQzc0LjQzNzcgNTAuOTY4OCA2OC41MTU3IDUxLjE2OTggNjUuNTEzMiA1MS4wODM3QzYyLjkzNjYgNTEuMDM4NSA2MS4xNDY2IDUwLjM1MTQgNjAuMTYxNyA0OC43MjJaTTU0LjIzNDQgMzMuMzk0NkM1NS42ODUxIDM0LjU4OSA1Ny4zOTY0IDM2LjI3OCA1OC4wOTczIDM3LjQ4ODNMNjAuNTMxMyAzNS41MzYxQzU5LjczMTUgMzQuMzc3OSA1Ny45NDYzIDMyLjc0MDUgNTYuNDk4MiAzMS42NzFMNTQuMjM0NCAzMy4zOTQ2Wk02My43MzI3IDM3LjkxODZDNjQuMTQ4NiAzOC42NTk5IDY0LjU0NTMgMzkuNjc2NyA2NC42MzQxIDQwLjMyNDlMNjcuMzcwMiAzOS42NDE2QzY3LjIwNjQgMzguOTk0OSA2Ni43NjA4IDM4LjAyOTIgNjYuMjk1NSAzNy4zMTM5TDYzLjczMjcgMzcuOTE4NlpNNjIuMzY0NCAzMi4zNzE0TDYyLjQwODYgMzQuNDQ1OUw3NS41MzA2IDM0LjE2NjhMNzUuNDg2NSAzMi4wOTIzTDYyLjM2NDQgMzIuMzcxNFpNNjIuMzE4NyA0My4xNDk4TDYyLjM2MjggNDUuMjI0NEw3Ni4wODQ3IDQ0LjkzMjRMNzYuMDQwNiA0Mi44NTc5TDYyLjMxODcgNDMuMTQ5OFpNNjEuMjI1MyAzOS45NDc0TDYxLjI3MDUgNDIuMDcxOUw3Ni45NDIgNDEuNzM4NUw3Ni44OTY4IDM5LjYxNEw2MS4yMjUzIDM5Ljk0NzRaTTYwLjc2MDUgMzUuNzMxM0w2MC44MDY4IDM3LjkwNThMNzcuMTUzMSAzNy41NThMNzcuMTA2OSAzNS4zODM1TDYwLjc2MDUgMzUuNzMxM1pNNjEuMzM4NiA0Ni40NDY0TDYxLjM4NDggNDguNjIwOUw3Ny4xMzEzIDQ4LjI4NTlMNzcuMDg1IDQ2LjExMTRMNjEuMzM4NiA0Ni40NDY0Wk02Ny4yODIgMzAuNzkxNUw2Ny40MTMzIDM2Ljk2NTFMNzAuMzg3NiAzNi45MDE4TDcwLjI1NjMgMzAuNzI4Mkw2Ny4yODIgMzAuNzkxNVpNNjcuNDk2MiA0MC44NjQyTDY3LjY5MzUgNTAuMTM3MUw3MC42Njc4IDUwLjA3MzhMNzAuNDcwNiA0MC44MDA5TDY3LjQ5NjIgNDAuODY0MlpNNzEuMzE4MyAzNy4xNTcxQzcxLjE1NzcgMzcuODM1NiA3MC43Nzk2IDM4Ljg2ODkgNzAuNDcgMzkuNjAwNkw3Mi45MDc4IDQwLjE3MzlDNzMuMjY5OSAzOS41NjYxIDczLjc1MTcgMzguNzA1NiA3NC4yODIgMzcuNzY5Mkw3MS4zMTgzIDM3LjE1NzFaIiBmaWxsPSIjRThFOEU4Ii8+CjxwYXRoIGQ9Ik04Mi44Nzg0IDM5Ljg2MThMODIuOTM2OSA0Mi42MTEyTDg4LjcxMDYgNDIuNDg4M0w4OC42NTIxIDM5LjczOUw4Mi44Nzg0IDM5Ljg2MThaTTg3LjUwMjQgMzkuNzYzNEw4Ny41MTE5IDQwLjIxMzNDODcuNTY1MSA0NS4wNjMzIDg3LjUwMjMgNDYuODE1IDg3LjIxMDkgNDcuMjIxM0M4Ny4wMTYzIDQ3LjQ3NTUgODYuNzkyNCA0Ny41MzAzIDg2LjQ0MjUgNDcuNTM3N0M4Ni4wNDI2IDQ3LjU0NjIgODUuMTkyOCA0Ny41NjQzIDg0LjI5MDggNDcuNDgzNUM4NC43NTY3IDQ4LjIyMzcgODUuMTA2NiA0OS4zOTE2IDg1LjE3NTIgNTAuMjY1M0M4Ni4zNTA1IDUwLjI2NTMgODcuNDI1MiA1MC4yNDI0IDg4LjA5NzkgNTAuMTI4MUM4OC44MjAxIDQ5Ljk4NzcgODkuMzE1MiA0OS43NTIxIDg5LjgwMTggNDkuMTE2NkM5MC4zNjAyIDQ4LjMyOTYgOTAuNDM3OCA0Ni4xMDI0IDkwLjQyNTEgNDAuODAxNUM5MC40MTc3IDQwLjQ1MTYgOTAuNDI2NyAzOS43MDEyIDkwLjQyNjcgMzkuNzAxMkw4Ny41MDI0IDM5Ljc2MzRaTTk0Ljg1OTIgMzEuNzgwMUM5Ni4yNzU5IDMyLjU1MDIgOTguMDc2NiAzMy43MzcyIDk4LjkyIDM0LjU5NDRMMTAwLjgwMSAzMi41Mjg5Qzk5Ljg4NDIgMzEuNzIzMyA5OC4wMTAxIDMwLjYxMjkgOTYuNjIgMjkuOTE3M0w5NC44NTkyIDMxLjc4MDFaTTk3Ljk0NTIgMzguMTQwOUM5Ni4zNDQgNDMuOTc2MyA5My4wOTEgNDguNTcxNSA4OC4zNDY4IDUxLjI0ODFDODguOTg0NCA1MS44MzQ2IDkwLjExMDggNTMuMDYxIDkwLjU3NCA1My42NzYyQzk1LjQ1OCA1MC41MjE2IDk5LjAyNDIgNDUuMzY5NiAxMDAuOTg1IDM4LjgwMTRMOTcuOTQ1MiAzOC4xNDA5Wk04Mi45MzMyIDM0LjIwOTNMODIuOTk1OSAzNy4xNTg3TDEwMi4yNjcgMzYuNzQ4N0wxMDIuMjA0IDMzLjc5OTRMODIuOTMzMiAzNC4yMDkzWk04MC45MzM2IDM0LjI1MTlMODEuMDg5NCA0MS41NzUyQzgxLjE1OTEgNDQuODQ5NSA4MS4wNzcyIDQ5LjIyNzIgNzkuMjE2NCA1Mi4yNjc1Qzc5LjkyMzcgNTIuNjAyNSA4MS4yOTY4IDUzLjY3MzYgODEuODA5NSA1NC4yNjI4Qzg0LjAxMjIgNTAuODQwMiA4NC4zMTkgNDUuMjgyNCA4NC4yMzkzIDQxLjUzMzJMODQuMDgyOSAzNC4xODQ5TDgwLjkzMzYgMzQuMjUxOVpNOTEuMDAyMSAzMC4zMTE4QzkxLjMxOTYgNDEuNzA3NyA5My41OTY3IDUzLjUzNjkgOTkuMDQ1NSA1My40MjFDMTAxLjM5NSA1My4zNzEgMTAyLjM3MSA1Mi4yMjUgMTAyLjc0NyA0Ny41NjZDMTAxLjk0MSA0Ny4yODMgMTAwLjg1MSA0Ni42MDYxIDEwMC4xNjEgNDUuOTIwNkMxMDAuMDc4IDQ5LjA3MyA5OS44MDU0IDUwLjM1NDEgOTkuMjMwNSA1MC4zNjY0Qzk2LjcwNjEgNTAuNDIwMSA5NC4xOTM0IDQwLjQ0NjMgOTQuMTUxNCAzMC4yNDQ4TDkxLjAwMjEgMzAuMzExOFoiIGZpbGw9IiNFOEU4RTgiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF8zMzc2XzEyMjk3NiI+CjxyZWN0IHdpZHRoPSIxMzUiIGhlaWdodD0iMTI1IiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=) no-repeat right top;
+    }
+    
+    .status-wrap.status-done .service-card {
+      padding-top: 16px;
+    }
+
+
+
+    .goal-card .vi-card-header {
+      position: relative;
+      z-index: 4;
+    }
+    .goal-card .vi-card-body {
+      padding-bottom: 16px;
+    }
+    .goal-card.status-done .vi-card-body {
+      position: relative;
+    }
+    .goal-card.status-done .vi-card-body:before {
+      content: '';
+      width: 178px;
+      height: 46px;
+      position: absolute;
+      top: 0px;
+      left: 8px;
+      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc4IiBoZWlnaHQ9IjQ2IiB2aWV3Qm94PSIwIDAgMTc4IDQ2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTY5LjA1MyAzNy44NTY2TDE3Mi4xNzcgMzcuNTExNEMxNzMuMDYgNDEuMTQxNSAxNzMuMTA5IDQxLjA4NDEgMTc2Ljc5OSA0MS42NjVMMTc1LjY3NCA0My45NTNDMTcxLjk4MyA0My4zNzIgMTY5LjkzNiA0MS40ODY3IDE2OS4wNTMgMzcuODU2NloiIGZpbGw9IiMzMUNFRkYiLz4KPHBhdGggZD0iTTE3My40MyAxOS4yNzY4TDE3NC41OTUgMjIuNzM4OUMxNzEuNDAzIDIxLjkxNzcgMTY5LjA1OCAyMi43MDY3IDE2Ny4wMTIgMjUuMjkwM0wxNjUuODQ3IDIxLjgyODFDMTY3Ljg5MyAxOS4yNDQ2IDE3MC4yMzggMTguNDU1NiAxNzMuNDMgMTkuMjc2OFoiIGZpbGw9IiNGRjY4NUYiLz4KPHJlY3QgeD0iMTQ0IiB5PSIxNiIgd2lkdGg9IjUiIGhlaWdodD0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTguNTI4OCAxNDQgMTYpIiBmaWxsPSIjRkZENjAwIi8+CjxwYXRoIGQ9Ik0yLjk5NzA3IDEuNDk3MDdMNC44OTU5MSAyNi40MjY3QzExLjExMyAyOS44MjI2IDE5LjUwNDcgMjQuNjAxOCAxOS40NzM5IDIwLjMwMTVMMi45OTcwNyAxLjQ5NzA3WiIgZmlsbD0iI0ZGN0Y0OCIvPgo8bWFzayBpZD0ibWFzazBfMTE3OF80MDQ2OCIgc3R5bGU9Im1hc2stdHlwZTphbHBoYSIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMiIgeT0iMSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjI3Ij4KPHBhdGggZD0iTTIuOTkzMTYgMS40OTEyMUw0Ljg5MiAyNi40MjA5QzExLjEwOTEgMjkuODE2OCAxOS41MDA4IDI0LjU5NiAxOS40NyAyMC4yOTU2TDIuOTkzMTYgMS40OTEyMVoiIGZpbGw9IiNGRkQ2MDAiLz4KPC9tYXNrPgo8ZyBtYXNrPSJ1cmwoI21hc2swXzExNzhfNDA0NjgpIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xLjI0MzM0IDEwLjgzNDNDMi4wMzYzNSAxMC4wMDM0IDMuMDA0NzQgOS4zMzk2NyAzLjkxMzYgOC43MTY3MUM0LjcxNzE2IDguMTY1OTMgNS40NzQxOCA3LjY0NzA1IDYuMDIyMjcgNy4wNzI3NkM2LjY2NTEyIDYuMzk5MTggNy4wOTcwNyA1LjY3MjI4IDcuNTU1NTcgNC45MDA2OEM4LjA3NDE0IDQuMDI3OTggOC42MjY2OSAzLjA5ODEgOS41NTY4IDIuMTIzNTRMMTIuMDQ1NiA0LjQ5ODgxQzExLjE4MzcgNS40MDE5MyAxMC41OTc3IDYuMzY3MTEgMTAuMDQ4IDcuMjcyNTNDOS41NjI0NiA4LjA3MjM0IDkuMTA1MjEgOC44MjU1MSA4LjUxMTA3IDkuNDQ4MDNDNy45MTY5NCAxMC4wNzA2IDcuMTg1OTMgMTAuNTYyNSA2LjQwOTY0IDExLjA4NDhDNS41MzA4NiAxMS42NzYxIDQuNTk0MDYgMTIuMzA2NSAzLjczMjE0IDEzLjIwOTZMMS4yNDMzNCAxMC44MzQzWk0xLjg0NDkgMTguMDcyNkMzLjA1Nzc0IDE3LjIzMDEgNC4zODEzNCAxNi41NDY2IDUuNjIzNTcgMTUuOTA1MUw1LjYyMzYgMTUuOTA1MUM2LjcyMTkgMTUuMzM4IDcuNzU2NTggMTQuODAzNyA4LjU5NDgzIDE0LjIyMTRDOS41NzgwMSAxMy41Mzg0IDEwLjM2MTcgMTIuODA5NSAxMS4xOTM2IDEyLjAzNTdMMTEuMTkzNiAxMi4wMzU3QzEyLjEzNDYgMTEuMTYwNiAxMy4xMzcxIDEwLjIyODEgMTQuNTU5NiA5LjIzOTk1TDE2LjEyOTkgMTEuNTAwM0MxNC44MTE3IDEyLjQxNjEgMTMuNzU3OSAxMy4zODQzIDEyLjc2OTMgMTQuMjkyNkwxMi43NjkzIDE0LjI5MjdDMTEuODk2MSAxNS4wOTUgMTEuMDczOCAxNS44NTA1IDEwLjE2NTEgMTYuNDgxOEM5LjI1NjQxIDE3LjExMyA4LjI2MTM3IDE3LjYxOTkgNy4yMDQ3MSAxOC4xNTgzQzYuMDA4NTQgMTguNzY3NiA0LjczMzM5IDE5LjQxNzMgMy40MTUxNiAyMC4zMzNMMS44NDQ5IDE4LjA3MjZaTTcuMzA4NjkgMjIuNjY3NkM1Ljc4Njk3IDIzLjQzNDMgNC4xNjU1NyAyNC4yNTEyIDIuNjQ5NTkgMjUuMjMwOEw0LjE0MzM0IDI3LjU0MjVDNS43OTEwNSAyNi40Nzc4IDcuMzUxODYgMjUuNzAwMiA4LjgxNjAxIDI0Ljk3MDdDMTAuMTA5NCAyNC4zMjY0IDExLjMyNzMgMjMuNzE5NiAxMi40NjMxIDIyLjk4NTZDMTMuNTk4OSAyMi4yNTE3IDE0LjY1MjYgMjEuMzkwNiAxNS43NzE1IDIwLjQ3NjNDMTcuMDM4MSAxOS40NDExIDE4LjM4ODMgMTguMzM3NyAyMC4wMzYgMTcuMjcyOUwxOC41NDIzIDE0Ljk2MTNDMTYuNzY0MiAxNi4xMTAyIDE1LjQ3OCAxNy4xNzIxIDE0LjI3MSAxOC4xNjg3QzEzLjIwMzcgMTkuMDQ5OCAxMi4xOTgzIDE5Ljg3OTkgMTAuOTY5NCAyMC42NzRDOS45MjE1OSAyMS4zNTEgOC42NTQxMSAyMS45ODk3IDcuMzA4NjkgMjIuNjY3NloiIGZpbGw9IiNGRkQ2MDAiLz4KPC9nPgo8cGF0aCBkPSJNMC4wNjQ3NDg1IDMuNTg3NTZMMS43NzgyOCAyLjIxMzg3TDEuOTgzNSAwLjAyNzI5NTdMMy44MTk0NiAxLjIzMjQ3TDUuOTYyNDMgMC43NTE5NTJMNS4zODM1OSAyLjg3MDQ4TDYuNTAyOCA0Ljc2MDA4TDQuMzA5MDkgNC44NjQyMkwyLjg1NzgzIDYuNTEyNThMMi4wODA4OSA0LjQ1ODQyTDAuMDY0NzQ4NSAzLjU4NzU2WiIgZmlsbD0iI0ZGRjUwMCIvPgo8L3N2Zz4K) no-repeat;
+    }
+
+    .service-card .goal-tip-wrap {
+      height: 58px;
+      padding: 8px 12px 8px 16px;
+      margin-left: 24px;
+      background: rgb(255,239,220);
+      background: linear-gradient(90deg, rgba(255,239,220,1) 0%, rgba(255,239,220,0) 100%);
+      border-radius: 6px;
+      position: relative;
+    }
+    .service-card .goal-tip-wrap:before {
+      content: '';
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: calc(50% - 5px);
+      left: -10px;
+      border-style: solid;
+      border-width: 5px 10px 5px 0;
+      border-color: transparent #ffefdd transparent transparent;
+    }
+    .service-card .goal-tip {
+      overflow: hidden;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    
+    .service-card .vi-divider-light-brown {
+      height: 1px;
+      width: 100%;
+      margin: 16px 0 0 0;
+      border-top: 1px dashed #DCC1A1;
+    }
+    .service-card .service-txt {
+      min-height: 64px;
+    }
+    .service-card .service-img {
+      width: 100px;
+      position: relative;
+      bottom: 0;
+    }
+    .service-card .service-img img {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+    
+    
+    
+
+
+    /* highchart */
+    .highcharts-wrap {
+      display: flex;
+    }
+    .highcharts-figure {
+      min-width: 120px;
+      /* margin-top: -42px; */
+    }
+    
+    .progress-wrapper {
+      width: 120px;
+      margin-bottom: 16px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .progress-wrapper .progress-content {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .progress-wrapper .progress-img-mask {
+      position: absolute;
+      z-index: 3;
+    }
+    .progress-wrapper .progress-mask {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      /* bottom: 0; */
+      background: rgba(255, 255, 255, .7);
+      z-index: 2;
+    }
+    .progress-wrapper .progress-sub-img {
+      position: absolute;
+      z-index: 3;
+    }
+    .progress-wrapper .progress-img {
+      position: relative;
+      left: 0;
+      z-index: 1; 
+    }
+    .progress-wrapper .progress-txt {
+      width: 100%;
+      position: absolute;
+      top: 16px;
+      text-align: center;
+      z-index: 3;
+    }
+    .progress-wrapper .progress-status-bar {
+      padding: 1px 8px 1px 28px;
+      position: absolute;
+      bottom: -12px;
+      z-index: 5;
+      background: #fff;
+      border-radius: 24px;
+    }
+    
+    
+    /* .progress-home {
+      top: -42px;
+    } */
+    .progress-home .progress-txt {
+      top: 52px;
+    }
+    .progress-home .progress-txt * {
+      color: #3D7DFA;
+    }
+    
+    
+    
+    .progress-status-bar .vi-icon {
+      position: absolute;
+    }
+    .icon-status-good {
+      width: 16px;
+      height: 16px;
+      left: 8px;
+      bottom: 5px;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iOCIgY3k9IjgiIHI9IjgiIGZpbGw9IiMzQzgyRkMiLz4KPHBhdGggZD0iTTQuMjY2NiA5LjU0NTlDNS4zMzMyNyAxMi44MTcxIDkuNTk5OTQgMTIuMjgzOCAxMC42NjY2IDkuNTQ1OSIgc3Ryb2tlPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI0LjI2Njg2IiBjeT0iNS4zMzMyNyIgcj0iMS4wNjY2NyIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMTAuNjY2MyIgY3k9IjUuMzMzMjciIHI9IjEuMDY2NjciIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=);
+    }
+    .icon-status-not-yet {
+      width: 54px;
+      height: 38px;
+      left: -31px;
+      bottom: 1px;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTQiIGhlaWdodD0iMzgiIHZpZXdCb3g9IjAgMCA1NCAzOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE3IDIwLjQ0NThMMTUgMjAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMjUgMTFMMjUuNDkxMyAxMyIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xOSAxMkwyMCAxNCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zMSAxNUwzMiAxMyIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zNC42OTk0IDMxLjMzNTJDMzQuNTA0OSAyNS4yMzE1IDI5LjM4NzYgMjYuMjI0NCAyOS45MDQ2IDE5LjYyMzJDMzIuNDIyMiAxNy43ODQ0IDI5LjYxNDIgMTUuNzQ0OSAyOC4wMTIyIDE4Ljk4MzFDMjcuNjEzOCAxNy4wNjYxIDIzLjY1MTggMTcuNjAzNiAyNC45MTM2IDIwLjIxNTZDMjIuNTMxNyAxOC41NjIyIDIwLjkxNzMgMjAuMjI5OSAyMi42NDQyIDIxLjYxOThDMTguNjkzNyAyMC41NzEyIDE3LjM4OCAyNS42OTUyIDIyLjcxODEgMjMuOTY3MkMyNS43MzE4IDI2LjM5NTYgMjMuNDI4OSAzMS4wMjI4IDI1LjM2NDUgMzQuMzYxQzI3LjMwMDEgMzcuNjk5MiAzNC44NzkgMzYuOTY5NSAzNC42OTk0IDMxLjMzNTJaIiBmaWxsPSIjRjhDMTI3Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjguMjc4NSAyNS4xNkMyOC43OTI0IDI1LjI5NDEgMjkuMjUxOSAyNS42Mjk1IDI5LjUxNDMgMjYuMTcyNkMyOS42NzQ1IDI2LjUwNDEgMjkuNTI3IDI2Ljg4MzIgMjkuMTg0OCAyNy4wMTkzQzI4Ljg0MjcgMjcuMTU1MyAyOC40MzU1IDI2Ljk5NjkgMjguMjc1NCAyNi42NjUzQzI4LjE5OTQgMjYuNTA4MiAyOC4wOTU1IDI2LjQ0MTQgMjcuOTc1NiAyNi40MTAyQzI3LjgzMzEgMjYuMzczIDI3LjYzNjcgMjYuMzgyNiAyNy40Mzg0IDI2LjQ2MTVDMjcuMjQwMSAyNi41NDAzIDI3LjA5OTIgMjYuNjY0OSAyNy4wMzI3IDI2Ljc4NTJDMjYuOTc2OSAyNi44ODYzIDI2Ljk2MDUgMjcuMDAwOSAyNy4wMzY0IDI3LjE1ODFDMjcuMTAzMSAyNy4yOTYyIDI3LjE3NzkgMjcuMzQ0NyAyNy4zMTM1IDI3LjM3ODdDMjcuNTAzNSAyNy40MjYzIDI3Ljc1NzYgMjcuNDI0IDI4LjEzMDcgMjcuNDAyMUMyOC4xNjMyIDI3LjQwMDIgMjguMTk3MSAyNy4zOTgxIDI4LjIzMjMgMjcuMzk1OUMyOC41NDE2IDI3LjM3NjYgMjguOTQ2MyAyNy4zNTE0IDI5LjMwNzEgMjcuNDExMkMyOS43NjQzIDI3LjQ4NjkgMzAuMjYgMjcuNzE2MiAzMC41MjkzIDI4LjI3MzZDMzAuNzkxNyAyOC44MTY4IDMwLjc1MjEgMjkuMzUwNiAzMC41MTI1IDI5Ljc4NDRDMzAuMjgzNSAzMC4xOTkxIDI5Ljg4OTUgMzAuNDk2IDI5LjQ2ODMgMzAuNjYzNUMyOS4wNDcxIDMwLjgzMSAyOC41Mzk1IDMwLjg5MjcgMjguMDQ4MyAzMC43NjQ1QzI3LjUzNDMgMzAuNjMwMyAyNy4wNzQ4IDMwLjI5NSAyNi44MTI0IDI5Ljc1MThDMjYuNjUyMyAyOS40MjAzIDI2Ljc5OTggMjkuMDQxMiAyNy4xNDE5IDI4LjkwNTJDMjcuNDg0MSAyOC43NjkxIDI3Ljg5MTIgMjguOTI3NiAyOC4wNTE0IDI5LjI1OTFDMjguMTI3MyAyOS40MTYzIDI4LjIzMTMgMjkuNDgzIDI4LjM1MTEgMjkuNTE0M0MyOC40OTM2IDI5LjU1MTUgMjguNjkwMSAyOS41NDE4IDI4Ljg4ODQgMjkuNDYyOUMyOS4wODY2IDI5LjM4NDEgMjkuMjI3NiAyOS4yNTk2IDI5LjI5NCAyOS4xMzkzQzI5LjM0OTkgMjkuMDM4MSAyOS4zNjYzIDI4LjkyMzUgMjkuMjkwMyAyOC43NjY0QzI5LjI4OTEgMjguNzYzOSAyOS4yODgxIDI4Ljc2MTQgMjkuMjg3IDI4Ljc1ODlDMjkuMjc2OCAyOC43MzUxIDI5LjI2NjYgMjguNzExIDI5LjEzNTUgMjguNjg5M0MyOC45NDcgMjguNjU4MSAyOC43MSAyOC42NzIxIDI4LjM0OTEgMjguNjkzNEMyOC4zMjY4IDI4LjY5NDcgMjguMzA0IDI4LjY5NiAyOC4yODA2IDI4LjY5NzRDMjcuOTM1NiAyOC43MTc2IDI3LjQ2NDUgMjguNzQyOCAyNy4wMjQzIDI4LjYzMjNDMjYuNTI5NiAyOC41MDgyIDI2LjA2OTEgMjguMjEzIDI1Ljc5NzUgMjcuNjUwOEMyNS41MzUxIDI3LjEwNzYgMjUuNTc0NyAyNi41NzM4IDI1LjgxNDMgMjYuMTRDMjYuMDQzMyAyNS43MjUzIDI2LjQzNzIgMjUuNDI4NCAyNi44NTg0IDI1LjI2MDlDMjcuMjc5NiAyNS4wOTM0IDI3Ljc4NzIgMjUuMDMxOCAyOC4yNzg1IDI1LjE2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNi41MzY0IDI0LjE4NThDMjYuNzkzIDI0LjA4MzcgMjcuMTMwOCAyNC4yNjk3IDI3LjI5MSAyNC42MDEzTDI3LjU4MSAyNS4yMDE2QzI3Ljc0MTEgMjUuNTMzMSAyNy42NjI5IDI1Ljg4NDYgMjcuNDA2MyAyNS45ODY2QzI3LjE0OTcgMjYuMDg4NyAyNi44MTE5IDI1LjkwMjYgMjYuNjUxNyAyNS41NzExTDI2LjM2MTggMjQuOTcwOEMyNi4yMDE2IDI0LjYzOTMgMjYuMjc5OCAyNC4yODc4IDI2LjUzNjQgMjQuMTg1OFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjkuNDY2MSAzMC4xODQ4QzI5LjcyMjcgMzAuMDgyNyAzMC4wNjA1IDMwLjI2ODggMzAuMjIwNyAzMC42MDAzTDMwLjUxMDYgMzEuMjAwNkMzMC42NzA4IDMxLjUzMjEgMzAuNTkyNiAzMS44ODM2IDMwLjMzNiAzMS45ODU2QzMwLjA3OTQgMzIuMDg3NyAyOS43NDE2IDMxLjkwMTcgMjkuNTgxNCAzMS41NzAxTDI5LjI5MTQgMzAuOTY5OEMyOS4xMzEzIDMwLjYzODMgMjkuMjA5NSAzMC4yODY4IDI5LjQ2NjEgMzAuMTg0OFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yOS4zNSAyNC43MzA2QzI1LjYyMjIgMjAuODQ5OSAzMC41OTk0IDE2Ljk3MTggMzIuNDY1MSAyMC4yMDQzQzMzLjg3NTIgMjIuNjQ3NCAzNy4xOTA3IDIzLjIxMDEgNDAgMjMuOTkxNkMzOS41NzI2IDI1LjUxNzIgMzkuNTcyNiAyNy4wMjExIDM5LjcxNDggMjhDMzYuMjU1IDI3LjkwOTQgMzEuNzA1MiAyNy4xODI0IDI5LjM1IDI0LjczMDZaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfMTAzMV80MTE5MSkiLz4KPGNpcmNsZSBjeD0iNDYiIGN5PSIyNiIgcj0iOCIgZmlsbD0iIzNDODJGQyIvPgo8ZWxsaXBzZSBjeD0iNDMuODUzMyIgY3k9IjI4LjYwNDciIHJ4PSIxLjA2NjY3IiByeT0iMS43NzczNCIgdHJhbnNmb3JtPSJyb3RhdGUoMjguOTIyOSA0My44NTMzIDI4LjYwNDcpIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI0My4zMzMzIiBjeT0iMjMuMzMzMyIgcj0iMS4wNjY2NyIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iNDguNjY2MyIgY3k9IjI2LjUzMzUiIHI9IjEuMDY2NjciIGZpbGw9IndoaXRlIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfMTAzMV80MTE5MSIgeDE9IjI4LjExMTgiIHkxPSIxOS41NTgyIiB4Mj0iNDEuMzU1NCIgeTI9IjI1LjYyNDEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzJGNzJFNyIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMzQzgyRkMiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K);
+    }
+    .icon-status-done {
+      width: 54px;
+      height: 38px;
+      left: -31px;
+      bottom: 1px;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTQiIGhlaWdodD0iMzgiIHZpZXdCb3g9IjAgMCA1NCAzOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuOTc4MTkgMTMuMzA4MUM2LjkzNjk5IDEzLjA2OTkgNy4wOTYwOCAxMi44NDMyIDcuMzM0MTEgMTIuODAwOUwyNC44NzEyIDkuNjg3MjJDMjUuMTEwOCA5LjY0NDY5IDI1LjMzOTIgOS44MDUwMiAyNS4zODA3IDEwLjA0NDdMMjguOTk1NiAzMC45NDU3QzI5LjI3OCAzMi41NzgzIDI4LjE4MzQgMzQuMTMwNyAyNi41NTA4IDM0LjQxMzFMMTQuMDQ3IDM2LjU3NTdDMTIuNDE0NCAzNi44NTggMTAuODYyIDM1Ljc2MzUgMTAuNTc5NiAzNC4xMzA4TDYuOTc4MTkgMTMuMzA4MVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik04LjMyMzI0IDE0LjkyNzdDOC4zMjMyNCAxNC45Mjc3IDEyLjU2MDggMTYuMDIyMSAxNS44NDczIDE1LjkzMDJDMTkuMTMzOCAxNS44MzgzIDI1LjE1NDYgMTQuNDU3MiAyNS4xNTQ2IDE0LjQ1NzJMMjcuOTk5MiAzMC42OTAzQzI4LjE4OTYgMzEuNzc2NiAyNy40NjQ3IDMyLjgxMTkgMjYuMzc4OSAzMy4wMDQ3TDEzLjk1NTcgMzUuMjEwNUMxMi44NjgxIDM1LjQwMzYgMTEuODMgMzQuNjc4NCAxMS42MzY5IDMzLjU5MDlMOC4zMjMyNCAxNC45Mjc3WiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyXzEyNDlfNDA0NjUpIi8+CjxyZWN0IHg9IjExLjk4MzQiIHk9IjE3LjcyODUiIHdpZHRoPSIyLjA3NjYyIiBoZWlnaHQ9IjEzLjU5MjUiIHJ4PSIxLjAzODMxIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTAuMDY3OSAxMS45ODM0IDE3LjcyODUpIiBmaWxsPSJ1cmwoI3BhaW50MV9saW5lYXJfMTI0OV80MDQ2NSkiLz4KPHJlY3QgeD0iMTYuMDY5MyIgeT0iMTcuMDAyIiB3aWR0aD0iMi4wNzY2MiIgaGVpZ2h0PSIxMy41OTI1IiByeD0iMS4wMzgzMSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEwLjA2NzkgMTYuMDY5MyAxNy4wMDIpIiBmaWxsPSJ1cmwoI3BhaW50Ml9saW5lYXJfMTI0OV80MDQ2NSkiLz4KPHJlY3QgeD0iMjAuMTYzMSIgeT0iMTYuMjc1NCIgd2lkdGg9IjIuMDc2NjIiIGhlaWdodD0iMTMuNTkyNSIgcng9IjEuMDM4MzEiIHRyYW5zZm9ybT0icm90YXRlKC0xMC4wNjc5IDIwLjE2MzEgMTYuMjc1NCkiIGZpbGw9InVybCgjcGFpbnQzX2xpbmVhcl8xMjQ5XzQwNDY1KSIvPgo8cGF0aCBkPSJNOC4xMTE0NSAxMy4wMjgzQzEyLjgxNjIgMTIuNDI0NSAyMi42NzA3IDEwLjkyMTMgMjQuNDUwNyA5LjczODYyQzI0Ljg2MDcgNC4wNTkxIDIwLjE5MyA4Ljc5ODA2IDE4Ljk5NTUgNy4wNTU5NUMxNS43NDcyIDIuMzMwNTMgMTMuNDYyNSA0LjU1ODc4IDEyLjE0NjUgNS4yNjM4OEM4LjEwMTE1IDcuNDMxMjYgNC4xMDE3MSAxLjI0MTI4IDQuMTg3NzEgNC4zNTMzMkM0LjI5NzI2IDguMzE3NjIgNy45MzcyOCA2Ljc5ODQ3IDguMTExNDUgMTMuMDI4M1oiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjEuOTIyNzQiIGN5PSI0LjQxOTIiIHI9IjAuODQ5NTI4IiB0cmFuc2Zvcm09InJvdGF0ZSgtMS42MDE0OCAxLjkyMjc0IDQuNDE5MikiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjguNjU3MTkiIGN5PSIxLjk2NDYiIHI9IjAuMjgzMTc2IiB0cmFuc2Zvcm09InJvdGF0ZSgtMS42MDE0OCA4LjY1NzE5IDEuOTY0NikiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjQuMzQ4NiIgY3k9IjEwLjAxNzMiIHI9IjAuMjgzMTc2IiB0cmFuc2Zvcm09InJvdGF0ZSgtMS42MDE0OCA0LjM0ODYgMTAuMDE3MykiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjE4LjkxMTEiIGN5PSIzLjk0MzEyIiByPSIwLjI4MzE3NiIgdHJhbnNmb3JtPSJyb3RhdGUoLTEuNjAxNDggMTguOTExMSAzLjk0MzEyKSIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTkuNjk5OTcgMTcuMDUyMUM5LjY2MjA2IDE2LjgzMjkgOS43OTQ5IDE2LjYyMDIgMTAuMDA4NSAxNi41NTgxVjE2LjU1ODFDMTAuMjU4NyAxNi40ODUzIDEwLjUxNjYgMTYuNjQ2NCAxMC41NjEgMTYuOTAzMkwxMy40NzI2IDMzLjczODRDMTMuNTEwNSAzMy45NTc2IDEzLjM3NzcgMzQuMTcwMyAxMy4xNjQxIDM0LjIzMjRWMzQuMjMyNEMxMi45MTM4IDM0LjMwNTIgMTIuNjU2IDM0LjE0NDEgMTIuNjExNiAzMy44ODczTDkuNjk5OTcgMTcuMDUyMVoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuMiIvPgo8Y2lyY2xlIGN4PSIxOC41NjczIiBjeT0iMzIuMjgxIiByPSIwLjI4MzE3NiIgdHJhbnNmb3JtPSJyb3RhdGUoLTEuNjAxNDggMTguNTY3MyAzMi4yODEpIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIxOS42NDM1IiBjeT0iMjAuMDcxOCIgcj0iMC41NjYzNTIiIHRyYW5zZm9ybT0icm90YXRlKC0xLjYwMTQ4IDE5LjY0MzUgMjAuMDcxOCkiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjI0Ljc4OCIgY3k9IjIxLjYyNjUiIHI9IjAuNTY2MzUyIiB0cmFuc2Zvcm09InJvdGF0ZSgtMS42MDE0OCAyNC43ODggMjEuNjI2NSkiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjI0LjM4NzciIGN5PSIxNy4zODg0IiByPSIwLjI4MzE3NiIgdHJhbnNmb3JtPSJyb3RhdGUoLTEuNjAxNDggMjQuMzg3NyAxNy4zODg0KSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMTQuNzU4OCIgY3k9IjE3LjY1OCIgcj0iMC4yODMxNzYiIHRyYW5zZm9ybT0icm90YXRlKC0xLjYwMTQ4IDE0Ljc1ODggMTcuNjU4KSIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTI1LjA1NjkgMTMuODc0N0wyNi44Mjc3IDEzLjU2ODRDMjcuMzU3OSAxMy40NzY3IDI3Ljg2NTYgMTMuODIxIDI3Ljk3NjYgMTQuMzQ3NUwzMC41NSAyNi41NTI2QzMwLjY2MjYgMjcuMDg2MyAzMC4zMjY3IDI3LjYxMTcgMjkuNzk1IDI3LjczMzZMMjcuNTQ3NiAyOC4yNDg4IiBzdHJva2U9IndoaXRlIi8+CjxwYXRoIGQ9Ik0zMS42NDgxIDIwLjIwMjlDMzMuMjAyIDIyLjc4NjMgMzYuOTc4NyAyMy4yNjQ4IDQwIDI0LjEyNTlWMjhDMzYuMzMxMyAyOC4wMDA0IDMxLjA0NDYgMjcuMzYwNiAyOC40MDUzIDI0LjcyNDJDMjQuNTI0NyAyMC44NDc4IDI5LjcwNiAxNi45NzQxIDMxLjY0ODEgMjAuMjAyOVoiIGZpbGw9InVybCgjcGFpbnQ0X2xpbmVhcl8xMjQ5XzQwNDY1KSIvPgo8Y2lyY2xlIGN4PSI0NiIgY3k9IjI2IiByPSI4IiBmaWxsPSIjM0M4MkZDIi8+CjxwYXRoIGQ9Ik00Mi4yNjY2IDI3LjU0NTlDNDMuMzMzMyAzMC44MTcxIDQ3LjU5OTkgMzAuMjgzOCA0OC42NjY2IDI3LjU0NTkiIHN0cm9rZT0id2hpdGUiLz4KPGNpcmNsZSBjeD0iNDIuMjY2OSIgY3k9IjIzLjMzMzMiIHI9IjEuMDY2NjciIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjQ4LjY2NjMiIGN5PSIyMy4zMzMzIiByPSIxLjA2NjY3IiBmaWxsPSJ3aGl0ZSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzEyNDlfNDA0NjUiIHgxPSIxNi41MDE4IiB5MT0iMTMuNDc1NiIgeDI9IjIwLjE2NTEiIHkyPSIzNC4xMDgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0ZGQUYxNCIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRkQ3MDQiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDFfbGluZWFyXzEyNDlfNDA0NjUiIHgxPSIxMy4wMjE3IiB5MT0iMTcuNzI4NSIgeDI9IjEzLjAyMTciIHkyPSIzMS4zMjEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0ZGODQxMyIvPgo8c3RvcCBvZmZzZXQ9IjAuMDAwMSIgc3RvcC1jb2xvcj0iI0ZGOTIxMyIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRkI4MDIiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDJfbGluZWFyXzEyNDlfNDA0NjUiIHgxPSIxNy4xMDc2IiB5MT0iMTcuMDAyIiB4Mj0iMTcuMTA3NiIgeTI9IjMwLjU5NDQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0ZGODQxMyIvPgo8c3RvcCBvZmZzZXQ9IjAuMDAwMSIgc3RvcC1jb2xvcj0iI0ZGOTIxMyIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRkI4MDIiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDNfbGluZWFyXzEyNDlfNDA0NjUiIHgxPSIyMS4yMDE0IiB5MT0iMTYuMjc1NCIgeDI9IjIxLjIwMTQiIHkyPSIyOS44Njc4IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRjg0MTMiLz4KPHN0b3Agb2Zmc2V0PSIwLjAwMDEiIHN0b3AtY29sb3I9IiNGRjkyMTMiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRkZCODAyIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQ0X2xpbmVhcl8xMjQ5XzQwNDY1IiB4MT0iMzguNSIgeTE9IjI1LjUiIHgyPSIyNyIgeTI9IjIwLjUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzNDODJGQyIvPgo8c3RvcCBvZmZzZXQ9IjAuNDUwNzIiIHN0b3AtY29sb3I9IiMyMjY4RTIiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K);
+    }
+    
+    
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+
+<!-- if scroll, add .vi-page-header-fix -->
+<body class="vi-bg-mint">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">家庭健檢結果</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500" href="">諮詢專人</a>
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap vi-bg-mint">
+    
+    <div class="main_container vi-has-foot-btn pad_top24">
+      
+      <!-- toast, 參考 import { CTBCMBToastWidget } from '../view/ui-2022/toast/ctbc-mb-toast.widget';-->
+      <div class="toast">
+        <span>儲存成功</span>
+      </div>
+
+    
+      <div class="status-wrap status-not-yet">
+        
+        <div class="vi-container">
+          <div class="vi-txt-title vi-txt-b900 mb12">
+            您的<span class="txt-blue">家庭責任金</span>為：
+          </div>
+          
+          
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="status-not-yet">
+            <!-- status .status-not-yet, .status-good, .status-done -->
+            <div class="vi-card vi-rounded-card goal-card status-not-yet">
+              <div class="vi-card-header flex-column">
+                <div class="dis-flex flex-justify-between w-100">
+                  <div>
+                    <div class="vi-txt-callout vi-txt-b500 mb4">目標</div>
+                    <div class="vi-txt-b900 mb4">
+                      <span class="vi-txt-titlexl vi-txt-w320-20px">880</span>
+                      <span class="vi-txt-body">萬</span>
+                    </div>
+                  </div>
+                  <div class="vi-txt-body-bold  vi-txt-g500">編輯目標</div>
+                </div>
+                <div class="vi-txt-callout vi-txt-b500 align-self-start">依據您每月家庭支出 <span class="vi-txt-bold txt-blue">7 萬</span>，扶養 <span class="vi-txt-bold txt-blue">10 年</span> 加上通貨膨脹率 <span class="vi-txt-bold txt-blue">1 %</span> 試算目標金額</div>
+              </div>
+              <div class="vi-card-body dis-flex bg-blue pad_top16">
+                <div class="dis-flex flex-justify-between w-100">
+                  <div class="dis-flex flex-column flex-justify-center">
+                    <div class="vi-txt-callout vi-txt-white mb4">已準備</div>
+                    <div class="vi-txt-white mb4">
+                      <span class="vi-txt-titlexl vi-txt-w320-20px">0</span>
+                      <span class="vi-txt-body">萬</span>
+                    </div>
+                    <div class="vi-txt-callout vi-txt-white mb16">(以壽險保額計算)</div>
+                    <div class="dis-inline-flex">
+                      <div class="vi-btn vi-btn-white vi-btn-xs">編輯/查看保單</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-chart-wrap">
+                  <figure class="highcharts-figure">
+                    <div class="progress-wrapper progress-home">
+                      <div class="progress-content">
+                        <!-- 跟首頁的 progress 差在這裡，多一個 mask -->
+                        <div div class="progress-img-mask">
+                          <img src="../../../../inc/img/health/chart-home-mask.svg" alt="" />
+                        </div>
+                        <!-- 直接把百分比帶入 bottom: x % -->
+                        <div class="progress-mask" style="bottom: 0%;">
+                          <div class="progress-mask-white"></div>
+                        </div>
+                        <div div class="progress-img">
+                          <img src="../../../../inc/img/health/chart-home.svg" alt="" />
+                        </div>
+                      </div>
+                      <div class="progress-txt">
+                        <div class="vi-txt-body-bold">0％</div>
+                        <div class="vi-txt-bold vi-txt-callout">完成率</div>
+                      </div>
+                      <div class="progress-status-bar">
+                        <span class="vi-icon vi-icon-xs icon-status-not-yet"></span>
+                        <span class="vi-txt-footnote vi-txt-bold txt-blue">尚無準備</span>
+                      </div>
+                    </div>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          
+            <div class="vi-card vi-rounded-card bg-light-brown service-card pad_btm16">
+              <div class="vi-card-header flex-column">
+                <div class="dis-flex flex-justify-between w-100">
+                  <div class="flex-shrink-0">
+                    <div class="vi-txt-callout vi-txt-bold vi-txt-br500">您尚需準備</div>
+                    <div class="vi-txt-br500">
+                      <span class="vi-txt-titlexl vi-txt-w320-20px">880</span>
+                      <span class="vi-txt-body">萬</span>
+                    </div>
+                  </div>
+                  <div class="goal-tip-wrap">
+                    <div class="vi-txt-callout vi-txt-br500 goal-tip">加油！提高壽險給付金額，讓家人繼續維持現在生活測試字會不會過長</div>
+                  </div>
+                </div>
+                <div class="vi-divider-light-brown"></div>
+              </div>
+              <div class="vi-card-body">
+                <div class="dis-flex w-100">
+                  <div class="service-txt">
+                    <div class="vi-txt-body-bold vi-txt-br500 mb24">希望了解符合自己的壽險保單嗎？</div>
+                    <!-- 有無理專 -->
+                    <div class="d-flex mt-12 mb16">
+                      <span class="vi-txt-callout vi-txt-b500">理專</span>
+                      <span class="vi-txt-callout vi-txt-bold vi-txt-b600">謝佳雯 (永吉分行)</span>
+                    </div>
+                  </div>
+                  <div class="flex-shrink-0 service-img">
+                    <img src="../../../../inc/img/health/service-person.svg" alt="" />
+                  </div>
+                </div>
+                <div class="btn vi-btn vi-btn-primary vi-btn-s">預約專人，聽取進一步諮詢</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="status-good" class="hide">
+            <!-- status .status-not-yet, .status-good, .status-done -->
+            <div class="vi-card vi-rounded-card goal-card status-good">
+              <div class="vi-card-header flex-column">
+                <div class="dis-flex flex-justify-between w-100">
+                  <div>
+                    <div class="vi-txt-callout vi-txt-b500 mb4">目標</div>
+                    <div class="vi-txt-b900 mb4">
+                      <span class="vi-txt-titlexl vi-txt-w320-20px">880</span>
+                      <span class="vi-txt-body">萬</span>
+                    </div>
+                  </div>
+                  <div class="vi-txt-body-bold vi-txt-g500">編輯目標</div>
+                </div>
+                <div class="vi-txt-callout vi-txt-b500 align-self-start">依據您每月家庭支出 <span class="vi-txt-bold txt-blue">7 萬</span>，扶養 <span class="vi-txt-bold txt-blue">10 年</span> 加上通貨膨脹率 <span class="vi-txt-bold txt-blue">1 %</span> 試算目標金額</div>
+              </div>
+              <div class="vi-card-body dis-flex bg-blue pad_top16">
+                <div class="dis-flex flex-justify-between w-100">
+                  <div class="dis-flex flex-column flex-justify-center">
+                    <div class="vi-txt-callout vi-txt-white mb4">已準備</div>
+                    <div class="vi-txt-white mb4">
+                      <span class="vi-txt-titlexl vi-txt-w320-20px">285</span>
+                      <span class="vi-txt-body">萬</span>
+                    </div>
+                    <div class="vi-txt-callout vi-txt-white mb16">(以壽險保額計算)</div>
+                    <div class="dis-inline-flex">
+                      <div class="vi-btn vi-btn-white vi-btn-xs">編輯/查看保單</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-chart-wrap">
+                  <figure class="highcharts-figure">
+                    <div class="progress-wrapper progress-home">
+                      <div class="progress-content">
+                        <!-- 跟首頁的 progress 差在這裡，多一個 mask -->
+                        <div div class="progress-img-mask">
+                          <img src="../../../../inc/img/health/chart-home-mask.svg" alt="" />
+                        </div>
+                        <!-- 直接把百分比帶入 bottom: x % -->
+                        <div class="progress-mask" style="bottom: 52%;">
+                          <div class="progress-mask-white"></div>
+                        </div>
+                        <div div class="progress-img">
+                          <img src="../../../../inc/img/health/chart-home.svg" alt="" />
+                        </div>
+                      </div>
+                      <div class="progress-txt">
+                        <div class="vi-txt-body-bold">52％</div>
+                        <div class="vi-txt-bold vi-txt-callout">完成率</div>
+                      </div>
+                      <div class="progress-status-bar">
+                        <span class="vi-icon vi-icon-xs icon-status-good"></span>
+                        <span class="vi-txt-footnote vi-txt-bold txt-blue">尚有缺口</span>
+                      </div>
+                    </div>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          
+            <div class="vi-card vi-rounded-card bg-light-brown service-card pad_btm16">
+              <div class="vi-card-header flex-column">
+                <div class="dis-flex flex-justify-between w-100">
+                  <div class="flex-shrink-0">
+                    <div class="vi-txt-callout vi-txt-bold vi-txt-br500">您尚需準備</div>
+                    <div class="vi-txt-br500">
+                      <span class="vi-txt-titlexl vi-txt-w320-20px">595</span>
+                      <span class="vi-txt-body">萬</span>
+                    </div>
+                  </div>
+                  <div class="goal-tip-wrap">
+                    <div class="vi-txt-callout vi-txt-br500 goal-tip">加油！提高壽險給付金額，讓家人繼續維持現在生活測試字會不會過長</div>
+                  </div>
+                </div>
+                <div class="vi-divider-light-brown"></div>
+              </div>
+              <div class="vi-card-body">
+                <div class="dis-flex w-100">
+                  <div class="service-txt">
+                    <div class="vi-txt-body-bold vi-txt-br500 mb24">希望了解符合自己的壽險保單嗎？</div>
+                    <!-- 有無理專 -->
+                    <!-- <div class="d-flex mt-12 mb16">
+                      <span class="vi-txt-callout vi-txt-b500">理專</span>
+                      <span class="vi-txt-callout vi-txt-bold vi-txt-b600">謝佳雯 (永吉分行)</span>
+                    </div> -->
+                  </div>
+                  <div class="flex-shrink-0 service-img">
+                    <img src="../../../../inc/img/health/service-person.svg" alt="" />
+                  </div>
+                </div>
+                <div class="btn vi-btn vi-btn-primary vi-btn-s">預約專人，聽取進一步諮詢</div>
+              </div>
+            </div>
+          </div>
+          
+          
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="status-done" class="hide">
+            <!-- status .status-not-yet, .status-good, .status-done -->
+            <div class="vi-card vi-rounded-card goal-card status-done">
+              <div class="vi-card-header flex-column">
+                <div class="dis-flex flex-justify-between w-100">
+                  <div>
+                    <div class="vi-txt-callout vi-txt-b500 mb4">目標</div>
+                    <div class="vi-txt-b900 mb4">
+                      <span class="vi-txt-titlexl vi-txt-w320-20px">880</span>
+                      <span class="vi-txt-body">萬</span>
+                    </div>
+                  </div>
+                  <div class="vi-txt-body-bold vi-txt-g500">編輯目標</div>
+                </div>
+                <div class="vi-txt-callout vi-txt-b500 align-self-start">依據您每月家庭支出 <span class="vi-txt-bold txt-blue">7 萬</span>，扶養 <span class="vi-txt-bold txt-blue">10 年</span> 加上通貨膨脹率 <span class="vi-txt-bold txt-blue">1 %</span> 試算目標金額</div>
+              </div>
+              <div class="vi-card-body dis-flex bg-blue pad_top16">
+                <div class="dis-flex flex-justify-between w-100">
+                  <div class="dis-flex flex-column flex-justify-center">
+                    <div class="vi-txt-callout vi-txt-white mb4">恭喜你！已達成目標！</div>
+                    <div class="vi-txt-white mb4">
+                      <span class="vi-txt-titlexl vi-txt-w320-20px">1200</span>
+                      <span class="vi-txt-body">萬</span>
+                    </div>
+                    <div class="vi-txt-callout vi-txt-white mb16">(以壽險保額計算)</div>
+                    <div class="dis-inline-flex">
+                      <div class="vi-btn vi-btn-white vi-btn-xs">編輯/查看保單</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-chart-wrap">
+                  <figure class="highcharts-figure">
+                    <div class="progress-wrapper progress-home">
+                      <div class="progress-content">
+                        <!-- 跟首頁的 progress 差在這裡，多一個 mask -->
+                        <div div class="progress-img-mask">
+                          <img src="../../../../inc/img/health/chart-home-mask.svg" alt="" />
+                        </div>
+                        <!-- 直接把百分比帶入 bottom: x % -->
+                        <div class="progress-mask" style="bottom: 100%;">
+                          <div class="progress-mask-white"></div>
+                        </div>
+                        <div div class="progress-img">
+                          <img src="../../../../inc/img/health/chart-home.svg" alt="" />
+                        </div>
+                      </div>
+                      <div class="progress-txt">
+                        <div class="vi-txt-body-bold">100％</div>
+                        <div class="vi-txt-bold vi-txt-callout">完成率</div>
+                      </div>
+                      <div class="progress-status-bar">
+                        <span class="vi-icon vi-icon-xs icon-status-done"></span>
+                        <span class="vi-txt-footnote vi-txt-bold txt-blue">恭喜達標</span>
+                      </div>
+                    </div>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          
+            <div class="vi-card vi-rounded-card bg-light-brown service-card pad_btm16">
+              <!-- <div class="vi-card-header flex-column">
+                <div class="dis-flex flex-justify-between w-100">
+                  <div class="flex-shrink-0">
+                    <div class="vi-txt-callout vi-txt-bold vi-txt-br500">您尚需準備</div>
+                    <div class="vi-txt-br500">
+                      <span class="vi-txt-titlexl vi-txt-w320-20px">595</span>
+                      <span class="vi-txt-body">萬</span>
+                    </div>
+                  </div>
+                  <div class="goal-tip-wrap">
+                    <div class="vi-txt-callout vi-txt-br500 goal-tip">加油！提高壽險給付金額，讓家人繼續維持現在生活測試字會不會過長</div>
+                  </div>
+                </div>
+                <div class="vi-divider-light-brown"></div>
+              </div> -->
+              <div class="vi-card-body">
+                <div class="dis-flex w-100">
+                  <div class="service-txt">
+                    <div class="vi-txt-body-bold vi-txt-br500 mb24">健全理財規劃，開創未來美好人生</div>
+                    <!-- 有無理專 -->
+                    <div class="d-flex mt-12 mb16">
+                      <span class="vi-txt-callout vi-txt-b500">理專</span>
+                      <span class="vi-txt-callout vi-txt-bold vi-txt-b600">謝佳雯 (永吉分行)</span>
+                    </div>
+                  </div>
+                  <div class="flex-shrink-0 service-img">
+                    <img src="../../../../inc/img/health/service-person.svg" alt="" />
+                  </div>
+                </div>
+                <div class="btn vi-btn vi-btn-primary vi-btn-s">預約專人，聽取進一步諮詢</div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+          
+          
+        <div class="vi-card-s">
+          <div class="vi-card-header">
+            <div class="vi-line-title vi-w-100">如何達成目標</div>
+          </div>
+          
+          <div class="vi-card-body">
+            <div class="vertical-timeline mb24">
+              <div class="timeline-item">
+                <div class="timeline-header">
+                  <div class="vi-txt-body-bold vi-txt-white step">步驟 1</div>
+                  <div class="vi-txt-body-bold vi-txt-b600 top-2px step-title">完善您的保單資料</div>
+                </div>
+                <div class="timeline-body">
+                  <div class="vi-txt-body vi-txt-b600 mb12">有其他保單未加入健診嗎？完善您的保單資料，讓我們給您更精準的建議</div>
+                  <div class="btn vi-btn vi-btn-secondary vi-btn-xs">添加/編輯我的保單</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-header">
+                  <div class="vi-txt-body-bold vi-txt-white step">步驟 2</div>
+                  <div class="vi-txt-body-bold vi-txt-b600 top-2px step-title">購買壽險保單</div>
+                </div>
+                <div class="timeline-body">
+                  <div class="vi-txt-body vi-txt-b600 mb8">您尚需準備壽險<span class="vi-txt-body-bold vi-txt-r500 ml4">595萬</span></div>
+                  <div class="vi-txt-body vi-txt-b600">補足您的壽險給付金額，若意外身故可由保險公司直接將壽險給付金額傳承給家人，讓家庭生活品質可以延續下去。</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="vi-line-title mb16 vi-w-100">推薦您適合的壽險</div>
+
+            <!-- 參考 保險子頁 intro-card-graphic-collocation.component -->
+            <ul class="vi-img-list vi-btm-line">
+              <li class="vi-list-item">
+                <div class="vi-img-block">
+                  <div class="vi-article-pic">
+                    <img src="../../../../inc/img/layout/06-pic.svg">
+                  </div>
+                </div>
+                <div class="vi-list-content">
+                  <div class="vi-txt-body-bold vi-txt-b900">中國信託產險意遊保個人旅行綜合</div>
+                  <div class="vi-txt-callout vi-txt-b600 mt4">旅平險及旅遊不便險兩大保障，一次購足</div>
+                  <div class="vi-tag vi-bg-g300 mt4">
+                    <span class="vi-txt-callout vi-txt-g600">旅平險</span>
+                  </div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-img-block">
+                  <div class="vi-article-pic">
+                    <img src="../../../../inc/img/layout/06-pic.svg">
+                  </div>
+                </div>
+                <div class="vi-list-content">
+                  <div class="vi-txt-body-bold vi-txt-b900">中國信託產險意遊保個人旅行綜合</div>
+                  <div class="vi-txt-callout vi-txt-b600 mt4">旅平險及旅遊不便險兩大保障，一次購足</div>
+                  <div class="vi-tag vi-bg-g300 mt4">
+                    <span class="vi-txt-callout vi-txt-g600">旅平險</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        
+        <div class="vi-container">
+          
+          <!-- 備註 -->
+          <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+          <div class="mt24 mb32">
+            <div class="vi-note-accordion">
+              <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+                <div class="forAEM base-style break-word mr4">
+                  標題
+                </div>
+                <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+              </div>
+              <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                <div class="vi-card-body forAEM base-style break-word">
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      
+      </div>
+      
+      <div id="footer">
+        <div class="vi-page-footer">
+          <div class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-secondary">添加/編輯保單</div>
+            <div class="btn vi-btn vi-btn-primary">回健診首頁</div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div id="trigger-status-some" class="vi-txt-g500 mb24 pb24">-> 卡片狀態 有部分準備金 demo</div>
+      <div id="trigger-status-no" class="vi-txt-g500 mb24 pb24">-> 卡片狀態 無準備金 demo</div>
+      <div id="trigger-status-done" class="vi-txt-g500 mb24 pb24">-> 卡片狀態 已完成，有理專 demo</div>
+      
+    </div>
+
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// 卡片狀態 無準備金 demo
+document.getElementById('trigger-status-no').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementsByClassName('status-wrap')[0].classList.add('status-not-yet');
+  document.getElementsByClassName('status-wrap')[0].classList.remove('status-good');
+  document.getElementsByClassName('status-wrap')[0].classList.remove('status-done');
+  document.getElementById('status-not-yet').classList.remove('hide');
+  document.getElementById('status-good').classList.add('hide');
+  document.getElementById('status-done').classList.add('hide');
+});
+
+// 卡片狀態 有部分準備金 demo
+document.getElementById('trigger-status-some').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementsByClassName('status-wrap')[0].classList.add('status-good');
+  document.getElementsByClassName('status-wrap')[0].classList.remove('status-not-yet');
+  document.getElementsByClassName('status-wrap')[0].classList.remove('status-done');
+  document.getElementById('status-not-yet').classList.add('hide');
+  document.getElementById('status-good').classList.remove('hide');
+  document.getElementById('status-done').classList.add('hide');
+});
+
+// 卡片狀態 已完成 demo
+document.getElementById('trigger-status-done').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementsByClassName('status-wrap')[0].classList.add('status-done');
+  document.getElementsByClassName('status-wrap')[0].classList.remove('status-not-yet');
+  document.getElementsByClassName('status-wrap')[0].classList.remove('status-good');
+  document.getElementById('status-not-yet').classList.add('hide');
+  document.getElementById('status-good').classList.add('hide');
+  document.getElementById('status-done').classList.remove('hide');
+});
+
+
+// scroll fixed header
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 0) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+  }
+}
+</script>

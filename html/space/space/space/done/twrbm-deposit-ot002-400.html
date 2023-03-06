@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-detail-list .vi-list-lt {
+      margin-right: 12px;
+    }
+
+    .vi-detail-list.no-bg.vi-btm-line li.vi-list-item  {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  </style>
+</head>
+
+<!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+<header class="">
+  <div class="vi-page-header-normal">
+    <div class="vi-page-header-lt">
+      <button class="vi-btn" ontouchstart="">
+        <span class="vi-icon vi-icon-base icon-page-back"></span>
+      </button>
+    </div>
+    <div class="vi-page-header-ct">
+      <h1 class="vi-page-title">線上開數位帳戶</h1>
+    </div>
+    <!-- <div class="vi-page-header-rt">
+      <span class="vi-icon vi-icon-base vi-modal-close"></span>
+    </div> -->
+  </div>
+</header>
+
+<body class="body-wrap scroll vi-bg-mint">
+  <div class="main_container">
+
+    <div class="vi-page-indicator">
+      <div class="vi-progress-bar">
+        <progress class="progress-bar-handle" max="100" value="66"></progress>
+      </div>
+      <div class="vi-txt-b900 vi-txt-title">確認身分資訊</div>
+      <div class="vi-step vi-txt-g600">
+        步驟
+        <span class="vi-step-current">2</span><span class="vi-txt-b500">/3</span>
+      </div>
+    </div>
+
+    <div class="vi-container">
+      <div class="vi-card">
+        <div class="vi-card-header">
+          <div class="vi-line-title" translate="deposit_ot002_110.identity.title">身份資料</div>
+        </div>
+
+        <div class="vi-card-body">
+          <ul class="vi-detail-list">
+            <li class="vi-list-item">
+              <div class="vi-list-lt" translate="deposit_ot002_110.customer.name">姓名</div>
+              <div class="vi-list-rt">{{pageData.model.custName}}</div>
+            </li>
+
+            <li class="vi-list-item" *ngIf="pageData.model.showLongCustName">
+              <div class="vi-list-lt" translate="deposit_ot002_110.aboriginal.name">原住名姓名</div>
+              <div class="vi-list-rt">{{pageData.model.longCustNameEng}}</div>
+            </li>
+
+            <li class="vi-list-item" *ngIf="pageData.model.englishName">
+              <div class="vi-list-lt" translate="deposit_ot002_110.english.name">英文姓名</div>
+              <div class="vi-list-rt">{{pageData.model.englishName}}</div>
+            </li>
+
+            <li class="vi-list-item">
+              <div class="vi-list-lt" translate="deposit_ot002_110.customer.id">身分證字號</div>
+              <div class="vi-list-rt">{{pageData.model.custIxd}}</div>
+            </li>
+
+            <li class="vi-list-item">
+              <div class="vi-list-lt" translate="deposit_ot002_110.birthday">出生日期</div>
+              <div class="vi-list-rt">{{pageData.model.birthday}}</div>
+            </li>
+
+            <li class="vi-list-item">
+              <div class="vi-list-lt" translate="deposit_ot002_110.issue.date">身分證發證日期</div>
+              <div class="vi-list-rt">{{pageData.model.issueDate}}</div>
+            </li>
+
+            <li class="vi-list-item">
+              <div class="vi-list-lt" translate="deposit_ot002_110.issue.place">身分證發證地點</div>
+              <div class="vi-list-rt">{{pageData.model.issuePlace.value}}</div>
+            </li>
+
+            <li class="vi-list-item">
+              <div class="vi-list-lt" translate="deposit_ot002_110.issue.kind">身分證換補領類別</div>
+              <div class="vi-list-rt">{{pageData.model.issueKind.value}}</div>
+            </li>
+
+            <li class="vi-list-item">
+              <div class="vi-list-lt" translate="deposit_ot002_110.residence.address">戶籍地址</div>
+              <div class="vi-list-rt">
+                {{pageData.model.resAddrCity.value}}{{pageData.model.resAddrAreaZcode.value}}{{pageData.model.resAddr}}
+              </div>
+            </li>
+
+            <li class="vi-list-item">
+              <div class="vi-list-lt" translate="deposit_ot002_110.residence.address">未成年簽帳金融卡消費通知</div>
+              <div class="vi-list-rt">
+                關閉
+              </div>
+            </li>
+          </ul>
+
+          <div class="rt mt16 mb16">
+            <a href="" class="vi-icon-link">
+              <span class="vi-icon vi-icon-base icon-pencil-g"></span>
+              <span class="vi-txt-body-bold vi-txt-g500 ml4" translate="deposit_ot002_110.button.edit"
+                (click)="modify($event, pageData.model.modifyType1)">資料修改</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="vi-btn-group mt24">
+        <button class="vi-btn vi-btn-primary" ontouchstart="" translate="deposit_ot002_110.button.next"
+          (click)="next($event)">確定送出</button>
+      </div>
+
+      <div class="vi-remarks forAEM" [inject-dom]="pageData.model.remark" *ngIf="pageData.model.remark">
+        <h4 class="vi-remarks-title">備註</h4>
+        <ol class="vi-ordered-list-num">
+          <li>注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項</li>
+        </ol>
+      </div>
+    </div>
+
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>

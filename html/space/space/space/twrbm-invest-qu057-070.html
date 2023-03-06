@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>    
+    .main_container {
+      position: relative;
+      z-index: 9;
+    }
+    
+    
+    .page-gradient {
+      content: '';
+      width: 100%;
+      height: 724px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F0FCFB 32%, rgba(255, 249, 237, 0.7) 48%, rgba(228, 240, 239, 0) 100%);
+    }
+    
+    
+    .vi-page-header-fix .overview-info {
+      padding-top: 52px;
+    }
+    .vi-page-header-fix .overview-info.empty {
+      background-position: center bottom -20px;
+    }
+    
+    .overview-info-content {
+      padding: 24px 0 16px 0;
+    }
+
+    
+    
+    .chart-wrap {
+      width: 100%;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+    }
+    
+    .chart-toggle-swith {
+      width: 24px;
+      height: 24px;
+      background: #FFFFFF;
+      box-shadow: 0px 4px 7px rgba(0, 128, 121, 0.41);
+      border-radius: 6px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .slide-down {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNy44NjgxIDYuNzIyMDVDMTcuODQwMiA2LjE2OTYgMTcuMzY5MSA1Ljc0NDczIDE2LjgxNjcgNS43NzM4M0wxNC4wMzc0IDUuOTIwMjZDMTMuNDg1OSA1Ljk0OTMyIDEzLjAxNTMgNS41MjU3OCAxMi45ODYyIDQuOTc0MjZDMTIuOTU3MiA0LjQyMjc0IDEzLjM4MDcgMy45NTIwOSAxMy45MzIyIDMuOTIzMDNMMTYuNzExNSAzLjc3NjZDMTguMzY4NyAzLjY4OTI5IDE5Ljc4MTkgNC45NjM5MiAxOS44NjU1IDYuNjIxMjdMMjAuMDIyNCA5LjczMDI2QzIwLjA1MDIgMTAuMjgxOCAxOS42MjU3IDEwLjc1MTYgMTkuMDc0MSAxMC43Nzk0QzE4LjUyMjUgMTAuODA3MiAxOC4wNTI4IDEwLjM4MjYgMTguMDI0OSA5LjgzMTA1TDE3Ljg2ODEgNi43MjIwNVoiIGZpbGw9IiMwMDk4OTEiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjkxMDgxIDE4LjgyMDFDNC41MzI0NCAxOC40MTc4IDQuNTUxODQgMTcuNzg0OSA0Ljk1NDE1IDE3LjQwNjZMMTcuMTI4OCA1LjA0MzExQzE3LjUzMTEgNC42NjQ3NCAxOC4xNjQgNC42ODQxNCAxOC41NDI0IDUuMDg2NDVDMTguOTIwNyA1LjQ4ODc2IDE4LjkwMTMgNi4xMjE2MyAxOC40OTkgNi41TDYuMzI0MzYgMTguODYzNEM1LjkyMjA1IDE5LjI0MTggNS4yODkxOCAxOS4yMjI0IDQuOTEwODEgMTguODIwMVoiIGZpbGw9IiMwMDk4OTEiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik02LjAxMDgzIDE2Ljk2MzVDNi4wMzg3MSAxNy41MTU5IDYuNTA5NzkgMTcuOTQwOCA3LjA2MjE4IDE3LjkxMTdMOS44NDE0NyAxNy43NjUzQzEwLjM5MyAxNy43MzYyIDEwLjg2MzYgMTguMTU5OCAxMC44OTI3IDE4LjcxMTNDMTAuOTIxOCAxOS4yNjI4IDEwLjQ5ODIgMTkuNzMzNSA5Ljk0NjcgMTkuNzYyNUw3LjE2NzQgMTkuOTA4OUM1LjUxMDI0IDE5Ljk5NjMgNC4wOTcgMTguNzIxNiA0LjAxMzM3IDE3LjA2NDNMMy44NTY1IDEzLjk1NTNDMy44Mjg2NyAxMy40MDM3IDQuMjUzMjUgMTIuOTM0IDQuODA0ODQgMTIuOTA2MkM1LjM1NjQyIDEyLjg3ODMgNS44MjYxMyAxMy4zMDI5IDUuODUzOTYgMTMuODU0NUw2LjAxMDgzIDE2Ljk2MzVaIiBmaWxsPSIjMDA5ODkxIi8+Cjwvc3ZnPgo=);
+    }
+    .slide-up {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMi43MTU1IDExLjIxNDRDMTIuMzM3MSAxMC44MTIxIDEyLjM1NjUgMTAuMTc5MyAxMi43NTg4IDkuODAwODhMMTcuOTI1NSA0Ljk0MTU5QzE4LjMyNzggNC41NjMyMSAxOC45NjA3IDQuNTgyNjIgMTkuMzM5IDQuOTg0OTNDMTkuNzE3NCA1LjM4NzIzIDE5LjY5OCA2LjAyMDEgMTkuMjk1NyA2LjM5ODQ3TDE0LjEyOSAxMS4yNTc4QzEzLjcyNjcgMTEuNjM2MSAxMy4wOTM4IDExLjYxNjcgMTIuNzE1NSAxMS4yMTQ0WiIgZmlsbD0iIzAwOTg5MSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEzLjgxNTUgOS4zNTc3OEMxMy44NDM0IDkuOTEwMjMgMTQuMzE0NSAxMC4zMzUxIDE0Ljg2NjkgMTAuMzA2TDE3LjY0NjIgMTAuMTU5NkMxOC4xOTc3IDEwLjEzMDUgMTguNjY4MyAxMC41NTQxIDE4LjY5NzQgMTEuMTA1NkMxOC43MjY0IDExLjY1NzEgMTguMzAyOSAxMi4xMjc3IDE3Ljc1MTQgMTIuMTU2OEwxNC45NzIxIDEyLjMwMzJDMTMuMzE0OSAxMi4zOTA1IDExLjkwMTcgMTEuMTE1OSAxMS44MTgxIDkuNDU4NTdMMTEuNjYxMiA2LjM0OTU3QzExLjYzMzQgNS43OTc5OSAxMi4wNTc5IDUuMzI4MjggMTIuNjA5NSA1LjMwMDQ1QzEzLjE2MTEgNS4yNzI2MiAxMy42MzA4IDUuNjk3MiAxMy42NTg2IDYuMjQ4NzlMMTMuODE1NSA5LjM1Nzc4WiIgZmlsbD0iIzAwOTg5MSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTExLjE2MzQgMTIuNDcxMUMxMS41NDE4IDEyLjg3MzQgMTEuNTIyNCAxMy41MDYzIDExLjEyMDEgMTMuODg0N0w1Ljk1MzQxIDE4Ljc0NEM1LjU1MTExIDE5LjEyMjMgNC45MTgyNCAxOS4xMDI5IDQuNTM5ODYgMTguNzAwNkM0LjE2MTQ5IDE4LjI5ODMgNC4xODA4OSAxNy42NjU0IDQuNTgzMiAxNy4yODcxTDkuNzQ5ODkgMTIuNDI3OEMxMC4xNTIyIDEyLjA0OTQgMTAuNzg1MSAxMi4wNjg4IDExLjE2MzQgMTIuNDcxMVoiIGZpbGw9IiMwMDk4OTEiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMC4wNjM0IDE0LjMyNzhDMTAuMDM1NSAxMy43NzUzIDkuNTY0NDMgMTMuMzUwNCA5LjAxMjA0IDEzLjM3OTVMNi4yMzI3NSAxMy41MjZDNS42ODEyMyAxMy41NTUgNS4yMTA1OCAxMy4xMzE1IDUuMTgxNTIgMTIuNThDNS4xNTI0NiAxMi4wMjg1IDUuNTc2IDExLjU1NzggNi4xMjc1MiAxMS41Mjg3TDguOTA2ODIgMTEuMzgyM0MxMC41NjQgMTEuMjk1IDExLjk3NzIgMTIuNTY5NiAxMi4wNjA4IDE0LjIyN0wxMi4yMTc3IDE3LjMzNkMxMi4yNDU1IDE3Ljg4NzYgMTEuODIxIDE4LjM1NzMgMTEuMjY5NCAxOC4zODUxQzEwLjcxNzggMTguNDEyOSAxMC4yNDgxIDE3Ljk4ODMgMTAuMjIwMyAxNy40MzY4TDEwLjA2MzQgMTQuMzI3OFoiIGZpbGw9IiMwMDk4OTEiLz4KPC9zdmc+Cg==);
+    }
+    
+    
+    .vi-card.vi-card-accordion {
+      margin-bottom: 12px;
+    }
+    .vi-card.vi-card-accordion .vi-card-header {
+      padding-bottom: 6px;
+      align-items: baseline;
+    }
+    .vi-card.vi-card-accordion .vi-card-footer {
+      padding-top: 6px;
+      padding-bottom: 16px;
+    }
+    
+    
+    
+    .overview-info {
+      padding-bottom: 24px;
+    }
+    .overview-info-content {
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+
+<!-- if scroll, add .vi-page-header-fix -->
+<body class="vi-bg-mint">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">持有投資資產與保單</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <!-- <a class="vi-icon vi-icon-base icon-start-default-w"></a> -->
+        <!-- <a class="vi-icon vi-icon-base icon-start-default-w ml24"></a> -->
+        <!-- <a class="vi-txt-body-bold vi-txt-white">動作</a> -->
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap scroll vi-bg-mint">
+    
+    <div class="page-gradient"></div>
+
+
+    <div class="main_container pad_btm0">
+
+      <!-- scroll down fixed 效果同 通知中心，可參考 nav-tabs-notice.component, add .nav-tab-green-gray -->
+      <div class="nav-scroll has-tab-info js_scroll_fixed_top nav-tab-green-gray">
+        <div class="vi-tab-line-area">
+          <div class="vi-tab-line">
+            <ul class="nav" role="tablist">
+              <!-- id 是 demo 用的，開發請拉掉 -->
+              <li id="nav-a-1">
+                <a>
+                  <span>持有投資資產</span>
+                </a>
+              </li>
+              <!-- id 是 demo 用的，開發請拉掉 -->
+              <li id="nav-a-2" class="active">
+                <a>
+                  <span>持有保單</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="tab-content">
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="tab-a-2" class="tab-pane active">
+            
+            <div class="overview-info">
+              <div class="overview-info-content">
+                
+                <div class="vi-container w-100">
+                  
+                  <div class="chart-wrap">
+                    <!-- id 是 demo 用的，開發請拉掉 -->
+                    <div id="trigger-slide-down-up" class="chart-toggle-swith slide-down"></div>
+                    <div class="chart-overview">
+                      <!-- id 是 demo 用的，開發請拉掉 -->
+                      <div id="chart-overview-align" class="ct">
+                        <div class="vi-icon-link mb4">
+                          <span class="vi-txt-body vi-txt-b600">理專已建立</span>
+                        </div>
+                        <div class="vi-txt-title vi-txt-b600">
+                          <span>2 份</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- id 是 demo 用的，開發請拉掉，這裡顯示/隱藏時要加上 slide 效果 -->
+                    <div id="target-chart-detail" class="hide">
+                      <div class="rt pad_top16">
+                        <div class="vi-txt-callout vi-txt-b500">以下為已持有保單金額</div>
+                      </div>
+                      <ul class="vi-detail-list vi-detail-list-lt-no-width vi-list-even-bg-alpha-white">
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt ">
+                            <div class="vi-txt-body vi-txt-b600">住院日額</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body-bold vi-txt-g500">3,000元</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">實支實付</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body-bold vi-txt-g500">50萬</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">失能殘廢</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body-bold vi-txt-g500">3萬</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">癌症</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body-bold vi-txt-g500">100.2 萬</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">重大傷病</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body-bold vi-txt-g500">50萬</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">長期照護(月)</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <!-- 金額為0的話 class 為 vi-txt-b400 -->
+                            <div class="vi-txt-body-bold vi-txt-b400">0元</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">壽險 (給家庭)</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body-bold vi-txt-g500">50萬</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">壽險 (給傳承)</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body-bold vi-txt-g500">50萬</div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="overview-content pad_top24">
+              
+              <div class="vi-container">
+                
+                <div class="dis-flex flex-justify-between mb16">
+                  <!-- id 是 demo 用的，開發請拉掉 -->
+                  <div id="trigger-select-supercard" class="vi-select-super-card no-border vi-txt-b900">所有保障項目</div>
+                  <!-- id 是 demo 用的，開發請拉掉 空值才會顯示 -->
+                  <div id="edit-target" class="vi-txt-body-bold vi-txt-g500 top-4px hide">編輯醫療</div>
+                </div>
+                  
+                  
+                <!-- id 是 demo 用的，開發請拉掉 -->
+                <div id="not-empty-block">  
+                  
+                  <div id="" class="vi-card vi-card-accordion">
+                    <div class="vi-card-header flex-justify-between collapsed" role="button" data-toggle="collapse">
+                      <div class="vi-txt-headline vi-txt-b600">台灣人壽實支實付醫療健康保險</div>
+                      <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+                    </div>
+                    <div id="" class="panel-collapse collapse" role="tabpanel">
+                      <div class="vi-card-body">
+                        <ul class="vi-list vi-list-noline vi-list-baseline vi-list-no-bg vi-list-dot">
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">住院日額</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">3,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">實支實付</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">30,000 元</div>
+                            </div>
+                          </li>
+                          <!-- 篩選到的保單顯示不同顏色 -->
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body-bold vi-txt-br500">重大傷病</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body-bold vi-txt-br500">500,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">癌症</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">100,000,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">長期照護</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">3,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">失能殘障</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">500,000 元</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="vi-card-footer">
+                      <div class="mr-auto">
+                        <div class="vi-txt-callout vi-txt-b500">理專建立</div>
+                      </div>
+                      <div class="ml-auto rt">
+                        <div class="vi-tag-group mt-2">
+                          <!-- class 綁定類別
+                            vi-tag-amber 給退休 
+                            vi-tag-olive-green 給傳承
+                            vi-tag-hyacinth 給家庭
+                            vi-tag-darkcyan 給醫療
+                            vi-tag-sea-blue 給買房
+                          -->
+                          <div class="vi-tag vi-tag-hyacinth">
+                            <div class="vi-txt">給家庭</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                  <div id="" class="vi-card vi-card-accordion">
+                    <div class="vi-card-header flex-justify-between collapsed" role="button" data-toggle="collapse">
+                      <div class="vi-txt-headline vi-txt-b600">泰安產物新中信平安福專案（臺幣）</div>
+                      <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+                    </div>
+                    <div id="" class="panel-collapse collapse" role="tabpanel">
+                      <div class="vi-card-body">
+                        <ul class="vi-list vi-list-noline vi-list-baseline vi-list-no-bg vi-list-dot">
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">住院日額</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">3,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">實支實付</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">30,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">重大傷病</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">500,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">癌症</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">100,000,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">長期照護</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">3,000 元</div>
+                            </div>
+                          </li>
+                          <!-- 篩選到的保單顯示不同顏色 -->
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body-bold vi-txt-br500">失能殘障</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body-bold vi-txt-br500">500,000 元</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="vi-card-footer">
+                      <div class="mr-auto">
+                        <!-- <div class="vi-txt-callout vi-txt-b500">理專建立</div> -->
+                      </div>
+                      <div class="ml-auto rt">
+                        <div class="vi-tag-group mt-2">
+                          <!-- class 綁定類別
+                            vi-tag-amber 給退休 
+                            vi-tag-olive-green 給傳承
+                            vi-tag-hyacinth 給家庭
+                            vi-tag-darkcyan 給醫療
+                            vi-tag-sea-blue 給買房
+                          -->
+                          <div class="vi-tag vi-tag-darkcyan">
+                            <div class="vi-txt">給醫療</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div id="" class="vi-card vi-card-accordion">
+                    <div class="vi-card-header flex-justify-between collapsed" role="button" data-toggle="collapse">
+                      <div class="vi-txt-headline vi-txt-b600">泰安產物新中信平安福專案（臺幣）</div>
+                      <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+                    </div>
+                    <div id="" class="panel-collapse collapse" role="tabpanel">
+                      <div class="vi-card-body">
+                        <ul class="vi-list vi-list-noline vi-list-baseline vi-list-no-bg vi-list-dot">
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">住院日額</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">3,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">實支實付</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">30,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">重大傷病</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">500,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">癌症</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">100,000,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">長期照護</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">3,000 元</div>
+                            </div>
+                          </li>
+                          <!-- 篩選到的保單顯示不同顏色 -->
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body-bold vi-txt-br500">失能殘障</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body-bold vi-txt-br500">500,000 元</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="vi-card-footer">
+                      <div class="mr-auto">
+                        <!-- <div class="vi-txt-callout vi-txt-b500">理專建立</div> -->
+                      </div>
+                      <div class="ml-auto rt">
+                        <div class="vi-tag-group mt-2">
+                          <!-- class 綁定類別
+                            vi-tag-amber 給退休 
+                            vi-tag-olive-green 給傳承
+                            vi-tag-hyacinth 給家庭
+                            vi-tag-darkcyan 給醫療
+                            vi-tag-sea-blue 給買房
+                          -->
+                          <div class="vi-tag vi-tag-darkcyan">
+                            <div class="vi-txt">給醫療</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div id="" class="vi-card vi-card-accordion">
+                    <div class="vi-card-header flex-justify-between collapsed" role="button" data-toggle="collapse">
+                      <div class="vi-txt-headline vi-txt-b600">泰安產物新中信平安福專案（臺幣）</div>
+                      <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+                    </div>
+                    <div id="" class="panel-collapse collapse" role="tabpanel">
+                      <div class="vi-card-body">
+                        <ul class="vi-list vi-list-noline vi-list-baseline vi-list-no-bg vi-list-dot">
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">住院日額</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">3,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">實支實付</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">30,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">重大傷病</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">500,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">癌症</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">100,000,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">長期照護</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">3,000 元</div>
+                            </div>
+                          </li>
+                          <!-- 篩選到的保單顯示不同顏色 -->
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body-bold vi-txt-br500">失能殘障</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body-bold vi-txt-br500">500,000 元</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="vi-card-footer">
+                      <div class="mr-auto">
+                        <!-- <div class="vi-txt-callout vi-txt-b500">理專建立</div> -->
+                      </div>
+                      <div class="ml-auto rt">
+                        <div class="vi-tag-group mt-2">
+                          <!-- class 綁定類別
+                            vi-tag-amber 給退休 
+                            vi-tag-olive-green 給傳承
+                            vi-tag-hyacinth 給家庭
+                            vi-tag-darkcyan 給醫療
+                            vi-tag-sea-blue 給買房
+                          -->
+                          <div class="vi-tag vi-tag-darkcyan">
+                            <div class="vi-txt">給醫療</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                  <div id="" class="vi-card vi-card-accordion">
+                    <div class="vi-card-header flex-justify-between collapsed" role="button" data-toggle="collapse">
+                      <div class="vi-txt-headline vi-txt-b600">台灣人壽實支實付醫療健康保險</div>
+                      <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+                    </div>
+                    <div id="" class="panel-collapse collapse" role="tabpanel">
+                      <div class="vi-card-body">
+                        <ul class="vi-list vi-list-noline vi-list-baseline vi-list-no-bg vi-list-dot">
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">住院日額</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">3,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">實支實付</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">30,000 元</div>
+                            </div>
+                          </li>
+                          <!-- 篩選到的保單顯示不同顏色 -->
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body-bold vi-txt-br500">重大傷病</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body-bold vi-txt-br500">500,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">癌症</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">100,000,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">長期照護</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">3,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">失能殘障</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">500,000 元</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="vi-card-footer">
+                      <div class="mr-auto">
+                        <div class="vi-txt-callout vi-txt-b500">理專建立</div>
+                      </div>
+                      <div class="ml-auto rt">
+                        <div class="vi-tag-group mt-2">
+                          <!-- class 綁定類別
+                            vi-tag-amber 給退休 
+                            vi-tag-olive-green 給傳承
+                            vi-tag-hyacinth 給家庭
+                            vi-tag-darkcyan 給醫療
+                            vi-tag-sea-blue 給買房
+                          -->
+                          <div class="vi-tag vi-tag-hyacinth">
+                            <div class="vi-txt">給家庭</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                  <div id="" class="vi-card vi-card-accordion">
+                    <div class="vi-card-header flex-justify-between collapsed" role="button" data-toggle="collapse">
+                      <div class="vi-txt-headline vi-txt-b600">泰安產物新中信平安福專案（臺幣）</div>
+                      <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+                    </div>
+                    <div id="" class="panel-collapse collapse" role="tabpanel">
+                      <div class="vi-card-body">
+                        <ul class="vi-list vi-list-noline vi-list-baseline vi-list-no-bg vi-list-dot">
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">住院日額</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">3,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">實支實付</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">30,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">重大傷病</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">500,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">癌症</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">100,000,000 元</div>
+                            </div>
+                          </li>
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body vi-txt-b600">長期照護</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body vi-txt-b600">3,000 元</div>
+                            </div>
+                          </li>
+                          <!-- 篩選到的保單顯示不同顏色 -->
+                          <li class="vi-list-item">
+                            <div class="vi-list-lt">
+                              <div class="vi-txt-body-bold vi-txt-br500">失能殘障</div>
+                            </div>
+                            <div class="vi-list-rt">
+                              <div class="vi-txt-body-bold vi-txt-br500">500,000 元</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="vi-card-footer">
+                      <div class="mr-auto">
+                        <!-- <div class="vi-txt-callout vi-txt-b500">理專建立</div> -->
+                      </div>
+                      <div class="ml-auto rt">
+                        <div class="vi-tag-group mt-2">
+                          <!-- class 綁定類別
+                            vi-tag-amber 給退休 
+                            vi-tag-olive-green 給傳承
+                            vi-tag-hyacinth 給家庭
+                            vi-tag-darkcyan 給醫療
+                            vi-tag-sea-blue 給買房
+                          -->
+                          <div class="vi-tag vi-tag-darkcyan">
+                            <div class="vi-txt">給醫療</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                  <!-- 無理專 -->
+                  <div class="vi-txt-body vi-txt-b600 mt16 mb24 ct">還有其他保單不在上面？<a class="vi-txt-bold vi-txt-g500" href="#">預約理專</a>更新資料</div>
+                  
+                  <!-- 有理專 中間會多一個 br 斷行 -->
+                  <div class="vi-txt-body vi-txt-b600 mt16 mb24 ct">還有其他保單不在上面？<br>聯繫理專諮詢 <a class="vi-txt-bold vi-txt-g500" href="#">謝佳雯 (永吉分行)<span class="vi-icon vi-icon-xs icon-arrow-right-g top-2px ml8"></span></a></div>
+                
+                
+                
+                  <!-- 備註 現有版型 這裡僅示意 -->
+                  <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+                  <div class="mt16">
+                    <div class="vi-note-accordion">
+                      <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+                        <div class="forAEM base-style break-word mr4">
+                          標題
+                        </div>
+                        <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+                      </div>
+                      <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                        <div class="vi-card-body forAEM base-style break-word">
+                          <p>備註(我的首頁內文AEM)</p>
+                          <p>備註(我的首頁內文AEM)</p>
+                          <p>備註(我的首頁內文AEM)</p>
+                          <p>備註(我的首頁內文AEM)</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              
+              
+                <!-- id 是 demo 用的，開發請拉掉 -->
+                <div id="empty-block" class="hide">
+                  <div class="vi-empty pad_top36 min_ht_80vh">
+                    <span class="vi-empty-img"></span>  
+                    <div class="vi-txt-body vi-txt-b600">目前還沒有保單？<a class="vi-txt-bold vi-txt-g500" href="#">預約理專</a>幫你建立</div>
+                  </div>
+                </div>
+                
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      <div id="trigger-empty" class="vi-txt-g500 mb24 pb24">-> 資產分配項目 空值 demo</div>
+
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+<!-- 資產分配項目 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-select-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal" (click)=""></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">資產分配項目</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" ontouchstart="" data-dismiss="modal" (click)=""></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <ul class="vi-list vi-list-px8">
+          <li class="vi-list-item">
+            <div class="vi-txt-body-bold vi-txt-g500">所有保障項目</div>
+          </li>
+          <li class="vi-list-item">
+            <div class="vi-txt-body-bold vi-txt-g500">住院日額</div>
+          </li>
+          <li class="vi-list-item">
+            <div class="vi-txt-body-bold vi-txt-g500">實支實付</div>
+          </li>
+          <li class="vi-list-item">
+            <div class="vi-txt-body-bold vi-txt-g500">重大傷病</div>
+          </li>
+          <li class="vi-list-item">
+            <div class="vi-txt-body-bold vi-txt-g500">失能殘廢</div>
+          </li>
+          <li class="vi-list-item">
+            <div class="vi-txt-body-bold vi-txt-g500">癌症</div>
+          </li>
+          <li class="vi-list-item">
+            <div class="vi-txt-body-bold vi-txt-g500">長期照護</div>
+          </li>
+          <li class="vi-list-item">
+            <div class="vi-txt-body-bold vi-txt-g500">壽險 (給家庭)</div>
+          </li>
+          <li class="vi-list-item">
+            <div class="vi-txt-body-bold vi-txt-g500">壽險 (給傳承)</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// 展開收合 demo
+let open = false;
+document.getElementById('trigger-slide-down-up').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('trigger-slide-down-up').classList.toggle('slide-down');
+  document.getElementById('trigger-slide-down-up').classList.toggle('slide-up');
+  // 這裡要加上 slide 效果
+  document.getElementById('target-chart-detail').classList.toggle('hide');
+  
+});
+
+
+// 資產分配項目 demo
+document.getElementById('trigger-select-supercard').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-select-supercard').classList.toggle('hide');
+  document.getElementById('target-select-supercard').classList.toggle('vi-modal-in');
+});
+
+
+// 空值 demo
+document.getElementById('trigger-empty').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('not-empty-block').classList.toggle('hide');
+  document.getElementById('empty-block').classList.toggle('hide');
+  document.getElementById('edit-target').classList.toggle('hide');
+});
+
+// 超人卡片 close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('vi-modal-close');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+  });
+}
+
+// accordion demo
+const accordion = document.getElementsByClassName('vi-card-accordion');
+for (var i = 0; i < accordion.length; i++) {
+  accordion[i].addEventListener('click', function(e) {
+    this.getElementsByClassName('vi-card-header')[0].classList.toggle('collapsed');
+    this.getElementsByClassName('panel-collapse')[0].classList.toggle('collapse')
+  });
+}
+
+
+// scroll fixed nav demo
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 1) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+    document.getElementsByClassName('nav-tab-green-gray')[0].classList.add('fixed-top');
+    document.getElementsByClassName('nav-tab-green-gray')[0].classList.add('fixed-position-1');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+    document.getElementsByClassName('nav-tab-green-gray')[0].classList.remove('fixed-top');
+    document.getElementsByClassName('nav-tab-green-gray')[0].classList.remove('fixed-position-1');
+  }
+}
+</script>

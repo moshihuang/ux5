@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 360 360">
+    <defs>
+        <filter id="uwc46bpjva" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <filter id="awv4hd4ynb" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-8 -40) translate(-83 40) translate(91)">
+                    <path fill="#FF625E" stroke="#FF625E" stroke-width="1.199" d="M180 257.194c18.7 2.583 28.05-1.042 28.05-10.875 0-14.75-6.118-5.783-13.196-3.875-7.078 1.907-14.854 2.08-14.854 2.08v12.67z"/>
+                    <path stroke="#4F4F4F" stroke-linejoin="round" stroke-width="5.999" d="M226.978 178.624l-24.833-6.26c8.238-3.56 15.456-6.456 21.656-8.687M133 177.998l24.833-6.26c-8.238-3.56-15.457-6.456-21.656-8.687"/>
+                    <ellipse cx="115.828" cy="190.907" fill="#FF918E" filter="url(#uwc46bpjva)" rx="11.2" ry="12.314"/>
+                    <ellipse cx="243.508" cy="190.907" fill="#FF918E" filter="url(#awv4hd4ynb)" rx="11.2" ry="12.314"/>
+                    <path stroke="#324148" stroke-width="5.6" d="M200.46 150.563c10.327-5.386 20.765-6.258 31.315-2.616M161.193 150.574c-10.327-5.386-20.765-6.258-31.315-2.616" opacity=".8"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

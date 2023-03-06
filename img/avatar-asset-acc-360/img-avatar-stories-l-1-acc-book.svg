@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="360" height="440" viewBox="0 0 360 440">
+    <defs>
+        <filter id="q7cxrxnc1b" width="106.1%" height="113.1%" x="-3.1%" y="-6.6%" filterUnits="objectBoundingBox">
+            <feOffset dy="-13" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1 0 0 0 0 0.347260165 0 0 0 0 0.158060213 0 0 0 1 0"/>
+        </filter>
+        <path id="w4dt56lrma" d="M122.229 98.908c72.086-6.353 98.18 20.123 98.708-8.943.528-29.067-28.06-46.375-59.91-53.945-31.85-7.57-30.09-12.723-55.912-12.723-22.847 0-18.091-2.7-42.57 2.83-24.478 5.53-65.68 42.312-51.095 79.27 14.585 36.958 38.692-.135 110.779-6.489z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <path fill="#FF5928" d="M158.033 22.094c2.232.994 3.603 3.28 3.427 5.717-.194 2.698-.156 5.015.112 6.95.311 2.249 1.343 6.793 3.094 13.632.705 2.754-.956 5.558-3.71 6.263-.254.065-.512.11-.773.136-3.298.324-6.234-2.087-6.558-5.385l-.006-.062c-.461-5.257-.692-9.048-.692-11.375 0-2.597.287-7.059.862-13.385.15-1.665 1.622-2.891 3.287-2.74.33.03.654.114.957.249z" transform="translate(-8 -40) translate(8 29.085) translate(68.661) rotate(66 159.554 37.881)"/>
+                    <g transform="translate(-8 -40) translate(8 29.085) translate(68.661) rotate(13 114.674 72.1)">
+                        <use fill="#FA7048" xlink:href="#w4dt56lrma"/>
+                        <use fill="#000" filter="url(#q7cxrxnc1b)" xlink:href="#w4dt56lrma"/>
+                    </g>
+                    <g stroke="#463938">
+                        <path stroke-width="6" d="M25.828 0h43.043c4.419 0 8 3.582 8 8 0 .155-.004.31-.013.464l-1.104 19C75.508 31.695 72.005 35 67.767 35H26.932c-4.238 0-7.74-3.305-7.986-7.536l-1.104-19c-.257-4.41 3.111-8.194 7.522-8.45.155-.01.31-.014.464-.014zM101.828 0h43.043c4.419 0 8 3.582 8 8 0 .155-.004.31-.013.464l-1.104 19c-.246 4.231-3.749 7.536-7.987 7.536h-40.835c-4.238 0-7.74-3.305-7.986-7.536l-1.104-19c-.257-4.41 3.111-8.194 7.522-8.45.155-.01.31-.014.464-.014z" transform="translate(-8 -40) translate(8 29.085) translate(68.661) translate(25.989 164.915)"/>
+                        <path stroke-width="5" d="M76.848 19c2.432-1.375 5.332-2.062 8.7-2.062 3.367 0 6.387.687 9.058 2.063" transform="translate(-8 -40) translate(8 29.085) translate(68.661) translate(25.989 164.915)"/>
+                        <path stroke-width="6" d="M19.177 7.922L0 8.743" transform="translate(-8 -40) translate(8 29.085) translate(68.661) translate(25.989 164.915)"/>
+                        <path stroke-width="6" d="M169.177 7.922L150 8.743" transform="translate(-8 -40) translate(8 29.085) translate(68.661) translate(25.989 164.915) matrix(-1 0 0 1 319.177 0)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

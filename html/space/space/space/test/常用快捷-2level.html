@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base_2023.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>    
+
+    /* 通用 */
+    .allfunction-sortable-wrap {
+      transition: all .4s;
+    }
+    .allfunction-sortable-wrap .item {
+      /* min-height: 78px; */
+      width: -webkit-fill-available;
+      margin: 0 auto 16px auto;
+      text-align: center;
+      position: relative;
+    }
+    .allfunction-sortable-wrap .item .img {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto 8px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .allfunction-sortable-wrap .item .img img {
+      width: 24px;
+      min-width: 24px;
+      height: 24px;
+    }
+    .allfunction-sortable-wrap .static-item .img {
+      border: 0;
+    }
+    .allfunction-sortable-wrap .item .action {
+      right: 20px;
+    }
+    .allfunction-sortable-wrap .item.disabled {
+      pointer-events: none;
+    }
+    .allfunction-sortable-wrap .item.empty .img {
+      border: dashed 1px #009891;
+      background: none !important;
+      opacity: .3;
+      /* box-shadow: 0px 4px 8px rgba(0, 128, 121, 0.04); */
+    }
+    /* .allfunction-sortable-wrap .item.empty .img img {
+      opacity: .2;
+    } */
+    .allfunction-sortable-wrap .item.empty .name {
+      display: none;
+    }
+    .allfunction-sortable-wrap .item .action {
+      position: absolute;
+      top: 0;
+      z-index: 2;
+    }
+    .allfunction-sortable-wrap .item.empty .action {
+      display: none;
+    }
+    .allfunction-sortable-wrap .static-item.disabled .img {
+      background: #F5F5F5;
+    }
+    .allfunction-sortable-wrap .static-item.disabled .img img {
+      filter: grayscale(100%) opacity(80%);
+    }
+    .allfunction-sortable-wrap .item.sortable-ghost {
+      background: #E4F0EF !important;
+      opacity: 0;
+    }
+    
+    
+    
+    /* 上方 */
+    .allfunction-sortable-wrap .sortable-block {
+      
+    }
+    .allfunction-sortable-wrap .sortable-block.fixed {
+      width: 100%;
+      position: fixed;
+      left: 0;
+      top: calc(var(--sat) + 44px);
+      background: linear-gradient(to bottom, #FFFFFF 0%, #E8F2F1 100%);
+      z-index: 9;
+      display: none;
+    }
+    .allfunction-sortable-wrap .sortable-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 8px;
+      transition: all .4s;
+    }
+    .allfunction-sortable-wrap .sortable-wrap .item .name {
+      width: 88px;
+      width: -webkit-fill-available;
+      padding: 0 8px;
+      overflow: hidden;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .allfunction-sortable-wrap .sortable-wrap .item:not(.static-item) .img,
+    .allfunction-sortable-wrap .sortable-wrap:not(.fixed) .item:not(.disabled) .img {
+      background: #EFFFFE;
+    }
+    .allfunction-sortable-wrap .sortable-wrap .item .action {
+      right: 20px;
+    }
+    .allfunction-sortable-wrap .sortable-wrap.fixed {
+      display: flex;
+      padding: 0 6px 24px;
+      grid-gap: 0;
+      overflow-x: scroll;
+      clip-path: inset(0 0 20px 0);
+      padding-bottom: 20px;
+    }
+    .allfunction-sortable-wrap .sortable-wrap.fixed .static-item {
+      display: none;
+    }
+    .allfunction-sortable-wrap .sortable-wrap.fixed .item.selected {
+      margin: 0 6px;
+    }
+    .allfunction-sortable-wrap .sortable-wrap.fixed .item .name {
+      width: 78px;
+      padding: 0;
+      overflow: hidden;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+    .allfunction-sortable-wrap .sortable-wrap.fixed .item .action {
+      right: 8px;
+    }
+    .allfunction-sortable-wrap .sortable-wrap.fixed .item.selected.disabled {
+      pointer-events: auto;
+    }
+
+
+    /* 下方所有功能 */
+    .allfunction-sortable-wrap .cus-all-function-block {
+      
+    }
+    .allfunction-sortable-wrap .cus-all-function-block.fixed {
+      /* padding-top: 304px; */
+      position: relative;
+      top: 12px;
+    }
+    .allfunction-sortable-wrap .cus-all-function-block.fixed .nav-scroll.fixed-position-cus-function {
+      position: sticky;
+      left: 0;
+      margin-top: -12px;
+      top: calc(var(--sat) + 44px + 162px);
+      /* top: calc(var(--sat) + 44px + 122px); */
+      overflow-x: scroll;
+      overflow-y: hidden;
+      width: calc(100% + 24px);
+      /* padding: 0 12px; */
+      background: #fff;
+      z-index: 3;
+      border-radius: 12px 0 0 0;
+    }
+    .allfunction-sortable-wrap .tab-pane-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .allfunction-sortable-wrap .tab-pane-wrap .item {
+      padding:  0 6px;
+      text-align: center;
+      position: relative;
+      border-radius: 3px;
+      background: #fff;
+    }
+    .allfunction-sortable-wrap .tab-pane-wrap .item .img {
+      margin-bottom: 8px;
+    }
+    .allfunction-sortable-wrap .tab-pane-wrap .item .img img {
+      min-width: 24px;
+      width: 24px;
+      height: 24px;
+    }
+    .allfunction-sortable-wrap .tab-pane-wrap .item .action {
+      position: absolute;
+      top: 8px;
+      right: 20px;
+    }
+    .allfunction-sortable-wrap .cus-all-function-block .tab-content {
+      min-height: calc(100vh - 200px);
+    }
+    
+    
+    
+    
+    .fixed-sortable-block {
+      padding-top: 24px;
+      width: 100%;
+      position: fixed;
+      top: -100px;
+      left: 0;
+      background: linear-gradient(to bottom, #FFFFFF 0%, #E8F2F1 100%);
+      z-index: 9;
+      display: none;
+      transition: all .4s;
+    }
+    .fixed-sortable-block.fixed {
+      top: calc(var(--sat) + 44px);
+      transition: all .4s;
+    }
+    .fixed-sortable-wrap {
+      display: flex;
+      padding: 0 6px 24px;
+      grid-gap: 0;
+      overflow-x: scroll;
+      clip-path: inset(0 0 20px 0);
+      padding-bottom: 20px;
+    }
+    .fixed-sortable-block .static-item {
+      display: none;
+    }
+    .fixed-sortable-block .item.selected {
+      margin: 0 6px;
+    }
+    .fixed-sortable-block .item .name {
+      width: 78px;
+      padding: 0;
+      overflow: hidden;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+    .fixed-sortable-block .item .action {
+      right: 8px;
+    }
+    .fixed-sortable-block .item.selected.disabled {
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<body class="vi-bg-mint-only">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">新增/編輯常用功能</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500" href="">儲存</a>
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap scroll vi-bg-mint">
+
+    <!-- add .pad_btm0 -->
+    <div class="main_container pad_btm0">
+      
+      <!-- toast, 參考 /ui-2022/toast/ctbc-mb-toast.widget -->
+      <div class="toast">
+        <span>已達新增上限</span>
+      </div>
+      
+      <div class="allfunction-sortable-wrap">
+        <div class="vi-container">
+          
+          <!-- 下滑後 fixed 區塊 -->
+          <div class="fixed-sortable-block" style="display: none;">
+            <div class="pl16 pr16 mb16">可新增 5 個功能，長按可調整順序。</div>
+            <div class="fixed-sortable-block-wrap">
+              <div class="fixed-sortable-wrap">
+                <!-- 有值的 加 .selected -->
+                <div class="item selected" data-id="2">
+                  <div class="img">
+                    <img src="../../../../inc/img/icon/star-g.svg">
+                  </div>
+                  <div class="name vi-txt-callout vi-txt-b600">中信錢包</div>
+                  <div class="action remove">
+                    <div class="vi-icon vi-icon-xs vi-icon-circle-remove-r"></div>
+                  </div>
+                </div>
+                <div class="item selected" data-id="3">
+                  <div class="img">
+                    <img src="../../../../inc/img/icon/star-g.svg">
+                  </div>
+                  <div class="name vi-txt-callout vi-txt-b600">臺幣活存明細</div>
+                  <div class="action remove">
+                    <div class="vi-icon vi-icon-xs vi-icon-circle-remove-r"></div>
+                  </div>
+                </div>
+                <!-- 空值的 加 .empty -->
+                <div class="item empty" data-id="">
+                  <div class="img">
+                    <img src="../../../../inc/img/icon/star-g.svg">
+                  </div>
+                  <div class="name vi-txt-callout vi-txt-b600"></div>
+                  <div class="action remove">
+                    <div class="vi-icon vi-icon-xs vi-icon-circle-remove-r"></div>
+                  </div>
+                </div>
+                <div class="item empty" data-id="">
+                  <div class="img">
+                    <img src="../../../../inc/img/icon/star-g.svg">
+                  </div>
+                  <div class="name vi-txt-callout vi-txt-b600"></div>
+                  <div class="action remove">
+                    <div class="vi-icon vi-icon-xs vi-icon-circle-remove-r"></div>
+                  </div>
+                </div>
+                <div class="item empty" data-id="">
+                  <div class="img">
+                    <img src="../../../../inc/img/icon/star-g.svg">
+                  </div>
+                  <div class="name vi-txt-callout vi-txt-b600"></div>
+                  <div class="action remove">
+                    <div class="vi-icon vi-icon-xs vi-icon-circle-remove-r"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+          <!-- 上方區塊 -->
+          <div class="sortable-block">
+            <!-- 上方可拖拉區塊 -->
+            <div class="vi-txt-callout vi-txt-b600 pad_top24 mb12 sortable-block-title">可新增 5 個功能，長按可調整順序。</div>
+            <!-- id 是 demo 用的，開發請拉掉 -->
+            <div id="sortableDemo" class="sortable-wrap">
+              <!-- 固定四顆 加 .static-item .disabled -->
+              <div class="item static-item disabled" data-id="">
+                <div class="img">
+                  <img src="../../../../inc/img/icon/book-bill-40px-g.svg">
+                </div>
+                <div class="name vi-txt-callout vi-txt-b600">臺幣轉帳</div>
+              </div>
+              <div class="item static-item disabled" data-id="">
+                <div class="img">
+                  <img src="../../../../inc/img/icon/star-g.svg">
+                </div>
+                <div class="name vi-txt-callout vi-txt-b600">社群收款</div>
+              </div>
+              <div class="item static-item disabled" data-id="">
+                <div class="img">
+                  <img src="../../../../inc/img/icon/star-g.svg">
+                </div>
+                <div class="name vi-txt-callout vi-txt-b600">無卡提款</div>
+              </div>
+              <div class="item static-item disabled" data-id="">
+                <div class="img">
+                  <img src="../../../../inc/img/icon/star-g.svg">
+                </div>
+                <div class="name vi-txt-callout vi-txt-b600">繳費捐款</div>
+              </div>
+              <!-- 可以抓取的 加 .item, 有設定的加 .selected ,空值的 加 .empty, .disabled 變不能抓取 -->
+              <div class="item selected" data-id="2">
+                <div class="img">
+                  <img src="../../../../inc/img/icon/star-g.svg">
+                </div>
+                <div class="action remove">
+                  <div class="vi-icon vi-icon-xs vi-icon-circle-remove-r"></div>
+                </div>
+                <div class="name vi-txt-callout vi-txt-b600">中信錢包1111111</div>
+              </div>
+              <div class="item selected" data-id="3">
+                <div class="img">
+                  <img src="../../../../inc/img/icon/star-g.svg">
+                </div>
+                <div class="action remove">
+                  <div class="vi-icon vi-icon-xs vi-icon-circle-remove-r"></div>
+                </div>
+                <div class="name vi-txt-callout vi-txt-b600">臺幣活存明細</div>
+              </div>
+              <div class="item empty disabled" data-id="">
+                <div class="img">
+                  <img src="../../../../inc/img/icon/star-g.svg">
+                </div>
+                <div class="action remove">
+                  <div class="vi-icon vi-icon-xs vi-icon-circle-remove-r"></div>
+                </div>
+                <div class="name vi-txt-callout vi-txt-b600"></div>
+              </div>
+              <div class="item empty disabled" data-id="">
+                <div class="img">
+                  <img src="../../../../inc/img/icon/star-g.svg">
+                </div>
+                <div class="action remove">
+                  <div class="vi-icon vi-icon-xs vi-icon-circle-remove-r"></div>
+                </div>
+                <div class="name vi-txt-callout vi-txt-b600"></div>
+              </div>
+              <div class="item empty disabled" data-id="">
+                <div class="img">
+                  <img src="../../../../inc/img/icon/star-g.svg">
+                </div>
+                <div class="action remove">
+                  <div class="vi-icon vi-icon-xs vi-icon-circle-remove-r"></div>
+                </div>
+                <div class="name vi-txt-callout vi-txt-b600"></div>
+              </div>
+            </div>
+          </div>
+          
+
+          <!-- 下方所有功能 -->
+          <div class="vi-row">
+            <div class="cus-all-function-block">
+              <div class="vi-card pad_top24 pad_btm24">
+                <div class="vi-container">
+                  <div class="dis-flex align-items-center mb16 cus-all-function-block-title">
+                    <div class="vi-line-title vi-txt-b900">請選擇想加入的常用功能
+                      <span class="vi-icon vi-icon-xs icon-info-mark-g mr8"></span>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- 可參考 全功能總覽 twrbm-home-qu056-010.component.html -->
+                <div class="tab-wrap pl12 pr12">
+                  <!-- 要 fixed, fixed-position-1 要改 -->
+                  <!--  fixed-top fixed-position-cus-function -->
+                  <div class="nav-scroll js_scroll_fixed_top">
+                    <ul class="vi-tab js_anchor_tab">
+                      <li class="vi-tab-item active">
+                        <a class="vi-tab-link" href="#tab1-1" data-toggle="tab">
+                          <span>熱門常用</span>
+                        </a>
+                      </li>
+                      <li class="vi-tab-item">
+                        <a class="vi-tab-link" href="#tab1-2" data-toggle="tab">
+                          <span>臺幣</span>
+                        </a>
+                      </li>
+                      <li class="vi-tab-item">
+                        <a class="vi-tab-link" href="#tab1-3" data-toggle="tab">
+                          <span>信用卡</span>
+                        </a>
+                      </li>
+                      <li class="vi-tab-item">
+                        <a class="vi-tab-link" href="#tab1-4" data-toggle="tab">
+                          <span>外幣</span>
+                        </a>
+                      </li>
+                      <li class="vi-tab-item">
+                        <a class="vi-tab-link" href="#tab1-5" data-toggle="tab">
+                          <span>投資</span>
+                        </a>
+                      </li>
+                      <li class="vi-tab-item">
+                        <a class="vi-tab-link" href="#tab1-6" data-toggle="tab">
+                          <span>貸款</span>
+                        </a>
+                      </li>
+                      <li class="vi-tab-item">
+                        <a class="vi-tab-link" href="#tab1-7" data-toggle="tab">
+                          <span>點數/優惠</span>
+                        </a>
+                      </li>
+                      <li class="vi-tab-item">
+                        <a class="vi-tab-link" href="#tab1-8" data-toggle="tab">
+                          <span>保險</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                    
+                  <div class="tab-content pad_top24">
+                    <!-- 最近使用 -->
+                    <div id="tab1-1" class="tab-pane active" role="tabpanel">
+                      <div class="tab-pane-wrap">
+                        <div class="item" data-id="1">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">基金定期(不)定額查詢</div>
+                        </div>
+                        <!-- 已設定的 加 .selected -->
+                        <div class="item selected" data-id="2">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <!-- 已設定的 .add 改 .remove  裡面的 icon class 不同 -->
+                          <div class="action remove">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-remove-r"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">中信錢包1111111</div>
+                        </div>
+                        <div class="item selected" data-id="3">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <!-- 已設定的 .add 改 .remove  裡面的 icon class 不同 -->
+                          <div class="action remove">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-remove-r"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">臺幣活存明細</div>
+                        </div>
+                        <div class="item" data-id="4">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">信用卡概要</div>
+                        </div>
+                        <div class="item" data-id="5">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">帳單明細</div>
+                        </div>
+                        <div class="item" data-id="6">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">繳信用卡費</div>
+                        </div>
+                        <div class="item" data-id="7">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">未出帳單明細</div>
+                        </div>
+                        <div class="item" data-id="8">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">任務牆</div>
+                        </div>
+                        <div class="item" data-id="9">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">帳戶資訊分享</div>
+                        </div>
+                      </div>
+                      
+                      <div class="vi-dashed-divider"></div>
+                      
+                      <div class="vi-txt-body-bold vi-txt-b900 mt24 mb16">臺幣</div>
+                      
+                      <div class="tab-pane-wrap">
+                        <div class="item" data-id="11">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">臺幣存款概要</div>
+                        </div>
+                        <div class="item" data-id="3">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">臺幣活存明細</div>
+                        </div>
+                        <div class="item" data-id="13">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">收支管理</div>
+                        </div>
+                        <div class="item" data-id="14">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">預約轉帳查詢</div>
+                        </div>
+                        <div class="item" data-id="15">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">金融卡卡片管理</div>
+                        </div>
+                        <div class="item" data-id="16">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">薪轉戶專區</div>
+                        </div>
+                        <div class="item" data-id="17">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">繳費紀錄查詢</div>
+                        </div>
+                        <div class="item" data-id="18">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">方便轉明細查詢</div>
+                        </div>
+                        <div class="item" data-id="19">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">臺幣定存查詢</div>
+                        </div>
+                      </div>
+                      
+                      <div class="vi-dashed-divider"></div>
+                      
+                      <div class="vi-txt-body-bold vi-txt-b900 mt24 mb16">外幣</div>
+                      
+                      <div class="tab-pane-wrap">
+                        <div class="item" data-id="21">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">外幣存款概要</div>
+                        </div>
+                        <div class="item" data-id="22">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">換匯/外幣轉帳</div>
+                        </div>
+                        <div class="item" data-id="23">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">匯率查詢試算</div>
+                        </div>
+                        <div class="item" data-id="24">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">外幣活存明細</div>
+                        </div>
+                        <div class="item" data-id="25">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">換匯紀錄</div>
+                        </div>
+                        <div class="item" data-id="26">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">匯率通知設定</div>
+                        </div>
+                        <div class="item" data-id="27">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">活存轉定存</div>
+                        </div>
+                        <div class="item" data-id="28">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">帳戶資訊分享</div>
+                        </div>
+                        <div class="item" data-id="29">
+                          <div class="img">
+                            <img src="../../../../inc/img/icon/star-g.svg">
+                          </div>
+                          <div class="action add">
+                            <div class="vi-icon vi-icon-xs vi-icon-circle-add-g"></div>
+                          </div>
+                          <div class="name vi-txt-callout vi-txt-b600">利率查詢</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- 臺幣 -->
+                    <div id="tab1-2" class="tab-pane" role="tabpanel">
+
+                    </div>
+
+                    <!-- 信用卡 -->
+                    <div id="tab1-3" class="tab-pane" role="tabpanel">
+
+                    </div>
+                    
+                    <!-- 外幣 -->
+                    <div id="tab1-4" class="tab-pane" role="tabpanel">
+
+                    </div>
+                    
+                    <!-- 投資 -->
+                    <div id="tab1-5" class="tab-pane" role="tabpanel">
+
+                    </div>
+                    
+                    <!-- 貸款 -->
+                    <div id="tab1-6" class="tab-pane" role="tabpanel">
+
+                    </div>
+                    
+                    <!-- 點數/優惠 -->
+                    <div id="tab1-7" class="tab-pane" role="tabpanel">
+
+                    </div>
+                    
+                    <!-- 保險 -->
+                    <div id="tab1-8" class="tab-pane" role="tabpanel">
+
+                    </div>
+      
+                  </div><!-- /tab-content -->
+
+                </div>
+                  
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+new Sortable(sortableDemo, {
+	swap: true,
+	swapClass: 'highlight',
+	animation: 150,
+  filter: '.disabled'
+});
+
+// scroll fixed header
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 0) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+  }
+}
+
+
+$(document).ready(function(){
+  
+  function moveScrollRight() {
+    if ($('.sortable-wrap').find('.item.selected').length > 3) {
+      $('.sortable-wrap').stop().animate({
+        scrollLeft: "+=120px"
+      }, 400);
+      console.log('moveScrollRight')
+    };
+  }
+  
+  function moveScrollLeft() {
+    if ($('.sortable-wrap').find('.item.selected').length < 3) {
+      $('.sortable-wrap').stop().animate({
+        scrollLeft: "-=120px"
+      }, 400);
+      console.log('moveScrollLeft')
+    }
+  }
+  
+  var elSortable = $('.sortable-block').height(),
+        // 165 是 $('.sortable-block').height() - fixed 時的高度
+        fixedGap = elSortable - 156;
+        htmlScroll = $('html').scrollTop();
+        animateOpacity = 1.6 - (htmlScroll / 100);
+        // 這個數值要再測試一下有瀏海手機會不會有問題
+        elAllFunctionGap = $('.cus-all-function-block').offset().top + 301;
+  
+  function changeFixedGap() {
+
+    if ( $('.sortable-block').hasClass('fixed') ) {
+      elSortable = $('.sortable-block').height();
+      elAllFunctionGap = $('.cus-all-function-block').offset().top + 301;
+      $('.cus-all-function-block').css('padding-top', elAllFunctionGap );
+      console.log('changeFixedGap fixed')
+    }
+    // else {
+    //   elSortable = $('.sortable-block').height();
+    //   fixedGap = elSortable - 156;
+    //   $('.cus-all-function-block').css('padding-top', 0 );
+    //   console.log('changeFixedGap un fixed')
+    // }
+    
+    console.log('change fixedGap', fixedGap, elAllFunctionGap);
+  }
+  
+  function fixedEvent() {
+    const htmlScroll = $('html').scrollTop();
+    const elAllFunctionGap = $('.cus-all-function-block').offset().top + 301;
+    
+    if (htmlScroll == 0) {
+      $('.sortable-block').removeClass('fixed pad_top24');
+      // $('.sortable-block .vi-txt-callout:not(.name)').removeClass('hide');
+      $('.sortable-wrap').removeClass('fixed');
+      $('.sortable-wrap .selected').removeClass('disabled');
+      // $('.cus-all-function-block').removeClass('fixed');
+      $('.cus-all-function-block').removeClass('fixed');
+      $('.cus-all-function-block .nav-scroll').removeClass('fixed-position fixed-position-cus-function');
+      // $('.sortable-block-title').removeClass('padx_12');
+      $('.sortable-block-title, .cus-all-function-block-title').removeClass('dis-none');
+      $('.cus-all-function-block').css('padding-top', 0 );
+      
+      // setTimeout(function() { 
+
+      // }, 400);
+      
+      $('.fixed-sortable-block').fadeOut().removeClass('fixed');
+
+      console.log('0');
+    }
+    else if ( !$('.sortable-block').hasClass('fixed') && htmlScroll > fixedGap) {
+      $('.sortable-block').addClass('fixed pad_top24');
+      $('.sortable-wrap').addClass('fixed');
+      $('.sortable-wrap .selected').addClass('disabled');
+      $('.cus-all-function-block').addClass('fixed');
+      $('.cus-all-function-block-title').addClass('fixed');
+      $('.cus-all-function-block .nav-scroll').addClass('fixed-position fixed-position-cus-function');
+      // $('.sortable-block-title').addClass('padx_12');
+      $('.sortable-block-title, .cus-all-function-block-title').addClass('dis-none');
+      $('.cus-all-function-block').css('padding-top', elAllFunctionGap );
+      
+      setTimeout(function() { 
+        
+      }, 400);
+      
+      changeFixedGap();
+      
+      $('.fixed-sortable-block').fadeIn().addClass('fixed');
+      
+      console.log('fixed');
+    }
+    else if ( $('.sortable-block').hasClass('fixed') && htmlScroll <= fixedGap) {
+      $('.sortable-block').removeClass('fixed pad_top24');
+      // $('.sortable-block .vi-txt-callout:not(.name)').removeClass('hide');
+      $('.sortable-wrap').removeClass('fixed');
+      $('.sortable-wrap .selected').removeClass('disabled');
+      // $('.cus-all-function-block').removeClass('fixed');
+      $('.cus-all-function-block').removeClass('fixed');
+      $('.cus-all-function-block-title').removeClass('fixed');
+      $('.cus-all-function-block .nav-scroll').removeClass('fixed-position fixed-position-cus-function');
+      // $('.sortable-block-title').removeClass('padx_12');
+      $('.sortable-block-title, .cus-all-function-block-title').removeClass('dis-none');
+      $('.cus-all-function-block').css('padding-top', 0 );
+      
+      setTimeout(function() { 
+        
+      }, 400);
+      
+      $('.fixed-sortable-block').fadeOut().removeClass('fixed');
+      
+      console.log('unbindunbindunbindunbind');
+    }
+    
+    // console.log('scroll:' + htmlScroll, 'fixedGap:' + fixedGap , 'AllFunctionoffsettop:' + elAllFunctionGap, 'sortableHeight:' + elSortable);
+  }
+
+  $(window).scroll(function() {
+    fixedEvent();
+  });
+  
+  fixedEvent();
+
+  // remove from sortable-wrap
+  $('body').on('touchstart', '.sortable-wrap .item.selected .remove', function(){
+    const deleteID = $(this).closest('.item').attr('data-id');
+    $(this).closest('.item').removeClass('selected').addClass('empty disabled');
+    $(this).closest('.img img').attr('src', '');
+    $(this).siblings('.name').text('');
+    // $(this).html('');
+    // $(this).closest('.item').remove().insertAfter($('.sortable-wrap .item:last'))
+    $(this).closest('.item').insertAfter($('.sortable-wrap .item:last'));
+
+    // 同步下方區塊
+    $('.cus-all-function-block .item').each(function(e) {
+      const selfID = $(this).attr('data-id');
+      
+      if (deleteID == selfID) {
+        $(this).removeClass('selected');
+        $(this).find('.action').removeClass('remove').addClass('add');
+        $(this).find('.action .vi-icon').removeClass('vi-icon-circle-remove-r').addClass('vi-icon-circle-add-g');
+        console.log( selfID );
+      }
+    });
+    
+    moveScrollLeft();
+    changeFixedGap();
+    
+    console.log( 'remove', deleteID );
+  });
+
+  
+  // remove from cus-all-function-block
+  $('body').on('touchstart', '.cus-all-function-block .item .remove', function(){
+    const deleteID = $(this).closest('.item').attr('data-id');
+    
+    $(this).closest('.item').removeClass('selected');
+    $(this).closest('.img img').attr('src', '');
+    $(this).closest('.name').text('');
+    
+    $(this).closest('.item').find('.action').removeClass('remove').addClass('add');
+    $(this).closest('.item').find('.action .vi-icon').removeClass('vi-icon-circle-remove-r').addClass('vi-icon-circle-add-g');
+
+    // 同步上方區塊
+    $('.sortable-wrap .item').each(function(e) {
+      const selfID = $(this).attr('data-id');
+      
+      if (deleteID == selfID) {
+        $(this).removeClass('selected').addClass('empty disabled');
+        $(this).find('.img img').attr('src', '../inc/img/icon/star-g.svg');
+        $(this).find('.name').text('');
+        $(this).find('.action').removeClass('add').addClass('remove').html('<div class="vi-icon vi-icon-xs vi-icon-circle-remove-r"></div>');
+        $(this).insertAfter($('.sortable-wrap .item:last'));
+      }
+    });
+    
+    moveScrollLeft();
+    changeFixedGap();
+    
+    console.log( 'remove', deleteID );
+  });
+  
+  
+  // add from cus-all-function-block to sortable-wrap
+  $('body').on('touchstart', '.cus-all-function-block .item:not(.selected)', function(){
+    
+    const addID = $(this).closest('.item').attr('data-id');
+    $(this).find('.action').removeClass('add').addClass('remove');
+    $(this).find('.action .vi-icon').removeClass('vi-icon-circle-add-g').addClass('vi-icon-circle-remove-r');
+
+    const checkLen = $('.sortable-wrap').find('.item.selected').length;
+    
+    if (checkLen < 6) {
+      // 同步上方區塊
+      // $(this).closest('.item').removeClass('selected').addClass('empty');
+      $(this).clone().addClass('selected').insertBefore($('.sortable-wrap .item.empty:first'));
+      $('.sortable-wrap .item.empty:last').remove();
+      
+      $('.sortable-wrap .item.empty:first').each(function(e) {
+        const selfID = $(this).attr('data-id');
+        
+        if (addID == selfID) {
+          $(this).find('.action').removeClass('remove').addClass('add');
+          $(this).find('.action .vi-icon').removeClass('vi-icon-circle-remove-r').addClass('vi-icon-circle-add-g');
+          console.log( selfID );
+        }
+      });
+      
+      // 同步 fixed 區塊
+      // $(this).closest('.item').removeClass('selected').addClass('empty');
+      $(this).clone().addClass('selected').insertBefore($('.fixed-sortable-block .item.empty:first'));
+
+      moveScrollRight();
+      changeFixedGap();
+    }
+    
+    // 超過
+    if (checkLen == 5) {
+      // show toast
+      $('.toast').addClass('show');
+      
+      setTimeout(function() { 
+        $('.toast').removeClass('show');
+      }, 3000);
+
+      console.log( 'full' );
+    }
+
+    console.log( 'add', addID );
+  });
+  
+
+
+});
+</script>

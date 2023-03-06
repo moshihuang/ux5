@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-overlay-card {
+      margin-bottom: 12px;
+    }
+    .vi-overlay-card-inner {
+      top: 0;
+      margin-top: 0;
+    }
+
+    /* 相關標的 */
+    .vi-fund-trend-block .vi-line-title + .ml-auto {
+      position: relative;
+      top: 2px;
+    }
+    .vi-fund-trend-block .vi-line-title + .ml-auto div {
+      display: inline-flex;
+    }
+    .vi-fund-trend-block .vi-line-title + .ml-auto .chart {
+      flex-basis: 86px;
+    }
+    .vi-fund-trend-block .vi-line-title + .ml-auto .rate {
+      flex-basis: 110px;
+    }
+
+    .vi-fund-trend-block .vi-fund-info {
+      flex-basis: 100%;
+    }
+    .vi-fund-trend-block .vi-fund-chart {
+      margin-left: 4px;
+      flex-basis: 86px;
+    }
+    .vi-fund-trend-block .vi-fund-rate {
+      flex-basis: 110px;
+      text-align: right;
+    }
+    .vi-fund-trend-block .vi-fund-rate .txt-rate {
+      padding: 1px 8px;
+      display: inline-block;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 16px;
+    }
+
+    .vi-fund-trend-block .vi-fund-rate .increase {
+      background: #21941D;
+    }
+    .vi-fund-trend-block .vi-fund-rate .decrease {
+      background: #FF5441;
+    }
+
+
+
+
+    .vi-fund-observe-block {
+
+    }
+    .vi-fund-observe-card .vi-card-body {
+      padding-top: 16px;
+    }
+    .vi-fund-observe-card .vi-fund-name {
+      margin-bottom: 4px;
+      font-size: 20px;
+    }
+    .vi-fund-observe-card .vi-fund-desc {
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+    .vi-fund-observe-card .vi-fund-desc.over40 {
+      font-size: 15px;
+    }
+    .vi-fund-observe-card .vi-fund-value {
+      flex: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .vi-fund-observe-card .vi-fund-rate {
+      display: flex;
+      justify-content: space-between;
+    }
+    .vi-fund-observe-card .vi-fund-rate .txt-rate {
+      padding: 1px 8px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 16px;
+    }
+    .vi-fund-observe-card .vi-fund-rate .increase {
+      background: #21941D;
+    }
+    .vi-fund-observe-card .vi-fund-rate .decrease {
+      background: #FF5441;
+    }
+
+    .vi-fund-observe-card .vi-card-footer.increase {
+      background: #68AA65;
+    }
+    .vi-fund-observe-card .vi-card-footer.decrease {
+      background: #EF6E60;
+    }
+    .vi-fund-observe-card .vi-card-footer.unbiased {
+      background: #757575;
+    }
+
+    .vi-fund-observe-card .vi-card-footer.increase .vi-icon-increase,
+    .vi-fund-observe-card .vi-card-footer.decrease .vi-icon-decrease {
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEuMDc4MTcgMTMuMjMxNkMwLjkyOTkxNSAxMy40NjQ1IDAuOTk4NTkyIDEzLjc3MzYgMS4yMzE1NiAxMy45MjE4QzEuNDY0NTMgMTQuMDcwMSAxLjc3MzU4IDE0LjAwMTQgMS45MjE4MyAxMy43Njg0TDEuMDc4MTcgMTMuMjMxNlpNNSA4TDUuMTg1NyA3LjUzNTc2QzQuOTYyNDUgNy40NDY0NiA0LjcwNzI2IDcuNTI4NzEgNC41NzgxNyA3LjczMTU2TDUgOFpNMTAgMTBMOS44MTQzIDEwLjQ2NDJDMTAuMDY0OSAxMC41NjQ1IDEwLjM0OTkgMTAuNDQ3NyAxMC40NTgxIDEwLjIwMDRMMTAgMTBaTTEzLjk2NTYgMS44MTc4QzEzLjg2NSAxLjU2MDY0IDEzLjU3NSAxLjQzMzc1IDEzLjMxNzggMS41MzQzOEw5LjEyNzIxIDMuMTc0MThDOC44NzAwNSAzLjI3NDggOC43NDMxNiAzLjU2NDg0IDguODQzNzkgMy44MjJDOC45NDQ0MSA0LjA3OTE1IDkuMjM0NDUgNC4yMDYwNCA5LjQ5MTYxIDQuMTA1NDJMMTMuMjE2NiAyLjY0NzgyTDE0LjY3NDIgNi4zNzI3OUMxNC43NzQ4IDYuNjI5OTUgMTUuMDY0OCA2Ljc1Njg0IDE1LjMyMiA2LjY1NjIxQzE1LjU3OTIgNi41NTU1OSAxNS43MDYgNi4yNjU1NSAxNS42MDU0IDYuMDA4MzlMMTMuOTY1NiAxLjgxNzhaTTEuOTIxODMgMTMuNzY4NEw1LjQyMTgzIDguMjY4NDRMNC41NzgxNyA3LjczMTU2TDEuMDc4MTcgMTMuMjMxNkwxLjkyMTgzIDEzLjc2ODRaTTQuODE0MyA4LjQ2NDI0TDkuODE0MyAxMC40NjQyTDEwLjE4NTcgOS41MzU3Nkw1LjE4NTcgNy41MzU3Nkw0LjgxNDMgOC40NjQyNFpNMTAuNDU4MSAxMC4yMDA0TDEzLjk1ODEgMi4yMDA0MUwxMy4wNDE5IDEuNzk5NTlMOS41NDE5MiA5Ljc5OTU5TDEwLjQ1ODEgMTAuMjAwNFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=");
+    }
+    .vi-fund-observe-card .vi-card-footer.decrease .vi-icon-decrease {
+      transform: rotate(180deg);
+      transform: scaleY(-1);
+    }
+    .vi-fund-observe-card .vi-card-footer.unbiased .vi-icon-unbiased {
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgNy41QzAuNzIzODU4IDcuNSAwLjUgNy43MjM4NiAwLjUgOEMwLjUgOC4yNzYxNCAwLjcyMzg1OCA4LjUgMSA4LjVMMSA3LjVaTTE1LjM1MzYgOC4zNTM1NUMxNS41NDg4IDguMTU4MjkgMTUuNTQ4OCA3Ljg0MTcxIDE1LjM1MzYgNy42NDY0NUwxMi4xNzE2IDQuNDY0NDdDMTEuOTc2MyA0LjI2OTIgMTEuNjU5NyA0LjI2OTIgMTEuNDY0NSA0LjQ2NDQ3QzExLjI2OTIgNC42NTk3MyAxMS4yNjkyIDQuOTc2MzEgMTEuNDY0NSA1LjE3MTU3TDE0LjI5MjkgOEwxMS40NjQ1IDEwLjgyODRDMTEuMjY5MiAxMS4wMjM3IDExLjI2OTIgMTEuMzQwMyAxMS40NjQ1IDExLjUzNTVDMTEuNjU5NyAxMS43MzA4IDExLjk3NjMgMTEuNzMwOCAxMi4xNzE2IDExLjUzNTVMMTUuMzUzNiA4LjM1MzU1Wk0xIDguNUwxNSA4LjVWNy41TDEgNy41TDEgOC41WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==");
+    }
+
+    .vi-icon-link .vi-icon-info {
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iOCIgY3k9IjgiIHI9IjcuMjUiIHN0cm9rZT0iIzAwOTg5MSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPGVsbGlwc2UgY3g9IjgiIGN5PSI1IiByeD0iMSIgcnk9IjEiIGZpbGw9IiMwMDk4OTEiLz4KPGxpbmUgeDE9IjgiIHkxPSI4IiB4Mj0iOCIgeTI9IjExIiBzdHJva2U9IiMwMDk4OTEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=");
+    }
+  </style>
+</head>
+
+<!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+<header class="">
+  <div class="vi-page-header-normal">
+    <div class="vi-page-header-lt">
+      <button class="vi-btn" ontouchstart="">
+        <span class="vi-icon vi-icon-base icon-page-back"></span>
+      </button>
+    </div>
+    <div class="vi-page-header-ct">
+      <h1 class="vi-page-title">ETF/境外股票</h1>
+    </div>
+    <!-- <div class="vi-page-header-rt">
+      <span class="vi-icon vi-icon-base vi-modal-close"></span>
+    </div> -->
+  </div>
+</header>
+
+<body class="body-wrap vi-bg-mint-only">
+  <div class="main_container add-title-space has-foot-btn">
+
+    <div class="vi-container">
+      <ng-template #headerLinks>
+          <a *ngIf="!login" (click)="clickLogin($event)" class="vi-icon-link">
+          <span class="vi-txt-headline vi-txt-b600">
+              <i18n translate="home_qu057.00000021">登入/ 註冊</i18n>
+          </span>
+          <span class="vi-icon vi-icon-base vi-icon-direction-right ml4"></span>
+          </a>
+          <a *ngIf="showMyInvest" (click)="clickMyInvest($event)" class="vi-icon-link">
+          <span class="vi-txt-body vi-txt-b600"><i18n translate="home_qu052.00000008">我的投資</i18n></span>
+          <span class="vi-icon vi-icon-base vi-icon-direction-right ml4"></span>
+          </a>
+          <a *ngIf="showBuy" (click)="clickBuy($event)" class="vi-icon-link">
+          <span class="vi-txt-headline vi-txt-b600"><i18n translate="home_qu052.00000009">立即申購</i18n></span>
+          <span class="vi-icon vi-icon-base vi-icon-direction-right ml4"></span>
+          </a>
+      </ng-template>
+      <div *ngIf="showTopAmtArea" class="vi-subhome-balance mb16">
+          <div class="vi-subhome-balance-item">
+          <a class="vi-icon-link clear-space">
+              <span class="vi-txt-body vi-txt-b600 mr4">
+              <i18n translate="home_qu057.00000046">總參考市值</i18n>
+              </span>
+              <eye [initMaskStatus]="initMaskStatus" [taskId]="'TWRBM_Home_QU052'"
+              (clickEvent)="handleEyeClickEvent($event)"></eye>
+          </a>
+          <div *ngIf="hasError" class="vi-txt-footnote vi-txt-b500 mt4">
+              <i18n translate="home_qu057.00000064">暫時無法取得資料</i18n>
+          </div>
+          <ng-container *ngIf="!hasError">
+              <div class="vi-txt-body-bold vi-txt-b900 mt4"
+              [ngClass]="{'vi-balance-mask': maskAmt, 'vi-sub': maskAmt}">
+              <span>{{totalMarketValue | commafy:0}}</span>
+              </div>
+              <div class="vi-txt-footnote vi-txt-b500 mt4">
+              <i18n translate="home_qu057.00000040">(約當新臺幣)</i18n>
+              </div>
+          </ng-container>
+          </div>
+          <div class="vi-subhome-balance-item">
+          <a href="javascript:;" class="vi-icon-link">
+              <span class="vi-txt-body vi-txt-b600 mr4"><i18n translate="home_qu052.00000010">總參考損益</i18n></span>
+          </a>
+          <div *ngIf="hasError" class="vi-txt-footnote vi-txt-b500 mt4">
+              <i18n translate="home_qu057.00000064">暫時無法取得資料</i18n>
+          </div>
+          <ng-container *ngIf="!hasError">
+              <div class="vi-txt-body-bold vi-txt-b900 mt4"
+              [ngClass]="{'vi-balance-mask': maskAmt, 'vi-sub': maskAmt}">
+              <span>{{totalNetReturn | commafy:0}}</span>
+              </div>
+              <div class="vi-txt-footnote vi-txt-bold mt4" [ngClass]="sign == '+' ? 'vi-txt-g400' : 'vi-txt-r500'">({{sign}}{{totalReturnRate}}%)</div>
+          </ng-container>
+          </div>
+      </div>
+
+      <!-- 模組01 -->
+      <quick-list [items]="items" (onClickItem)="onClickItem($event)">
+      </quick-list>
+    </div>
+
+
+    <!-- 我的觀察清單 -->
+    <twrbm-home-qu052-target [isLogin]="login">
+      <div (element-visible)="onVisible($event)" class="vi-card-s mb12">
+        <div class="vi-card-header flex-wrap">
+          <div class="vi-txt-headline vi-txt-b900">我的觀察清單</div>
+        </div>
+        <div class="vi-card-body padx_0">
+
+          <!--demo 有超過 40 個字-->
+          <div class="vi-scroll-block vi-fund-observe-block">
+            <a (click)="" class="vi-scroll-item vi-fund-observe-card">
+              <div class="vi-card-body">
+                <div class="vi-txt-headline vi-txt-b600 vi-fund-name">0050</div>
+                <div class="vi-txt-b600 vi-fund-desc">元大中國傘型基金之上證 50 基金</div>
+                <div class="vi-fund-value mb8">
+                  <div class="vi-txt-body vi-txt-b600">近 1 日收盤價</div>
+                  <div class="vi-txt-headline vi-txt-b600">30.90</div>
+                </div>
+                <div class="vi-fund-rate">
+                  <div class="vi-txt-body vi-txt-b600">漲跌幅</div>
+                  <div class="txt-rate decrease">-12.00%</div>
+                </div>
+              </div>
+              <div class="vi-card-footer increase">
+                <span class="vi-icon vi-icon-xs vi-icon-increase"></span>
+                <span>自觀察以來價格上漲 3%</span>
+              </div>
+            </a>
+            <a (click)="" class="vi-scroll-item vi-fund-observe-card">
+              <div class="vi-card-body">
+                <div class="vi-txt-headline vi-txt-b600 vi-fund-name">1234</div>
+                <!-- 如果超過 40 個字，加 .over40-->
+                <div class="vi-txt-b600 vi-fund-desc over40">一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十</div>
+                <div class="vi-fund-value mb8">
+                  <div class="vi-txt-body vi-txt-b600">近 1 日收盤價</div>
+                  <div class="vi-txt-headline vi-txt-b600">30.90</div>
+                </div>
+                <div class="vi-fund-rate">
+                  <div class="vi-txt-body vi-txt-b600">漲跌幅</div>
+                  <div class="txt-rate decrease">-12.00%</div>
+                </div>
+              </div>
+              <div class="vi-card-footer decrease">
+                <span class="vi-icon vi-icon-xs vi-icon-decrease"></span>
+                <span>自觀察以來價格下跌</span>
+              </div>
+            </a>
+            <a (click)="" class="vi-scroll-item vi-fund-observe-card">
+              <div class="vi-card-body">
+                <div class="vi-txt-headline vi-txt-b600 vi-fund-name">EWH</div>
+                <div class="vi-txt-b600 vi-fund-desc">Ｅｎｔｅｒｇｙ  Ａｒｋａｎｓａｓ  Ｉｎｃ４．８７５％２０６６０９０１安特吉阿肯色公司特別股</div>
+                <div class="vi-fund-value mb8">
+                  <div class="vi-txt-body vi-txt-b600">近 1 日收盤價</div>
+                  <div class="vi-txt-headline vi-txt-b600">66.90</div>
+                </div>
+                <div class="vi-fund-rate">
+                  <div class="vi-txt-body vi-txt-b600">漲跌幅</div>
+                  <div class="txt-rate increase">+12.12%</div>
+                </div>
+              </div>
+              <div class="vi-card-footer unbiased">
+                <span class="vi-icon vi-icon-xs vi-icon-unbiased"></span>
+                <span>自觀察以來價格持平</span>
+              </div>
+            </a>
+          </div>
+
+          <!--demo 沒有超過 40 個字-->
+          <div class="vi-scroll-block vi-fund-observe-block">
+            <a (click)="" class="vi-scroll-item vi-fund-observe-card">
+              <div class="vi-card-body">
+                <div class="vi-txt-headline vi-txt-b600 vi-fund-name">0050</div>
+                <div class="vi-txt-b600 vi-fund-desc">元大中國傘型基金之上證 50 基金</div>
+                <div class="vi-fund-value mb8">
+                  <div class="vi-txt-body vi-txt-b600">近 1 日收盤價</div>
+                  <div class="vi-txt-headline vi-txt-b600">30.90</div>
+                </div>
+                <div class="vi-fund-rate">
+                  <div class="vi-txt-body vi-txt-b600">漲跌幅</div>
+                  <div class="txt-rate decrease">-12.00%</div>
+                </div>
+              </div>
+              <div class="vi-card-footer increase">
+                <span class="vi-icon vi-icon-xs vi-icon-increase"></span>
+                <span>自觀察以來價格上漲 3%</span>
+              </div>
+            </a>
+            <a (click)="" class="vi-scroll-item vi-fund-observe-card">
+              <div class="vi-card-body">
+                <div class="vi-txt-headline vi-txt-b600 vi-fund-name">1234</div>
+                <div class="vi-txt-b600 vi-fund-desc">一二三四五六七八九十二</div>
+                <div class="vi-fund-value mb8">
+                  <div class="vi-txt-body vi-txt-b600">近 1 日收盤價</div>
+                  <div class="vi-txt-headline vi-txt-b600">30.90</div>
+                </div>
+                <div class="vi-fund-rate">
+                  <div class="vi-txt-body vi-txt-b600">漲跌幅</div>
+                  <div class="txt-rate decrease">-12.00%</div>
+                </div>
+              </div>
+              <div class="vi-card-footer decrease">
+                <span class="vi-icon vi-icon-xs vi-icon-decrease"></span>
+                <span>自觀察以來價格下跌</span>
+              </div>
+            </a>
+            <a (click)="" class="vi-scroll-item vi-fund-observe-card">
+              <div class="vi-card-body">
+                <div class="vi-txt-headline vi-txt-b600 vi-fund-name">EWH</div>
+                <div class="vi-txt-b600 vi-fund-desc">Ｅｎｔｅ安特吉阿肯色公司特別股</div>
+                <div class="vi-fund-value mb8">
+                  <div class="vi-txt-body vi-txt-b600">近 1 日收盤價</div>
+                  <div class="vi-txt-headline vi-txt-b600">66.90</div>
+                </div>
+                <div class="vi-fund-rate">
+                  <div class="vi-txt-body vi-txt-b600">漲跌幅</div>
+                  <div class="txt-rate increase">+12.12%</div>
+                </div>
+              </div>
+              <div class="vi-card-footer unbiased">
+                <span class="vi-icon vi-icon-xs vi-icon-unbiased"></span>
+                <span>自觀察以來價格持平</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="vi-container dis-flex flex-justify-between mt8">
+            <a class="vi-icon-link">
+              <span class="vi-icon vi-icon-xs vi-icon-info"></span>
+              <span class="vi-txt-body-bold vi-txt-g500 ml4">價格漲跌</span>
+            </a>
+            <a (click)="" class="vi-icon-link">
+              <span class="vi-icon vi-icon-xs icon icon-forward-arrow vi-txt-g500"></span>
+              <span class="vi-txt-body-bold vi-txt-g500 ml4">看更多</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </twrbm-home-qu052-target>
+
+        
+    <!-- 找適合你的投資方式 -->
+    <div class="vi-card-s mb12">
+        <div class="vi-card-header flex-wrap">
+            <div class="vi-txt-headline vi-txt-b900 wid_100per">
+            <i18n translate="home_qu052.00000005" ng-reflect-bundle-key="home_qu052.00000005">找適合你的投資方式</i18n>
+            </div>
+            <div class="vi-txt-body vi-txt-b600 mt4">ETF 和境外股票，有什麼不一樣？</div>
+        </div>
+        <div class="vi-card-body">
+            
+            <intro-card-theme ng-reflect-aem-path="InvestmentProductSubpageList" ng-reflect-aem-params="investment">
+            <div class="vi-module-13" style="">
+
+                
+                <div class="nav-scroll mb20">
+                <ul class="vi-tab-pin with-icon">
+                    <!--bindings={
+            "ng-reflect-ng-for-of": "[object Object],[object Object"
+            }--><li class="vi-tab-item active" ng-reflect-klass="vi-tab-item" ng-reflect-ng-class="[object Object]">
+                    <a class="vi-tab-link" data-toggle="tab" href="intro-card-theme-tab0">
+                        <!--bindings={}-->
+                        <span>ETF</span>
+                    </a>
+                    </li><li class="vi-tab-item" ng-reflect-klass="vi-tab-item" ng-reflect-ng-class="[object Object]">
+                    <a class="vi-tab-link" data-toggle="tab" href="intro-card-theme-tab1">
+                        <!--bindings={}-->
+                        <span>境外股票</span>
+                    </a>
+                    </li>
+                </ul>
+                </div>
+                <div class="tab-content">
+                <!--bindings={
+            "ng-reflect-ng-for-of": "[object Object],[object Object"
+            }--><div class="tab-pane active" ng-reflect-klass="tab-pane" ng-reflect-ng-class="[object Object]" id="intro-card-theme-tab0">
+                    <div class="vi-block-topic">
+                    <!--bindings={
+            "ng-reflect-ng-for-of": "[object Object],[object Object"
+            }--><a class="vi-topic-item" ng-reflect-ng-style="[object Object]">
+                        <!--bindings={
+            "ng-reflect-ng-if": "ETF在投什麼?"
+            }--><h3 class="vi-topic-item-title">ETF在投什麼?</h3>
+                        <!--bindings={
+            "ng-reflect-ng-if": "投資一籃子股票，追蹤指數績效"
+            }--><div class="vi-topic-item-content">投資一籃子股票，追蹤指數績效</div>
+                        <!--bindings={
+            "ng-reflect-ng-if": "看更多"
+            }--><div class="vi-btn vi-btn-secondary vi-btn-xs">看更多</div>
+                    </a><a class="vi-topic-item" ng-reflect-ng-style="[object Object]">
+                        <!--bindings={
+            "ng-reflect-ng-if": "投資ETF的好處"
+            }--><h3 class="vi-topic-item-title">投資ETF的好處</h3>
+                        <!--bindings={
+            "ng-reflect-ng-if": "投資簡單，即時交易操作靈活"
+            }--><div class="vi-topic-item-content">投資簡單，即時交易操作靈活</div>
+                        <!--bindings={
+            "ng-reflect-ng-if": "看更多"
+            }--><div class="vi-btn vi-btn-secondary vi-btn-xs">看更多</div>
+                    </a><a class="vi-topic-item" ng-reflect-ng-style="[object Object]">
+                        <!--bindings={
+            "ng-reflect-ng-if": "圖解ETF策略"
+            }--><h3 class="vi-topic-item-title">圖解ETF策略</h3>
+                        <!--bindings={
+            "ng-reflect-ng-if": "輕鬆入門ETF，成為領頭行家"
+            }--><div class="vi-topic-item-content">輕鬆入門ETF，成為領頭行家</div>
+                        <!--bindings={
+            "ng-reflect-ng-if": "看更多"
+            }--><div class="vi-btn vi-btn-secondary vi-btn-xs">看更多</div>
+                    </a><a class="vi-topic-item" ng-reflect-ng-style="[object Object]">
+                        <!--bindings={
+            "ng-reflect-ng-if": "ETF如何買?"
+            }--><h3 class="vi-topic-item-title">ETF如何買?</h3>
+                        <!--bindings={
+            "ng-reflect-ng-if": "輕鬆3步驟就搞定"
+            }--><div class="vi-topic-item-content">輕鬆3步驟就搞定</div>
+                        <!--bindings={
+            "ng-reflect-ng-if": "看更多"
+            }--><div class="vi-btn vi-btn-secondary vi-btn-xs">看更多</div>
+                    </a>
+                    </div>
+                    <!--bindings={
+            "ng-reflect-ng-if": "true"
+            }--><div class="vi-btn-group mt24">
+                    <a class="vi-btn vi-btn-primary vi-btn-xl">我有興趣，立即申購</a>
+                    </div>
+                </div><div class="tab-pane" ng-reflect-klass="tab-pane" ng-reflect-ng-class="[object Object]" id="intro-card-theme-tab1">
+                    <div class="vi-block-topic">
+                    <!--bindings={
+            "ng-reflect-ng-for-of": "[object Object],[object Object"
+            }--><a class="vi-topic-item" ng-reflect-ng-style="[object Object]">
+                        <!--bindings={
+            "ng-reflect-ng-if": "投資美股的好處?"
+            }--><h3 class="vi-topic-item-title">投資美股的好處?</h3>
+                        <!--bindings={
+            "ng-reflect-ng-if": "精準參與目標市場，投資最新趨勢"
+            }--><div class="vi-topic-item-content">精準參與目標市場，投資最新趨勢</div>
+                        <!--bindings={
+            "ng-reflect-ng-if": "看更多"
+            }--><div class="vi-btn vi-btn-secondary vi-btn-xs">看更多</div>
+                    </a><a class="vi-topic-item" ng-reflect-ng-style="[object Object]">
+                        <!--bindings={
+            "ng-reflect-ng-if": "美股交易知多少?"
+            }--><h3 class="vi-topic-item-title">美股交易知多少?</h3>
+                        <!--bindings={
+            "ng-reflect-ng-if": "知己知彼，交易規範一把抓"
+            }--><div class="vi-topic-item-content">知己知彼，交易規範一把抓</div>
+                        <!--bindings={
+            "ng-reflect-ng-if": "看更多"
+            }--><div class="vi-btn vi-btn-secondary vi-btn-xs">看更多</div>
+                    </a><a class="vi-topic-item" ng-reflect-ng-style="[object Object]">
+                        <!--bindings={
+            "ng-reflect-ng-if": "輕鬆認識股票類型"
+            }--><h3 class="vi-topic-item-title">輕鬆認識股票類型</h3>
+                        <!--bindings={
+            "ng-reflect-ng-if": "輕鬆入門股票，情資一網打盡"
+            }--><div class="vi-topic-item-content">輕鬆入門股票，情資一網打盡</div>
+                        <!--bindings={
+            "ng-reflect-ng-if": "看更多"
+            }--><div class="vi-btn vi-btn-secondary vi-btn-xs">看更多</div>
+                    </a><a class="vi-topic-item" ng-reflect-ng-style="[object Object]">
+                        <!--bindings={
+            "ng-reflect-ng-if": "境外股票如何買?"
+            }--><h3 class="vi-topic-item-title">境外股票如何買?</h3>
+                        <!--bindings={
+            "ng-reflect-ng-if": "線上申購好簡單，一站式服務"
+            }--><div class="vi-topic-item-content">線上申購好簡單，一站式服務</div>
+                        <!--bindings={
+            "ng-reflect-ng-if": "看更多"
+            }--><div class="vi-btn vi-btn-secondary vi-btn-xs">看更多</div>
+                    </a>
+                    </div>
+                    <!--bindings={
+            "ng-reflect-ng-if": "true"
+            }--><div class="vi-btn-group mt24">
+                    <a class="vi-btn vi-btn-primary vi-btn-xl">我有興趣，境外股票</a>
+                    </div>
+                </div>
+                </div>
+            
+            </div>
+            </intro-card-theme>
+        </div>
+    </div>
+
+
+    <!-- 理財心法都在這 -->
+    <div class="vi-card-s vi-overlay-card">
+      <div class="vi-card-header flex-wrap">
+          <div class="vi-txt-headline vi-txt-b900 wid_100per">
+          <i18n translate="home_qu052.00000007" ng-reflect-bundle-key="home_qu052.00000007">投資策略都在這</i18n>
+          </div>
+          <div class="vi-txt-body vi-txt-b600 mt4">簡單搞懂 ETF、境外股票</div>
+      </div>
+
+      <div class="vi-card-body">
+
+        <life-card ng-reflect-prod-type="MF" ng-reflect-tab-idx="0" ng-reflect-tab-content-extend="[object Object]" ng-reflect-is-check-article-size="false">
+          <div class="vi-module-02">
+
+            <div class="nav-scroll">
+              <ul class="vi-tab">
+          
+                <li class="vi-tab-item active" ng-reflect-klass="vi-tab-item" ng-reflect-ng-class="[object Object]">
+                  <a class="vi-tab-link" data-toggle="tab" href="life-card-tab0">
+                    <span>多元配置</span>
+                  </a>
+                </li>
+        
+                <li class="vi-tab-item" ng-reflect-klass="vi-tab-item" ng-reflect-ng-class="[object Object]">
+                  <a class="vi-tab-link" data-toggle="tab" href="life-card-tab1">
+                    <span>創新科技</span>
+                  </a>
+                </li>
+      
+                <li class="vi-tab-item" ng-reflect-klass="vi-tab-item" ng-reflect-ng-class="[object Object]">
+                  <a class="vi-tab-link" data-toggle="tab" href="life-card-tab2">
+                    <span>配合金流</span>
+                  </a>
+                </li>
+      
+                <li class="vi-tab-item" ng-reflect-klass="vi-tab-item" ng-reflect-ng-class="[object Object]">
+                  <a class="vi-tab-link" data-toggle="tab" href="life-card-tab3">
+                    <span>永續投資</span>
+                  </a>
+                </li>
+        
+                <li class="vi-tab-item" ng-reflect-klass="vi-tab-item" ng-reflect-ng-class="[object Object]">
+                  <a class="vi-tab-link" data-toggle="tab" href="life-card-tab4">
+                    <span>樂退Go</span>
+                  </a>
+                </li>
+            
+                <li class="vi-tab-item" ng-reflect-klass="vi-tab-item" ng-reflect-ng-class="[object Object]">
+                  <a class="vi-tab-link" data-toggle="tab" href="life-card-tab5">
+                    <span>嚴選定期(不)定額基金</span>
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+            
+            <div class="tab-content" ng-reflect-ng-style="[object Object]" style="">
+              <div class="tab-pane active" ng-reflect-klass="tab-pane" ng-reflect-ng-class="[object Object]" ng-reflect-ng-style="[object Object]" id="life-card-tab0" style="">
+                <div class="vi-blog-article js_blog_article owl-loaded owl-drag">
+                  <div class="owl-stage-outer">
+                    <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1608px;">
+                      <div class="owl-item active" style="width: 402px;">
+                        <a>
+                          <div class="vi-blog-article-pic">
+                  
+                          </div>
+                          <div class="vi-blog-article-title">
+                            <p>通膨環境下的產業投資策略</p>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="owl-item" style="width: 402px;">
+                        <a>
+                          <div class="vi-blog-article-pic">
+                  
+                          </div>
+                          <div class="vi-blog-article-title">
+                            <p>波動度提升下的資產布局方向</p>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="owl-item" style="width: 402px;">
+                        <a>
+                          <div class="vi-blog-article-pic">
+                    
+                          </div>
+                          <div class="vi-blog-article-title">
+                            <p>通膨與升息環境下的投資決策</p>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="owl-item" style="width: 402px;">
+                        <a>
+                          <div class="vi-blog-article-pic">
+                        
+                          </div>
+                          <div class="vi-blog-article-title">
+                            <p>【虎年投資展望】疫後復甦新世界</p>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="owl-nav disabled">
+                    <button type="button" role="presentation" class="owl-prev">
+                      <span aria-label="Previous">‹</span>
+                    </button>
+                    <button type="button" role="presentation" class="owl-next">
+                      <span aria-label="Next">›</span>
+                    </button>
+                  </div>
+                  <div class="owl-dots">
+                    <button role="button" class="owl-dot active"><span></span></button>
+                    <button role="button" class="owl-dot"><span></span></button>
+                    <button role="button" class="owl-dot"><span></span></button>
+                    <button role="button" class="owl-dot"><span></span></button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+
+            <!--相關標的 trend-->
+            <div class="vi-fund-trend-block">
+              <div class="dis-flex">
+                <div class="vi-line-title">相關標的</div>
+                <div class="ml-auto flex-shrink-0">
+                  <div class="vi-txt-body vi-txt-b500 mr4 recent">近一年走勢</div>
+                  <div class="vi-txt-body vi-txt-b500 rate">收盤價/漲跌幅</div>
+                </div>
+              </div>
+
+              <div class="vi-list-px0 vi-btm-line mt16">
+                <div class="vi-list-item">
+                  <a class="vi-w-100">
+                    <div class="dis-flex">
+                      <div class="dis-flex flex-grow">
+                        <div class="vi-fund-info">
+                          <div class="vi-txt-body-bold vi-txt-b600 vi-fund-name">EBC</div>
+                          <div class="vi-fund-desc">ＥＢＣＥＡＳＴＥＲＮ ＢＡＮＫＳＨＡＲＥＳ ＩＮＣ</div>
+                        </div>
+                        <div class="vi-fund-chart">
+                          <div class="ml-auto wid_70px">
+                            <!--請置換成 chart-->
+                            <img src="https://via.placeholder.com/70" class="wid_100per" />
+                          </div>
+                        </div>
+                        <div class="flex-shrink-0 vi-fund-rate">
+                          <div class="vi-txt-body-bold value">27.3900</div>
+                          <div class="txt-rate decrease">-12.00%</div>
+                        </div>
+                      </div>
+                      <div class="ml-auto">
+                        <div class="vi-icon vi-icon-xs icon-arrow-next-g"></div>
+                      </div>
+                    </div>
+                    <div class="vi-txt-hashtag mt8">
+                      <div class="vi-txt-callout vi-txt-br500">#嚴選定期 #定期(不)定額5折起</div>
+                    </div>
+                  </a>
+                  <div class="vi-list-full dis-flex mt16">
+                    <label class="vi-post-fav">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="vi-list-item">
+                  <a class="vi-w-100">
+                    <div class="dis-flex">
+                      <div class="dis-flex flex-grow">
+                        <div class="vi-fund-info">
+                          <div class="vi-txt-body-bold vi-txt-b600 vi-fund-name">0050</div>
+                          <div class="vi-fund-desc">元大台灣卓越５０</div>
+                        </div>
+                        <div class="vi-fund-chart">
+                          <div class="ml-auto wid_70px">
+                            <!--請置換成 chart-->
+                            <img src="https://via.placeholder.com/70" class="wid_100per" />
+                          </div>
+                        </div>
+                        <div class="flex-shrink-0 vi-fund-rate">
+                          <div class="vi-txt-body-bold value">27.3900</div>
+                          <div class="txt-rate increase">+150.00%</div>
+                        </div>
+                      </div>
+                      <div class="ml-auto">
+                        <div class="vi-icon vi-icon-xs icon-arrow-next-g"></div>
+                      </div>
+                    </div>
+                    <div class="vi-txt-hashtag mt8">
+                      <div class="vi-txt-callout vi-txt-br500">#嚴選定期 #定期(不)定額5折起</div>
+                    </div>
+                  </a>
+
+                  <div class="vi-list-full dis-flex mt16">
+                    <label class="vi-post-fav">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dis-flex mt16">
+                <div class="vi-txt-callout vi-txt-b500">
+                  資料來源：<br>Lipper/基金公司，截至：2022/03/03
+                </div>
+                <a class="vi-icon-link ml-auto flex-shrink-0 align-items-start">
+                  <span class="vi-icon vi-icon-xs icon icon-forward-arrow vi-txt-g500"></span>
+                  <span class="vi-txt-body-bold vi-txt-g500 ml4">看更多</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </life-card>
+
+      </div>
+    </div>
+
+
+
+    
+
+
+    <!-- faq -->
+    <div class="vi-card-s mb12">
+      <div class="vi-card-header flex-wrap">
+        <div class="vi-txt-headline vi-txt-b900 wid_100per"><i18n translate="home_qu044.00000009" ng-reflect-bundle-key="home_qu044.00000009">常見問題</i18n></div>
+        <div class="vi-txt-body vi-txt-b600 mt4">有任何疑問嗎？幫你整理出可能想知道的事</div>
+      </div>
+
+      <div class="vi-card-body">
+        <faq ng-reflect-prod-type="ETF"><div class="vi-module-03">
+          <div class="vi-card-group" id="accordion">
+            <div class="vi-card-accordion panel">
+            <a class="vi-card-header flex-justify-between collapsed" data-parent="#accordion" data-toggle="collapse" role="button" href="#faq-collapse0">
+                <h4 class="vi-txt-body vi-txt-b900">
+                ETF/境外股票單筆投資之門檻為何?
+                </h4>
+                <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+            </a>
+            <div class="panel-collapse collapse" role="tabpanel" id="faq-collapse0">
+                <div class="vi-card-body padx_12 pady_16">
+                <div class="vi-txt-body vi-txt-b600"><p>境內ETF：台灣證券交易所(含櫃檯買賣市場)最低交易金額，臨櫃為新台幣50,000元，自動化通路為新台幣10,000元，並以1千元為增加單位。</p>
+                  <p>境外ETF及境外股票：</p>
+                  <p>美國及英國證券交易所最低交易單位為1股，香港、上海及深圳證券交易所最低交易單位為1手(每手股數依標的不同各有規定)，日本證券交易所對於各標的均有不同之最低交易單位與累加單位規範。可於ETF/境外股票申購頁面選擇申購標的，上述最低交易單位即會顯示於投資股數欄位旁。</p>
+                  </div>
+                              </div>
+                          </div>
+                          </div><div class="vi-card-accordion panel">
+                          <a class="vi-card-header flex-justify-between collapsed" data-parent="#accordion" data-toggle="collapse" role="button" href="#faq-collapse1">
+                              <h4 class="vi-txt-body vi-txt-b900">
+                              透過網路/行動銀行可以辦理的ETF/境外股票交易服務有什麼?
+                              </h4>
+                              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+                          </a>
+                          <div class="panel-collapse collapse" role="tabpanel" id="faq-collapse1">
+                              <div class="vi-card-body padx_12 pady_16">
+                              <div class="vi-txt-body vi-txt-b600"><p>本行網路/行動銀行功能相當便利，提供您24小時無休息服務，舉凡<b>ETF或境外股票單筆申購/贖回，境內ETF定期(不)定額的查詢/申購/贖回/或定期(不)定額的異動服務</b>，皆可於網路/行動銀行完成交易。</p>
+                  <p>【註】：異動服務係指定期(不)定額之投資扣款日、投資金額、扣款帳戶或信用卡號（限本人帳戶或信用卡卡號）、恢復扣款、停止扣款等異動設定。</p>
+                  </div>
+                              </div>
+                          </div>
+                          </div><div class="vi-card-accordion panel">
+                          <a class="vi-card-header flex-justify-between collapsed" data-parent="#accordion" data-toggle="collapse" role="button" href="#faq-collapse2">
+                              <h4 class="vi-txt-body vi-txt-b900">
+                              透過網路/行動銀行辦理投資ETF/境外股票，其扣款帳戶有何限制？
+                              </h4>
+                              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+                          </a>
+                          <div class="panel-collapse collapse" role="tabpanel" id="faq-collapse2">
+                              <div class="vi-card-body padx_12 pady_16">
+                              <div class="vi-txt-body vi-txt-b600"><p>限委託人本人之中國信託商業銀行活儲(期)存款帳戶(境內ETF)或外幣存款帳戶(境外ETF及境外股票)，且已開通網路銀行轉帳功能，若未開通轉帳功能可至中國信託銀行全省<a href="https://www.ctbcbank.com/twrbo/zh_tw/index/h_locate_index/h_locate_inquiry.html">服務據點</a>辦理。</p>
+                  </div>
+                              </div>
+                          </div>
+                          </div><div class="vi-card-accordion panel">
+                          <a class="vi-card-header flex-justify-between collapsed" data-parent="#accordion" data-toggle="collapse" role="button" href="#faq-collapse3">
+                              <h4 class="vi-txt-body vi-txt-b900">
+                              使用網路/行動銀行辦理ETF或境外股票單筆投資，於何時扣款？
+                              </h4>
+                              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+                          </a>
+                          <div class="panel-collapse collapse" role="tabpanel" id="faq-collapse3">
+                              <div class="vi-card-body padx_12 pady_16">
+                              <div class="vi-txt-body vi-txt-b600"><p>境內ETF為約定之日，從客戶設定之帳戶扣款，故請務必於交易生效日前一個金融機構營業日確認存款帳戶，維持足夠的扣款金額，才能有效投資。而境外ETF及境外股票於客戶設定之外幣帳戶圈存投資金額，如嗣後委託人申購指示成交，則受託人將於次一營業日自圈存金額中扣收成交金額。</p>
+                  </div>
+                              </div>
+                          </div>
+                          </div><div class="vi-card-accordion panel">
+                          <a class="vi-card-header flex-justify-between collapsed" data-parent="#accordion" data-toggle="collapse" role="button" href="#faq-collapse4">
+                              <h4 class="vi-txt-body vi-txt-b900">
+                              若透過網路/行動銀行辦理之交易日為假日，何時會執行？
+                              </h4>
+                              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+                          </a>
+                          <div class="panel-collapse collapse" role="tabpanel" id="faq-collapse4">
+                              <div class="vi-card-body padx_12 pady_16">
+                              <div class="vi-txt-body vi-txt-b600"><p>該筆交易會視ETF/境外股票標的所在交易所是否為假日來決定執行日，標的所在交易所若為非假日則會於當日執行，若為假日則於交易所下一個交易日執行下單投資。</p>
+                  </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="rt mt16">
+                <a class="vi-icon-link">
+                <span class="vi-icon vi-icon-xs icon icon-forward-arrow vi-txt-g500"></span>
+                <span class="vi-txt-body-bold vi-txt-g500 ml4">
+                    看更多ETF/境外股票的常見問題
+                </span>
+                </a>
+            </div>
+                      
+          </div>
+        </faq>
+      </div>
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>

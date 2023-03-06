@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    
+  </style>
+</head>
+
+<!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+<header class="">
+    <div class="vi-page-header-normal">
+        <div class="vi-page-header-lt">
+            <button class="vi-btn" ontouchstart="">
+                <span class="vi-icon vi-icon-base icon-page-back"></span>
+            </button>
+        </div>
+        <div class="vi-page-header-ct">
+            <h1 class="vi-page-title">投資型保險概要及標的</h1>
+        </div>
+        <!-- <div class="vi-page-header-rt">
+            <span class="vi-icon vi-icon-base vi-modal-close"></span>
+        </div> -->
+    </div>
+</header>
+
+<body class="body-wrap vi-bg-mint-only">
+    <div class="main_container">
+		<div class="detail-block">
+			<div class="div-tb mb10">
+				<div class="td">{{policyNo}}</div>
+			</div>
+			<div class="div-tb mb10">
+				<div class="td vmid">{{typeName}}</div>
+			</div>
+			<div class="div-tb mb10">
+				<div class="td vmid"><i18n translate="invest_qu006.00000880">保單幣別</i18n></div>
+				<div class="td rt">{{curr}}</div>
+			</div>
+			<div class="div-tb mb10">
+				<div class="td vmid"><i18n translate="invest_qu006.00000879">參考保單價值</i18n></div>
+				<div class="td rt"><span class="money-big">{{netValue}}</span></div>
+			</div>
+            <!-- 2022 03RC 新增 -->
+            <div class="div-tb mb10">
+				<div class="td vmid">投資金額</div>
+				<div class="td rt">94,433</div>
+			</div>
+            <div class="div-tb mb10">
+				<div class="td vmid">參考損益</div>
+				<div class="td rt">-83,180</div>
+			</div>
+            <div class="div-tb mb10">
+				<div class="td vmid">參考報酬率</div>
+				<div class="td rt">-88.03%</div>
+			</div>
+            <!-- END 2022 03RC 新增 -->
+		</div>
+        <!-- 2022 03RC 新增 -->
+        <div class="panel-group toggle-panel demo-toggle" id="detail">
+            <ng-container >
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#detail" href="#detailPanel" aria-expanded="false">
+                            <div class="div-tb">
+                                <div class="td wid_50per">詳細資料</div>
+                                <div class="td vmid rt"></div>
+                                <div class="td wid_15px"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="panel-collapse collapse" id="detailPanel" aria-expanded="false">
+                        <div class="panel-body bg_white">
+                            <div class="div-tb mb5">
+                                <div class="td wid_15px"></div>
+                                <div class="td wid_50per">保單生效日期</div>
+                                <div class="td rt">2021/08/17</div>
+                                <div class="td wid_15px"></div>
+                            </div>
+                            <div class="div-tb mb5">
+                                <div class="td wid_15px"></div>
+                                <div class="td wid_50per">保障滿期日</div>
+                                <div class="td rt">終身</div>
+                                <div class="td wid_15px"></div>
+                            </div>
+                            <div class="div-tb mb5">
+                                <div class="td wid_15px"></div>
+                                <div class="td wid_50per">累計所繳保費</div>
+                                <div class="td rt">20,000</div>
+                                <div class="td wid_15px"></div>
+                            </div>
+                            <div class="div-tb mb5">
+                                <div class="td wid_15px"></div>
+                                <div class="td wid_50per">累計現金配息</div>
+                                <div class="td rt">2,000</div>
+                                <div class="td wid_15px"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        <!-- END 2022 03RC 新增 -->
+
+		<div class="container">
+			<ul class="card-list">
+				<li class="title">
+					<div class="div-tb">
+						<div class="td"><i18n translate="invest_qu006.00003503">標的名稱</i18n><br /><i18n translate="invest_qu006.00000880">保單幣別</i18n></div>
+						<div class="td rt"><i18n translate="invest_qu006.00003514">參考標的價值</i18n><br /><i18n translate="invest_qu006.00002798">投資金額</i18n></div>
+						<div class="td wid_15px"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+        <div class="panel-group toggle-panel demo-toggle" id="BB">
+            <!-- QA-LIST -->
+            <ng-container *ngFor="let invest of investList let i = index">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#BB" href="#{{i}}" aria-expanded="false">
+                            <div class="div-tb">
+                                <div class="td wid_55per">{{invest.targetName}}<br />{{curr}}</div>
+                                <div class="td vmid rt">{{invest.targetNetValue}}<br />{{invest.targetCost}}</div>
+                                <div class="td wid_15px"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="panel-collapse collapse" id="{{i}}" aria-expanded="false">
+                        <div class="panel-body bg_white">
+                            <div class="div-tb mb5">
+                                <div class="td wid_15px"></div>
+                                <div class="td wid_50per"><i18n translate="invest_qu006.00001443">參考損益</i18n></div>
+                                <div class="td rt">{{invest.refProfit}}</div>
+                                <div class="td wid_15px"></div>
+                            </div>
+                            <div class="div-tb mb5">
+                                <div class="td wid_15px"></div>
+                                <div class="td wid_50per"><i18n translate="invest_qu006.00001416">參考報酬率</i18n></div>
+                                <div class="td rt">{{getRateOfReturnValue(invest.rateOfReturn)}}</div>
+                                <div class="td wid_15px"></div>
+                            </div>
+                            <div class="div-tb mb5">
+                                <div class="td wid_15px"></div>
+                                <div class="td wid_50per"><i18n translate="invest_qu006.00003515">標的幣別</i18n></div>
+                                <div class="td rt">{{invest.targetCurrency}}</div>
+                                <div class="td wid_15px"></div>
+                            </div>
+                            <div class="div-tb mb5">
+                                <div class="td wid_15px"></div>
+                                <div class="td wid_50per"><i18n translate="invest_qu006.00006188">風險屬性</i18n></div>
+                                <div class="td rt">{{invest.riskDesc}}</div>
+                                <div class="td wid_15px"></div>
+                            </div>
+                            <div class="div-tb mb5">
+                                <div class="td wid_15px"></div>
+                                <div class="td wid_50per"><i18n translate="invest_qu006.00003517">標的淨值日</i18n></div>
+                                <div class="td rt">{{invest.targetPriceDate}}</div>
+                                <div class="td wid_15px"></div>
+                            </div>
+                            <div class="div-tb mb5">
+                                <div class="td wid_15px"></div>
+                                <div class="td wid_50per"><i18n translate="invest_qu006.00001676">單位數</i18n></div>
+                                <div class="td rt">{{invest.unitNum}}</div>
+                                <div class="td wid_15px"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        <div class="container">
+            <div class="remarks">
+                <memo-remarks [format]="3" [key]="'TWRBMInvestQU006_040_Remark'"></memo-remarks>
+            </div>
+        </div>
+	</div>
+	<!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>

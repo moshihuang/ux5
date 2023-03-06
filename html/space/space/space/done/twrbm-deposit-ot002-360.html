@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-card.vi-card-step {
+      margin-top: 16px;
+      overflow: visible;
+      position: relative;
+    }
+    .vi-card.vi-card-step .vi-step-bi {
+      width: 74px;
+      height: 60px;
+      position: absolute;
+      top: -16px;
+      right: 0;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzQiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA3NCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzQ3MDlfMTQ3OTM3KSI+CjxwYXRoIGQ9Ik0xNy4xNTA4IDQ0LjAwMzZDMjUuNjAyNCA0MS44MDM4IDMwLjIxMTYgMzUuMDk0MyAzMC4wOTc0IDMzLjYxNjRDMjkuOTgzMyAzMi4xMzg2IDQ2LjI4NzIgNDguOTg5MSA0Ni4yODcyIDQ4Ljk4OTFDNDYuMjg3MiA0OC45ODkxIDI4LjU0ODMgNjEuNjM1IDI2LjQ0NjYgNjAuODgyMkMyMi4wODExIDU4Ljg5NTIgMTQuMTEwMiA1Mi43Mzc4IDE3LjE1MDggNDQuMDAzNloiIGZpbGw9IiM5ODk4OTkiLz4KPHBhdGggZD0iTTI5LjYwMTcgNTYuOTkyN0MyOC43ODQxIDU1LjM2NDggMTguNTE1NCAzNy40MzA2IDE4LjUxNTQgMzcuNDMwNkwxNS44NjQ2IDM5LjkzOEMxOC4xNDg1IDQ0LjExNzYgMjUuNzI5NCA1Ni44NzggMjYuNTM2MyA1OC42Njg2QzI3LjM0MzMgNjAuNDU5MiAzMC40MTkzIDU4LjYyMDYgMjkuNjAxNyA1Ni45OTI3WiIgZmlsbD0iIzg0QzRGRiIvPgo8cGF0aCBkPSJNMTUuODYzOSAzOS45Mzg0TDE4LjgxMzYgMzguMDcxNEwxOS43NzI2IDM5LjIwNDNDMTkuOTE3NSAzOS42MzA2IDE2LjkxOTIgNDEuNjE3NiAxNi4zNDgzIDQxLjMyOTZMMTUuODYzOSAzOS45Mzg0WiIgZmlsbD0iIzc0QjBFOCIvPgo8cGF0aCBkPSJNMTkuNTcyNSAzNy45NTQ1QzE4LjQ5ODUgMzguNzMzIDE0LjYyNTYgMzMuNDEzNiAxMC45MjIgMjYuMDczM0M3LjIxODQ5IDE4LjczMyA1LjA4NjgzIDEyLjE1MTQgNi4xNjA4MyAxMS4zNzI5QzcuMjM0ODIgMTAuNTk0NSAxMS4xMDc4IDE1LjkxMzkgMTQuODExMyAyMy4yNTQyQzE4LjUxNDggMzAuNTk0NSAyMC42NDY1IDM3LjE3NiAxOS41NzI1IDM3Ljk1NDVaIiBmaWxsPSIjRDlGMEYzIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAuOTIyIDI2LjA3MzNDMTQuNjI1NiAzMy40MTM2IDE4LjQ5ODUgMzguNzMzIDE5LjU3MjUgMzcuOTU0NUMyMC42NDY1IDM3LjE3NiAxOC41MTQ4IDMwLjU5NDUgMTQuODExMyAyMy4yNTQyQzExLjEwNzggMTUuOTEzOSA3LjIzNDgyIDEwLjU5NDUgNi4xNjA4MyAxMS4zNzI5QzUuMDg2ODMgMTIuMTUxNCA3LjIxODQ5IDE4LjczMyAxMC45MjIgMjYuMDczM1oiIGZpbGw9IiM0ODhFQ0UiLz4KPHBhdGggZD0iTTE4LjgwMzEgMzYuOTQ5N0MxNC45MTE0IDM0Ljk4NjEgNS42NDk4MyAxNS44NjY0IDYuMzIxNTcgMTIuNDIxOEM2Ljg3NzUyIDEyLjcwMjQgMTIuMTI0MiAxNC4xNzk5IDE2LjQ5OTQgMjIuNzE2NUMyMC44NzQ1IDMxLjI1MyAxOS4yMTM4IDM2LjEyNSAxOC44MDMxIDM2Ljk0OTdaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfNDcwOV8xNDc5MzcpIi8+CjxwYXRoIGQ9Ik0xNS41NTY4IDM4LjM2MTlDMTYuMjM3MyAzNC4wNTYzIDYuMTMzMTMgMTUuMzY4MiAyLjk0NTMxIDEzLjkwMDZDMi44NDgwOSAxNC41MTU3IDIuODE5NDQgMTguNDI0OSA3LjE5MDQ5IDI2Ljk2MzVDMTEuNTYxNSAzNS41MDIyIDE0LjY0NzYgMzguMjEzMyAxNS41NTY4IDM4LjM2MTlaIiBmaWxsPSIjRDRGMEZGIi8+CjxwYXRoIGQ9Ik0xNS44OTQ5IDQ0Ljc0NTZDMTYuNjE5OCA0MS43ODU0IDE3Ljc3NDYgMzkuNzg5NSAxOS45MjA3IDQwLjkxMzlDMjEuOTE0NCA0Mi43MDM1IDIwLjIwMjggNDguMDM2OSAyMC4yMDI4IDQ4LjAzNjlDMjAuMjAyOCA0OC4wMzY5IDIxLjkyMzYgNDUuMjk3NSAyMy4zMTE1IDQ2LjM5ODdDMjQuNjk5NSA0Ny40OTk4IDI0Ljk0MTcgNTAuMzkzMiAyMi4xMzcxIDUzLjA0OTdDMjIuMTM3MSA1My4wNDk3IDIzLjYzNjggNTEuNjA0NiAyNS4wMDE2IDUyLjc2NTZDMjYuODc4OSA1NC40MDU1IDIyLjIxODUgNTguMzAyMyAyNy41NjI5IDYxLjAyMzVDMTQuNTU0MSA1OS4yNzQ1IDE1LjE2OTkgNDcuNzA1OCAxNS44OTQ5IDQ0Ljc0NTZaIiBmaWxsPSIjOTg5OTk5Ii8+CjxwYXRoIGQ9Ik0yLjMyODg1IDEzLjgxNDFDMi40OTU4NSAxMi45MTYzIDUuNzcxMjMgMTEuMjk2IDYuMDk3MjcgMTEuNTQyMkMxMC40NzQxIDE5Ljk3NyAxOS41NjkgMzcuMjA4MyAxOS42MzI0IDM3LjY2NjJDMTkuNzExNyAzOC4yMzg1IDE2LjUxNTggNDAuNDMwOSAxNS42MTc1IDQwLjI2NEMxNS4yMTI0IDM5LjQ0NTIgMi40MDgyNSAxNC4zODYzIDIuMzI4ODUgMTMuODE0MVoiIGZpbGw9IiM1Q0IxRkYiLz4KPHBhdGggZD0iTTQyLjM3OTEgOC4xMjI3MUM0Mi4zNzkxIDguMTIyNzEgNDIuNDIzOCA1LjY2NzI1IDQzLjQ5NTIgMy43MDI4OEM0NC4wNzU2IDIuNTg2NzcgNDQuNDc3NCAxLjczODUzIDQzLjgwNzcgMS43Mzg1M0M0Mi41MTMgMS43ODMxNyA0MS43MDk0IDMuNjEzNjEgNDIuMzc5MSA4LjEyMjcxWiIgZmlsbD0iIzk4OTg5OSIvPgo8cGF0aCBkPSJNODcuOTE4IDMzLjcwNEM4Ny45MTggMzMuNzA0IDgzLjg1NTMgMzQuNjQxNSA4MS4yNjU5IDMxLjczOTZDNzYuMTMxOCAyNC41OTY1IDcwLjE5NDEgMy4yNTYzNiA1MC45MDc2IDQuOTk3NUMyNC45NjkxIDcuMzYzNjYgMjUuOTA2NiAyOC41Njk4IDMxLjA0MDggMzcuMjMwOUMzMC40NjA0IDM5Ljk1NDIgMzEuMDQwOCA0NC43MzEyIDMxLjc1NTEgNDcuMTQyQzM0LjUyMyA1Ni40NzI3IDQ0Ljg4MDYgNjAuODQ3OSA1OC4wMDYxIDU5LjM3NDZDNjAuNjQwMSA1OS4wNjIxIDYzLjQwODEgNTguNzk0MiA2NS42NDAzIDU4LjE2OTJDODguMDUxOSA1MS44Mjk3IDg3LjkxOCAzMy43MDQgODcuOTE4IDMzLjcwNFoiIGZpbGw9IiNEN0Q3RDciLz4KPHBhdGggZD0iTTI3LjY5MDkgMjYuMzgyM0MyNy4zMzM4IDMzLjk3MTkgMzEuMDM5MyAzOC4xMjM4IDMxLjAzOTMgMzguMTIzOEMzMS4wMzkzIDM4LjEyMzggMzMuMDkyOSAzNy44MTEzIDM1LjcyNjkgMzguNjU5NUM0MC4wNTc1IDQwLjA0MzUgNTIuOTU5OCAzOS42NDE3IDU1LjA1ODEgMjcuNDk4NEM1Ni42NjUzIDE4LjM5MDkgNDguODUyNSA5LjE0OTQ2IDQwLjQxNDYgOS43Mjk4NEMzMi42NDY1IDEwLjMxMDIgMjguMjcxMyAxNC4zNzI5IDI3LjY5MDkgMjYuMzgyM1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0zMi42NTYxIDI0LjE0MzVDMzIuNjA0MiAyMS43NzcgMzMuNTIxNCAxOS44Mzc1IDM0LjcwNDYgMTkuODExNUMzNS44ODc5IDE5Ljc4NTUgMzYuODg5MiAyMS42ODMgMzYuOTQxMiAyNC4wNDk1QzM2Ljk5MzEgMjYuNDE2MSAzNi4wNzU5IDI4LjM1NTYgMzQuODkyNiAyOC4zODE1QzMzLjcwOTQgMjguNDA3NSAzMi43MDgxIDI2LjUxMDEgMzIuNjU2MSAyNC4xNDM1WiIgZmlsbD0iIzIzMUYyMCIvPgo8cGF0aCBkPSJNMzMuMDg3MiAyMy4yNjU0QzMzLjA2ODMgMjIuNDAyNiAzMy40NzI3IDIxLjY5NCAzMy45OTA0IDIxLjY4MjZDMzQuNTA4IDIxLjY3MTMgMzQuOTQzIDIyLjM2MTYgMzQuOTYxOSAyMy4yMjQ0QzM0Ljk4MDggMjQuMDg3MiAzNC41NzY0IDI0Ljc5NTggMzQuMDU4NyAyNC44MDcxQzMzLjU0MTEgMjQuODE4NSAzMy4xMDYxIDI0LjEyODIgMzMuMDg3MiAyMy4yNjU0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTI1LjQ1OTUgMzAuMzExMkMyNS40NTk1IDMwLjMxMTIgMjcuNTEzMiAyOS45OTg2IDI4Ljk4NjQgMzAuNTc5QzMwLjE5MTggMzEuMDI1NSAzMC40NTk3IDI4LjEyMzYgMjkuNTIyMiAyNy4zMkMyOC41ODQ2IDI2LjUxNjQgMjUuNDU5NSAzMC4zMTEyIDI1LjQ1OTUgMzAuMzExMloiIGZpbGw9IiNFQzZDMjIiLz4KPHBhdGggZD0iTTQ1LjI1NTYgNi45MTczOUM0NS4yNTU2IDYuOTE3MzkgNDcuNTMyNSA0LjcyOTgxIDQ5Ljk4NzkgNC4zMjgwMUM1Mi4yMjAyIDMuOTI2MjEgNTEuMTA0IDIuMjI5NzEgNDkuMDUwNCAzLjEyMjZDNDcuMjIgMy45NzA4NSA0NS4yNTU2IDYuOTE3MzkgNDUuMjU1NiA2LjkxNzM5WiIgZmlsbD0iIzk4OTg5OSIvPgo8cGF0aCBkPSJNNDMuMDUwMyA4LjMxOTEzQzQzLjA1MDMgOC4zMTkxMyA0NC4xMjE3IDUuNTA2NTMgNDYuNjIxOCAzLjk4ODYxQzQ4LjcyMDEgMi43Mzg1NiA0OS4xNjY2IDEuNDg4NTEgNDguNDk2OSAxLjE3NTk5QzQ3LjE1NzYgMC41NTA5NyA0NC41NjgyIDEuNTMzMTUgNDMuMDUwMyA4LjMxOTEzWiIgZmlsbD0iIzk4OTg5OSIvPgo8cGF0aCBkPSJNNDMuODk4MyA1Mi4yMzE4QzQ0LjgzNTggNTEuNjUxNCA0NS4zNzE1IDUwLjYyNDYgNDUuNDE2MiA0OS41OTc4QzQ2LjE3NTEgNTAuODQ3OCA0NS44MTggNTIuNDU1IDQ0LjU2NzkgNTMuMjU4NkM0My4zMTc5IDU0LjA2MjIgNDEuNjY2IDUzLjcwNTEgNDAuODE3OCA1Mi40OTk3QzQxLjggNTIuOTAxNSA0Mi45NjA3IDUyLjgxMjIgNDMuODk4MyA1Mi4yMzE4WiIgZmlsbD0iIzk4OTg5OSIvPgo8cGF0aCBkPSJNNDQuNzkxMSA0NC43NzZDNDUuODE3OSA0My45Mjc3IDQ2LjI2NDQgNDIuNzIyMyA0Ni4xNzUxIDQxLjUxNjlDNDcuMjQ2NiA0Mi44NTYyIDQ3LjA2OCA0NC43NzYgNDUuNzI4NyA0NS44NDc0QzQ0LjQzNCA0Ni45MTg5IDQyLjQ2OTYgNDYuNzg1IDQxLjMwODggNDUuNTM0OUM0Mi40Njk2IDQ1Ljg0NzQgNDMuNzY0MyA0NS41Nzk2IDQ0Ljc5MTEgNDQuNzc2WiIgZmlsbD0iIzk4OTg5OSIvPgo8cGF0aCBkPSJNMzYuNTc3MiA0OC44Mzg0QzM3LjgyNzMgNDguMzkyIDM4LjY3NTUgNDcuMzY1MiAzOC45ODggNDYuMjA0NEMzOS41MjM4IDQ3LjgxMTYgMzguNjc1NSA0OS41NTI3IDM3LjA2ODMgNTAuMTMzMUMzNS40NjExIDUwLjcxMzUgMzMuNjc1MyA0OS45NTQ2IDMzLjAwNTcgNDguMzkyQzM0LjAzMjUgNDkuMTA2MyAzNS4zNzE4IDQ5LjMyOTUgMzYuNTc3MiA0OC44Mzg0WiIgZmlsbD0iIzk4OTg5OSIvPgo8cGF0aCBkPSJNMzguNDk2MiA1My42MTU2QzM4LjQ5NjIgNTMuNjE1NiAzOS4zNDQ1IDU1LjA4ODkgMzkuMDc2NiA1NS45ODE4QzM5LjA3NjYgNTUuOTgxOCAzOC4xODM3IDU2LjAyNjQgMzcuNTU4NyA1NS4xMzM1QzM3LjU1ODcgNTUuMTMzNSAzOC4xODM3IDU1LjE3ODEgMzguNDk2MiA1My42MTU2WiIgZmlsbD0iIzk4OTg5OSIvPgo8cGF0aCBkPSJNNTIuOTE4IDQyLjA1M0M1My40MDkgMzkuMzc0NCA1Ny43ODQyIDI1LjcxMzEgNzIuMTE1MSAyMS40MjcyQzgzLjg1NjcgMTcuOTQ1IDc3Ljg3NDMgMjcuMTg2NCA3NC4zOTIgMjkuMzc0Qzc0LjM5MiAyOS4zNzQgNzYuOTgxNCAyNy43NjY4IDc4LjM2NTQgMjkuMjg0N0M3OS43NDk0IDMwLjc1NzkgNzguNjc3OSAzNS45MzY3IDcyLjM4MyAzOC4wMzVDNzIuMzgzIDM4LjAzNSA3Ny44NzQzIDM2LjQyNzggNzguMjc2MSA0MC44MDNDNzguNjc3OSA0NS4xNzgyIDcyLjkxODcgNDkuMjg1NSA2NC44MzgxIDUwLjg0OEM1Ni43NTc0IDUyLjQxMDYgNTIuMzgyMiA0NC43MzE3IDUyLjkxOCA0Mi4wNTNaIiBmaWxsPSIjOTg5ODk5Ii8+CjxwYXRoIGQ9Ik0yNy42MDM1IDI0LjE5NDRDMjcuNjAzNSAyNC4xOTQ0IDI1LjM3MTMgMjUuNTc4NCAyNS4xMDM0IDI5LjUwNzFDMjUuMTAzNCAyOS41MDcxIDI3LjQyNDkgMjcuOTQ0NSAyOS4zODkzIDI3Ljg1NTNDMzAuOTUxOSAyNy43NjYgMjguODUzNiAyNC4wMTU4IDI3LjYwMzUgMjQuMTk0NFoiIGZpbGw9IiNFQzg4MjIiLz4KPC9nPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzQ3MDlfMTQ3OTM3IiB4MT0iNy4zNDc3OCIgeTE9IjI0Ljc4NTIiIHgyPSIxNS4yNjU1IiB5Mj0iMTYuOTMyNiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBvZmZzZXQ9IjAuMDAwMSIgc3RvcC1jb2xvcj0iI0FGRTJGRiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IndoaXRlIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxjbGlwUGF0aCBpZD0iY2xpcDBfNDcwOV8xNDc5MzciPgo8cmVjdCB3aWR0aD0iNzQiIGhlaWdodD0iNjAiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==");
+    }
+    .vi-card-header + .vi-card-body > .vi-form-group:first-child {
+      margin-top: 0;
+    }
+    .vi-input-group .title.large-title {
+      width: 86px;
+    }
+  </style>
+</head>
+
+<!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+<header class="">
+  <div class="vi-page-header-normal">
+    <div class="vi-page-header-lt">
+      <button class="vi-btn" ontouchstart="">
+        <span class="vi-icon vi-icon-base icon-page-back"></span>
+      </button>
+    </div>
+    <div class="vi-page-header-ct">
+      <h1 class="vi-page-title">法定代理人驗證</h1>
+    </div>
+    <!-- <div class="vi-page-header-rt">
+      <span class="vi-icon vi-icon-base vi-modal-close"></span>
+    </div> -->
+  </div>
+</header>
+
+<body class="body-wrap scroll vi-bg-mint">
+  <div class="main_container">
+
+    <!-- Step 1 -->
+    <div id="step1">
+      <div class="vi-container pad_top12">
+        <form>
+          <div class="vi-txt-title vi-txt-b900 mb8 pad_top12">協助未成年子女開戶驗證</div>
+
+          <div class="vi-txt-body vi-txt-b900 mb16 forAEM">
+            準備好以下證件，可以加速身份驗證速度喔～
+          </div>
+
+          <div class="vi-card">
+            <!-- <div class="vi-card-header flex-wrap">
+              <div class="vi-line-title">你的法定代理人是誰？</div>
+            </div> -->
+
+            <div class="vi-card-body pady_16">
+              <ul class="vi-list-px0">
+                <div class="vi-list-item flex-nowrap">
+                  <div class="vi-rank-mark flex-shrink-0 mr8">1</div>
+                  <div class="vi-idimg-area">
+                    <img src="../../../../../inc/img/img/icon/bi-id-card.png">
+                  </div>
+                  <!-- 這裡和原 component 比，有多淺灰字，結構有多一層 -->
+                  <div class="vi-txt-body vi-txt-b600">
+                    <div>本人身分證</div>
+                    <div class="vi-txt-callout vi-txt-b500 mt4">(法定代理人)</div>
+                  </div>
+                </div>
+                <div class="vi-list-item flex-nowrap">
+                  <div class="vi-rank-mark flex-shrink-0 mr8">2</div>
+                  <div class="vi-idimg-area">
+                    <img src="../../../../../inc/img/img/icon/bi-two-card.png">
+                  </div>
+                  <!-- 這裡和原 component 比，有多淺灰字，結構有多一層 -->
+                  <div class="vi-txt-body vi-txt-b600">
+                    <div>本人駕照或健保卡</div>
+                    <div class="vi-txt-callout vi-txt-b500 mt4">(法定代理人)</div>
+                  </div>
+                </div>
+                <div class="vi-list-item flex-nowrap">
+                  <div class="vi-rank-mark flex-shrink-0 mr8">2</div>
+                  <div class="vi-idimg-area">
+                    <img src="../../../../../inc/img/img/icon/bi-bank-book.png">
+                  </div>
+                  <!-- 這裡和原 component 比，有多淺灰字，結構有多一層 -->
+                  <div class="vi-txt-body vi-txt-b600">
+                    <div>銀行帳戶或本行信用卡</div>
+                  </div>
+                </div>
+                <div class="vi-list-item flex-nowrap">
+                  <div class="vi-rank-mark flex-shrink-0 mr8">2</div>
+                  <div class="vi-idimg-area">
+                    <img src="../../../../../inc/img/img/icon/bi-account-book.png">
+                  </div>
+                  <!-- 這裡和原 component 比，有多淺灰字，結構有多一層 -->
+                  <div class="vi-txt-body vi-txt-b600">
+                    <div>新式戶口名簿或電子戶籍謄本<span class="vi-txt-callout vi-txt-b500">（法定代理人非雙親者才需準備）</span>
+                    </div>
+                    <div class="vi-txt-body-bold vi-txt-g500 mt4">
+                      <span class="vi-icon vi-icon-xs icon-question-mark"></span>
+                      資料準備說明
+                    </div>
+                  </div>
+                </div>
+              </ul>
+
+              <div class="vi-btn-group mt8">
+                <button id="btn-step1" class="vi-btn vi-btn-primary">準備好了，開始吧</button>
+              </div>
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+
+
+
+    <!-- Step 2 -->
+    <div id="step2" class="hide">
+      <div class="vi-page-indicator">
+        <div class="vi-progress-bar">
+          <progress class="progress-bar-handle" max="100" value="33"></progress>
+        </div>
+        <div class="vi-txt-b900 vi-txt-title">
+          身份確認及條款
+        </div>
+        <div class="vi-step vi-txt-g600">
+          步驟
+          <span class="vi-step-current">1</span><span class="vi-txt-b500">/3</span>
+        </div>
+      </div>
+
+      <div class="vi-container">
+        <form>
+          <div class="vi-card vi-card-step">
+            <div class="vi-step-bi"></div>
+            <div class="vi-card-header flex-wrap">
+              <div class="vi-line-title">請確認開戶資料</div>
+            </div>
+            <div class="vi-card-body pad_btm16">
+              <div class="vi-form-group">
+                <div class="vi-input-group">
+                  <span class="title large-title">未成年子女身分證字號</span>
+                  <input type="text" placeholderTransKey="" maxlength="10">
+                </div>
+                <div class="vi-form-info"></div>
+                <div class="vi-form-error">
+                  {{formClazz.formErrors?.bankMobile}}
+                </div>
+              </div>
+              <div class="vi-form-group">
+                <div class="vi-input-group">
+                  <span class="title large-title">未成年子女出生年月日</span>
+                  <input type="text" placeholder="YYYY/MM/DD" maxlength="10">
+                </div>
+              </div>
+              <div class="vi-form-group">
+                <div class="vi-input-group">
+                  <span class="title large-title">你的身份證字號(法代)</span>
+                  <input type="text" placeholderTransKey="" maxlength="10">
+                </div>
+              </div>
+              <div class="vi-form-group">
+                <div class="vi-input-group">
+                  <span class="title large-title">你的出生年月日(法代)</span>
+                  <input type="text" placeholder="YYYY/MM/DD" maxlength="10">
+                </div>
+              </div>
+              <div class="vi-form-group">
+                <div class="vi-input-group">
+                  <span class="title large-title">你的手機號碼(法代)</span>
+                  <input type="tel" placeholderTransKey="" maxlength="10">
+                </div>
+              </div>
+
+              <div class="vi-btn-group mt8">
+                <button id="btn-step2" class="vi-btn vi-btn-primary">下一步</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>  
+    </div>
+
+
+
+    <!-- Step 3 -->
+    <div id="step3" class="hide">
+      <div class="vi-page-indicator">
+        <div class="vi-progress-bar">
+          <progress class="progress-bar-handle" max="100" value="33"></progress>
+        </div>
+        <div class="vi-txt-b900 vi-txt-title">簽署條款</div>
+        <div class="vi-step vi-txt-g600">
+          <i18n translate="deposit_ot002.step">步驟</i18n>
+          <span class="vi-step-current">1</span><span class="vi-txt-b500">/3</span>
+        </div>
+      </div>
+
+      <div class="vi-container">
+        <form [formGroup]="formClazz.form" #formRef>
+          <div class="vi-card vi-account">
+            <div class="vi-card-body mt16">
+
+              <!-- 條款頁  參考 twrbm-deposit-ot002-470.component.html  這邊不再 demo open modal -->
+              <div class="vi-control-vertical-group">
+                <label class="vi-checkbox">
+                  <input type="checkbox">
+                  <span class="vi-checkbox-mark"></span>
+                  <span class="vi-checkbox-txt">
+                    <i18n>本人已詳閱貴行提供未成年人之</i18n>
+                    <a #privacy href="" class="vi-txt-body-bold vi-txt-g500">開立帳戶總約定書、金融卡約定條款及個人網路銀行暨行動銀行服務條款及個人資料運用告知聲明書</a>
+                    <i18n>，並同意未成年人依其內容與貴行締約開戶，審閱期間至少五日</i18n>
+                  </span>
+                </label>
+              </div>
+
+              <div class="vi-control-vertical-group">
+                <label class="vi-checkbox">
+                  <input type="checkbox">
+                  <span class="vi-checkbox-mark"></span>
+                  <span class="vi-checkbox-txt">
+                    <i18n>本人已詳閱</i18n>
+                    <a #privacy href="" class="vi-txt-body-bold vi-txt-g500">個人資料運用告知聲明書</a>
+                    <i18n>，並同意由貴行依該聲明書搜集觸及利用本人個人資料</i18n>
+                  </span>
+                </label>
+              </div>
+
+              <div class="vi-control-vertical-group">
+                <label class="vi-checkbox">
+                  <input type="checkbox">
+                  <span class="vi-checkbox-mark"></span>
+                  <span class="vi-checkbox-txt">
+                    <i18n>本人同意為未成年於貴行開立 ＭyWay 數位台幣帳戶，並同意未成年人就本次開立的帳戶日後進行一切存款提款及轉帳匯款及簽帳刷卡消費等行為</i18n>
+                  </span>
+                </label>
+              </div>
+
+              <div class="vi-control-vertical-group">
+                <label class="vi-checkbox">
+                  <input type="checkbox">
+                  <span class="vi-checkbox-mark"></span>
+                  <span class="vi-checkbox-txt">
+                    <i18n>本人已詳閱</i18n>
+                    <a #privacy href="" class="vi-txt-body-bold vi-txt-g500">法代相互授權同意書</a>
+                    <i18n>，並擬向貴行申請法代相互授權，除前向條款約定事項外，本次申請法代相互授權須待未成年開戶申請成功後始可生效</i18n>
+                  </span>
+                </label>
+              </div>
+
+              <div class="vi-control-vertical-group">
+                <label class="vi-checkbox">
+                  <input type="checkbox">
+                  <span class="vi-checkbox-mark"></span>
+                  <span class="vi-checkbox-txt">
+                    <i18n>本人同意為辦理未成年開立數位帳戶之特定目的提供予貴行之個人資料（含戶口名簿、戶籍謄本等），得由貴行於該特定目的範圍內進行處理及利用，本人同意於未成年人完成線上開戶申請前，貴行可保留本人已填寫及上傳的證件檔案 30 日，以利本人於前述期間內接續完成身份驗證流程</i18n>
+                  </span>
+                </label>
+              </div>
+
+              <div class="mb24"></div>
+              <div class="vi-btn-group mb16">
+                <button id="btn-step3" class="vi-btn vi-btn-primary" ontouchstart="" >已簽署條款並繼續</button>
+              </div>
+
+            </div>
+          </div>
+        </form>
+
+        <div class="vi-remarks forAEM">
+          <h4 class="vi-remarks-title">備註</h4>
+          <ol class="vi-ordered-list vi-ordered-list-num">
+            <li>立約人知悉貴行提供之數位存款帳戶相關服務屬經立約人事先同之非以有形媒介提供之數位內容或一經提供即為完成之線上服務，故排除消費者保護法第 19 條第 1 項解除權之適用。</li>
+          </ol>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+
+<script>
+// js event for demo page content change
+document.getElementById('btn-step1').addEventListener('click', function() {
+  event.preventDefault();
+  document.getElementById('step1').classList.toggle('hide');
+  document.getElementById('step2').classList.toggle('hide');
+});
+document.getElementById('btn-step2').addEventListener('click', function() {
+  event.preventDefault();
+  document.getElementById('step2').classList.toggle('hide');
+  document.getElementById('step3').classList.toggle('hide');
+});
+</script>
+
+</html>

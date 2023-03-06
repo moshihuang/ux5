@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-page-indicator .vi-step {
+      height: 28px;
+      margin-left: 12px;
+      flex-shrink: 0;
+    }
+    
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+
+<body class="vi-bg-mint ">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <!-- <h1 class="vi-page-title"></h1> -->
+      </div>
+      <div class="vi-page-header-rt">
+        <a class="vi-icon vi-icon-base icon-start-default-w"></a>
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap vi-bg-mint">
+    
+    <div class="main_container vi-has-foot-btn">
+      
+      <div class="vi-page-indicator">
+        <div class="vi-progress-bar"></div>
+        <div class="vi-txt-title vi-txt-b900">請選擇您的職業，來了解國家可以給你多少退休金</div>
+        <div class="vi-step vi-txt-g600">
+          步驟
+          <span class="vi-step-current">3</span><span class="vi-txt-b500">/4</span>
+        </div>
+      </div>
+      
+
+      <div class="vi-container">
+
+        <div class="dis-flex align-items-center flex-justify-end mb12">
+          <span class="vi-txt-callout vi-txt-b600">以下金額為平均月薪</span><span class="vi-icon vi-icon-xs icon-info-mark-g ml8"></span>
+        </div>
+        
+        <!-- 點選時加 .selected -->
+        <div class="vi-card vi-card-select">
+          <div class="vi-card-header">
+            <div class="dis-flex flex-justify-between align-items-center w-100">
+              <div class="dis-flex align-items-center">
+                <div class="mr16">
+                  <img src="../../../../inc/img/health/retired-select-1.svg">
+                  <!-- 預設圖 -->
+                  <!-- <img src="../../../../inc/img/health/select-default.svg"> -->
+                </div>
+                <div class="vi-txt-body-bold vi-txt-b600">公教人員</div>
+              </div>
+              <div class="vi-txt-body-bold vi-txt-b600">
+                48,863 元/月
+              </div>
+            </div>
+          </div>
+          <div class="vi-card-body pad_btm16 hide">
+            <div class="vi-txt-callout vi-txt-b600">公務員與教師退休時皆可領取「公教人員保險」中的退休給付，另外公務員可額外領取「公務員退撫基金」，而教師則區分為公校教師與私校教師，分別可領取「公立學校教職員退撫基金」及「私立學校教職員退撫基金」</div>
+          </div>
+        </div>
+        
+        <!-- 點選時加 .selected -->
+        <div class="vi-card vi-card-select">
+          <div class="vi-card-header">
+            <div class="dis-flex flex-justify-between align-items-center w-100">
+              <div class="dis-flex align-items-center">
+                <div class="mr16">
+                  <img src="../../../../inc/img/health/retired-select-2.svg">
+                  <!-- 預設圖 -->
+                  <!-- <img src="../../../../inc/img/health/select-default.svg"> -->
+                </div>
+                <div class="vi-txt-body-bold vi-txt-b600">勞工</div>
+              </div>
+              <div class="vi-txt-body-bold vi-txt-b600">
+                26,179 元/月
+              </div>
+            </div>
+          </div>
+          <div class="vi-card-body pad_btm16 hide">
+            <div class="vi-txt-callout vi-txt-b600">一般勞工退休時領取總退休金為「勞工保險」中的退休給付 +「勞工退休金」兩部分所組成。</div>
+          </div>
+        </div>
+        
+        <!-- 點選時加 .selected -->
+        <div class="vi-card vi-card-select">
+          <div class="vi-card-header">
+            <div class="dis-flex flex-justify-between align-items-center w-100">
+              <div class="dis-flex flex-column">
+                <div class="vi-txt-body-bold vi-txt-b600 mb8">自己填</div>
+                <div class="vi-txt-body vi-txt-b600">已知你的預計每月可領退休金？</div>
+              </div>
+            </div>
+          </div>
+          <div class="vi-card-body pad_btm16 hide">
+            <div class="vi-form-group mt0 mb0" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group">
+                <span class="title large-title">每月可領退休金</span>
+                <input type="tel" placeholder="請輸入金額">
+                <span class="unit">元/日</span>
+              </div>
+              <div class="vi-form-error">請輸入1~999,999,999的金額</div>
+            </div>
+            <div class="rt mt8">
+              <span class="vi-icon vi-icon-xs icon-info-mark-g top-2px"></span>
+              <span class="vi-txt-body-bold vi-txt-g500">用退休計算機試算每月退休金</span>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="vi-txt-info pad_btm24">勞工保險之金額為107年全體平均給付金額。(資料來源：國家年金改革委員會)<br>
+公教人員保險之金額為107年全體平均給付金額。(資料來源：國家年金改革委員會)</div>
+        
+      </div>
+
+      <div id="footer">
+        <div class="vi-page-footer">
+          <div class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-l vi-btn-primary">下一步</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+$(document).ready(function(){
+
+  $('.vi-card-select').on('click', function() {
+    $(this).siblings().removeClass('selected');
+    $(this).siblings().find('.vi-card-body').addClass('hide')
+    $(this).addClass('selected');
+    $(this).find('.vi-card-body').removeClass('hide')
+  });
+
+});
+</script>

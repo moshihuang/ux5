@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="188" height="187" viewBox="0 0 188 187">
+    <defs>
+        <filter id="fjqg0yi9de" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <filter id="9e0e0h2g3f" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <path id="s5rjmmtsya" d="M9.557 13.466c5.452 0 9.222-4.952 9.222-6.496 0-1.551-3.777-6.496-9.222-6.496C4.146.474.327 5.419.327 6.97c0 1.544 3.846 6.496 9.23 6.496z"/>
+        <path id="tqfm2yih0c" d="M9.557 13.466c5.452 0 9.222-4.952 9.222-6.496 0-1.551-3.777-6.496-9.222-6.496C4.146.474.327 5.419.327 6.97c0 1.544 3.846 6.496 9.23 6.496z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g transform="translate(-46 -241) translate(20 237) translate(-20 4) translate(46.667)">
+                        <path stroke="#FF625E" stroke-width="3.484" d="M95.566 128.231c8.219-.225 14.993-3.681 20.323-10.37"/>
+                        <g transform="translate(104.531 82.22)">
+                            <mask id="wbc11bmhtb" fill="#fff">
+                                <use xlink:href="#s5rjmmtsya"/>
+                            </mask>
+                            <use fill="#FFF" fill-rule="nonzero" transform="rotate(-3 9.553 6.97)" xlink:href="#s5rjmmtsya"/>
+                            <ellipse cx="13.237" cy="7.646" fill="#324148" mask="url(#wbc11bmhtb)" rx="5.871" ry="6.496"/>
+                        </g>
+                        <g transform="translate(67.068 82.22)">
+                            <mask id="iv0qa4fd5d" fill="#fff">
+                                <use xlink:href="#tqfm2yih0c"/>
+                            </mask>
+                            <use fill="#FFF" fill-rule="nonzero" transform="rotate(3 9.553 6.97)" xlink:href="#tqfm2yih0c"/>
+                            <ellipse cx="12.796" cy="7.646" fill="#324148" mask="url(#iv0qa4fd5d)" rx="5.871" ry="6.496"/>
+                        </g>
+                        <ellipse cx="62.133" cy="98.886" fill="#FF918E" filter="url(#fjqg0yi9de)" rx="5.807" ry="6.378"/>
+                        <ellipse cx="128.337" cy="98.886" fill="#FF918E" filter="url(#9e0e0h2g3f)" rx="5.807" ry="6.378"/>
+                        <path stroke="#324148" stroke-width="2.904" d="M122.612 78.557c-5.355-2.79-10.768-3.24-16.238-1.355M85.656 78.057c-5.355-2.79-10.767-3.24-16.238-1.355" opacity=".8"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

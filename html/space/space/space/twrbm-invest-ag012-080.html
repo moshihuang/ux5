@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+
+<body class="vi-bg-mint ">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">編輯目標</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <a class="vi-icon vi-icon-base icon-start-default-w"></a>
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap vi-bg-mint">
+    
+    <div class="main_container vi-has-foot-btn pad_top24">
+
+      <div class="vi-container">
+
+        <div class="vi-card pad_btm16">
+          <div class="vi-card-header">
+            <div class="vi-line-title">基本資料</div>
+          </div>
+          <div class="vi-card-body">
+            <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group">
+                <span class="title large-title">預期退休年齡</span>
+                <input type="text" placeholder="請輸入" type="">
+                <span class="unit">歲</span>
+              </div>
+              <!-- <div class="vi-form-error"></div> -->
+              <div class="vi-form-info">
+                <span class="vi-txt-callout vi-txt-b500">根據勞動部公布平均退休年齡為63歲</span>
+                <span class="vi-icon vi-icon-xs icon-info-mark-g top-2px"></span>
+              </div>
+            </div>
+
+            
+            <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group">
+                <span class="title large-title">預估壽命</span>
+                <input type="text" placeholder="請輸入" type="">
+                <span class="unit">歲</span>
+              </div>
+              <!-- <div class="vi-form-error"></div> -->
+              <div class="vi-form-info dis-flex">
+                <span class="vi-txt-callout vi-txt-b500">根據內政部統計國人平均壽命，男性為 78.1 歲，女性為 84.7 歲</span>
+                <span class="vi-icon vi-icon-xs icon-info-mark-g top-2px ml4"></span>
+              </div>
+            </div>
+            
+            <div class="vi-form-group has-error" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group">
+                <span class="title large-title">退休後每月花費</span>
+                <input type="text" placeholder="請輸入金額">
+                <!-- <span class="unit">萬</span> -->
+              </div>
+              <div class="vi-form-error">請輸入金額</div>
+            </div>
+            
+            <div class="dis-flex mt4 mb16">
+              <div class="vi-btn vi-btn-xs vi-btn-secondary mr8">60,000</div>
+              <div class="vi-btn vi-btn-xs vi-btn-secondary mr8">80,000</div>
+              <div class="vi-btn vi-btn-xs vi-btn-secondary mr8">110,000</div>
+            </div>
+            
+            <div class="vi-txt-info">(主計處統計 65 歲以上家戶月平均消費，低標為新台幣 43,520 元；高標新台幣 101,588 元。)</div>
+          </div>
+        </div>
+        
+        <div class="vi-card pad_btm16">
+          <div class="vi-card-header">
+            <div class="vi-line-title">預期的通貨膨脹率</div>
+          </div>
+          <div class="vi-card-body">
+            <div class="vi-txt-body vi-txt-b600 mb8">民國 98 年～107 年消費者物價指數平均年增率為 1%，您也可以自行調整</div>
+            
+            <div class="vi-form-group">
+              <label class="vi-checkbox">
+                <input type="checkbox">
+                <span class="vi-checkbox-mark"></span>
+                <span class="vi-checkbox-txt">加入物價通貨膨脹率計算 </span>
+              </label>
+            </div>
+            
+            <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group disabled">
+                <span class="title large-title">完成年限</span>
+                <input type="tel" value="1">
+                <span class="unit">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="vi-card pad_btm16">
+          <div class="vi-card-header">
+            <div class="vi-line-title">預期的報酬率</div>
+          </div>
+          <div class="vi-card-body">
+            <div class="vi-txt-body vi-txt-b600 mb8">您最高可設定${6%}報酬率，報酬率越高，需準備的金額也會越多。</div>
+
+            <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group">
+                <span class="title large-title">預期報酬率</span>
+                <input type="tel" value="1">
+                <span class="unit">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="vi-card pad_btm16">
+          <div class="vi-card-header">
+            <div class="vi-line-title">你目前的社會保險金</div>
+          </div>
+          <div class="vi-card-body">
+            <!-- id 是 demo 用的，開發請拉掉 -->
+            <div id="trigger-job" class="vi-form-group vi-for-select">
+              <div class="vi-input-group">
+                <span class="title large-title">你的職業</span>
+                <input value="勞工" type="text" readonly="readonly">
+              </div>
+              <!-- <div class="vi-form-error"></div> -->
+            </div>
+            
+            <div class="mt8 mb12 ct">
+              <span class="vi-txt-headline vi-txt-b600">26,179</span>
+              <span class="vi-txt-body vi-txt-b600"> / 平均月薪</span>
+            </div>
+            <div class="vi-txt-body vi-txt-b600">一般勞工退休時領取的總退休金主要為「勞工保險」中的退休給付 +「勞工退休金」兩部分所組成。</div>
+            
+            <!-- <div class="mt8 mb12 ct">
+              <span class="vi-txt-headline vi-txt-b600">48,863</span>
+              <span class="vi-txt-body vi-txt-b600"> / 平均月薪</span>
+            </div>
+            <div class="vi-txt-body vi-txt-b600">公務員與教師退休時皆可領取「公教人員保險」中的退休給付，另外公務員可額外領取「公務員退撫基金」，而教師則區分為公校教師與私校教師，分別可領取「公立學校教職員退撫基金」及「私立學校教職員退撫基金」</div> -->
+            
+            <!-- 自己填時才顯示 -->
+            <div class="">
+              <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+                <div class="vi-input-group">
+                  <span class="title large-title">預計每月可領退休金</span>
+                  <input type="text" placeholder="請輸入金額">
+                </div>
+              </div>
+              <div class="vi-form-info">
+                <span class="vi-icon vi-icon-xs icon-info-mark-g top-2px"></span>
+                <span class="vi-txt-body-bold vi-txt-g500">用退休計算機試算每月退休金</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="vi-card pad_btm16">
+          <div class="vi-card-header">
+            <div class="vi-line-title">基本資料</div>
+          </div>
+          <div class="vi-card-body">
+            
+            <div class="vi-txt-body vi-txt-b500 mt8 mb8 ct loading-txt">整理中，稍後再試</div>
+            
+          </div>
+        </div>
+
+      </div>
+
+      <div id="footer">
+        <div class="vi-page-footer">
+          <div class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-secondary">取消</div>
+            <div class="btn vi-btn vi-btn-primary">儲存</div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+<!-- popup 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-info-popup" class="vi-modal">
+  <div class="vi-modal-backdrop"></div>
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-header-ct">
+        <span class="popup-title">統計資訊</span>
+      </div>
+    </div>
+    <div class="popup-body">
+      
+    </div>
+    <div class="popup-footer">
+      <div class="vi-btn-group">
+        <button class="vi-btn vi-btn-primary" ontouchstart>我知道了</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-select-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal" (click)=""></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">選擇目標</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" ontouchstart="" data-dismiss="modal" (click)=""></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <ul class="vi-list vi-list-px8 super-card-select">
+          <!-- 已選取 加 active -->
+          <a class="vi-list-item active" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">公教人員</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">勞工</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">自己填</div>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// 選擇職業 demo
+document.getElementById('trigger-job').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-select-supercard').classList.toggle('hide');
+  document.getElementById('target-select-supercard').classList.toggle('vi-modal-in');
+});
+
+// 超人卡片 close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('vi-modal-close');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+  });
+}
+
+
+// scroll fixed header
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 0) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+  }
+}
+
+
+$(document).ready(function(){
+
+  $('#trigger-popup-info').on('click', function() {
+    $('#target-info-popup').toggleClass('vi-modal-in');
+  });
+
+});
+</script>

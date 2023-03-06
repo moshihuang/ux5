@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-page-indicator {
+      flex-direction: column;
+    }
+
+
+
+    .slider-vertical-wrap {
+      margin: 12px 16px 36px;
+    }
+    .noUi-vertical {
+      width: 24px;
+      height: 400px;
+      border-radius: 100px;
+      border: 1px solid #009891;
+    }
+    .noUi-target {
+      margin: 0 auto;
+    }
+    .noUi-vertical .noUi-handle {
+      width: 40px;
+      height: 40px;
+      left: -10px;
+      border: 0;
+      border-radius: 100px;
+      background: #009891;
+      box-shadow: 0px 2px 3px rgba(1, 2, 2, 0.28);
+    }
+    .noUi-vertical .noUi-handle:before {
+      width: 40px;
+      height: 40px;
+      left: 0;
+      top: 0;
+      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAxMiAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik02LjUzNjUgMC44MTY0MDZDNy42MDg0OSAwLjgxNjQwNiA4LjQ3NzUyIDEuNjg1NDMgOC40Nzc1MiAyLjc1NzQyVjMuODk0OTJDOS42ODUwMyA0LjUwNTUxIDEwLjY4MDEgNS42MzQ1NyAxMS4xMzI2IDcuMjQxQzExLjQyMzIgOC4yNzI4NCAxMC44MjI0IDkuMzQ0OTMgOS43OTA1MyA5LjYzNTU4QzguNzU4NjkgOS45MjYyMyA3LjY4NjYgOS4zMjUzNyA3LjM5NTk1IDguMjkzNTNDNy4yNTI5IDcuNzg1NjcgNy4wMTEyOCA3LjUzNTA2IDYuODEyNiA3LjQwODU1QzYuNTk4MTkgNy4yNzIwMyA2LjMzNzI5IDcuMjE4NiA2LjA3NTE4IDcuMjU4NTdDNS44MTUzMyA3LjI5ODIgNS41NzE3OCA3LjQyNzExIDUuMzkwMTMgNy42NDIwNkM1LjIxNzg2IDcuODQ1OTEgNS4wMzIyOSA4LjIxMDEyIDUuMDMyMjkgOC44MzYxNkM1LjAzMjI5IDkuMzE2MTIgNS4xNjgzNyA5LjQ4ODEgNS4zMzE3IDkuNjM1M0M1LjYwNjA3IDkuODgyNTggNi4wNDUyOCAxMC4wOTg0IDYuODI3MzkgMTAuNDEzNEM2Ljg5Mjg4IDEwLjQzOTcgNi45NjI3IDEwLjQ2NzQgNy4wMzYxNiAxMC40OTY2TDcuMDM2NzkgMTAuNDk2OEw3LjAzNzI2IDEwLjQ5N0M3LjY4MDE3IDEwLjc1MjEgOC42MDEwNCAxMS4xMTc1IDkuMzM0OTIgMTEuNjY2M0MxMC4zMDUyIDEyLjM5MTkgMTEuMDU0NCAxMy40OTU4IDExLjA1NDQgMTUuMDcyQzExLjA1NDQgMTYuNzYxNSAxMC41Mzg5IDE4LjE5NDQgOS41MTE5NiAxOS4yMDcyQzkuMTkxMjkgMTkuNTIzNSA4Ljg0MjA1IDE5Ljc3NzcgOC40Nzc1MiAxOS45Nzc4VjIwLjI1NTVDOC40Nzc1MiAyMS4zMjc1IDcuNjA4NDkgMjIuMTk2NSA2LjUzNjUgMjIuMTk2NUM1LjUyNTE1IDIyLjE5NjUgNC42OTQ0NiAyMS40MjMxIDQuNjAzNzEgMjAuNDM1NEMzLjk2NDcyIDIwLjI4MTMgMy4zNTYxOCAyMC4wMjEzIDIuODI2NSAxOS42NjcxQzEuOTE5NiAxOS4wNjA3IDEgMTcuOTg2OCAxIDE2LjQ5NzVDMSAxNS40MjU1IDEuODY5MDIgMTQuNTU2NCAyLjk0MTAyIDE0LjU1NjRDMy45NjYxNCAxNC41NTY0IDQuODA1NjYgMTUuMzUxMSA0Ljg3NzEgMTYuMzU4MUM0Ljg5OTY4IDE2LjM3ODcgNC45MzM5NiAxNi40MDY0IDQuOTg0NCAxNi40NDAxQzUuMjE5NCAxNi41OTczIDUuNjAxMDggMTYuNzIyNiA1Ljk5OTE4IDE2LjcxNjlDNi4zODIyMyAxNi43MTE0IDYuNjM2MDUgMTYuNTkxMiA2Ljc4NiAxNi40NDMzQzYuOTE2MzkgMTYuMzE0NyA3LjE3MjQgMTUuOTY1OSA3LjE3MjQgMTUuMDcyQzcuMTcyNCAxNC45MTYgNy4xNjg5MiAxNC44OTQgNy4wMDk5OSAxNC43NzUxQzYuNzEwMTcgMTQuNTUwOSA2LjI3NjUxIDE0LjM3NjQgNS40Njg4MyAxNC4wNTEzTDUuMzc3MyAxNC4wMTQ0QzQuNjUzODcgMTMuNzIzMSAzLjU4NzU1IDEzLjI4OTQgMi43MzI3NyAxMi41MTlDMS43NjY5NSAxMS42NDg2IDEuMTUwMjYgMTAuNDM0OCAxLjE1MDI2IDguODM2MTZDMS4xNTAyNiA2LjIxMjY4IDIuNjM0MDEgNC4zMjQ5MyA0LjU5NTQ5IDMuNjQyNDlMNC41OTU0OSAyLjc1NzQyQzQuNTk1NDkgMS42ODU0MyA1LjQ2NDUxIDAuODE2NDA2IDYuNTM2NSAwLjgxNjQwNlpNNC44Mzg2NyAxNi4zMTQ4QzQuODM5MzQgMTYuMzE0NyA0Ljg0MzM1IDE2LjMxOTQgNC44NDg2NyAxNi4zMjkyQzQuODQwNjYgMTYuMzE5OSA0LjgzOCAxNi4zMTQ5IDQuODM4NjcgMTYuMzE0OFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=) no-repeat center;
+    }
+    .noUi-vertical .noUi-handle:after {
+      display: none;
+    }
+    .noUi-touch-area {
+      
+    }
+    .noUi-pips-vertical {
+      height: calc(100%);
+      top: -4px;
+      left: 80%;
+    }
+    
+    .noUi-value {
+      color: #757575;
+    }
+    .noUi-value:after {
+      content: '萬';
+      position: absolute;
+    }
+    .noUi-marker-vertical.noUi-marker-large {
+      width: 12px;
+    }
+    .noUi-marker-vertical.noUi-marker {
+      left: 6px;
+      color: #757575;
+      font-size: 17px;
+      background: #C9EBE9;
+    }
+    .noUi-marker-vertical.noUi-marker:first-child,
+    .noUi-marker-vertical.noUi-marker:nth-last-child(2) {
+      display: none;
+    }
+    
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+
+<body class="vi-bg-mint ">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <!-- <h1 class="vi-page-title"></h1> -->
+      </div>
+      <div class="vi-page-header-rt">
+        <a class="vi-icon vi-icon-base icon-start-default-w"></a>
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap vi-bg-mint">
+    
+    <div class="main_container vi-has-foot-btn">
+      
+      <div class="vi-page-indicator">
+        <div class="vi-progress-bar"></div>
+        <div class="vi-txt-title vi-txt-b900 mb4">當意外發生，期望保險可以補助多少來減輕生活負擔？</div>
+        <div class="vi-txt-body vi-txt-b600">(保險實支實付給付的最高金額)</div>
+      </div>
+      
+      <div class="vi-container">
+        
+        <!-- 點選時加 .selected -->
+        <div class="vi-card vi-card-select selected">
+          <div class="vi-card-header">
+            <div class="dis-flex flex-justify-between align-items-center w-100">
+              <div class="dis-flex align-items-center">
+                <div class="mr16">
+                  <img src="../../../../inc/img/health/surgery-1.svg">
+                  <!-- 預設圖 -->
+                  <!-- <img src="../../../../inc/img/health/select-default.svg"> -->
+                </div>
+                <div>
+                  <div class="vi-txt-body-bold vi-txt-b600">高昂自費手術</div>
+                  <div class="vi-txt-callout vi-txt-b600 mt4">如：換人工關節或椎間盤</div>
+                </div>
+              </div>
+              <div class="vi-txt-body-bold vi-txt-b600 flex-shrink-0 ml8">
+                25萬
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 點選時加 .selected, 錯誤時加 .has-error -->
+        <div class="vi-card vi-card-select has-error">
+          <div class="vi-card-header">
+            <div class="dis-flex flex-justify-between align-items-center w-100">
+              <div class="dis-flex align-items-center">
+                <div class="mr16">
+                  <img src="../../../../inc/img/health/surgery-2.svg">
+                  <!-- 預設圖 -->
+                  <!-- <img src="../../../../inc/img/health/select-default.svg"> -->
+                </div>
+                <div>
+                  <div class="vi-txt-body-bold vi-txt-b600">一般自費手術</div>
+                  <div class="vi-txt-callout vi-txt-b600 mt4">如：剖腹產、開刀手術</div>
+                </div>
+              </div>
+              <div class="vi-txt-body-bold vi-txt-b600 flex-shrink-0 ml8">
+                12萬
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 錯誤 -->
+        <div class="vi-form-group mt-12">
+          <div class="vi-form-error">error message</div>
+        </div>
+        
+        <!-- 點選時加 .selected -->
+        <div class="vi-card vi-card-select">
+          <div class="vi-card-header">
+            <div class="dis-flex flex-justify-between align-items-center w-100">
+              <div class="dis-flex align-items-center">
+                <div class="mr16">
+                  <img src="../../../../inc/img/health/surgery-3.svg">
+                  <!-- 預設圖 -->
+                  <!-- <img src="../../../../inc/img/health/select-default.svg"> -->
+                </div>
+                <div>
+                  <div class="vi-txt-body-bold vi-txt-b600">門診手術</div>
+                  <!-- <div class="vi-txt-callout vi-txt-b600 mt4">如：換人工關節或椎間盤</div> -->
+                </div>
+              </div>
+              <div class="vi-txt-body-bold vi-txt-b600 flex-shrink-0 ml8">
+                5萬
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 點選時加 .selected -->
+        <div class="vi-card vi-card-select">
+          <div class="vi-card-header">
+            <div class="dis-flex flex-justify-between align-items-center w-100">
+              <div class="dis-flex flex-column">
+                <div class="vi-txt-body-bold vi-txt-b600">自己填</div>
+                <div class="vi-txt-body vi-txt-b600 mt8">已知期望的保險補助最高金額嗎？</div>
+              </div>
+            </div>
+          </div>
+          <div class="vi-card-body pad_btm16 hide">
+            <div class="vi-form-group mt0 mb0" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group">
+                <span class="title large-title">實支實付</span>
+                <input type="tel" placeholder="請輸入金額">
+                <span class="unit">元</span>
+              </div>
+              <div class="vi-form-error">請輸入1~999,999,999的金額</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- id 是 demo 用的，開發請拉掉 -->
+        <div id="trigger-popup-info" class="ct mt24 mb40">
+          <span class="vi-icon vi-icon-xs icon-info-mark-g top-2px"></span>
+          <span class="vi-txt-body-bold vi-txt-g500">實支實付平均保額</span>
+        </div>
+        
+      </div>
+
+      <div id="footer">
+        <div class="vi-page-footer">
+          <div class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-l vi-btn-primary">下一步</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+<!-- vi-modal popup 現有版型 這裡僅示意，可參考 ctbc-mb-alert.widget -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-popup-info" class="vi-modal">
+  <div class="vi-modal-backdrop"></div>
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-header-ct">
+        <span class="popup-title">常見醫療耗材 & 花費</span>
+      </div>
+    </div>
+    <div class="popup-body">
+      <div class="vi-modal-list-gray-header">
+        <div class="vi-txt-body vi-txt-b600">敷料耗材</div>
+      </div>
+      <ul class="vi-list vi-list-baseline vi-list-px8">
+        <li class="vi-list-item">
+          <div class="vi-list-lt flex-shrink-0">
+            <div class="vi-txt-body vi-txt-b600">自控式止痛設備</div>
+          </div>
+          <div class="vi-list-rt">
+            <div class="">
+              <div class="vi-txt-body vi-txt-b600">約 6000 元</div>
+            </div>
+          </div>
+        </li>
+        <li class="vi-list-item">
+          <div class="vi-list-lt flex-shrink-0">
+            <div class="vi-txt-body vi-txt-b600">玻尿酸防沾黏貼片</div>
+          </div>
+          <div class="vi-list-rt">
+            <div class="">
+              <div class="vi-txt-body vi-txt-b600">約 2 萬</div>
+            </div>
+          </div>
+        </li>
+        <li class="vi-list-item">
+          <div class="vi-list-lt flex-shrink-0">
+            <div class="vi-txt-body vi-txt-b600">燒燙傷 / 車禍 - 人工真皮 (視所需面積)</div>
+          </div>
+          <div class="vi-list-rt">
+            <div class="">
+              <div class="vi-txt-body vi-txt-b600">約 1 萬 - 4 萬</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      
+      <div class="vi-modal-list-gray-header">
+        <div class="vi-txt-body vi-txt-b600">自費醫材</div>
+      </div>
+      <ul class="vi-list vi-list-baseline vi-list-px8">
+        <li class="vi-list-item">
+          <div class="vi-list-lt flex-shrink-0">
+            <div class="vi-txt-body vi-txt-b600">心肌梗塞 / 血栓 - 塗藥血管支架</div>
+          </div>
+          <div class="vi-list-rt">
+            <div class="">
+              <div class="vi-txt-body vi-txt-b600">約 2 - 8 萬 / 支</div>
+            </div>
+          </div>
+        </li>
+        <li class="vi-list-item">
+          <div class="vi-list-lt flex-shrink-0">
+            <div class="vi-txt-body vi-txt-b600">老花 / 白內障 - 人工水晶體</div>
+          </div>
+          <div class="vi-list-rt">
+            <div class="">
+              <div class="vi-txt-body vi-txt-b600">約 3 - 10 萬</div>
+            </div>
+          </div>
+        </li>
+        <li class="vi-list-item">
+          <div class="vi-list-lt flex-shrink-0">
+            <div class="vi-txt-body vi-txt-b600">燒燙傷 / 車禍 - 人工真皮 (視所需面積)</div>
+          </div>
+          <div class="vi-list-rt">
+            <div class="">
+              <div class="vi-txt-body vi-txt-b600">約 1 萬 - 4 萬</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      
+      <div class="vi-txt-callout vi-txt-b500 mt16">備註：備註備註備註備註備註備註備註</div>
+    </div>
+    <div class="popup-footer">
+      <div class="vi-btn-group">
+        <button (bindClick)="onClickConfirm($event)" class="vi-btn vi-btn-primary" ontouchstart>我知道了</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// modal demo 
+document.getElementById('trigger-popup-info').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-popup-info').classList.toggle('vi-modal-in');
+});
+
+$(document).ready(function(){
+
+  $('.vi-card-select').on('click', function() {
+    $(this).siblings().removeClass('selected');
+    $(this).siblings().find('.vi-card-body').addClass('hide')
+    $(this).addClass('selected');
+    $(this).find('.vi-card-body').removeClass('hide')
+  });
+
+});
+</script>

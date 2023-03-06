@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base_2023.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<!-- if scroll, add .vi-page-header-fix -->
+<body class="vi-bg-mint">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">換匯</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <!-- <span class="vi-icon vi-icon-base vi-modal-close"></span> -->
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap vi-bg-mint">
+
+    <div class="main_container">
+      
+      <!-- toast, 參考 /ui-2022/toast/ctbc-mb-toast.widget -->
+      <div class="toast">
+        <span>已完成金融憑證申請</span>
+      </div>
+
+      <div class="vi-container">
+        
+        <div class="d-flex flex-justify-between align-items-center mb16 pad_top12">
+          <div class="vi-txt-title vi-txt-b900">確認資訊</div>
+          <div class="vi-txt-body vi-txt-b600 rt ml8">匯率有效時限<span class="vi-txt-body-bold vi-txt-r500 ml8">01:28</span></div>
+        </div>
+
+        <div class="vi-card">
+          <div class="vi-card-body pad_top24 pad_btm16">
+            
+            <!-- 如果可以的話 看要不要寫成模組, add .exchange-currency-amount-group-confirm -->
+            <div class="exchange-currency-amount-group exchange-currency-amount-group-confirm">
+              <div class="group-select align-items-start">
+                <div class="select-wrap">
+                  <div class="vi-txt-callout vi-txt-b500 mb16">即將用</div>
+                  <div class="dis-flex align-items-start mb8">
+                    <span class="vi-flag vi-flag-twd mr8 top-2px"></span>
+                    <span class="vi-txt-headline vi-txt-b600">新臺幣</span>
+                  </div>
+                  <div class="dis-flex align-items-baseline">
+                    <span class="vi-txt-footnote vi-txt-b900 mr4">$</span>
+                    <span class="vi-txt-title vi-txt-b900 w320-vi-txt-15px">888,888</span>
+                    <!-- 金額 七位數(百萬) 不含千分位 字體大小由20px->17px 小手機字體大小由20px->15px -->
+                    <!-- <span class="vi-txt-body-bold vi-txt-b900 w320-vi-txt-15px">888,888</span> -->
+                  </div>
+                </div>
+                <div class="icon-space">
+                  <div class="vi-icon vi-icon-base vi-icon-exchange-oneway-b"></div>
+                </div>
+                <div class="select-wrap">
+                  <div class="vi-txt-callout vi-txt-b500 mb16">兌換成</div>
+                  <div class="dis-flex align-items-start mb8">
+                    <span class="vi-flag vi-flag-usd mr8 top-2px"></span>
+                    <span class="vi-txt-headline vi-txt-b600">美元</span>
+                  </div>
+                  <div class="dis-flex align-items-baseline">
+                    <span class="vi-txt-footnote vi-txt-b900 mr4">$</span>
+                    <span class="vi-txt-title vi-txt-b900 w320-vi-txt-15px">888,888</span>
+                    <!-- 金額 七位數(百萬) 不含千分位 字體大小由20px->17px 小手機字體大小由20px->15px -->
+                    <!-- <span class="vi-txt-body-bold vi-txt-b900 w320-vi-txt-15px">888,888</span> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="vi-card vi-no-shadow vi-bg-r100 align-items-center padx_8 pady_8 mt16 mb8">
+              <div class="vi-txt-body-bold vi-txt-br500 dis-flex align-items-center">
+                <!-- <span class="vi-icon vi-icon-xs icon-info-mark-g mr8"></span> -->
+                成交匯率：31.975<del class="vi-txt-callout vi-txt-normal vi-txt-b400 ml8">31.98</del>
+              </div>
+              <div class="vi-txt-callout vi-txt-br900 mt4">已享有數位通路匯率優惠</div>
+            </div>
+            
+            <div class="vi-txt-callout vi-txt-b500">提醒您，此筆換匯金額已達美金 10萬(含)以上，請確認金額正確後再進行交易。</div>
+
+            <div class="vi-dashed-divider"></div>
+            
+            <ul class="vi-detail-list">
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">轉出帳號</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900 mb4">我的臺幣活存</div>
+                  <div class="vi-txt-body-bold vi-txt-b900">0000251300001234</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">轉入帳號</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900 mb4">我的外幣活存</div>
+                  <div class="vi-txt-body-bold vi-txt-b900">0000834234343298</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">申報性質</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900">觀光支出</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">註記</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900">匯率 31.975</div>
+                </div>
+              </li>
+            </ul>
+            
+            <div class="vi-txt-callout vi-txt-b500 mt12">交易日期：2022/04/22</div>
+            
+            <div class="dis-inline-flex justify-content-end w-100 mt16">
+              <a class="btn insight vi-btn vi-btn-secondary vi-btn-xs">查看申報書</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="vi-card">
+          <div class="vi-card-header pad_btm8">
+            <div class="vi-line-title">交易認證</div>
+          </div>
+          <div class="vi-card-body pad_btm8">
+            <div class="vi-form-group">
+              <div class="vi-input-group">
+                <span class="title">網銀密碼</span>
+                <input type="password" maxlength="" autocomplete="off" placeholder="請留意英文大小寫之不同">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="vi-card">
+          <div class="vi-card-header pad_btm16">
+            <div class="vi-line-title">驗證金融憑證</div>
+          </div>
+          <div class="vi-card-body pad_btm8">
+            <div class="vi-txt-body vi-txt-b600 mb8">因今日累積換匯達新臺幣50萬元，需輸入您所設定的金融憑證密碼！</div>
+            <div class="vi-form-group">
+              <div class="vi-input-group">
+                <span class="title large-title">金融憑證<br>密碼</span>
+                <input type="password" maxlength="" autocomplete="off" placeholder="請留意英文大小寫不同">
+              </div>
+            </div>
+            
+            <div class="rt mb8">
+              <div class="vi-txt-body-bold vi-txt-g500">忘記密碼，重新申請</div>
+            </div>
+            
+            <div class="vi-form-group vi-checkbox-group">
+              <label class="vi-checkbox">
+              <!-- <label class="vi-checkbox is-error"> -->
+                <input type="checkbox">
+                <span class="vi-checkbox-mark"></span>
+                <span class="vi-checkbox-txt">我已確認本次大額換匯交易的<a href="#" class="vi-txt-body-bold vi-txt-g500">申報書內容</a>正確無誤。</span>
+              </label>
+              <!-- <div class="vi-form-error">Error Message</div> -->
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="vi-card mt12 mb24">
+          <div class="vi-card-header pad_btm16">
+            <div class="vi-line-title">驗證金融憑證</div>
+          </div>
+          <div class="vi-card-body pad_btm8">
+            <div class="vi-txt-body vi-txt-b600 mb8">因今日累積換匯達新臺幣50萬元，需輸入您所設定的金融憑證密碼！</div>
+            
+            <div class="vi-txt-body-bold vi-txt-b600 mt16 mb12">今日其他筆換匯金額</div>
+
+            <div class="vi-card-title padx_8 pad_top12 pad_btm8">
+              <div class="vi-div-tb">
+                <div class="td lt wid_48per">
+                  <div class="vi-txt-body vi-txt-b500">轉出金額</div>
+                </div>
+                <div class="td lt flex-grow">
+                  <div class="vi-txt-body vi-txt-b500">轉入金額</div>
+                </div>
+              </div>
+            </div>
+            <div class="vi-card-group mb24">
+              <!-- add .vi-card-accordion-list-card-bg-r100 -->
+              <div class="vi-card-accordion-list vi-card-accordion-list-card-bg-r100 panel">
+                <a href="#collapse1" aria-expanded="false" data-toggle="collapse" class="vi-icon-link vi-card-header collapsed">
+                  <div class="vi-div-tb">
+                    <div class="td lt wid_50per">
+                      <div class="vi-txt-body vi-txt-b600">新臺幣</div>
+                      <!-- 小手機字體大小由20px->15px -->
+                      <div class="vi-txt-body vi-txt-b600 w320-vi-txt-15px">9,999,999</div>
+                    </div>
+                    <div class="td lt flex-grow">
+                      <div class="vi-txt-body vi-txt-b600">美元</div>
+                      <!-- 小手機字體大小由20px->15px -->
+                      <div class="vi-txt-body vi-txt-b600 w320-vi-txt-15px">9,999,999.00</div>
+                    </div>
+                  </div>
+                  <!-- remove .ml10 -->
+                  <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+                </a>
+                <div id="collapse1" class="panel-collapse collapse" role="tabpanel">
+                  <!-- .vi-grey-area change to .vi-bg-r100, add .pad_btm0 -->
+                  <div class="vi-card-body vi-bg-r100 mt12 pad_btm0">
+                    <ul class="vi-list vi-list-noline vi-list-px0 vi-list-py8">
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">轉出帳號</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">0000251300001234</div>
+                        </div>
+                      </li>
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">轉入帳號</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">0000251300056789</div>
+                        </div>
+                      </li>
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">成交匯率</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">29.7417</div>
+                        </div>
+                      </li>
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">交易通路</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">預約自動化交易</div>
+                        </div>
+                      </li>
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt"></div>
+                        <div class="vi-list-rt">
+                          <div class="dis-inline-flex justify-content-end">
+                            <a class="btn insight vi-btn vi-btn-secondary vi-btn-xs">查看申報書</a>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="vi-form-group vi-checkbox-group mt0 mb16">
+                      <label class="vi-checkbox">
+                      <!-- <label class="vi-checkbox is-error"> -->
+                        <input type="checkbox">
+                        <span class="vi-checkbox-mark"></span>
+                        <span class="vi-checkbox-txt">我已確認本次大額換匯交易的申報書內容正確無誤。</span>
+                      </label>
+                      <!-- <div class="vi-form-error">請確認本次換匯交易內容</div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="vi-card-accordion-list vi-card-accordion-list-card-bg-r100 panel">
+                <a href="#collapse2" aria-expanded="false" data-toggle="collapse" class="vi-icon-link vi-card-header collapsed">
+                  <div class="vi-div-tb">
+                    <div class="td lt wid_50per">
+                      <div class="vi-txt-body vi-txt-b600">新臺幣</div>
+                      <!-- 小手機字體大小由20px->15px -->
+                      <div class="vi-txt-body vi-txt-b600 w320-vi-txt-15px">9,999,999</div>
+                    </div>
+                    <div class="td lt flex-grow">
+                      <div class="vi-txt-body vi-txt-b600">日元</div>
+                      <div class="vi-txt-body vi-txt-b600 w320-vi-txt-15px">99,999</div>
+                    </div>
+                  </div>
+                  <!-- remove .ml10 -->
+                  <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+                </a>
+                <div id="collapse2" class="panel-collapse collapse" role="tabpanel">
+                  <!-- .vi-grey-area change to .vi-bg-r100, add .pad_btm0 -->
+                  <div class="vi-card-body vi-bg-r100 mt12 pad_btm0">
+                    <ul class="vi-list vi-list-noline vi-list-px0 vi-list-py8">
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">轉出帳號</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">0000251300001234</div>
+                        </div>
+                      </li>
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">轉入帳號</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">0000251300056789</div>
+                        </div>
+                      </li>
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">成交匯率</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">29.7417</div>
+                        </div>
+                      </li>
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">交易通路</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">臨櫃</div>
+                        </div>
+                      </li>
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt"></div>
+                        <div class="vi-list-rt">
+                          <div class="dis-inline-flex justify-content-end">
+                            <a class="btn insight vi-btn vi-btn-secondary vi-btn-xs">查看申報書</a>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="vi-txt-body-bold vi-txt-b600 mb4">請輸入金融憑證密碼</div>
+            <div class="vi-form-group">
+              <div class="vi-input-group">
+                <span class="title large-title">金融憑證<br>密碼</span>
+                <input type="password" maxlength="" autocomplete="off" placeholder="請留意英文大小寫不同">
+              </div>
+            </div>
+            
+            <div class="rt mb8">
+              <div class="vi-txt-body-bold vi-txt-g500">忘記密碼，重新申請</div>
+            </div>
+            
+            <div class="vi-form-group vi-checkbox-group">
+              <label class="vi-checkbox">
+              <!-- <label class="vi-checkbox is-error"> -->
+                <input type="checkbox">
+                <span class="vi-checkbox-mark"></span>
+                <span class="vi-checkbox-txt">我已確認本次大額換匯交易的<a href="#" class="vi-txt-body-bold vi-txt-g500">申報書內容</a>正確無誤。</span>
+              </label>
+              <!-- <div class="vi-form-error">Error Message</div> -->
+            </div>
+          </div>
+        </div>
+
+
+        <div class="vi-btn-group mt24 mb24">
+          <a class="btn insight vi-btn vi-btn-block vi-btn-primary" href="twrbm-fxex-tx003-030.html">確認送出</a>
+        </div>
+
+
+        <!-- 備註 現有版型 這裡僅示意 -->
+        <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+        <div class="">
+          <div class="vi-note-accordion">
+            <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+              <div class="forAEM base-style break-word mr4">
+                標題
+              </div>
+              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+            </div>
+            <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+              <div class="vi-card-body forAEM base-style break-word">
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// scroll fixed header
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 0) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+  }
+}
+
+
+$(document).ready(function(){
+  
+
+});
+</script>

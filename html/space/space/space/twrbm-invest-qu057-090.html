@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>    
+    .main_container {
+      position: relative;
+      z-index: 9;
+    }
+    
+    
+    .page-gradient {
+      content: '';
+      width: 100%;
+      height: 724px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(180deg, #FFFFFF 44px, #F0FCFB 32%, rgba(255, 249, 237, 0.7) 48%, rgba(228, 240, 239, 0) 100%);
+    }
+    
+    
+    
+    .overview-content {
+      padding-top: 24px;
+      background: none;
+    }
+    .overview-content.nav-fixed {
+      padding-top: 76px;
+    }
+    
+    
+    .vi-tag-group .vi-tag {
+      max-width: 96px;
+    }
+    .vi-tag-group .vi-tag .vi-txt {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+
+<!-- if scroll, add .vi-page-header-fix -->
+<body class="vi-bg-mint">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">臺幣定存</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <!-- <a class="vi-icon vi-icon-base icon-start-default-w"></a> -->
+        <!-- <a class="vi-icon vi-icon-base icon-start-default-w ml24"></a> -->
+        <!-- <a class="vi-txt-body-bold vi-txt-white">動作</a> -->
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap scroll vi-bg-mint">
+    
+    <div class="page-gradient"></div>
+
+
+    <div class="main_container pad_btm0">
+      
+      <div class="vi-container">
+        <div class="page-desc pad_top24">
+          <div class="vi-txt-headline vi-txt-b900 mb16">檢視資產分配</div>
+          <div class="vi-txt-body mb4">請先完成健診，您之後可以檢視有哪些資產被分配到此投資目標，來作為準備金。</div>
+        </div>
+      </div>
+
+
+      <!-- scroll down fixed 效果同 通知中心，可參考 nav-tabs-notice.component, add .nav-tab-green-gray -->
+      <div class="nav-scroll has-tab-info js_scroll_fixed_top nav-tab-green-gray">
+        <div class="vi-tab-line-area">
+          <div class="vi-tab-line">
+            <ul class="nav" role="tablist">
+              <!-- id 是 demo 用的，開發請拉掉 -->
+              <li id="nav-a-1" class="">
+                <a class="btn">
+                  <span>尚未分配</span>
+                </a>
+              </li>
+              <!-- id 是 demo 用的，開發請拉掉 -->
+              <li id="nav-a-2" class="active">
+                <a class="btn">
+                  <span>已分配</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="tab-content">
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="tab-a-1" class="tab-pane active">
+            
+
+            <div class="overview-content">
+              
+              <div class="vi-container">
+
+                <!-- id 是 demo 用的，開發請拉掉 -->
+                <div id="not-empty-block">
+                  
+                  <div class="mt24 mb8">
+                    <div class="dis-flex flex-justify-between align-items-end">
+                      <div class="vi-txt-body vi-txt-b600">共 3 筆</div>
+                      <div class="rt">
+                        <div class="vi-txt-body vi-txt-b600">參考市值</div>
+                        <!-- 除了臺幣以外 都會有約當新臺幣 -->
+                        <div class="vi-txt-callout vi-txt-b500">(約當新臺幣)</div>
+                      </div>
+                    </div>
+                  </div>  
+                  
+                  <div class="vi-card">
+                    <div class="vi-card-header flex-column vi-w-100" (click)="">
+                      <div class="vi-w-100 dis-flex flex-row flex-justify-between">
+                        <div class="mr-auto">
+                          <div class="vi-txt-headline vi-txt-b600">臺幣定存</div>
+                        </div>
+                        <div class="ml-auto rt ml16">
+                          <div class="vi-txt-headline vi-txt-b900">30,000</div>
+                        </div>
+                      </div>
+                      <div class="vi-w-100 dis-flex flex-row flex-justify-between mt4">
+                        <div class="mr-auto">
+                          <div class="vi-txt-callout vi-txt-b600">0000006111823866</div>
+                        </div>
+                        <div class="ml-auto rt">
+                          <div class="vi-txt-callout vi-txt-b600"> </div>
+                        </div>
+                      </div>
+                      <div class="vi-w-100 dis-flex flex-row flex-justify-between mt4">
+                        <div class="mr-auto flex-shrink-0 mr12">
+                          <div class="vi-txt-callout vi-txt-b500">定存起日：2022/04/17</div>
+                        </div>
+                        <div class="ml-auto rt">
+                          <div class="vi-tag-group mt-2">
+                            <!-- class 綁定類別
+                              vi-tag-amber 給退休 
+                              vi-tag-olive-green 給傳承
+                              vi-tag-hyacinth 給家庭
+                              vi-tag-darkcyan 給醫療
+                              vi-tag-sea-blue 給買房
+                            -->
+                            <div class="vi-tag vi-tag-amber">
+                              <div class="vi-txt">給退休</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="vi-card">
+                    <div class="vi-card-header flex-column vi-w-100" (click)="">
+                      <div class="vi-w-100 dis-flex flex-row flex-justify-between">
+                        <div class="mr-auto">
+                          <div class="vi-txt-headline vi-txt-b600">臺幣定存</div>
+                        </div>
+                        <div class="ml-auto rt ml16">
+                          <div class="vi-txt-headline vi-txt-b900">30,000</div>
+                        </div>
+                      </div>
+                      <div class="vi-w-100 dis-flex flex-row flex-justify-between mt4">
+                        <div class="mr-auto">
+                          <div class="vi-txt-callout vi-txt-b600">0000006111823866</div>
+                        </div>
+                        <div class="ml-auto rt">
+                          <div class="vi-txt-callout vi-txt-b600"> </div>
+                        </div>
+                      </div>
+                      <div class="vi-w-100 dis-flex flex-row flex-justify-between mt4">
+                        <div class="mr-auto flex-shrink-0 mr12">
+                          <div class="vi-txt-callout vi-txt-b500">定存起日：2022/04/17</div>
+                        </div>
+                        <div class="ml-auto rt">
+                          <div class="vi-tag-group mt-2">
+                            <div class="vi-tag vi-tag-amber">
+                              <div class="vi-txt">給退休</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="vi-card">
+                    <div class="vi-card-header flex-column vi-w-100" (click)="">
+                      <div class="vi-w-100 dis-flex flex-row flex-justify-between">
+                        <div class="mr-auto">
+                          <div class="vi-txt-headline vi-txt-b600">臺幣定存</div>
+                        </div>
+                        <div class="ml-auto rt ml16">
+                          <div class="vi-txt-headline vi-txt-b900">30,000</div>
+                        </div>
+                      </div>
+                      <div class="vi-w-100 dis-flex flex-row flex-justify-between mt4">
+                        <div class="mr-auto">
+                          <div class="vi-txt-callout vi-txt-b600">0000006111823866</div>
+                        </div>
+                        <div class="ml-auto rt">
+                          <div class="vi-txt-callout vi-txt-b600"> </div>
+                        </div>
+                      </div>
+                      <div class="vi-w-100 dis-flex flex-row flex-justify-between mt4">
+                        <div class="mr-auto  flex-shrink-0 mr12">
+                          <div class="vi-txt-callout vi-txt-b500">定存起日：2022/04/17</div>
+                        </div>
+                        <div class="ml-auto rt">
+                          <div class="vi-tag-group mt-2">
+                            <div class="vi-tag vi-tag-amber">
+                              <div class="vi-txt">給退休</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="vi-card">
+                    <div class="vi-card-header flex-column vi-w-100" (click)="">
+                      <div class="vi-w-100 dis-flex flex-row flex-justify-between">
+                        <div class="mr-auto">
+                          <div class="vi-txt-headline vi-txt-b600">臺幣定存</div>
+                        </div>
+                        <div class="ml-auto rt ml16">
+                          <div class="vi-txt-headline vi-txt-b900">30,000</div>
+                        </div>
+                      </div>
+                      <div class="vi-w-100 dis-flex flex-row flex-justify-between mt4">
+                        <div class="mr-auto">
+                          <div class="vi-txt-callout vi-txt-b600">0000006111823866</div>
+                        </div>
+                        <div class="ml-auto rt">
+                          <div class="vi-txt-callout vi-txt-b600"> </div>
+                        </div>
+                      </div>
+                      <div class="vi-w-100 dis-flex flex-row flex-justify-between mt4">
+                        <div class="mr-auto  flex-shrink-0 mr12">
+                          <div class="vi-txt-callout vi-txt-b500">定存起日：2022/04/17</div>
+                        </div>
+                        <div class="ml-auto rt">
+                          <div class="vi-tag-group mt-2">
+                            <div class="vi-tag vi-tag-amber">
+                              <div class="vi-txt">給退休</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="vi-card">
+                    <div class="vi-card-header flex-column vi-w-100" (click)="">
+                      <div class="vi-w-100 dis-flex flex-row flex-justify-between">
+                        <div class="mr-auto">
+                          <div class="vi-txt-headline vi-txt-b600">臺幣定存</div>
+                        </div>
+                        <div class="ml-auto rt ml16">
+                          <div class="vi-txt-headline vi-txt-b900">30,000</div>
+                        </div>
+                      </div>
+                      <div class="vi-w-100 dis-flex flex-row flex-justify-between mt4">
+                        <div class="mr-auto">
+                          <div class="vi-txt-callout vi-txt-b600">0000006111823866</div>
+                        </div>
+                        <div class="ml-auto rt">
+                          <div class="vi-txt-callout vi-txt-b600"> </div>
+                        </div>
+                      </div>
+                      <div class="vi-w-100 dis-flex flex-row flex-justify-between mt4">
+                        <div class="mr-auto  flex-shrink-0 mr12">
+                          <div class="vi-txt-callout vi-txt-b500">定存起日：2022/04/17</div>
+                        </div>
+                        <div class="ml-auto rt">
+                          <div class="vi-tag-group mt-2">
+                            <div class="vi-tag vi-tag-amber">
+                              <div class="vi-txt">給一二三四五六七八九十一二三四五六七八九十</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="vi-pagination mt16 mb24">
+                    <div class="prev disabled"></div>
+                    <div class="page-item">
+                      <span class="active">1</span>
+                      <span>/</span>
+                      <span class="total">5</span>
+                    </div>
+                    <div class="next"></div>
+                  </div>
+                  
+                </div>
+
+              
+                <!-- id 是 demo 用的，開發請拉掉 -->
+                <div id="empty-block" class="hide">
+                  <div class="vi-empty pad_top36">
+                    <span class="vi-empty-img"></span>  
+                    <div class="vi-txt-body vi-txt-b600">你的臺幣定存都分配出去囉～</div>
+                  </div>
+                </div>
+                
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      <div id="trigger-empty" class="vi-txt-g500 mb24 pb24">-> 資產分配項目 空值 demo</div>
+      
+      <div>
+        <div class="vi-txt-g500 mb24 pb24">tag 綁定類別樣式 DEMO</div>
+        <div class="vi-tag-group mt-2 pad_btm36">
+          <!-- class 綁定類別
+            vi-tag-amber 給退休 
+            vi-tag-olive-green 給傳承
+            vi-tag-hyacinth 給家庭
+            vi-tag-darkcyan 給醫療
+            vi-tag-sea-blue 給買房
+          -->
+          <div class="vi-tag vi-tag-amber">
+            <div class="vi-txt">給退休</div>
+          </div>
+          <div class="vi-tag vi-tag-olive-green">
+            <div class="vi-txt">給傳承</div>
+          </div>
+          <div class="vi-tag vi-tag-hyacinth">
+            <div class="vi-txt">給家庭</div>
+          </div>
+          <div class="vi-tag vi-tag-darkcyan">
+            <div class="vi-txt">給醫療</div>
+          </div>
+          <div class="vi-tag vi-tag-sea-blue">
+            <div class="vi-txt">給買房</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-select-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal" (click)=""></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">資產分配項目</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" ontouchstart="" data-dismiss="modal" (click)=""></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <ul class="vi-list vi-list-px8">
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">所有資產</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">尚未分配的資產</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">給退休用的資產</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">給目標用的資產</div>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// 超人卡片 close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('vi-modal-close');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+  });
+}
+
+$(document).ready(function(){
+  
+  $('#trigger-empty').on('click', function() {
+    $('#not-empty-block').toggleClass('hide');
+    $('#empty-block').toggleClass('hide');
+  });
+  
+  // scroll to fixed header
+  $(window).scroll(function(){
+    const scrollGap = $('.page-desc').innerHeight();
+    const scrollTop = $(document).scrollTop() - 12;
+    const scrollTop16 = $(document).scrollTop() - 4;
+    
+    if ( scrollTop16 >= scrollGap ) {
+      $('.nav-tab-green-gray').addClass('fixed-top fixed-position-1');
+      $('.overview-content').addClass('nav-fixed');
+    }
+    else {
+      $('.nav-tab-green-gray').removeClass('fixed-top fixed-position-1');
+      $('.overview-content').removeClass('nav-fixed');
+    }
+    
+    if ( scrollTop >= 1 ) {
+      $('body').addClass('vi-page-header-fix');
+    }
+    else {
+      $('body').removeClass('vi-page-header-fix');
+    }
+  });
+
+});
+</script>

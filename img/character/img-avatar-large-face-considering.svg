@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="240" viewBox="0 0 240 240">
+    <defs>
+        <filter id="4mz0ms3sbe" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <filter id="lxx1jc3rgf" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <path id="l2swo2zraa" d="M12.288 17.331c7.01 0 11.857-6.374 11.857-8.36 0-1.998-4.857-8.362-11.857-8.362C5.33.61.42 6.973.42 8.97c0 1.987 4.945 8.361 11.867 8.361z"/>
+        <path id="7y63mtfxmc" d="M12.288 17.331c7.01 0 11.857-6.374 11.857-8.36 0-1.998-4.857-8.362-11.857-8.362C5.33.61.42 6.973.42 8.97c0 1.987 4.945 8.361 11.867 8.361z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g transform="translate(-68 -179) translate(68 179)">
+                <path stroke="#FF625E" stroke-width="4.48" d="M122.87 165.04c10.567-.289 19.277-4.737 26.13-13.346"/>
+                <g transform="translate(134.397 105.822)">
+                    <mask id="0tjfl8kglb" fill="#fff">
+                        <use xlink:href="#l2swo2zraa"/>
+                    </mask>
+                    <use fill="#FFF" fill-rule="nonzero" transform="rotate(-3 12.283 8.97)" xlink:href="#l2swo2zraa"/>
+                    <ellipse cx="11.877" cy="13.702" fill="#324148" mask="url(#0tjfl8kglb)" rx="7.549" ry="8.361"/>
+                </g>
+                <g transform="translate(86.23 105.822)">
+                    <mask id="sc8vpqfdkd" fill="#fff">
+                        <use xlink:href="#7y63mtfxmc"/>
+                    </mask>
+                    <use fill="#FFF" fill-rule="nonzero" transform="rotate(3 12.283 8.97)" xlink:href="#7y63mtfxmc"/>
+                    <ellipse cx="12.596" cy="13.702" fill="#324148" mask="url(#sc8vpqfdkd)" rx="7.549" ry="8.361"/>
+                </g>
+                <ellipse cx="79.885" cy="127.271" fill="#FF918E" filter="url(#4mz0ms3sbe)" rx="7.467" ry="8.209"/>
+                <ellipse cx="165.005" cy="127.271" fill="#FF918E" filter="url(#lxx1jc3rgf)" rx="7.467" ry="8.209"/>
+                <path stroke="#324148" stroke-width="3.733" d="M136.307 97.375c7.443 2.21 14.385 1.454 20.825-2.271M110.129 102.383c-6.885-3.59-13.844-4.172-20.877-1.744" opacity=".8"/>
+            </g>
+        </g>
+    </g>
+</svg>

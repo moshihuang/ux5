@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<!-- if scroll, add .vi-page-header-fix -->
+<body class="vi-bg-g550 en">
+
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <!-- 新增 .vi-page-header-green 綠色 header，ios 瀏海也要改成綠的 #0F8F88 -->
+    <!-- 如果 rt 有二顆 icon，加上 .vi-page-header-two-icons -->
+    <div class="container-header vi-page-header vi-page-header-green">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">Credit Cards</h1>
+        <!-- 英文版不顯示 -->
+        <!-- <div class="rt mb12">
+          <a class="btn vi-icon-link">
+            <span class="vi-txt-body vi-txt-white">信用卡介紹</span>
+            <span class="vi-icon vi-icon-base vi-icon-direction-right ml4 mt-2"></span>
+          </a>
+        </div> -->
+      </div>
+      <div class="vi-page-header-rt">
+        <!-- <a class="btn vi-icon vi-icon-base icon-start-default-w"></a> -->
+        <!-- <a class="btn vi-icon vi-icon-base icon-start-default-w ml24"></a> -->
+        <!-- <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-white">動作</a> -->
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content start from here -->
+  <div class="body-wrap scroll vi-bg-g550">
+    
+    <!-- 概要頁同一版型 共用 .main_container_overview -->
+    <div class="main_container add-title-space main_container_overview vi-has-foot-btn">
+      
+      <!-- TAB 參考 ng\view\nav-tabs-product\ -->
+      <div class="nav-scroll has-tab-info js_scroll_fixed_top nav-tab-green">
+        <div class="nav-scroll-bg"></div>
+        <div class="vi-tab-line-area">
+          <div class="vi-tab-line">
+            <ul class="nav" role="tablist">
+              <li class="active">
+                <a class="btn">
+                  <span>Overview</span>
+                </a>
+              </li>
+              <li class="">
+                <a class="btn">
+                  <span>Manage My Cards</span>
+                </a>
+              </li>
+              <li class="">
+                <a class="btn">
+                  <span>Card Benefits</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="tab-content">
+        <div class="tab-pane active">
+
+          <!-- 空值 加 .empty, 如果非空值 拿掉 .empty 就好, overview-info 要留著 -->
+          <!-- id 是 demo 用的，開發請拉掉， 各概要頁 不同的 class .overview-info-xxxxx -->
+          <!-- 如果沒有 vi-rounded-btn-group, 這裡加 pad_btm24-->
+          <div id="overview-info" class="overview-info overview-info-creditcard has-tab">
+            
+            <div class="overview-info-content">
+              <div class="w-100 ct">
+                <div class="vi-container">
+                  <!-- id 是 demo 用的，開發請拉掉 -->
+                  <div id="target-info-content-normal" class="dis-flex">
+                    <div class="w-50 left-col">
+                      <!-- id 是 demo 用的，開發請拉掉 -->
+                      <div id="trigger-modal-amount" class="vi-txt-white vi-icon-link mb4">
+                        Available Credit
+                        <span class="vi-icon vi-icon-xs icon-info-mark-w ml8"></span>
+                      </div>
+                      <div class="vi-txt-title vi-txt-white ct mb4">1,000,000</div>
+                      <!-- 英文版不顯示 -->
+                      <!-- id 是 demo 用的，開發請拉掉 -->
+                      <!-- <div id="trigger-supercard-amount-adjust" class="btn vi-txt-btn vi-txt-body-bold vi-txt-white">
+                        額度調整
+                        <span class="vi-icon vi-icon-xs icon-arrow-right-w"></span>
+                      </div> -->
+                    </div>
+                    
+                    <div class="vi-dashed-divider-vertical-ga500"></div>
+                    
+                    <div class="w-50 right-col">
+                      <div class="vi-txt-white vi-icon-link mb4">
+                        Used Credit
+                      </div>
+                      <div class="vi-txt-title vi-txt-white ct mb4">50,000</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- id 是 demo 用的，開發請拉掉, 整理中 -->
+                <div id="target-info-content-processing" class="hide">
+                  <div class="dis-flex flex-column align-items-center">
+                    <div class="vi-txt-white vi-icon-link loading-txt mb16">
+                      Oops! Please try again later
+                    </div>
+                    <!-- 英文版不顯示 -->
+                    <!-- <div class="btn vi-txt-btn vi-txt-body-bold vi-txt-white">
+                      額度調整
+                      <span class="vi-icon vi-icon-xs icon-arrow-right-w"></span>
+                    </div> -->
+                  </div>
+                </div>
+                
+                <!-- id 是 demo 用的，開發請拉掉, 如果空值 -->
+              <div id="target-info-content-empty" class="hide">
+                <div class="dis-flex flex-column align-items-center">
+                  <div class="vi-txt-body-bold vi-txt-white">You don't have credit card!</div>
+                </div>
+              </div>
+                
+              </div>
+
+            </div>
+          </div>
+
+
+          <!-- 如果有 vi-rounded-btn-group，這邊是 pad_top36，如果沒有，用 .pad_top24 -->
+          <div class="overview-content pad_top36">
+            
+            <!-- 圓角分隔線包二顆 btn .vi-rounded-btn-group -->
+            <div class="vi-rounded-btn-group vi-rounded-btn-group-overview">
+              <div class="btn vi-btn vi-btn-white">
+                <span class="vi-icon vi-icon-base icon-cash-bag"></span>
+                <span>Cash Advance</span>
+              </div>
+              <div class="btn vi-btn vi-btn-white">
+                <span class="vi-icon vi-icon-base icon-pay-creditcard-bill"></span>
+                <span>Pay Bill</span>
+              </div>
+            </div>
+            <!-- 如果只有一顆，add .single -->
+            <!-- <div class="vi-rounded-btn-group single vi-rounded-btn-group-overview">
+              <div class="btn vi-btn vi-btn-white">
+                <span class="vi-icon vi-icon-base icon-pay-creditcard-bill"></span>
+                <span>Pay Bill</span>
+              </div>
+            </div> -->
+            
+            
+            <!-- id 是 demo 用的，開發請拉掉 -->
+            <div id="card-block" class="pad_top24">
+              <!-- 如果有 vi-rounded-btn-group，這邊是 pad_top24，如果沒有，拿掉 class -->
+              <div class="vi-container">
+                
+                <!-- id 是 demo 用的，開發請拉掉 單幣卡 -->
+                <div id="one" class="">
+                  <!-- .has-select-link -->
+                  <div class="vi-card vi-overview-card has-select-link">
+                    <a class="vi-card-header flex-justify-between vi-w-100 vi-select-link">
+                      <div class="vi-txt-headline mr-auto">
+                        <div class="vi-line-title">Unbilled Items</div>
+                        <div class="vi-txt-callout vi-txt-b500 mt8 ml12">
+                          (Closing Date 5)
+                        </div>
+                      </div>
+                      <div class="ml-auto rt">
+                        <div class="vi-txt-headline vi-txt-b900">
+                          22,800
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  
+                  <!-- .has-select-link -->
+                  <div class="vi-card vi-overview-card has-select-link">
+                    <a class="vi-card-header flex-justify-between vi-w-100 vi-select-link">
+                      <div class="vi-txt-headline mr-auto">
+                        <div class="vi-line-title">Unbilled Items</div>
+                        <div class="vi-txt-callout vi-txt-b500 mt8 ml12">
+                          (Closing Date 5)
+                        </div>
+                      </div>
+                      <div class="ml-auto rt">
+                        <div class="vi-txt-headline vi-txt-b900">
+                          
+                        </div>
+                      </div>
+                    </a>
+                    <!-- 整理中 或有 btn 時才顯示 vi-card-body -->
+                    <div class="vi-card-body">
+                      <div class="vi-txt-body vi-txt-b500 mb32 ct loading-txt">Please try again later</div>
+                      <!-- <div class="rt pad_btm16">
+                        <div class="btn vi-btn vi-btn-primary vi-btn-xs">還沒入帳？看即時消費明細</div>
+                      </div> -->
+                    </div>
+                  </div>
+                  
+                  <div class="mt24 mb8 rt">
+                    <!-- 英文版只顯示一個 -->
+                    <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500">Revolving</a>
+                    <!-- <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500">帳單分期</a>
+                    <span class="vi-dashed-divider-vertical ml12 mr16"></span>
+                    <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500">循環利率</a> -->
+                  </div>
+                  
+                  
+                  <!-- .has-select-link -->
+                  <div class="vi-card vi-overview-card has-select-link">
+                    <a class="vi-card-header flex-justify-between vi-w-100 vi-select-link">
+                      <div class="vi-txt-headline mr-auto">
+                        <div class="vi-line-title">Latest Statement</div>
+                      </div>
+                    </a>
+                    <div class="vi-card-body">
+                      <div class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                        <div class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">Statement Balance</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body-bold vi-txt-b600">3,000</div>
+                          </div>
+                        </div>
+                        <div class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">
+                              Unpaid Amount
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body-bold vi-txt-br500">
+                              1,000
+                            </div>
+                          </div>
+                        </div>
+                        <div class="vi-list-item mt-8">
+                          <div class="vi-list-lt">
+                            <div class="vi-tag-group">
+                              <!-- vi-tag-g200, vi-tag-r300 -->
+                              <div class="vi-tag vi-tag-g200">
+                                <div class="vi-txt">3/23 Due</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <!-- "trigger-popup-calculation" demo 用的，開發請拉掉 -->
+                            <div class="vi-txt-callout vi-txt-b500 trigger-popup-calculation">
+                              Unpaid
+                              <span class="vi-icon vi-icon-xs icon-question-mark-g ml4 top-2px"></span>
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 英文版不顯示 -->
+                      <!-- <div class="dis-flex flex-justify-end pad_btm16">
+                        <div class="btn vi-btn vi-btn-secondary vi-btn-xs mr16">設定自動扣繳</div>
+                        <div class="btn vi-btn vi-btn-primary vi-btn-xs">立即繳費</div>
+                      </div> -->
+                    </div>
+                  </div>
+                  
+                  <!-- .has-select-link -->
+                  <div class="vi-card vi-overview-card has-select-link">
+                    <!-- .vi-select-link -->
+                    <a class="vi-card-header flex-justify-between vi-w-100 vi-select-link">
+                      <div class="vi-txt-headline mr-auto">
+                        <div class="vi-line-title">Latest Statement</div>
+                      </div>
+                    </a>
+                    <div class="vi-card-body">
+                      <div class="vi-list vi-list-noline vi-list-overview vi-list-px0 vi-list-py8">
+                        <div class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">Statement Balance</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="dis-flex align-items-baseline">
+                              <span class="vi-txt-body-bold vi-txt-b600">Not Applicable</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- .has-select-link -->
+                  <div class="vi-card vi-overview-card has-select-link">
+                    <a class="vi-card-header flex-justify-between vi-w-100 vi-select-link">
+                      <div class="vi-txt-headline mr-auto">
+                        <div class="vi-line-title">Statement Balance</div>
+                      </div>
+                    </a>
+                    <div class="vi-card-body">
+                      <div class="vi-txt-body vi-txt-b500 mb32 ct loading-txt">Please try again later</div>
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="mt12 mb24 rt">
+                    <div class="btn vi-txt-btn">
+                      <div class="vi-txt-body-bold vi-txt-b600">
+                        Payment Record
+                        <div class="vi-icon vi-icon-xs vi-icon-direction-right top-2px"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <!-- id 是 demo 用的，開發請拉掉 雙幣卡 -->
+                <div id="two" class="hide">
+                  <!-- 沒有 .has-select-link -->
+                  <div class="vi-card vi-overview-card">
+                    <!-- 沒有 .vi-select-link, add .align-items-center -->
+                    <div class="vi-card-header flex-justify-between vi-w-100 align-items-center">
+                      <div class="vi-txt-headline mr-auto">
+                        <div class="vi-line-title">Unbilled Items</div>
+                      </div>
+                      <div class="ml-auto rt">
+                        <div class="vi-txt-callout vi-txt-b500 mt8 ml12">
+                          (Closing Date 5)
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vi-card-body">
+                      <div class="vi-list vi-list-overview vi-list-px0 vi-list-py16 mt-16">
+                        <div class="btn vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-headline vi-txt-b600 mr-auto dis-flex align-items-center">
+                              <span class="vi-flag vi-flag-twd mr8"></span>
+                              TWD
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="dis-flex align-items-baseline">
+                              <span class="vi-txt-callout vi-txt-b600 currency mr8">TWD</span>
+                              <span class="vi-txt-headline vi-txt-b900 mr4">22,800</span>
+                              <span class="vi-icon vi-icon-xs vi-icon-direction-right top-2px"></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="btn vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-headline vi-txt-b600 mr-auto dis-flex align-items-center">
+                              <span class="vi-flag vi-flag-usd mr8"></span>
+                              USD
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="dis-flex align-items-baseline">
+                              <span class="vi-txt-callout vi-txt-b600 currency mr8">USD</span>
+                              <span class="vi-txt-headline vi-txt-b900 mr4">12,000.12</span>
+                              <span class="vi-icon vi-icon-xs vi-icon-direction-right top-2px"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 沒有 .has-select-link -->
+                  <div class="vi-card vi-overview-card">
+                    <!-- 沒有 .vi-select-link, add .align-items-center -->
+                    <div class="vi-card-header flex-justify-between vi-w-100 align-items-center">
+                      <div class="vi-txt-headline mr-auto">
+                        <div class="vi-line-title">Unbilled Items</div>
+                      </div>
+                      <div class="ml-auto rt">
+                        <div class="vi-txt-callout vi-txt-b500 mt8 ml12">
+                          (Closing Date 5)
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vi-card-body">
+                      <div class="vi-list vi-list-overview vi-list-px0 vi-list-py16 mt-16">
+                        <div class="btn vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-headline vi-txt-b600 mr-auto dis-flex align-items-center">
+                              <span class="vi-flag vi-flag-twd mr8"></span>
+                              TWD
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <span class="vi-txt-body vi-txt-w320-15px vi-txt-b500">Please try again later</span>
+                            <span class="vi-icon vi-icon-xs vi-icon-direction-right ml4 top-2px"></span>
+                          </div>
+                        </div>
+                        <div class="btn vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-headline vi-txt-b600 mr-auto dis-flex align-items-center">
+                              <span class="vi-flag vi-flag-usd mr8"></span>
+                              USD
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="dis-flex align-items-baseline">
+                              <span class="vi-txt-callout vi-txt-b600 currency mr8">USD</span>
+                              <span class="vi-txt-headline vi-txt-b900 mr4">0</span>
+                              <span class="vi-icon vi-icon-xs vi-icon-direction-right top-2px"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- 沒有 .has-select-link -->
+                  <div class="vi-card vi-overview-card">
+                    <!-- 沒有 .vi-select-link, add .align-items-center -->
+                    <div class="vi-card-header flex-justify-between vi-w-100 align-items-center">
+                      <div class="vi-txt-headline mr-auto">
+                        <div class="vi-line-title">Unbilled Items</div>
+                      </div>
+                      <div class="ml-auto rt">
+                        <div class="vi-txt-callout vi-txt-b500 mt8 ml12">
+                          (Closing Date 5)
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vi-card-body">
+                      <div class="vi-txt-body vi-txt-b500 mb32 ct loading-txt">Please try again later</div>
+                    </div>
+                  </div>
+                  
+                  <div class="mt24 mb8 rt">
+                    <!-- 英文版只顯示一個 -->
+                    <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500">Revolving</a>
+                    <!-- <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500">帳單分期</a>
+                    <span class="vi-dashed-divider-vertical ml12 mr16"></span>
+                    <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500">循環利率</a> -->
+                  </div>
+                  
+                  
+                  <!-- 沒有 .has-select-link -->
+                  <div class="vi-card vi-overview-card">
+                    <!-- 沒有 .vi-select-link -->
+                    <div class="vi-card-header flex-justify-between vi-w-100">
+                      <div class="vi-txt-headline mr-auto">
+                        <div class="vi-line-title">Latest Statement</div>
+                      </div>
+                    </div>
+                    <div class="vi-card-body">
+                      <div class="vi-list vi-list-noline vi-list-overview vi-list-px0 vi-list-py8">
+                        <div class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="dis-flex">
+                              <div class="vi-txt-body vi-txt-b600">Statement Balance</div>
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="dis-flex align-items-baseline">
+                              <span class="vi-txt-callout vi-txt-b600 currency mr8">TWD</span>
+                              <span class="vi-txt-body-bold vi-txt-b600">3,000</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="rt vi-txt-callout vi-txt-b500 mt-4 pad_btm16">Updating. Please Check After 5:00</div>
+                    </div>
+                  </div>
+                  
+                  
+                  <!-- 沒有 .has-select-link -->
+                  <div class="vi-card vi-overview-card">
+                    <!-- 沒有 .vi-select-link -->
+                    <div class="vi-card-header flex-justify-between vi-w-100">
+                      <div class="vi-txt-headline mr-auto">
+                        <div class="vi-line-title">Latest Statement</div>
+                      </div>
+                    </div>
+                    <div class="vi-card-body">
+                      <div class="vi-list vi-list-noline vi-list-overview vi-list-px0 vi-list-py8">
+                        <div class="vi-list-item btn vi-txt-btn w-100">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-headline vi-txt-b600 mr-auto dis-flex align-items-center">
+                              <span class="vi-flag vi-flag-twd mr8"></span>
+                              TWD
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <span class="vi-icon vi-icon-xs icon-triangle-right-g top-2px"></span>
+                          </div>
+                        </div>
+                        <div class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="dis-flex">
+                              <div class="vi-txt-body vi-txt-b600">Statement Balance</div>
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="dis-flex align-items-baseline">
+                              <span class="vi-txt-callout vi-txt-b600 currency mr8">TWD</span>
+                              <span class="vi-txt-body-bold vi-txt-b600">3,000</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="rt vi-txt-callout vi-txt-b500 mt-4 pad_btm16">Updating. Please Check After 5:00</div>
+        
+                      <div class="vi-dashed-divider mt0"></div>
+
+                      <div class="vi-list vi-list-noline vi-list-overview vi-list-px0 vi-list-py8">
+                        <div class="vi-list-item btn vi-txt-btn w-100">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-headline vi-txt-b600 mr-auto dis-flex align-items-center">
+                              <span class="vi-flag vi-flag-usd mr8"></span>
+                              USD
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <span class="vi-icon vi-icon-xs icon-triangle-right-g top-2px"></span>
+                          </div>
+                        </div>
+                        <div class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="dis-flex">
+                              <div class="vi-txt-body vi-txt-b600">Statement Balance</div>
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="dis-flex align-items-baseline">
+                              <span class="vi-txt-callout vi-txt-b600 currency mr8">USD</span>
+                              <span class="vi-txt-body-bold vi-txt-b600">2,000</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="rt vi-txt-callout vi-txt-b500 mt-4 pad_btm16">Updating. Please Check After 5:00</div>
+                    </div>
+                  </div>
+                  
+                  <!-- 沒有 .has-select-link -->
+                  <div class="vi-card vi-overview-card">
+                    <!-- 沒有 .vi-select-link -->
+                    <div class="vi-card-header flex-justify-between vi-w-100">
+                      <div class="vi-txt-headline mr-auto">
+                        <div class="vi-line-title">Latest Statement</div>
+                      </div>
+                    </div>
+                    <div class="vi-card-body pad_btm16">
+                      <div class="vi-list vi-list-noline vi-list-overview vi-list-px0 vi-list-py8">
+                        <div class="vi-list-item btn vi-txt-btn w-100">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-headline vi-txt-b600 mr-auto dis-flex align-items-center">
+                              <span class="vi-flag vi-flag-twd mr8"></span>
+                              TWD
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <span class="vi-icon vi-icon-xs icon-triangle-right-g top-2px"></span>
+                          </div>
+                        </div>
+                        <div class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">Statement Balance</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="dis-flex align-items-baseline">
+                              <span class="vi-txt-callout vi-txt-b600 currency mr8">TWD</span>
+                              <span class="vi-txt-body-bold vi-txt-b600">3,000</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">
+                              Unpaid Amount
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body-bold vi-txt-br500">
+                              <div class="dis-flex align-items-baseline flex-justify-end">
+                                <span class="vi-txt-callout vi-txt-br500 currency mr8">TWD</span>
+                                <span class="vi-txt-body-bold vi-txt-br500">2,000</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="vi-list-item mt-8">
+                          <div class="vi-list-lt">
+                            <div class="vi-tag-group">
+                              <!-- vi-tag-g200, vi-tag-r300 -->
+                              <div class="vi-tag vi-tag-g200">
+                                <div class="vi-txt">3/23 Due</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <!-- "trigger-bill-notice" demo 用的，開發請拉掉 -->
+                            <div class="vi-txt-callout vi-txt-b500 trigger-bill-notice">
+                              <!-- 狀態文字有 Unpaid、Partly paid、No Payment Needed、Fully paid -->
+                              Unpaid
+                              <span class="vi-icon vi-icon-xs icon-question-mark-g ml4 top-3px"></span>
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 英文版不顯示 -->
+                      <!-- <div class="dis-flex flex-justify-end mb16">
+                        <div class="btn vi-btn vi-btn-secondary vi-btn-xs mr16">設定自動扣繳</div>
+                        <div class="btn vi-btn vi-btn-primary vi-btn-xs">立即繳費</div>
+                      </div> -->
+
+                      <div class="vi-dashed-divider mt0"></div>
+                      
+                      <div class="vi-list vi-list-noline vi-list-overview vi-list-px0 vi-list-py8">
+                        <div class="vi-list-item btn vi-txt-btn w-100">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-headline vi-txt-b600 mr-auto dis-flex align-items-center">
+                              <span class="vi-flag vi-flag-usd mr8"></span>
+                              USD
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <span class="vi-icon vi-icon-xs icon-triangle-right-g top-2px"></span>
+                          </div>
+                        </div>
+                        <div class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">Statement Balance</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="dis-flex align-items-baseline">
+                              <span class="vi-txt-callout vi-txt-b600 currency mr8">USD</span>
+                              <span class="vi-txt-body-bold vi-txt-b600">2,000</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="vi-list-item mt-8">
+                          <div class="vi-list-lt">
+                            <div class="vi-tag-group">
+                              <!-- vi-tag-g200, vi-tag-r300 -->
+                              <div class="vi-tag vi-tag-r300">
+                                <div class="vi-txt">3/23 Autopay</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <!-- "trigger-bill-notice" demo 用的，開發請拉掉 -->
+                            <div class="vi-txt-callout vi-txt-b500 trigger-bill-notice">
+                              <!-- 狀態文字有 Unpaid、Partly paid、No Payment Needed、Fully paid -->
+                              Unpaid
+                              <span class="vi-icon vi-icon-xs icon-question-mark-g ml4 top-3px"></span>
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 英文版不顯示 -->
+                      <!-- <div class="dis-flex flex-justify-end">
+                        <div class="btn vi-btn vi-btn-secondary vi-btn-xs mr16">外幣餘額查詢</div>
+                        <div class="btn vi-btn vi-btn-primary vi-btn-xs">立即換匯</div>
+                      </div> -->
+                    </div>
+                  </div>
+                  
+                  <!-- 沒有 .has-select-link -->
+                  <div class="vi-card vi-overview-card">
+                    <!-- 沒有 .vi-select-link -->
+                    <div class="vi-card-header flex-justify-between vi-w-100">
+                      <div class="vi-txt-headline mr-auto">
+                        <div class="vi-line-title">Latest Statement</div>
+                      </div>
+                    </div>
+                    <div class="vi-card-body pad_btm16">
+                      <div class="vi-list vi-list-noline vi-list-overview vi-list-px0 vi-list-py8">
+                        <div class="vi-list-item btn vi-txt-btn w-100">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-headline vi-txt-b600 mr-auto dis-flex align-items-center">
+                              <span class="vi-flag vi-flag-twd mr8"></span>
+                              TWD
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <span class="vi-icon vi-icon-xs icon-triangle-right-g top-2px"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="vi-txt-body vi-txt-b500 mb32 ct loading-txt">Please try again later</div>
+
+                      <div class="vi-dashed-divider mt0"></div>
+                      
+                      <div class="vi-list vi-list-noline vi-list-overview vi-list-px0 vi-list-py8">
+                        <div class="vi-list-item btn vi-txt-btn w-100">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-headline vi-txt-b600 mr-auto dis-flex align-items-center">
+                              <span class="vi-flag vi-flag-usd mr8"></span>
+                              USD
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <span class="vi-icon vi-icon-xs icon-triangle-right-g top-2px"></span>
+                          </div>
+                        </div>
+                        <div class="vi-txt-body vi-txt-b500 mb16 ct loading-txt">Please try again later</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="mt12 mb24 rt">
+                    <div class="btn vi-txt-btn">
+                      <div class="vi-txt-body-bold vi-txt-b600">
+                        Payment Record
+                        <div class="vi-icon vi-icon-xs vi-icon-direction-right top-2px"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <!-- 沒有 .has-select-link -->
+                <div class="vi-card vi-overview-card">
+                  <!-- 沒有 .vi-select-link -->
+                  <div class="vi-card-header flex-justify-between vi-w-100">
+                    <div class="vi-txt-headline mr-auto">
+                      <div class="vi-line-title">Rewards</div>
+                    </div>
+                    <div class="ml-auto">
+                      <!-- id 是 demo 用的，開發請拉掉 -->
+                      <div id="trigger-cash-back1" class="vi-txt-body-bold vi-txt-g500">Cashback Rate</div>
+                    </div>
+                  </div>
+                  <div class="vi-card-body">
+                    <div class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                      <a class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">Cashback</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">
+                            120
+                            <!-- <span class="vi-icon vi-icon-xs icon-arrow-right-g top-2px"></span> -->
+                          </div>
+                        </div>
+                      </a>
+                      <a class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">Reward points</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">
+                            1,000
+                            <!-- <span class="vi-icon vi-icon-xs icon-arrow-right-g top-2px"></span> -->
+                          </div>
+                          <div class="vi-txt-callout vi-txt-b500 mt8">(Valid until YYYY/MM)</div>
+                        </div>
+                      </a>
+                    </div>
+                    
+                    <!-- 英文版不顯示我的點數/哩程中心 -->
+                    <!-- <div class="vi-dashed-divider mt0"></div>
+                    
+                    <div class="pad_btm16 rt">
+                      <div class="btn vi-txt-btn">
+                        <div class="vi-txt-body-bold vi-txt-b600">
+                          我的點數/哩程中心
+                          <div class="vi-icon vi-icon-xs vi-icon-direction-right top-2px"></div>
+                        </div>
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+                
+                <!-- 沒有 .has-select-link -->
+                <div class="vi-card vi-overview-card">
+                  <!-- 沒有 .vi-select-link -->
+                  <div class="vi-card-header flex-justify-between vi-w-100">
+                    <div class="vi-txt-headline mr-auto">
+                      <div class="vi-line-title">Rewards</div>
+                    </div>
+                    <div class="ml-auto">
+                      <!-- id 是 demo 用的，開發請拉掉 -->
+                      <!-- <div id="trigger-cash-back" class="vi-txt-body-bold vi-txt-g500">看現金回饋率</div> -->
+                    </div>
+                  </div>
+                  <div class="vi-card-body">
+                    <div class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                      <a class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">Cashback</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body vi-txt-b500">
+                            Please try again later
+                          </div>
+                        </div>
+                      </a>
+                      <a class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">Reward points</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">
+                            1,000
+                            <!-- <span class="vi-icon vi-icon-xs icon-arrow-right-g top-2px"></span> -->
+                          </div>
+                          <div class="vi-txt-callout vi-txt-b500 mt8">(Valid until YYYY/MM)</div>
+                        </div>
+                      </a>
+                    </div>
+                    
+                    <!-- 英文版不顯示我的點數/哩程中心 -->
+                    <!-- <div class="vi-dashed-divider mt0"></div>
+                    
+                    <div class="pad_btm16 rt">
+                      <div class="btn vi-txt-btn">
+                        <div class="vi-txt-body-bold vi-txt-b600">
+                          我的點數/哩程中心
+                          <div class="vi-icon vi-icon-xs vi-icon-direction-right top-2px"></div>
+                        </div>
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+                
+                <!-- 沒有 .has-select-link -->
+                <div class="vi-card vi-overview-card">
+                  <!-- 沒有 .vi-select-link -->
+                  <div class="vi-card-header flex-justify-between vi-w-100">
+                    <div class="vi-txt-headline mr-auto">
+                      <div class="vi-line-title">Rewards</div>
+                    </div>
+                    <div class="ml-auto">
+                      <!-- id 是 demo 用的，開發請拉掉 -->
+                      <div id="trigger-cash-back2" class="vi-txt-body-bold vi-txt-g500">Cashback Rate</div>
+                    </div>
+                  </div>
+                  <div class="vi-card-body">
+                    <div class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                      <a class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">Cashback</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">
+                            120
+                            <!-- <span class="vi-icon vi-icon-xs icon-arrow-right-g top-2px"></span> -->
+                          </div>
+                        </div>
+                      </a>
+                      <a class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">Reward points</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body vi-txt-b500">
+                            Please try again later
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    
+                    <!-- 英文版不顯示我的點數/哩程中心 -->
+                    <!-- <div class="vi-dashed-divider mt0"></div>
+                    
+                    <div class="pad_btm16 rt">
+                      <div class="btn vi-txt-btn">
+                        <div class="vi-txt-body-bold vi-txt-b600">
+                          我的點數/哩程中心
+                          <div class="vi-icon vi-icon-xs vi-icon-direction-right top-2px"></div>
+                        </div>
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+                
+                
+                <!-- 沒有 .has-select-link -->
+                <div class="vi-card vi-overview-card">
+                  <!-- 沒有 .vi-select-link -->
+                  <div class="vi-card-header flex-justify-between vi-w-100">
+                    <div class="vi-txt-headline mr-auto">
+                      <div class="vi-line-title">Rewards</div>
+                    </div>
+                  </div>
+                  <div class="vi-card-body">
+                    <div class="vi-txt-body vi-txt-b500 mb32 ct loading-txt">Please try again later</div>
+                    
+                    <!-- 英文版不顯示我的點數/哩程中心 -->
+                    <!-- <div class="vi-dashed-divider mt0"></div>
+                    
+                    <div class="pad_btm16 rt">
+                      <div class="btn vi-txt-btn">
+                        <div class="vi-txt-body-bold vi-txt-b600">
+                          我的點數/哩程中心
+                          <div class="vi-icon vi-icon-xs vi-icon-direction-right top-2px"></div>
+                        </div>
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+                
+              </div>
+              
+            </div>
+            
+            
+            <div class="vi-container">
+              <div class="mt24">
+                <!-- 現有版型 這裡僅示意 -->
+                <!-- 參考 <ctbc-mb-marketing-card interactPoint=""></ctbc-mb-marketing-card> -->
+                <a class="vi-banner">
+                  <div class="vi-banner-bi" style="background-image: url(&quot;/content/dam/ctbc-ib/bee-gallery/bee_02.png&quot;);"></div>
+                  <div class="vi-banner-rt">
+                    <div class="vi-banner-title">預設廣告01標題</div>
+                    <div class="vi-banner-txt">預設廣告01內文(原頁置換非白名單)</div>
+                    <div class="rt">
+                      <div class="vi-icon-link mt8">
+                        <img class="vi-icon vi-icon-base" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNC4yNzE4IDYuNjg1MzZDMTMuODkzMyA2LjI4MzE5IDEzLjkxMjUgNS42NTAzMiAxNC4zMTQ2IDUuMjcxOEMxNC43MTY4IDQuODkzMjkgMTUuMzQ5NyA0LjkxMjQ3IDE1LjcyODIgNS4zMTQ2NEwyMS4zNzUyIDExLjMxNDZDMjEuNzM3NiAxMS42OTk3IDIxLjczNzYgMTIuMzAwMyAyMS4zNzUyIDEyLjY4NTRMMTUuNzI4MiAxOC42ODU0QzE1LjM0OTcgMTkuMDg3NSAxNC43MTY4IDE5LjEwNjcgMTQuMzE0NiAxOC43MjgyQzEzLjkxMjUgMTguMzQ5NyAxMy44OTMzIDE3LjcxNjggMTQuMjcxOCAxNy4zMTQ2TDE4LjMzMjYgMTNMMyAxM0MyLjQ0NzcyIDEzIDIgMTIuNTUyMyAyIDEyQzIgMTEuNDQ3NyAyLjQ0NzcyIDExIDMgMTFMMTguMzMyNiAxMUwxNC4yNzE4IDYuNjg1MzZaIiBmaWxsPSIjMDA5ODkxIi8+Cjwvc3ZnPgo=">
+                        <span class="vi-txt-body-bold vi-txt-g500 ml4">立即前往</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              
+              
+              <!-- 備註 現有版型 這裡僅示意 -->
+              <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+              <div class="mt16">
+                <div class="vi-note-accordion">
+                  <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+                    <div class="forAEM base-style break-word mr4">
+                      標題
+                    </div>
+                    <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+                  </div>
+                  <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                    <div class="vi-card-body forAEM base-style break-word">
+                      <p>備註(我的首頁內文AEM)</p>
+                      <p>備註(我的首頁內文AEM)</p>
+                      <p>備註(我的首頁內文AEM)</p>
+                      <p>備註(我的首頁內文AEM)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div><!-- end tab -->
+
+      </div>
+      
+      
+      <div id="trigger-one-two" class="vi-txt-g500 mb16">-> 單幣卡 / 雙幣卡 切換</div>
+      <div id="trigger-info-content-empty" class="vi-txt-g500 mb16">-> 未持有信用卡 - Tab 下方文字</div>
+      <div id="trigger-info-content-processing" class="vi-txt-g500 mb16">-> 額度資料整理中 - Tab 下方文字</div>
+      <div id="trigger-info-content-normal" class="vi-txt-g500 mb16">-> 正常情況- Tab 下方文字</div>
+      
+      <div id="trigger-cash-back3" class="vi-txt-g500 mb16">-> 現金回饋率 modal 鈦金/御璽卡利率查詢失敗情境</div>
+      
+      <div id="trigger-cash-back4" class="vi-txt-g500 mb16">-> 現金回饋率 modal 隱藏鈦金/御璽卡區塊情境</div>
+    
+    </div>
+    <!-- main_container -->
+    
+    
+    <!-- 現有元件 這裡僅示意 -->
+    <div class="vi-gotop" style="bottom: 84px;"></div>
+  </div>
+
+</body>
+<!-- body-wrap -->
+</html>
+
+
+
+<!-- vi-modal popup 現有版型 這裡僅示意，可參考 ctbc-mb-alert.widget -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-modal-amount" class="vi-modal">
+  <div class="vi-modal-backdrop"></div>
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-header-ct">
+        <span class="popup-title">Credit Detail</span>
+      </div>
+    </div>
+    <div class="popup-body">
+      <div class="vi-list vi-list-noline vi-list-baseline vi-list-px0 vi-list-py8">
+        <div class="vi-list-item">
+          <div class="vi-list-lt">
+            <div class="vi-txt-body vi-txt-b600">＋ Available Credit</div>
+          </div>
+          <div class="vi-list-rt">
+            <div class="vi-txt-body-bold vi-txt-b600">100,000</div>
+          </div>
+        </div>
+        <div class="vi-list-item">
+          <div class="vi-list-lt">
+            <div class="vi-txt-body vi-txt-b600">＋ Used Credit</div>
+          </div>
+          <div class="vi-list-rt">
+            <div class="vi-txt-body-bold vi-txt-b600">50,000</div>
+          </div>
+        </div>
+        
+        <div class="vi-dashed-divider mt8 mb8"></div>
+        
+        <div class="vi-list-item pad_btm0">
+          <div class="vi-list-lt">
+            <div class="vi-txt-headline vi-txt-b600">Credit Line</div>
+          </div>
+          <div class="vi-list-rt">
+            <div class="vi-txt-headline vi-txt-b600">150,000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-footer">
+      <div class="vi-btn-group">
+        <button class="vi-btn vi-btn-primary">Got It</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- vi-modal popup 現有版型 這裡僅示意，可參考 ctbc-mb-alert.widget -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-modal-calculation" class="vi-modal">
+  <div class="vi-modal-backdrop"></div>
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-header-ct">
+        <span class="popup-title">Payment</span>
+      </div>
+    </div>
+    <div class="popup-body">
+      
+      <div class="vi-card-body vi-txt-b500 mb24 ct loading-txt hide">Oops! Please try again later</div>
+      
+      <div class="vi-list vi-list-noline vi-list-baseline vi-list-px0 vi-list-py8">
+        <div class="vi-list-item">
+          <div class="vi-list-lt">
+            <div class="vi-txt-body vi-txt-b600">＋ Payment Received</div>
+          </div>
+          <div class="vi-list-rt">
+            <div class="vi-txt-body vi-txt-b600">700</div>
+          </div>
+        </div>
+        <div class="vi-list-item">
+          <div class="vi-list-lt">
+            <div class="vi-txt-body vi-txt-b600">＋ Adjustments</div>
+          </div>
+          <div class="vi-list-rt">
+            <div class="vi-txt-body vi-txt-b600">1,300</div>
+          </div>
+        </div>
+        
+        <div class="vi-dashed-divider mt8 mb8"></div>
+        
+        <div class="vi-list-item pad_btm0">
+          <div class="vi-list-lt">
+            <div class="vi-txt-headline vi-txt-b600">Amount</div>
+          </div>
+          <div class="vi-list-rt">
+            <div class="vi-txt-headline vi-txt-b600">2,000</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dis-flex flex-justify-between vi-bg-b100 rounded-6px pad_16 mt24 mb16">
+        <div class="lt">
+          <div class="vi-txt-body vi-txt-b600">Recent Payment</div>
+        </div>
+        <div class="rt">
+          <div class="vi-txt-body-bold vi-txt-b900">1,000,300</div>
+        </div>
+      </div>
+      
+      <div class="vi-txt-body vi-txt-b600">Note：<br>
+English AEM</div>
+    </div>
+    <div class="popup-footer">
+      <div class="vi-btn-group">
+        <button class="vi-btn vi-btn-primary">Got It</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- vi-modal popup 現有版型 這裡僅示意，可參考 ctbc-mb-alert.widget -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-modal-bill-notice" class="vi-modal">
+  <div class="vi-modal-backdrop"></div>
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-header-ct">
+        <span class="popup-title">Note</span>
+      </div>
+    </div>
+    <div class="popup-body">
+      <div class="vi-txt-body vi-txt-b600">English AEM</div>
+    </div>
+    <div class="popup-footer">
+      <div class="vi-btn-group">
+        <button class="vi-btn vi-btn-primary">Got It</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-amount-adjust-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">選擇調額的方式</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" ontouchstart="" data-dismiss="modal" ></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <ul class="vi-list vi-list-px8 vi-list-py12 super-card-select">
+          <a class="btn vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">提高臨時額度</div>
+          </a>
+          <a class="btn vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">提高固定額度 (永久提高刷卡總額度)</div>
+          </a>
+          <a class="btn vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">設定附卡額度</div>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!-- vi-modal popup 現有版型 這裡僅示意，可參考 ctbc-mb-alert.widget -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-cash-back" class="vi-modal">
+  <div class="vi-modal-backdrop"></div>
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-header-ct">
+        <span class="popup-title">Cashback Rate</span>
+      </div>
+    </div>
+    <div class="popup-body">
+      <div class="mb24">
+        <div class="vi-line-title">Mastercard Titanium / Visa Signature cards</div>
+        <div class="vi-txt-body vi-txt-b500 mt16">Including Basic 0.5%</div>
+        <div class="vi-bg-b100 rounded-6px pad_16 mt12 mb12">
+          <div class="vi-txt-body vi-txt-b900">中信現金回饋卡</div>
+          <div class="dis-flex flex-justify-between mt12">
+            <div class="lt">
+              <div class="vi-txt-callout vi-txt-b600">鈦金卡 (VISA)</div>
+            </div>
+            <div class="rt">
+              <div class="vi-txt-callout vi-txt-b900">
+                <div class="vi-txt-bold">2.5 %</div>
+                Overseas Spending
+              </div>
+            </div>
+          </div>
+          <div class="vi-dashed-divider"></div>
+          <div class="dis-flex flex-justify-between mt12">
+            <div class="lt">
+              <div class="vi-txt-callout vi-txt-b600">鈦金卡 (VISA)</div>
+            </div>
+            <div class="rt">
+              <div class="vi-txt-callout vi-txt-b900">
+                <div class="vi-txt-bold">2.0 %</div>
+                Overseas Spending
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vi-bg-b100 rounded-6px pad_16 mt12 mb12">
+          <div class="vi-txt-body vi-txt-b900">漢神百貨聯名卡</div>
+          <div class="dis-flex flex-justify-between mt12">
+            <div class="lt">
+              <div class="vi-txt-callout vi-txt-b600">鈦金卡 (VISA)</div>
+            </div>
+            <div class="rt">
+              <div class="vi-txt-callout vi-txt-b900">
+                <div class="vi-txt-bold">1.5 %</div>
+                Overseas Spending
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vi-bg-b100 rounded-6px pad_16 mt12 mb12">
+          <div class="vi-txt-body vi-txt-b900">TAIPEI 101 聯名卡</div>
+          <div class="dis-flex flex-justify-between mt12">
+            <div class="lt">
+              <div class="vi-txt-callout vi-txt-b600">鈦金卡 (VISA)</div>
+            </div>
+            <div class="rt">
+              <div class="vi-txt-callout vi-txt-b900">
+                <div class="vi-txt-bold">1.0 %</div>
+                Overseas Spending
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vi-bg-b100 rounded-6px pad_16 mt12 mb12">
+          <div class="vi-txt-body vi-txt-b900">環球購物中心聯名卡</div>
+          <div class="dis-flex flex-justify-between mt12">
+            <div class="lt">
+              <div class="vi-txt-callout vi-txt-b600">鈦金卡 (VISA)</div>
+            </div>
+            <div class="rt">
+              <div class="vi-txt-callout vi-txt-b900">
+                <div class="vi-txt-bold">1.0 %</div>
+                Overseas Spending
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vi-txt-callout vi-txt-b500 mt16">提醒：鈦金/御璽卡別海外現金回饋將會因消費達門檻而變動</div>
+      </div>
+      
+      <div>
+        <div class="vi-line-title">Other Cashback Cards</div>
+        <div class="vi-txt-body vi-txt-b600 mt16">其他現金回饋卡因常有卡別專屬活動，若需了解目前回饋請至<a href="#" class="vi-txt-g500">官網查詢</a></div>
+      </div>
+    </div>
+    <div class="popup-footer">
+      <div class="vi-btn-group">
+        <button class="vi-btn vi-btn-primary">Got It</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- vi-modal popup 現有版型 這裡僅示意，可參考 ctbc-mb-alert.widget -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-cash-back3" class="vi-modal">
+  <div class="vi-modal-backdrop"></div>
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-header-ct">
+        <span class="popup-title">Cashback Rate</span>
+      </div>
+    </div>
+    <div class="popup-body">
+      <div class="mb24">
+        <div class="vi-line-title">Mastercard Titanium / Visa Signature cards</div>
+        <div class="vi-txt-body vi-txt-b500 mt16">Including Basic 0.5%</div>
+        <div class="vi-bg-b100 rounded-6px pad_16 mt12 mb12">
+          <div class="ct">
+            <div class="vi-txt-body vi-txt-b500">Oops! Please try again later</div>
+          </div>
+        </div>
+        <div class="vi-txt-callout vi-txt-b500 mt16">提醒：鈦金/御璽卡別海外現金回饋將會因消費達門檻而變動</div>
+      </div>
+      
+      <div>
+        <div class="vi-line-title">Other Cashback Cards</div>
+        <div class="vi-txt-body vi-txt-b600 mt16">其他現金回饋卡因常有卡別專屬活動，若需了解目前回饋請至<a href="#" class="vi-txt-g500">官網查詢</a></div>
+      </div>
+    </div>
+    <div class="popup-footer">
+      <div class="vi-btn-group">
+        <button class="vi-btn vi-btn-primary">Got It</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- vi-modal popup 現有版型 這裡僅示意，可參考 ctbc-mb-alert.widget -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-cash-back4" class="vi-modal">
+  <div class="vi-modal-backdrop"></div>
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-header-ct">
+        <span class="popup-title">Cashback Rate</span>
+      </div>
+    </div>
+    <div class="popup-body">
+      <div>
+        <div class="vi-line-title">Other Cashback Cards</div>
+        <div class="vi-txt-body vi-txt-b600 mt16">其他現金回饋卡因常有卡別專屬活動，若需了解目前回饋請至<a href="#" class="vi-txt-g500">官網查詢</a></div>
+      </div>
+    </div>
+    <div class="popup-footer">
+      <div class="vi-btn-group">
+        <button class="vi-btn vi-btn-primary">Got It</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// 超人卡片 close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('vi-modal-close');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+  });
+}
+
+
+$(document).ready(function(){
+  
+  // 單幣卡/雙幣卡 切換 demo
+  $('#trigger-one-two').on('click', function() {
+    $('#one').toggleClass('hide');
+    $('#two').toggleClass('hide');
+  });
+  
+  // 正常情況 切換 demo
+  $('#trigger-info-content-normal').on('click', function() {
+    $('#target-info-content-normal').removeClass('hide');
+    $('#target-info-content-processing, #target-info-content-empty').addClass('hide');
+  });
+  // 額度資料整理中 切換 demo
+  $('#trigger-info-content-processing').on('click', function() {
+    $('#target-info-content-processing').removeClass('hide');
+    $('#target-info-content-normal, #target-info-content-empty').addClass('hide');
+  });
+  // 未持有信用卡 切換 demo
+  $('#trigger-info-content-empty').on('click', function() {
+    $('#target-info-content-empty').removeClass('hide');
+    $('#target-info-content-processing, #target-info-content-normal').addClass('hide');
+  });
+
+  // 可用額度 modal demo
+  $('#trigger-modal-amount').on('click', function() {
+    $('#target-modal-amount').toggleClass('vi-modal-in');
+  });
+  
+  // 額度調整 bottom sheet demo
+  $('#trigger-supercard-amount-adjust').on('click', function() {
+    $('#target-amount-adjust-supercard').toggleClass('hide vi-modal-in');
+  });
+  
+  // 金額怎麼計算 demo
+  $('.trigger-popup-calculation').on('click', function() {
+    $('#target-modal-calculation').toggleClass('vi-modal-in');
+  });
+  
+  // 繳費提醒 modal demo
+  $('.trigger-bill-notice').on('click', function() {
+    $('#target-modal-bill-notice').toggleClass('vi-modal-in');
+  });
+  
+  // 看現金回饋率 modal demo
+  $('#trigger-cash-back1, #trigger-cash-back2').on('click', function() {
+    $('#target-cash-back').toggleClass('vi-modal-in');
+  });
+  
+  // 看現金回饋率 modal demo
+  $('#trigger-cash-back3').on('click', function() {
+    $('#target-cash-back3').toggleClass('vi-modal-in');
+  });
+  // 看現金回饋率 modal demo
+  $('#trigger-cash-back4').on('click', function() {
+    $('#target-cash-back4').toggleClass('vi-modal-in');
+  });
+  
+  // modal close demo，關閉時的動態效果依照現行
+  $('.vi-modal .popup-footer .vi-btn').on('click', function() {
+    $(this).closest('.vi-modal').toggleClass('vi-modal-in');
+  });
+  
+  
+  // scroll event
+  $(window).scroll(function(){
+    // scroll to fixed header
+    const scrollTop = $(document).scrollTop();
+    
+    if ( scrollTop >= 1 ) {
+      $('body').addClass('vi-page-header-fix');
+      $('.main_container').removeClass('add-title-space');
+      $('.nav-tab-green').addClass('fixed-top fixed-position-1');
+    }
+    else {
+      $('body').removeClass('vi-page-header-fix');
+      $('.main_container').addClass('add-title-space');
+      $('.nav-tab-green').removeClass('fixed-top fixed-position-1');
+    }
+    
+    // show vi-gotop
+    // console.log(window.scrollY, window.innerHeight)
+    if (window.scrollY >= window.innerHeight) {
+      $('.vi-gotop').addClass('vi-gotop-show');
+    }
+    else {
+      $('.vi-gotop').removeClass('vi-gotop-show');
+    }
+  });
+  
+});
+</script>

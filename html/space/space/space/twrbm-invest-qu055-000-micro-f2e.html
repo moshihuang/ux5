@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <script type="text/javascript" src="twrbm-invest-qu055-000-micro-f2e.js"></script>
+  <style>
+    /* source css */
+    article,
+    aside,
+    dialog,
+    footer,
+    header,
+    section,
+    footer,
+    nav,
+    icon-trash figure,
+    menu {
+      display: block;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    *:after,
+    *:before {
+      box-sizing: border-box;
+    }
+    html,
+    body,
+    ul,
+    li,
+    dl,
+    dt,
+    dd,
+    form,
+    image {
+      margin: 0;
+      border: 0;
+      padding: 0;
+      list-style: none;
+    }
+    img {
+      border: 0;
+    }
+    a {
+      font-weight: normal;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    a:visited,
+    a:hover,
+    a:active,
+    a:focus {
+      text-decoration: none;
+      transition: all 0.3s;
+      outline: none;
+      cursor: pointer;
+    }
+    a:hover,
+    a:active {
+      opacity: 1;
+    }
+    body,
+    div,
+    dl,
+    dt,
+    dd,
+    ul,
+    ol,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    form,
+    fieldset,
+    input,
+    select,
+    textarea,
+    p,
+    blockquote,
+    th,
+    td {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      color: #324148;
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-text-size-adjust: none;
+    }
+    
+    
+    
+    /*  */
+    .vi-card-s {
+      background-color: #fff;
+      border-radius: 12px 0;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .mt0 {
+      margin-top: 0 !important;
+    }
+    .mt4 {
+      margin-top: 4px !important;
+    }
+    .mt-4 {
+      margin-top: -4px !important;
+    }
+    .mt16 {
+      margin-top: 16px !important;
+    }
+    .mb4 {
+      margin-bottom: 4px !important;
+    }
+    .dis-flex {
+      display: flex;
+    }
+    .d-flex {
+      display: flex;
+    }
+    .flex-justify-end {
+      justify-content: flex-end;
+    }
+    .align-items-center {
+      align-items: center;
+    }
+    .w-100, .vi-w-100 {
+      width: 100%;
+    }
+    .mb12 {
+      margin-bottom: 12px !important;
+    }
+    .vi-txt-b900 {
+      color: #12171a;
+    }
+    .vi-txt-headline {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .top-2px {
+      position: relative;
+      top: 2px;
+    }
+    .ml-auto {
+      margin-left: auto;
+    }
+    .mr4 {
+      margin-right: 4px !important;
+    }
+    .mr8 {
+      margin-right: 8px !important;
+    }
+    .vi-icon-xs {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+    }
+    .vi-icon-base {
+      width: 24px;
+      height: 24px;
+      font-size: 24px;
+    }
+    .vi-icon {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: inline-block;
+    }
+    .vi-dashed-divider {
+      margin: 16px 0;
+      width: 100%;
+      height: 1px;
+      border-top: 1px dashed #C0C0C0;
+    }
+    a {
+    text-decoration: none;
+    }
+    .vi-txt-callout {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    .vi-txt-g500 {
+      color: #009891;
+    }
+    .vi-txt-body, .vi-txt-body-bold {
+      font-size: 17px !important;
+      line-height: 1.4;
+    }
+    .vi-txt-b500 {
+      color: #757575;
+    }
+    .vi-txt-b600 {
+      color: #36444d;
+    }
+    .vi-card-s .vi-card-body {
+      padding: 0 12px 16px 12px;
+    }
+    .mt8 {
+      margin-top: 8px !important;
+    }
+    .mb16 {
+      margin-bottom: 16px !important;
+    }
+    .vi-container .nav-scroll, 
+    .vi-card-body .nav-scroll {
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+    .nav-scroll {
+      position: relative;
+      border-bottom: 1px solid #DFE3E5;
+    }
+    .vi-tab {
+      display: flex;
+    }
+    .nav-scroll .vi-tab {
+      overflow-x: auto;
+      clip-path: inset(0 0 20px 0);
+      padding-bottom: 20px;
+      margin-bottom: -21px;
+    }
+    .vi-tab:after, .vi-tab:before {
+      content: "";
+      width: 12px;
+      height: 100%;
+      display: block;
+      -webkit-flex-shrink: 0;
+      flex-shrink: 0;
+    }
+    .vi-tab .vi-tab-item {
+      border-bottom: 1px solid #DFE3E5;
+      flex-shrink: 0;
+      flex-grow: 1;
+      flex-basis: auto;
+      margin-right: 16px;
+      text-align: center;
+      word-break: normal;
+      word-wrap: break-word;
+    }
+    .vi-tab-link {
+      display: block;
+    }
+    .vi-tab-link span {
+      padding: 10px 8px;
+      position: relative;
+      display: inline-block;
+      font-size: 17px;
+      line-height: 1.4;
+      color: #757575;
+      text-align: center;
+    }
+    .vi-tab-item.active .vi-tab-link span {
+      padding: 10px 8px;
+      position: relative;
+      display: inline-block;
+      font-size: 17px;
+      line-height: 1.4;
+      color: #12171a;
+      font-weight: 700;
+      text-align: center;
+    }
+    .vi-tab-link span:before {
+      content: "";
+    }
+    .vi-tab-item.active .vi-tab-link span:before {
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: #ff5441;
+      border-radius: 999px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    .tab-content .tab-pane {
+      position: relative;
+    }
+    .tab-content>.active {
+      display: block;
+    }
+    .tab-content>.tab-pane {
+      display: none;
+    }
+    .pad_top16 {
+      padding-top: 16px !important;
+    }
+    .vi-row {
+      margin-right: -12px;
+      margin-left: -12px;
+    }
+    .tab-content>.active {
+      display: block;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /* prototype */
+    .confidence-card-list-wrap {
+      padding-bottom: 24px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      /* clip-path: inset(0 0 16px 0); */
+    }
+    .confidence-card-list {
+      width: fit-content;
+      display: flex;
+      margin: 0 12px;
+    }
+    .confidence-card-list .item {
+      width: 75px;
+      min-width: 75px;
+      height: 148px;
+      display: flex;
+      flex-direction: column;
+      margin-right: 8px;
+      padding: 16px 4px 8px 4px;
+      text-align: center;
+      box-shadow: 2px 4px 6px rgba(10, 50, 50, 0.04);
+      border-radius: 12px;
+    }
+    .confidence-card-list .item:last-of-type {
+      margin-right: 0;
+    }
+    .confidence-card-list .item.high {
+      border: 1px solid transparent;
+      border-radius: 12px;
+      background-clip: padding-box, border-box;
+      background-origin: padding-box, border-box;
+      background-image: linear-gradient(to bottom, #FFF1DD, #ffffff), linear-gradient(180deg, #ffffff, #FFF1DD);
+    }
+    .confidence-card-list .item.low {
+      border: 1px solid transparent;
+      border-radius: 12px;
+      background-clip: padding-box, border-box;
+      background-origin: padding-box, border-box;
+      background-image: linear-gradient(to bottom, #E7F0FF, #ffffff), linear-gradient(180deg, #ffffff, #E7F0FF);;
+    }
+    .confidence-card-list .item .head {
+      justify-content: center;
+    }
+    .confidence-card-list .item .body {
+      margin-top: auto;
+      justify-content: center;
+    }
+    .confidence-card-list .item .vi-txt-confidence-high {
+      color: #FFA31A;
+    }
+    .confidence-card-list .item .vi-txt-confidence-low {
+      color: #4383E3;
+    }
+    .confidence-card-list .icon-confidence-high {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyNC4wMDAyQzE4LjYyNzQgMjQuMDAwMiAyNCAxOC42Mjc3IDI0IDEyLjAwMDJDMjQgNS4zNzI4MyAxOC42Mjc0IDAuMDAwMjQ0MTQxIDEyIDAuMDAwMjQ0MTQxQzUuMzcyNTggMC4wMDAyNDQxNDEgMCA1LjM3MjgzIDAgMTIuMDAwMkMwIDE4LjYyNzcgNS4zNzI1OCAyNC4wMDAyIDEyIDI0LjAwMDJaTTE3LjQ0ODcgMTQuMDQyQzE3LjYyMzMgMTMuNTE4MSAxNy4zNDAyIDEyLjk1MTggMTYuODE2MiAxMi43NzcxQzE2LjI5MjMgMTIuNjAyNSAxNS43MjYgMTIuODg1NyAxNS41NTEzIDEzLjQwOTZDMTQuMzU1MiAxNi45OTgxIDkuNjQ0NzcgMTYuOTk4IDguNDQ4NjggMTMuNDA5OEM4LjI3NDAzIDEyLjg4NTkgNy43MDc3MSAxMi42MDI3IDcuMTgzNzcgMTIuNzc3NEM2LjY1OTgyIDEyLjk1MiA2LjM3NjY3IDEzLjUxODMgNi41NTEzMiAxNC4wNDIzQzguMzU1MjMgMTkuNDUzOSAxNS42NDQ4IDE5LjQ1MzggMTcuNDQ4NyAxNC4wNDJaTTguODg2OTcgOC4xMDA4M0M4Ljg4Njk3IDguOTI5MjYgOC4yNDA0OCA5LjYwMDgzIDcuNDQzIDkuNjAwODNDNi42NDU1MSA5LjYwMDgzIDUuOTk5MDIgOC45MjkyNiA1Ljk5OTAyIDguMTAwODNDNS45OTkwMiA3LjI3MjQgNi42NDU1MSA2LjYwMDgzIDcuNDQzIDYuNjAwODNDOC4yNDA0OCA2LjYwMDgzIDguODg2OTcgNy4yNzI0IDguODg2OTcgOC4xMDA4M1pNMTYuNDQ0OSA5LjYwMDgzQzE3LjI0MjQgOS42MDA4MyAxNy44ODg5IDguOTI5MjYgMTcuODg4OSA4LjEwMDgzQzE3Ljg4ODkgNy4yNzI0IDE3LjI0MjQgNi42MDA4MyAxNi40NDQ5IDYuNjAwODNDMTUuNjQ3NSA2LjYwMDgzIDE1LjAwMSA3LjI3MjQgMTUuMDAxIDguMTAwODNDMTUuMDAxIDguOTI5MjYgMTUuNjQ3NSA5LjYwMDgzIDE2LjQ0NDkgOS42MDA4M1oiIGZpbGw9IiNGRkEzMUEiLz4KPC9zdmc+Cg==);
+    }
+    .confidence-card-list .icon-confidence-low {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyNEMxOC42Mjc0IDI0IDI0IDE4LjYyNzQgMjQgMTJDMjQgNS4zNzI1OCAxOC42Mjc0IDAgMTIgMEM1LjM3MjU4IDAgMCA1LjM3MjU4IDAgMTJDMCAxOC42Mjc0IDUuMzcyNTggMjQgMTIgMjRaTTcuNDQzOTcgOS41OTk2MUM4LjI0MTQ2IDkuNTk5NjEgOC44ODc5NCA4LjkyODA0IDguODg3OTQgOC4wOTk2MUM4Ljg4Nzk0IDcuMjcxMTggOC4yNDE0NiA2LjU5OTYxIDcuNDQzOTcgNi41OTk2MUM2LjY0NjQ5IDYuNTk5NjEgNiA3LjI3MTE4IDYgOC4wOTk2MUM2IDguOTI4MDQgNi42NDY0OSA5LjU5OTYxIDcuNDQzOTcgOS41OTk2MVpNOC40NTA2NCAxNy40MTZDOS42NDY3NiAxMy44Mjc1IDE0LjM1NzIgMTMuODI3NiAxNS41NTMzIDE3LjQxNThDMTUuNzI3OSAxNy45Mzk3IDE2LjI5NDIgMTguMjIyOSAxNi44MTgyIDE4LjA0ODJDMTcuMzQyMSAxNy44NzM2IDE3LjYyNTMgMTcuMzA3MiAxNy40NTA2IDE2Ljc4MzNDMTUuNjQ2NyAxMS4zNzE3IDguMzU3MTUgMTEuMzcxNyA2LjU1MzI3IDE2Ljc4MzVDNi4zNzg2MiAxNy4zMDc1IDYuNjYxNzkgMTcuODczOCA3LjE4NTczIDE4LjA0ODRDNy43MDk2OCAxOC4yMjMxIDguMjc2IDE3LjkzOTkgOC40NTA2NCAxNy40MTZaTTE3Ljg4OTkgOC4wOTk2MUMxNy44ODk5IDguOTI4MDQgMTcuMjQzNCA5LjU5OTYxIDE2LjQ0NTkgOS41OTk2MUMxNS42NDg0IDkuNTk5NjEgMTUuMDAyIDguOTI4MDQgMTUuMDAyIDguMDk5NjFDMTUuMDAyIDcuMjcxMTggMTUuNjQ4NCA2LjU5OTYxIDE2LjQ0NTkgNi41OTk2MUMxNy4yNDM0IDYuNTk5NjEgMTcuODg5OSA3LjI3MTE4IDE3Ljg4OTkgOC4wOTk2MVoiIGZpbGw9IiM0MzgzRTMiLz4KPC9zdmc+Cg==);
+    }
+    .icon-forward-arrow-g {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0LjI3MTggNi42ODUzNkMxMy44OTMzIDYuMjgzMTkgMTMuOTEyNSA1LjY1MDMxIDE0LjMxNDYgNS4yNzE4QzE0LjcxNjggNC44OTMyOCAxNS4zNDk3IDQuOTEyNDYgMTUuNzI4MiA1LjMxNDY0TDE0LjI3MTggNi42ODUzNlpNMTUuNzI4MiAxOC42ODUzQzE1LjM0OTcgMTkuMDg3NSAxNC43MTY4IDE5LjEwNjcgMTQuMzE0NiAxOC43MjgyQzEzLjkxMjUgMTguMzQ5NyAxMy44OTMzIDE3LjcxNjggMTQuMjcxOCAxNy4zMTQ2TDE1LjcyODIgMTguNjg1M1pNMjAuNjQ3IDEyTDIxLjM3NTIgMTEuMzE0NkMyMS43Mzc2IDExLjY5OTcgMjEuNzM3NiAxMi4zMDAzIDIxLjM3NTIgMTIuNjg1NEwyMC42NDcgMTJaTTE1LjcyODIgNS4zMTQ2NEwyMS4zNzUyIDExLjMxNDZMMTkuOTE4OCAxMi42ODU0TDE0LjI3MTggNi42ODUzNkwxNS43MjgyIDUuMzE0NjRaTTIxLjM3NTIgMTIuNjg1NEwxNS43MjgyIDE4LjY4NTNMMTQuMjcxOCAxNy4zMTQ2TDE5LjkxODggMTEuMzE0NkwyMS4zNzUyIDEyLjY4NTRaIiBmaWxsPSIjMDA5ODkxIi8+CjxwYXRoIGQ9Ik0zIDEyTDIwIDEyIiBzdHJva2U9IiMwMDk4OTEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=);
+    }
+  </style>
+</head>
+
+
+<body>
+  <!-- 投資市場趨勢 從這裡開始 -->
+  <div class="vi-card-s mb12">
+
+    <div class="vi-card-body">
+      <div class="nav-scroll">
+        <ul class="vi-tab">
+          <li class="vi-tab-item active" href="#tab1-1" data-toggle="tab">
+            <a class="vi-tab-link"><span>產業</span></a>
+          </li>
+          <li class="vi-tab-item" href="#tab1-2" data-toggle="tab">
+            <a class="vi-tab-link"><span>區域</span></a>
+          </li>
+          <li class="vi-tab-item" href="#tab1-3" data-toggle="tab">
+            <a class="vi-tab-link"><span>貨幣</span></a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="tab-content">
+        <!-- 產業 tab -->
+        <div id="tab1-1" class="tab-pane active" role="tabpanel">
+          <div class="pad_top16">
+            <div class="vi-row">
+              <div class="confidence-card-list-wrap">
+                <div class="confidence-card-list">
+                <div class="item high">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">能源1</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-high mb4">信心高</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-high"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">公共<br>事業</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4 mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item high">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">金融</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-high mb4">信心高</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-high"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">原物料</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="vi-dashed-divider mt-4"></div>
+            
+            <div class="vi-txt-callout vi-txt-b500">資料來源：中國信託智能量化模型, 截至 2022/01/19</div>
+            
+            <div class="dis-flex align-items-center flex-justify-end mt16">
+              <div class="vi-icon vi-icon-base icon-forward-arrow-g vi-txt-g500 mr4"></div>
+              <div class="vi-txt-body-bold vi-txt-g500">看更多趨勢分析</div>
+            </div>
+          </div>
+        </div>
+        
+        <div id="tab1-2" class="tab-pane" role="tabpanel">
+          <div class="pad_top16">
+            <div class="vi-row">
+              <div class="confidence-card-list-wrap">
+                <div class="confidence-card-list">
+                <div class="item high">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">能源2</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-high mb4">信心高</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-high"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">公共<br>事業</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4 mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item high">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">金融</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-high mb4">信心高</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-high"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">原物料</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="vi-dashed-divider mt-4"></div>
+            
+            <div class="vi-txt-callout vi-txt-b500">資料來源：中國信託智能量化模型, 截至 2022/01/19</div>
+            
+            <div class="dis-flex align-items-center flex-justify-end mt16">
+              <div class="vi-icon vi-icon-base icon-forward-arrow-g vi-txt-g500 mr8"></div>
+              <div class="vi-txt-body-bold vi-txt-g500">看更多趨勢分析</div>
+            </div>
+          </div>
+        </div>
+        
+        <div id="tab1-3" class="tab-pane" role="tabpanel">
+          <div class="pad_top16">
+            <div class="vi-row">
+              <div class="confidence-card-list-wrap">
+                <div class="confidence-card-list">
+                <div class="item high">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">能源3</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-high mb4">信心高</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-high"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">公共<br>事業</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4 mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item high">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">金融</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-high mb4">信心高</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-high"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">原物料</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                <div class="item low">
+                  <div class="head">
+                    <div class="vi-txt-body vi-txt-b600">工業元</div>
+                  </div>
+                  <div class="body">
+                    <div class="vi-txt-body-bold vi-txt-confidence-low mb4">信心低</div>
+                    <div class="vi-icon vi-icon-base icon-confidence-low"></div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="vi-dashed-divider mt-4"></div>
+            
+            <div class="vi-txt-callout vi-txt-b500">資料來源：中國信託智能量化模型, 截至 2022/01/19</div>
+            
+            <div class="dis-flex align-items-center flex-justify-end mt16">
+              <div class="vi-icon vi-icon-base icon-forward-arrow-g vi-txt-g500 mr8"></div>
+              <div class="vi-txt-body-bold vi-txt-g500">看更多趨勢分析</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

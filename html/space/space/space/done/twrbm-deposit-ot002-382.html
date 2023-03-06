@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-upload-float-tip-txt {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(78, 78, 78, .4);
+      display: flex;
+      justify-content: center;
+      color: #fff;
+      font-size: 24px;
+    }
+    .vi-img.uploadImg {
+      padding: 12px 0;
+    }
+    .vi-img.uploadImg .watermark {
+      top: 30%;
+    }
+    
+    .twrbm_deposit_ot002_cropper_background_color {
+      background-color: #3c3c3c;
+    }
+
+    .twrbm_deposit_ot002_cropper_open_album {
+      background-color: #171717;
+      border: 1px solid #ffffff;
+      box-sizing: border-box;
+      border-radius: 6px;
+    }
+
+
+
+
+
+
+    .vi-photo-step ul li {
+      width: 100%;
+      position: relative;
+    }
+    .vi-photo-step ul li:before {
+      width: 100%;
+    }
+    /* .vi-photo-step ul li:first-child:before {
+      width: 0;
+    } */
+    .vi-photo-step ul li:after {
+      width: 100%;
+      content: "";
+      height: 4px;
+      background-color: #E0E0E0;
+      display: inline-block;
+      position: absolute;
+      top: 7px;
+      left: 50%;
+    }
+    .vi-photo-step ul li:last-child:before {
+      background: none;
+    }
+    .vi-photo-step ul li:last-child:after {
+      width: 0;
+      left: 10000px;
+    }
+    .vi-photo-step ul li.is-visited:after {
+      background-color: #06AFA8;
+    }
+  </style>
+</head>
+
+<!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+<header class="">
+  <div class="vi-page-header-normal">
+    <div class="vi-page-header-lt">
+      <button class="vi-btn" ontouchstart="">
+        <span class="vi-icon vi-icon-base icon-page-back"></span>
+      </button>
+    </div>
+    <div class="vi-page-header-ct">
+      <h1 class="vi-page-title">法定代理人驗證</h1>
+    </div>
+    <!-- <div class="vi-page-header-rt">
+      <span class="vi-icon vi-icon-base vi-modal-close"></span>
+    </div> -->
+  </div>
+</header>
+
+<body class="body-wrap scroll vi-bg-mint">
+  <div class="main_container pad_btm0" style="overflow-x: hidden;">
+      <div class="vi-camera">
+         <div class="vi-photo-step twrbm_deposit_ot002_382_padding_12_24_0_24" *ngIf="pageData.model.showStep">
+            <ul>
+               <li class="is-current"
+               [ngClass]="{'is-visited' : pageData.model.fileUpload1.visited, 'is-current' : pageData.model.fileUpload1.current}"
+               *ngIf="pageData.model.showStep1">
+               <div class="vi-photo-step-label vi-txt-footnote" [attr.data-count]="1"  data-count="1" >
+                  <span translate="deposit_ot002.382.progressbar.id_front">身分證正面</span>
+               </div>
+               </li>
+               <li
+               [ngClass]="{'is-visited' : pageData.model.fileUpload2.visited && pageData.model.showStep3, 'is-current' : pageData.model.fileUpload2.current}"
+               *ngIf="pageData.model.showStep2">
+               <div class="vi-photo-step-label vi-txt-footnote" [attr.data-count]="pageData.model.fileUpload2.index">
+                  <span translate="deposit_ot002.382.progressbar.id_back">身分證反面</span>
+               </div>
+               </li>
+               <li
+               [ngClass]="{'is-visited' : pageData.model.fileUpload3.visited && pageData.model.showStep4, 'is-current' : pageData.model.fileUpload3.current}"
+               *ngIf="pageData.model.showStep3">
+               <div class="vi-photo-step-label vi-txt-footnote" [attr.data-count]="pageData.model.fileUpload3.index">
+                  <span translate="deposit_ot002.382.progressbar.second.id.card">第二證件</span>
+               </div>
+               </li>
+               <li *ngIf="pageData.model.showStep4"
+               [ngClass]="{'is-visited' : pageData.model.fileUpload4.visited, 'is-current' : pageData.model.fileUpload4.current}">
+               <div class="vi-photo-step-label vi-txt-footnote" [attr.data-count]="pageData.model.fileUpload4.index">
+                  <span translate="deposit_ot002.382.progressbar.househole">新式戶口名簿/戶籍謄本</span>
+               </div>
+               </li>
+            </ul>
+         </div>
+         <!-- 相機 -->
+         <camera #camera *ngIf="!showHouseholdView" [pictureType]="pageData.model.fileUpload.pictureType"
+            [windowClass]="{'no-step' : !pageData.model.showStep}" [quality]="80" (confirmEvent)="takePicture($event)">
+            <ng-container #viewRootElement>
+    <div #screen class="vi-camera-window">
+        <!-- 未拍照 -->
+        <div class="vi-camera-frame" [ngClass]="frameClass" [hidden]="fileUpload?.data">
+            <ng-container *ngIf="title">
+                <div class="vi-camera-frame-txt vi-name-area">
+                    <span class="vi-name vi-txt-up forAEM" [inject-dom]="title">要保人 金小五</span>
+                    <span class="vi-info mt4 forAEM" [inject-dom]="subTitle">身分證正面</span>
+                </div>
+                <div #cropper class="vi-camera-photo"></div>
+            </ng-container>
+
+            <ng-container *ngIf="!title">
+                <div class="vi-camera-frame-txt forAEM" [inject-dom]="subTitle">身分證正面</div>
+                <div #cropper class="vi-camera-photo"></div>
+            </ng-container>
+        </div>
+
+        <!-- 已拍照 -->
+        <div class="vi-camera-frame" [hidden]="!fileUpload?.data">
+            <div class="vi-camera-frame-txt" translate="camera.photograph.title">確認文字照片清晰、無反光再點擊使用這張</div>
+            <div class="vi-camera-photo" *ngIf="fileUpload?.data">
+                <img [src]="fileUpload.data">
+            </div>
+        </div>
+    </div>
+
+    <div class="vi-camera-tool">
+        <!-- 未拍照按鈕 -->
+        <div *ngIf="!fileUpload?.data" class="vi-flex-row no-gutters align-items-center ht_30px">
+            <div class="vi-col-5" *ngIf="showAlbum">
+                <a (click)="openAlbum($event)" class="vi-icon-link vi-txt-white ml12">
+                    <span class="vi-icon vi-icon-base icon-photo-w"></span>
+                    <span class="vi-txt-body-bold ml4" translate="camera.button.album">開啟相簿</span>
+                </a>
+            </div>
+
+            <div class="vi-col-auto">
+                <a (click)="takePicture($event)" class="vi-btn-take"></a>
+            </div>
+        </div>
+
+        <!-- 已拍照按鈕 -->
+        <div *ngIf="fileUpload?.data" class="vi-flex-row no-gutters align-items-center">
+            <div class="vi-col-6 ct">
+                <a (click)="takePictureAgain($event)" class="vi-icon-link vi-txt-white">
+                    <span class="vi-icon vi-icon-base icon-reload-w"></span>
+                    <span class="vi-txt-body-bold ml4" translate="camera.button.take.picture.again">重新拍攝</span>
+                </a>
+            </div>
+
+            <div class="vi-col-6 ct">
+                <div class="vi-btn-group">
+                    <button (click)="usePicture($event)" class="vi-btn vi-btn-primary"
+                        translate="camera.button.use.this.one">使用這張</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+         </camera>
+         <!-- 戶籍謄本上傳頁 -->
+         <div [ngClass]="{'display_none' : !showHouseholdView}" class="dis-none">
+            <div class="vi-container pad_top20">
+               <div class="vi-card vi-account pad_btm8">
+                  <div class="vi-card-header flex-wrap">
+                     <div class="vi-line-title" translate="deposit_ot002.382.househole.upload.title">新式戶口名簿或電子戶籍謄本</div>
+                  </div>
+                  <div class="vi-card-body">
+                     <div class="vi-font-body vi-txt-b600 mb16" translate="deposit_ot002.382.househole.upload.content">新式戶口名簿請拍入整份文件包含詳細記事、流水號；電子戶籍謄本請拍入近三個月內申請的最新文件，包含謄本檢查號。</div>
+                     <div class="vi-upload-area vi-upload-area-row twrbm_deposit_ot002_382_padding_bottom_48">
+                                 <a class="vi-buttun-area vi-w-100" [ngClass]="{'twrbm_deposit_ot002_382_upload_household_is_error' : formClazz.formErrors?.fileUpload4}" (click)="intercept($event)">
+                                       <div>
+                                          <div class="vi-icon vi-icon-xs icon-plus-g"></div>
+                                          <div class="vi-txt-body-bold vi-txt-g500" translate="deposit_ot002.382.househole.upload.photo.text">上傳照片</div>
+                                       </div>
+                                 </a>
+                           <ng-container *ngFor="let householdReg of householdRegList.slice().reverse(); let i = index;">
+                           <div style=" width: 0px; height: 0px; overflow: hidden;">
+                              <input type="file" multiple="false" accept="image/*" [attr.id]="'HOUSEHOLD'" (change)="handleSelectedFile($event, i)" #fileRef
+                              />
+                           </div>
+                           <div class="vi-img-area uploadImg twrbm_deposit_ot002_382_margin" *ngIf="householdReg">
+                              <a class="delete-btn" (click)="removeFile($event, i)">
+                                 <div class="vi-icon vi-icon-base icon-color-delete"></div>
+                              </a>
+                              <div class="vi-img">
+                                 <i class="watermark"></i>
+                                 <img [src]="householdReg.data" class="vi-w-100">
+                              </div>
+                           </div>
+                        </ng-container>
+                        
+                     </div>
+                     <div class="dis-flex flex-column">
+                           <div class="vi-form-error" *ngIf="formClazz.formErrors?.fileUpload4">{{formClazz.formErrors?.fileUpload4}}</div>
+                           <div class="vi-txt-callout vi-txt-b500 rt mb16">
+                                 <i18n translate="deposit_ot002.382.remaining.size.title">剩餘上傳容量：</i18n>
+                                 {{getRoundRemainSize()}} MB
+                           </div>
+                     </div>
+
+                     <div class="vi-dashed-hr"></div>
+                     <div class="vi-remarks forAEM" [inject-dom]="upload_remarks">
+                        <h4 class="vi-remarks-title">備註</h4>
+                        <ol class="vi-ordered-list-num">
+                           <li>若選擇檔案上傳，格式需為：jpg、png、jpeg、bmp，且每張檔案大小需小於 6 MB。
+                           </li>
+                        </ol>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- 確認，下一步 disabled-->
+            <div class="vi-btn-group mt24 mb16 px-12">
+               <button class="vi-btn vi-btn-primary disabled" [ngClass]="{'disabled' : !hasUploadHouseholeFile()}" ontouchstart="" (click)="nextStep($event)"  translate="deposit_ot002.382.next.step.text">確認，下一步</button>
+            </div>
+         </div>
+      </div>
+   </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>

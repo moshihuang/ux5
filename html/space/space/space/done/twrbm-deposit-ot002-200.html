@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-list.vi-list-bg-gray .vi-list-item {
+      margin-bottom: 16px;
+      background: #F5F5F5;
+      border-radius: 6px;
+    }
+    .vi-list.vi-list-bg-gray .vi-list-item:last-child {
+      margin-bottom: 0;
+    }
+    .vi-list.vi-list-py8 .vi-list-item {
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+    .vi-list.vi-list-px8 .vi-list-item {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+    .vi-list.vi-list-noline.vi-list-px8 .vi-list-item:last-child {
+      padding-bottom: 8px;
+    }
+  </style>
+</head>
+
+<!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+<header class="">
+  <div class="vi-page-header-normal">
+    <div class="vi-page-header-lt">
+      <button class="vi-btn" ontouchstart="">
+        <span class="vi-icon vi-icon-base icon-page-back"></span>
+      </button>
+    </div>
+    <div class="vi-page-header-ct">
+      <h1 class="vi-page-title">線上開數位帳戶</h1>
+    </div>
+    <!-- <div class="vi-page-header-rt">
+      <span class="vi-icon vi-icon-base vi-modal-close"></span>
+    </div> -->
+  </div>
+</header>
+
+<body class="body-wrap scroll vi-bg-mint">
+  <div class="main_container">
+    
+    <div class="vi-page-indicator">
+      <div class="vi-progress-bar">
+        <progress class="progress-bar-handle" max="100" value="100"></progress>
+      </div>
+      <div class="vi-txt-b900 vi-txt-title" translate="deposit_ot002.step.5.1">身分認證</div>
+      <div class="vi-step vi-txt-g600">
+        <i18n translate="deposit_ot002.step">步驟</i18n>
+        <span class="vi-step-current">5</span><span class="vi-txt-b500">/5</span>
+      </div>
+    </div>
+
+    <div class="vi-container">
+      <form [formGroup]="formClazz.form" #formRef>
+        <div class="vi-tab-line mb24">
+          <ul class="nav">
+            <li>
+              <a href="" (click)="">
+                <span>本行帳戶</span>
+              </a>
+            </li>
+            <li>
+              <a href="" (click)="">
+                <span>他行帳戶</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="" (click)="">
+                <span>本行信用卡</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="vi-card">
+          <div class="vi-card-body mb20">
+            <ul class="vi-detail-list no-bg mt16 vi-btm-line">
+              <li class="vi-list-item">
+                <div class="vi-list-lt" translate="deposit_ot002_200.customer.id">身分證字號</div>
+                <div class="vi-list-rt">A1234567</div>
+              </li>
+
+              <li class="vi-list-item">
+                <div class="vi-list-lt" translate="deposit_ot002_200.birthday">生日</div>
+                <div class="vi-list-rt">1990/08/02</div>
+              </li>
+            </ul>
+
+            <a href="javascript:void(0)" class="vi-form-group vi-for-select mt24"
+              [ngClass]="{'has-error' : formClazz.formErrors?.cardKey}" (click)="showCreditCardSlide($event)">
+              <div class="vi-input-group">
+                <span class="title" translate="deposit_ot002_200.credit.card">信用卡</span>
+                <input type="text" placeholderTransKey="deposit_ot002_200.credit.card.placeholder"
+                  [value]="pageData.model.selectedCreditCard?.cardNo" maxlength="25" readonly>
+              </div>
+              <div class="vi-form-info">{{pageData.model.selectedCreditCard?.cardName}}</div>
+              <div class="vi-form-error" *ngIf="formClazz.formErrors?.cardKey">
+                {{formClazz.formErrors?.cardKey}}</div>
+            </a>
+
+            <div class="vi-form-group card_expired_date" [ngClass]="{'has-error' : formClazz.formErrors?.expiredDt}">
+              <div class="vi-input-group">
+                <span class="title" translate="deposit_ot002_200.valid.year">有效年月</span>
+                <input type="tel" placeholder="MM/YY" maxlength="5" formControlName="expiredDt" cleave
+                  [cleaveOption]="cleaveOption" (onValueChange)="setValidYear($event)">
+              </div>
+              <div class="vi-form-info"></div>
+              <div class="vi-form-error" *ngIf="formClazz.formErrors?.expiredDt">
+                {{formClazz.formErrors?.expiredDt}}</div>
+            </div>
+
+            <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.cvv2}">
+              <div class="vi-input-group">
+                <span class="title" translate="deposit_ot002_200.verification.code">驗證碼</span>
+                <input type="password" placeholderTransKey="deposit_ot002_200.verification.code.placeholder"
+                  maxlength="3" formControlName="cvv2">
+              </div>
+              <div class="vi-form-info"></div>
+              <div class="vi-form-error" *ngIf="formClazz.formErrors?.cvv2">
+                {{formClazz.formErrors?.cvv2}}</div>
+            </div>
+
+            <div class="vi-txt-callout vi-txt-r500 mt8" translate="deposit_ot002_200.transfer.memo">
+              簡易驗證成功轉帳限轉本行名下帳戶，且無法轉帳給他人。
+            </div>
+
+            <div class="vi-btn-group mt24">
+              <button class="vi-btn vi-btn-primary" ontouchstart="" translate="deposit_ot002_200.button.next"
+                (click)="next($event)">確認</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="vi-remarks forAEM" [inject-dom]="pageData.model.remark" *ngIf="pageData.model.remark">
+          <h4 class="vi-remarks-title">備註</h4>
+          <ol class="vi-ordered-list vi-ordered-list-num">
+            <li>注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項</li>
+          </ol>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+</html>
+
+<slide-panel-projection #projection></slide-panel-projection>
+
+<ng-template #projectionTemplate>
+  <div class="vi-modal-backdrop" data-dismiss="modal" (click)="closeSlide($event)"></div>
+  <div class="super-card">
+
+    <div class="super-card-header">
+      <div class="super-card-header-lt"></div>
+
+      <div class="super-card-header-ct">
+        <div class="super-card-title" translate="deposit_ot002_200.slide.credit.card">選擇驗證信用卡</div>
+      </div>
+
+      <div class="super-card-header-rt">
+        <button class="vi-modal-close" ontouchstart="" data-dismiss="modal" (click)="closeSlide($event)"></button>
+      </div>
+    </div>
+
+    <div class="super-card-body">
+      <ul class="vi-list vi-list-px8 vi-list-py8 vi-list-noline vi-list-bg-gray">
+        <a class="vi-list-item" href="">
+          <div class="vi-list-full">
+            <div class="vi-txt-body-bold vi-txt-g500">4182-30**-****-9000</div>
+            <div class="vi-txt-body vi-txt-b600 mt4">LINE Pay信用卡</div>
+          </div>
+        </a>
+        <a class="vi-list-item" href="">
+          <div class="vi-list-full">
+            <div class="vi-txt-body-bold vi-txt-g500">4311-95**-****-5678</div>
+            <div class="vi-txt-body vi-txt-b600 mt4">中信紅利卡</div>
+          </div>
+        </a>
+      </ul>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+    <defs>
+        <linearGradient id="1hhdq60n1a" x1="34.261%" x2="86.735%" y1="60.99%" y2="10.217%">
+            <stop offset="0%" stop-color="#EEE" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#7A4738"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <path fill="#FF625E" stroke="#FF625E" stroke-width="1.199" d="M14.331 18.363c1.404-.509 2.114-.38 2.132.384.026 1.148-.565 1.556-.844 1.556-.28 0-1.288-.395-1.288-.395v-1.545z" transform="translate(-919 -1586) translate(919 1586) translate(18.3 24)"/>
+                    <path stroke="#324148" stroke-width=".999" d="M17.237 1.37c-.096 1.396 1.742 1.727 5.516.994M10.344 1.573c.096 1.396-1.742 1.728-5.516.995" opacity=".8" transform="translate(-919 -1586) translate(919 1586) translate(18.3 24)"/>
+                    <path stroke="#4F4F4F" stroke-linejoin="round" stroke-width=".999" d="M5.727 8.207l3.311-.834c-1.098-.475-2.06-.861-2.887-1.159" opacity=".8" transform="translate(-919 -1586) translate(919 1586) translate(18.3 24)"/>
+                    <path fill="url(#1hhdq60n1a)" d="M2.456 13.264l1.387.23c1.52.253 2.701 1.458 2.924 2.983l.358 2.449c.08.546-.299 1.054-.845 1.134-.048.007-.096.01-.145.01H1.292v-5.82c0-.552.448-1 1-1 .055 0 .11.005.164.014z" opacity=".805" transform="translate(-919 -1586) translate(919 1586) translate(18.3 24) rotate(28 4.292 16.57)"/>
+                    <path fill="url(#1hhdq60n1a)" d="M21.887 13.192l1.386.23c1.52.253 2.702 1.459 2.925 2.983l.357 2.45c.08.546-.298 1.053-.845 1.133-.047.007-.096.01-.144.01h-4.843v-5.82c0-.552.447-1 1-1 .055 0 .11.005.164.014z" opacity=".805" transform="translate(-919 -1586) translate(919 1586) translate(18.3 24) scale(-1 1) rotate(28 0 -78.648)"/>
+                    <path stroke="#4F4F4F" stroke-linejoin="round" stroke-width=".999" d="M21.832 8.207l-3.311-.834c1.098-.475 2.06-.861 2.887-1.159" opacity=".8" transform="translate(-919 -1586) translate(919 1586) translate(18.3 24)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

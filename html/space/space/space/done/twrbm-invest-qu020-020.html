@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .main_container {
+      background: #e4f0ef;
+      min-height: calc(100vh);
+    }
+    
+    .vi-list.vi-list-bg-gray .vi-list-item {
+      margin-bottom: 16px;
+      background: #F5F5F5;
+      border-radius: 6px;
+    }
+    .vi-list.vi-list-bg-gray .vi-list-item:last-child {
+      margin-bottom: 0;
+    }
+
+
+    .vi-overview-detail-card {
+      border-radius: 12px 0 12px 0;
+      overflow: hidden;
+    }
+    .vi-overview-detail-card .vi-card-body {
+      background: #fff;
+    }
+    .vi-overview-detail-card.has-select-link .vi-card-body {
+      padding-right: 36px;
+    }
+    
+
+
+    .vi-list.vi-list-overview .vi-list-item {
+      padding: 0 0 16px 0;
+      align-items: start;
+    }
+    .vi-list.vi-list-overview .vi-list-item .vi-icon-link {
+      position: relative;
+      top: 4px;
+    }
+    .vi-list.vi-list-overview .vi-list-item.vi-list-item-border-top {
+      padding-top: 16px;
+      border-top: 1px dashed #C0C0C0;
+    }
+    .vi-list.vi-list-overview .flex-3 {
+      flex: 3;
+    }
+    
+    
+    .has-select-link .vi-stock-tag {
+      position: relative;
+      top: -3px;
+    }
+
+
+    @media (max-width: 320px) {
+      .vi-list.vi-list-overview .vi-list-item {
+        padding: 0 0 8px 0;
+      }
+      .vi-list.vi-list-overview .flex-3 {
+        flex: 2;
+      }
+    }
+
+
+    .super-card-select-account .vi-list-item * {
+      color: #36444D;
+    }
+    .super-card-select-account .vi-list-item:active,
+    .super-card-select-account .vi-list-item.active {
+      background: #009891;
+    }
+    .super-card-select-account .vi-list-item:active *,
+    .super-card-select-account .vi-list-item.active * {
+      color: #fff;
+    }
+    .super-card-body .vi-list-item:last-child {
+      border-bottom: 0;
+    }
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<!-- 不需要 scroll 事件，預設 fixed header -->
+<body class="vi-bg-mint vi-page-header-fix">
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <!-- 新增 .vi-page-header-green -->
+    <div class="container-header vi-page-header vi-page-header-green">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">個人信託資產</h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- EBMW content from here -->
+  <!-- 新增 .vi-bg-green-gradient 漸層背景 -->
+  <div class="body-wrap scroll vi-bg-g550 vi-bg-green-gradient">
+
+    <div class="main_container pad_top24">
+
+      <div class="vi-container">
+        <div class="vi-card vi-overview-detail-card">
+          <div class="vi-card-header">
+            <!-- .vi-select-super-card -->
+            <div class="vi-select-super-card w-100" (click)="">
+              <div class="flex-grow">
+                <div class="vi-txt-title mr-auto">富貴傳承信託</div>
+                <div class="mt4 vi-txt-callout vi-txt-b600">A001000001</div>
+              </div>
+            </div>
+          </div>
+          <div class="vi-card-body">
+            <ul class="vi-list vi-list-noline vi-list-baseline vi-list-no-bg vi-list-overview">
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">參考市值/餘額</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-title vi-txt-b600 mt-4">320,000</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">庫存標的/成本</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b600">50,000</div>
+                  <div class="vi-txt-callout vi-txt-b500 mt4">(以上金額為約當新臺幣)</div>
+                </div>
+              </li>
+              <li class="vi-list-item vi-list-item-border-top">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">
+                    契約關係
+                  </div>
+                </div>
+                <div class="vi-list-rt flex-3">
+                  <div class="vi-txt-body-bold vi-txt-b600">委託人、受益人、信託監察人</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">
+                    契約名稱
+                  </div>
+                </div>
+                <div class="vi-list-rt flex-3">
+                  <div class="vi-txt-body-bold vi-txt-b600">金小五、金小六、金小五、金小六、金小五、金小六、金小小六六、</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class="vi-line-title mt12 mb12">持有清單</div>
+        <!-- .has-select-link -->
+        <div class="vi-card vi-overview-detail-card has-select-link">
+          <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+            <div class="vi-txt-headline mr-auto">存款</div>
+            <div class="ml-auto rt flex-grow">
+              <div class="vi-txt-headline vi-txt-b900">342,800</div>
+              <!-- <div class="vi-txt-callout vi-txt-b500">(貸款餘額)</div> -->
+            </div>
+          </a>
+          <div class="vi-card-body">
+            <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">活存餘額</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- has-select-link 時 這邊是粗體 -->
+                  <div class="vi-txt-body-bold vi-txt-b600">32,800</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">定存總額</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- has-select-link 時 這邊是粗體 -->
+                  <div class="vi-txt-body-bold vi-txt-b600">10,000</div>
+                  <div class="vi-txt-callout vi-txt-b500">(以上金額為約當新臺幣)</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- .has-select-link -->
+        <div class="vi-card vi-overview-detail-card has-select-link">
+          <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+            <div class="vi-txt-headline mr-auto">基金</div>
+            <div class="ml-auto rt flex-grow">
+              <div class="vi-txt-headline vi-txt-b900">342,800</div>
+              <div class="vi-txt-callout vi-txt-b500">(總參考市值 | 約當新台幣)</div>
+            </div>
+          </a>
+          <div class="vi-card-body">
+            <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">參考損益</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- has-select-link 時 這邊是粗體 -->
+                  <div class="vi-txt-body-bold vi-txt-r500">-10,000</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">參考報酬率</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- vi-txt-red-nu, vi-txt-green-nu -->
+                  <div class="vi-stock-tag vi-txt-red-nu">
+                    -12.33%
+                  </div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">總投資成本</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- has-select-link 時 這邊是粗體 -->
+                  <div class="vi-txt-body-bold vi-txt-b600">10,000</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- .has-select-link -->
+        <div class="vi-card vi-overview-detail-card has-select-link">
+          <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+            <div class="vi-txt-headline mr-auto">股票</div>
+            <div class="ml-auto rt flex-grow">
+              <div class="vi-txt-headline vi-txt-b900">22,342,800</div>
+              <div class="vi-txt-callout vi-txt-b500">(總參考市值 | 約當新台幣)</div>
+            </div>
+          </a>
+          <div class="vi-card-body">
+            <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">參考損益</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- has-select-link 時 這邊是粗體 -->
+                  <div class="vi-txt-body-bold vi-txt-r500">-10,000</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">參考報酬率</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- vi-txt-red-nu, vi-txt-green-nu -->
+                  <div class="vi-stock-tag vi-txt-red-nu">
+                    -12.33%
+                  </div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">總投資成本</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- has-select-link 時 這邊是粗體 -->
+                  <div class="vi-txt-body-bold vi-txt-b600">10,000</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- .has-select-link -->
+        <div class="vi-card vi-overview-detail-card has-select-link">
+          <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+            <div class="vi-txt-headline mr-auto">債券</div>
+            <div class="ml-auto rt flex-grow">
+              <div class="vi-txt-headline vi-txt-b900">8,800</div>
+              <div class="vi-txt-callout vi-txt-b500">(總參考市值 | 約當新台幣)</div>
+            </div>
+          </a>
+          <div class="vi-card-body">
+            <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">參考損益</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- has-select-link 時 這邊是粗體 -->
+                  <div class="vi-txt-body-bold vi-txt-g400">+16,000</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">參考報酬率</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- vi-txt-red-nu, vi-txt-green-nu -->
+                  <div class="vi-stock-tag vi-txt-green-nu">
+                    +12.33%
+                  </div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">原始投資金額</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- has-select-link 時 這邊是粗體 -->
+                  <div class="vi-txt-body-bold vi-txt-b600">10,000</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- .has-select-link -->
+        <div class="vi-card vi-overview-detail-card has-select-link">
+          <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+            <div class="vi-txt-headline mr-auto">ETF</div>
+            <div class="ml-auto rt flex-grow">
+              <div class="vi-txt-headline vi-txt-b900">8,800</div>
+              <div class="vi-txt-callout vi-txt-b500">(總參考市值 | 約當新台幣)</div>
+            </div>
+          </a>
+          <div class="vi-card-body">
+            <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">參考損益</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- has-select-link 時 這邊是粗體 -->
+                  <div class="vi-txt-body-bold vi-txt-g400">+16,000</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">參考報酬率</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- vi-txt-red-nu, vi-txt-green-nu -->
+                  <div class="vi-stock-tag vi-txt-green-nu">
+                    +12.33%
+                  </div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">總投資成本</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- has-select-link 時 這邊是粗體 -->
+                  <div class="vi-txt-body-bold vi-txt-b600">10,000</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- .has-select-link -->
+        <div class="vi-card vi-overview-detail-card has-select-link">
+          <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+            <div class="vi-txt-headline mr-auto">SN</div>
+            <div class="ml-auto rt flex-grow">
+              <div class="vi-txt-headline vi-txt-b900">342,800</div>
+              <div class="vi-txt-callout vi-txt-b500">(總參考市值 | 約當新台幣)</div>
+            </div>
+          </a>
+          <div class="vi-card-body">
+            <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">參考損益</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- has-select-link 時 這邊是粗體 -->
+                  <div class="vi-txt-body-bold vi-txt-g400">+16,000</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">參考報酬率</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- vi-txt-red-nu, vi-txt-green-nu -->
+                  <div class="vi-stock-tag vi-txt-red-nu">
+                    12.33%
+                  </div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">原始投資金額</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- has-select-link 時 這邊是粗體 -->
+                  <div class="vi-txt-body-bold vi-txt-b600">10,000</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- .has-select-link -->
+        <div class="vi-card vi-overview-detail-card has-select-link">
+          <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+            <div class="vi-txt-headline mr-auto">不動產</div>
+            <div class="ml-auto rt flex-grow">
+              <div class="vi-txt-headline vi-txt-b900">21,342,800</div>
+              <div class="vi-txt-callout vi-txt-b500">(總參考市值 | 約當新台幣)</div>
+            </div>
+          </a>
+          <div class="vi-card-body">
+            <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">土地價值</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- has-select-link 時 這邊是粗體 -->
+                  <div class="vi-txt-body-bold vi-txt-b600">60,032,800</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">建物價值</div>
+                </div>
+                <div class="vi-list-rt">
+                  <!-- has-select-link 時 這邊是粗體 -->
+                  <div class="vi-txt-body-bold vi-txt-b600">12,304,490</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        
+        
+        <!-- 備註 -->
+        <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+        <div class="mt16">
+          <div class="vi-note-accordion">
+            <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+              <div class="forAEM base-style break-word mr4">
+                標題
+              </div>
+              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+            </div>
+            <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+              <div class="vi-card-body forAEM base-style break-word">
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+            
+      </div>
+
+     
+
+    </div>
+    <!-- main_container -->
+  </div>
+</body>
+<!-- body-wrap -->
+</html>
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-account-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">選擇個人信託資產</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <ul class="vi-list vi-list-px8 vi-list-py8 vi-list-noline vi-list-bg-gray super-card-select-account">
+          <!-- 目前的帳戶 加上 active -->
+          <a class="vi-list-item active" href="">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="dis-flex align-items-center mb8">
+                  <div class="vi-txt-body-bold vi-txt-b600">富貴傳承信託</div>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold"></div>
+              </div>
+            </div>
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body">A001000001</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold"></div>
+              </div>
+            </div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="dis-flex align-items-center mb8">
+                  <div class="vi-txt-body-bold vi-txt-b600">富貴傳承信託</div>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold"></div>
+              </div>
+            </div>
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body">A001000001</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold"></div>
+              </div>
+            </div>
+          </a>
+        </ul>
+          
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// 選擇帳號 demo
+document.getElementsByClassName('vi-select-super-card')[0].addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-account-supercard').classList.toggle('hide');
+  document.getElementById('target-account-supercard').classList.toggle('vi-modal-in');
+});
+
+</script>

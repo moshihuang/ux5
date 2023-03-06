@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-upload-area-row {
+      flex-direction: column;
+      width: 100%;
+      margin: 0;
+      padding-top: 0;
+      padding-bottom: 20px;
+    }
+    .vi-upload-area-row .vi-img-area {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 12px;
+    }
+    .vi-dashed-hr {
+      border-top: 1px dashed #DAE1E5;
+    }
+  </style>
+</head>
+
+<!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+<header class="">
+  <div class="vi-page-header-normal">
+    <div class="vi-page-header-lt">
+      <button class="vi-btn" ontouchstart="">
+        <span class="vi-icon vi-icon-base icon-page-back"></span>
+      </button>
+    </div>
+    <div class="vi-page-header-ct">
+      <h1 class="vi-page-title">法定代理人驗證</h1>
+    </div>
+    <!-- <div class="vi-page-header-rt">
+      <span class="vi-icon vi-icon-base vi-modal-close"></span>
+    </div> -->
+  </div>
+</header>
+
+<body class="body-wrap scroll vi-bg-mint">
+  <div class="main_container">
+
+    <!-- toast -->
+    <div class="toast show">
+      <span>證件已上傳，確認以下資訊是否正確</span>
+    </div>
+    
+    <div class="vi-page-indicator">
+      <div class="vi-progress-bar">
+        <progress class="progress-bar-handle" max="100" value="66"></progress>
+      </div>
+      <div class="vi-txt-b900 vi-txt-title">
+        上傳證件
+      </div>
+      <div class="vi-step vi-txt-g600">
+        步驟
+        <span class="vi-step-current">2</span><span class="vi-txt-b500">/3</span>
+      </div>
+    </div>
+
+    <div class="vi-container">
+      <form [formGroup]="formClazz.form" #formRef>
+        <div class="vi-card vi-account pad_btm8">
+          <div class="vi-card-header flex-wrap">
+            <div class="vi-line-title" translate="deposit_ot002_090.title.1">身分證正面</div>
+          </div>
+          <div class="vi-card-body">
+            <div class="vi-img">
+              <img src="../../../../../inc/img/img/icon/id-card-sample.png" class="vi-w-100">
+            </div>
+            <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group">
+                <span class="title" translate="deposit_ot002_090.customer.name">姓名 </span>
+                <input type="text" placeholderTransKey="deposit_ot002_090.customer.name.placeholder" maxlength="50"
+                  formControlName="custName">
+              </div>
+              <div class="vi-form-info"></div>
+              <div class="vi-form-error" *ngIf="formClazz.formErrors?.custName">{{formClazz.formErrors?.custName}}
+              </div>
+            </div>
+
+            <label class="vi-checkbox">
+              <input type="checkbox" [checked]="pageData.model.showAboriginalName"
+                (click)="toggleAboriginalName($event)">
+              <span class="vi-checkbox-mark"></span>
+              <span class="vi-checkbox-txt" translate="deposit_ot002_090.aboriginal.name.label">我有原住民姓名</span>
+            </label>
+
+            <div class="vi-form-group"
+              [ngClass]="{'has-error' : formClazz.formErrors?.longCustNameEng, 'hide' : !pageData.model.showAboriginalName}">
+              <div class="vi-input-group">
+                <span class="title" translate="deposit_ot002_090.aboriginal.name">原住名姓名 </span>
+                <input #longCustomName type="text" placeholderTransKey="deposit_ot002_090.aboriginal.name.placeholder"
+                  maxlength="50" formControlName="longCustNameEng">
+                <a href="" class="vi-icon-link" (click)="showKeyBoard($event)">
+                  <span class="vi-icon vi-icon-base icon-keyboard"></span>
+                </a>
+              </div>
+              <div class="vi-form-info"></div>
+              <div class="vi-form-error" *ngIf="formClazz.formErrors?.longCustNameEng">
+                {{formClazz.formErrors?.longCustNameEng}}</div>
+            </div>
+
+            <ng-container *ngIf="pageData.model.showEnglishName">
+              <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.englishLastName}">
+                <div class="vi-input-group">
+                  <span class="title" translate="deposit_ot002_090.english.last.name">英文姓 </span>
+                  <input type="text" placeholderTransKey="deposit_ot002_090.english.last.name.placeholder"
+                    maxlength="20" formControlName="englishLastName" upper-case>
+                </div>
+                <div class="vi-form-info"></div>
+                <div class="vi-form-error" *ngIf="formClazz.formErrors?.englishLastName">
+                  {{formClazz.formErrors?.englishLastName}}</div>
+              </div>
+              <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.englishFirstName}">
+                <div class="vi-input-group">
+                  <span class="title" translate="deposit_ot002_090.english.first.name">英文名 </span>
+                  <input type="text" placeholderTransKey="deposit_ot002_090.english.first.name.placeholder"
+                    maxlength="20" formControlName="englishFirstName" upper-case>
+                </div>
+                <div class="vi-form-info"></div>
+                <div class="vi-form-error" *ngIf="formClazz.formErrors?.englishFirstName">
+                  {{formClazz.formErrors?.englishFirstName}}</div>
+              </div>
+              <div class="rt">
+                <a href="" class="vi-icon-link" (click)="showEnglishNameMemo($event)">
+                  <span class="vi-icon vi-icon-s icon-question-mark"></span>
+                  <span class="vi-txt-body-bold vi-txt-g500 ml4"
+                    translate="deposit_ot002_090.english.memo">英文姓名說明</span>
+                </a>
+              </div>
+            </ng-container>
+
+            <div class="vi-form-groups" [ngClass]="{'has-error' : formClazz.formErrors?.issueDate}">
+              <div class="vi-form-area">
+                <div class="vi-form-group">
+                  <div class="vi-input-group">
+                    <span class="title" translate="deposit_ot002_090.issue.date">發證日期</span>
+                    <input type="text" placeholder="YYY/MM/DD" maxlength="25" formControlName="issueDate" cleave
+                      [cleaveOption]="cleaveOption" (onValueChange)="setIssueDate($event)">
+                  </div>
+                </div>
+                <div class="vi-form-two half">
+                  <a href="" class="vi-form-group vi-for-select" data-toggle="modal"
+                    (click)="showIssuePlaceSlide($event)">
+                    <div class="vi-input-group">
+                      <input type="text" placeholderTransKey="deposit_ot002_090.issue.place.placeholder"
+                        [value]="pageData.model.selectedIssuePlace?.value" maxlength="25" readonly>
+                    </div>
+                  </a>
+                  <a href="" class="vi-form-group vi-for-select" data-toggle="modal" data-toggle="modal"
+                    (click)="showIssueKindSlide($event)">
+                    <div class="vi-input-group">
+                      <input type="text" placeholderTransKey="deposit_ot002_090.issue.kind.placeholder"
+                        [value]="pageData.model.selectedIssueKind?.value" maxlength="25" readonly>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="vi-form-info"></div>
+              <div class="vi-form-error" *ngIf="formClazz.formErrors?.issueDate">
+                {{formClazz.formErrors?.issueDate}}</div>
+            </div>
+
+            <div class="vi-form-group">
+              <div class="vi-input-group disabled">
+                <span class="title" translate="deposit_ot002_090.birthday">出生年月日</span>
+                <input type="text" placeholder="YYYY/MM/DD" maxlength="10" formControlName="birthday" readonly>
+              </div>
+            </div>
+            <div class="vi-form-group">
+              <div class="vi-input-group disabled">
+                <span class="title" translate="deposit_ot002_090.customer.id">身分證字號 </span>
+                <input type="text" maxlength="100" formControlName="custIxd" readonly>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="vi-card vi-account pad_btm8">
+          <div class="vi-card-header flex-wrap">
+            <div class="vi-line-title" translate="deposit_ot002_090.title.2">身分證反面</div>
+          </div>
+
+          <div class="vi-card-body">
+            <div class="vi-img">
+              <img src="../../../../../inc/img/img/icon/id-card-back-sample.png" class="vi-w-100">
+            </div>
+            <div class="vi-form-groups" [ngClass]="{'has-error' : formClazz.formErrors?.resAddr}">
+              <div class="vi-form-area">
+                <div class="vi-form-two">
+                  <a href="" class="vi-form-group vi-for-select" data-toggle="modal" (click)="showCitySlide($event)">
+                    <div class="vi-input-group">
+                      <span class="title" translate="deposit_ot002_090.residence.address">戶籍地址</span>
+                      <input type="text" placeholderTransKey="deposit_ot002_090.residence.address.city.placeholder"
+                        [value]="pageData.model.selectedCity?.value" maxlength="25" readonly>
+                    </div>
+                  </a>
+                  <a href="" class="vi-form-group vi-for-select" data-toggle="modal" (click)="showAreaSlide($event)">
+                    <div class="vi-input-group">
+                      <input type="text" placeholderTransKey="deposit_ot002_090.residence.address.area.placeholder"
+                        [value]="pageData.model.selectedArea?.value" maxlength="25" readonly>
+                    </div>
+                  </a>
+                </div>
+                <div class="vi-form-group">
+                  <div class="vi-input-group">
+                    <input type="text" placeholderTransKey="deposit_ot002_090.residence.address.placeholder"
+                      maxlength="38" formControlName="resAddr">
+                  </div>
+                </div>
+              </div>
+              <div class="vi-form-info"></div>
+              <div class="vi-form-error" *ngIf="formClazz.formErrors?.resAddr">
+                {{formClazz.formErrors?.resAddr}}</div>
+            </div>
+
+            <a href="javascript:void(0)" class="vi-form-group vi-for-select"
+              [ngClass]="{'has-error' : formClazz.formErrors?.marriage}" data-toggle="modal"
+              (click)="showMarriageSlide($event)" *ngIf="pageData.model.showMarriage">
+              <div class="vi-input-group">
+                <span class="title" translate="deposit_ot002_090.marriage">婚姻狀況</span>
+                <input type="text" placeholderTransKey="deposit_ot002.slide.placeholder"
+                  [value]="pageData.model.selectedMarriage?.value" maxlength="25">
+              </div>
+              <div class="vi-form-info"></div>
+              <div class="vi-form-error" *ngIf="formClazz.formErrors?.marriage">{{formClazz.formErrors?.marriage}}
+              </div>
+            </a>
+          </div>
+
+        </div>
+        
+        <div class="vi-card vi-account pad_btm8">
+          <div class="vi-card-header flex-wrap">
+            <div class="vi-line-title" translate="">新式戶口名簿或電子戶籍謄本</div>
+          </div>
+
+          <div class="vi-card-body">
+            <div class="vi-font-body vi-txt-b600 mb16">新式戶口名簿請拍入整份文件包含詳細記事、流水號；電子戶籍謄本請拍入近三個月內申請的最新文件，包含謄本檢查號。</div>
+            
+            <div class="vi-upload-area vi-upload-area-row">
+              <ng-container>
+                <div style=" width: 0px; height: 0px; overflow: hidden;">
+                  <input type="file" multiple="false" accept="image/*" [attr.id]="'HOUSEHOLD'"  (change)="handleSelectedFile($event, i, j,'HOUSEHOLD')"#fileRef />
+                </div>
+                
+                <div class="vi-img-area">
+                  <a class="delete-btn" (click)="showRemoveModal(householdRegList, i)">
+                    <div class="vi-icon vi-icon-base icon-color-delete"></div>
+                  </a>
+                  <div class="vi-img">
+                    <!-- placeholder img -->
+                    <img src="http://placehold.jp/bfbfbf/bfbfbf/327x198.png" class="vi-w-100">
+                  </div>
+                </div>
+              </ng-container>
+              
+              <a class="vi-buttun-area vi-w-100" (click)="intercept($event, 'HOUSEHOLD')">
+                <div>
+                  <div class="vi-icon vi-icon-xs icon-plus-g"></div>
+                  <div class="vi-txt-body-bold vi-txt-g500" translate="">上傳照片</div>
+                </div>
+              </a>  
+            </div>
+            
+            <div class="vi-txt-callout vi-txt-b500 rt mb16">
+              <i18n translate="">剩餘上傳容量：</i18n>{{  }} MB
+            </div>
+            
+            <div class="vi-dashed-hr"></div>
+            
+            <div class="vi-remarks forAEM">
+              <h4 class="vi-remarks-title">備註</h4>
+              <ol class="vi-ordered-list-num">
+                <li>若選擇檔案上傳，格式需為：jpg、png、jpeg、bmp，且每張檔案大小需小於 6 MB。
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="vi-card vi-account pad_btm8">
+          <div class="vi-card-header flex-wrap">
+            <div class="vi-line-title">通知設定</div>
+          </div>
+
+          <div class="vi-card-body">
+            <div class="vi-txt-body-bold mb12">
+              <span>是否通知我下列訊息</span>
+              <span class="vi-txt-g500">
+                <span class="vi-icon vi-icon-xs icon-question-mark"></span>
+                通知方式
+              </span>
+            </div>
+            <label class="vi-checkbox">
+              <input type="checkbox">
+              <span class="vi-checkbox-mark"></span>
+              <span class="vi-checkbox-txt">小孩的簽帳金融卡消費通知</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="vi-btn-group mt24 mb16">
+          <button class="vi-btn vi-btn-primary" ontouchstart=""
+            (click)="next($event)" *ngIf="!pageData.model.edit">確認，下一步</button>
+          <button class="vi-btn vi-btn-primary" ontouchstart=""
+            (click)="confirm($event)" *ngIf="pageData.model.edit">確認修改</button>
+        </div>
+
+        <div class="vi-remarks forAEM">
+          <h4 class="vi-remarks-title">備註</h4>
+          <ol class="vi-ordered-list-num">
+            <li>立約人知悉貴行提供之數位存款帳戶相關服務屬經立約人事先同之非以有形媒介提供之數位內容或一經提供即為完成之線上服務，故排除消費者保護法第 19 條第 1 項解除權之適用。</li>
+          </ol>
+        </div>
+
+        
+
+      </form>
+    </div>
+
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+<!-- <slide-panel-projection #projection></slide-panel-projection>
+
+<ng-template #projectionTemplate>
+  <div class="vi-modal-backdrop" data-dismiss="modal" (click)="closeSlide($event)"></div>
+  <div class="super-card">
+
+    <div class="super-card-header">
+      <div class="super-card-header-lt">
+        <button class="vi-modal-back" ontouchstart (click)="backSlide($event)"
+          *ngIf="templateSwitch.backButtonEnabled"></button>
+      </div>
+      <div class="super-card-header-ct">
+        <span class="super-card-title" translate="deposit_ot002_090.slide.issue.place"
+          *ngIf="templateSwitch.currentTemplateId === pageData.model.issuePlaceTemplateId">選擇身分證發證地</span>
+        <span class="super-card-title" translate="deposit_ot002_090.slide.issue.kind"
+          *ngIf="templateSwitch.currentTemplateId === pageData.model.issueKindTemplateId">選擇發證方式</span>
+        <span class="super-card-title" translate="deposit_ot002_090.slide.residence.address.city"
+          *ngIf="templateSwitch.currentTemplateId === pageData.model.residenceCityTemplateId">選擇戶籍地址-縣市別</span>
+        <span class="super-card-title" translate="deposit_ot002_090.slide.residence.address.area"
+          *ngIf="templateSwitch.currentTemplateId === pageData.model.residenceAreaTemplateId">選擇戶籍地址-區域</span>
+        <span class="super-card-title" translate="deposit_ot002_090.slide.marriage"
+          *ngIf="templateSwitch.currentTemplateId === pageData.model.marriageTemplateId">選擇婚姻狀況</span>
+      </div>
+      <div class="super-card-header-rt">
+        <button class="vi-modal-close" ontouchstart="" data-dismiss="modal" (click)="closeSlide($event)"></button>
+      </div>
+    </div>
+
+    <div class="super-card-body">
+      <ul class="vi-list-px4">
+        <ul class="vi-list-px4" *ngIf="templateSwitch.currentTemplateId === pageData.model.issuePlaceTemplateId">
+          <a class="vi-list-item" href="" *ngFor="let issuePlace of pageData.model.issuePlaceList; let index = index"
+            (click)="toggleIssuePlace($event, issuePlace, index)">
+            <div class="vi-list-full">
+              <div class="vi-txt-body-bold vi-txt-g500">{{issuePlace.value}}</div>
+            </div>
+          </a>
+        </ul>
+
+        <ul class="vi-list-px4" *ngIf="templateSwitch.currentTemplateId === pageData.model.issueKindTemplateId">
+          <a class="vi-list-item" href="" *ngFor="let issueKind of pageData.model.issueKindList; let index = index"
+            (click)="toggleIssueKind($event, issueKind, index)">
+            <div class="vi-list-full">
+              <div class="vi-txt-body-bold vi-txt-g500">{{issueKind.value}}</div>
+            </div>
+          </a>
+        </ul>
+
+        <ul class="vi-list-px4" *ngIf="templateSwitch.currentTemplateId === pageData.model.residenceCityTemplateId">
+          <a class="vi-list-item" href="" *ngFor="let city of pageData.model.addrCityList; let index = index"
+            (click)="toggleCity($event, city, index)">
+            <div class="vi-list-full">
+              <div class="vi-txt-body-bold vi-txt-g500">{{city.value}}</div>
+            </div>
+          </a>
+        </ul>
+
+        <ul class="vi-list-px4" *ngIf="templateSwitch.currentTemplateId === pageData.model.residenceAreaTemplateId">
+          <a class="vi-list-item" href="" *ngFor="let area of pageData.model.areas; let index = index"
+            (click)="toggleArea($event, area, index)">
+            <div class="vi-list-full">
+              <div class="vi-txt-body-bold vi-txt-g500">{{area.value}}</div>
+            </div>
+          </a>
+        </ul>
+
+        <ul class="vi-list-px4" *ngIf="templateSwitch.currentTemplateId === pageData.model.marriageTemplateId">
+          <a class="vi-list-item" href="" *ngFor="let marriage of pageData.model.marriages; let index = index"
+            (click)="toggleMarriage($event, marriage)">
+            <div class="vi-list-full">
+              <div class="vi-txt-body-bold vi-txt-g500">{{marriage.value}}</div>
+            </div>
+          </a>
+        </ul>
+      </ul>
+    </div>
+
+  </div>
+</ng-template> -->

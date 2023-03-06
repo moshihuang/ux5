@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="84" height="84" viewBox="0 0 84 84">
+    <defs>
+        <path id="4aer255k3a" d="M27.053 63.054c1.809 2.374 3.227 3.993 4.253 4.858 1.416 1.192 2.41 3.187 4.31 4.271 1.9 1.085 5.588 1.723 8.225 1.723 4.864 0 9.171-3.91 12.921-11.728L81 67.552v89.718H0l4.672-82.804c.23-4.075 3.176-7.483 7.174-8.301l15.207-3.11z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-919 -1450) translate(919 1450) translate(-7)">
+                    <g>
+                        <g>
+                            <g>
+                                <g>
+                                    <g>
+                                        <path stroke="#324148" stroke-dasharray="2" stroke-linecap="round" stroke-linejoin="round" stroke-width=".76" d="M11.632 6.366c2.383-.287 3.796-.871 3.85-1.92C15.705.136 7.409.419.299.042" transform="translate(61.02 32.234) translate(.305)"/>
+                                        <g>
+                                            <path fill="#324148" d="M3.032 4.222c1.586-.005 2.873-.633 2.877-1.556.003-.923-1.28-1.542-2.866-1.537-1.585.005-2.872.384-2.876 1.556-.004 1.172 1.28 1.542 2.865 1.537z" transform="translate(61.02 32.234) translate(.305) rotate(-3 92.8 -60.409) rotate(-7 3.038 2.676)"/>
+                                            <path fill="#A1A1A1" d="M4.497 2.554c.465-.075.816-.407.716-1.46-.1-1.053-.503-1.263-.967-1.188-.465.075-.812.457-.716 1.46.095 1.003.503 1.263.967 1.188z" transform="translate(61.02 32.234) translate(.305) rotate(-3 92.8 -60.409) rotate(72 4.372 1.23)"/>
+                                            <path fill="#A1A1A1" d="M4.677 5.193c.465-.078.819-.412.725-1.463-.094-1.051-.496-1.26-.961-1.181-.466.078-.815.461-.726 1.463.09 1.001.496 1.259.962 1.18z" transform="translate(61.02 32.234) translate(.305) rotate(-3 92.8 -60.409) rotate(-81 4.56 3.87)"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <path fill="#FFB7A2" d="M47.267 61.788l8.63 1.892c3.149 10.564-1.984 16.096-15.397 16.596S18.764 75.47 15.533 64.353l11.558-2.56 20.176-.005z"/>
+                    <mask id="vcio8hp5yb" fill="#fff">
+                        <use xlink:href="#4aer255k3a"/>
+                    </mask>
+                    <use fill="#ECEFF1" transform="matrix(-1 0 0 1 81 0)" xlink:href="#4aer255k3a"/>
+                    <rect width="13.333" height="12" x="57.667" y="64.178" fill="#889DA7" mask="url(#vcio8hp5yb)" rx="2" transform="rotate(-21 64.333 70.178)"/>
+                    <path stroke="#324148" stroke-linecap="square" d="M59.097 70.178L55.409 71.762M60.097 73.178L56.409 74.762M64.626 74.762L65.952 78.404M58.626 62.762L59.952 66.404M68.626 72.762L69.952 76.404" mask="url(#vcio8hp5yb)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

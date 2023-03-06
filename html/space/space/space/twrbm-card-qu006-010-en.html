@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+    
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<!-- 不需要 scroll 事件，預設 fixed header -->
+<body class="vi-bg-g550 vi-page-header-fix en">
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <!-- 新增 .vi-page-header-green 綠色 header，ios 瀏海也要改成綠的 #0F8F88 -->
+    <!-- 如果 rt 有二顆 icon，加上 .vi-page-header-two-icons -->
+    <div class="container-header vi-page-header vi-page-header-green">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">Unbilled Transactions</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <!-- <a class="btn vi-icon vi-icon-base icon-start-default-w"></a> -->
+        <!-- <a class="btn vi-icon vi-icon-base icon-start-default-w ml24"></a> -->
+        <!-- <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-white">刷卡分析</a> -->
+      </div>
+    </div>
+  </header>
+
+  <!-- EBMW content from here -->
+  <!-- 新增 .vi-bg-green-gradient 漸層背景 -->
+  <div class="body-wrap scroll vi-bg-mint vi-bg-green-gradient">
+
+    <!-- 英文版沒有 vi-has-foot-btn -->
+    <div class="main_container main_container_overview">
+
+      <!-- id 是 demo 用的，開發請拉掉 -->
+      <div id="one" class="pad_top24">
+        <div class="vi-container">
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="target-card-has-value" class="vi-card vi-overview-detail-card pad_top16 mb24">
+            <div class="vi-card-body">
+              <ul class="vi-list vi-list-noline vi-list-baseline vi-list-no-bg vi-list-overview">
+                <li class="vi-list-item">
+                  <div class="vi-list-lt">
+                    <div class="vi-txt-body vi-txt-b600">Total Amount</div>
+                  </div>
+                  <div class="vi-list-rt">
+                    <div class="vi-txt-title vi-txt-b600 mt-4">22,800</div>
+                  </div>
+                </li>
+                <li class="vi-list-item">
+                  <div class="vi-list-lt">
+                    <div class="vi-txt-body vi-txt-b600">
+                      Closing Date
+                      <span class="vi-icon vi-icon-xs icon-question-mark-g top-2px ml4"></span>
+                    </div>
+                  </div>
+                  <div class="vi-list-rt">
+                    <div class="vi-txt-body-bold vi-txt-b600">5</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="vi-card-s">
+          <div class="vi-card-header">
+            <div class="vi-line-title">Transactions</div>
+          </div>
+
+          <div class="vi-card-body">
+            <!-- id 是 demo 用的，開發請拉掉 -->
+            <div id="target-has-detail1" class="">
+              <div class="mb24">
+                <!-- .vi-select-super-card -->
+                <!-- 如果只有一筆，加 .disabled -->
+                <!-- <div class="vi-select-super-card disabled w-100"> -->
+                <div id="trigger-card-super-card1" class="vi-select-super-card w-100 pad_top12 pad_btm12">
+                  <div class="flex-grow">
+                    <div class="dis-flex">
+                      <!-- <div class="mr8">
+                        <img src="../../../../inc/img/temp/credit-card-1.png" alt="" style="height: 24px;">
+                      </div> -->
+                      <div class="vi-txt-body-bold">
+                        <span class="vi-txt-ellipsis">All</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- .vi-select-super-card -->
+                <!-- 如果只有一筆，加 .disabled -->
+                <!-- <div class="vi-select-super-card disabled w-100"> -->
+                <div id="trigger-card-super-card1-1" class="vi-select-super-card w-100 pad_top12 pad_btm12 disabled hide">
+                  <div class="flex-grow">
+                    <div class="dis-flex">
+                      <!-- <div class="mr8">
+                        <img src="../../../../inc/img/temp/credit-card-1.png" alt="" style="height: 24px;">
+                      </div> -->
+                      <div class="vi-txt-body-bold">
+                        <span class="vi-txt-ellipsis">All</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="vi-row"> 
+                <div>
+                  <!-- change .container to .vi-container -->
+                  <div class="vi-container">
+                    <ul class="card-list">
+                      <li class="title line-top">
+                        <div class="div-tb">
+                          <!-- add .vi-txt-body -->
+                          <div class="td vi-txt-body top-2px">
+                            5 Items
+                          </div>
+                          <div class="td rt">
+                            <div class="date-order">
+                              <span class="vi-txt-body-bold vi-txt-g500">Sort</span>
+                              <!-- add .rotate180 if sort reverse -->
+                              <span class="vi-icon vi-icon-xs vi-icon-arrow-down-g ml4 top-2px"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <!-- 參考現行 twrbm-deposit-qu002-010 -->
+                  <!-- add .vi-detail-panel .vi-creditcard-detail-panel-->
+                  <div class="panel-group toggle-panel vi-detail-panel vi-creditcard-detail-panel" id="B00"> 
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#B00" href="#B00collapse0">
+                          <div class="div-tb">
+                            <!-- remove all vmid, 以下內容有調整 class name -->
+                            <div class="td wid_50px">
+                              <div class="vi-txt-body-bold vi-txt-b600">4/20</div>
+                            </div>
+                            <div class="td">
+                              <div class="vi-txt-body-bold vi-txt-b600">綠界－Ｈａｈｏｗ好學校 TAIPEI TW</div>
+                            </div>
+                            <div class="td rt">
+                              <div class="vi-txt-body-bold vi-txt-b600 money">4,280</div>
+                            </div>
+                            <div class="td wid_25px"></div>
+                          </div>
+                          <!-- 新增一個 div-tb 註記移到這 -->
+                          <div class="div-tb">
+                            <div class="td wid_50px"></div>
+                            <div class="td">
+                              <!-- 拿掉 mt4 加 vi-txt-ellipsis ellipsis-1-line -->
+                              <div class="vi-txt-callout vi-txt-b500 vi-txt-ellipsis ellipsis-1-line">(0724) 中信商務卡/雙幣商務卡-正卡正卡正卡正卡</div>
+                            </div>
+                            <div class="td wid_25px"></div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="panel-collapse collapse" id="B00collapse0">
+                        <div class="panel-body">
+                          <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                            <li class="vi-list-item">
+                              <div class="vi-list-lt">
+                                <div class="vi-txt-body vi-txt-b600">Transaction date</div>
+                              </div>
+                              <div class="vi-list-rt">
+                                <div class="vi-txt-body vi-txt-b600">3/20</div>
+                              </div>
+                            </li>
+                            <li class="vi-list-item">
+                              <div class="vi-list-lt">
+                                <div class="vi-txt-body vi-txt-b600">Post date</div>
+                              </div>
+                              <div class="vi-list-rt">
+                                <div class="vi-txt-body vi-txt-b600">3/24</div>
+                              </div>
+                            </li>
+                            <li class="vi-list-item">
+                              <div class="vi-list-lt">
+                                <div class="vi-txt-body vi-txt-b600">Original Currency</div>
+                              </div>
+                              <div class="vi-list-rt">
+                                <div class="vi-txt-body vi-txt-b600">US</div>
+                              </div>
+                            </li>
+                            <li class="vi-list-item">
+                              <div class="vi-list-lt">
+                                <div class="vi-txt-body vi-txt-b600">Original Currency Amount</div>
+                              </div>
+                              <div class="vi-list-rt">
+                                <div class="vi-txt-body vi-txt-b600">75.00</div>
+                              </div>
+                            </li>
+                            <li class="vi-list-item">
+                              <div class="vi-list-lt">
+                                <div class="vi-txt-body vi-txt-b600">Payment Method</div>
+                              </div>
+                              <div class="vi-list-rt">
+                                <div class="vi-txt-body vi-txt-b600">Card-Present<br> Transaction</div>
+                              </div>
+                            </li>
+                            <li class="vi-list-item">
+                              <div class="vi-list-lt">
+                                <div class="vi-txt-body vi-txt-b600">Transaction</div>
+                              </div>
+                              <div class="vi-list-rt">
+                                <div class="vi-txt-body vi-txt-b600">Uber Eat Pending<br> Amsterdam NL<br>(Uber Eats)</div>
+                              </div>
+                            </li>
+                            <div class="dis-flex flex-justify-end mb16">
+                              <div class="btn vi-btn vi-btn-xs vi-btn-secondary trigger-card-question">Question</div>
+                              <!-- <div class="btn vi-btn vi-btn-xs vi-btn-primary ml16">單筆分期</div> -->
+                            </div>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#B00" href="#B00collapse1">
+                          <div class="div-tb">
+                            <!-- remove all vmid, 以下內容有調整 class name -->
+                            <div class="td wid_50px">
+                              <div class="vi-txt-body-bold vi-txt-b600">4/14</div>
+                            </div>
+                            <div class="td">
+                              <div class="vi-txt-body-bold vi-txt-b600">TAOBAO.COM</div>
+                            </div>
+                            <div class="td rt">
+                              <div class="vi-txt-body-bold vi-txt-b600 money">-208</div>
+                            </div>
+                            <div class="td wid_25px"></div>
+                          </div>
+                          <!-- 新增一個 div-tb 註記移到這 -->
+                          <div class="div-tb">
+                            <div class="td wid_50px"></div>
+                            <div class="td">
+                              <!-- 拿掉 mt4 加 vi-txt-ellipsis ellipsis-1-line -->
+                              <div class="vi-txt-callout vi-txt-b500 vi-txt-ellipsis ellipsis-1-line">(1234) 英雄聯盟卡</div>
+                            </div>
+                            <div class="td wid_25px"></div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="panel-collapse collapse" id="B00collapse1">
+                        <div class="panel-body">
+                          <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                            <li class="vi-list-item">
+                              <div class="vi-list-lt">
+                                <div class="vi-txt-body vi-txt-b600">Transaction date</div>
+                              </div>
+                              <div class="vi-list-rt">
+                                <div class="vi-txt-body vi-txt-b600">3/20</div>
+                              </div>
+                            </li>
+                            <li class="vi-list-item">
+                              <div class="vi-list-lt">
+                                <div class="vi-txt-body vi-txt-b600">Post date</div>
+                              </div>
+                              <div class="vi-list-rt">
+                                <div class="vi-txt-body vi-txt-b600">3/24</div>
+                              </div>
+                            </li>
+                            <li class="vi-list-item">
+                              <div class="vi-list-lt">
+                                <div class="vi-txt-body vi-txt-b600">Original Currency</div>
+                              </div>
+                              <div class="vi-list-rt">
+                                <div class="vi-txt-body vi-txt-b600">US</div>
+                              </div>
+                            </li>
+                            <li class="vi-list-item">
+                              <div class="vi-list-lt">
+                                <div class="vi-txt-body vi-txt-b600">Original Currency Amount</div>
+                              </div>
+                              <div class="vi-list-rt">
+                                <div class="vi-txt-body vi-txt-b600">75.00</div>
+                              </div>
+                            </li>
+                            <li class="vi-list-item">
+                              <div class="vi-list-lt">
+                                <div class="vi-txt-body vi-txt-b600">Payment Method</div>
+                              </div>
+                              <div class="vi-list-rt">
+                                <div class="vi-txt-body vi-txt-b600">Card-Present<br> Transaction</div>
+                              </div>
+                            </li>
+                            <li class="vi-list-item">
+                              <div class="vi-list-lt">
+                                <div class="vi-txt-body vi-txt-b600">Transaction</div>
+                              </div>
+                              <div class="vi-list-rt">
+                                <div class="vi-txt-body vi-txt-b600">Uber Eat Pending<br> Amsterdam NL<br>(Uber Eats)</div>
+                              </div>
+                            </li>
+                            <div class="dis-flex flex-justify-end mb16">
+                              <div class="btn vi-btn vi-btn-xs vi-btn-secondary trigger-card-question">Question</div>
+                              <!-- <div class="btn vi-btn vi-btn-xs vi-btn-primary ml16">單筆分期</div> -->
+                            </div>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>  
+
+            <!-- id 是 demo 用的，開發請拉掉 -->
+            <div id="target-empty1" class="hide">
+              <div class="vi-empty pad_top32">
+                <span class="vi-empty-img"></span>  
+                <div class="vi-txt-body vi-txt-b600">No Transactions</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <!-- id 是 demo 用的，開發請拉掉 -->
+      <div id="two" class="hide">
+
+        <!-- tab 參考 ng\view\nav-tabs-product\ -->
+        <div class="nav-scroll has-tab-info js_scroll_fixed_top nav-tab-green">
+          <div class="nav-scroll-bg"></div>
+          <div class="vi-tab-line-area">
+            <div class="vi-tab-line">
+              <ul class="nav" role="tablist">
+                <li class="">
+                  <a class="btn">
+                    <span>TWD</span>
+                  </a>
+                </li>
+                <li class="active">
+                  <a class="btn">
+                    <span>USD</span>
+                  </a>
+                </li>
+                <li class="">
+                  <a class="btn">
+                    <span>JPY</span>
+                  </a>
+                </li>
+                <li class="">
+                  <a class="btn">
+                    <span>CNY</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content pad_top24">
+          <div class="tab-pane active">
+            <!-- id 是 demo 用的，開發請拉掉 -->
+            <div id="target-has-detail2" class="">
+              <div class="vi-container">
+                <div class="vi-card vi-overview-detail-card pad_top16 mb24">
+                  <div class="vi-card-body">
+                    <ul class="vi-list vi-list-noline vi-list-baseline vi-list-no-bg vi-list-overview">
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">Total Amount</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <span class="vi-txt-callout vi-txt-b600 currency mr4">USD</span>
+                          <span class="vi-txt-title vi-txt-b600 mt-4">22,800</span>
+                        </div>
+                      </li>
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">
+                            Closing Date
+                            <span class="vi-icon vi-icon-xs icon-question-mark-g top-2px ml4"></span>
+                          </div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">5</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="vi-card-s">
+                <div class="vi-card-header">
+                  <div class="vi-line-title mr-auto">Transactions</div>
+                </div>
+
+                <div class="vi-card-body">
+                  <div class="mb24">
+                    <!-- .vi-select-super-card -->
+                    <!-- 如果只有一筆，加 .disabled -->
+                    <!-- <div class="vi-select-super-card disabled w-100"> -->
+                    <!-- id 是 demo 用的，開發請拉掉 -->
+                    <div id="trigger-card-super-card2" class="vi-select-super-card w-100 pad_top12 pad_btm12">
+                      <div class="flex-grow">
+                        <div class="dis-flex">
+                          <div class="mr8">
+                            <img src="../../../../inc/img/temp/credit-card-1.png" alt="" style="height: 24px;">
+                          </div>
+                          <div class="vi-txt-body-bold">
+                            <span class="vi-txt-ellipsis">(0724) 中信商務卡/雙幣商務卡</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- .vi-select-super-card -->
+                    <!-- 如果只有一筆，加 .disabled -->
+                    <!-- <div class="vi-select-super-card disabled w-100"> -->
+                    <!-- id 是 demo 用的，開發請拉掉 -->
+                    <div id="trigger-card-super-card2-1" class="vi-select-super-card w-100 pad_top12 pad_btm12 disabled hide">
+                      <div class="flex-grow">
+                        <div class="dis-flex">
+                          <div class="mr8">
+                            <img src="../../../../inc/img/temp/credit-card-1.png" alt="" style="height: 24px;">
+                          </div>
+                          <div class="vi-txt-body-bold">
+                            <span class="vi-txt-ellipsis">(0724) 中信商務卡/雙幣商務卡</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="dis-flex flex-justify-end mt8 mb-5">
+                      <div class="vi-txt-body vi-txt-b600 mr12">Subtotal</div>
+                      <div class="dis-flex align-items-baseline">
+                        <!-- <span class="vi-txt-callout vi-txt-b600 currency mr8">USD</span> -->
+                        <span class="vi-txt-body vi-txt-b600">21,000</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="vi-row"> 
+                    <div>
+                      <!-- change .container to .vi-container -->
+                      <div class="vi-container">
+                        <ul class="card-list">
+                          <li class="title line-top">
+                            <div class="div-tb">
+                              <!-- add .vi-txt-body -->
+                              <div class="td vi-txt-body top-2px">
+                                5 Items
+                              </div>
+                              <div class="td rt">
+                                <div class="date-order">
+                                  <span class="vi-txt-body-bold vi-txt-g500">Sort</span>
+                                  <!-- add .rotate180 if sort reverse -->
+                                  <span class="vi-icon vi-icon-xs vi-icon-arrow-down-g ml4 top-2px"></span>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      <!-- 參考現行 twrbm-deposit-qu002-010 -->
+                      <!-- add .vi-detail-panel .vi-creditcard-detail-panel-->
+                      <div class="panel-group toggle-panel vi-detail-panel vi-creditcard-detail-panel" id="B01"> 
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#B01" href="#B01collapse0">
+                              <div class="div-tb">
+                                <!-- remove all vmid, 以下內容有調整 class name -->
+                                <div class="td wid_50px">
+                                  <div class="vi-txt-body-bold vi-txt-b600">3/11</div>
+                                </div>
+                                <div class="td">
+                                  <div class="vi-txt-body-bold vi-txt-b600">本行扣繳　　　</div>
+                                </div>
+                                <div class="td rt">
+                                  <div class="vi-txt-body-bold vi-txt-b600 money">-4,632</div>
+                                </div>
+                                <div class="td wid_25px"></div>
+                              </div>
+                              <!-- 新增一個 div-tb 註記移到這 -->
+                              <div class="div-tb">
+                                <div class="td wid_50px"></div>
+                                <div class="td">
+                                  <!-- 拿掉 mt4 加 vi-txt-ellipsis ellipsis-1-line -->
+                                  <div class="vi-txt-callout vi-txt-b500 vi-txt-ellipsis ellipsis-1-line">註記內文註記文註記內文註記文</div>
+                                </div>
+                                <div class="td wid_25px"></div>
+                              </div>
+                            </a>
+                          </div>
+                          <div class="panel-collapse collapse" id="B01collapse0">
+                            <div class="panel-body">
+                              <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                                <li class="vi-list-item">
+                                  <div class="vi-list-lt">
+                                    <div class="vi-txt-body vi-txt-b600">Transaction date</div>
+                                  </div>
+                                  <div class="vi-list-rt">
+                                    <div class="vi-txt-body vi-txt-b600">3/20</div>
+                                  </div>
+                                </li>
+                                <li class="vi-list-item">
+                                  <div class="vi-list-lt">
+                                    <div class="vi-txt-body vi-txt-b600">Post date</div>
+                                  </div>
+                                  <div class="vi-list-rt">
+                                    <div class="vi-txt-body vi-txt-b600">3/24</div>
+                                  </div>
+                                </li>
+                                <li class="vi-list-item">
+                                  <div class="vi-list-lt">
+                                    <div class="vi-txt-body vi-txt-b600">Payment Method</div>
+                                  </div>
+                                  <div class="vi-list-rt">
+                                    <div class="vi-txt-body vi-txt-b600">Card-Not-Present Transaction</div>
+                                  </div>
+                                </li>
+                                <li class="vi-list-item">
+                                  <div class="vi-list-lt">
+                                    <div class="vi-txt-body vi-txt-b600">Transaction</div>
+                                  </div>
+                                  <div class="vi-list-rt">
+                                    <div class="vi-txt-body vi-txt-b600">Uber Eat Pending<br> Amsterdam NL<br>(Uber Eats)</div>
+                                  </div>
+                                </li>
+                                <div class="dis-flex flex-justify-end mb16">
+                                  <div class="btn vi-btn vi-btn-xs vi-btn-secondary trigger-card-question">Question</div>
+                                  <!-- <div class="btn vi-btn vi-btn-xs vi-btn-primary ml16">單筆分期</div> -->
+                                </div>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                      
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- id 是 demo 用的，開發請拉掉 -->
+            <div id="target-empty2" class="hide">
+              <div class="vi-container">
+                <div class="vi-card vi-overview-detail-card pad_top16 mb24">
+                  <div class="vi-card-body">
+                    <ul class="vi-list vi-list-noline vi-list-baseline vi-list-no-bg vi-list-overview">
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">Total Amount</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-title vi-txt-b600 mt-4">0</div>
+                        </div>
+                      </li>
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">
+                            Closing Date
+                            <span class="vi-icon vi-icon-xs icon-question-mark-g top-2px ml4"></span>
+                          </div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">5</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="vi-card-s">
+                <div class="vi-card-header">
+                  <div class="vi-line-title mr-auto">Transactions</div>
+                </div>
+                <div class="vi-card-body">
+                  <!-- id 是 demo 用的，開發請拉掉 -->
+                  <div id="empty-3-selector">
+                    <div class="mb24">
+                      <!-- .vi-select-super-card -->
+                      <!-- 如果只有一筆，加 .disabled -->
+                      <!-- <div class="vi-select-super-card disabled w-100"> -->
+                      <div class="vi-select-super-card w-100 pad_top12 pad_btm12">
+                        <div class="flex-grow">
+                          <div class="dis-flex">
+                            <div class="mr8">
+                              <img src="../../../../inc/img/temp/credit-card-1.png" alt="" style="height: 24px;">
+                            </div>
+                            <div class="vi-txt-body-bold">
+                              <span class="vi-txt-ellipsis">(0724) 中信商務卡/雙幣商務卡</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="dis-flex flex-justify-end mt8 mb-5">
+                        <div class="vi-txt-body vi-txt-b600 mr12">Subtotal</div>
+                        <div class="dis-flex align-items-baseline">
+                          <!-- <span class="vi-txt-callout vi-txt-b600 currency mr8">USD</span> -->
+                          <span class="vi-txt-body vi-txt-b600">0</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="vi-empty pad_top32">
+                    <span class="vi-empty-img"></span>  
+                    <div class="vi-txt-body vi-txt-b600">No Transactions</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="vi-container">  
+        <div class="vi-txt-info vi-txt-b500 mt16 mb24">Date：2021/01/25 16:26:59</div>
+        
+        <!-- 備註 現有版型 這裡僅示意 -->
+        <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+        <div class="mt16">
+          <div class="vi-note-accordion">
+            <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+              <div class="forAEM base-style break-word mr4">
+                標題
+              </div>
+              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+            </div>
+            <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+              <div class="vi-card-body forAEM base-style break-word">
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mb60"></div>
+
+      </div>
+
+      <!-- <div id="footer">
+        <div class="vi-page-footer">
+          <div class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-primary">單筆分期</div>
+          </div>
+        </div>
+      </div> -->
+      
+      
+      <div id="trigger-one-two" class="vi-txt-g500 mb16">-> 單幣卡 / 雙幣卡 切換</div>
+      <div id="trigger-selected-card-disabled" class="vi-txt-g500 mb16">-> 信用卡選單只有一張卡，無法點選 切換</div>
+      <div id="trigger-empty1" class="vi-txt-g500 mb16">-> 單幣卡 空值 demo 切換，詳細情境請參考規格書</div>
+      <div id="trigger-empty2" class="vi-txt-g500 mb16">-> 雙幣卡 空值 demo 切換，詳細情境請參考規格書</div>
+      <div id="trigger-empty3" class="vi-txt-g500 mb16">-> 雙幣卡 空值 但有信用卡下拉選單 demo 切換，詳細情境請參考規格書</div>
+
+    </div>
+    <!-- main_container -->
+    
+    
+    <!-- 現有元件 這裡僅示意 -->
+    <div class="vi-gotop" style="bottom: 84px;"></div>
+  </div>
+</body>
+<!-- body-wrap -->
+</html>
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-account-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">Cards</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-list vi-list-px16 vi-list-py8 vi-list-noline vi-list-bg-gray super-card-select super-card-select-card">
+          <a class="vi-list-item" href="">
+            <div class="dis-flex">
+              <div class="dis-flex flex-column flex-justify-center desc">
+                <div class="vi-txt-body-bold vi-txt-b600">All</div>
+              </div>
+            </div>
+          </a>
+          <!-- 目前的帳戶 加上 active -->
+          <a class="vi-list-item active" href="">
+            <div class="dis-flex">
+              <div class="card-img mr8">
+                <img src="../../../../inc/img/temp/credit-card-1.png" alt="" style="height: 55px;">
+              </div>
+              <div class="dis-flex flex-column flex-justify-center desc">
+                <div class="vi-txt-body-bold vi-txt-b600">中信紅利晶緻卡</div>
+                <div class="vi-txt-footnote vi-txt-b500 mt4">1234 5678 **** 1234</div>
+              </div>
+            </div>
+          </a>
+          <a class="vi-list-item">
+            <div class="dis-flex">
+              <div class="card-img mr8">
+                <img src="../../../../inc/img/temp/credit-card-2.png" alt="" style="height: 55px;">
+              </div>
+              <div class="dis-flex flex-column flex-justify-center desc">
+                <div class="vi-txt-body-bold vi-txt-b600">MUJI無印良品聯名卡</div>
+                <div class="vi-txt-footnote vi-txt-b500 mt4">1234 5678 **** 2222</div>
+              </div>
+            </div>
+          </a>
+          <a class="vi-list-item">
+            <div class="dis-flex">
+              <div class="card-img mr8">
+                <img src="../../../../inc/img/temp/credit-card-3.png" alt="" style="height: 55px;">
+              </div>
+              <div class="dis-flex flex-column flex-justify-center desc">
+                <div class="vi-txt-body-bold vi-txt-b600">英雄聯盟卡</div>
+                <div class="vi-txt-footnote vi-txt-b500 mt4">1234 5678 **** 3333</div>
+              </div>
+            </div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="dis-flex">
+              <div class="dis-flex flex-column flex-justify-center desc">
+                <div class="vi-txt-body-bold vi-txt-b600">Other</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-card-question-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">Have Questions?</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-list vi-list-px8 vi-list-py12">
+          <a class="vi-list-item flex-column align-items-start" href="">
+            <div class="vi-txt-body-bold vi-txt-b600 mb4">Know more about the transaction</div>
+            <div class="vi-txt-body-bold vi-txt-g500">Copy keywords to search</div>
+          </a>
+          <a class="vi-list-item flex-column align-items-start" href="">
+            <div class="vi-txt-body-bold vi-txt-b600 mb4">I don't recognize the transaction</div>
+            <div class="vi-txt-body-bold vi-txt-g500">File a Dispute</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// 超人卡片 close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('vi-modal-close');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+  });
+}
+
+
+$(document).ready(function(){
+  
+  // 單幣卡/雙幣卡 切換 demo
+  $('#trigger-one-two').on('click', function() {
+    $('#one, #two').toggleClass('hide');
+    $('#target-has-detail1, #target-has-detail2').removeClass('hide')
+    $('#target-empty1, #target-empty2').addClass('hide');
+  });
+  
+  // 信用卡選單只有一張卡，無法點選 切換 demo
+  $('#trigger-selected-card-disabled').on('click', function() {
+    $('#trigger-card-super-card1, #trigger-card-super-card2').toggleClass('hide');
+    $('#trigger-card-super-card1-1, #trigger-card-super-card2-1').toggleClass('hide')
+  });
+  
+  // 空值 切換 demo
+  $('#trigger-empty1').on('click', function() {
+    $('#two, #target-has-detail1, #empty-3-selector').addClass('hide')
+    $('#one, #target-empty1').removeClass('hide');
+  });
+  $('#trigger-empty2').on('click', function() {
+    $('#one, #target-has-detail2, #empty-3-selector').addClass('hide')
+    $('#two, #target-empty2').removeClass('hide');
+  });
+  $('#trigger-empty3').on('click', function() {
+    $('#one, #target-has-detail2').addClass('hide')
+    $('#two, #target-empty2, #empty-3-selector').removeClass('hide');
+  });
+  
+  // 新到舊 demo
+  $('.date-order').on('click', function(){
+    const text = $(this).find('.vi-txt-g500').text();
+    $(this).find('.vi-icon').toggleClass('rotate180');
+    // $(this).find('.vi-txt-g500').text(text == "消費日新到舊" ? "消費日舊到新" : "消費日新到舊")
+  });
+  
+  // 選擇帳號 demo
+  $('#trigger-card-super-card1, #trigger-card-super-card2').on('click', function() {
+    $('#target-account-supercard').toggleClass('hide vi-modal-in');
+  });
+
+  // 刷卡疑問 demo
+  $('.trigger-card-question').on('click', function() {
+    $('#target-card-question-supercard').toggleClass('hide vi-modal-in');
+  });
+  
+  
+  // scroll event
+  $(window).scroll(function(){
+    // scroll to fixed header
+    const scrollTop = $(document).scrollTop();
+    
+    if ( scrollTop >= 1 ) {
+      $('body').addClass('vi-page-header-fix');
+      $('.main_container').removeClass('add-title-space');
+      $('.nav-tab-green').addClass('fixed-top fixed-position-1');
+      $('.tab-content').addClass('nav-tab-green-fixed')
+    }
+    else {
+      // $('body').removeClass('vi-page-header-fix');
+      // $('.main_container').addClass('add-title-space');
+      $('.nav-tab-green').removeClass('fixed-top fixed-position-1');
+      $('.tab-content').removeClass('nav-tab-green-fixed')
+    }
+    
+    // show vi-gotop, demo 用的 開發請拉掉
+    // console.log(window.scrollY,  window.innerHeight)
+    if (window.scrollY >= window.innerHeight) {
+      $('.vi-gotop').addClass('vi-gotop-show');
+    }
+    else {
+      $('.vi-gotop').removeClass('vi-gotop-show');
+    }
+  });
+});
+</script>

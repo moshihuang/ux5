@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <defs>
+        <path id="vn4g9fq8aa" d="M0 0L3.98 0 3.98 2.399 0 2.399z"/>
+        <path id="nail5n7evc" d="M0 0L3.98 0 3.98 2.399 0 2.399z"/>
+        <path id="1wtolyyf6e" d="M0 0L9.704 0 9.704 3.456 0 3.456z"/>
+        <path id="pbkh5m63ag" d="M0 0L20 0 20 23.144 0 23.144z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g transform="translate(-470.000000, -280.000000) translate(470.000000, 280.000000) translate(6.000000, 1.500000) translate(12.404518, 26.600615)">
+                        <mask id="3saqlgl3db" fill="#fff">
+                            <use xlink:href="#vn4g9fq8aa"/>
+                        </mask>
+                        <path fill="#7C5BCE" d="M3.98.446c0 1.078-.891 1.953-1.99 1.953C.89 2.4 0 1.524 0 .446 0 .293.018.143.052 0h3.876c.035.143.052.293.052.446" mask="url(#3saqlgl3db)"/>
+                    </g>
+                    <g transform="translate(-470.000000, -280.000000) translate(470.000000, 280.000000) translate(6.000000, 1.500000) translate(3.615523, 26.600615)">
+                        <mask id="mqbcs1mjjd" fill="#fff">
+                            <use xlink:href="#nail5n7evc"/>
+                        </mask>
+                        <path fill="#7C5BCE" d="M3.98.446c0 1.078-.89 1.953-1.99 1.953C.891 2.4 0 1.524 0 .446 0 .293.019.143.053 0h3.875c.035.143.052.293.052.446" mask="url(#mqbcs1mjjd)"/>
+                    </g>
+                    <g transform="translate(-470.000000, -280.000000) translate(470.000000, 280.000000) translate(6.000000, 1.500000) translate(5.148185, 0.000000)">
+                        <mask id="sid5ci3ayf" fill="#fff">
+                            <use xlink:href="#1wtolyyf6e"/>
+                        </mask>
+                        <path fill="#7C5BCE" d="M9.704 1.106v2.35h-1.6V1.572l-.07-.001H1.6v1.885H0v-2.35C0 .435.656 0 1.67 0h6.363c1.015 0 1.671.435 1.671 1.106" mask="url(#sid5ci3ayf)"/>
+                    </g>
+                    <g transform="translate(-470.000000, -280.000000) translate(470.000000, 280.000000) translate(6.000000, 1.500000) translate(0.000000, 3.456343)">
+                        <mask id="l5ts5zqqph" fill="#fff">
+                            <use xlink:href="#pbkh5m63ag"/>
+                        </mask>
+                        <path fill="#C082E8" d="M20 2.109v18.927c0 1.16-.967 2.108-2.149 2.108H2.148C.968 23.144 0 22.195 0 21.036V2.109C0 .949.967 0 2.148 0H17.85C19.033 0 20 .949 20 2.109" mask="url(#l5ts5zqqph)"/>
+                    </g>
+                    <path fill="#7C5BCE" d="M17.443 13.164c0 .062-.006.124-.017.184-.088.461-.5.81-.996.81H3.57c-.496 0-.908-.349-.996-.81-.012-.06-.018-.122-.018-.184 0-.55.454-.995 1.014-.995h12.86c.56 0 1.013.445 1.013.995M17.443 9.584c0 .062-.006.124-.017.184-.088.461-.5.81-.996.81H3.57c-.496 0-.908-.349-.996-.81-.012-.06-.018-.122-.018-.184 0-.08.01-.157.029-.231.105-.439.507-.764.985-.764h12.86c.479 0 .88.325.985.764.019.074.028.15.028.23" transform="translate(-470.000000, -280.000000) translate(470.000000, 280.000000) translate(6.000000, 1.500000)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<!-- if scroll, add .vi-page-header-fix -->
+<body class="vi-bg-g550">
+
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <!-- 新增 .vi-page-header-green 綠色 header，ios 瀏海也要改成綠的 #0F8F88 -->
+    <!-- 如果 rt 有二顆 icon，加上 .vi-page-header-two-icons -->
+    <div class="container-header vi-page-header vi-page-header-green">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">我的保險</h1>
+        <div class="rt mb12">
+          <a class="btn vi-icon-link">
+            <!-- 這裡是 vi-txt-white -->
+            <span class="vi-txt-body vi-txt-white">保險介紹</span>
+            <span class="vi-icon vi-icon-base vi-icon-direction-right ml4 mt-2"></span>
+          </a>
+        </div>
+      </div>
+      <div class="vi-page-header-rt">
+        <!-- <a class="btn vi-icon vi-icon-base icon-start-default-w"></a> -->
+        <!-- <a class="btn vi-icon vi-icon-base icon-start-default-w ml24"></a> -->
+        <!-- <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-white">動作</a> -->
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content start from here -->
+  <div class="body-wrap scroll vi-bg-g550">
+    
+    <!-- 概要頁同一版型 共用 .main_container_overview -->
+    <!-- 英文版沒有 vi-rounded-btn-group 加 .no-vi-rounded-btn-group -->
+    <div class="main_container add-title-space main_container_overview no-vi-rounded-btn-group">
+
+      <div class="vi-bg-g550 sub-title-space">
+        <div class="vi-container">
+          <div>
+            <span class="vi-txt-callout vi-txt-g100 mr8">保險總參考市值</span>
+            <!-- id 是 demo 用的，開發請拉掉, 這裡要連動開閉眼 -->
+            <span id="tw-amount-eye" class="vi-txt-callout vi-txt-g100">282,600,000</span>
+            <span id="tw-amount-eye-hide" class="vi-txt-callout vi-txt-g100 hide">****</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- tab 參考 ng\view\nav-tabs-product\ -->
+      <div class="nav-scroll has-tab-info js_scroll_fixed_top nav-tab-green">
+        <div class="nav-scroll-bg"></div>
+        <div class="vi-tab-line-area">
+          <div class="vi-tab-line">
+            <ul class="nav" role="tablist">
+              <li class="">
+                <a class="btn">
+                  <span>壽險/年金險</span>
+                </a>
+              </li>
+              <li class="active">
+                <a class="btn">
+                  <span>投資型保險</span>
+                </a>
+              </li>
+              <li class="">
+                <a class="btn">
+                  <span>其他</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="tab-content">
+        <div class="tab-pane active">
+
+          <!-- 空值 加 .empty, 如果非空值 拿掉 .empty 就好, overview-info 要留著 -->
+          <!-- id 是 demo 用的，開發請拉掉， 各概要頁 不同的 class .overview-info-xxxxx -->
+          <!-- 如果沒有 vi-rounded-btn-group, 這裡加 pad_btm24-->
+          <div id="overview-info" class="overview-info overview-info-insurance has-tab">
+            
+            <div class="overview-info-content">
+              <!-- id 是 demo 用的，開發請拉掉, 如果非空值 從這裡開始隱藏-->
+              <div id="target-not-empty" class="ct">
+                <div class="vi-icon-link">
+                  <span class="vi-txt-body vi-txt-white mr8">投資型保險總參考市值</span>
+                  <!-- id 是 demo 用的，開發請拉掉, 這裡只有 icon-eye 跟 icon-eye-close 不會有半開的情況 -->
+                  <span id="trigger-eye" class="vi-icon vi-icon-base icon-eye"></span>
+                </div>
+
+                <!-- id 是 demo 用的，開發請拉掉, 羽毛遮罩 vi-balance-mask 這邊的遮罩比較小比較淡要加 vi-balance-mask-sm -->
+                <div id="vi-balance-mask-sm" class="vi-txt-title vi-txt-white ct vi-balance-mask-number">
+                  <span>222,600,000</span>
+                </div>
+                
+                <div class="vi-txt-callout vi-txt-b200 mt4">(約當新臺幣)</div>
+              </div>
+
+              <!-- id 是 demo 用的，開發請拉掉, 如果空值 -->
+              <div id="target-empty" class="ct hide">
+                <div class="vi-txt-body-bold vi-txt-white">你目前沒有壽險/年金險唷！</div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- 如果有 vi-rounded-btn-group，這邊是 pad_top36，如果沒有，用 .pad_top24 -->
+          <div class="overview-content pad_top36">
+            <!-- 圓角分隔線包二顆 btn .vi-rounded-btn-group -->
+            <!-- <div class="vi-rounded-btn-group vi-rounded-btn-group-overview">
+              <div id="trigger-select-supercard" class="btn vi-btn vi-btn-white">
+                <span class="vi-icon vi-icon-base vi-icon-insurance"></span>
+                <span>網路投保</span>
+              </div>
+              <div class="btn vi-btn vi-btn-white">
+                <span class="vi-icon vi-icon-base vi-icon-insurance-search"></span>
+                <span>進度查詢</span>
+              </div>
+            </div> -->
+            <!-- 如果只有一顆，add .single -->
+            <!-- <div class="vi-rounded-btn-group single vi-rounded-btn-group-overview">
+              <div class="btn vi-btn vi-btn-white">
+                <span class="vi-icon vi-icon-base vi-icon-insurance"></span>
+                <span>利率查詢</span>
+              </div>
+            </div> -->
+            
+            
+            <!-- id 是 demo 用的，開發請拉掉 -->
+            <div id="card-block">
+              <!-- 如果有 vi-rounded-btn-group，這邊是 pad_top24，如果沒有，拿掉 class -->
+              <div class="vi-container pad_top24">
+                
+                <div class="vi-card vi-overview-card">
+                  <div class="vi-card-body">
+                    <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview pad_top16">
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">總參考報酬率</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <!-- vi-txt-red-nu, vi-txt-green-nu -->
+                          <div class="vi-stock-tag vi-txt-green-nu">
+                            +12.33%
+                          </div>
+                        </div>
+                      </li>
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">總參考損益</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">100,000,000</div>
+                        </div>
+                      </li>
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">總原始投資金額</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">100,000,000</div>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="mt-8 pad_btm16 rt">
+                      <div class="vi-txt-callout vi-txt-b500">(約當新臺幣)</div>
+                    </div>
+                  </div>
+                </div>
+                
+
+                <div class="vi-line-title mt16 mb16">投資型保險保單</div>
+                
+                <div class="vi-card vi-overview-card pad_btm16">
+                  <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link">
+                    <div class="vi-txt-headline mr-auto">
+                      安聯富貴贏家外幣變額超優勢變額萬能保險
+                      <div class="vi-txt-callout vi-txt-b500 mt4">QL11097678</div>
+                    </div>
+                  </a>
+                  <div class="vi-card-body bg-gray-gradient">
+                    <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview pad_top16">
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">參考保單價值</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">100,000,000</div>
+                        </div>
+                      </li>
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">參考報酬率</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <!-- vi-txt-red-nu, vi-txt-green-nu -->
+                          <div class="vi-stock-tag vi-txt-green-nu">
+                            +1222.22%
+                          </div>
+                        </div>
+                      </li>
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">參考損益</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">3,000</div>
+                        </div>
+                      </li>
+                      <li class="mt-8 rt">
+                        <div class="vi-txt-callout vi-txt-b500">(以上金額均為美元)</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="vi-card vi-overview-card pad_btm16">
+                  <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link">
+                    <div class="vi-txt-headline mr-auto">
+                      安聯富貴贏家外幣變額超優勢變額萬能保險
+                      <div class="vi-txt-callout vi-txt-b500 mt4">QL11097678</div>
+                    </div>
+                  </a>
+                  <div class="vi-card-body bg-gray-gradient">
+                    <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview pad_top16">
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">參考保單價值</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">100,000,000</div>
+                        </div>
+                      </li>
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">參考報酬率</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <!-- vi-txt-red-nu, vi-txt-green-nu -->
+                          <div class="vi-stock-tag vi-txt-red-nu">
+                            -2.22%
+                          </div>
+                        </div>
+                      </li>
+                      <li class="vi-list-item">
+                        <div class="vi-list-lt">
+                          <div class="vi-txt-body vi-txt-b600">參考損益</div>
+                        </div>
+                        <div class="vi-list-rt">
+                          <div class="vi-txt-body-bold vi-txt-b600">-3,000</div>
+                        </div>
+                      </li>
+                      <li class="mt-8 rt">
+                        <div class="vi-txt-callout vi-txt-b500">(以上金額均為美元)</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+            
+            <!-- id 是 demo 用的，開發請拉掉 -->
+            <div id="other-block" class="mt16 mb24">
+              <div class="vi-card-s mt16 mb24">
+                <div class="vi-card-header flex-wrap">
+                  <div class="vi-line-title">其他服務</div>
+                </div>
+                <div class="vi-card-body">
+                  <!-- vi-module-07 -->
+                  <div class="vi-module-07">
+                    <div class="vi-card-column">
+                      <a class="btn vi-card-xs vi-bg-mint-light" href="javascript:;">
+                        <div class="list-item-block">
+                          <div class="item-icon">
+                            <span class="vi-icon">
+                              <!-- <img src="../../../../inc/img/layout/icon_progress.svg"> -->
+                              <!-- default img -->
+                              <img src="../../../../inc/img/layout/start-default-g.svg">
+                            </span>
+                          </div>
+                          <div class="item-title-block">
+                            <div class="vi-txt-body-bold vi-txt-b600">預約專人諮詢</div>
+                          </div>
+                          <div class="item-block-right">
+                            <span class="vi-icon vi-icon-xs icon-right-green"></span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+              
+              
+            <div class="vi-container">  
+              <div class="mt24">
+                <!-- 行銷版位 現有版型 這裡僅示意 -->
+                <!-- 參考 <ctbc-mb-marketing-card interactPoint=""></ctbc-mb-marketing-card> -->
+                <a class="vi-banner">
+                  <div class="vi-banner-bi" style="background-image: url(&quot;/content/dam/ctbc-ib/bee-gallery/bee_02.png&quot;);"></div>
+                  <div class="vi-banner-rt">
+                    <div class="vi-banner-title">預設廣告01標題</div>
+                    <div class="vi-banner-txt">預設廣告01內文(原頁置換非白名單)</div>
+                    <div class="rt">
+                      <div class="vi-icon-link mt8">
+                        <img class="vi-icon vi-icon-base" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNC4yNzE4IDYuNjg1MzZDMTMuODkzMyA2LjI4MzE5IDEzLjkxMjUgNS42NTAzMiAxNC4zMTQ2IDUuMjcxOEMxNC43MTY4IDQuODkzMjkgMTUuMzQ5NyA0LjkxMjQ3IDE1LjcyODIgNS4zMTQ2NEwyMS4zNzUyIDExLjMxNDZDMjEuNzM3NiAxMS42OTk3IDIxLjczNzYgMTIuMzAwMyAyMS4zNzUyIDEyLjY4NTRMMTUuNzI4MiAxOC42ODU0QzE1LjM0OTcgMTkuMDg3NSAxNC43MTY4IDE5LjEwNjcgMTQuMzE0NiAxOC43MjgyQzEzLjkxMjUgMTguMzQ5NyAxMy44OTMzIDE3LjcxNjggMTQuMjcxOCAxNy4zMTQ2TDE4LjMzMjYgMTNMMyAxM0MyLjQ0NzcyIDEzIDIgMTIuNTUyMyAyIDEyQzIgMTEuNDQ3NyAyLjQ0NzcyIDExIDMgMTFMMTguMzMyNiAxMUwxNC4yNzE4IDYuNjg1MzZaIiBmaWxsPSIjMDA5ODkxIi8+Cjwvc3ZnPgo=">
+                        <span class="vi-txt-body-bold vi-txt-g500 ml4">立即前往</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              
+              
+              <!-- 備註 現有版型 這裡僅示意 -->
+              <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+              <div class="mt16">
+                <div class="vi-note-accordion">
+                  <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+                    <div class="forAEM base-style break-word mr4">
+                      標題
+                    </div>
+                    <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+                  </div>
+                  <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                    <div class="vi-card-body forAEM base-style break-word">
+                      <p>備註(我的首頁內文AEM)</p>
+                      <p>備註(我的首頁內文AEM)</p>
+                      <p>備註(我的首頁內文AEM)</p>
+                      <p>備註(我的首頁內文AEM)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mb60"></div>
+
+            </div>
+          </div>
+        </div><!-- end tab -->
+
+      </div>
+      
+      <!-- <div id="trigger-header-fixed" class="vi-txt-g500 mb16">-> header fixed 切換</div> -->
+      <div id="trigger-empty" class="vi-txt-g500 mb16">-> 空值 demo 切換，詳細情境請參考規格書</div>
+        
+    
+    </div>
+    <!-- main_container -->
+  </div>
+
+</body>
+<!-- body-wrap -->
+</html>
+
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-select-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">網路投保</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" ontouchstart="" data-dismiss="modal" ></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <ul class="vi-list vi-list-px8 vi-list-py12 super-card-select">
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">旅行平安保險</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">汽機車保險</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">寵物保險</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">利變年金險</div>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// 空值 demo
+document.getElementById('trigger-empty').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('overview-info').classList.toggle('empty');
+  document.getElementById('target-not-empty').classList.toggle('hide');
+  document.getElementById('target-empty').classList.toggle('hide');
+  document.getElementById('card-block').classList.toggle('hide');
+  document.getElementsByClassName('sub-title-space')[0].classList.toggle('hide');
+});
+
+// 金額開閉眼 demo
+document.getElementById('trigger-eye').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('trigger-eye').classList.toggle('icon-eye-close');
+  document.getElementById('vi-balance-mask-sm').classList.toggle('vi-balance-mask');
+  document.getElementById('vi-balance-mask-sm').classList.toggle('vi-balance-mask-sm');
+  document.getElementById('tw-amount-eye').classList.toggle('hide');
+  document.getElementById('tw-amount-eye-hide').classList.toggle('hide');
+});
+
+// 超人卡片 close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('vi-modal-close');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+  });
+}
+
+
+$(document).ready(function(){
+  
+  // scroll to fixed header
+  $(window).scroll(function(){
+    const scrollTop = $(document).scrollTop();
+    
+    if ( scrollTop >= 1 ) {
+      $('body').addClass('vi-page-header-fix');
+      $('.main_container').removeClass('add-title-space');
+      $('.nav-tab-green').addClass('fixed-top fixed-position-1');
+    }
+    else {
+      $('body').removeClass('vi-page-header-fix');
+      $('.main_container').addClass('add-title-space');
+      $('.nav-tab-green').removeClass('fixed-top fixed-position-1');
+    }
+  });
+  
+});
+</script>

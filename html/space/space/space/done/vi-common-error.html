@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+</head>
+
+
+<header class="">
+  <div class="vi-page-header-normal">
+    <div class="vi-page-header-lt">
+      <button class="vi-btn" ontouchstart="">
+        <span class="vi-icon vi-icon-base icon-page-back"></span>
+      </button>
+    </div>
+    <div class="vi-page-header-ct">
+      <h1 class="vi-page-title">法定代理人驗證</h1>
+    </div>
+    <!-- <div class="vi-page-header-rt">
+      <span class="vi-icon vi-icon-base vi-modal-close"></span>
+    </div> -->
+  </div>
+</header>
+
+<body class="vi-bg-mint">
+  <!-- EBMW content start from here -->
+  <div class="body-wrap scroll vi-bg-mint">
+    
+    <div class="main_container pad_btm0">
+      
+      <div class="vi-container">
+        <div class="vi-common-error-wrap">
+          <div class="vi-error">
+            <div class="bi-img vi-error-bi-1 mb16"></div>
+            <!-- 另外一個圖檔 -->
+            <div class="bi-img vi-error-bi-2 mb16"></div>
+            
+
+            <div class="vi-txt-headline vi-txt-b600 mb16">一二三四五六七八九十</div>
+            <div class="vi-txt-body vi-txt-b600 mb24">你已持有中信信用卡，申請網銀帳號能用 APP 繳費或透過【 i 繳費 】平台繳費</div>
+            
+            <div class="vi-row">
+
+              <div class="btn-type">
+                <div class="vi-btn-group">
+                  <!-- 只有一顆 加 vi-btn-m -->
+                  <div class="btn vi-btn vi-btn-primary vi-btn-m">{{ btn.name }}</div>
+                </div>
+              </div>
+              
+              <div class="btn-type hide">
+                <div class="vi-btn-group">
+                  <!-- 二顆 不用加 vi-btn-m -->
+                  <div class="btn vi-btn vi-btn-secondary">{{ btn.name }}</div>
+                  <div class="btn vi-btn vi-btn-secondary">{{ btn.name }}</div>
+                </div>
+              </div>
+              
+              
+              <div class="btn-type hide">
+                <div class="vi-btn-group">
+                  <div class="btn vi-btn vi-btn-secondary">{{ btn.name }}</div>
+                  <div class="btn vi-btn vi-btn-secondary">{{ btn.name }}</div>
+                </div>
+                <div class="vi-btn-group mt24">
+                  <div class="btn vi-btn vi-btn-secondary vi-btn-block">{{ btn.name }}</div>
+                </div>
+              </div>
+              
+              <div class="btn-type hide">
+                <div class="vi-btn-group">
+                  <div class="btn vi-btn vi-btn-secondary">{{ btn.name }}</div>
+                  <div class="btn vi-btn vi-btn-secondary">{{ btn.name }}</div>
+                </div>
+                <div class="vi-btn-group mt24">
+                  <div class="btn vi-btn vi-btn-secondary">{{ btn.name }}</div>
+                  <div class="btn vi-btn vi-btn-secondary">{{ btn.name }}</div>
+                </div>
+              </div>
+              
+              <div class="btn-type hide">
+                <div class="vi-btn-group">
+                  <div class="btn vi-btn vi-btn-secondary vi-btn-block">{{ btn.name }}</div>
+                </div>
+                <div class="vi-btn-group mt24">
+                  <div class="btn vi-btn vi-btn-secondary vi-btn-block">{{ btn.name }}</div>
+                </div>
+              </div>
+            </div>
+              
+            <div class="vi-txt-callout vi-txt-b500 mt24"><i18n>錯誤代碼：</i18n>ESB9188</div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="trigger-type" class="vi-txt-g500 mb16">-> 五種按鈕情境切換</div>
+      
+    </div>
+    <!-- main_container -->
+    
+  </div>
+</body>
+<!-- body-wrap -->
+</html>
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+$(document).ready(function(){
+  $('#trigger-type').click(function(e){
+    const el = $('.btn-type').not('.hide');
+    el.next().removeClass('hide');
+    el.addClass('hide');
+  });
+});
+
+</script>

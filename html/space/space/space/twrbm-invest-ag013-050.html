@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>    
+    .main_container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .nav-scroll .vi-tab-line-area {
+      padding: 12px 12px 0 12px;
+    }
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+
+<!-- if scroll, add .vi-page-header-fix -->
+<body class="vi-bg-mint">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">給目標的 ETF</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <!-- <a class="vi-icon vi-icon-base icon-start-default-w"></a> -->
+        <!-- <a class="vi-icon vi-icon-base icon-start-default-w ml24"></a> -->
+        <!-- <a class="vi-txt-body-bold vi-txt-white">動作</a> -->
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap scroll vi-bg-mint">
+    
+    <div class="main_container vi-has-foot-btn">
+
+      <!-- scroll down fixed 效果同 通知中心，可參考 nav-tabs-notice.component, add .nav-tab-green-gray, 更新, 此元件無法加 class, 故移除 .nav-tab-green-gray -->
+      <div class="nav-scroll has-tab-info js_scroll_fixed_top">
+        <div class="vi-tab-line-area">
+          <div class="vi-tab-line">
+            <ul class="nav" role="tablist">
+              <!-- id 是 demo 用的，開發請拉掉 -->
+              <li id="nav-a-1" class="active">
+                <a>
+                  <span>尚未分配</span>
+                </a>
+              </li>
+              <!-- id 是 demo 用的，開發請拉掉 -->
+              <li id="nav-a-2" class="">
+                <a>
+                  <span>已分配</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="tab-content">
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="tab-a-1" class="tab-pane active">
+
+            <!-- id 是 demo 用的，開發請拉掉 -->
+            <div id="not-empty-block">
+              <div class="nav-fixed-spacing">
+                
+                <div class="vi-container">
+                  
+                  <div class="vi-line-title mb16">請選擇分配給$買房的 ETF</div>
+                  
+                  <div class="mb8">
+                    <div class="dis-flex flex-justify-between align-items-end">
+                      <!-- <div class="vi-txt-body vi-txt-b600">全選此頁1-20筆</div> -->
+                      <div class="vi-form-group ml16 mt0 mb0">
+                        <!-- add .dis-flex -->
+                        <label class="vi-checkbox dis-flex">
+                          <input type="checkbox">
+                          <span class="vi-checkbox-mark"></span>
+                          <span class="vi-checkbox-txt">全選此頁1-20筆</span>
+                        </label>
+                      </div>
+                      <div class="rt flex-shrink-0">
+                        <div class="vi-txt-body vi-txt-b600">參考市值</div>
+                        <div class="vi-txt-callout vi-txt-b500">(約當新臺幣)</div>
+                      </div>
+                    </div>
+                  </div>  
+
+
+                  <div class="vi-card">
+                    <div class="vi-card-header flex-justify-between align-items-start vi-w-100">
+                      <div class="mr-auto">
+                        <div class="vi-form-group mt4 mb4">
+                          <label class="vi-checkbox">
+                            <input type="checkbox">
+                            <span class="vi-checkbox-mark"></span>
+                            <span class="vi-checkbox-txt vi-txt-bold">元大寶來台灣ＥＴＦ傘型基金之台商收成基金</span>
+                          </label>
+                        </div>
+                        <div class="ml32">
+                          <div class="vi-txt-body vi-txt-b600"></div>
+                          <div class="vi-txt-callout vi-txt-b600 mb4">0000006111823866</div>
+                          <div class="vi-txt-callout vi-txt-b500">投資起日：2022/04/17 </div>
+                        </div>
+                      </div>
+                      <div class="ml-auto ml16 dis-flex flex-column align-self-stretch align-items-end flex-shrink-0">
+                        <div class="vi-txt-headline vi-txt-b900 vi-txt-w320-17px">20,000</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="vi-card">
+                    <div class="vi-card-header flex-justify-between align-items-start vi-w-100">
+                      <div class="mr-auto">
+                        <div class="vi-form-group mt4 mb4">
+                          <label class="vi-checkbox">
+                            <input type="checkbox">
+                            <span class="vi-checkbox-mark"></span>
+                            <span class="vi-checkbox-txt vi-txt-bold">元大寶來台灣ＥＴＦ傘型基金之台商收成基金</span>
+                          </label>
+                        </div>
+                        <div class="ml32">
+                          <div class="vi-txt-body vi-txt-b600"></div>
+                          <div class="vi-txt-callout vi-txt-b600 mb4">0000006111823866</div>
+                          <div class="vi-txt-callout vi-txt-b500">投資起日：2022/04/17 </div>
+                        </div>
+                      </div>
+                      <div class="ml-auto ml16 dis-flex flex-column align-self-stretch align-items-end flex-shrink-0">
+                        <div class="vi-txt-headline vi-txt-b900 vi-txt-w320-17px">20,000</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="vi-card">
+                    <div class="vi-card-header flex-justify-between align-items-start vi-w-100">
+                      <div class="mr-auto">
+                        <div class="vi-form-group mt4 mb4">
+                          <label class="vi-checkbox">
+                            <input type="checkbox">
+                            <span class="vi-checkbox-mark"></span>
+                            <span class="vi-checkbox-txt vi-txt-bold">元大寶來台灣ＥＴＦ傘型基金之台商收成基金</span>
+                          </label>
+                        </div>
+                        <div class="ml32">
+                          <div class="vi-txt-body vi-txt-b600"></div>
+                          <div class="vi-txt-callout vi-txt-b600 mb4">0000006111823866</div>
+                          <div class="vi-txt-callout vi-txt-b500">投資起日：2022/04/17 </div>
+                        </div>
+                      </div>
+                      <div class="ml-auto ml16 dis-flex flex-column align-self-stretch align-items-end flex-shrink-0">
+                        <div class="vi-txt-headline vi-txt-b900 vi-txt-w320-17px">20,000</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="vi-card">
+                    <div class="vi-card-header flex-justify-between align-items-start vi-w-100">
+                      <div class="mr-auto">
+                        <div class="vi-form-group mt4 mb4">
+                          <label class="vi-checkbox">
+                            <input type="checkbox">
+                            <span class="vi-checkbox-mark"></span>
+                            <span class="vi-checkbox-txt vi-txt-bold">元大寶來台灣ＥＴＦ傘型基金之台商收成基金</span>
+                          </label>
+                        </div>
+                        <div class="ml32">
+                          <div class="vi-txt-body vi-txt-b600"></div>
+                          <div class="vi-txt-callout vi-txt-b600 mb4">0000006111823866</div>
+                          <div class="vi-txt-callout vi-txt-b500">投資起日：2022/04/17 </div>
+                        </div>
+                      </div>
+                      <div class="ml-auto ml16 dis-flex flex-column align-self-stretch align-items-end flex-shrink-0">
+                        <div class="vi-txt-headline vi-txt-b900 vi-txt-w320-17px">20,000</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="vi-card">
+                    <div class="vi-card-header flex-justify-between align-items-start vi-w-100">
+                      <div class="mr-auto">
+                        <div class="vi-form-group mt4 mb4">
+                          <label class="vi-checkbox">
+                            <input type="checkbox">
+                            <span class="vi-checkbox-mark"></span>
+                            <span class="vi-checkbox-txt vi-txt-bold">元大寶來台灣ＥＴＦ傘型基金之台商收成基金</span>
+                          </label>
+                        </div>
+                        <div class="ml32">
+                          <div class="vi-txt-body vi-txt-b600"></div>
+                          <div class="vi-txt-callout vi-txt-b600 mb4">0000006111823866</div>
+                          <div class="vi-txt-callout vi-txt-b500">投資起日：2022/04/17 </div>
+                        </div>
+                      </div>
+                      <div class="ml-auto ml16 dis-flex flex-column align-self-stretch align-items-end flex-shrink-0">
+                        <div class="vi-txt-headline vi-txt-b900 vi-txt-w320-17px">20,000</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="vi-card">
+                    <div class="vi-card-header flex-justify-between align-items-start vi-w-100">
+                      <div class="mr-auto">
+                        <div class="vi-form-group mt4 mb4">
+                          <label class="vi-checkbox">
+                            <input type="checkbox">
+                            <span class="vi-checkbox-mark"></span>
+                            <span class="vi-checkbox-txt vi-txt-bold">元大寶來台灣ＥＴＦ傘型基金之台商收成基金</span>
+                          </label>
+                        </div>
+                        <div class="ml32">
+                          <div class="vi-txt-body vi-txt-b600"></div>
+                          <div class="vi-txt-callout vi-txt-b600 mb4">0000006111823866</div>
+                          <div class="vi-txt-callout vi-txt-b500">投資起日：2022/04/17 </div>
+                        </div>
+                      </div>
+                      <div class="ml-auto ml16 dis-flex flex-column align-self-stretch align-items-end flex-shrink-0">
+                        <div class="vi-txt-headline vi-txt-b900 vi-txt-w320-17px">20,000</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="vi-card">
+                    <div class="vi-card-header flex-justify-between align-items-start vi-w-100">
+                      <div class="mr-auto">
+                        <div class="vi-form-group mt4 mb4">
+                          <label class="vi-checkbox">
+                            <input type="checkbox">
+                            <span class="vi-checkbox-mark"></span>
+                            <span class="vi-checkbox-txt vi-txt-bold">元大寶來台灣ＥＴＦ傘型基金之台商收成基金</span>
+                          </label>
+                        </div>
+                        <div class="ml32">
+                          <div class="vi-txt-body vi-txt-b600"></div>
+                          <div class="vi-txt-callout vi-txt-b600 mb4">0000006111823866</div>
+                          <div class="vi-txt-callout vi-txt-b500">投資起日：2022/04/17 </div>
+                        </div>
+                      </div>
+                      <div class="ml-auto ml16 dis-flex flex-column align-self-stretch align-items-end flex-shrink-0">
+                        <div class="vi-txt-headline vi-txt-b900 vi-txt-w320-17px">20,000</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="vi-txt-body vi-txt-b600 mb4 rt">共64筆</div>
+                  
+                  <div class="vi-pagination mb24">
+                    <!-- 可按時拿掉 .disabled -->
+                    <div class="prev disabled"></div>
+                    <div class="page-item">
+                      <span class="active">1</span>
+                      <span>/</span>
+                      <span class="total">5</span>
+                    </div>
+                    <div class="next"></div>
+                  </div>
+                
+
+                </div>
+                
+              </div>
+            </div>
+            
+            <!-- id 是 demo 用的，開發請拉掉 -->
+            <div id="empty-block" class="hide">
+              <div class="vi-empty pad_top36">
+                <span class="vi-empty-img"></span>  
+                <div class="vi-txt-body vi-txt-b600">你的 ETF 都分配出去囉～</div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div id="footer">
+        <div class="vi-page-footer">
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="target-has-select-item" class="vi-txt-callout vi-txt-b900 ct mb8 hide">共選擇 2 筆，共 <span class="vi-txt-bold">100,000</span> 元給$目標</div>
+          <div class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-secondary">取消</div>
+            <div class="btn vi-btn vi-btn-primary">確認</div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div id="trigger-empty" class="vi-txt-g500 mb60">-> 尚未分配 空值 demo</div>
+
+
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// 空值 demo
+document.getElementById('trigger-empty').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('not-empty-block').classList.toggle('hide');
+  document.getElementById('empty-block').classList.toggle('hide');
+});
+
+
+// 超人卡片 close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('vi-modal-close');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+  });
+}
+
+// scroll fixed nav demo
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 1) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+    document.getElementsByClassName('nav-scroll')[0].classList.add('fixed-top');
+    document.getElementsByClassName('nav-scroll')[0].classList.add('fixed-position-1');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+    document.getElementsByClassName('nav-scroll')[0].classList.remove('fixed-top');
+    document.getElementsByClassName('nav-scroll')[0].classList.remove('fixed-position-1');
+  }
+}
+
+
+$(document).ready(function(){
+
+  // if checkbox checked length > 0, show 顯示選擇筆數與金額
+  $('.vi-form-group').on('click', function() {
+    const totalChecked = $('.vi-form-group input:checkbox:checked').length;
+    if (totalChecked > 0) {
+      $('#target-pass-step').addClass('hide');
+      $('#target-has-select-item').removeClass('hide');
+    }
+    else {
+      $('#target-pass-step').removeClass('hide');
+      $('#target-has-select-item').addClass('hide');
+    }
+  });
+
+});
+</script>

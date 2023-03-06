@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-upload-float-tip-txt {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(78, 78, 78, .4);
+      display: flex;
+      justify-content: center;
+      color: #fff;
+      font-size: 24px;
+    }
+    .vi-img.uploadImg {
+      padding: 12px 0;
+    }
+    .vi-img.uploadImg .watermark {
+      top: 30%;
+    }
+  </style>
+</head>
+
+<!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+<header class="">
+  <div class="vi-page-header-normal">
+    <div class="vi-page-header-lt">
+      <button class="vi-btn" ontouchstart="">
+        <span class="vi-icon vi-icon-base icon-page-back"></span>
+      </button>
+    </div>
+    <div class="vi-page-header-ct">
+      <h1 class="vi-page-title">法定代理人驗證</h1>
+    </div>
+    <!-- <div class="vi-page-header-rt">
+      <span class="vi-icon vi-icon-base vi-modal-close"></span>
+    </div> -->
+  </div>
+</header>
+
+<body class="body-wrap scroll vi-bg-mint">
+  <div class="main_container">
+    
+    <div class="vi-photo-step">
+      <ul>
+        <li class="is-visited">
+          <div class="vi-photo-step-label" data-count="1">
+            <span>
+              <i18n>身分證正面</i18n>
+            </span>
+          </div>
+        </li>
+        <li class="is-current">
+          <div class="vi-photo-step-label" data-count="2">
+            <span>
+              <i18n>身分證反面</i18n>
+            </span>
+          </div>
+        </li>
+        <li>
+          <div class="vi-photo-step-label" data-count="3">
+            <span>
+              <i18n>第二證件</i18n>
+            </span>
+          </div>
+        </li>
+        <li>
+          <!-- 超過四個字 字縮小 加 vi-txt-footnote -->
+          <div class="vi-photo-step-label vi-txt-footnote" data-count="4">
+            <span>
+              <i18n>新式戶口名簿/戶籍謄本</i18n>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="vi-card">
+      <div class="vi-card-body pad_top16">
+        <ul class="vi-list-px0 vi-btm-line">
+          <div class="vi-list-item">
+            <div class="vi-flex-row no-gutters wid_100per">
+              <div class="vi-col-auto mr8 flex-shrink-0">
+                <div class="vi-rank-mark">1</div>
+              </div>
+              <div class="vi-col">
+                <p class="vi-txt-body vi-txt-b600 mt2 mb12" translate="deposit_ot002_055.id.card">身分證正反面</p>
+                <div class="vi-flex-row gutters-s vi-upload-data">
+                  <div class="vi-col-6">
+                    <div class="vi-img uploadImg"
+                      [ngClass]="{'is-done' : pageData.model.ocrPositiveSuccess, 'is-error' : formClazz.formErrors?.ocrPositive}"
+                      *ngIf="fileUpload1?.data">
+                      <i class="watermark txt_openAcct"></i>
+                      <img [src]="fileUpload1.data" alt="">
+                    </div>
+                    <div class="vi-img" *ngIf="!fileUpload1?.data">
+                      <img [src]="pageData.model.idCardFront" alt="">
+                    </div>
+                  </div>
+                  <div class="vi-col-6">
+                    <div class="vi-img uploadImg"
+                      [ngClass]="{'is-done' : pageData.model.ocrNegativeSuccess, 'is-error' : formClazz.formErrors?.ocrNegative}"
+                      *ngIf="fileUpload2?.data">
+                      <i class="watermark txt_openAcct"></i>
+                      <img [src]="fileUpload2.data" alt="">
+                    </div>
+                    <div class="vi-img" *ngIf="!fileUpload2?.data">
+                      <img [src]="pageData.model.idCardBack" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="vi-form-info"></div>
+                <div class="vi-form-error" *ngIf="formClazz.formErrors?.ocr">{{formClazz.formErrors?.ocr}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="vi-list-item">
+            <div class="vi-flex-row no-gutters wid_100per">
+              <div class="vi-col-auto mr8 flex-shrink-0">
+                <div class="vi-rank-mark">2</div>
+              </div>
+              <div class="vi-col">
+                <p class="vi-txt-body vi-txt-b600 mt2 mb12" translate="deposit_ot002_055.second.id.card">健保卡或駕照</p>
+                <div class="vi-flex-row gutters-s vi-upload-data" *ngIf="!fileUpload3?.data">
+                  <div class="vi-col-6">
+                    <div class="vi-img">
+                      <img [src]="pageData.model.secondIdCard1" alt="">
+                    </div>
+                  </div>
+                  <div class="vi-col-6">
+                    <div class="vi-img">
+                      <img [src]="pageData.model.secondIdCard2" alt="">
+                    </div>
+                  </div>
+                  <div class="vi-upload-float-tip"><img [src]="pageData.model.other"></div>
+                </div>
+
+                <div class="vi-flex-row gutters-s vi-upload-data" *ngIf="fileUpload3?.data">
+                  <div class="vi-col-6">
+                    <div class="vi-img uploadImg"
+                      [ngClass]="{'is-done' : fileUpload3?.data, 'is-error' : formClazz.formErrors?.fileUpload3}">
+                      <i class="watermark txt_openAcct"></i>
+                      <img [src]="fileUpload3.data" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="vi-form-info"></div>
+                <div class="vi-form-error" *ngIf="formClazz.formErrors?.fileUpload3">
+                  {{formClazz.formErrors?.fileUpload3}}
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="vi-list-item">
+            <div class="vi-flex-row no-gutters wid_100per">
+              <div class="vi-col-auto mr8 flex-shrink-0">
+                <div class="vi-rank-mark">3</div>
+              </div>
+              <div class="vi-col">
+                <p class="vi-txt-body vi-txt-b600 mt2 mb12" translate="deposit_ot002_055.second.id.card">新式戶口名簿/戶籍謄本(電子戶籍謄本)</p>
+                <div class="vi-flex-row gutters-s vi-upload-data" *ngIf="!fileUpload3?.data">
+                  <div class="vi-col-6">
+                    <div class="vi-img">
+                      <img [src]="pageData.model.secondIdCard1" alt="">
+                    </div>
+                  </div>
+                  <div class="vi-col-6">
+                    <div class="vi-img">
+                      <img [src]="pageData.model.secondIdCard2" alt="">
+                    </div>
+                  </div>
+                  <div class="vi-upload-float-tip"><img [src]="pageData.model.other"></div>
+                </div>
+
+                <div class="vi-flex-row gutters-s vi-upload-data" *ngIf="fileUpload3?.data">
+                  <div class="vi-col-6">
+                    <div class="vi-img uploadImg"
+                      [ngClass]="{'is-done' : fileUpload3?.data, 'is-error' : formClazz.formErrors?.fileUpload3}">
+                      <i class="watermark txt_openAcct"></i>
+                      <img [src]="fileUpload3.data" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="vi-form-info"></div>
+                <div class="vi-form-error" *ngIf="formClazz.formErrors?.fileUpload3">
+                  {{formClazz.formErrors?.fileUpload3}}
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </ul>
+
+        <div class="vi-txt-body vi-txt-b600 mt16" translate="deposit_ot002_055.memo.title">提醒：</div>
+        <ol class="vi-ol-num li-mb0">
+          <li translate="deposit_ot002_055.memo.label1">請提供彩色清晰證件，避免照片歪斜、模糊、不完整。</li>
+          <li translate="deposit_ot002_055.memo.label2">請以橫式滿版拍攝，並避免反光。</li>
+        </ol>
+
+        <div class="mb24"></div>
+        <div class="vi-btn-group mb16">
+          <button class="vi-btn vi-btn-primary" ontouchstart="" translate="deposit_ot002_055.button.photograph"
+            *ngIf="pageData.model.new" (click)="photograph($event)">開始拍照</button>
+          <button class="vi-btn vi-btn-primary" ontouchstart="" translate="deposit_ot002_055.button.photograph.again"
+            *ngIf="!pageData.model.new" (click)="photograph($event)">重新拍照</button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="vi-container">
+      <div class="vi-remarks forAEM" [inject-dom]="pageData.model.remark" *ngIf="pageData.model.remark">
+        <h4 class="vi-remarks-title">備註</h4>
+        <ol class="vi-ordered-list-num">
+          <li>若選擇檔案上傳，格式需為：jpg、png、jpeg、bmp，且每張檔案大小需小於 10 MB。</li>
+        </ol>
+      </div>
+    </div>
+
+
+    <div class="vi-page-indicator">
+      <div class="vi-progress-bar">
+        <progress class="progress-bar-handle" max="100" value="66"></progress>
+      </div>
+      <div class="vi-txt-b900 vi-txt-title">
+        上傳證件
+      </div>
+      <div class="vi-step vi-txt-g600">
+        步驟
+        <span class="vi-step-current">2</span><span class="vi-txt-b500">/3</span>
+      </div>
+    </div>
+
+    <div class="vi-container">
+      <div class="vi-card">
+        <div class="vi-card-body pad_top16">
+          <ul class="vi-list-px0 vi-btm-line">
+            <div class="vi-list-item">
+              <div class="vi-flex-row no-gutters wid_100per">
+                <div class="vi-col-auto mr8 flex-shrink-0">
+                  <div class="vi-rank-mark">1</div>
+                </div>
+                <div class="vi-col">
+                  <p class="vi-txt-body vi-txt-b600 mt2 mb12">身分證正反面</p>
+                  <div class="vi-flex-row gutters-s vi-upload-data">
+                    <div class="vi-col-6">
+                      <div class="vi-img uploadImg">
+                        <i class="watermark txt_openAcct"></i>
+                        <img src="../../../../../inc/img/img/icon/id-card-sample.png">
+                      </div>
+                      <!-- <div class="vi-img">
+                        <img src="../../../../../inc/img/img/icon/bi-id-card.png">
+                      </div> -->
+                    </div>
+                    <div class="vi-col-6">
+                      <div class="vi-img uploadImg hide">
+                        <i class="watermark txt_openAcct"></i>
+                        <img src="">
+                      </div>
+                      <div class="vi-img">
+                        <img src="../../../../../inc/img/img/icon/bi-idcard-back.png">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="vi-form-info"></div>
+                  <div class="vi-form-error" *ngIf="formClazz.formErrors?.ocr">{{formClazz.formErrors?.ocr}}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="vi-list-item">
+              <div class="vi-flex-row no-gutters wid_100per">
+                <div class="vi-col-auto mr8 flex-shrink-0">
+                  <div class="vi-rank-mark">2</div>
+                </div>
+                <div class="vi-col">
+                  <p class="vi-txt-body vi-txt-b600 mt2 mb12">健保卡或駕照</p>
+                  <div class="vi-flex-row gutters-s vi-upload-data">
+                    
+                    <div class="vi-col-6">
+                      <div class="vi-img uploadImg hide">
+                        <i class="watermark txt_openAcct"></i>
+                        <img src="">
+                      </div>
+                      <div class="vi-img">
+                        <img src="../../../../../inc/img/img/icon/bi-health-card.png">
+                      </div>
+                    </div>
+                    <div class="vi-col-6">
+                      <div class="vi-img uploadImg hide">
+                        <i class="watermark txt_openAcct"></i>
+                        <img src="">
+                      </div>
+                      <div class="vi-img">
+                        <img src="../../../../../inc/img/img/icon/bi-drive-card.png">
+                      </div>
+                    </div>
+                    <div class="vi-upload-float-tip vi-upload-float-tip-txt">
+                      或
+                      <!-- <img [src]="pageData.model.other"> -->
+                    </div>
+                  </div>
+
+                  <div class="vi-form-info"></div>
+                  <div class="vi-form-error" *ngIf="formClazz.formErrors?.fileUpload3">
+                    {{formClazz.formErrors?.fileUpload3}}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="vi-list-item">
+              <div class="vi-flex-row no-gutters wid_100per">
+                <div class="vi-col-auto mr8 flex-shrink-0">
+                  <div class="vi-rank-mark">3</div>
+                </div>
+                <div class="vi-col">
+                  <div class="vi-txt-body vi-txt-b600 mt2 mb12">新式戶口名簿或電子戶籍謄本</div>
+                  <div class="vi-txt-body-bold vi-txt-g500 mt-8 mb12">
+                    <span class="vi-icon vi-icon-xs icon-question-mark"></span>
+                    資料準備說明
+                  </div>
+                  <div class="vi-flex-row gutters-s vi-upload-data">
+                    <div class="vi-col-6">
+                      <div class="vi-img uploadImg hide">
+                        <i class="watermark txt_openAcct"></i>
+                        <img src="">
+                      </div>
+                      <div class="vi-img">
+                        <img src="../../../../../inc/img/img/icon/bi-account-book.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="vi-form-info"></div>
+                  <div class="vi-form-error" *ngIf="formClazz.formErrors?.fileUpload3">
+                    {{formClazz.formErrors?}}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </ul>
+
+          <div class="vi-txt-body vi-txt-b600 mt16" translate="deposit_ot002_055.memo.title">提醒：</div>
+          <ol class="vi-ol-num li-mb0">
+            <li translate="deposit_ot002_055.memo.label1">請提供彩色清晰證件，避免照片歪斜、模糊、不完整。</li>
+            <li translate="deposit_ot002_055.memo.label2">請以橫式滿版拍攝，並避免反光。</li>
+          </ol>
+
+          <div class="mb24"></div>
+          <div class="vi-btn-group mb16">
+            <button class="vi-btn vi-btn-primary" ontouchstart="">開始拍照</button>
+            <!-- <button class="vi-btn vi-btn-primary" ontouchstart="">重新拍照</button> -->
+          </div>
+
+        </div>
+      </div>
+
+      <div class="vi-remarks forAEM" [inject-dom]="pageData.model.remark" *ngIf="pageData.model.remark">
+        <h4 class="vi-remarks-title">備註</h4>
+        <ol class="vi-ordered-list-num">
+          <li>若選擇檔案上傳，格式需為：jpg、png、jpeg、bmp，且每張檔案大小需小於 10 MB。</li>
+        </ol>
+      </div>
+      
+    </div>
+
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>

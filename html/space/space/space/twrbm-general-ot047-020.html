@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <script type="text/javascript" src="../../../../inc/base.js"></script>
+  <style>
+    /* 這些都是 push-otp-model-alert.component.css 來的 */
+    .modal-body.validate_content_padding {
+        padding: 20px 30px 10px 30px;;
+    }
+
+    .push_otp_model_alert_validate_content {
+        background: #dcf2f1;
+        border-radius: 5px;
+    }
+
+    .modal-body.message_padding {
+        padding: 10px 30px 30px 30px;
+    }
+
+    .modal-body.validate_code_padding {
+        padding: 0px 15px 15px 15px;
+    }
+
+    .modal-body.validate_code_padding.validate_code_text_style {
+        font-weight: bolder;
+        color: #107778;
+        font-size: 36px;
+    }
+
+    .modal-body.validate_title_text_style {
+        color: #b0bec5;
+    }
+
+    .pop-close-btn-round {
+        background: rgba(0, 0, 0, 0.6);
+        box-shadow: 0px 4px 4px rgba(102, 102, 102, 0.25);
+        border-radius: 12px;
+        height: 48px;
+      }
+      
+    .pop-close-btn {
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 48px;
+        color: #ffffff;
+    }
+
+    .copy-icon {
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAAGXcA1uAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAG5SURBVDhP5VXBSsNAEM0f1Ksg1U/wrgd/w5vHHv0Kr2mgkhxqI0pvBVFPXqweehCRWkUQESoIgrQ1tSoK0q47szvbTbIx1YoIPniQ7eybN9mZTa0YFvf3WMAGTC2OWvdioZAt+2KL5zBcXL88iYUe3b27ZZbr1PFHAAQou5IjPKcJC0iDbipghGvPUP6Vszr3sBdCgdXLi6HHyAEwDr8qr8IcAECJJqpidHAbOpVc7YBlyyU2t10JEcUKmgBOTC+cOJLg6rmHtZ93H9IF9KLqhUMCHbY9gcEY7WW54zvwnGo8o6QRPECncfP2igOBQwcC6EOsF5oAnqM9yPges4qFabmbIyKgZyI08g8IOoM+O263sGlTm2vpAr3LkxvFcQUFexY2EtMFOrx8XRcjXSeQ0Qj41PINVdwQFcXZ5PuXpHIEyKnOlDzW6D2qM0hirnYojfK+zJACUT3vqbh3xEavK0ZvWHkat2TGCBIM4ILD76bPSJQ4cGBibNi/NWj13/GawfOPGECyk047dFFCF2Zcg9OgY0wO/NwAIP+RwWR+p4KkESWDpOqB6QYE+k4LrqPoK/T5pf0dWNYHaRyMTTC6iIMAAAAASUVORK5CYII=')  no-repeat;
+        width: 25px;
+        height: 30px;
+        margin-left: 5px;
+    }
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<body class="vi-bg-mint modal-open">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">金融卡片解鎖</h1>
+      </div>
+      <div class="vi-page-header-rt"></div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap scroll vi-bg-mint">
+
+    <div class="main_container">
+      <div class="vi-container">
+        <div class="vi-txt-body vi-txt-b600 pad_top24 mb16">解鎖卡片可以再增加 3 次重試密碼的機會，請確認以下資訊是否正確。</div>
+        
+        <div class="vi-card mb24">
+          <div class="vi-card-header">
+            <div class="vi-line-title">所在位置</div>
+          </div>
+          <div class="vi-card-body">
+            <div class="ct">
+              <div class="vi-txt-body vi-txt-b600 mb16">ATM 機台據點</div>
+              <div class="vi-txt-title mb12">統一義村</div>
+            </div>
+          </div>
+          <div class="vi-card-footer">
+            <div class="vi-btn-group pad_btm12">
+              <div class="vi-btn vi-btn-primary">確認，發送一次性密碼</div>
+            </div>
+          </div>
+        </div>
+          
+        
+        <!-- 備註 現有版型 這裡僅示意 -->
+        <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+        <div class="mt16">
+          <div class="vi-note-accordion">
+            <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+              <div class="forAEM base-style break-word mr4">
+                標題
+              </div>
+              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+            </div>
+            <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+              <div class="vi-card-body forAEM base-style break-word">
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      
+    </div>
+    
+    
+    
+    
+    
+    <!-- modal 參考 push-otp-model-alert.component -->
+    <div class="modal in modal-date modal-footer-close" role="dialog" data-backdrop="static" data-keyboard="false" style="z-index: 99999; display: block;">
+      <div class="modal-vertical-middle">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title ct">一次性密碼</h4>
+            </div>
+            <div class="modal-body validate_content_padding">
+              <div class="push_otp_model_alert_validate_content">
+                <div class="modal-body validate_title_text_style ct">
+                  網頁識別碼 WIOZ
+                </div>
+                <div class="modal-body validate_code_padding validate_code_text_style ct">0057445</div>
+              </div>
+            </div>
+            <div class="modal-body message_padding">請先確認識別碼字母跟 ATM 一致後，再將上方 7 碼數字填入至一次性密碼欄位。</div>
+          </div>
+          <div class="ct mb10 mt20 pop-close-btn-round" (click)="clickClose($event)">
+            <a class="pop-close-btn">關閉</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end modal-->
+    
+  </div>
+  <!-- main_container -->
+
+</body>
+<!-- body-wrap -->
+
+
+<div class="modal-backdrop in"></div>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+
+// scroll fixed header
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 0) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+    document.getElementsByClassName('main_container')[0].classList.remove('add-title-space');
+    document.getElementsByClassName('main_container')[0].classList.add('pad_top24');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+    document.getElementsByClassName('main_container')[0].classList.add('add-title-space');
+    document.getElementsByClassName('main_container')[0].classList.remove('pad_top24');
+  }
+}
+
+
+</script>

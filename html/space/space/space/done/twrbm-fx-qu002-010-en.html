@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<!-- 不需要 scroll 事件，預設 fixed header -->
+<body class="vi-bg-g550 vi-page-header-fix en">
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <!-- 新增 .vi-page-header-green 綠色 header，ios 瀏海也要改成綠的 #0F8F88 -->
+    <!-- 如果 rt 有二顆 icon，加上 .vi-page-header-two-icons -->
+    <div class="container-header vi-page-header vi-page-header-green">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">FCY Deposit Account Details</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <!-- <a class="btn vi-icon vi-icon-base icon-start-default-w"></a> -->
+        <!-- <a class="btn vi-icon vi-icon-base icon-start-default-w ml24"></a> -->
+        <!-- <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-white">動作</a> -->
+      </div>
+    </div>
+  </header>
+
+  <!-- EBMW content from here -->
+  <!-- 新增 .vi-bg-green-gradient 漸層背景 -->
+  <div class="body-wrap scroll vi-bg-mint vi-bg-green-gradient">
+
+    <div class="main_container has-foot-btn main_container_overview_nt_fx pad_top24">
+
+      <div class="vi-container">
+        <div class="vi-card vi-overview-detail-card mb24">
+          <div class="vi-card-header">
+            <!-- .vi-select-super-card -->
+            <!-- 如果只有一筆，加 .disabled -->
+            <!-- <div class="vi-select-super-card disabled w-100"> -->
+            <div class="vi-select-super-card w-100">
+              <div class="flex-grow">
+                <div class="vi-txt-title mr-auto">
+                  <span class="vi-flag vi-flag-usd mr4 top-4px"></span>
+                  <span class="vi-txt-ellipsis">USD - My Way Digital</span>
+                </div>
+                <div class="mt4 vi-txt-callout vi-txt-b600">0000498827784920</div>
+              </div>
+            </div>
+          </div>
+          <div class="vi-card-body">
+            <ul class="vi-list vi-list-noline vi-list-baseline vi-list-no-bg vi-list-overview">
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600 en-vi-txt-callout">Current Balance</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-title vi-txt-b600 en-vi-txt-body-bold">
+                    <span class="currency mr4">USD</span>
+                    <span>320,000</span>
+                  </div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600 dis-flex en-vi-txt-callout">
+                    Available Balance
+                    <span class="vi-icon vi-icon-xs icon-question-mark-g top-2px ml8"></span>
+                  </div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b600">
+                    <span class="currency mr4">USD</span>
+                    <span>50,000</span>
+                  </div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-callout vi-txt-b500 mt-12">(NTD Equivalent 90,495)</div>
+                </div>
+              </li>
+              <!-- 英文版不顯示 -->
+              <!-- <li class="vi-list-item vi-list-item-border-top">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600"></div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-g500 dis-flex">
+                    <span class="vi-icon vi-icon-base vi-icon-fx-history mr4"></span>
+                    <span class="">換匯紀錄/平均匯率</span>
+                  </div>
+                </div>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- id 是 demo 用的，開發請拉掉 -->
+      <div id="target-no-search-result">
+        <div class="vi-card-s">
+          <div class="vi-card-header">
+            <div class="vi-line-title mr-auto">Account Statement</div>
+            <div class="rt ml-auto">
+              <!-- 英文版不顯示 -->
+              <!-- <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500">近三年明細下載</a>
+              <span class="vi-dashed-divider-vertical ml12 mr16"></span> -->
+              <!-- id 是 demo 用的，開發請拉掉 -->
+              <a id="trigger-search" class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500">Search</a>
+            </div>
+          </div>
+          
+          
+          <div class="vi-card-body">
+            <div class="vi-row"> 
+              <!-- tab, scroll top 時需 fixed -->
+              <div class="nav-scroll nav-detail-fixed-top">
+                <ul class="vi-tab">
+                  <li class="vi-tab-item active">
+                    <a class="vi-tab-link"><span>Recent</span></a>
+                  </li>
+                  <li class="vi-tab-item">
+                    <a class="vi-tab-link"><span>Apr</span></a>
+                  </li>
+                  <li class="vi-tab-item">
+                    <a class="vi-tab-link"><span>Mar</span></a>
+                  </li>
+                  <li class="vi-tab-item">
+                    <a class="vi-tab-link"><span>Feb</span></a>
+                  </li>
+                  <li class="vi-tab-item">
+                    <a class="vi-tab-link"><span>Jan</span></a>
+                  </li>
+                  <li class="vi-tab-item">
+                    <a class="vi-tab-link"><span>Dec</span></a>
+                  </li>
+                  <li class="vi-tab-item">
+                    <a class="vi-tab-link"><span>Nov</span></a>
+                  </li>
+                </ul>
+                <div class="fixed-card-list hide">
+                  <div class="vi-container">
+                    <ul class="card-list">
+                      <!-- remove .line-top -->
+                      <li class="title">
+                        <div class="div-tb">
+                          <!-- add .vi-txt-body -->
+                          <div class="td vi-txt-body">April</div>
+                          <div class="td rt">
+                            <div class="date-order">
+                              <span class="vi-txt-body-bold vi-txt-g500">Sort</span>
+                              <!-- add .rotate180 if sort reverse -->
+                              <span class="vi-icon vi-icon-xs vi-icon-arrow-down-g ml4 top-2px"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <div class="tab-content">
+                  <div class="tab-pane active">
+                    <!-- change .container to .vi-container -->
+                    <div class="vi-container">
+                      <ul class="card-list">
+                        <!-- remove .line-top -->
+                        <li class="title">
+                          <div class="div-tb">
+                            <!-- add .vi-txt-body -->
+                            <!-- id 是 demo 用的，開發請拉掉 -->
+                            <div id="el1" class="td vi-txt-body">
+                              April
+                            </div>
+                            <div class="td rt">
+                              <div class="date-order">
+                                <span class="vi-txt-body-bold vi-txt-g500">Sort</span>
+                                <!-- add .rotate180 if sort reverse -->
+                                <span class="vi-icon vi-icon-xs vi-icon-arrow-down-g ml4 top-2px"></span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <!-- 參考現行 twrbm-deposit-qu002-010 -->
+                    <!-- add .vi-transfer-detail-panel-->
+                    <div class="panel-group toggle-panel vi-transfer-detail-panel" id="B00"> 
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#B00" href="#B00collapse0">
+                            <div class="div-tb">
+                              <!-- remove all vmid, 以下內容有調整 class name -->
+                              <div class="td wid_50px">
+                                <div class="vi-txt-body-bold vi-txt-b600">4/7</div>
+                              </div>
+                              <div class="td">
+                                <div class="vi-txt-body-bold vi-txt-b600">轉帳存</div>
+                              </div>
+                              <div class="td rt">
+                                <div class="vi-txt-body-bold vi-txt-b600 money">-1,083.00</div>
+                              </div>
+                              <div class="td wid_25px"></div>
+                            </div>
+                            <!-- 新增一個 div-tb 註記移到這 -->
+                            <div class="div-tb">
+                              <div class="td wid_50px"></div>
+                              <div class="td">
+                                <!-- 拿掉 mt4 -->
+                                <div class="vi-txt-callout vi-txt-b500">匯率 27.9600</div>
+                              </div>
+                              <div class="td wid_25px"></div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="panel-collapse collapse" id="B00collapse0">
+                          <div class="panel-body">
+                            <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">Balance</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">0.42</div>
+                                </div>
+                              </li>
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">Remarks</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">行動網</div>
+                                </div>
+                              </li>
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">From</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">0000103508011176</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#B00" href="#B00collapse1">
+                            <div class="div-tb">
+                              <!-- remove all vmid, 以下內容有調整 class name -->
+                              <div class="td wid_50px vi-txt-body-bold vi-txt-b600">4/5</div>
+                              <div class="td">
+                                <div class="vi-txt-body-bold vi-txt-b600">利息 折TWD1</div>
+                              </div>
+                              <div class="td rt">
+                                <div class="vi-txt-body-bold vi-txt-g400 money">200</div>
+                              </div>
+                              <div class="td wid_25px"></div>
+                            </div>
+                            <div class="div-tb">
+                              <div class="td wid_50px"></div>
+                              <div class="td">
+                                <!-- <div class="vi-txt-callout vi-txt-b500">匯率 27.9600</div> -->
+                              </div>
+                              <div class="td wid_25px"></div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="panel-collapse collapse" id="B00collapse1">
+                          <div class="panel-body">
+                            <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">Balance</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">0.42</div>
+                                </div>
+                              </li>
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">Remarks</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">行動網</div>
+                                </div>
+                              </li>
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">Send to</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">0000103508011176</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#B00" href="#B00collapse2">
+                            <div class="div-tb">
+                              <!-- remove all vmid, 以下內容有調整 class name -->
+                              <div class="td wid_50px">
+                                <div class="vi-txt-body-bold vi-txt-b600">4/8</div>
+                              </div>
+                              <div class="td">
+                                <div class="vi-txt-body-bold vi-txt-b600">轉帳存</div>
+                              </div>
+                              <div class="td rt">
+                                <div class="vi-txt-body-bold vi-txt-g400 money">3595.05</div>
+                              </div>
+                              <div class="td wid_25px"></div>
+                            </div>
+                            <div class="div-tb">
+                              <div class="td wid_50px"></div>
+                              <div class="td">
+                                <div class="vi-txt-callout vi-txt-b500">000012341**4123*</div>
+                              </div>
+                              <div class="td wid_25px"></div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="panel-collapse collapse" id="B00collapse2">
+                          <div class="panel-body">
+                            <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">Balance</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">0.42</div>
+                                </div>
+                              </li>
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">Remarks</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">行動網</div>
+                                </div>
+                              </li>
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">From</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">0000103508011176</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    
+                    <!-- change .container to .vi-container -->
+                    <div class="vi-container">
+                      <ul class="card-list">
+                        <!-- remove .line-top -->
+                        <li class="title">
+                          <div class="div-tb">
+                            <!-- id 是 demo 用的，開發請拉掉 -->
+                            <div id="el2" class="td vi-txt-body">
+                              March
+                            </div>
+                            <div class="td"></div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                      
+                    <!-- add .vi-transfer-detail-panel-->
+                    <div class="panel-group toggle-panel vi-transfer-detail-panel" id="B01">   
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#B01" href="#B01collapse3">
+                            <div class="div-tb">
+                              <!-- remove all vmid, 以下內容有調整 class name -->
+                              <div class="td wid_50px">
+                                <div class="vi-txt-body-bold vi-txt-b600">3/28</div>
+                              </div>
+                              <div class="td">
+                                <div class="vi-txt-body-bold vi-txt-b600">轉帳存</div>
+                              </div>
+                              <div class="td rt">
+                                <div class="vi-txt-body-bold vi-txt-g400 money">20</div>
+                              </div>
+                              <div class="td wid_25px"></div>
+                            </div>
+                            <div class="div-tb">
+                              <div class="td wid_50px"></div>
+                              <div class="td">
+                                <div class="vi-txt-callout vi-txt-b500">000012341**4123*</div>
+                              </div>
+                              <div class="td wid_25px"></div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="panel-collapse collapse" id="B01collapse3">
+                          <div class="panel-body">
+                            <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">Balance</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">0.42</div>
+                                </div>
+                              </li>
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">Remarks</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">行動網</div>
+                                </div>
+                              </li>
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">From</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">0000103508011176</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#B01" href="#B01collapse4">
+                            <div class="div-tb">
+                              <!-- remove all vmid, 以下內容有調整 class name -->
+                              <div class="td wid_50px">
+                                <div class="vi-txt-body-bold vi-txt-b600">3/6</div>
+                              </div>
+                              <div class="td">
+                                <div class="vi-txt-body-bold vi-txt-b600">轉帳提</div>
+                              </div>
+                              <div class="td rt">
+                                <div class="vi-txt-body-bold vi-txt-b600 money">-1,083.00</div>
+                              </div>
+                              <div class="td wid_25px"></div>
+                            </div>
+                            <div class="div-tb">
+                              <div class="td wid_50px"></div>
+                              <div class="td">
+                                <div class="vi-txt-callout vi-txt-b500">匯率 27.9600</div>
+                              </div>
+                              <div class="td wid_25px"></div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="panel-collapse collapse" id="B01collapse4">
+                          <div class="panel-body">
+                            <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">Balance</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">0.42</div>
+                                </div>
+                              </li>
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">Remarks</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">行動網</div>
+                                </div>
+                              </li>
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">From</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">0000103508011176</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>  
+                    
+                    <!-- change .container to .vi-container -->
+                    <div class="vi-container">
+                      <ul class="card-list">
+                        <li class="title">
+                          <div class="div-tb">
+                            <div class="td vi-txt-body">
+                              2021 / December
+                            </div>
+                            <div class="td"></div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                      
+                    <!-- add .vi-transfer-detail-panel-->
+                    <div class="panel-group toggle-panel vi-transfer-detail-panel" id="B02">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#B02" href="#B02collapse1">
+                            <div class="div-tb">
+                              <!-- remove all vmid, 以下內容有調整 class name -->
+                              <div class="td wid_50px">
+                                <div class="vi-txt-body-bold vi-txt-b600">12/10</div>
+                              </div>
+                              <div class="td">
+                                <div class="vi-txt-body-bold vi-txt-b600">轉帳提</div>
+                              </div>
+                              <div class="td rt">
+                                <div class="vi-txt-body-bold vi-txt-b600 money">-1,083.00</div>
+                              </div>
+                              <div class="td wid_25px"></div>
+                            </div>
+                            <div class="div-tb">
+                              <div class="td wid_50px"></div>
+                              <div class="td">
+                                <div class="vi-txt-callout vi-txt-b500">匯率 27.9600</div>
+                              </div>
+                              <div class="td wid_25px"></div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="panel-collapse collapse" id="B02collapse1">
+                          <div class="panel-body">
+                            <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">Balance</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">0.42</div>
+                                </div>
+                              </li>
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">Remarks</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">行動網</div>
+                                </div>
+                              </li>
+                              <li class="vi-list-item">
+                                <div class="vi-list-lt">
+                                  <div class="vi-txt-body vi-txt-b600">From</div>
+                                </div>
+                                <div class="vi-list-rt">
+                                  <div class="vi-txt-body vi-txt-b600">0000103508011176</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    
+                    <!-- change .container to .vi-container -->
+                    <div class="vi-container">
+                      <ul class="card-list">
+                        <li class="title">
+                          <div class="div-tb">
+                            <div class="td vi-txt-body">
+                              2021 / November
+                            </div>
+                            <div class="td"></div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                      
+                    <!-- add .vi-transfer-detail-panel-->
+                    <!-- 空值 add .empty -->
+                    <div class="panel-group toggle-panel vi-transfer-detail-panel empty" id="B03">
+                      <div class="vi-txt-body vi-txt-b500 ct pady_16">No results found in the date range</div>
+                    </div>
+              
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+        
+      <!-- id 是 demo 用的，開發請拉掉 -->
+      <div id="target-search-result" class="hide">
+        <div class="vi-card-s">
+          <div class="vi-card-header">
+            <div class="vi-line-title mt8 mr-auto">Search Results</div>
+            <div class="mt8 rt ml-auto">
+              <a class="vi-txt-body-bold vi-txt-g500">Clear Search History</a>
+            </div>
+          </div>
+          
+          <!-- add .pad_btm0 -->
+          <div class="vi-card-body pad_btm0">
+            <div class="vi-input-super-card vi-input-group search-result-input two-row mb16">
+              <div class="flex-grow">
+                <div class="vi-txt-body-bold mb8 en-vi-txt-callout">Keyword：房東太太</div>
+                <div class="vi-txt-body-bold en-vi-txt-callout">Range：2022/04/01 - 2022/05/01</div>
+              </div>
+              <div class="vi-icon vi-icon-base icon-search-g"></div>
+            </div>
+            
+            <div class="vi-input-super-card vi-input-group search-result-input mb16">
+              <div class="flex-grow">
+                <div class="vi-txt-body-bold en-vi-txt-callout">Range：2022/04/01 - 2022/05/01</div>
+              </div>
+              <div class="vi-icon vi-icon-base icon-search-g"></div>
+            </div>
+            
+            <div class="vi-row">
+              <div class="vi-container">
+                <ul class="card-list">
+                  <!-- remove .line-top -->
+                  <li class="title">
+                    <div class="div-tb">
+                      <!-- add .vi-txt-body -->
+                      <div class="td vi-txt-body">
+                        April
+                      </div>
+                      <!-- 搜尋結果沒有排序 -->
+                      <!-- <div class="td rt">
+                        <div class="date-order">
+                          <span class="vi-txt-body-bold vi-txt-g500">新到舊</span>
+                          <span class="vi-icon vi-icon-xs vi-icon-arrow-down-g ml4 top-2px"></span>
+                        </div>
+                      </div> -->
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- 參考現行 twrbm-deposit-qu002-010 -->
+              <!-- add .vi-transfer-detail-panel-->
+              <div class="panel-group toggle-panel vi-transfer-detail-panel" id="B0"> 
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#B0" href="#B0collapse0">
+                      <div class="div-tb">
+                        <!-- remove all vmid, 以下內容有調整 class name -->
+                        <div class="td wid_50px">
+                          <div class="vi-txt-body-bold vi-txt-b600">4/18</div>
+                        </div>
+                        <div class="td">
+                          <div class="vi-txt-body-bold vi-txt-b600">轉帳提</div>
+                          <div class="vi-txt-callout vi-txt-b500">註記內文註記文<span class="vi-txt-r500">房東太太</span></div>
+                        </div>
+                        <div class="td rt">
+                          <div class="vi-txt-body-bold vi-txt-b600 money">-120</div>
+                        </div>
+                        <div class="td wid_25px"></div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="panel-collapse collapse" id="B0collapse0">
+                    <div class="panel-body">
+                      <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">Balance</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body vi-txt-b600">0.42</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">Remarks</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body vi-txt-b600">行動網</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">From</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body vi-txt-b600">0000103508011176</div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#B0" href="#B0collapse1">
+                      <div class="div-tb">
+                        <!-- remove all vmid, 以下內容有調整 class name -->
+                        <div class="td wid_50px vi-txt-body-bold vi-txt-b600">4/14</div>
+                        <div class="td">
+                          <div class="vi-txt-body-bold vi-txt-b600">跨行轉出</div>
+                          <div class="vi-txt-callout vi-txt-b500">轉給<span class="vi-txt-r500">房東太太</span></div>
+                        </div>
+                        <div class="td rt">
+                          <div class="vi-txt-body-bold vi-txt-b600 money">-23,000</div>
+                        </div>
+                        <div class="td wid_25px"></div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="panel-collapse collapse" id="B0collapse1">
+                    <div class="panel-body">
+                      <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">Balance</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body vi-txt-b600">0.42</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">Remarks</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body vi-txt-b600">行動網</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">From</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body vi-txt-b600">0000103508011176</div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+              <!-- change .container to .vi-container -->
+              <div class="vi-container">
+                <ul class="card-list">
+                  <!-- remove .line-top -->
+                  <li class="title">
+                    <div class="div-tb">
+                      <div class="td vi-txt-body">
+                        March
+                      </div>
+                      <div class="td"></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+                
+              <!-- add .vi-transfer-detail-panel-->
+              <div class="panel-group toggle-panel vi-transfer-detail-panel" id="B1">   
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#B1" href="#B1collapse3">
+                      <div class="div-tb">
+                        <!-- remove all vmid, 以下內容有調整 class name -->
+                        <div class="td wid_50px">
+                          <div class="vi-txt-body-bold vi-txt-b600">3/20</div>
+                        </div>
+                        <div class="td">
+                          <div class="vi-txt-body-bold vi-txt-b600">跨行轉出</div>
+                          <div class="vi-txt-callout vi-txt-b500">轉給<span class="vi-txt-r500">房東太太</span></div>
+                        </div>
+                        <div class="td rt">
+                          <div class="vi-txt-body-bold vi-txt-b600 money">-120</div>
+                        </div>
+                        <div class="td wid_25px"></div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="panel-collapse collapse" id="B1collapse3">
+                    <div class="panel-body">
+                      <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview">
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">Balance</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body vi-txt-b600">0.42</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">Remarks</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body vi-txt-b600">行動網</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">From</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <div class="vi-txt-body vi-txt-b600">0000103508011176</div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
+        
+      </div>
+    
+
+      <div class="vi-container">  
+        <div class="vi-txt-callout vi-txt-b500 mt16 mb24">Date：2021/01/25 16:26:59</div>
+        
+        <!-- 備註 現有版型 這裡僅示意 -->
+        <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+        <div class="mt16">
+          <div class="vi-note-accordion">
+            <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+              <div class="forAEM base-style break-word mr4">
+                Remarks
+              </div>
+              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+            </div>
+            <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+              <div class="vi-card-body forAEM base-style break-word">
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mb60"></div>
+
+        <div id="trigger-search-result" class="vi-txt-g500 mb16">-> 搜尋結果 切換</div>
+        
+      </div>
+
+      <div id="footer">
+        <div class="vi-page-footer">
+          <div class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-secondary">Set To Term</div>
+            <div class="btn vi-btn vi-btn-primary">Transfer Now</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- main_container -->
+  </div>
+</body>
+<!-- body-wrap -->
+</html>
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-account-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">Select Account</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="rt vi-txt-body mb4">Current Balance</div>
+        <ul class="vi-list vi-list-px8 vi-list-py8 vi-list-noline vi-list-bg-gray super-card-select-account">
+          <!-- 目前的帳戶 加上 active -->
+          <a class="vi-list-item active" href="">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="dis-flex align-items-center mb8">
+                  <span class="vi-flag vi-flag-usd mr8"></span>
+                  <span class="vi-txt-body-bold vi-txt-b600">USD - My Way 數位</span>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold"></div>
+              </div>
+            </div>
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body">0000251300001234</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold">
+                  <span class="currency mr4">USD</span>
+                  <span>10,294</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="dis-flex align-items-center mb8">
+                  <span class="vi-flag vi-flag-jpy mr8"></span>
+                  <span class="vi-txt-body-bold vi-txt-b600">JPY - My Way 數位</span>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold vi-txt-b600"></div>
+              </div>
+            </div>
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body vi-txt-b600">0000251300001234</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold vi-txt-b600">
+                  <span class="currency mr4">JPY</span>
+                  <span>100,000,000</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </ul>
+          
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!-- 搜尋 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-search-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">Search</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div>
+          <div class="vi-form-group mt0">
+            <div class="vi-input-group">
+              <a class="vi-icon vi-icon-base icon-search-g mr16"></a>
+              <input type="search" maxlength="16" placeholder="可搜尋明細中的文字或數字 (非必填)">
+              <a class="vi-icon vi-icon-base icon-input-delete"></a>
+            </div>
+            <div class="vi-form-info">Max 16 Characters Allowed</div>
+            <div class="vi-form-error">{{ searchForms.formErrors?.searchTexts }}</div>
+          </div>
+          
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="trigger-start-date" class="vi-form-group">
+            <div class="vi-input-group">
+              <span class="title">Start Date</span>
+              <input type="text" maxlength="50">
+              <span class="vi-icon vi-icon-base vi-icon-calender"></span>
+            </div>
+            <div class="vi-form-info"></div>
+            <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div>
+          </div>
+
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="trigger-end-date" class="vi-form-group">
+            <div class="vi-input-group">
+              <span class="title">End Date</span>
+              <input type="text" maxlength="50">
+              <span class="vi-icon vi-icon-base vi-icon-calender"></span>
+            </div>
+            <div class="vi-form-info"></div>
+            <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div>
+          </div>
+          
+          <div class="rt en-flex-justify-start en-lt en-flex-reverse">
+            <span class="vi-txt-callout vi-txt-b500">You may view the transactions within 6 months. The searching range is up to 3 months.</span>
+            <span class="vi-icon vi-icon-xs icon-info-mark-g top-2px"></span>
+          </div>
+          
+          <div class="vi-btn-group mt24">
+            <div class="btn vi-btn vi-btn-primary">Search</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!-- 日曆 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-datepicker-supercard" class="vi-modal hide">
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">Select Date</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <!-- add .vi-datepicker-panel -->
+        <div class="datepicker-complex-panel vi-datepicker-panel">
+          <!-- 內容來自 <modal-datepicker> 現有版型 這裡僅示意，有調整的地方已加上註解，分別為
+             調整 selector 的 icon class，
+             加上 .today 今天，
+             新增 .m-range-label，
+             .y-range-label 移除文字"年" 
+          -->
+          <ul class="" role="tablist">
+            <li class="prev-year-btn" style="display: none;"><i class="icon-expand_left"></i></li>
+            <li class="prev-month-btn" style=""><i class="icon-expand_left"></i></li>
+            <li class="input-group-btn" role="presentation">
+              <a class="y-link btn btn-default" data-toggle="tab" href="#1652684545785-tab-y">
+                <span class="val">2022</span>
+                <!-- 調整 icon-more_down to .vi-icon.vi-icon-xs.vi-icon-triangle-down-g -->
+                <i class="vi-icon vi-icon-xs vi-icon-triangle-down-g"></i>
+              </a>
+            </li>
+            <li class="input-group-btn" role="presentation">
+              <a class="m-link btn btn-default" data-toggle="tab" href="#1652684545785-tab-m">
+              <span class="val">5</span>
+                <!-- 調整 icon-more_down to .vi-icon.vi-icon-xs.vi-icon-triangle-down-g -->
+                <i class="vi-icon vi-icon-xs vi-icon-triangle-down-g"></i>
+              </a>
+            </li>
+            <li class="input-group-btn" role="presentation" style="display: none;">
+              <a class="d-link btn btn-default" data-toggle="tab" href="#1652684545785-tab-d">17</a>
+            </li>
+            <!-- 新增 m-range-label -->
+            <li class="m-range-label" style="display: none;">2022</li>
+            <!-- 移除文字 "年" -->
+            <li class="y-range-label" style="display: none;">2020-2029</li>
+            <li class="next-year-btn" style="display: none;"><i class="icon-expand_right"></i></li>
+            <li class="next-month-btn" style=""><i class="icon-expand_right"></i></li>
+          </ul>
+          
+          <div class="tab-content">
+            <div class="tab-pane" id="1652684545785-tab-y">
+              <div class="date_y_only form_date" data-date="">
+                <div class="datepicker datepicker-inline">
+                  <div class="datepicker-days" style="display: none;">
+                    <table class="table-condensed">
+                      <thead>
+                        <tr>
+                          <th colspan="7" class="datepicker-title" style="display: none;"></th>
+                        </tr>
+                        <tr>
+                          <th class="prev disabled">«</th>
+                          <th colspan="5" class="datepicker-switch">2022 May</th>
+                          <th class="next disabled">»</th>
+                        </tr>
+                        <tr>
+                          <th class="dow">Su</th>
+                          <th class="dow">Mo</th>
+                          <th class="dow">Tu</th>
+                          <th class="dow">We</th>
+                          <th class="dow">Th</th>
+                          <th class="dow">Fr</th>
+                          <th class="dow">Sa</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="old day" data-date="1650758400000">24</td>
+                          <td class="old day" data-date="1650844800000">25</td>
+                          <td class="old day" data-date="1650931200000">26</td>
+                          <td class="old day" data-date="1651017600000">27</td>
+                          <td class="old day" data-date="1651104000000">28</td>
+                          <td class="old day" data-date="1651190400000">29</td>
+                          <td class="old day" data-date="1651276800000">30</td>
+                        </tr>
+                        <tr>
+                          <td class="disabled day" data-date="1651363200000">1</td>
+                          <td class="disabled day" data-date="1651449600000">2</td>
+                          <td class="disabled day" data-date="1651536000000">3</td>
+                          <td class="disabled day" data-date="1651622400000">4</td>
+                          <td class="disabled day" data-date="1651708800000">5</td>
+                          <td class="disabled day" data-date="1651795200000">6</td>
+                          <td class="disabled day" data-date="1651881600000">7</td>
+                        </tr>
+                        <tr>
+                          <td class="disabled day" data-date="1651968000000">8</td>
+                          <td class="disabled day" data-date="1652054400000">9</td>
+                          <td class="disabled day" data-date="1652140800000">10</td>
+                          <td class="disabled day" data-date="1652227200000">11</td>
+                          <td class="disabled day" data-date="1652313600000">12</td>
+                          <td class="disabled day" data-date="1652400000000">13</td>
+                          <td class="disabled day" data-date="1652486400000">14</td>
+                        </tr>
+                        <tr>
+                          <td class="disabled day" data-date="1652572800000">15</td>
+                          <td class="disabled day" data-date="1652659200000">16</td>
+                          <!-- add .today -->
+                          <td class="today day" data-date="1652745600000">17</td>
+                          <td class="day" data-date="1652832000000">18</td>
+                          <td class="active day" data-date="1652918400000">19</td>
+                          <td class="day" data-date="1653004800000">20</td>
+                          <td class="day" data-date="1653091200000">21</td>
+                        </tr>
+                        <tr>
+                          <td class="day" data-date="1653177600000">22</td>
+                          <td class="day" data-date="1653264000000">23</td>
+                          <td class="day" data-date="1653350400000">24</td>
+                          <td class="day" data-date="1653436800000">25</td>
+                          <td class="day" data-date="1653523200000">26</td>
+                          <td class="day" data-date="1653609600000">27</td>
+                          <td class="day" data-date="1653696000000">28</td>
+                        </tr>
+                        <tr>
+                          <td class="day" data-date="1653782400000">29</td>
+                          <td class="day" data-date="1653868800000">30</td>
+                          <td class="day" data-date="1653955200000">31</td>
+                          <td class="new day" data-date="1654041600000">1</td>
+                          <td class="new day" data-date="1654128000000">2</td>
+                          <td class="new day" data-date="1654214400000">3</td>
+                          <td class="new day" data-date="1654300800000">4</td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th colspan="7" class="today" style="display: none;">Today</th>
+                        </tr>
+                        <tr>
+                          <th colspan="7" class="clear" style="display: none;">Clear</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  <div class="datepicker-months" style="display: none;">
+                    <table class="table-condensed">
+                      <thead>
+                        <tr>
+                          <th colspan="7" class="datepicker-title" style="display: none;"></th>
+                        </tr>
+                        <tr>
+                          <th class="prev disabled">«</th>
+                          <th colspan="5" class="datepicker-switch">2022</th>
+                          <th class="next disabled">»</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="7"><span class="month disabled">Jan</span><span class="month disabled">Feb</span><span
+                              class="month disabled">Mar</span><span class="month disabled">Apr</span><span
+                              class="month focused active">May</span><span class="month">Jun</span><span class="month">Jul</span><span
+                              class="month">Aug</span><span class="month disabled">Sep</span><span class="month disabled">Oct</span><span
+                              class="month disabled">Nov</span><span class="month disabled">Dec</span></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th colspan="7" class="today" style="display: none;">今天</th>
+                        </tr>
+                        <tr>
+                          <th colspan="7" class="clear" style="display: none;">清除</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  <div class="datepicker-years" style="">
+                    <table class="table-condensed">
+                      <thead>
+                        <tr>
+                          <th colspan="7" class="datepicker-title" style="display: none;"></th>
+                        </tr>
+                        <tr>
+                          <th class="prev disabled">«</th>
+                          <th colspan="5" class="datepicker-switch">2020-2029</th>
+                          <th class="next disabled">»</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="7"><span class="year old disabled">2019</span><span class="year disabled">2020</span><span
+                              class="year disabled">2021</span><span class="year active focused">2022</span><span
+                              class="year disabled">2023</span><span class="year disabled">2024</span><span
+                              class="year disabled">2025</span><span class="year disabled">2026</span><span
+                              class="year disabled">2027</span><span class="year disabled">2028</span><span
+                              class="year disabled">2029</span><span class="year new disabled">2030</span></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th colspan="7" class="today" style="display: none;">今天</th>
+                        </tr>
+                        <tr>
+                          <th colspan="7" class="clear" style="display: none;">清除</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  <div class="datepicker-decades" style="display: none;">
+                    <table class="table-condensed">
+                      <thead>
+                        <tr>
+                          <th colspan="7" class="datepicker-title" style="display: none;"></th>
+                        </tr>
+                        <tr>
+                          <th class="prev disabled">«</th>
+                          <th colspan="5" class="datepicker-switch">2000-2090</th>
+                          <th class="next disabled">»</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="7"><span class="decade old disabled">1990</span><span class="decade disabled">2000</span><span
+                              class="decade disabled">2010</span><span class="decade active disabled focused">2020</span><span
+                              class="decade disabled">2030</span><span class="decade disabled">2040</span><span
+                              class="decade disabled">2050</span><span class="decade disabled">2060</span><span
+                              class="decade disabled">2070</span><span class="decade disabled">2080</span><span
+                              class="decade disabled">2090</span><span class="decade new disabled">2100</span></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th colspan="7" class="today" style="display: none;">今天</th>
+                        </tr>
+                        <tr>
+                          <th colspan="7" class="clear" style="display: none;">清除</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  <div class="datepicker-centuries" style="display: none;">
+                    <table class="table-condensed">
+                      <thead>
+                        <tr>
+                          <th colspan="7" class="datepicker-title" style="display: none;"></th>
+                        </tr>
+                        <tr>
+                          <th class="prev disabled">«</th>
+                          <th colspan="5" class="datepicker-switch">2000-2900</th>
+                          <th class="next disabled">»</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="7"><span class="century old disabled">1900</span><span
+                              class="century active disabled focused">2000</span><span class="century disabled">2100</span><span
+                              class="century disabled">2200</span><span class="century disabled">2300</span><span
+                              class="century disabled">2400</span><span class="century disabled">2500</span><span
+                              class="century disabled">2600</span><span class="century disabled">2700</span><span
+                              class="century disabled">2800</span><span class="century disabled">2900</span><span
+                              class="century new disabled">3000</span></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th colspan="7" class="today" style="display: none;">今天</th>
+                        </tr>
+                        <tr>
+                          <th colspan="7" class="clear" style="display: none;">清除</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane " id="1652684545785-tab-m">
+              <div class="date_m_only form_date" data-date="">
+              <div class="datepicker datepicker-inline">
+                <div class="datepicker-days" style="display: none;">
+                  <table class="table-condensed">
+                    <thead>
+                      <tr>
+                        <th colspan="7" class="datepicker-title" style="display: none;"></th>
+                      </tr>
+                      <tr>
+                        <th class="prev">«</th>
+                        <th colspan="5" class="datepicker-switch">五月 2022</th>
+                        <th class="next disabled">»</th>
+                      </tr>
+                      <tr>
+                        <th class="dow">日</th>
+                        <th class="dow">一</th>
+                        <th class="dow">二</th>
+                        <th class="dow">三</th>
+                        <th class="dow">四</th>
+                        <th class="dow">五</th>
+                        <th class="dow">六</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="old day" data-date="1650758400000">24</td>
+                        <td class="old day" data-date="1650844800000">25</td>
+                        <td class="old day" data-date="1650931200000">26</td>
+                        <td class="old day" data-date="1651017600000">27</td>
+                        <td class="old day" data-date="1651104000000">28</td>
+                        <td class="old day" data-date="1651190400000">29</td>
+                        <td class="old day" data-date="1651276800000">30</td>
+                      </tr>
+                      <tr>
+                        <td class="disabled day" data-date="1651363200000">1</td>
+                        <td class="disabled day" data-date="1651449600000">2</td>
+                        <td class="disabled day" data-date="1651536000000">3</td>
+                        <td class="disabled day" data-date="1651622400000">4</td>
+                        <td class="disabled day" data-date="1651708800000">5</td>
+                        <td class="disabled day" data-date="1651795200000">6</td>
+                        <td class="disabled day" data-date="1651881600000">7</td>
+                      </tr>
+                      <tr>
+                        <td class="disabled day" data-date="1651968000000">8</td>
+                        <td class="disabled day" data-date="1652054400000">9</td>
+                        <td class="disabled day" data-date="1652140800000">10</td>
+                        <td class="disabled day" data-date="1652227200000">11</td>
+                        <td class="disabled day" data-date="1652313600000">12</td>
+                        <td class="disabled day" data-date="1652400000000">13</td>
+                        <td class="disabled day" data-date="1652486400000">14</td>
+                      </tr>
+                      <tr>
+                        <td class="disabled day" data-date="1652572800000">15</td>
+                        <td class="disabled day" data-date="1652659200000">16</td>
+                        <!-- add .today -->
+                        <td class="today day" data-date="1652745600000">17</td>
+                        <td class="day" data-date="1652832000000">18</td>
+                        <td class="active day" data-date="1652918400000">19</td>
+                        <td class="day" data-date="1653004800000">20</td>
+                        <td class="day" data-date="1653091200000">21</td>
+                      </tr>
+                      <tr>
+                        <td class="day" data-date="1653177600000">22</td>
+                        <td class="day" data-date="1653264000000">23</td>
+                        <td class="day" data-date="1653350400000">24</td>
+                        <td class="day" data-date="1653436800000">25</td>
+                        <td class="day" data-date="1653523200000">26</td>
+                        <td class="day" data-date="1653609600000">27</td>
+                        <td class="day" data-date="1653696000000">28</td>
+                      </tr>
+                      <tr>
+                        <td class="day" data-date="1653782400000">29</td>
+                        <td class="day" data-date="1653868800000">30</td>
+                        <td class="day" data-date="1653955200000">31</td>
+                        <td class="new day" data-date="1654041600000">1</td>
+                        <td class="new day" data-date="1654128000000">2</td>
+                        <td class="new day" data-date="1654214400000">3</td>
+                        <td class="new day" data-date="1654300800000">4</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <th colspan="7" class="today" style="display: none;">今天</th>
+                      </tr>
+                      <tr>
+                        <th colspan="7" class="clear" style="display: none;">清除</th>
+                      </tr>
+                    </tfoot>
+                  </table>
+                  </div>
+                  <div class="datepicker-months" style="">
+                    <table class="table-condensed">
+                      <thead>
+                        <tr>
+                          <th colspan="7" class="datepicker-title" style="display: none;"></th>
+                        </tr>
+                        <tr>
+                          <th class="prev">«</th>
+                          <th colspan="5" class="datepicker-switch">Months</th>
+                          <th class="next disabled">»</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="7"><span class="month disabled">Jan</span><span class="month disabled">Feb</span><span
+                              class="month disabled">Mar</span><span class="month disabled">Apr</span><span
+                              class="month focused active">May</span><span class="month">Jun</span><span class="month">Jul</span><span
+                              class="month">Aug</span><span class="month disabled">Sep</span><span class="month disabled">Oct</span><span
+                              class="month disabled">Nov</span><span class="month disabled">Dec</span></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th colspan="7" class="today" style="display: none;">今天</th>
+                        </tr>
+                        <tr>
+                          <th colspan="7" class="clear" style="display: none;">清除</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  <div class="datepicker-years" style="display: none;">
+                    <table class="table-condensed">
+                      <thead>
+                        <tr>
+                          <th colspan="7" class="datepicker-title" style="display: none;"></th>
+                        </tr>
+                        <tr>
+                          <th class="prev">«</th>
+                          <th colspan="5" class="datepicker-switch">2020-2029</th>
+                          <th class="next disabled">»</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="7"><span class="year old disabled">2019</span><span class="year disabled">2020</span><span
+                              class="year disabled">2021</span><span class="year active focused">2022</span><span
+                              class="year disabled">2023</span><span class="year disabled">2024</span><span
+                              class="year disabled">2025</span><span class="year disabled">2026</span><span
+                              class="year disabled">2027</span><span class="year disabled">2028</span><span
+                              class="year disabled">2029</span><span class="year new disabled">2030</span></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th colspan="7" class="today" style="display: none;">今天</th>
+                        </tr>
+                        <tr>
+                          <th colspan="7" class="clear" style="display: none;">清除</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  <div class="datepicker-decades" style="display: none;">
+                    <table class="table-condensed">
+                      <thead>
+                        <tr>
+                          <th colspan="7" class="datepicker-title" style="display: none;"></th>
+                        </tr>
+                        <tr>
+                          <th class="prev">«</th>
+                          <th colspan="5" class="datepicker-switch">2000-2090</th>
+                          <th class="next disabled">»</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="7"><span class="decade old disabled">1990</span><span class="decade disabled">2000</span><span
+                              class="decade disabled">2010</span><span class="decade active disabled focused">2020</span><span
+                              class="decade disabled">2030</span><span class="decade disabled">2040</span><span
+                              class="decade disabled">2050</span><span class="decade disabled">2060</span><span
+                              class="decade disabled">2070</span><span class="decade disabled">2080</span><span
+                              class="decade disabled">2090</span><span class="decade new disabled">2100</span></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th colspan="7" class="today" style="display: none;">今天</th>
+                        </tr>
+                        <tr>
+                          <th colspan="7" class="clear" style="display: none;">清除</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  <div class="datepicker-centuries" style="display: none;">
+                    <table class="table-condensed">
+                      <thead>
+                        <tr>
+                          <th colspan="7" class="datepicker-title" style="display: none;"></th>
+                        </tr>
+                        <tr>
+                          <th class="prev">«</th>
+                          <th colspan="5" class="datepicker-switch">2000-2900</th>
+                          <th class="next disabled">»</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="7"><span class="century old disabled">1900</span><span
+                              class="century active disabled focused">2000</span><span class="century disabled">2100</span><span
+                              class="century disabled">2200</span><span class="century disabled">2300</span><span
+                              class="century disabled">2400</span><span class="century disabled">2500</span><span
+                              class="century disabled">2600</span><span class="century disabled">2700</span><span
+                              class="century disabled">2800</span><span class="century disabled">2900</span><span
+                              class="century new disabled">3000</span></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th colspan="7" class="today" style="display: none;">今天</th>
+                        </tr>
+                        <tr>
+                          <th colspan="7" class="clear" style="display: none;">清除</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane active" id="1652684545785-tab-d">
+              <div class="date_d_only form_date" data-date="">
+                <div class="datepicker datepicker-inline">
+                  <div class="datepicker-days" style="">
+                    <table class="table-condensed">
+                      <thead>
+                        <tr>
+                          <th colspan="7" class="datepicker-title" style="display: none;"></th>
+                        </tr>
+                        <tr>
+                          <th class="prev">«</th>
+                          <th colspan="5" class="datepicker-switch">五月 2022</th>
+                          <th class="next">»</th>
+                        </tr>
+                        <tr>
+                          <th class="dow">日</th>
+                          <th class="dow">一</th>
+                          <th class="dow">二</th>
+                          <th class="dow">三</th>
+                          <th class="dow">四</th>
+                          <th class="dow">五</th>
+                          <th class="dow">六</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="old day" data-date="1650758400000">24</td>
+                          <td class="old day" data-date="1650844800000">25</td>
+                          <td class="old day" data-date="1650931200000">26</td>
+                          <td class="old day" data-date="1651017600000">27</td>
+                          <td class="old day" data-date="1651104000000">28</td>
+                          <td class="old day" data-date="1651190400000">29</td>
+                          <td class="old day" data-date="1651276800000">30</td>
+                        </tr>
+                        <tr>
+                          <td class="disabled day" data-date="1651363200000">1</td>
+                          <td class="disabled day" data-date="1651449600000">2</td>
+                          <td class="disabled day" data-date="1651536000000">3</td>
+                          <td class="disabled day" data-date="1651622400000">4</td>
+                          <td class="disabled day" data-date="1651708800000">5</td>
+                          <td class="disabled day" data-date="1651795200000">6</td>
+                          <td class="disabled day" data-date="1651881600000">7</td>
+                        </tr>
+                        <tr>
+                          <td class="disabled day" data-date="1651968000000">8</td>
+                          <td class="disabled day" data-date="1652054400000">9</td>
+                          <td class="disabled day" data-date="1652140800000">10</td>
+                          <td class="disabled day" data-date="1652227200000">11</td>
+                          <td class="disabled day" data-date="1652313600000">12</td>
+                          <td class="disabled day" data-date="1652400000000">13</td>
+                          <td class="disabled day" data-date="1652486400000">14</td>
+                        </tr>
+                        <tr>
+                          <td class="disabled day" data-date="1652572800000">15</td>
+                          <td class="disabled day" data-date="1652659200000">16</td>
+                          <!-- add .today -->
+                          <td class="today day" data-date="1652745600000">17</td>
+                          <td class="day" data-date="1652832000000">18</td>
+                          <td class="active day" data-date="1652918400000">19</td>
+                          <td class="day" data-date="1653004800000">20</td>
+                          <td class="day" data-date="1653091200000">21</td>
+                        </tr>
+                        <tr>
+                          <td class="day" data-date="1653177600000">22</td>
+                          <td class="day" data-date="1653264000000">23</td>
+                          <td class="day" data-date="1653350400000">24</td>
+                          <td class="day" data-date="1653436800000">25</td>
+                          <td class="day" data-date="1653523200000">26</td>
+                          <td class="day" data-date="1653609600000">27</td>
+                          <td class="day" data-date="1653696000000">28</td>
+                        </tr>
+                        <tr>
+                          <td class="day" data-date="1653782400000">29</td>
+                          <td class="day" data-date="1653868800000">30</td>
+                          <td class="day" data-date="1653955200000">31</td>
+                          <td class="new day" data-date="1654041600000">1</td>
+                          <td class="new day" data-date="1654128000000">2</td>
+                          <td class="new day" data-date="1654214400000">3</td>
+                          <td class="new day" data-date="1654300800000">4</td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th colspan="7" class="today" style="display: none;">今天</th>
+                        </tr>
+                        <tr>
+                          <th colspan="7" class="clear" style="display: none;">清除</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  <div class="datepicker-months" style="display: none;">
+                    <table class="table-condensed">
+                      <thead>
+                        <tr>
+                          <th colspan="7" class="datepicker-title" style="display: none;"></th>
+                        </tr>
+                        <tr>
+                          <th class="prev">«</th>
+                          <th colspan="5" class="datepicker-switch">Months</th>
+                          <th class="next">»</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="7"><span class="month disabled">1月</span><span class="month disabled">2月</span><span
+                              class="month disabled">3月</span><span class="month disabled">4月</span><span
+                              class="month focused active">5月</span><span class="month">6月</span><span class="month">7月</span><span
+                              class="month">8月</span><span class="month disabled">9月</span><span class="month disabled">10月</span><span
+                              class="month disabled">11月</span><span class="month disabled">12月</span></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th colspan="7" class="today" style="display: none;">今天</th>
+                        </tr>
+                        <tr>
+                          <th colspan="7" class="clear" style="display: none;">清除</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  <div class="datepicker-years" style="display: none;">
+                    <table class="table-condensed">
+                      <thead>
+                        <tr>
+                          <th colspan="7" class="datepicker-title" style="display: none;"></th>
+                        </tr>
+                        <tr>
+                          <th class="prev">«</th>
+                          <th colspan="5" class="datepicker-switch">2020-2029</th>
+                          <th class="next">»</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="7"><span class="year old disabled">2019</span><span class="year disabled">2020</span><span
+                              class="year disabled">2021</span><span class="year active focused">2022</span><span
+                              class="year disabled">2023</span><span class="year disabled">2024</span><span
+                              class="year disabled">2025</span><span class="year disabled">2026</span><span
+                              class="year disabled">2027</span><span class="year disabled">2028</span><span
+                              class="year disabled">2029</span><span class="year new disabled">2030</span></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th colspan="7" class="today" style="display: none;">今天</th>
+                        </tr>
+                        <tr>
+                          <th colspan="7" class="clear" style="display: none;">清除</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  <div class="datepicker-decades" style="display: none;">
+                    <table class="table-condensed">
+                      <thead>
+                        <tr>
+                          <th colspan="7" class="datepicker-title" style="display: none;"></th>
+                        </tr>
+                        <tr>
+                          <th class="prev">«</th>
+                          <th colspan="5" class="datepicker-switch">2000-2090</th>
+                          <th class="next">»</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="7"><span class="decade old disabled">1990</span><span class="decade disabled">2000</span><span
+                              class="decade disabled">2010</span><span class="decade active disabled focused">2020</span><span
+                              class="decade disabled">2030</span><span class="decade disabled">2040</span><span
+                              class="decade disabled">2050</span><span class="decade disabled">2060</span><span
+                              class="decade disabled">2070</span><span class="decade disabled">2080</span><span
+                              class="decade disabled">2090</span><span class="decade new disabled">2100</span></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th colspan="7" class="today" style="display: none;">今天</th>
+                        </tr>
+                        <tr>
+                          <th colspan="7" class="clear" style="display: none;">清除</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  <div class="datepicker-centuries" style="display: none;">
+                    <table class="table-condensed">
+                      <thead>
+                        <tr>
+                          <th colspan="7" class="datepicker-title" style="display: none;"></th>
+                        </tr>
+                        <tr>
+                          <th class="prev">«</th>
+                          <th colspan="5" class="datepicker-switch">2000-2900</th>
+                          <th class="next">»</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="7"><span class="century old disabled">1900</span><span
+                              class="century active disabled focused">2000</span><span class="century disabled">2100</span><span
+                              class="century disabled">2200</span><span class="century disabled">2300</span><span
+                              class="century disabled">2400</span><span class="century disabled">2500</span><span
+                              class="century disabled">2600</span><span class="century disabled">2700</span><span
+                              class="century disabled">2800</span><span class="century disabled">2900</span><span
+                              class="century new disabled">3000</span></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th colspan="7" class="today" style="display: none;">今天</th>
+                        </tr>
+                        <tr>
+                          <th colspan="7" class="clear" style="display: none;">清除</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// 選擇帳號 demo
+document.getElementsByClassName('vi-select-super-card')[0].addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-account-supercard').classList.toggle('hide');
+  document.getElementById('target-account-supercard').classList.toggle('vi-modal-in');
+});
+
+// 搜尋 demo
+document.getElementById('trigger-search').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-search-supercard').classList.toggle('hide');
+  document.getElementById('target-search-supercard').classList.toggle('vi-modal-in');
+});
+
+// 搜尋結果 demo
+document.getElementById('trigger-search-result').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-search-result').classList.toggle('hide');
+  document.getElementById('target-no-search-result').classList.toggle('hide');
+});
+
+
+// 日曆 demo
+document.getElementById('trigger-start-date').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-datepicker-supercard').classList.toggle('hide');
+  document.getElementById('target-datepicker-supercard').classList.toggle('vi-modal-in');
+});
+document.getElementById('trigger-end-date').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-datepicker-supercard').classList.toggle('hide');
+  document.getElementById('target-datepicker-supercard').classList.toggle('vi-modal-in');
+});
+
+
+// 新到舊 icon demo
+const iconArrow = document.getElementsByClassName('vi-icon-arrow-down-g');
+for (var i = 0; i < iconArrow.length; i++){
+  iconArrow[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.classList.toggle('rotate180');
+  });
+}
+
+// 超人卡片 close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('vi-modal-close');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+  });
+}
+
+
+$(document).ready(function(){
+  
+  // 日曆點擊示意
+  $('.vi-datepicker-panel .date_d_only td.day').on('click', function() {
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+    $('#trigger-start-date .vi-input-group input').val('2022/05/19');
+  });
+  
+  // 明細月份 fixed top 示意
+  $(window).scroll(function(){
+    
+    const scrollTop = $(window).scrollTop();
+    const targetTop = $('.nav-detail-fixed-top').offset().top - 44;
+    const el1Top = $('#el1').offset().top - 94;
+    
+    if ( scrollTop >= targetTop ) {
+      $('.nav-detail-fixed-top').addClass('fixed-top fixed-position-1');
+      $('.nav-detail-fixed-top').parent().find('.tab-content').addClass('nav-detail-fixed');
+      $('.fixed-card-list').removeClass('hide');
+      
+      $('.card-list .title .td.vi-txt-body').each(function(index) {
+        const elDetailHeight = $('.nav-detail-fixed-top').height() + 44;
+        const elTop = $(this).offset().top - elDetailHeight;
+        const elBottom = $(this).offset().top + $(this).height() + elDetailHeight;
+        const txt = $(this).text();
+        
+        if ( scrollTop >= elTop && scrollTop <= elBottom ) {
+          $('.fixed-card-list').find('.td.vi-txt-body').html(txt);
+        }
+      });
+    }
+    if ( scrollTop < el1Top ) {
+      $('.nav-detail-fixed-top').removeClass('fixed-top fixed-position-1');
+      $('.nav-detail-fixed-top').parent().find('.tab-content').removeClass('nav-detail-fixed');
+      $('.fixed-card-list').addClass('hide');
+    }
+  });
+});
+</script>

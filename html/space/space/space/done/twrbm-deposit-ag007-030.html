@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-list.vi-list-bg-gray .vi-list-item {
+      margin-bottom: 16px;
+      background: #F5F5F5;
+      border-radius: 6px;
+    }
+    .vi-list.vi-list-bg-gray .vi-list-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .vi-detail-list .vi-list-item:last-child {
+      margin-bottom: 0;
+    }
+
+
+    .vi-step-purple .vi-step-current {
+      color: #9081A8;
+    }
+    .vi-progress-bar-purple {
+      border-radius: 100px;
+    }
+
+    .vi-progress-bar-purple .progress-bar-handle {
+      display: block;
+      -webkit-appearance: none;
+      appearance: none;
+      vertical-align: baseline;
+      width: auto;
+      height: 8px;
+      border-radius: 100px;
+    }
+    .vi-progress-bar-purple .progress-bar-handle::-webkit-progress-bar {
+      background-color: #E3E3E3;
+      overflow: hidden;
+      border-radius: 100px;
+    }
+    .vi-progress-bar-purple .progress-bar-handle::-webkit-progress-value {
+      border-radius: 100px;
+      background-color: #9081A8;
+    }
+
+
+
+    .vi-step-purple .vi-step-current {
+      color: #9081A8;
+    }
+    .vi-progress-bar-purple {
+      border-radius: 100px;
+    }
+
+    .vi-progress-bar-purple .progress-bar-handle {
+      display: block;
+      -webkit-appearance: none;
+      appearance: none;
+      vertical-align: baseline;
+      width: auto;
+      height: 8px;
+      border-radius: 100px;
+    }
+    .vi-progress-bar-purple .progress-bar-handle::-webkit-progress-bar {
+      background-color: #E3E3E3;
+      overflow: hidden;
+      border-radius: 100px;
+    }
+    .vi-progress-bar-purple .progress-bar-handle::-webkit-progress-value {
+      border-radius: 100px;
+      background-color: #9081A8;
+    }
+
+  
+    .vi-card.vi-overview-chart-card .vi-card-body {
+      background: #fff;
+    }
+    .vi-card.vi-overview-chart-card .vi-card-footer {
+      padding: 0 16px 16px 16px;
+    }
+    .vi-card.vi-overview-chart-card .vi-list-overview-chart {
+      padding-top: 16px;
+      border-top: 1px dashed #C0C0C0;
+    }
+    .vi-card.vi-overview-chart-card .vi-list-overview-chart .vi-list-item {
+      padding: 0;
+    }
+    .vi-card.vi-overview-chart-card .vi-list-overview-chart .vi-list-item.vi-list-item-chart .vi-list-lt {
+      margin-right: 0;
+      display: inline-flex;
+      align-items: center;
+    }
+
+
+    .gray-mask {
+      filter: grayscale(100%);
+    }
+
+
+    .vi-overview-card .vi-card-body {
+      display: flex;
+      background: #fff;
+      padding-bottom: 16px;
+    }
+    .vi-overview-card .vi-card-body .moneybaby-img {
+      position: relative;
+      width: 100px;
+    }
+    .vi-overview-card .vi-card-body .moneybaby-img img {
+      width: 100%;
+      position: absolute;
+      bottom: -16px;
+    }
+    .vi-overview-card .vi-card-body .vi-txt-fc {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+    
+    .vi-overview-card .vi-card-footer {
+      padding: 16px;
+      text-align: unset;
+    }
+    .vi-overview-card .vi-card-footer {
+      background: rgb(246,246,246);
+      background: linear-gradient(180deg, rgba(246,246,246,1) 0%, rgba(246,246,246,0.4) 40%, rgba(246,246,246,0) 100%);
+    }
+    .vi-overview-card .vi-select-link:after {
+      position: relative;
+      top: -4px;
+    }
+
+    
+    .vi-list.vi-list-overview .vi-list-item.vi-list-item-step {
+      padding-bottom: 0;
+    }
+    @media (max-width: 320px) {
+      .vi-list.vi-list-overview .vi-list-item {
+        padding: 0 0 8px 0;
+      }
+      .vi-list.vi-list-overview .vi-list-item.vi-list-item-step .vi-step {
+        flex-direction: column;
+      }
+      .vi-list.vi-list-overview .vi-list-item.vi-list-item-step .vi-step .ml-auto {
+        width: 100%;
+      }
+    }
+
+
+    .vi-detail-list.vi-list-no-bg .vi-list-item {
+      padding-top: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .vi-detail-list.vi-list-no-bg .vi-list-item:nth-child(even) {
+      background: none;
+    }
+    .vi-card-body .vi-detail-list.vi-list-no-bg .vi-list-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  </style>
+</head>
+
+<body class="vi-bg-mint vi-page-header-fix">
+
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <!-- 新增 .vi-page-header-green 綠色 header，ios 瀏海也要改成綠的 #0F8F88 -->
+    <div class="container-header vi-page-header vi-page-header-green">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">錢寶寶明細</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-white">修改紀錄</a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- EBMW content from here -->
+  <!-- 新增 .vi-bg-green-gradient 漸層背景 -->
+  <div class="body-wrap scroll vi-bg-mint vi-bg-green-gradient">
+    
+    <div class="main_container has-foot-btn pad_top24">
+
+      <div class="vi-container">
+        
+        <!-- id 是 demo 用的，開發請拉掉 -->
+        <div id="target-ing" class="vi-card vi-overview-card">
+          <a class="vi-card-header">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-txt-headline dis-flex align-items-center">
+                <span class="vi-flag vi-flag-usd mr8"></span>
+                美元
+              </div>
+              <div class="vi-tag-group">
+                <div class="vi-tag vi-tag-g200">
+                  <div class="vi-txt">扣款中</div>
+                </div>
+                <!-- 紅色的狀態 -->
+                <!-- <div class="vi-tag vi-tag-r300">
+                  <div class="vi-txt">已到期</div>
+                </div> -->
+              </div>
+            </div>
+          </a>
+          <div class="vi-card-body">
+            <div class="mr-auto moneybaby-img">
+              <img src="../../../../../inc/img/img/moneybaby/usd-0.svg" alt="">
+            </div>
+            <div class="ml-auto rt">
+              <div class="vi-txt-body vi-txt-b600 mb4">已累積金額</div>
+              <div class="vi-txt-fc mb4">
+                <span class="txt_normal vi-txt-callout vi-txt-b600 currency mr4">EUR</span>
+                <span class="vi-txt-headline vi-txt-b600">300.00</span>
+              </div>
+              <div class="vi-txt-callout vi-txt-b500 mt4">
+              (約當新臺幣 1,000,000)
+              </div>
+            </div>
+          </div>
+          <div class="vi-card-footer">
+            <ul class="vi-list vi-list-overview">
+              <li class="vi-list-item vi-list-item-step pad_top0">
+                <div class="vi-list-lt flex-grow mr0">
+                  <div class="vi-step vi-step-purple dis-flex align-items-center mb8">
+                    <div class="vi-txt-title vi-step-current mr-auto">
+                      1<span class="vi-txt-body vi-txt-b600"> / 10次</span>
+                    </div>
+                    <div class="ml-auto vi-txt-body vi-txt-b600">
+                      每次扣款 <span class="vi-txt-bold">新臺幣 1,000</span>
+                      <span class="vi-icon vi-icon-base icon-pencil-g top-4px"></span>
+                    </div>
+                  </div>
+                  <div class="vi-progress-bar vi-progress-bar-purple">
+                    <!-- value = 12/20 -->
+                    <progress class="progress-bar-handle" max="100" value="60"></progress>
+                  </div>
+                </div>
+                <!-- <div class="vi-list-rt">
+                  <button class="vi-btn vi-btn-secondary vi-btn-xs">立即繳款</a>
+                </div> -->
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- id 是 demo 用的，開發請拉掉 -->
+        <div id="target-pause" class="vi-card vi-overview-card hide">
+          <a class="vi-card-header">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-txt-headline dis-flex align-items-center">
+                <span class="vi-flag vi-flag-usd mr8"></span>
+                美元
+              </div>
+              <div class="vi-tag-group">
+                <div class="vi-tag vi-tag-r300">
+                  <div class="vi-txt">暫停扣款</div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <div class="vi-card-body">
+            <div class="mr-auto moneybaby-img">
+              <img src="../../../../../inc/img/img/moneybaby/usd-0.svg" alt="" class="gray-mask">
+            </div>
+            <div class="ml-auto rt">
+              <div class="vi-txt-body vi-txt-b600 mb4">已累積金額</div>
+              <div class="vi-txt-fc mb4">
+                <span class="txt_normal vi-txt-callout vi-txt-b600 currency mr4">EUR</span>
+                <span class="vi-txt-headline vi-txt-b600">300.00</span>
+              </div>
+              <div class="vi-txt-callout vi-txt-b500 mt4">
+              (約當新臺幣 1,000,000)
+              </div>
+            </div>
+          </div>
+          <div class="vi-card-footer">
+            <ul class="vi-list vi-list-overview">
+              <li class="vi-list-item vi-list-item-step pad_top0">
+                <div class="vi-list-lt flex-grow mr0">
+                  <div class="vi-step vi-step-purple dis-flex align-items-center mb8">
+                    <div class="vi-txt-title vi-step-current mr-auto">
+                      1<span class="vi-txt-body vi-txt-b600"> / 10次</span>
+                    </div>
+                    <div class="ml-auto vi-txt-body vi-txt-b600">
+                      每次扣款 <span class="vi-txt-bold">新臺幣 1,000</span>
+                      <span class="vi-icon vi-icon-base icon-pencil-g top-4px"></span>
+                    </div>
+                  </div>
+                  <div class="vi-progress-bar vi-progress-bar-purple">
+                    <!-- value = 12/20 -->
+                    <progress class="progress-bar-handle" max="100" value="60"></progress>
+                  </div>
+                </div>
+                <!-- <div class="vi-list-rt">
+                  <button class="vi-btn vi-btn-secondary vi-btn-xs">立即繳款</a>
+                </div> -->
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- id 是 demo 用的，開發請拉掉 -->
+        <div id="target-done" class="vi-card vi-overview-card hide">
+          <a class="vi-card-header">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-txt-headline dis-flex align-items-center">
+                <span class="vi-flag vi-flag-usd mr8"></span>
+                美元
+              </div>
+              <div class="vi-tag-group">
+                <div class="vi-tag vi-tag-g200">
+                  <div class="vi-txt">已到期</div>
+                </div>
+                <!-- 紅色的狀態 -->
+                <!-- <div class="vi-tag vi-tag-r300">
+                  <div class="vi-txt">已到期</div>
+                </div> -->
+              </div>
+            </div>
+          </a>
+          <div class="vi-card-body">
+            <div class="mr-auto moneybaby-img">
+              <img src="../../../../../inc/img/img/moneybaby/usd-10.svg" alt="">
+            </div>
+            <div class="ml-auto rt">
+              <div class="vi-txt-body vi-txt-b600 mb4">已累積金額</div>
+              <div class="vi-txt-fc mb4">
+                <span class="txt_normal vi-txt-callout vi-txt-b600 currency mr4">EUR</span>
+                <span class="vi-txt-headline vi-txt-b600">300.00</span>
+              </div>
+              <div class="vi-txt-callout vi-txt-b500 mt4">
+              (約當新臺幣 1,000,000)
+              </div>
+            </div>
+          </div>
+          <div class="vi-card-footer">
+            <ul class="vi-list vi-list-overview">
+              <li class="vi-list-item vi-list-item-step pad_top0">
+                <div class="vi-list-lt flex-grow mr0">
+                  <div class="vi-step vi-step-purple dis-flex align-items-center mb8">
+                    <div class="vi-txt-title vi-step-current mr-auto">
+                      10<span class="vi-txt-body vi-txt-b600"> / 10次</span>
+                    </div>
+                    <div class="ml-auto vi-txt-body vi-txt-b600">
+                      每次扣款 <span class="vi-txt-bold">新臺幣 1,000</span>
+                      <!-- <span class="vi-icon vi-icon-base icon-pencil-g top-4px"></span> -->
+                    </div>
+                  </div>
+                  <div class="vi-progress-bar vi-progress-bar-purple">
+                    <!-- value = 12/20 -->
+                    <progress class="progress-bar-handle" max="100" value="60"></progress>
+                  </div>
+                </div>
+                <!-- <div class="vi-list-rt">
+                  <button class="vi-btn vi-btn-secondary vi-btn-xs">立即繳款</a>
+                </div> -->
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- id 是 demo 用的，開發請拉掉 -->
+        <div id="target-cancel" class="vi-card vi-overview-card hide">
+          <a class="vi-card-header">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-txt-headline dis-flex align-items-center">
+                <span class="vi-flag vi-flag-usd mr8"></span>
+                美元
+              </div>
+              <div class="vi-tag-group">
+                <div class="vi-tag vi-tag-r300">
+                  <div class="vi-txt">取消扣款</div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <div class="vi-card-body">
+            <div class="mr-auto moneybaby-img">
+              <img src="../../../../../inc/img/img/moneybaby/usd-5-6.svg" alt="">
+            </div>
+            <div class="ml-auto rt">
+              <div class="vi-txt-body vi-txt-b600 mb4">已累積金額</div>
+              <div class="vi-txt-fc mb4">
+                <span class="txt_normal vi-txt-callout vi-txt-b600 currency mr4">EUR</span>
+                <span class="vi-txt-headline vi-txt-b600">300.00</span>
+              </div>
+              <div class="vi-txt-callout vi-txt-b500 mt4">
+              (約當新臺幣 1,000,000)
+              </div>
+            </div>
+          </div>
+          <div class="vi-card-footer">
+            <ul class="vi-list vi-list-overview">
+              <li class="vi-list-item vi-list-item-step pad_top0">
+                <div class="vi-list-lt flex-grow mr0">
+                  <div class="vi-step vi-step-purple dis-flex align-items-center mb8">
+                    <div class="vi-txt-title vi-step-current mr-auto">
+                      5<span class="vi-txt-body vi-txt-b600"> / 10次</span>
+                    </div>
+                    <div class="ml-auto vi-txt-body vi-txt-b600">
+                      每次扣款 <span class="vi-txt-bold">新臺幣 1,000</span>
+                      <!-- <span class="vi-icon vi-icon-base icon-pencil-g top-4px"></span> -->
+                    </div>
+                  </div>
+                  <div class="vi-progress-bar vi-progress-bar-purple">
+                    <!-- value = 12/20 -->
+                    <progress class="progress-bar-handle" max="100" value="60"></progress>
+                  </div>
+                </div>
+                <!-- <div class="vi-list-rt">
+                  <button class="vi-btn vi-btn-secondary vi-btn-xs">立即繳款</a>
+                </div> -->
+              </li>
+            </ul>
+          </div>
+        </div>
+      
+      </div>
+
+      
+      <div class="vi-card-s mb12">
+        <div class="vi-card-header">
+          <div class="vi-line-title">扣款資訊</div>
+        </div>
+        <div class="vi-card-body pad_btm8">
+          <ul class="vi-detail-list">
+            <li class="vi-list-item">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body vi-txt-b600">設定日期</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold vi-txt-b900">2022/04/22</div>
+              </div>
+            </li>
+            <li class="vi-list-item">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body vi-txt-b600">每月扣款日</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold vi-txt-b900">每月 22 日</div>
+                <div class="vi-txt-callout vi-txt-b500">指定交易日若為本行非營業日，將遞延至次一本行營業日執行交易</div>
+              </div>
+            </li>
+            <li class="vi-list-item">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body vi-txt-b600">扣款期間</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold vi-txt-b900">2022/10/22-2023/02/22</div>
+              </div>
+            </li>
+            <li class="vi-list-item">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body vi-txt-b600">扣款帳號</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="dis-flex flex-justify-end">
+                  <span class="vi-flag vi-flag-twd mr8"></span>
+                  <span class="vi-txt-body-bold vi-txt-b900">新臺幣 - 活期存款</span>
+                </div>
+                <div class="vi-txt-body-bold vi-txt-b900">0000251300001234</div>
+              </div>
+            </li>
+            <li class="vi-list-item">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body vi-txt-b600">到期是否續存</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold vi-txt-b900">不續存</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      
+      <div class="vi-card-s">
+        <div class="vi-card-header">
+          <div class="vi-line-title">定存資訊</div>
+        </div>
+        <div class="vi-card-body">
+          <div id="overflow-list" class="overflow-list overflow-collapse">
+            <ul class="vi-detail-list">
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">定存幣別</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900">
+                    <div class="dis-flex flex-justify-end">
+                      <span class="vi-flag vi-flag-usd mr8"></span>
+                      <span class="vi-txt-body-bold vi-txt-b600">美元</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">定存利率</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900">固定利率</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">利率</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900">依本行錢寶寶定存牌告/優惠利率為準</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">付息方式</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900">每月轉帳</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">本金/匯息轉入帳號</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="dis-flex flex-row align-items-center flex-justify-end">
+                    <div class="dis-flex flex-column mr8">
+                      <div class="dis-flex">
+                        <span class="vi-flag vi-flag-usd mr8"></span> 
+                        <span class="vi-txt-body-bold vi-txt-b900">美元 - My Way數位帳戶</span>
+                      </div>
+                      <div class="vi-txt-body-bold vi-txt-b900">000049882778910</div>
+                    </div>
+                    <div class="vi-icon vi-icon-base icon-pencil-g"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">定存期別</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900">365天</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">開戶日</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900">2022/04/14</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">起息日</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900">2022/04/14</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">到期日</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900">2022/04/14</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">錢寶寶定存序號</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900">000001</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="mb32"></div>
+      
+
+      <div id="footer">
+        <div class="vi-page-footer">
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="one-btn" class="vi-btn-group hide">
+            <div class="btn vi-btn vi-btn-l vi-btn-primary">定存解約</div>
+          </div>
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="two-btn" class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-secondary">定存解約</div>
+            <div class="btn vi-btn vi-btn-primary">修改設定</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="trigger-ing" class="vi-txt-g500 mb16">-> 扣款中 demo</div>
+      <div id="trigger-pause" class="vi-txt-g500 mb16">-> 暫停扣款 demo</div>
+      <div id="trigger-done" class="vi-txt-g500 mb16">-> 已到期 demo</div>
+      <div id="trigger-cancel" class="vi-txt-g500 mb16">-> 取消扣款 demo</div>
+
+
+    </div>
+    <!-- main_container -->
+  </div>
+</body>
+<!-- body-wrap -->
+</html>
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+
+
+
+$(document).ready(function(){
+  
+  $('#trigger-ing').on('click', function() {
+    $('#target-ing').removeClass('hide');
+    $('#target-ing').siblings().addClass('hide');
+    $('#one-btn').addClass('hide');
+    $('#two-btn').removeClass('hide');
+  });
+  
+  $('#trigger-pause').on('click', function() {
+    $('#target-pause').removeClass('hide');
+    $('#target-pause').siblings().addClass('hide');
+    $('#one-btn').addClass('hide');
+    $('#two-btn').removeClass('hide');
+  });
+  
+  $('#trigger-done').on('click', function() {
+    $('#target-done').removeClass('hide');
+    $('#target-done').siblings().addClass('hide');
+    $('#one-btn').removeClass('hide');
+    $('#two-btn').addClass('hide');
+  });
+  
+  $('#trigger-cancel').on('click', function() {
+    $('#target-cancel').removeClass('hide');
+    $('#target-cancel').siblings().addClass('hide');
+    $('#one-btn').removeClass('hide');
+    $('#two-btn').addClass('hide');
+  });
+  
+});
+</script>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base_2023.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style> 
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<!-- if scroll, add .vi-page-header-fix -->
+<body class="vi-bg-mint en">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">Recent Transfer</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <!-- <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500" href="#">最近轉帳</a> -->
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap scroll vi-bg-mint">
+
+    <div class="main_container pad_top24">
+      
+      <div class="vi-container">
+        
+        <!-- id 是 demo 用的，開發請拉掉 -->
+        <div id="has-value">
+          <div class="vi-txt-callout vi-txt-b600 mb16">Pin your favorite transaction data on top to keep the record of currency and account.
+(max list 10 transaction data in 3 months)</div>
+
+          <div class="card-wrap">
+            <!-- 如果已經 pin 了，加 .is-selected，如果沒有就拿掉 .is-selected -->
+            <div class="vi-card overflow-hidden is-selected">
+              <div class="vi-card-header pad_btm0">
+                <div class="d-flex justify-content-between w-100">
+                  <div class="dis-flex align-items-start mb8">
+                    <span class="vi-flag vi-flag-usd mr8 top-2px"></span>
+                    <span class="vi-txt-headline vi-txt-b600">美元</span>
+                  </div>
+                  <div class="vi-icon-circle-border">
+                    <label class="vi-icon-pin">
+                      <input type="checkbox" checked>
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="vi-card-body">
+                <div class="exchange-currency-amount-group">
+                  <div class="group-select align-items-center pad_btm12">
+                    <div class="select-wrap">
+                      <div class="vi-txt-body vi-txt-b600 mt4 mb4">我的外幣帳戶</div>
+                      <div class="vi-txt-body vi-txt-b500">(01234)</div>
+                    </div>
+                    <div class="icon-space mt0 ml8 mr8">
+                      <div class="vi-icon vi-icon-base vi-icon-exchange-oneway-solid-b"></div>
+                    </div>
+                    <div class="select-wrap">
+                      <div class="vi-txt-body vi-txt-b600 mt4 mb4">媽外幣帳戶</div>
+                      <div class="vi-txt-body vi-txt-b500">(86846)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="vi-card-footer pad_top0 pad_btm0">
+                <div class="vi-row">
+                  <div class="vi-card-footer-event vi-bg-b100">
+                    <div class="vi-txt-callout vi-txt-b500">Transaction Date：2022/09/13</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="vi-card overflow-hidden">
+              <div class="vi-card-header pad_btm0">
+                <div class="d-flex justify-content-between w-100">
+                  <div class="dis-flex align-items-start mb8">
+                    <span class="vi-flag vi-flag-jpy mr8 top-2px"></span>
+                    <span class="vi-txt-headline vi-txt-b600">日元</span>
+                  </div>
+                  <div class="vi-icon-circle-border">
+                    <label class="vi-icon-pin">
+                      <input type="checkbox">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="vi-card-body">
+                <div class="exchange-currency-amount-group">
+                  <div class="group-select align-items-center pad_btm12">
+                    <div class="select-wrap">
+                      <div class="vi-txt-body vi-txt-b600 mt4 mb4">我的外幣帳戶</div>
+                      <div class="vi-txt-body vi-txt-b500">(01234)</div>
+                    </div>
+                    <div class="icon-space mt0 ml8 mr8">
+                      <div class="vi-icon vi-icon-base vi-icon-exchange-oneway-solid-b"></div>
+                    </div>
+                    <div class="select-wrap">
+                      <div class="vi-txt-body vi-txt-b600 mt4 mb4">金小四外幣帳戶</div>
+                      <div class="vi-txt-body vi-txt-b500">(86846)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="vi-card-footer pad_top0 pad_btm0">
+                <div class="vi-row">
+                  <div class="vi-card-footer-event vi-bg-b100">
+                    <div class="vi-txt-callout vi-txt-b500">Transaction Date：2022/09/13</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="vi-card overflow-hidden">
+              <div class="vi-card-header pad_btm0">
+                <div class="d-flex justify-content-between w-100">
+                  <div class="dis-flex align-items-start mb8">
+                    <span class="vi-flag vi-flag-cnh mr8 top-2px"></span>
+                    <span class="vi-txt-headline vi-txt-b600">人民幣</span>
+                  </div>
+                  <div class="vi-icon-circle-border">
+                    <label class="vi-icon-pin">
+                      <input type="checkbox">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="vi-card-body">
+                <div class="exchange-currency-amount-group">
+                  <div class="group-select align-items-center pad_btm12">
+                    <div class="select-wrap">
+                      <div class="vi-txt-body vi-txt-b600 mt4 mb4">我的外幣帳戶</div>
+                      <div class="vi-txt-body vi-txt-b500">(01234)</div>
+                    </div>
+                    <div class="icon-space mt0 ml8 mr8">
+                      <div class="vi-icon vi-icon-base vi-icon-exchange-oneway-solid-b"></div>
+                    </div>
+                    <div class="select-wrap">
+                      <div class="vi-txt-body vi-txt-b600 mt4 mb4">金小五外幣帳戶</div>
+                      <div class="vi-txt-body vi-txt-b500">(86846)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="vi-card-footer pad_top0 pad_btm0">
+                <div class="vi-row">
+                  <div class="vi-card-footer-event vi-bg-b100">
+                    <div class="vi-txt-callout vi-txt-b500">Transaction Date：2022/09/13</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="vi-card overflow-hidden">
+              <div class="vi-card-header pad_btm0">
+                <div class="d-flex justify-content-between w-100">
+                  <div class="dis-flex align-items-start mb8">
+                    <span class="vi-flag vi-flag-cnh mr8 top-2px"></span>
+                    <span class="vi-txt-headline vi-txt-b600">人民幣</span>
+                  </div>
+                  <div class="vi-icon-circle-border">
+                    <label class="vi-icon-pin">
+                      <input type="checkbox" name="checkbox" >
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="vi-card-body">
+                <div class="exchange-currency-amount-group">
+                  <div class="group-select align-items-center pad_btm12">
+                    <div class="select-wrap">
+                      <div class="vi-txt-body vi-txt-b600 mt4 mb4">我的外幣帳戶</div>
+                      <div class="vi-txt-body vi-txt-b500">(01234)</div>
+                    </div>
+                    <div class="icon-space mt0 ml8 mr8">
+                      <div class="vi-icon vi-icon-base vi-icon-exchange-oneway-solid-b"></div>
+                    </div>
+                    <div class="select-wrap">
+                      <div class="vi-txt-body vi-txt-b600 mt4 mb4">金小五外幣帳戶</div>
+                      <div class="vi-txt-body vi-txt-b500">(86846)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      
+        <!-- id 是 demo 用的，開發請拉掉 -->
+        <div id="target-empty" class="hide">
+          <div class="vi-empty pad_top32">
+            <span class="vi-empty-img"></span>  
+            <div class="vi-txt-body vi-txt-b600">No record in last 3 months</div>
+          </div>
+        </div>
+      
+      <div id="trigger-empty" class="vi-txt-g500 mt16 mb16">-> 空值 demo 切換，詳細情境請參考規格書</div>
+
+    </div>
+    <!-- main_container -->
+  </div>
+</body>
+<!-- body-wrap -->
+</html>
+
+
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// scroll fixed header
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 0) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+  }
+}
+
+
+$(document).ready(function(){
+
+  // 空值 切換 demo
+  $('#trigger-empty').on('click', function() {
+    $('#has-value, #target-empty').toggleClass('hide');
+  });
+  
+  
+  // Pin event demo
+  $('input[type=checkbox]').on('change', function() {
+
+    if ($(this).is(':checked')) {
+      $(this).closest('.vi-card').addClass('is-selected');
+      $(this).closest('.vi-card').insertBefore($('.card-wrap .vi-card:first'))
+    }
+    else {
+      $(this).closest('.vi-card').removeClass('is-selected');
+      $(this).closest('.vi-card').insertAfter($('.card-wrap .vi-card:last'))
+    }
+
+    console.log('change');
+    
+  });
+
+
+});
+</script>

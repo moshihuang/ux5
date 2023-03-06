@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .divider-txt {
+      margin: 0 16px;
+      color: #757575;
+      text-align: center;
+    }
+    .divider-txt span {
+      display: block;
+      color: #757575;
+      font-size: 15px;
+      position: relative;
+    }
+    .divider-txt span:before,
+    .divider-txt span:after {
+      content: '';
+      width: calc(50% - 18px);
+      height: 1px;
+      border-top: 1px solid #DAE1E5;
+      position: absolute;
+      top: 10px;
+    }
+    .divider-txt span:before {
+      left: 0;
+    }
+    .divider-txt span:after {
+      right: 0;
+    }
+  </style>
+</head>
+
+<!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+<header class="">
+  <div class="vi-page-header-normal">
+    <div class="vi-page-header-lt">
+      <button class="vi-btn" ontouchstart="">
+        <span class="vi-icon vi-icon-base icon-page-back"></span>
+      </button>
+    </div>
+    <div class="vi-page-header-ct">
+      <h1 class="vi-page-title">線上開數位帳戶</h1>
+    </div>
+    <!-- <div class="vi-page-header-rt">
+      <span class="vi-icon vi-icon-base vi-modal-close"></span>
+    </div> -->
+  </div>
+</header>
+
+<body class="body-wrap scroll vi-bg-mint">
+  <div class="main_container">
+
+    <div class="vi-page-indicator">
+      <div class="vi-progress-bar">
+        <progress class="progress-bar-handle" max="100" value="100"></progress>
+      </div>
+      <div class="vi-txt-b900 vi-txt-title">身分認證</div>
+      <div class="vi-step vi-txt-g600">
+        <i18n>步驟</i18n>
+        <span class="vi-step-current">3</span><span class="vi-txt-b500">/3</span>
+      </div>
+    </div>
+
+    <div class="vi-container">
+      <div class="dis-flex align-items-end">
+        <div class="vi-txt-body vi-txt-b900 flex-grow pad_btm16 forAEM" [inject-dom]="pageData.model.certificationMemo">
+          最後一步囉～所選的驗證方式將會決定子女的轉帳額度
+        </div>
+        <img class="wid_120px flex-shrink-0" src="../../../../../inc/img/icon/bi-final-step.svg" alt="">
+      </div>
+
+      <div class="vi-card">
+        <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+          <div class="vi-txt-headline mr-auto">
+            本行帳戶驗證
+          </div>
+          <div class="ml-auto rt flex-grow">
+          </div>
+        </a>
+        <div class="vi-card-body pad_btm16">
+          <div class="vi-txt-body vi-txt-b600 forAEM" [inject-dom]="pageData.model.creditCardMemo">
+            驗證成功後，子女可轉帳給他人，轉帳限額每筆 5 萬、每日 10 萬、每月 20 萬。
+          </div>
+        </div>
+      </div>
+
+      <div class="vi-card">
+        <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+          <div class="vi-txt-headline mr-auto">
+            他行銀行帳戶驗證
+            <span href="" class="ml4 vi-icon vi-icon-base icon-question-mark top-4px" (click)="showOtherBankMemo($event)"></span>
+          </div>
+          <div class="ml-auto rt flex-grow">
+          </div>
+        </a>
+        <div class="vi-card-body pad_btm16">
+          <div class="vi-txt-body vi-txt-b600 forAEM" [inject-dom]="pageData.model.otherBankMemo">
+            驗證成功即可轉帳給他人，轉帳限額每筆 1 萬、每日 3 萬、每月 5 萬。
+          </div>
+          <div class="vi-txt-body vi-txt-r500 mt8" translate="deposit_ot002_120.other.bank.notice">註：不可使用數位帳戶驗證</div>
+        </div>
+      </div>
+
+
+      <div class="vi-card">
+        <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+          <div class="vi-txt-headline mr-auto">
+            本行帳戶驗證
+          </div>
+          <div class="ml-auto rt flex-grow">
+          </div>
+        </a>
+        <div class="vi-card-body pad_btm16">
+          <div class="vi-txt-body vi-txt-b600 forAEM" [inject-dom]="pageData.model.creditCardMemo">
+            驗證成功後，子女可轉帳給他人，轉帳限額每筆 5 萬、每日 10 萬、每月 20 萬。
+          </div>
+        </div>
+        
+        <div class="divider-txt">
+          <span>或</span>
+        </div>
+
+        <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+          <div class="vi-txt-headline mr-auto">
+            他行銀行帳戶驗證
+          </div>
+          <div class="ml-auto rt flex-grow">
+          </div>
+        </a>
+        <div class="vi-card-body pad_btm16">
+          <div class="vi-txt-body vi-txt-b600 forAEM" [inject-dom]="pageData.model.otherBankMemo">
+            驗證成功即可轉帳給他人，轉帳限額每筆 1 萬、每日 3 萬、每月 5 萬。
+          </div>
+          <div class="vi-txt-body vi-txt-r500 mt8" translate="deposit_ot002_120.other.bank.notice">註：不可使用數位帳戶驗證</div>
+        </div>
+      </div>
+
+      
+
+      <div class="vi-card">
+        <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+          <div class="vi-txt-headline mr-auto">
+            本行信用卡驗證
+          </div>
+          <div class="ml-auto rt flex-grow">
+          </div>
+        </a>
+        <div class="vi-card-body pad_btm16">
+          <div class="vi-txt-body vi-txt-b600 forAEM" [inject-dom]="pageData.model.creditCardMemo">
+            簡易驗證成功
+            <span class="vi-txt-r500">轉帳限轉本行名下帳戶，且無法轉帳給他人。</span>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="mt16 mb24 ct" *ngIf="pageData.model.showSmsButton">
+        <ng-container *ngIf="!pageData.model.disabledSms">
+          <span class="vi-txt-body vi-txt-b600 forAEM" [inject-dom]="pageData.model.smsMemo">手邊無驗證卡片?</span>
+          <a href="" class="vi-text-link js_demo_toast" translate="deposit_ot002_120.button.send.sms"
+            (click)="send($event)">發送稍後驗證連結至手機</a>
+        </ng-container>
+
+        <span class="vi-txt-body vi-txt-b600" translate="deposit_ot002_120.sms.send.message"
+          *ngIf="pageData.model.disabledSms">已發送驗證連結至手機</span>
+      </div>
+
+      <div class="vi-remarks forAEM" [inject-dom]="pageData.model.remark" *ngIf="pageData.model.remark">
+        <h4 class="vi-remarks-title">備註</h4>
+        <ol class="vi-ordered-list-num">
+          <li>注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項注意事項</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+  <div class="vi-gotop"></div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>

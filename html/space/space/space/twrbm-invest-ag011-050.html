@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+
+<body class="vi-bg-mint ">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">編輯目標</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <a class="vi-icon vi-icon-base icon-start-default-w"></a>
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap vi-bg-mint">
+    
+    <div class="main_container vi-has-foot-btn pad_top24">
+
+      <div class="vi-container">
+
+        <div class="vi-card pad_btm16">
+          <div class="vi-card-header">
+            <div class="vi-line-title">現有資產</div>
+          </div>
+          <div class="vi-card-body">
+            <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group">
+                <span class="title">金融資產</span>
+                <input type="tel" placeholder="請輸入金額">
+                <span class="unit">萬</span>
+              </div>
+              <!-- <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div> -->
+            </div>
+            <div class="vi-txt-info rt">說明文字</div>
+            
+            <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group">
+                <span class="title">不動產</span>
+                <input type="tel" placeholder="請輸入金額">
+                <span class="unit">萬</span>
+              </div>
+              <!-- <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div> -->
+            </div>
+            <div class="vi-txt-info rt"> (土地、房屋...)</div>
+            
+            <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group">
+                <span class="title">動產</span>
+                <input type="tel" placeholder="請輸入金額">
+                <span class="unit">萬</span>
+              </div>
+              <!-- <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div> -->
+            </div>
+            <div class="vi-txt-info rt"> (汽車、珠寶...)</div>
+            
+            <div class="vi-dashed-divider mt16 mb16"></div>
+            
+            <div class="dis-flex align-items-baseline flex-justify-end">
+              <span class="vi-txt-body vi-txt-b600 mr12">資產總額</span>
+              <span class="vi-txt-headline vi-txt-b600">3,350</span>
+              <span class="vi-txt-body vi-txt-b600 ml4">萬</span>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="vi-card pad_btm8">
+          <div class="vi-card-header">
+            <div class="vi-line-title">傳承對象</div>
+          </div>
+          <div class="vi-card-body">
+            <div class="vi-txt-body vi-txt-b600">(可多選)</div>
+            
+            <div class="vi-form-group mb4">
+              <label class="vi-checkbox">
+                <input type="checkbox">
+                <span class="vi-checkbox-mark"></span>
+                <span class="vi-checkbox-txt">配偶</span>
+              </label>
+            </div>
+            <div class="vi-form-group mb4">
+              <label class="vi-checkbox">
+                <input type="checkbox">
+                <span class="vi-checkbox-mark"></span>
+                <span class="vi-checkbox-txt">父母親</span>
+              </label>
+            </div>
+            
+            <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group vi-counter-group">
+                <span class="btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                  <span class="vi-icon vi-icon-minus"></span>
+                </span>
+                <input type="tel" name="quant[1]" class="input-number" value="1" min="0" max="10">
+                <span class="btn-number" data-type="plus" data-field="quant[1]">
+                  <span class="vi-icon vi-icon-plus"></span>
+                </span>
+              </div>
+            </div>
+            
+            
+            <div class="vi-form-group mb4">
+              <label class="vi-checkbox">
+                <input type="checkbox">
+                <span class="vi-checkbox-mark"></span>
+                <span class="vi-checkbox-txt">子女</span>
+              </label>
+            </div>
+            
+            <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group vi-counter-group">
+                <span class="btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                  <span class="vi-icon vi-icon-minus"></span>
+                </span>
+                <input type="tel" name="quant[1]" class="input-number" value="1" min="0" max="10">
+                <span class="btn-number" data-type="plus" data-field="quant[1]">
+                  <span class="vi-icon vi-icon-plus"></span>
+                </span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        <div class="vi-card pad_btm8">
+          <div class="vi-card-header">
+            <div class="vi-line-title">其他準備金</div>
+            <div class="ml-auto vi-txt-body-bold vi-txt-g500">不懂？詢問專人</div>
+          </div>
+          <div class="vi-card-body">
+            <div class="vi-txt-body vi-txt-b600 mb8">若有其他金額要傳承，可加入至其他準備金，跟遺產稅一起透過壽險來達到目標</div>
+            
+            <div class="vi-form-group">
+              <label class="vi-checkbox">
+                <input type="checkbox">
+                <span class="vi-checkbox-mark"></span>
+                <span class="vi-checkbox-txt">我有其他準備金</span>
+              </label>
+            </div>
+            
+            <div class="vi-form-group mt4" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group">
+                <span class="title large-title">金額</span>
+                <input type="tel" value="" placeholder="請輸入金額">
+                <span class="unit">萬</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="mb32"></div>
+        
+      </div>
+
+      <div id="footer">
+        <div class="vi-page-footer">
+          <div class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-secondary">取消</div>
+            <div class="btn vi-btn vi-btn-primary">儲存</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// scroll fixed header
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 0) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+  }
+}
+
+
+$(document).ready(function(){
+  // counter group
+  $('.btn-number').click(function(e){
+    e.preventDefault();
+    
+    fieldName = $(this).attr('data-field');
+    type      = $(this).attr('data-type');
+    var input = $("input[name='" + fieldName + "']");
+    var currentVal = parseInt(input.val());
+    
+    if (!isNaN(currentVal)) {
+      if (type == 'minus') {
+        if (currentVal > input.attr('min')) {
+          input.val(currentVal - 1).change();
+        } 
+        if (parseInt(input.val()) == input.attr('min')) {
+          $(this).attr('disabled', true).addClass('disabled');
+        }
+      } 
+      else if (type == 'plus') {
+        if (currentVal < input.attr('max')) {
+          input.val(currentVal + 1).change();
+        }
+        if (parseInt(input.val()) == input.attr('max')) {
+          $(this).attr('disabled', true);
+          $(this).attr('disabled', true).addClass('disabled');
+        }
+      }
+    } 
+    else {
+      input.val(0);
+    }
+  });
+
+  $('.input-number').focusin(function() {
+    $(this).data('oldValue', $(this).val());
+  });
+
+  $('.input-number').change(function() {
+      minValue =  parseInt($(this).attr('min'));
+      maxValue =  parseInt($(this).attr('max'));
+      valueCurrent = parseInt($(this).val());
+      
+      name = $(this).attr('name');
+      if (valueCurrent >= minValue) {
+        $(".btn-number[data-type='minus'][data-field='" + name + "']").removeAttr('disabled').removeClass('disabled');
+      }
+      else {
+        $(this).val($(this).data('oldValue'));
+      }
+      if (valueCurrent <= maxValue) {
+        $(".btn-number[data-type='plus'][data-field='" + name + "']").removeAttr('disabled').removeClass('disabled');
+      } 
+      else {
+        $(this).val($(this).data('oldValue'));
+      }
+  });
+
+});
+</script>

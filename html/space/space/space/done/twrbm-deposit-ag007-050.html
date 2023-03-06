@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style> 
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<!-- if scroll, add .vi-page-header-fix -->
+<body class="vi-bg-mint">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">修改設定</h1>
+      </div>
+      <!-- <div class="vi-page-header-rt">
+        <span class="vi-icon vi-icon-base vi-modal-close"></span>
+      </div> -->
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap scroll vi-bg-mint">
+
+    <div class="main_container pad_top24">
+
+      <div class="vi-container">
+        
+        <div class="vi-txt-title mb16">確認資訊</div>
+        
+        <div class="vi-card">
+          <div class="vi-card-header">
+            <div class="vi-line-title ">錢寶寶設定</div>
+          </div>
+          <div class="vi-card-body">
+            <ul class="vi-detail-list">
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">扣款狀態</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900">取消 (不再扣款)</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">扣款金額</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900">新臺幣 1,000</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">本金/匯息<br>轉入帳號</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="dis-flex flex-justify-end txt-ellipsis-one-line">
+                    <span class="vi-flag vi-flag-usd mr8"></span>
+                    <span class="vi-txt-body-bold vi-txt-b600">美元 - My Way數位帳戶</span>
+                  </div>
+                  <div class="vi-txt-body-bold vi-txt-b900">000049882778910</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class="vi-card">
+          <div class="vi-card-header">
+            <div class="vi-line-title">定存資訊</div>
+          </div>
+          <div class="vi-card-body">
+            <ul class="vi-detail-list">
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">每月扣款日</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900">每月 22 號</div>
+                  <div class="vi-txt-callout vi-txt-b500">指定交易日若為本行非營業日，將遞延至次一本行營業日執行交易</div>
+
+                  <!-- 其它二種狀態文字 -->
+                  <!-- <div class="vi-txt-body-bold vi-txt-r600">暫停扣款</div>
+                  <div class="vi-txt-callout vi-txt-r600">最後一期扣款日到期前都可以恢復扣款</div>
+
+                  <div class="vi-txt-body-bold vi-txt-r600">取消扣款</div>
+                  <div class="vi-txt-callout vi-txt-r600">提醒您，若取消將無法再恢復扣款</div> -->
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">扣款帳號</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="dis-flex flex-justify-end txt-ellipsis-one-line">
+                    <span class="vi-flag vi-flag-twd mr8"></span>
+                    <span class="vi-txt-body-bold vi-txt-b600">新臺幣 - 活期存款</span>
+                  </div>
+                  <div class="vi-txt-body-bold vi-txt-b900">0000251300001234</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">定存幣別</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="dis-flex flex-justify-end">
+                    <span class="vi-flag vi-flag-usd mr8"></span>
+                    <span class="vi-txt-body-bold vi-txt-b600">美元</span>
+                  </div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">定存利率</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900">固定利率</div>
+                </div>
+              </li>
+              <li class="vi-list-item">
+                <div class="vi-list-lt">
+                  <div class="vi-txt-body vi-txt-b600">付息方式</div>
+                </div>
+                <div class="vi-list-rt">
+                  <div class="vi-txt-body-bold vi-txt-b900">到期轉帳</div>
+                </div>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+        
+        
+        <div class="vi-card">
+          <div class="vi-card-header pad_btm16">
+            <div class="vi-line-title">交易認證</div>
+          </div>
+          <div class="vi-card-body pad_btm8">
+            <div class="vi-form-group">
+              <div class="vi-input-group">
+                <span class="title">網銀密碼</span>
+                <input type="password" maxlength="12" autocomplete="off" placeholder="請留意英文大小寫之不同">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="vi-btn-group mt24 mb24">
+          <div class="vi-btn vi-btn-primary">確認送出</div>
+        </div>
+        
+        <!-- 備註 現有版型 這裡僅示意 -->
+        <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+        <div class="mt16">
+          <div class="vi-note-accordion">
+            <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+              <div class="forAEM base-style break-word mr4">
+                標題
+              </div>
+              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+            </div>
+            <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+              <div class="vi-card-body forAEM base-style break-word">
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- main_container -->
+  </div>
+</body>
+<!-- body-wrap -->
+</html>
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-account-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">選擇扣款帳號</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="rt vi-txt-body mb4">可用餘額</div>
+        <ul class="vi-list vi-list-px8 vi-list-py8 vi-list-noline vi-list-bg-gray super-card-select-account">
+          <!-- 目前的帳戶 加上 active -->
+          <a class="vi-list-item active" href="">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="dis-flex align-items-center mb8">
+                  <span class="vi-flag vi-flag-twd mr8 flex-shrink-0"></span>
+                  <span class="vi-txt-body-bold vi-txt-b600">My Way 數位</span>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold"></div>
+              </div>
+            </div>
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body">0000251300001234</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold">
+                  <!-- <span class="currency mr4">USD</span> -->
+                  <span>10,294</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="dis-flex align-items-center mb8">
+                  <span class="vi-flag vi-flag-twd mr8 flex-shrink-0"></span>
+                  <span class="vi-txt-body-bold vi-txt-b600">My Way 數位</span>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold vi-txt-b600"></div>
+              </div>
+            </div>
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body vi-txt-b600">0000251300001234</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold vi-txt-b600">
+                  <!-- <span class="currency mr4">JPY</span> -->
+                  <span>100,000,000</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="dis-flex align-items-center mb8">
+                  <span class="vi-flag vi-flag-usd mr8 flex-shrink-0"></span>
+                  <span class="vi-txt-body-bold vi-txt-b600">美元 - My Way 數位</span>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold"></div>
+              </div>
+            </div>
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body">0000251300001234</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold">
+                  <span class="currency mr4">USD</span>
+                  <span>10,294</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="dis-flex align-items-center mb8">
+                  <span class="vi-flag vi-flag-jpy mr8 flex-shrink-0"></span>
+                  <span class="vi-txt-body-bold vi-txt-b600">日圓 - My Way 數位</span>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold vi-txt-b600"></div>
+              </div>
+            </div>
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body vi-txt-b600">0000251300001234</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold vi-txt-b600">
+                  <span class="currency mr4">JPY</span>
+                  <span>100,000,000</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </ul>
+          
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-currency-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">選擇定存幣別</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <ul class="vi-list vi-list-px8 vi-list-py12 super-card-select">
+          <!-- 如果已是選取 加 .active -->
+          <a class="vi-list-item active" href="">
+            <span class="vi-flag vi-flag-usd mr8"></span>
+            <span class="vi-txt-body-bold vi-txt-g500">美元</span>
+          </a>
+          <a class="vi-list-item" href="">
+            <span class="vi-flag vi-flag-jpy mr8"></span>
+            <span class="vi-txt-body-bold vi-txt-g500">日圓</span>
+          </a>
+          <a class="vi-list-item" href="">
+            <span class="vi-flag vi-flag-cnh mr8"></span>
+            <span class="vi-txt-body-bold vi-txt-g500">人民幣</span>
+          </a>
+          <a class="vi-list-item" href="">
+            <span class="vi-flag vi-flag-aud mr8"></span>
+            <span class="vi-txt-body-bold vi-txt-g500">澳幣</span>
+          </a>
+        </ul>
+          
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-income-account-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">選擇本金/匯息轉入帳號</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <ul class="vi-list vi-list-px8 vi-list-py8 vi-list-noline vi-list-bg-gray super-card-select-account">
+          <a class="vi-list-item" href="">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body-bold vi-txt-g500 mb4">0000251300001234</div>
+                <div class="dis-flex align-items-center">
+                  <span class="vi-flag vi-flag-jpy mr8"></span>
+                  <span class="vi-txt-body vi-txt-b900">日圓 - My Way 數位</span>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body vi-txt-b600 mb4">可用餘額</div>
+                <div class="vi-txt-body vi-txt-b600">
+                  <span>USD</span><span>10,294</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <!-- 目前的帳戶 加上 active -->
+          <a class="vi-list-item active" href="">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="dis-flex align-items-center mb8">
+                  <span class="vi-flag vi-flag-usd mr8 flex-shrink-0"></span>
+                  <span class="vi-txt-body-bold vi-txt-b600">美元 - My Way 數位</span>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold"></div>
+              </div>
+            </div>
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body">0000251300001234</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold">
+                  <span class="currency mr4">USD</span>
+                  <span>10,294</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="dis-flex align-items-center mb8">
+                  <span class="vi-flag vi-flag-usd mr8 flex-shrink-0"></span>
+                  <span class="vi-txt-body-bold vi-txt-b600">美元 - My Way 數位</span>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold"></div>
+              </div>
+            </div>
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body">0000251300001234</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold">
+                  <span class="currency mr4">USD</span>
+                  <span>10,294</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </ul>
+          
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-pay-interest-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">選擇付息方式</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-txt-body vi-txt-b900 mb16 ct">利息將轉到你定存的外幣帳戶<br>請選擇你想領取利息的方式 </div>
+        
+        <a class="vi-card vi-card-btn pad_btm16">
+          <div class="vi-card-header flex-justify-between vi-w-100">
+            <div class="vi-txt-body-bold vi-txt-b900 mr-auto">每月轉帳</div>
+          </div>
+          <div class="vi-card-body">
+            <div class="vi-txt-body vi-txt-b600">利息每個月轉到我的外幣活存帳戶</div>
+          </div>
+        </a>
+        
+        <a class="vi-card vi-card-btn pad_btm16">
+          <div class="vi-card-header flex-justify-between vi-w-100">
+            <div class="vi-txt-body-bold vi-txt-b900 mr-auto">到期轉帳</div>
+          </div>
+          <div class="vi-card-body">
+            <div class="vi-txt-body vi-txt-b600">利息在定存到期之後，在全部一次轉到我的外幣活存帳戶</div>
+          </div>
+        </a>
+          
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+<!-- 日曆 超人卡片 現有版型 這裡僅示意 這裡只有選 day 不是完整的日曆 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-datepicker-supercard" class="vi-modal hide">
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">請選擇扣款日</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <!-- add .vi-datepicker-panel -->
+        <div class="datepicker-complex-panel vi-datepicker-panel">
+          <!-- 內容來自 <modal-datepicker> 現有版型 這裡僅示意，有調整的地方已加上註解，分別為
+             調整 selector 的 icon class，
+             掉 年 月 的選項跟箭頭，
+             拿掉 年 的內容，
+             拿掉 月 的內容，
+             拿掉 星期x 的標題，
+             拿掉 old disabled day，
+             拿掉 new day，
+             29, 30, 31 加上 disabled
+          -->
+          
+          <!-- 拿掉 年 月 的選項跟箭頭 -->
+          <ul></ul>
+          
+          
+          <!--  -->
+          <div class="tab-content">
+            <!-- 拿掉 年 的內容 -->
+            <div class="tab-pane" id="1652684545785-tab-y"></div>
+            <!-- 拿掉 月 的內容 -->
+            <div class="tab-pane " id="1652684545785-tab-m"></div>
+            <!-- 拿掉 星期x 的標題 -->
+            <!-- 拿掉 old disabled day -->
+            <!-- 拿掉 new day -->
+            <!-- 29, 30, 31 加上 disabled -->
+            <div class="tab-pane active" id="1652684545785-tab-d">
+              <div class="date_d_only form_date" data-date="">
+                <div class="datepicker datepicker-inline">
+                  <div class="datepicker-days" style="">
+                    <table class="table-condensed">
+                      <tbody>
+                        <tr>
+                          <td class="day" data-date="1651363200000">1</td>
+                          <td class="day" data-date="1651449600000">2</td>
+                          <td class="day" data-date="1651536000000">3</td>
+                          <td class="day" data-date="1651622400000">4</td>
+                          <td class="day" data-date="1651708800000">5</td>
+                          <td class="day" data-date="1651795200000">6</td>
+                          <td class="day" data-date="1651881600000">7</td>
+                        </tr>
+                        <tr>
+                          <td class="day" data-date="1651968000000">8</td>
+                          <td class="day" data-date="1652054400000">9</td>
+                          <td class="day" data-date="1652140800000">10</td>
+                          <td class="day" data-date="1652227200000">11</td>
+                          <td class="day" data-date="1652313600000">12</td>
+                          <td class="day" data-date="1652400000000">13</td>
+                          <td class="day" data-date="1652486400000">14</td>
+                        </tr>
+                        <tr>
+                          <td class="day" data-date="1652572800000">15</td>
+                          <td class="day" data-date="1652659200000">16</td>
+                          <!-- 這裡不用加 today -->
+                          <td class="day" data-date="1652745600000">17</td>
+                          <td class="day" data-date="1652832000000">18</td>
+                          <td class="active day" data-date="1652918400000">19</td>
+                          <td class="day" data-date="1653004800000">20</td>
+                          <td class="day" data-date="1653091200000">21</td>
+                        </tr>
+                        <tr>
+                          <td class="day" data-date="1653177600000">22</td>
+                          <td class="day" data-date="1653264000000">23</td>
+                          <td class="day" data-date="1653350400000">24</td>
+                          <td class="day" data-date="1653436800000">25</td>
+                          <td class="day" data-date="1653523200000">26</td>
+                          <td class="day" data-date="1653609600000">27</td>
+                          <td class="day" data-date="1653696000000">28</td>
+                        </tr>
+                        <tr>
+                          <td class="day disabled" data-date="1653782400000">29</td>
+                          <td class="day disabled" data-date="1653868800000">30</td>
+                          <td class="day disabled" data-date="1653955200000">31</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// scroll fixed header
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 0) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+  }
+}
+
+$(document).ready(function(){
+
+
+});
+</script>

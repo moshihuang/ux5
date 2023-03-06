@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="360px" height="360px" viewBox="0 0 360 360" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Img_Avatar_Large_Face_Home</title>
+    <defs>
+        <path d="M215.526561,184.729181 C226.041004,184.729181 233.313292,175.16802 233.313292,172.187389 C233.313292,169.192473 226.027659,159.646311 215.526561,159.646311 C205.090916,159.646311 197.727121,169.192473 197.727121,172.187389 C197.727121,175.16802 205.14366,184.729181 215.526561,184.729181 Z" id="path-1"></path>
+        <path d="M143.27585,184.729181 C153.790293,184.729181 161.062581,175.16802 161.062581,172.187389 C161.062581,169.192473 153.776948,159.646311 143.27585,159.646311 C132.840205,159.646311 125.47641,169.192473 125.47641,172.187389 C125.47641,175.16802 132.892949,184.729181 143.27585,184.729181 Z" id="path-3"></path>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-5">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-6">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="2-首頁" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Img_Home-Avatar_Face">
+            <path d="M179.805138,247.560705 C195.655949,247.126876 208.720903,240.453803 219,227.541484" id="Path-33" stroke="#FF625E" stroke-width="6.37875"></path>
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Shape" fill="#FFFFFF" fill-rule="nonzero" transform="translate(215.520206, 172.187746) rotate(-3.000000) translate(-215.520206, -172.187746) " xlink:href="#path-1"></use>
+            <ellipse id="Oval" fill="#324148" mask="url(#mask-2)" cx="216.077086" cy="168.208102" rx="11.3228726" ry="12.5414349"></ellipse>
+            <mask id="mask-4" fill="white">
+                <use xlink:href="#path-3"></use>
+            </mask>
+            <use id="Shape" fill="#FFFFFF" fill-rule="nonzero" transform="translate(143.269495, 172.187746) rotate(3.000000) translate(-143.269495, -172.187746) " xlink:href="#path-3"></use>
+            <ellipse id="Oval" fill="#324148" mask="url(#mask-4)" cx="143.222873" cy="168.208102" rx="11.3228726" ry="12.5414349"></ellipse>
+            <ellipse id="Oval" fill="#FF918E" filter="url(#filter-5)" cx="115.327545" cy="190.907171" rx="11.2" ry="12.3140448"></ellipse>
+            <ellipse id="Oval-Copy" fill="#FF918E" filter="url(#filter-6)" cx="243.007545" cy="190.907171" rx="11.2" ry="12.3140448"></ellipse>
+            <path d="M200.536838,153.530341 C209.646176,146.273193 219.726257,143.425452 230.77708,144.987117" id="Path-36-Copy" stroke="#324148" stroke-width="5.315625" opacity="0.8" transform="translate(215.656959, 149.051320) rotate(11.000000) translate(-215.656959, -149.051320) "></path>
+            <path d="M129.87571,153.541276 C138.985048,146.284128 149.065128,143.436387 160.115951,144.998052" id="Path-36-Copy" stroke="#324148" stroke-width="5.315625" opacity="0.8" transform="translate(144.995830, 149.062255) scale(-1, 1) rotate(11.000000) translate(-144.995830, -149.062255) "></path>
+        </g>
+    </g>
+</svg>

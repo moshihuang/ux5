@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <script type="text/javascript" src="../../../../inc/base.js"></script>
+  <style>    
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<body class="vi-bg-mint">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">金融卡片解鎖</h1>
+      </div>
+      <div class="vi-page-header-rt"></div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap scroll vi-bg-mint">
+
+    <div class="main_container">
+      <div class="vi-container">
+        <div class="vi-txt-body vi-txt-b600 pad_top24 mb16">解鎖卡片可以再增加 3 次重試密碼的機會，請確認以下資訊是否正確。</div>
+        
+        <!-- id 是 demo 用的，開發請拉掉 -->
+        <div id="notSend" class="vi-card mb24">
+          <div class="vi-card-header">
+            <div class="vi-line-title">所在位置</div>
+          </div>
+          <div class="vi-card-body">
+            <div class="ct">
+              <div class="vi-txt-body vi-txt-b600 mb16">ATM 機台據點</div>
+              <div class="vi-txt-title mb12">統一義村</div>
+            </div>
+          </div>
+          <div class="vi-card-footer">
+            <div class="vi-btn-group pad_btm12">
+              <div class="vi-btn vi-btn-primary">確認，發送一次性密碼</div>
+              <!-- 發送後改這個 -->
+              <!-- <div class="vi-btn vi-btn-primary disabled">已發送</div> -->
+            </div>
+            <!-- 發送後才出現 -->
+            <!-- <div class="vi-txt-body-bold vi-txt-g500 mb4 rt">查看一次性密碼</div> -->
+          </div>
+        </div>
+        
+        <!-- id 是 demo 用的，開發請拉掉 -->
+        <div id="sent" class="vi-card mb24 hide">
+          <div class="vi-card-header">
+            <div class="vi-line-title">所在位置</div>
+          </div>
+          <div class="vi-card-body">
+            <div class="ct">
+              <div class="vi-txt-body vi-txt-b600 mb16">ATM 機台據點</div>
+              <div class="vi-txt-title mb12">統一義村</div>
+            </div>
+          </div>
+          <div class="vi-card-footer">
+            <div class="vi-btn-group pad_btm12">
+              <!-- <div class="vi-btn vi-btn-primary">確認，發送一次性密碼</div> -->
+              <!-- 發送後改這個 -->
+              <div class="vi-btn vi-btn-primary disabled">已發送</div>
+            </div>
+            <!-- 發送後才出現 -->
+            <div class="vi-txt-body-bold vi-txt-g500 mb4 rt">查看一次性密碼</div>
+          </div>
+        </div>
+        
+        
+        <!-- 備註 現有版型 這裡僅示意 -->
+        <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+        <div class="mt16">
+          <div class="vi-note-accordion">
+            <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+              <div class="forAEM base-style break-word mr4">
+                標題
+              </div>
+              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+            </div>
+            <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+              <div class="vi-card-body forAEM base-style break-word">
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      
+    </div>
+    
+    <div id="trigger-send" class="vi-txt-g500 mb16">-> 未發送 / 已發送 切換</div>
+    
+  </div>
+  <!-- main_container -->
+
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// scroll fixed header
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 0) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+    document.getElementsByClassName('main_container')[0].classList.remove('add-title-space');
+    document.getElementsByClassName('main_container')[0].classList.add('pad_top24');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+    document.getElementsByClassName('main_container')[0].classList.add('add-title-space');
+    document.getElementsByClassName('main_container')[0].classList.remove('pad_top24');
+  }
+}
+
+
+$(document).ready(function(){
+  
+  // 未發送 / 已發送 切換 demo
+  $('#trigger-send').on('click', function() {
+    $('#notSend, #sent').toggleClass('hide');
+  });
+  
+});
+
+</script>

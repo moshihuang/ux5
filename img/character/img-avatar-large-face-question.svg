@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="240" viewBox="0 0 240 240">
+    <defs>
+        <filter id="m3dnhran7e" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <filter id="yuwobrj4of" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <path id="2ny3lxte0a" d="M146.684 123.153c7.01 0 11.858-6.374 11.858-8.361 0-1.997-4.857-8.361-11.858-8.361-6.957 0-11.866 6.364-11.866 8.36 0 1.988 4.944 8.362 11.866 8.362z"/>
+        <path id="bld8nmveqc" d="M98.517 123.153c7.01 0 11.858-6.374 11.858-8.361 0-1.997-4.857-8.361-11.858-8.361-6.957 0-11.866 6.364-11.866 8.36 0 1.988 4.944 8.362 11.866 8.362z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g transform="translate(-68 -179) translate(68 179)">
+                <path stroke="#FF625E" stroke-width="4.48" d="M122.87 165.04c10.567-.289 19.277-4.737 26.13-13.346"/>
+                <mask id="n589h1n17b" fill="#fff">
+                    <use xlink:href="#2ny3lxte0a"/>
+                </mask>
+                <use fill="#FFF" fill-rule="nonzero" transform="rotate(-3 146.68 114.792)" xlink:href="#2ny3lxte0a"/>
+                <ellipse cx="149.274" cy="111.523" fill="#324148" mask="url(#n589h1n17b)" rx="7.549" ry="8.361"/>
+                <mask id="lzuvd3lfqd" fill="#fff">
+                    <use xlink:href="#bld8nmveqc"/>
+                </mask>
+                <use fill="#FFF" fill-rule="nonzero" transform="rotate(3 98.513 114.792)" xlink:href="#bld8nmveqc"/>
+                <ellipse cx="101.825" cy="111.523" fill="#324148" mask="url(#lzuvd3lfqd)" rx="7.549" ry="8.361"/>
+                <ellipse cx="79.885" cy="127.271" fill="#FF918E" filter="url(#m3dnhran7e)" rx="7.467" ry="8.209"/>
+                <ellipse cx="165.005" cy="127.271" fill="#FF918E" filter="url(#yuwobrj4of)" rx="7.467" ry="8.209"/>
+                <path stroke="#324148" stroke-width="3.733" d="M136.307 100.375c6.884-3.59 13.843-4.171 20.876-1.744M110.129 100.383c-6.885-3.59-13.844-4.172-20.877-1.744" opacity=".8"/>
+            </g>
+        </g>
+    </g>
+</svg>

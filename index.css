@@ -1,0 +1,123 @@
+
+/** lock UI */
+body {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+}
+
+custom-keyboard-input input {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+custom-keyboard-input {
+  flex-grow: 1;
+  -webkit-flex-grow: 1;
+  flex: 1;
+}
+
+custom-keyboard-input input {
+	width:100%;
+	line-height:1.0;
+	padding:0px !important;
+}
+
+/* .input_group.has-value .title { */
+/* 	white-space:nowrap; */
+/* } */
+
+.keyboardDiv_selected .customInput_innerDiv .mock_cursor {
+	top: 0px;
+	left: 0px;
+}
+
+.customKeyboard li a.caps_on:before,
+.customKeyboard_toUpper li a.caps:before {
+    /*background-image: url(../img/icon/keyboard_caps_on.png);*/
+    content: "\E975";
+    font-family: "icomoon";
+	font-size: 24px;
+}
+
+.customKeyboard li a.caps_lock:before {
+    /*background-image: url(../img/icon/keyboard_caps_lock.png);*/
+    content: "\E974";
+    font-family: "icomoon";
+	font-size: 24px;
+}
+
+.customInputDiv .customInput_innerDiv {
+	left:0px;
+}
+
+.customInputDiv_pw .customInputFakeInputDiv {
+	margin-top:0px;
+	left:0px;
+	font-weight:700;
+}
+
+.customInputDiv_pw .customInputFakePwInputDiv {
+	display:inline;
+	position:relative;
+	float:left;
+	left:0px;
+	top:0px;
+	font-weight:bolder;
+}
+
+.vi-login-card .customInputFakeInputDiv,
+.vi-login-card .customInputFakePwInputDiv {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.fontZoomIn .customInputDiv .customInputFakeInputDiv {
+	font-size:18px;
+}
+
+.fontZoomIn .customInputDiv_pw .customInputFakeInputDiv {
+	font-size:18px;
+}
+
+.fontZoomIn .customInputDiv_pw .customInputFakePwInputDiv {
+	font-size:18px;
+}
+
+.isAndroidApp .customInputDiv_pw .customInputFakeInputDiv {
+	font-size:80%;
+	top:3px;
+}
+
+.customInputDiv_pw .transparent {
+	color: transparent !important;
+	-webkit-text-fill-color: transparent !important;
+}
+
+.customKeyboard div {
+	display:inline-block;
+}
+
+body.white{
+	background: #ffffff;
+}
+
+.loading-all-light {
+	background: rgba(0,0,0, 0.3);
+}
+
+.for-select input[readonly] {
+	pointer-events: none;
+}
+
+div.disabled input[readonly] {
+	pointer-events: none;
+}

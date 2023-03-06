@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base_2023.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <script type="text/javascript" src="../../../../../inc/base.js"></script>
+  <style>    
+    /* search-bar */
+.search-block .input-group .form-control {
+  margin-top: 2px;
+}
+.search-bar {
+  padding: 19px 20px 19px 20px;
+}
+.seearch-bar > div {
+  position: relative;
+}
+.search-bar-input {
+  height: 44px;
+  width: 100%;
+  padding-left: 56px;
+  background: #ecf1f3;
+  border-radius: 7px;
+  line-height: 45px;
+  border: 1px solid #d8dfe3 ;
+}
+.search-bar-input::placeholder {
+  color: #aaaaaa;
+}
+.icon-search {
+  position: absolute;
+  top: 73.5px;
+  left: 37px;
+  font-size: 25px;
+  color: #24a09a;
+}
+.list-group .list-group-header {
+  width: 100%;
+  height: 25px;
+  padding-left: 15px;
+  line-height: 25px;
+  background: #ecf1f3;
+}
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<body class="vi-bg-mint vi-page-header-fix">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">理財健診</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500" href="">諮詢理專</a>
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap scroll vi-bg-mint">
+
+    <animation [state]="animateState">
+    <div class="main_container">
+      <section class="search-bar">
+        <div>
+          <input [(ngModel)]="filterInputValue" (ngModelChange)="filterInputValueChange($event)"
+                 class="search-bar-input" type="text"
+                 [placeholder]="getBundleString('請輸入關鍵字或銀行代碼', 'transfer_tx001.00005187')">
+          <i class="icon-search"></i>
+        </div>
+      </section>
+
+      <!-- 熱門 -->
+      <section class="list-group mb0" *ngIf="popularBankResult?.length > 0">
+        <div class="list-group-header">
+          <i18n translate="transfer_tx001.011.hotList">熱門</i18n>
+        </div>
+        <div class="btn-group btn-group-vertical btn-select-option">
+          <label class="btn btn-default" [class.active]="isHighLightBank(bank)"
+                 *ngFor="let bank of popularBankResult"
+                 (click)="selectPopularBank($event,bank)">
+              {{bank.bankCode}} {{bank.bankName}}
+          </label>
+        </div>
+      </section>
+
+      <!-- 全部 -->
+      <section class="list-group">
+        <div class="list-group-header" *ngIf="popularBankResult?.length > 0">
+          <i18n translate="transfer_tx001.011.listAll">全部</i18n>
+        </div>
+        <div class="btn-group btn-group-vertical btn-select-option">
+          <label class="btn btn-default {{item.selected?'active':''}}" *ngFor="let item of filterList;let index=index;"
+                 #itemRef (click)="selectBankId($event, index, itemRef)">
+            {{item.label}}
+          </label>
+        </div>
+      </section>
+
+    </div>
+  </animation>
+    
+  </div>
+  <!-- main_container -->
+  
+  
+  
+  
+  <!-- vi-modal popup 現有版型 這裡僅示意，可參考 ctbc-mb-alert.widget -->
+  <!-- id 是 demo 用的，開發請拉掉 -->
+  <div id="target-modal-amount" class="vi-modal">
+    <div class="vi-modal-backdrop"></div>
+    <div class="popup">
+      <div class="popup-header">
+        <div class="popup-header-ct">
+          <span class="popup-title">額度說明</span>
+        </div>
+      </div>
+      <div class="popup-body">
+        <div class="vi-list vi-list-noline vi-list-baseline vi-list-px0 vi-list-py8">
+          <div class="vi-list-item">
+            <div class="vi-list-lt">
+              <div class="vi-txt-body vi-txt-b600">＋ 可用額度(含溢繳)</div>
+            </div>
+            <div class="vi-list-rt">
+              <div class="vi-txt-body-bold vi-txt-b600">100,000</div>
+            </div>
+          </div>
+          <div class="vi-list-item">
+            <div class="vi-list-lt">
+              <div class="vi-txt-body vi-txt-b600">＋ 已使用額度</div>
+            </div>
+            <div class="vi-list-rt">
+              <div class="vi-txt-body-bold vi-txt-b600">50,000</div>
+            </div>
+          </div>
+          
+          <div class="vi-dashed-divider mt8 mb8"></div>
+          
+          <div class="vi-list-item pad_btm0">
+            <div class="vi-list-lt">
+              <div class="vi-txt-headline vi-txt-b600">總信用額度</div>
+            </div>
+            <div class="vi-list-rt">
+              <div class="vi-txt-headline vi-txt-b600">150,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup-footer">
+        <div class="vi-btn-group">
+          <button class="vi-btn vi-btn-primary" data-dismiss="modal">我知道了</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="footer">
+    <ul class="foot-tab">
+      <li class="active">
+        <a>
+          <div class="vi-icon vi-icon-base icon-tabbar-my"></div>
+          <p>我的</p>
+        </a>
+      </li>
+      <li>
+        <a>
+          <div class="vi-icon vi-icon-base icon-tabbar-benefit"></div>
+          <p>優惠</p>
+        </a>
+      </li>
+      <li class="foot-tab-cash">
+        <a>
+          <div class="vi-icon vi-icon-base icon-tabbar-cash"></div>
+          <p>收付</p>
+        </a>
+      </li>
+      <li>
+        <a>
+          <div class="vi-icon vi-icon-base icon-tabbar-invest"></div>
+          <p>理財</p>
+        </a>
+      </li>
+      <li>
+        <a>
+          <div class="vi-icon vi-icon-base icon-tabbar-menu"></div>
+          <p>更多</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+  <!-- 現有元件 這裡僅示意 -->
+  <div class="vi-gotop" style="bottom: 32px;"></div>
+  
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<!-- spiderweb chart 需要的 highcharts-more, local 放在 src/applibs/ctbc/highcharts-more.js, 要注意 highcharts.js 要使用相同版本 v5.0.14 才不會有問題 -->
+<!-- <script src="../../../../applibs/ctbc/highcharts-more.js"></script> -->
+<script src="../../../../js/highcharts-more.js"></script>
+<script>
+
+
+// scroll fixed header
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 0) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+    document.getElementsByClassName('main_container')[0].classList.remove('add-title-space');
+    document.getElementsByClassName('main_container')[0].classList.add('pad_top24');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+    document.getElementsByClassName('main_container')[0].classList.add('add-title-space');
+    document.getElementsByClassName('main_container')[0].classList.remove('pad_top24');
+  }
+}
+</script>

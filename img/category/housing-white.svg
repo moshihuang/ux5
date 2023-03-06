@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <defs>
+        <path id="shw7s5osxb" d="M0 0.021L26.964 0.021 26.964 10.46 0 10.46z"/>
+        <path id="5onwk8a8ad" d="M0 0L20.939 0 20.939 13.438 0 13.438z"/>
+        <filter id="fa3qnkquaa">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g filter="url(#fa3qnkquaa)">
+            <g>
+                <g transform="translate(2 3) translate(0 1.5)">
+                    <mask id="4169jtuwrc" fill="#fff">
+                        <use xlink:href="#shw7s5osxb"/>
+                    </mask>
+                    <path fill="#107778" d="M25.808 10.46H1.156C.012 10.46-.435 8.975.52 8.345L12.847.211c.368-.243.841-.254 1.218-.032l.053.032.88.582 1.802 1.19 4.179 2.756 2.203 1.455.923.608 2.34 1.543c.954.63.507 2.115-.637 2.115" mask="url(#4169jtuwrc)"/>
+                </g>
+                <path fill="#107778" d="M10.477 22.5c0 .117.015.233.046.346v-.692c-.031.113-.046.229-.046.346" transform="translate(2 3)"/>
+                <g transform="translate(2 3) translate(3.058 13.562)">
+                    <mask id="skr85uajie" fill="#fff">
+                        <use xlink:href="#5onwk8a8ad"/>
+                    </mask>
+                    <path fill="#107778" d="M17.965 6.248C17.775 7.468 16.73 8.4 15.47 8.4s-2.306-.933-2.495-2.153c-.004-.025-.008-.05-.01-.074v-.65c.157-1.256 1.219-2.227 2.505-2.227 1.395 0 2.526 1.143 2.526 2.552 0 .136-.01.269-.031.399M19.428 0H1.511C.68 0 0 .687 0 1.527V11.91c0 .84.68 1.527 1.511 1.527h17.917c.832 0 1.511-.687 1.511-1.527V1.527C20.94.687 20.26 0 19.428 0" mask="url(#skr85uajie)"/>
+                </g>
+                <path fill="#107778" d="M21 4.198c0 .254-.346.406-.606.266l-3.59-2.348c-.19-.102-.304-.276-.304-.462v-.401C16.5.563 17.191 0 18.036 0h1.428C20.309 0 21 .564 21 1.253v2.945z" transform="translate(2 3)"/>
+            </g>
+        </g>
+    </g>
+</svg>

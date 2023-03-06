@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="428" height="761" viewBox="0 0 428 761">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g transform="translate(-5864.000000, -185.000000) translate(5864.000000, 185.000000) translate(22.826667, 22.818591)">
+                        <rect width="178.048" height="177.985" fill="#FEC602" rx="4.565"/>
+                        <rect width="13.696" height="111.811" x="27.392" y="38.792" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="88.993" x="54.784" y="61.61" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="88.993" x="136.96" y="61.61" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="30.805" x="82.176" y="119.798" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="119.798" x="109.568" y="30.805" fill="#FFF3CA" rx="2.283"/>
+                    </g>
+                    <g transform="translate(-5864.000000, -185.000000) translate(5864.000000, 185.000000) translate(22.826667, 22.818591) translate(205.440000, 205.367316)">
+                        <rect width="178.048" height="177.985" fill="#FEC602" rx="4.565"/>
+                        <rect width="13.696" height="52.483" x="27.392" y="98.12" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="27.382" x="27.392" y="66.174" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="27.382" x="27.392" y="34.228" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="69.597" x="54.784" y="81.006" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="13.691" x="54.784" y="62.751" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="13.691" x="54.784" y="44.496" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="37.651" x="136.96" y="112.952" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="13.691" x="136.96" y="94.697" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="23.96" x="136.96" y="66.174" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="23.96" x="82.176" y="126.643" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="23.96" x="82.176" y="98.12" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="23.96" x="82.176" y="69.597" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="55.906" x="109.568" y="94.697" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="33.087" x="109.568" y="57.046" fill="#FFF3CA" rx="2.283"/>
+                        <rect width="13.696" height="20.537" x="109.568" y="31.946" fill="#FFF3CA" rx="2.283"/>
+                    </g>
+                    <g transform="translate(-5864.000000, -185.000000) translate(5864.000000, 185.000000) translate(22.826667, 22.818591) translate(0.000000, 205.367316)">
+                        <g fill="#FEC602">
+                            <rect width="178.048" height="177.985" rx="4.565"/>
+                        </g>
+                        <ellipse cx="89.024" cy="88.993" stroke="#FFF3CA" stroke-width="13.696" rx="54.784" ry="54.762"/>
+                        <path stroke="#FEC602" stroke-width="13.696" d="M89.024 88.993L37.664 34.228M89.024 88.993L7.989 76.442M89.024 88.993L77.611 27.382"/>
+                    </g>
+                    <g transform="translate(-5864.000000, -185.000000) translate(5864.000000, 185.000000) translate(22.826667, 22.818591) translate(205.440000, 0.000000)">
+                        <rect width="178.048" height="177.985" fill="#FEC602" rx="4.565"/>
+                        <path stroke="#FFF3CA" stroke-linecap="round" stroke-linejoin="round" stroke-width="13.696" d="M22.827 142.616L47.936 107.247 74.187 120.939 101.579 83.288 130.112 94.697 159.787 61.61"/>
+                        <path fill="#FFF3CA" d="M162.804 52.968l10.304 16.488c1.336 2.138.686 4.955-1.453 6.29-.725.454-1.563.694-2.418.695l-20.614.003c-2.521 0-4.565-2.043-4.566-4.564 0-.856.24-1.695.694-2.421l10.31-16.492c1.337-2.138 4.153-2.787 6.291-1.45.588.367 1.084.863 1.452 1.451z" transform="translate(158.927662, 61.609826) rotate(39.000000) translate(-158.927662, -61.609826)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

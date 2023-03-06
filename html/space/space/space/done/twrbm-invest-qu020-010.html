@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .main_container {
+      background: #e4f0ef;
+      min-height: calc(100vh);
+      /* min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+      min-height: calc(100vh - constant(safe-area-inset-top) - constant(safe-area-inset-bottom)); */
+    }
+    
+
+    /* .vi-page-header-fix .overview-info {
+      padding-top: 24px;
+    } */
+    .vi-page-header-fix .overview-info.has-tab {
+      padding-top: 56px;
+      background-position: center 52px;
+    }
+
+    .overview-info {
+      background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDE0IiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDQxNCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8yOTE5XzEzNTM5NykiPgo8cGF0aCBvcGFjaXR5PSIwLjYiIGQ9Ik0zNTkgNUMzOTMuNSA1IDQwNyA1Ny41MTY5IDQxNCA3Ni4wMTY4VjE1My41SDE2NUMxODYuNjY3IDEyNC4xNjcgMjIxLjggNjEuNTE2OSAyNDUgNTcuNTE2OUMyNzQgNTIuNTE2OSAyNzMuNSA3Ni4wMTY4IDI5MSA3Ni4wMTY4QzMwOC41IDc2LjAxNjggMzI0LjUgNSAzNTkgNVoiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl8yOTE5XzEzNTM5NykiLz4KPHBhdGggZD0iTTE4MCAxNTBDMTY2LjUwMSAxMjcgMTMyLjUgNTYuNSAxMDIuNSA1Ni41QzM5LjgzOCA1Ni41IDYwLjAwMDUgMCAxMS4wMDA1IDBDLTI3LjQ5OTMgMCAtMjYuOTk5NyAxMjMuNzM2IC0yNi45OTk3IDE1MEgxODBaIiBmaWxsPSJ1cmwoI3BhaW50MV9saW5lYXJfMjkxOV8xMzUzOTcpIi8+CjxwYXRoIGQ9Ik0zNjkgMTVINDA3VjE1MEgzNjlWMTVaIiBmaWxsPSIjMTE5NDhEIi8+CjxwYXRoIGQ9Ik0zNTAgMTkuNzMyQzM1My41IDEyLjkzNTQgMzYxLjQyNSAxNS41NzY2IDM2OSAxNS4yMDA5QzM2OSAyNC44MjkzIDM2OSAxNTAgMzY5IDE1MEgzNTBDMzUwIDE1MCAzNTAgMzIuNzU4OCAzNTAgMTkuNzMyWiIgZmlsbD0iIzE4OUE5MyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTM1MCAyNi40MjRDMzUyLjY1NiAyMy41IDM1OC45ODkgMjQuMjExNSAzNjkuMDE1IDI0LjIxMTVWMzAuMjExNUMzNjAuMDQ1IDMwLjIxMTUgMzUyLjEyOCAyOS41IDM1MCAzM0MzNTAgMzMgMzUwLjAwMiAyOCAzNTAgMjYuNDI0WiIgZmlsbD0iIzBGOEY4OCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTM1MCAzOS40MjRDMzUyLjY1NiAzNi41IDM1OC45ODkgMzcuMTc3MyAzNjkuMDE1IDM3LjE3NzNWNDMuMTc3M0MzNjAuMDQ1IDQzLjE3NzMgMzUyLjEyOCA0Mi41IDM1MCA0NkMzNTAgNDYgMzUwLjAwMiA0MSAzNTAgMzkuNDI0WiIgZmlsbD0iIzBGOEY4OCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTM1MCA1MS45MjRDMzUyLjY1NiA0OSAzNTkuNSA1MC4xNzc0IDM2OS4wMTUgNTAuMTc3NFY1Ni4xNzc0QzM1OC41IDU2LjE3NzQgMzUyLjEyOCA1NSAzNTAgNTguNUMzNTAgNTguNSAzNTAuMDAyIDUzLjUgMzUwIDUxLjkyNFoiIGZpbGw9IiMwRjhGODgiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zNTAgNjguNTY3MUMzNTIuNjU2IDY1LjY0MzEgMzU4Ljk4OSA2My4xNzcyIDM2OS4wMTUgNjMuMTc3MlY2OS4xNzcyQzM2MC4wNDUgNjkuMTc3MiAzNTIuMTI4IDcxLjY0MzEgMzUwIDc1LjE0MzFDMzUwIDc1LjE0MzEgMzUwLjAwMiA3MC4xNDMxIDM1MCA2OC41NjcxWiIgZmlsbD0iIzBGOEY4OCIvPgo8cmVjdCB4PSIzNjkiIHk9IjI0LjE3NzIiIHdpZHRoPSIzOCIgaGVpZ2h0PSI2IiBmaWxsPSIjMEY4Rjg4Ii8+CjxyZWN0IHg9IjM2OSIgeT0iMzcuMTc3MiIgd2lkdGg9IjM4IiBoZWlnaHQ9IjYiIGZpbGw9IiMwRjhGODgiLz4KPHJlY3QgeD0iMzY5IiB5PSI1MC4xNzcyIiB3aWR0aD0iMzgiIGhlaWdodD0iNiIgZmlsbD0iIzBGOEY4OCIvPgo8cmVjdCB4PSIzNjkiIHk9IjYzLjE3NzIiIHdpZHRoPSIzOCIgaGVpZ2h0PSI2IiBmaWxsPSIjMEY4Rjg4Ii8+CjxnIG9wYWNpdHk9IjAuOCI+CjxwYXRoIGQ9Ik01NSAxN0M3Ni41MzkxIDE3IDk0IDM0LjQ2MDkgOTQgNTZWMTUwSDU1VjE3WiIgZmlsbD0iIzEyOTU4RSIvPgo8cGF0aCBkPSJNNTUgMTdDNTguMDc2MiAxNyA2MS4wODQ3IDE3LjYzMTMgNjQgMThDNjQgMjMuOTM4NCA2NCAxMTcuNSA2NCAxMzdINTVWMTdaIiBmaWxsPSIjMkE5Qjk1Ii8+CjxyZWN0IHg9IjU4LjM0MzMiIHk9IjI5IiB3aWR0aD0iMjEuMTcxNCIgaGVpZ2h0PSIzIiBmaWxsPSIjMEY4Rjg4Ii8+CjxyZWN0IHg9IjU4LjM0MzMiIHk9IjM2IiB3aWR0aD0iMjUuNjI4NiIgaGVpZ2h0PSIzIiBmaWxsPSIjMEY4Rjg4Ii8+CjxyZWN0IHg9IjU4LjM0MzMiIHk9IjQzIiB3aWR0aD0iMzAuMDg1NyIgaGVpZ2h0PSIzIiBmaWxsPSIjMEY4Rjg4Ii8+CjxyZWN0IHg9IjU4LjM0MzMiIHk9IjUwIiB3aWR0aD0iMzAuMDg1NyIgaGVpZ2h0PSIzIiBmaWxsPSIjMEY4Rjg4Ii8+CjxyZWN0IHg9IjU4LjM0MzMiIHk9IjU3IiB3aWR0aD0iMzAuMDg1NyIgaGVpZ2h0PSIzIiBmaWxsPSIjMEY4Rjg4Ii8+CjxyZWN0IHg9IjU4LjM0MzMiIHk9IjY0IiB3aWR0aD0iMzAuMDg1NyIgaGVpZ2h0PSIzIiBmaWxsPSIjMEY4Rjg4Ii8+CjxyZWN0IHg9IjU4LjM0MzMiIHk9IjcxIiB3aWR0aD0iMzAuMDg1NyIgaGVpZ2h0PSIzIiBmaWxsPSIjMEY4Rjg4Ii8+CjxyZWN0IHg9IjU4LjM0MzMiIHk9Ijc4IiB3aWR0aD0iMzAuMDg1NyIgaGVpZ2h0PSIzIiBmaWxsPSIjMEY4Rjg4Ii8+CjxyZWN0IHg9IjU4LjM0MzMiIHk9Ijg1IiB3aWR0aD0iMzAuMDg1NyIgaGVpZ2h0PSIzIiBmaWxsPSIjMEY4Rjg4Ii8+CjxyZWN0IHg9IjU4LjM0MzMiIHk9IjkyIiB3aWR0aD0iMzAuMDg1NyIgaGVpZ2h0PSIzIiBmaWxsPSIjMEY4Rjg4Ii8+CjxyZWN0IHg9IjU4LjM0MzMiIHk9Ijk5IiB3aWR0aD0iMzAuMDg1NyIgaGVpZ2h0PSIzIiBmaWxsPSIjMEY4Rjg4Ii8+CjxyZWN0IHg9IjU4LjM0MzMiIHk9IjEwNiIgd2lkdGg9IjMwLjA4NTciIGhlaWdodD0iMyIgZmlsbD0iIzBGOEY4OCIvPgo8cmVjdCB4PSI1OC4zNDMzIiB5PSIxMTMiIHdpZHRoPSIzMC4wODU3IiBoZWlnaHQ9IjMiIGZpbGw9IiMwRjhGODgiLz4KPHJlY3QgeD0iNTguMzQzMyIgeT0iMTIwIiB3aWR0aD0iMzAuMDg1NyIgaGVpZ2h0PSIzIiBmaWxsPSIjMTA4Rjg4Ii8+CjwvZz4KPHJlY3QgeD0iNy42ODY1MiIgeT0iNTAuMzkyNiIgd2lkdGg9IjQzLjAwNzUiIGhlaWdodD0iMTA1LjYwNyIgZmlsbD0iIzBGOEY4OCIvPgo8ZyBmaWx0ZXI9InVybCgjZmlsdGVyMF9pXzI5MTlfMTM1Mzk3KSI+CjxyZWN0IHg9IjEyLjc0NjMiIHk9IjU1LjY0OTIiIHdpZHRoPSI5LjI3NjEyIiBoZWlnaHQ9IjEwMC4zNTEiIGZpbGw9IiMyNTk5OTIiLz4KPC9nPgo8ZyBmaWx0ZXI9InVybCgjZmlsdGVyMV9pXzI5MTlfMTM1Mzk3KSI+CjxyZWN0IHg9IjI0LjU1MjIiIHk9IjU1LjY0OTIiIHdpZHRoPSI5LjI3NjEyIiBoZWlnaHQ9IjEwMC4zNTEiIGZpbGw9IiMyNTk5OTIiLz4KPC9nPgo8ZyBmaWx0ZXI9InVybCgjZmlsdGVyMl9pXzI5MTlfMTM1Mzk3KSI+CjxyZWN0IHg9IjM2LjM1ODIiIHk9IjU1LjY0OTIiIHdpZHRoPSI5LjI3NjEyIiBoZWlnaHQ9IjEwMC4zNTEiIGZpbGw9IiMyNTk5OTIiLz4KPC9nPgo8cmVjdCB4PSI3LjY4NjUyIiB5PSI0OC4yODA1IiB3aWR0aD0iNDMuMDA3NSIgaGVpZ2h0PSIxLjY4NjU3IiBmaWxsPSIjMEI4ODgxIi8+CjxyZWN0IHg9IjYiIHk9IjQzIiB3aWR0aD0iNDQuNjk0IiBoZWlnaHQ9IjUuMjgwMzciIGZpbGw9IiMwRjhGODgiLz4KPHJlY3Qgd2lkdGg9IjE0IiBoZWlnaHQ9IjEwNiIgdHJhbnNmb3JtPSJtYXRyaXgoLTEgMCAwIDEgNjUgNTApIiBmaWxsPSIjMEY4Rjg4Ii8+CjxyZWN0IHdpZHRoPSIxNC4zMzU4IiBoZWlnaHQ9IjEuNjg2NTciIHRyYW5zZm9ybT0ibWF0cml4KC0xIDAgMCAxIDY1LjAyOTggNDguMjgwNSkiIGZpbGw9IiMwRjg4ODEiLz4KPHJlY3Qgd2lkdGg9IjE1LjE3OTEiIGhlaWdodD0iNS4yODAzNyIgdHJhbnNmb3JtPSJtYXRyaXgoLTEgMCAwIDEgNjUuODczIDQzKSIgZmlsbD0iIzBGOEY4OCIvPgo8ZyBmaWx0ZXI9InVybCgjZmlsdGVyM19pXzI5MTlfMTM1Mzk3KSI+CjxyZWN0IHg9IjUyLjM4MDYiIHk9IjU1LjY0OTIiIHdpZHRoPSI0LjIxNjQyIiBoZWlnaHQ9IjEwMC4zNTEiIGZpbGw9IiMxMDhGODgiLz4KPC9nPgo8ZyBmaWx0ZXI9InVybCgjZmlsdGVyNF9pXzI5MTlfMTM1Mzk3KSI+CjxyZWN0IHg9IjU4LjI4MzciIHk9IjU1LjY0OTIiIHdpZHRoPSI0LjIxNjQyIiBoZWlnaHQ9IjEwMC4zNTEiIGZpbGw9IiMxMDhGODgiLz4KPC9nPgo8cmVjdCB4PSIzMzAiIHk9IjYyIiB3aWR0aD0iMzYiIGhlaWdodD0iODgiIGZpbGw9IiMyNTk5OTIiLz4KPHJlY3QgeD0iMzY2IiB5PSI2MiIgd2lkdGg9IjgiIGhlaWdodD0iODgiIGZpbGw9IiMxOThGODkiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zMzkgNjdIMzMzVjczSDMzOVY2N1pNMzQ3IDY3SDM0MVY3M0gzNDdWNjdaTTM0OSA2N0gzNTVWNzNIMzQ5VjY3Wk0zNjMgNjdIMzU3VjczSDM2M1Y2N1pNMzMzIDc3SDMzOVY4M0gzMzNWNzdaTTM0NyA3N0gzNDFWODNIMzQ3Vjc3Wk0zNDkgNzdIMzU1VjgzSDM0OVY3N1pNMzYzIDc3SDM1N1Y4M0gzNjNWNzdaTTMzMyA4N0gzMzlWOTNIMzMzVjg3Wk0zNDcgODdIMzQxVjkzSDM0N1Y4N1pNMzQ5IDg3SDM1NVY5M0gzNDlWODdaTTM2MyA4N0gzNTdWOTNIMzYzVjg3Wk0zMzMgOTdIMzM5VjEwM0gzMzNWOTdaTTM0NyA5N0gzNDFWMTAzSDM0N1Y5N1pNMzQ5IDk3SDM1NVYxMDNIMzQ5Vjk3Wk0zNjMgOTdIMzU3VjEwM0gzNjNWOTdaTTMzMyAxMDdIMzM5VjExM0gzMzNWMTA3Wk0zNDcgMTA3SDM0MVYxMTNIMzQ3VjEwN1pNMzQ5IDEwN0gzNTVWMTEzSDM0OVYxMDdaTTM2MyAxMDdIMzU3VjExM0gzNjNWMTA3Wk0zMzMgMTE3SDMzOVYxMjNIMzMzVjExN1pNMzQ3IDExN0gzNDFWMTIzSDM0N1YxMTdaTTM0OSAxMTdIMzU1VjEyM0gzNDlWMTE3Wk0zNjMgMTE3SDM1N1YxMjNIMzYzVjExN1oiIGZpbGw9IiMwRjhGODgiLz4KPC9nPgo8ZGVmcz4KPGZpbHRlciBpZD0iZmlsdGVyMF9pXzI5MTlfMTM1Mzk3IiB4PSIxMi43NDYzIiB5PSI1NS42NDkyIiB3aWR0aD0iOS4yNzYxMiIgaGVpZ2h0PSIxMDAuMzUxIiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+CjxmZUJsZW5kIG1vZGU9Im5vcm1hbCIgaW49IlNvdXJjZUdyYXBoaWMiIGluMj0iQmFja2dyb3VuZEltYWdlRml4IiByZXN1bHQ9InNoYXBlIi8+CjxmZUNvbG9yTWF0cml4IGluPSJTb3VyY2VBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIiByZXN1bHQ9ImhhcmRBbHBoYSIvPgo8ZmVPZmZzZXQgZHg9IjIiIGR5PSIyIi8+CjxmZUNvbXBvc2l0ZSBpbjI9ImhhcmRBbHBoYSIgb3BlcmF0b3I9ImFyaXRobWV0aWMiIGsyPSItMSIgazM9IjEiLz4KPGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMC4wNDIyMjIyIDAgMCAwIDAgMC41MzMzMzMgMCAwIDAgMCAwLjUwNjQ3NiAwIDAgMCAxIDAiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbjI9InNoYXBlIiByZXN1bHQ9ImVmZmVjdDFfaW5uZXJTaGFkb3dfMjkxOV8xMzUzOTciLz4KPC9maWx0ZXI+CjxmaWx0ZXIgaWQ9ImZpbHRlcjFfaV8yOTE5XzEzNTM5NyIgeD0iMjQuNTUyMiIgeT0iNTUuNjQ5MiIgd2lkdGg9IjkuMjc2MTIiIGhlaWdodD0iMTAwLjM1MSIgZmlsdGVyVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBjb2xvci1pbnRlcnBvbGF0aW9uLWZpbHRlcnM9InNSR0IiPgo8ZmVGbG9vZCBmbG9vZC1vcGFjaXR5PSIwIiByZXN1bHQ9IkJhY2tncm91bmRJbWFnZUZpeCIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9IkJhY2tncm91bmRJbWFnZUZpeCIgcmVzdWx0PSJzaGFwZSIvPgo8ZmVDb2xvck1hdHJpeCBpbj0iU291cmNlQWxwaGEiIHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAxMjcgMCIgcmVzdWx0PSJoYXJkQWxwaGEiLz4KPGZlT2Zmc2V0IGR4PSIyIiBkeT0iMiIvPgo8ZmVDb21wb3NpdGUgaW4yPSJoYXJkQWxwaGEiIG9wZXJhdG9yPSJhcml0aG1ldGljIiBrMj0iLTEiIGszPSIxIi8+CjxmZUNvbG9yTWF0cml4IHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAwIDAuMDQyMjIyMiAwIDAgMCAwIDAuNTMzMzMzIDAgMCAwIDAgMC41MDY0NzYgMCAwIDAgMSAwIi8+CjxmZUJsZW5kIG1vZGU9Im5vcm1hbCIgaW4yPSJzaGFwZSIgcmVzdWx0PSJlZmZlY3QxX2lubmVyU2hhZG93XzI5MTlfMTM1Mzk3Ii8+CjwvZmlsdGVyPgo8ZmlsdGVyIGlkPSJmaWx0ZXIyX2lfMjkxOV8xMzUzOTciIHg9IjM2LjM1ODIiIHk9IjU1LjY0OTIiIHdpZHRoPSI5LjI3NjEyIiBoZWlnaHQ9IjEwMC4zNTEiIGZpbHRlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIj4KPGZlRmxvb2QgZmxvb2Qtb3BhY2l0eT0iMCIgcmVzdWx0PSJCYWNrZ3JvdW5kSW1hZ2VGaXgiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJCYWNrZ3JvdW5kSW1hZ2VGaXgiIHJlc3VsdD0ic2hhcGUiLz4KPGZlQ29sb3JNYXRyaXggaW49IlNvdXJjZUFscGhhIiB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMTI3IDAiIHJlc3VsdD0iaGFyZEFscGhhIi8+CjxmZU9mZnNldCBkeD0iMiIgZHk9IjIiLz4KPGZlQ29tcG9zaXRlIGluMj0iaGFyZEFscGhhIiBvcGVyYXRvcj0iYXJpdGhtZXRpYyIgazI9Ii0xIiBrMz0iMSIvPgo8ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwLjA0MjIyMjIgMCAwIDAgMCAwLjUzMzMzMyAwIDAgMCAwIDAuNTA2NDc2IDAgMCAwIDEgMCIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluMj0ic2hhcGUiIHJlc3VsdD0iZWZmZWN0MV9pbm5lclNoYWRvd18yOTE5XzEzNTM5NyIvPgo8L2ZpbHRlcj4KPGZpbHRlciBpZD0iZmlsdGVyM19pXzI5MTlfMTM1Mzk3IiB4PSI1Mi4zODA2IiB5PSI1NS42NDkyIiB3aWR0aD0iNC4yMTYzMSIgaGVpZ2h0PSIxMDAuMzUxIiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+CjxmZUJsZW5kIG1vZGU9Im5vcm1hbCIgaW49IlNvdXJjZUdyYXBoaWMiIGluMj0iQmFja2dyb3VuZEltYWdlRml4IiByZXN1bHQ9InNoYXBlIi8+CjxmZUNvbG9yTWF0cml4IGluPSJTb3VyY2VBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIiByZXN1bHQ9ImhhcmRBbHBoYSIvPgo8ZmVPZmZzZXQgZHg9IjIiIGR5PSIyIi8+CjxmZUNvbXBvc2l0ZSBpbjI9ImhhcmRBbHBoYSIgb3BlcmF0b3I9ImFyaXRobWV0aWMiIGsyPSItMSIgazM9IjEiLz4KPGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMC4wNDIyMjIyIDAgMCAwIDAgMC41MzMzMzMgMCAwIDAgMCAwLjUwNjQ3NiAwIDAgMCAxIDAiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbjI9InNoYXBlIiByZXN1bHQ9ImVmZmVjdDFfaW5uZXJTaGFkb3dfMjkxOV8xMzUzOTciLz4KPC9maWx0ZXI+CjxmaWx0ZXIgaWQ9ImZpbHRlcjRfaV8yOTE5XzEzNTM5NyIgeD0iNTguMjgzNyIgeT0iNTUuNjQ5MiIgd2lkdGg9IjQuMjE2MzEiIGhlaWdodD0iMTAwLjM1MSIgZmlsdGVyVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBjb2xvci1pbnRlcnBvbGF0aW9uLWZpbHRlcnM9InNSR0IiPgo8ZmVGbG9vZCBmbG9vZC1vcGFjaXR5PSIwIiByZXN1bHQ9IkJhY2tncm91bmRJbWFnZUZpeCIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9IkJhY2tncm91bmRJbWFnZUZpeCIgcmVzdWx0PSJzaGFwZSIvPgo8ZmVDb2xvck1hdHJpeCBpbj0iU291cmNlQWxwaGEiIHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAxMjcgMCIgcmVzdWx0PSJoYXJkQWxwaGEiLz4KPGZlT2Zmc2V0IGR4PSIyIiBkeT0iMiIvPgo8ZmVDb21wb3NpdGUgaW4yPSJoYXJkQWxwaGEiIG9wZXJhdG9yPSJhcml0aG1ldGljIiBrMj0iLTEiIGszPSIxIi8+CjxmZUNvbG9yTWF0cml4IHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAwIDAuMDQyMjIyMiAwIDAgMCAwIDAuNTMzMzMzIDAgMCAwIDAgMC41MDY0NzYgMCAwIDAgMSAwIi8+CjxmZUJsZW5kIG1vZGU9Im5vcm1hbCIgaW4yPSJzaGFwZSIgcmVzdWx0PSJlZmZlY3QxX2lubmVyU2hhZG93XzI5MTlfMTM1Mzk3Ii8+CjwvZmlsdGVyPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfMjkxOV8xMzUzOTciIHgxPSIzNDYiIHkxPSI0LjAxNjg0IiB4Mj0iMzIwIiB5Mj0iMTQwLjUxNyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMEU4ODgxIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE4OTM4QiIgc3RvcC1vcGFjaXR5PSIwIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQxX2xpbmVhcl8yOTE5XzEzNTM5NyIgeDE9IjM3LjUwMDQiIHkxPSI2NC41IiB4Mj0iNjIuNTAwNCIgeTI9IjE1Ny41IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMwRTg4ODEiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMTg5MzhCIiBzdG9wLW9wYWNpdHk9IjAiLz4KPC9saW5lYXJHcmFkaWVudD4KPGNsaXBQYXRoIGlkPSJjbGlwMF8yOTE5XzEzNTM5NyI+CjxyZWN0IHdpZHRoPSI0MTQiIGhlaWdodD0iMTUwIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=") #0F8F88 no-repeat center top;
+    }
+    .overview-info .icon-eye {
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjAwMDEgNUM3LjcxMTU1IDUgMy44MzU1IDguMDcyNjEgMi4wMTc4NCAxMS41NjI0QzMuNDUwMzMgMTQuMzAzNiA3LjE0NzgzIDE4LjEyNDkgMTIuMDAwMSAxOC4xMjQ5QzE2LjI4ODYgMTguMTI0OSAyMC4xNjQ3IDE1LjA1MjMgMjEuOTgyMyAxMS41NjI1QzIwLjE4MzkgOC4xMDk5NyAxNi4zMTg2IDUgMTIuMDAwMSA1WiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxwYXRoIGQ9Ik0xNiAxMS41QzE2IDEzLjQwMTIgMTUuNDg0NSAxNS4wNzcxIDE0LjcwMzUgMTYuMjQ4NkMxMy45MTc5IDE3LjQyNzEgMTIuOTQyMyAxOCAxMiAxOEMxMS4wNTc3IDE4IDEwLjA4MjEgMTcuNDI3MSA5LjI5NjUyIDE2LjI0ODZDOC41MTU1NCAxNS4wNzcxIDggMTMuNDAxMiA4IDExLjVDOCA5LjU5ODgyIDguNTE1NTQgNy45MjI4NiA5LjI5NjUyIDYuNzUxNEMxMC4wODIxIDUuNTcyOTUgMTEuMDU3NyA1IDEyIDVDMTIuOTQyMyA1IDEzLjkxNzkgNS41NzI5NSAxNC43MDM1IDYuNzUxNEMxNS40ODQ1IDcuOTIyODYgMTYgOS41OTg4MiAxNiAxMS41WiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPgo=");
+    }
+    .overview-info .icon-eye-close {
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIxIDkuMDAwMDRDMTkuNDA5MyAxMi4xMDE3IDE1Ljk0NzMgMTQuOTE3NiAxMiAxNC45MTc2QzcuNTMwMzkgMTQuOTE3NiA0LjIzNTc2IDExLjQwOTcgMi45OTk5NSA5IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNSAxM0wzIDE2IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTkgMTNMMjEgMTYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMiAxNVYxOSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==");
+    }
+
+    .vi-rounded-btn-group {
+      position: relative;
+      z-index: 2;
+      /* position: absolute;
+      top: -20px; */
+      position: relative;
+      margin-top: -56px;
+      left: 0;
+      right: 0;
+    }
+    .overview-info-content {
+      /* min-height: 116px; */
+      padding: 24px 0 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .overview-info.has-tab {
+      min-height: 66px;
+    }
+    .overview-info.empty {
+      padding-bottom: 20px;
+    }
+    .overview-info.empty .overview-info-content {
+      min-height: 116px;
+      padding: 24px 0 32px 0;
+    }
+    .overview-info.has-tab .overview-info-content {
+      padding: 24px 0 0 0;
+    }
+
+    .overview-content {
+      /* padding-top: 44px; */
+      position: relative;
+      top: -20px;
+      /* top: -12px; */
+      border-radius: 24px 0 0 0;
+      background: #E4F0EF;
+    }
+    
+    .icon-custom-service {
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIGZpbGw9IiNFRkZGRkUiLz4KPHBhdGggZD0iTTE0LjE0NTggMjEuNUMxMy40MzMzIDIwLjcwMzkgMTMgMTkuNjUyNSAxMyAxOC41QzEzIDE2LjAxNDcgMTUuMDE0NyAxNCAxNy41IDE0QzE5LjA2MDIgMTQgMjAuNDM1IDE0Ljc5NCAyMS4yNDIyIDE2QzIwIDIwIDE3LjUgMjAuNSAxNC4xNDU4IDIxLjVaIiBmaWxsPSIjQzlFQkU5Ii8+CjxlbGxpcHNlIGN4PSIxNS43Nzc2IiBjeT0iMTEuODcxNSIgcng9IjEuMjkxNzciIHJ5PSIxLjIyMjEiIGZpbGw9IiMwMDk4OTEiLz4KPGVsbGlwc2UgY3g9IjguMjgxNTIiIGN5PSIxMS44NzE1IiByeD0iMS4yOTE3NyIgcnk9IjEuMjIyMSIgZmlsbD0iIzAwOTg5MSIvPgo8cGF0aCBkPSJNMTIuMDI5NCAxOC4zODkyQzE0LjAzNTkgMTguMzg5MiAxNS43NDk3IDE3LjIwNzggMTYuNDM4NiAxNS41Mzc2SDE1LjAwMDRDMTQuNDA2MiAxNi41MDcxIDEzLjMwMzkgMTcuMTY3MSAxMi4wMjk0IDE3LjE2NzFDMTAuNzU0OCAxNy4xNjcxIDkuNjYxMTIgMTYuNTA3MSA5LjA1ODI5IDE1LjUzNzZINy42MjAxMkM4LjMwOTA2IDE3LjIwNzggMTAuMDIyOCAxOC4zODkyIDEyLjAyOTQgMTguMzg5MloiIGZpbGw9IiMwMDk4OTEiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xOSA4LjczNDk2VjkuMDE5ODdIMTQuNzI1N0wxMy45MzI5IDcuNTUzMzRMMTMuMjIyIDkuMDE5ODdIOS45MDgxNEw5LjE2NDcyIDcuNTUzMzRMOC4zMzkzIDkuMDE5ODdINC45NjgyNlY4LjczNDA4QzYuMjgwNTEgNi4yOTA0NCA4LjkyOTYgNC42MjAxMiAxMS45ODM5IDQuNjIwMTJDMTUuMDM4NiA0LjYyMDEyIDE3LjY4NzkgNi4yOTA4NCAxOSA4LjczNDk2WiIgZmlsbD0iIzAwOTg5MSIvPgo8cGF0aCBkPSJNMi40NTQ1NSAxNS4xM0MyLjE1OTE4IDE0LjE3NTggMiAxMy4xNjA4IDIgMTIuMTA4MUMyIDYuNTI1NTUgNi40NzcxNSAyIDEyIDJDMTcuNTIyOCAyIDIyIDYuNTI1NTUgMjIgMTIuMTA4MUMyMiAxNC41MzI5IDIxLjE1NTMgMTYuNzU4MyAxOS43NDcyIDE4LjVDMTcgMjEuODk4IDE0IDIxIDE0IDIxIiBzdHJva2U9IiMwMDk4OTEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=");
+    }
+    
+    
+    .icon-trust {
+      width: 35px;
+      height: 35px;
+      margin: 0 auto;
+      background-repeat: no-repeat;
+    }
+    .item .icon-trust {
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHZpZXdCb3g9IjAgMCAzNSAzNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIyLjk5MDkgNkgxMy40NDk2TDguMzEyMDQgMTEuMjg0NEgyVjI0LjM0ODdIMTMuNDQ5NkwyMC4wNTUxIDI5LjQ4NjNMMjcuMzk0NSAyMy42MTQ3SDMzVjEyLjYwNTZIMjYuNjYwNkwyMi45OTA5IDZaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMzMgMTNIMTYuMzg3MUMxNi4zODcxIDEzIDExLjI0OCAxNi4yNzU0IDkuNzgwNiAxNy43NDMzQzguMzEzMTcgMTkuMjExMiA4LjY3NzIyIDIzLjYxNDggMTQuMTgzMyAxOS4yMTEyQzguMzExNDEgMjIuODgwOSAxMS45ODExIDI2LjU1MDYgMTYuMzg0OCAyMi4xNDdDMTEuOTgxMSAyNi41NTA2IDE1LjY1MzIgMjguNzUyNCAxOS4zMjA1IDI1LjA4MjdDMTUuNjUzMiAyOC4wMTg1IDE4LjU2MDMgMjkuODY2NSAyMC43ODg0IDI4Ljc1MjRDMjMuNzI0MiAyNy4yODQ1IDI2LjY1OTkgMjQuNDY3OSAyOC44NjE4IDIzSDMzVjEzWiIgc3Ryb2tlPSIjQjBCRUM1IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTI2LjY2MDEgMTMuMzM5NUwyNS4xOTIyIDExLjEzNzdDMjAuMDU0NiAxMS4xMzc3IDE4LjI5MzQgMTAuNDAzOCAxNi4wOTE2IDEwLjQwMzhDMTcuMjQ4OSAxMS42Nzk2IDIwLjI4OCAxNC4zMDY4IDIxLjUyMjUgMTUuNTQxM0MyNS4wNDU0IDE2LjEyODUgMjYuNDE1NCAxNC4zMTgxIDI2LjY2MDEgMTMuMzM5NVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNyAxM0MxOC43Njc3IDE0LjE3ODUgMjAuMTk0NCAxNC45MTc2IDIwLjk0NTMgMTUuMjc3OEMyMS4zMjM5IDE1LjQ1OTQgMjEuNzM4OCAxNS41NDE0IDIyLjE1ODggMTUuNTQxNFYxNS41NDE0QzI1LjY1MTkgMTUuNTQxNCAyNy41MzI1IDExLjQ0MDMgMjUuMjUzMSA4Ljc5MzNMMjIuODQ3NyA2SDE0TDguMjkyOTQgMTEuMTM3OEgyVjI0SDExLjUiIHN0cm9rZT0iI0IwQkVDNSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTIzLjcyNDkgMTEuMTM3OUgxNi4zODU1VjguMjAyMTVIMjEuNTIzMUwyMy43MjQ5IDExLjEzNzlaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K");
+    }
+    .item.on .icon-trust {
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHZpZXdCb3g9IjAgMCAzNSAzNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIyLjk5MDkgNkgxMy40NDk2TDguMzEyMDQgMTEuMjg0NEgyVjI0LjM0ODdIMTMuNDQ5NkwyMC4wNTUxIDI5LjQ4NjNMMjcuMzk0NSAyMy42MTQ3SDMzVjEyLjYwNTZIMjYuNjYwNkwyMi45OTA5IDZaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMzMgMTNIMTYuMzg3MUMxNi4zODcxIDEzIDExLjI0OCAxNi4yNzU0IDkuNzgwNiAxNy43NDMzQzguMzEzMTcgMTkuMjExMiA4LjY3NzIyIDIzLjYxNDggMTQuMTgzMyAxOS4yMTEyQzguMzExNDEgMjIuODgwOSAxMS45ODExIDI2LjU1MDYgMTYuMzg0OCAyMi4xNDdDMTEuOTgxMSAyNi41NTA2IDE1LjY1MzIgMjguNzUyNCAxOS4zMjA1IDI1LjA4MjdDMTUuNjUzMiAyOC4wMTg1IDE4LjU2MDMgMjkuODY2NSAyMC43ODg0IDI4Ljc1MjRDMjMuNzI0MiAyNy4yODQ1IDI2LjY1OTkgMjQuNDY3OSAyOC44NjE4IDIzSDMzVjEzWiIgc3Ryb2tlPSIjMjRBMDlBIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTI2LjY2MDEgMTMuMzM5NUwyNS4xOTIyIDExLjEzNzdDMjAuMDU0NiAxMS4xMzc3IDE4LjI5MzQgMTAuNDAzOCAxNi4wOTE2IDEwLjQwMzhDMTcuMjQ4OSAxMS42Nzk2IDIwLjI4OCAxNC4zMDY4IDIxLjUyMjUgMTUuNTQxM0MyNS4wNDU0IDE2LjEyODUgMjYuNDE1NCAxNC4zMTgxIDI2LjY2MDEgMTMuMzM5NVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNyAxM0MxOC43Njc3IDE0LjE3ODUgMjAuMTk0NCAxNC45MTc2IDIwLjk0NTMgMTUuMjc3OEMyMS4zMjM5IDE1LjQ1OTQgMjEuNzM4OCAxNS41NDE0IDIyLjE1ODggMTUuNTQxNFYxNS41NDE0QzI1LjY1MTkgMTUuNTQxNCAyNy41MzI1IDExLjQ0MDMgMjUuMjUzMSA4Ljc5MzNMMjIuODQ3NyA2SDE0TDguMjkyOTQgMTEuMTM3OEgyVjI0SDExIiBzdHJva2U9IiMyNEEwOUEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMy43MjQ5IDExLjEzNzlIMTYuMzg1NVY4LjIwMjE1SDIxLjUyMzFMMjMuNzI0OSAxMS4xMzc5WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==");
+    }
+    
+    
+    .vi-overview-card {
+      border-radius: 12px 0;
+      overflow: hidden;
+    }
+    .vi-overview-card .vi-card-header .vi-txt-headline {
+      width: calc(100% - 20px);
+    }
+    .vi-overview-card .vi-card-body {
+      background: rgb(246,246,246);
+      background: linear-gradient(180deg, rgba(246,246,246,1) 0%, rgba(246,246,246,0.4) 40%, rgba(246,246,246,0) 100%);
+    }
+    
+    
+    .vi-list.vi-list-overview {
+
+    }
+    .vi-list.vi-list-overview .vi-list-item {
+      padding: 0 0 16px 0;
+    }
+    .vi-list.vi-list-overview .vi-list-item .vi-icon-link {
+      position: relative;
+      top: 4px;
+    }
+    .vi-list.vi-list-overview .vi-list-item-step {
+      padding-top: 4px;
+      align-items: center;
+    }
+    .vi-list.vi-list-overview .vi-list-item-step .vi-list-rt {
+      margin-left: 32px;
+    }
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<!-- if scroll, add .vi-page-header-fix -->
+<body class="vi-bg-mint">
+
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <!-- 新增 .vi-page-header-green 綠色 header，ios 瀏海也要改成綠的 #0F8F88 -->
+    <div class="container-header vi-page-header vi-page-header-green">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">我的信託</h1>
+        <div class="rt mb16">
+          <a class="vi-icon-link">
+            <!-- 這裡是 vi-txt-white -->
+            <span class="vi-txt-body vi-txt-white">個人信託介紹</span>
+            <span class="vi-icon vi-icon-base vi-icon-direction-right ml4"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap scroll vi-bg-g550">
+    
+    <!-- add-title-space -->
+    <div class="main_container add-title-space">
+      
+      <!-- 7RC 沒有 tab -->
+      <div class="overview-info">
+        <div class="overview-info-content"></div>
+      </div>
+
+
+      <!-- 員工福利信託沒有 vi-rounded-btn-group，用 .pt-0，如果有 vi-rounded-btn-group，用 pad_top36 -->
+      <div class="overview-content pad_top36">
+        
+        <!-- 圓角分隔線包二顆 btn .vi-rounded-btn-group -->
+        <!-- 如果只有一顆，add .single -->
+        <!-- 員工福利信託 沒有這邊 -->
+        <div class="vi-rounded-btn-group single">
+          <button class="vi-btn vi-btn-white" ontouchstart="" (click)="">
+            <span class="vi-icon vi-icon-base icon-custom-service"></span>
+            <span>信託諮詢</span>
+          </button>
+          <!-- <button class="vi-btn vi-btn-white" ontouchstart="" (click)="">
+            <span class="vi-icon vi-icon-base icon-custom-service"></span>
+            <span>專人回電</span>
+          </button> -->
+        </div>
+        
+        <!-- 如果有 vi-rounded-btn-group，這邊是 pad_top24，如果沒有，拿掉 class -->
+        <div class="vi-container pad_top24">
+          <!-- 這裡請做成共用 vi-overview-card component -->
+          <!-- has-select-link -->
+          <div class="vi-card vi-overview-card has-select-link">
+            <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+              <div class="vi-txt-headline mr-auto">
+                富貴傳承信託
+                <div class="vi-txt-callout vi-txt-b500 mt4">A001000001</div>
+              </div>
+              <div class="ml-auto rt flex-grow">
+                <div class="vi-txt-headline vi-txt-b900"></div>
+                <div class="vi-txt-callout vi-txt-b500 mt4"></div>
+              </div>
+            </a>
+            <div class="vi-card-body">
+              <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview pad_top16">
+                <li class="vi-list-item">
+                  <div class="vi-list-lt">
+                    <div class="vi-txt-body vi-txt-b600">參考市值/餘額</div>
+                  </div>
+                  <div class="vi-list-rt">
+                    <!-- has-select-link 時 這邊是粗體 -->
+                    <div class="vi-txt-body-bold vi-txt-b600">320,000</div>
+                  </div>
+                </li>
+                <li class="vi-list-item">
+                  <div class="vi-list-lt">
+                    <div class="vi-txt-body vi-txt-b600">
+                      庫存標的成本
+                    </div>
+                  </div>
+                  <div class="vi-list-rt">
+                    <!-- has-select-link 時 這邊是粗體 -->
+                    <div class="vi-txt-body-bold vi-txt-b600">50,000</div>
+                    <div class="vi-txt-callout vi-txt-b500 mt4">(以上金額為約當新臺幣)</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- 這裡請做成共用 vi-overview-card component -->
+          <!-- has-select-link -->
+          <div class="vi-card vi-overview-card has-select-link">
+            <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+              <div class="vi-txt-headline mr-auto">
+                退休養老信託
+                <div class="vi-txt-callout vi-txt-b500 mt4">A001000001</div>
+              </div>
+              <div class="ml-auto rt flex-grow">
+                <div class="vi-txt-headline vi-txt-b900"></div>
+                <div class="vi-txt-callout vi-txt-b500"></div>
+              </div>
+            </a>
+            <div class="vi-card-body">
+              <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview pad_top16">
+                <li class="vi-list-item">
+                  <div class="vi-list-lt">
+                    <div class="vi-txt-body vi-txt-b600">參考市值/餘額</div>
+                  </div>
+                  <div class="vi-list-rt">
+                    <!-- has-select-link 時 這邊是粗體 -->
+                    <div class="vi-txt-body-bold vi-txt-b600">320,000</div>
+                  </div>
+                </li>
+                <li class="vi-list-item">
+                  <div class="vi-list-lt">
+                    <div class="vi-txt-body vi-txt-b600">
+                      庫存標的成本
+                    </div>
+                  </div>
+                  <div class="vi-list-rt">
+                    <!-- has-select-link 時 這邊是粗體 -->
+                    <div class="vi-txt-body-bold vi-txt-b600">50,000</div>
+                    <div class="vi-txt-callout vi-txt-b500 mt4">(以上金額為約當新臺幣)</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- 這裡請做成共用 vi-overview-card component -->
+          <!-- has-select-link -->
+          <div class="vi-card vi-overview-card has-select-link">
+            <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+              <div class="vi-txt-headline mr-auto">
+                有價證券信託(本金自益、孳息他益 / 借券)
+                <div class="vi-txt-callout vi-txt-b500 mt4">A001000001</div>
+              </div>
+              <div class="ml-auto rt flex-grow">
+                <div class="vi-txt-headline vi-txt-b900"></div>
+                <div class="vi-txt-callout vi-txt-b500"></div>
+              </div>
+            </a>
+            <div class="vi-card-body">
+              <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview pad_top16">
+                <li class="vi-list-item">
+                  <div class="vi-list-lt">
+                    <div class="vi-txt-body vi-txt-b600">參考市值/餘額</div>
+                  </div>
+                  <div class="vi-list-rt">
+                    <!-- has-select-link 時 這邊是粗體 -->
+                    <div class="vi-txt-body-bold vi-txt-b600">320,000</div>
+                  </div>
+                </li>
+                <li class="vi-list-item">
+                  <div class="vi-list-lt">
+                    <div class="vi-txt-body vi-txt-b600">
+                      庫存標的成本
+                    </div>
+                  </div>
+                  <div class="vi-list-rt">
+                    <!-- has-select-link 時 這邊是粗體 -->
+                    <div class="vi-txt-body-bold vi-txt-b600">50,000</div>
+                    <div class="vi-txt-callout vi-txt-b500 mt4">(以上金額為約當新臺幣)</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          
+          <!-- 9RC 法人信託概要 牌卡-->
+          <!-- has-select-link -->
+          <div class="vi-card vi-overview-card has-select-link">
+            <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+              <div class="vi-txt-headline mr-auto">
+                福儲信託(1:1)補助
+                <!-- <div class="vi-txt-callout vi-txt-b500 mt4">A001000001</div> -->
+              </div>
+              <div class="ml-auto rt flex-grow">
+                <div class="vi-txt-headline vi-txt-b900"></div>
+                <div class="vi-txt-callout vi-txt-b500"></div>
+              </div>
+            </a>
+            <div class="vi-card-body">
+              <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview pad_top16">
+                <li class="vi-list-item">
+                  <div class="vi-list-lt">
+                    <div class="vi-txt-body vi-txt-b600">標的市值</div>
+                  </div>
+                  <div class="vi-list-rt">
+                    <!-- has-select-link 時 這邊是粗體 -->
+                    <div class="vi-txt-body-bold vi-txt-b600">100,000,000</div>
+                  </div>
+                </li>
+                <li class="vi-list-item">
+                  <div class="vi-list-lt">
+                    <div class="vi-txt-body vi-txt-b600">參考損益</div>
+                  </div>
+                  <div class="vi-list-rt">
+                    <!-- has-select-link 時 這邊是粗體 -->
+                    <div class="vi-txt-body-bold vi-txt-g400">+10,000</div>
+                  </div>
+                </li>
+                <li class="vi-list-item">
+                  <div class="vi-list-lt">
+                    <div class="vi-txt-body vi-txt-b600">參考報酬率</div>
+                  </div>
+                  <div class="vi-list-rt">
+                    <!-- vi-txt-red-nu, vi-txt-green-nu -->
+                    <div class="vi-stock-tag vi-txt-green-nu">
+                      +12.33%
+                    </div>
+                  </div>
+                </li>
+                <li class="vi-list-item">
+                  <div class="vi-list-lt">
+                    <div class="vi-txt-body vi-txt-b600">提存本金</div>
+                  </div>
+                  <div class="vi-list-rt">
+                    <!-- has-select-link 時 這邊是粗體 -->
+                    <div class="vi-txt-body-bold vi-txt-b600">10,000</div>
+                    <div class="vi-txt-callout vi-txt-b500 mt4">(以上金額為約當新臺幣)</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- 9RC 法人信託概要 牌卡-->
+          <!-- has-select-link -->
+          <div class="vi-card vi-overview-card has-select-link">
+            <a class="vi-card-header flex-wrap flex-justify-between vi-w-100 vi-select-link" (click)="">
+              <div class="vi-txt-headline mr-auto">
+                金控持股信託(補助百分之20)
+                <!-- <div class="vi-txt-callout vi-txt-b500 mt4">A001000001</div> -->
+              </div>
+              <div class="ml-auto rt flex-grow">
+                <div class="vi-txt-headline vi-txt-b900"></div>
+                <div class="vi-txt-callout vi-txt-b500"></div>
+              </div>
+            </a>
+            <div class="vi-card-body">
+              <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview pad_top16">
+                <li class="vi-list-item">
+                  <div class="vi-list-lt">
+                    <div class="vi-txt-body vi-txt-b600">標的市值</div>
+                  </div>
+                  <div class="vi-list-rt">
+                    <!-- has-select-link 時 這邊是粗體 -->
+                    <div class="vi-txt-body-bold vi-txt-b600">100,000,000</div>
+                  </div>
+                </li>
+                <li class="vi-list-item">
+                  <div class="vi-list-lt">
+                    <div class="vi-txt-body vi-txt-b600">參考損益</div>
+                  </div>
+                  <div class="vi-list-rt">
+                    <!-- has-select-link 時 這邊是粗體 -->
+                    <div class="vi-txt-body-bold vi-txt-r500">-10,000</div>
+                  </div>
+                </li>
+                <li class="vi-list-item">
+                  <div class="vi-list-lt">
+                    <div class="vi-txt-body vi-txt-b600">參考報酬率</div>
+                  </div>
+                  <div class="vi-list-rt">
+                    <!-- vi-txt-red-nu, vi-txt-green-nu -->
+                    <div class="vi-stock-tag vi-txt-red-nu">
+                      -12.33%
+                    </div>
+                  </div>
+                </li>
+                <li class="vi-list-item">
+                  <div class="vi-list-lt">
+                    <div class="vi-txt-body vi-txt-b600">提存本金</div>
+                  </div>
+                  <div class="vi-list-rt">
+                    <!-- has-select-link 時 這邊是粗體 -->
+                    <div class="vi-txt-body-bold vi-txt-b600">10,000</div>
+                    <div class="vi-txt-callout vi-txt-b500 mt4">(以上金額為約當新臺幣)</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          
+          <!-- 行銷版位 -->
+          <!-- <ctbc-mb-marketing-card interactPoint="APP_CARD_HOME4110"></ctbc-mb-marketing-card> -->
+          <div class="mt24">
+            <a class="vi-banner">
+              <div class="vi-banner-bi" style="background-image: url(&quot;/content/dam/ctbc-ib/bee-gallery/bee_02.png&quot;);"></div>
+              <div class="vi-banner-rt">
+                <div class="vi-banner-title">預設廣告01標題</div>
+                <div class="vi-banner-txt">預設廣告01內文(原頁置換非白名單)</div>
+                <div class="rt">
+                  <div class="vi-icon-link mt8">
+                    <img class="vi-icon vi-icon-base" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNC4yNzE4IDYuNjg1MzZDMTMuODkzMyA2LjI4MzE5IDEzLjkxMjUgNS42NTAzMiAxNC4zMTQ2IDUuMjcxOEMxNC43MTY4IDQuODkzMjkgMTUuMzQ5NyA0LjkxMjQ3IDE1LjcyODIgNS4zMTQ2NEwyMS4zNzUyIDExLjMxNDZDMjEuNzM3NiAxMS42OTk3IDIxLjczNzYgMTIuMzAwMyAyMS4zNzUyIDEyLjY4NTRMMTUuNzI4MiAxOC42ODU0QzE1LjM0OTcgMTkuMDg3NSAxNC43MTY4IDE5LjEwNjcgMTQuMzE0NiAxOC43MjgyQzEzLjkxMjUgMTguMzQ5NyAxMy44OTMzIDE3LjcxNjggMTQuMjcxOCAxNy4zMTQ2TDE4LjMzMjYgMTNMMyAxM0MyLjQ0NzcyIDEzIDIgMTIuNTUyMyAyIDEyQzIgMTEuNDQ3NyAyLjQ0NzcyIDExIDMgMTFMMTguMzMyNiAxMUwxNC4yNzE4IDYuNjg1MzZaIiBmaWxsPSIjMDA5ODkxIi8+Cjwvc3ZnPgo=">
+                    <span class="vi-txt-body-bold vi-txt-g500 ml4">立即前往</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          
+          <!-- 備註 -->
+          <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+          <div class="mt16">
+            <div class="vi-note-accordion">
+              <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+                <div class="forAEM base-style break-word mr4">
+                  標題
+                </div>
+                <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+              </div>
+              <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                <div class="vi-card-body forAEM base-style break-word">
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+    
+    </div>
+    <!-- main_container -->
+  </div>
+
+</body>
+<!-- body-wrap -->
+</html>
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-account-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">選擇個人信託資產</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <ul class="vi-list vi-list-px8 vi-list-py8 vi-list-noline vi-list-bg-gray super-card-select-account">
+          <!-- 目前的帳戶 加上 active -->
+          <a class="vi-list-item active" href="">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="dis-flex align-items-center mb8">
+                  <div class="vi-txt-body-bold vi-txt-b600">富貴傳承信託</div>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold"></div>
+              </div>
+            </div>
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body">A001000001</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold">10,294</div>
+              </div>
+            </div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="dis-flex align-items-center mb8">
+                  <!-- <span class="vi-flag vi-flag-jpy mr8"></span> -->
+                  <span class="vi-txt-body-bold vi-txt-b600">活期帳戶</span>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold vi-txt-b600"></div>
+              </div>
+            </div>
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body vi-txt-b600">0000251300001234</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold vi-txt-b600">100,000,000</div>
+              </div>
+            </div>
+          </a>
+        </ul>
+          
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+$(document).ready(function(){
+  
+  // scroll to fixed header
+  $(window).scroll(function(){
+    const scrollTop = $(document).scrollTop();
+    
+    if ( scrollTop >= 1 ) {
+      $('body').addClass('vi-page-header-fix');
+      $('.main_container').removeClass('add-title-space');
+      $('.nav-tab-green').addClass('fixed-top fixed-position-1');
+    }
+    else {
+      $('body').removeClass('vi-page-header-fix');
+      $('.main_container').addClass('add-title-space');
+      $('.nav-tab-green').removeClass('fixed-top fixed-position-1');
+    }
+  });
+  
+});
+</script>

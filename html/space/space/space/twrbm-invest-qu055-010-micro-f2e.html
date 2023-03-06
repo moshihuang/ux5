@@ -1,0 +1,3357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <script type="text/javascript" src="twrbm-invest-qu055-010-micro-f2e.js"></script>
+  <style>
+    /* source css */
+    article,
+    aside,
+    dialog,
+    footer,
+    header,
+    section,
+    footer,
+    nav,
+    icon-trash figure,
+    menu {
+      display: block;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    *:after,
+    *:before {
+      box-sizing: border-box;
+    }
+    html,
+    body,
+    ul,
+    li,
+    dl,
+    dt,
+    dd,
+    form,
+    image {
+      margin: 0;
+      border: 0;
+      padding: 0;
+      list-style: none;
+    }
+    img {
+      border: 0;
+    }
+    a {
+      font-weight: normal;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    a:visited,
+    a:hover,
+    a:active,
+    a:focus {
+      text-decoration: none;
+      transition: all 0.3s;
+      outline: none;
+      cursor: pointer;
+    }
+    a:hover,
+    a:active {
+      opacity: 1;
+    }
+    body,
+    div,
+    dl,
+    dt,
+    dd,
+    ul,
+    ol,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    form,
+    fieldset,
+    input,
+    select,
+    textarea,
+    p,
+    blockquote,
+    th,
+    td {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      color: #324148;
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-text-size-adjust: none;
+    }
+    
+    
+    
+    
+    /*  */
+    .mt0 {
+      margin-top: 0 !important;
+    }
+    .mt4 {
+      margin-top: 4px !important;
+    }
+    .mt-4 {
+      margin-top: -4px !important;
+    }
+    .mt16 {
+      margin-top: 16px !important;
+    }
+    .mb4 {
+      margin-bottom: 4px !important;
+    }
+    .dis-flex {
+      display: flex;
+    }
+    .d-flex {
+      display: flex;
+    }
+    .flex-justify-end {
+      justify-content: flex-end;
+    }
+    .align-items-center {
+      align-items: center;
+    }
+    .w-100, .vi-w-100 {
+      width: 100%;
+    }
+    .mb12 {
+      margin-bottom: 12px !important;
+    }
+    .vi-txt-b900 {
+      color: #12171a;
+    }
+    .vi-txt-body-bold {
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .vi-txt-headline {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .top-2px {
+      position: relative;
+      top: 2px;
+    }
+    .mr-auto {
+      margin-right: auto;
+    }
+    .ml-auto {
+      margin-left: auto;
+    }
+    .mr4 {
+      margin-right: 4px !important;
+    }
+    .mr8 {
+      margin-right: 8px !important;
+    }
+    .mr12 {
+      margin-right: 12px !important;
+    }
+    .vi-icon-xs {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+    }
+    .vi-icon-base {
+      width: 24px;
+      height: 24px;
+      font-size: 24px;
+    }
+    .vi-icon {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: inline-block;
+    }
+    .vi-dashed-divider {
+      margin: 16px 0;
+      width: 100%;
+      height: 1px;
+      border-top: 1px dashed #C0C0C0;
+    }
+    a {
+    text-decoration: none;
+    }
+    .vi-txt-callout {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    .vi-txt-g500 {
+      color: #009891;
+    }
+    .vi-txt-body, .vi-txt-body-bold {
+      font-size: 17px !important;
+      line-height: 1.4;
+    }
+    .vi-txt-b500 {
+      color: #757575;
+    }
+    .vi-txt-b600 {
+      color: #36444d;
+    }
+    .vi-card-s .vi-card-body {
+      padding: 0 12px 16px 12px;
+    }
+    .mt8 {
+      margin-top: 8px !important;
+    }
+    .mb16 {
+      margin-bottom: 16px !important;
+    }
+    .vi-row {
+      margin-right: -12px;
+      margin-left: -12px;
+    }
+    /* .vi-container .nav-scroll, 
+    .vi-card-body .nav-scroll {
+      margin-left: -12px;
+      margin-right: -12px;
+    } */
+    .nav-scroll {
+      position: relative;
+      border-bottom: 1px solid #DFE3E5;
+    }
+    .vi-tab-line {
+      background: linear-gradient(90.87deg, #fafafa 2.69%, #f0f0f0 99.7%);
+      border-radius: 100px;
+      height: 40px;
+    }
+    .nav {
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none;
+    }
+    .vi-tab-line .nav {
+      display: flex;
+      background: none;
+      padding-bottom: 33px;
+    }
+    .nav>li {
+      position: relative;
+      display: block;
+    }
+    .vi-tab-line .nav > li {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+    .vi-tab-line .nav > li.active:before {
+      position: absolute;
+      height: 28px;
+      left: 12px;
+      right: 12px;
+      top: 8px;
+      box-shadow: 0 10px 10px rgb(46 146 141 / 53%);
+      border-radius: 18px;
+      content: "";
+    }
+    .nav>li>a {
+      position: relative;
+      display: block;
+      padding: 10px 15px;
+    }
+    .vi-tab-line .nav > li > a {
+      text-align: center;
+      white-space: nowrap;
+      font-size: 17px;
+      line-height: 22px;
+      height: 40px;
+      transition: none;
+      font-weight: 700;
+      color: #757575;
+    }
+    .vi-tab-line .nav > li.active > a {
+      opacity: 1;
+      background: #009891;
+      border-radius: 100px;
+      height: 40px;
+      overflow: hidden;
+    }
+    .vi-tab-line .nav > li.active > a:before {
+      content: "";
+      position: absolute;
+      width: 57px;
+      height: 59px;
+      right: -8px;
+      bottom: -27px;
+      background: #02817B;
+      opacity: 0.7;
+      border-radius: 100%;
+    }
+    .vi-tab-line span {
+      position: relative;
+      word-break: normal;
+      word-wrap: break-word;
+    }
+    .vi-tab-line .nav > li.active > a span {
+      color: #fff;
+    }
+    .vi-card-s {
+      background-color: #fff;
+      border-radius: 12px 0;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .pad_top24 {
+      padding-top: 24px !important;
+    }
+    .vi-container {
+      position: relative;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    .vi-line-title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 28px;
+      color: #12171A;
+      display: inline-block;
+    }
+    .vi-line-title:before {
+      content: "";
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAA8CAYAAAC5OOBJAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARoSURBVHgBbVfbcRxHDETPjVnSWcXHSfx3BorBGUgZKAOl4BAcgxNxDI7ADkF/rmKpFhoADWBW0hV5u9ydwaPRaAwh6/P44cPjyxifVeWTAL+Jf5RfgIoq1rWfxy1845x/H6rv/cH6rLWxyu/91o34FTSybsfL3d3nQ+S9vcMYy4ttGqLgvV3suZlZV/peoUDmuvmEfLg+boCegXq+7Fn45n9IRjYzR430zC2jtb/HKVLGH4ZWntPc+ztlxBayhgm69yUaRjqSy8C0yDSMrhcwWBNTAkasMga/hf9MZU0IBoNAQGJ7Ebn6DpQjNzkTwUoq6xtod6oo2+7f3k36UhYedYVI1/js4HDSmGczErnZqmYSSIs91qqFv12lMtg1Ekwbheo5bECKXL5mun90WNiLmpzenvWaVWevq3StEjT3o2TVCc6Cw3PmH74s3tGM1pb8RnbZej1kFpAarUf0o9akbNwhUCLR7TI100EgrUnRdMrKMjbfKGTfVudcmaE3OkrrG1UDsGaOJkeyCTx1LSDh3bSaSQeCHJGzNhgR2SiSui2WLMpaXF+A2Wctlo2XZGUoh2sGRM6l5uYxqpTK3D0MjG4tN7iLYKyeAUhgZLlYTtgiaIqOrdbJ7aQxUqOM6xF3mAAjcpCoKrHbAYv6Zrm3bpJEu5tnA0e8MYJI2TGpeFVUMm8UzzV8G0nGiceFuYevHQuNhnpeIA/3pSSbZ5RfYoaTwKxNuD25vidgsnGcoUvqttsZ1yvkdtPx6hWOrnMURqNEUUoQIFtx94tcnp8h16u7OATV9zNjxhkky0vk9rDCfHD98zKlzmgzrAQvY8f9G5G3tzUVLthSzmkBDoogCWkJ/Ppa8PQkuL6WVgxJTLTZCm/cEMDLkrLntyL3DxqNmNh1Js7HJB/NzfFubXp6VCd2jhTl4HJKIwamUBNDoWyoLfV8fhddpIcNdEn504yZusIx1P0MD5vwjYtSRsC2YqixC5EQp290KJVEOi/7Hj6toc3altDB68VbclSLap1hNPOVVBIt3kvmkvQkcdeKw84uBz3EqNkEQZrC62tW+askQKVCLyLdPGSElhjEELjo3piKPmeEuNTwQTaR5exnlkhj8MDQBffGIvDSb3gyYF5HydjG/UGp7shFWQlDKOqMOhGgEEUPRy06xwgM1nmdh8p36zI3NkTBZpuGehnd10ypLEZtQyvR1kyG2psvphQ2KpsC//gB8ijiNPWRpslz0tPBY+vFuzyLGnFGz2I4PW3RUG8IqV5EzWFs+fBRNwbNas3IxBUbbBm51FHSnnPEIjpNU/5HbmQ7MldfWy0a/YxQ6PKe21tKT82Rj2Ti9EK3nKSYlpXm8dhpH/REk6r5oad65oEmGqWOKDKl5lL9B6RMif2vJZn6XQpzI1P9v0DFDOHTkyxFL4eTf2M++wMJjaWElME6GLVvIxGO46+ckovxCIacKrsBgd2m/PPmZfw5tgMOUoV++utm8d9i4x9f/5ffv3z8+OUbrml97r6sf2oAAAAASUVORK5CYII=) no-repeat center;
+      display: inline-block;
+      width: 5px;
+      height: 20px;
+      background-size: contain;
+      margin-right: 8px;
+      top: 3px;
+      position: relative;
+    }
+    .icon-high-confidence-face {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyNC4wMDAyQzE4LjYyNzQgMjQuMDAwMiAyNCAxOC42Mjc3IDI0IDEyLjAwMDJDMjQgNS4zNzI4MyAxOC42Mjc0IDAuMDAwMjQ0MTQxIDEyIDAuMDAwMjQ0MTQxQzUuMzcyNTggMC4wMDAyNDQxNDEgMCA1LjM3MjgzIDAgMTIuMDAwMkMwIDE4LjYyNzcgNS4zNzI1OCAyNC4wMDAyIDEyIDI0LjAwMDJaTTE3LjQ0ODcgMTQuMDQyQzE3LjYyMzMgMTMuNTE4MSAxNy4zNDAyIDEyLjk1MTggMTYuODE2MiAxMi43NzcxQzE2LjI5MjMgMTIuNjAyNSAxNS43MjYgMTIuODg1NyAxNS41NTEzIDEzLjQwOTZDMTQuMzU1MiAxNi45OTgxIDkuNjQ0NzcgMTYuOTk4IDguNDQ4NjggMTMuNDA5OEM4LjI3NDAzIDEyLjg4NTkgNy43MDc3MSAxMi42MDI3IDcuMTgzNzcgMTIuNzc3NEM2LjY1OTgyIDEyLjk1MiA2LjM3NjY3IDEzLjUxODMgNi41NTEzMiAxNC4wNDIzQzguMzU1MjMgMTkuNDUzOSAxNS42NDQ4IDE5LjQ1MzggMTcuNDQ4NyAxNC4wNDJaTTguODg2OTcgOC4xMDA4M0M4Ljg4Njk3IDguOTI5MjYgOC4yNDA0OCA5LjYwMDgzIDcuNDQzIDkuNjAwODNDNi42NDU1MSA5LjYwMDgzIDUuOTk5MDIgOC45MjkyNiA1Ljk5OTAyIDguMTAwODNDNS45OTkwMiA3LjI3MjQgNi42NDU1MSA2LjYwMDgzIDcuNDQzIDYuNjAwODNDOC4yNDA0OCA2LjYwMDgzIDguODg2OTcgNy4yNzI0IDguODg2OTcgOC4xMDA4M1pNMTYuNDQ0OSA5LjYwMDgzQzE3LjI0MjQgOS42MDA4MyAxNy44ODg5IDguOTI5MjYgMTcuODg4OSA4LjEwMDgzQzE3Ljg4ODkgNy4yNzI0IDE3LjI0MjQgNi42MDA4MyAxNi40NDQ5IDYuNjAwODNDMTUuNjQ3NSA2LjYwMDgzIDE1LjAwMSA3LjI3MjQgMTUuMDAxIDguMTAwODNDMTUuMDAxIDguOTI5MjYgMTUuNjQ3NSA5LjYwMDgzIDE2LjQ0NDkgOS42MDA4M1oiIGZpbGw9IiNGRkEzMUEiLz4KPC9zdmc+Cg==);
+    }
+    .icon-low-confidence-face {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyNEMxOC42Mjc0IDI0IDI0IDE4LjYyNzQgMjQgMTJDMjQgNS4zNzI1OCAxOC42Mjc0IDAgMTIgMEM1LjM3MjU4IDAgMCA1LjM3MjU4IDAgMTJDMCAxOC42Mjc0IDUuMzcyNTggMjQgMTIgMjRaTTcuNDQzOTcgOS41OTk2MUM4LjI0MTQ2IDkuNTk5NjEgOC44ODc5NCA4LjkyODA0IDguODg3OTQgOC4wOTk2MUM4Ljg4Nzk0IDcuMjcxMTggOC4yNDE0NiA2LjU5OTYxIDcuNDQzOTcgNi41OTk2MUM2LjY0NjQ5IDYuNTk5NjEgNiA3LjI3MTE4IDYgOC4wOTk2MUM2IDguOTI4MDQgNi42NDY0OSA5LjU5OTYxIDcuNDQzOTcgOS41OTk2MVpNOC40NTA2NCAxNy40MTZDOS42NDY3NiAxMy44Mjc1IDE0LjM1NzIgMTMuODI3NiAxNS41NTMzIDE3LjQxNThDMTUuNzI3OSAxNy45Mzk3IDE2LjI5NDIgMTguMjIyOSAxNi44MTgyIDE4LjA0ODJDMTcuMzQyMSAxNy44NzM2IDE3LjYyNTMgMTcuMzA3MiAxNy40NTA2IDE2Ljc4MzNDMTUuNjQ2NyAxMS4zNzE3IDguMzU3MTUgMTEuMzcxNyA2LjU1MzI3IDE2Ljc4MzVDNi4zNzg2MiAxNy4zMDc1IDYuNjYxNzkgMTcuODczOCA3LjE4NTczIDE4LjA0ODRDNy43MDk2OCAxOC4yMjMxIDguMjc2IDE3LjkzOTkgOC40NTA2NCAxNy40MTZaTTE3Ljg4OTkgOC4wOTk2MUMxNy44ODk5IDguOTI4MDQgMTcuMjQzNCA5LjU5OTYxIDE2LjQ0NTkgOS41OTk2MUMxNS42NDg0IDkuNTk5NjEgMTUuMDAyIDguOTI4MDQgMTUuMDAyIDguMDk5NjFDMTUuMDAyIDcuMjcxMTggMTUuNjQ4NCA2LjU5OTYxIDE2LjQ0NTkgNi41OTk2MUMxNy4yNDM0IDYuNTk5NjEgMTcuODg5OSA3LjI3MTE4IDE3Ljg4OTkgOC4wOTk2MVoiIGZpbGw9IiM0MzgzRTMiLz4KPC9zdmc+Cg==);
+    }
+    .vi-txt-bl500 {
+      color: #4383E3;
+    }
+    .vi-txt-y500 {
+      color: #FFA31A;
+    }
+    .vi-txt-g400 {
+      color: #21941D;
+    }
+    .vi-txt-r500 {
+      color: #FF5441;
+    }
+    .flex-justify-center {
+      justify-content: center;
+    }
+    .align-items-center {
+      align-items: center;
+    }
+    .pad_top16 {
+      padding-top: 16px !important;
+    }
+    .vi-icon-link {
+      display: inline-flex;
+      align-items: center;
+    }
+    .icon-direction-down-g {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjEyNzMgMTIuMjMyMUM5LjM0NjI4IDEzLjUwMTIgNy41MDE1OCAxMy41MDEyIDYuNzIwNjMgMTIuMjMyMUwyLjI5OTgzIDUuMDQ4MThDMS40Nzk4MiAzLjcxNTY0IDIuNDM4NTIgMiA0LjAwMzE2IDJMMTIuODQ0OSAyQzE0LjQwOTUgMiAxNS4zNjgyIDMuNzE1NjcgMTQuNTQ4MiA1LjA0ODIxTDEwLjEyNzMgMTIuMjMyMVoiIGZpbGw9IiMwMDk4OTEiLz4KPC9zdmc+Cg==);
+    }
+    .icon-display-block-g {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMC43NSIgeT0iMC43NSIgd2lkdGg9IjIyLjUiIGhlaWdodD0iMjIuNSIgcng9IjIuMjUiIHN0cm9rZT0iIzAwOTg5MSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHJlY3QgeD0iNS43NSIgeT0iNS43NTA5OCIgd2lkdGg9IjQuNSIgaGVpZ2h0PSI0LjUiIHN0cm9rZT0iIzAwOTg5MSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHJlY3QgeD0iNS43NSIgeT0iMTMuNzUxIiB3aWR0aD0iNC41IiBoZWlnaHQ9IjQuNSIgc3Ryb2tlPSIjMDA5ODkxIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cmVjdCB4PSIxMy43NSIgeT0iNS43NTA5OCIgd2lkdGg9IjQuNSIgaGVpZ2h0PSI0LjUiIHN0cm9rZT0iIzAwOTg5MSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHJlY3QgeD0iMTMuNzUiIHk9IjEzLjc1MSIgd2lkdGg9IjQuNSIgaGVpZ2h0PSI0LjUiIHN0cm9rZT0iIzAwOTg5MSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPC9zdmc+Cg==);
+    }
+    .icon-display-block-g.active {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMC41IiB5PSIwLjUiIHdpZHRoPSIyMyIgaGVpZ2h0PSIyMyIgcng9IjIuNSIgZmlsbD0iIzAwOTg5MSIgc3Ryb2tlPSIjMDA5ODkxIi8+CjxyZWN0IHg9IjUuNzQ5MDIiIHk9IjUuNzUwOTgiIHdpZHRoPSI0LjUiIGhlaWdodD0iNC41IiBmaWxsPSIjMDA5ODkxIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIvPgo8cmVjdCB4PSI1Ljc0OTAyIiB5PSIxMy43NTEiIHdpZHRoPSI0LjUiIGhlaWdodD0iNC41IiBmaWxsPSIjMDA5ODkxIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIvPgo8cmVjdCB4PSIxMy43NDkiIHk9IjUuNzUwOTgiIHdpZHRoPSI0LjUiIGhlaWdodD0iNC41IiBmaWxsPSIjMDA5ODkxIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIvPgo8cmVjdCB4PSIxMy43NDkiIHk9IjEzLjc1MSIgd2lkdGg9IjQuNSIgaGVpZ2h0PSI0LjUiIGZpbGw9IiMwMDk4OTEiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWpvaW49ImJldmVsIi8+Cjwvc3ZnPgo=);
+    }
+    .icon-display-list-g {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMC43NSIgeT0iMC43NSIgd2lkdGg9IjIyLjUiIGhlaWdodD0iMjIuNSIgcng9IjIuMjUiIHN0cm9rZT0iIzAwOTg5MSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPGxpbmUgeDE9IjUuMDAwOTgiIHkxPSI4LjI0OTAyIiB4Mj0iMTkuMDAxIiB5Mj0iOC4yNDkwMiIgc3Ryb2tlPSIjMDA5ODkxIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8bGluZSB4MT0iNS4wMDA5OCIgeTE9IjEyLjI0OSIgeDI9IjE5LjAwMSIgeTI9IjEyLjI0OSIgc3Ryb2tlPSIjMDA5ODkxIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8bGluZSB4MT0iNS4wMDA5OCIgeTE9IjE2LjI0OSIgeDI9IjE5LjAwMSIgeTI9IjE2LjI0OSIgc3Ryb2tlPSIjMDA5ODkxIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K);
+    }
+    .icon-display-list-g.active {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMC43NSIgeT0iMC43NSIgd2lkdGg9IjIyLjUiIGhlaWdodD0iMjIuNSIgcng9IjIuMjUiIGZpbGw9IiMwMDk4OTEiIHN0cm9rZT0iIzAwOTg5MSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPGxpbmUgeDE9IjUuMzk3NzEiIHkxPSI2Ljc1IiB4Mj0iMTguNTk3NyIgeTI9IjYuNzUiIHN0cm9rZT0iI0VGRkZGRSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8bGluZSB4MT0iNS4zOTc3MSIgeTE9IjExLjU1IiB4Mj0iMTguNTk3NyIgeTI9IjExLjU1IiBzdHJva2U9IiNFRkZGRkUiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGxpbmUgeDE9IjUuMzk3NzEiIHkxPSIxNi4zNTAxIiB4Mj0iMTguNTk3NyIgeTI9IjE2LjM1MDEiIHN0cm9rZT0iI0VGRkZGRSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K);
+    }
+    .vi-txt-title {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .mt-2 {
+      margin-top: -2px !important;
+    }
+    .vi-btn-group {
+      display: flex;
+      justify-content: center;
+      margin: 0 -12px;
+    }
+    .vi-btn {
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 1.4;
+      text-align: center;
+      background-color: transparent;
+      padding: 0;
+      border: 0;
+      outline: 0;
+    }
+    .vi-btn-m {
+      width: 180px;
+    }
+    .vi-btn-primary {
+      color: #ffffff;
+      background-color: #009891;
+      border-radius: 6px;
+    }
+    .vi-btn-group .vi-btn {
+      /* flex: 1; */
+      margin: 0 12px;
+      padding: 12px 0px;
+    }
+    .vi-btn-group .vi-btn-m {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto;
+    }
+    .vi-btn-group .vi-btn {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    .hide {
+      display: none !important;
+    }
+    .vi-tab {
+      display: flex;
+    }
+    .nav-scroll .vi-tab {
+      overflow-x: auto;
+      clip-path: inset(0 0 20px 0);
+      padding-bottom: 20px;
+      margin-bottom: -21px;
+    }
+    .vi-tab:after, .vi-tab:before {
+      content: "";
+      width: 12px;
+      height: 100%;
+      display: block;
+      -webkit-flex-shrink: 0;
+      flex-shrink: 0;
+    }
+    .vi-tab .vi-tab-item {
+      border-bottom: 1px solid #DFE3E5;
+      flex-shrink: 0;
+      flex-grow: 1;
+      flex-basis: auto;
+      margin-right: 16px;
+      text-align: center;
+      word-break: normal;
+      word-wrap: break-word;
+    }
+    .vi-tab-link {
+      display: block;
+    }
+    .vi-tab-link span {
+      padding: 10px 8px;
+      position: relative;
+      display: inline-block;
+      font-size: 17px;
+      line-height: 1.4;
+      color: #757575;
+      text-align: center;
+    }
+    .vi-tab-item.active .vi-tab-link span {
+      padding: 10px 8px;
+      position: relative;
+      display: inline-block;
+      font-size: 17px;
+      line-height: 1.4;
+      color: #12171a;
+      font-weight: 700;
+      text-align: center;
+    }
+    .vi-tab-link span:before {
+      content: "";
+    }
+    .vi-tab-item.active .vi-tab-link span:before {
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: #ff5441;
+      border-radius: 999px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    .tab-content .tab-pane {
+      position: relative;
+    }
+    .tab-content>.active {
+      display: block;
+    }
+    .tab-content>.tab-pane {
+      display: none;
+    }
+    .tab-content>.active {
+      display: block;
+    }
+    .mt24 {
+      margin-top: 24px !important;
+    }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      background-color: transparent;
+    }
+    th {
+      text-align: left;
+    }
+    .wid_40per {
+      width: 40%;
+    }
+    .icon-info-mark-g {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iOCIgY3k9IjgiIHI9IjcuMjUiIHN0cm9rZT0iIzAwOTg5MSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPGVsbGlwc2UgY3g9IjgiIGN5PSI1IiByeD0iMSIgcnk9IjEiIGZpbGw9IiMwMDk4OTEiLz4KPGxpbmUgeDE9IjgiIHkxPSI4IiB4Mj0iOCIgeTI9IjExIiBzdHJva2U9IiMwMDk4OTEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=);
+    }
+    .vi-tag {
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .vi-tag-group .vi-tag {
+      padding: 2px 8px;
+      height: 24px;
+      max-width: 124px;
+    }
+    .vi-tag-group .vi-txt {
+      font-size: 15px;
+      font-weight: normal;
+    }
+    .vi-tag-r300 {
+      background: #FFEEED;
+    }
+    .vi-tag-r300 .vi-txt {
+      color: #FF5441;
+    }
+    .vi-tag-group .vi-tag .vi-txt {
+      width: max-content;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .vi-tag-g200 {
+      background: #E4F0EF;
+    }
+    .vi-tag-g200 .vi-txt {
+      color: #067A75;
+    }
+    
+    
+    .vi-modal {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      display: none;
+    }
+    .vi-modal-in {
+      display: block;
+    }
+    .vi-modal-backdrop {
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+    .vi-modal-in .vi-modal-backdrop {
+      opacity: 1;
+      animation: backdrop-in 0.2s ease-in-out;
+      animation-fill-mode: backwards;
+    }
+    .vi-modal-in .super-card {
+      opacity: 1;
+      transform: translateY(0);
+      animation: slide-panel-in 0.3s ease-in-out;
+    }
+    .vi-modal.vi-modal-nopull .super-card:before {
+      display: none;
+    }
+    .vi-modal-fixed-container {
+      padding-bottom: 72px;
+      padding-bottom: calc(72px + var(--sab));
+    }
+    .vi-modal-backdrop {
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+    .vi-modal-in {
+      display: block;
+    }
+    .vi-modal-in .vi-modal-backdrop {
+      opacity: 1;
+      animation: backdrop-in 0.2s ease-in-out;
+      animation-fill-mode: backwards;
+    }
+    @keyframes backdrop-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .vi-modal-out .vi-modal-backdrop {
+      opacity: 0;
+      animation: backdrop-out 0.2s ease-in-out;
+      animation-fill-mode: backwards;
+    }
+    @keyframes backdrop-out {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+    .super-card {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: #fff;
+      display: -webkit-flex;
+      -webkit-flex-direction: column;
+      display: flex;
+      flex-direction: column;
+      border-radius: 16px 16px 0px 0px;
+      padding: 24px 0 12px;
+      min-height: 208px;
+      max-height: calc(100% - 16px);
+      max-height: calc(100% - 16px - var(--sat));
+      transform: translateY(100%);
+    }
+    .super-card:before {
+      content: "";
+      display: block;
+      width: 160px;
+      height: 4px;
+      border-radius: 24px;
+      background-color: #757575;
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      -webkit-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+    .super-card-header {
+      border-radius: 16px 16px 0px 0px;
+      padding: 0 16px 24px;
+      flex: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .super-card-header-lt {
+      min-width: 24px;
+    }
+    .super-card-title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1.4;
+      color: #12171a;
+      text-align: center;
+    }
+    .super-card-header-ct {
+      flex-shrink: 1;
+      text-align: center;
+    }
+    .vi-modal-close {
+      width: 24px;
+      height: 24px;
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHvSURBVHgB7dpLUsJAFIXhS1yoOJOJwArEFSA4AEbiRhM5kYmUIY/76rLON0Qqdv2VStE3LUJERERERERE9K/MROv08Sp1vfq52uwszy9ryWS8Hl2g034rTbO6uSQW9SQZjvtPkWb+67OmfpPFeiMTVaJR3yymdfmsXWiwv+JAVS1FQReoU3CkrjgGlIHqXfffgiL1xWnqL1HQP6QPu/PlKo/dX3B8Jg2Js1jPRUEfCDIiBcQBm0AQGSkoDtgFgohIgXHANhB4RgqOA/aBwCNSQhzwCQSWkZLigF8gsIiUGAd8A4EmUnIc8A8EUyIVEAdiAsGYSIXEaVclkYZEapURB2IDQW+kO4LjQHwgmBIpIQ7kBIIxkZLiQF4gGBIpMQ44TRQHms2a/u889H/HUd4dNGpMmvciICfQpBlyTqT4QKoBe3yk2GfQkF/IjdwZsse/Uoq7g8ZsHzJfBNz+J4kwZW9VSCT/QJqNZwGRfANZ7MqTI/kFshxZJEbyCeQxz0mKZB/Ic9iVEMk2UMQkMDiSXaDIMWlgJJtAGTPkoEj6QJkD9oBIur0YzihmDtgXy3nv3u2w3YiCwxnFq6hJYF+kIs8oRo9Je++k6ezPKGbNkLsipZ9RPG7fpamuD8pLMMWZZBOlrYeIiIiIiIiIqCzfTfKUnS2TQGsAAAAASUVORK5CYII=) no-repeat center;
+      background-size: contain;
+      border: 0;
+      outline: 0;
+    }
+    .super-card-body {
+      flex: 1;
+      color: #36444d;
+      overflow-y: auto;
+      padding: 0 16px;
+    }
+    .vi-list-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 16px;
+      border-bottom: 1px dashed #dae1e5;
+    }
+    .super-card-select .vi-list-item:active, .super-card-select .vi-list-item.active, .super-card-select-account .vi-list-item:active, .super-card-select-account .vi-list-item.active {
+      background: #009891;
+      border-radius: 8px;
+    }
+    .vi-list.vi-list-px8 .vi-list-item {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    .vi-list.vi-list-py12 .vi-list-item {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+    .super-card-select .vi-list-item:active *, .super-card-select .vi-list-item.active *, .super-card-select-account .vi-list-item:active *, .super-card-select-account .vi-list-item.active * {
+      color: #fff;
+    }
+    
+    .fixed-colume-table {
+      display: flex;
+      width: 550px;
+      max-width: 100%;
+      padding-bottom: 16px;
+      overflow: auto;
+      flex-direction: column;
+      background: #fff;
+      border-radius: 12px 0 0 0;
+      clip-path: inset(0 0 16px 0);
+    }
+    .fixed-colume-table .row {
+      width: fit-content;
+      display: flex;
+      flex-direction: row;
+    }
+    .fixed-colume-table .row.highlight .td,
+    .row.highlight:nth-child(odd) .td.fixed-colume-table-sticky {
+      background: #F4FBFB;
+    }
+    .fixed-colume-table-header {
+      justify-content: space-between;
+      border-radius: 12px 0 0 0;
+      border-bottom: 2px solid #DAE1E5;
+    }
+    .fixed-colume-table-sticky {
+      position: sticky;
+      left: 0px; 
+      z-index: 1;
+      background: #fff;
+    }
+    .fixed-colume-table-sticky:after {
+      content: '';
+      width: 16px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      box-shadow: 10px 0px 12px rgb(0 0 0 / 3%);
+    }
+    .fixed-colume-table .row .th {
+      display: flex;
+      padding: 12px 8px;
+      background: #F5F5F5;
+    }
+    .fixed-colume-table .row .th.fixed-colume-table-sticky {
+      border-radius: 12px 0 0 0;
+    }
+    .fixed-colume-table .row .th,
+    .fixed-colume-table .row .td {
+      min-width: 88px;
+      display: flex;
+      justify-content: flex-end;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .fixed-colume-table .row .th [class^='vi-txt-'],
+    .fixed-colume-table .row .td [class^='vi-txt-'] {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .fixed-colume-table .row .th,
+    .fixed-colume-table .row .th [class^='vi-txt-'] {
+      align-items: center;
+      text-align: right;
+    }
+    .fixed-colume-table .row .th:nth-child(1),
+    .fixed-colume-table .row .td:nth-child(1) {
+      min-width: 110px;
+      justify-content: flex-start;
+    }
+    .fixed-colume-table .row .th:nth-child(1) [class^='vi-txt-'],
+    .fixed-colume-table .row .td:nth-child(1) [class^='vi-txt-'] {
+      display: flex;
+      justify-content: flex-start;
+    }
+    .fixed-colume-table .row .th:nth-child(2),
+    .fixed-colume-table .row .td:nth-child(2) {
+      padding-left: 22px;
+      min-width: calc(88px + 14px);
+    }
+    .fixed-colume-table .row .th:nth-child(2),
+    .fixed-colume-table .row .td:nth-child(2),
+    .fixed-colume-table .row .th:nth-child(2) [class^='vi-txt-'],
+    .fixed-colume-table .row .td:nth-child(2) [class^='vi-txt-'] {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+    .fixed-colume-table .row .td {
+      padding: 12px 8px;
+    }
+    .fixed-colume-table .row .td:nth-child(2) .high {
+      color: #FFA31A;
+    }
+    .fixed-colume-table .row .td:nth-child(2) .low {
+      color: #4383E3;
+    }
+    .fixed-colume-table .row:nth-child(odd) {
+      background: #F5F5F5;
+    }
+    .fixed-colume-table .row:nth-child(odd) .fixed-colume-table-sticky {
+      background: #F5F5F5;
+    }
+    
+    
+    
+    /* prototype */
+    .bg-light-gray-gradient {
+      background: linear-gradient(180deg, rgba(247,247,247,1) 0%, rgba(247,247,247,0) 48px, rgba(247,247,247,0) 100%);
+    }
+    
+    
+    
+    .vi-scroll-block .vi-scroll-block-item {
+      min-width: 280px;
+      height: 107px;
+      margin-bottom: 24px;
+      overflow: hidden;
+      border-radius: 6px;
+      position: relative;
+    }
+    .vi-scroll-block .vi-scroll-block-item:not(:last-child) {
+      margin-right: 12px;
+    }
+    .vi-scroll-block .vi-scroll-block-img {
+      width: 100%;
+      position: relative;
+    }
+    .vi-scroll-block .vi-scroll-block-img:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.5) 30%, rgba(0,0,0,0) 100%);
+    }
+    .vi-scroll-block .vi-scroll-block-img.default-img {
+      height: 107px;
+      background: url("data:image/jpg;base64,/9j/4AAQSkZJRgABAgEASABIAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCABrARgDAREAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9D2bgfl2HqPw/mcV/XR/hSv6/r+uhA+RjoOOfp+Ht7g4H5G/9fkUQOevXv79SMce+QOBjj34SE9u5QmbA9+vIyeefwxzyQBz6Va/r8DCT39Px/r0sZkr8e4+vUc/n1z/kG0jGT/rczpjwefUdvTJ/M9D25IFVu/8AhzGT/r+tzMlbrnt7+/8AXHSrMJP+vuM6Vs+vOePXn1P5fl3NWlZf1/X9dDGT/r7zLlbJI+vUj8c9Tj1Hv+JpdzB/1+H/AALGbM3oPXHIx17cd+xz2HpVrcxfXy/q/wDwTOmbGOmfXqO5447fiBwAc1f9f1/XmYyfczmPJzj8iPxwP0x6d+7Mnv8A8Agbj8fTGO/TuR/XBOTQwK5PXP68j/6364/Sgf8AX9f12IWPJ/THf8sjtyOg6+9If9foQMf6jjjI9+Oe4FA0QMevb+ZHOARxg49TyemeyArsfp17+vTH+fX6ZBkDHt37H/8AUP8AOfegZAx69Ppj6+vPfP4UD/r+vy/4BXb8P69uc/0GOMUf1/X9bj/X59yJiPyOSOAPTgdSD09PfrhDK7Zx6/5J9Rjke34mgf8AX9f0rkDZ/wDrDkcH2OO3X275pB+BA56/99dOPoegJ/x4PSgf9d9NP68ztfDngubVNl7qZktdOyHjQfLc3Y6goCMRQkf8tiC0nSJCGEq8GJxsaV4U7TqbN/Zh695eWy6vofT5Pw9UxqjiMXzUMK9YxWlWut1y3+Cm1/y8avJfArPmXr1vDaadbra2MEdrBGOI4htGcYLMxyzu2Pmkcs7fLlsjNeNOU6kuapJyk+r1dvJdF2SSt0R99Qo0MLSjRw9OFGnHaMFbV9W7tyk+sm3J7tkUk/T5uxI+n147d+ef0Vv6f9f5Fuf9fd5GfJOBnn164+n44Ge1O39JEOfn/XqUZJ8g4Y/l25wffPr1x24IqrfIzcvz+f8AT8u3zKElwDnnHUdMjpnn2wOmRg807erIcihJP6HBOf1HH/1s4/M5p2/pEOfmUJLjvnPbqP8APQ8k9ceoqrf0yHPX+tf6+4oyzHHJ/L0/Dvj3B4xzTt/X9bkOf/Du39fhoUXm68nnPJx37985z2wOh9BTSIc/6v8Ad/V+59vk9v5HrnnP5cfjjvXd/X+R83/X9aEDH8uePXk8g447Acn/ABH/AMOP+v6/B3Kznqep7dDjB6k49/8AHnFNfd+BMnp/S/pGdOxyfT+X5fjj9R0qui/r+v67mEtjOmOP/wBePy4J+gHp6dbj/X9f1+hg/P8Ar+v8tzMlbrz68579OfrgD6dPaorcxlv+f9bfmZ0rYyR/TOeevcnGBn37cVXUwl+v/DGZK3BJ5J5IJHf8c/rj9TWnz/r+v62MZPX+vIzJW5J+n6479h29PpiqWiMZP8/v/rQzpTnOM9e3PQfzx+YPTiqX9f16mL/r+uxmTNnI9f6jnIPT8egB9c1a/r+v6/AwfX+v6/z8ikx9fyH8vbA/Ljn1ZBCzdcc+n+ce3P5nuaBldj3+uff1/wA556DvgH/wf68+xCxHvx17nP4/4DGTSD+un3/12K7nnp6f569vTPHT3oH/AMC1yBj6nI69COvp1wP8ntQMgY859v6ficex/rSGQE/z/pj349s4xzxjFA/633+ZAx5z7fT+RP8A9akP+v6RXbPJOc+4z68g9fw60AQMeeP146Y4B/pxz65FAyFj6d+ue3HAOOQc564H17A+xXbnnPX1B9evvkf16Uh+X9f1/Xmd74S8LJdeXq2pJm2DbrO1YcXDL/y3mU4/0dSPkjP+tYEuDCAJfOxmLcL0qb963vz/AJb/AGV/e7v7Prt9ZkOSqvyY3FxvRTvQoy1VVp/xJp/8uk/hi/4lrv8Adq0/UJJxjjgenUcZx0A9uOnv0NeRb1f4H3PN0Vkvy8reWhRkn5Aznp1OOhPXI/me/FO3ovTchz+/+v66lGWfrz7cd8f4DjJJ5/Cml5feZuX9P+v62M+Wcf568f5/P8Kq39Ihz8/67fqUZZuvPQ4P4+mOO/oRTt8iHP8Apb/18yhJOB36ceo98j+XQ5xVW+f9f1+Zm5/1r/XYoyTfkc9R9f15OP544p2Jc13/AK+f9feUXn7Eg+wI5z359Bn88HvTsZuepRkm6jOBz7j65P8Aie3WqsQ5lGSbq3U89MdvfH9M9+tO39f1/X3kOb/r8/y/rb7zJ5/X25x+p5/wFdJ4xCSMn36HnHQ/rjrnP603YPUpyN1PHPJ9Onbnjt36cYHSmv6/r0M5P9PX8/60M6U5J7D6c9SP85/Hir+4wk9Ldtev/Df0/UzZm5/D9OP5cf55N9P60MXt96/rp5WM2Y8cc9wO/Oex9D79KqP3f8MYNmZK3B9e+PbI6du3v0HfmooxfX+v6+/YzZW64x1xye3Xvjjrx7dOOb6/1/Xl+qMJf1qv61/DUzZW6ng8HHT/APV19x2/G0Yyf9f1/W25myt16jqDz149+v8A+rk1S/r+v8jGT/UzZGye+DkfTB7Zz/8AW7VSMGVWOfcA9eBx/nkA5z7gUxFdj19M+vP+eOv4eoAMhLex5/Mnv7/Q4z9aQ7f1/Xz/AOHIGPX0Pf6k/gPfntxjsD7f15kDY+vPt3xxz+ufqOlAEDHqQByOeg79sj/PrzikMrs319s/n3/w568GgaIG/Djj/wDX27++cfSgP6/ry/q5XY/Ufz/Pp0+lIohY5/Tnt24/z1xhcUDK7Hr0HPA+h6dPTPp+dA0QsR+mMfTHqRx0HPp0oA3PDei/2te/vgfsNsRJckFgHPOyBWB4MmCXIIZY1YgqxWuXFV/Yw93+JPSK7d5W8unS/wA0exk2XfX8SnUUvq1G0qz196792kmrO8re9ZpqKbTTcT2J5VVQqAKijaiKAqKq8BQOAAAAAAMAADgAV4dnv1fVvX+mz9H5kkoxtFJJJJWSS2SS0StZWS06IoyT+55PY8e3T9M8j9advVkOf9f1v/XcoSTdf0zwPy64HGMn8x1pL+v6/r8yHMoyT57/AJE84PAPPTv3yaLerM3P+v8AL/gFGSbHIz2688j3/n9c9apL5EOfz+RRkm689847cA4yAemeCc+9NL5kOfVP+vn+BQeY9P8AHuR+X49+Tyc1ViHP59/6/r8ylJN759xz/PPHPHcdetOxm5lGSbnGfr6ckeueuP5U0vIlz+f+XyKUkwyeevQ846fnz3zkjJppGfP8v8/67FGSY+wznOf88duc+nA5ppeRDn87/wDDv/g/0j9By3PX9Ppwc+3uevqOd/M4Px+8gc8HBJHTHtzn6dOOhB9Qck/r+v6/IP69PvKMx69x9ev16f59BVIxl/Vv0/y/pZsh6/j9AD7cj8O3r2qluYS7a/1/WxmSk8+/J6D3HPsM+3bpyL8v67GMn5GZKefQc+vYfXnge+fzNX0/4b8zGRmzN1GPf3zzyPb9evpg1Fdf67mEra/d5GdK3b69PpyO/wDnpz0pav8Ar7zGT6v/AIHr/wAAzZjgcn65P6dcn8fXoDnFmEn/AF06mbI2Bnr+vr+v4dgMVepjLy/rsZrnJ/z7fqP8PaqMn/XzK5x7Y68fl9fXoO2fegCBj74H6HA6Af59aA/r1IGJ578d/wAOo5HfH8uvKH96K7HPP049s/5P5d6BkJbr6fzx6ceucnn/ABBkDE88Yyc4/AHrzj2+gwMZpDK75z7HPU/556e3PagCBjn6nPPT/Ofc5/qD/r5f11IGPvkfp/kgcc/hnBpDX9f1/WpXZueR2J+uRjtz0+hNAyBj+eTn65wOv5n16epoH/X9W/Ui+ZmCqCxZsKB95iewHrnj3zxSemvzfkhpczSWrbtFLq30Xd/qewaTZppWnw2qgebjzbh+oe4dRv8AqFwEQ/3FXPUivCr1HWqSle0dorqorb0b3fmz9Jy7CxwOEp0Vbna56zXWrJe879Urcsf7qXUsyT8cn6gcH07D8PX8eazS+Z2Of9f1/Xl0KEs3XnHUevAxj6Y9fp1p2M3P1/r+n0KMk/uevrwOvp0546deccU7EOfX+n1/r/IoyS4zg8Drjn3/AJceh9+lUkQ56/1YpSTA5BJJ7cg9zzjpjv37EEDkOxDm9fT/AC3KLzH1x37c889h9M+3WnYzc1/wSk83Xk557dOe5PH1BznqDTsQ5fL1/ruUZJuvPTjknp+Bwf0759qSIc/P+v6/y8ik83J55zn+XXOe3rnrxTttqQ5/5FKSY84PGMY+n8vboQexBppEOfd3+7+v+CU5ZfXkZOBn/P4+3tg07fIzc+39df8Agn6KnHoCP/18Dnvzn9B63qZFeQjH0z+Xbt9enQ5HehEt2T/r+vUoTFsHkHHP6D9B6n3q0YvqZkrcfX1x/LknPPbqMHFVH+v6/rT1MZb+vbd/h/X4GbKevQ9fTnpgZPr7dR0zV9TCfr3M2Rhn15+p9OenP9OvQVXZdzGT/r+v69DNlbqeOQcf57kZwD9Mcc1fT+v6/ruYSfp/X9fj0M2Vhk9OMde/+Bx9Pb2tJmMn/X9ehmTHJwfXrn2/+t+P1xVL+v6Zi/69f60M6U+/TH4nPHsfQ+uenFUYP+u35/1+dB/85zjGSO36/ifpRm9yux49cjt+fseP5/hR/X9f8ONEDnnP17/14456nBxwKQ9v6/y/ruQMff8AnxyeOvtn/HpQH9f1/SIG75z9fxzxkdePr9OaCiBj6k9up/8Arj6j69aQFcn8+n/6sH0/PrmgaIWOfXnrgn+nTp0/xFIf4/19xAx4OTgDt7//AK/fnvgHIf8AX9fqH9f1+hXY8H8z3xyfxxyP14zyEMgJOD/P8P0z3/LoMAGQMenXv3zj9T+nGe2c0h/19xseHbUXOpRyuP3dqpuGGOrqQsK+mRIQ4yP+WZ9q5sVPkpNLeb5V3t1/DT5nsZLh1WxsJSV4UE6zurrmTSpq/Rqb515QfqeiST8k9T9TnHb69+vPOa8mx9u5/L+vVf15FGSbGc8AccevTJ7n/wCtwetVYhz/AK/MpSTjnHtjt7g9z06enXrzTsZue99P6/r1KMk3B5xn8OfYe3fn+hp2/r+vQhzXf+v6f3FKSYHvkfzx69PTHY57807EOf8AX4fqUpJj0/Pr6EZxnr3xn1yDVWM3P+v6/r5lGWbk5PfnGO/OM9SMZ7nnPNNIlz/r+vkUnlPIxwSOfw45/n06dRmnYzc13/r+vIpyTHJyTj64xn9Dn+WTzimkyOf+v66FJ5evcZ/z7eoPTiqS+8hz8/68tSk8o5yccdjzjn+fXsPzpohz/r+vvKbyHnnOPUnv7/Q8Z9D6U1H+v6/rbuRz67n6TMeev07k4J9O56A8c+uRS/r+v69DT+v+G2KsjDnJznOO/ck/Xr3Pp07iIk+hmyn649PXjjqc9MfT8zV/1/w5hLZ/11M2ZsZ47HPbIJ9vXvgjOODzWi/Lb+mYP+v6/L+kZ07cfXuOM4685H0646n0xUe/9f18jGRmStjk8fkeevbt+Z681W7/AK8l/wAEwlq+pmytySO/pj09/wD6/HHqBfl5/Ixk/wCtTNlYc44A98++ffp1/PmqW3f+l/S6mM3/AF/XaxmSsec8H1HP1HTv147HJ5q0Yyf9f1/wLGdK3OevX3/x+nr1HQc1/X9fiYv0/rp+hSY59ug68H+nf/D1L/r+rkELHr7fqSPb2/z6A9vUgbv3xz/iM4H9AaA/r+v66EDE/j+XPrn/APWB+RpFfd/XkQOT3P8AL1/POO3Tnr6gFdjx14PtkeuR/L1zyKQyu5B9O36dAMYPPPT2+tA/6/r7iF8cD/PYevfg/wD6qBr+tv6/LdIgY8Zx09D2z7cZ9+vr0xSHr/X9dyA/XHBzzj/OOnTr37EArsc9+SOc9+o4P4j6fSgZCxznr07/AOPA/X6cUhr+vzOv8NIIrW4mIw00ojBPdYkGCCccEyPx6j2xXn4x3nGPaN/nJ/5JH1WQw5MPVqvepV5b9eWmrr/yacr+htyTHnJI9hjP1z/P2wK5LHtuX9f8MUJJRz36fngdvrwD9OvOHYhz79H/AFdFOSYnuB6c5789D19hVJEOfz/r+r/O5Rklx6ngcD6fjz9ep/GmkQ538ilJMfTt7j8O446fnzwadjNztv3/AB/r7ynJKcc45/L2546DPXgA5AqrEc/9f1/kUnl545OD17dfT9afKRz+f3/5/wBfmUpJT3Pbue3+fXHJ5yM5aRDn/Xz+ZSeUcnP9Txz25/QZNO2n9fmQ5/1/X6FOSU5/l+frxznjsB261Siv6+8hz8/6+7f1/wCHpPL1yRz9fXJ+vUg57YxgdX+n4Gbn/X9eX9Wu3UeTryQPY9frz3H9R1zTt9/6f11Ic/6/r+mfpqxGAeD6fjzyT3/XPHtWR3f1/X3FKQ9+MHPA+h/PPf09c00ZS/pf1/XpsZkhOT8w7Y568HnPHf8A+vzxV/1/w39fgYydjNlbJ4wccev/ANfn1/lir2RjLb+n0M6Y9Rj9SO2P89Rn0xVr+v6/rzMG/v8A69NjMmYHv7jtg/0565xjgcVS7mEvn/X9amdMw5zwfr9O+OenbuOOM1S3/r9TB/kZkrcfh1x07j3Off8AAVf4/wBf1cxk/wCr9zNlbr3H5Zz65/X3zjuapbf1/wAExkZkh5OefqOvufxx6k5z2OaRkyuzf5Gf19/zwOnqWIgY4yR69uPXj8fzo/r+rD/p9f6/ryIG47HPp/kjjH/6qQ/6/ruQMT2J/DOfr6f579wP6+ZXY5x/Lp/XHGePyPPNAyBj+f8A+rj3OcD8BxSH/XoQMc8Z/Tpx/n8D70Dt/wAH+v6+4gY//W/n69MYx09+nKH/AF/Vyu2OTz1OeO+T7ccdvbp3oAhY9ecgenOBg59vz6DJFAyBj68fpn0/Ic9cdOlA+xAxx/8AWwcHP/189PTvSH/V/wCvvt+ljs9Lby9OtxnqJGJ9d0rMO3Urj2I7V5tfWrPysv8AyVfqfXZZ7mCordtTk9vtTl59rE0kvXknB+mD3IHvz+RrJI7HP+u7KTzZyB0P+cd8Y6/Snb+v6/zIc1/X9fIoyS4xz6+/v9eR1Oe5B45qlFkOf9fL1/MpSTevHJ6jr275xj+R4p2IcvPr/X9fkU3lIOM9vx57jjn/AAx7Cn8v6/r/AIYzc/69N/mU5JRzyc/j7D09zj2xjnmqsyHL/hv6/r7yk8uckHj8/rnH5U7fMhz/AC0/4cpu+epPXqOpPHpn8D39etP5EOf9fl/X4lR5f65/IZ46/hx/UuzIc/MpPL0P6dOvPX1HP48Z4xT5f6/r+tzNz/r+l+ZTeTPXGCTwOvOc8Dnnp9MDOetW6Eufnt0KjSdtw47Z69e/AznrnnseadvL0M3PzP1Bc5/H6D26e49eOuRk1zdv6/E9dmfK3GeP047/AMvyNWjGX/D/ANf19zM2Vv5kfr+HOBxzjj1poxk/X+v6uZsp79BnjGfx9+CM9z+Rq+v9f1/VjCXz/r9DNlbk/XqPx79iBx7c8dheyMZGbMTk9v8AEe/+Rx1q1t/X/BMZf8D0uZkpORjnsPf8cj19MH6dKX3f1+hg+v8AX6fP/JGbM3px6++fXp2HQH065FUv63/r/hzCRmSntkcj0z+JGO/Tpx+OKsxf9f1+vyKEhGe+enPfnOfp9PQfjRm9yux46euPxGOnf8R0H40B/XfuQOe3t6dfQ+5z/XnFHQZAx7Z/Xr/np+H1wh2/r+vIrseOnc/y459PY9fzoAhY+vueO3f1/wAn6cIZAw//AFfj9M+3TqDigZAxyPr9f6cfp0H40D/r+u9yuxPr7+3v6Y7f0pDK7ng+/wDXrxnt1H60DIW6Z498ZwPzx/Pt+FAEDH6/488ex64z07dskH/XpoLFa3V1xbwSSgHGVBCjpgGQ4QE9gWFZyqQh8UkvLq/lu/uOijhq9d/uaU6mtm0vdT85O0Y/N+fr3tjot0LOASPFF+5X5SxkbrznaCnXOPm/HHNeTWxEPaTspS952eiX4u9/l/kfcYHKsT9Voe0lTp2pxum3OSd9fhXL9032XRj5dIwCPtQz3/dYwew/1mTjOM4555GMjNV1vyf+Ta/kdLyx9cQl5ez/APt1cyZ9NlXO2eNuD1DIeO38fXsccdOlaRrxf2WvSz/r+vU555fUV+WrB+TTjt5rmsYtzDPETmPIHJZSGH6ZZcH+8B79DW0ZRl9q1+j0/P8ARnBUo1qe8G13j7y9Xbb5peRkvLyc9fr0656jGB/9f6acv9f1/XyOVzS30Kskme30/qc5I9PU5/CnaxDn/X4FKSUcfmMZ6j2HUn8/xp2Zm5v+v6/rfYqPKeenB9c+nB9D1z26dcZp2/r+vkS5/wCZSeTg8j045/P3wMdOe3eqsv1/r8zNz/r+tP0Kjyfz6j3PHT29c+5p2Ic/6/rz2KjyfX9O/HA9+PbGcjuXb+vIhz8/62ZUeTHJ9v8APfGB09Pxp2Ic/MpvJ3/p6ceo54/THpTSJcvl/X5H6lSt+I68ep+hxnnqM8dO9ca/rue83p3v/X3dTNmbrjpz/hyOffPTnoO9X+Zg3/kv0M+ZgBj29Ovf05/Lkd16i49zGW/9f15mZK3tk8+gyPQE/wAvpjsKpf11/DQxk7/8G+pmyn73b8fTj/Pt+tdUYS/r+v6+4zZTjPP8h19+nU57D1q+n9f1+RjJ/wBf8EzJWPODkYP9M+mfftn9bW3Ywk9P6SXn2M2ZuevXp09+2BznucdcZql/X9f13MZf1/X9fiZszc8Dvk9vY+vXJH5DvVGLf3lJj6d+vtnoPQYz2Pr+NfoZldvp6ZJz69vXt1P59aB/p/X9ehAx+mfx7n3HTr+dH9fcP+vkQMenX0HX8f8AAjnJ7+qGQse3Ofr/AE569x6YoArscA+n4f4gnv7ck9KRRXY89uPTnt7fp/QHJB+n9f1+WhAeSe3P09eM+/QdvXtSD1/r+v66kL/pn9f8/r165AMgc+nU8dPy/Educ85oGRpHJNIscKPLK5wsaLkk9+BnAGMkjAA5OBzSclFOUmklu3oXTpzqzjTpxlOcnaMYq7b32Xlu3oldtpJnWWPh6KFVlv8A99Ljd9nU4iQ9cMVwZCO44jOcYcDNefVxUpaUtF/M17z9N7L5X9D6fB5LTpJTxf72bWlJP93B9pNa1JL1UN1aa1NWQoiBUVUReFVVCqAOgAHHrgAY/CubV6ttvu9X97PY92CUYJRilZKKSS9IrZfLRl2G4/0aPpkBgQSegZl/l6c8gdOK5px9+Xbfy2R62Gq3w8FfRcyfyk/0/D8Kc0/BI6jrz0yCB/k5zngjuKNxTqef9fgZM03U5GOOPzP6En298Vqlb+v67HLOpvr+Vv6/rbQyZ5u3146HOfQHPcnoDjPUcjSMfu/r5eW5yzqea/Xt/X6mJdeXLkkANxhlwpPGPm4GQT2/I8ZrWLkv8n/Wh59aFOpq/dl/MtHptfo9l+SexgT7kPUYPQ9QTnHTt2689eCM10qzW/3nmVFKm/e67NbP9UUHk7HjA6fy4APrwAOaqxg53/p/joVJJMZ5x0x+Hrn29Dzz6U7ev9f1/mQ5X/4H9f1cqO/BycY5x07DoM56gfl0zmml/X9f1+ZDl3/r5FR5OuD149M5z6f5BHGOz5SHP7+v9W/r8CozZJ9OD34PoSD1688n3qrE8xWY5J59vb+Z+uf0HWgV/uIWPXHp/TPTv+uR3WgPvP0d0XWFKpZXLgEDZbyseo6LC7HgEdI2PUYT723cq9HecVv8SX/pS/8AbvPX0rLcf7scNWdmrKjNvRrpB+a2g3pb3d1FPblbr+Ptnj88e/Ttgc45T2Ht/Xnt/XQzpWx7+g+vX65749e/bRbGD/H+v6/Nd82ZuOcdfTjIHU5P1/8Ar1UV1/Uxf3MzJSOc4/w/yeR+WOKpav8ArX+vvMZP+r6mbKx6/wAueo6d+g7dCc+lX/wxhJ/1/wAN/WuhmSv154ySOvf0Ge+ccD8PW7Wt/X9foYyf9efp/wAHoZsrfp+X8+ffv2zjrSRjJv8Ar+v66eWdKxPHP1xwfU/ifU9iTVL+v6/pmD/4cqMf1z1xnoe/+eaYiFj2/I5HAAPToe/5j64A63Kzn8CPT/62Rg8/j9TSK/r+v6uQMcfTp9eR16fr6dRxQBAxHpx+HH4AdemDkY684zSGQMTj0/n2HOSOMY5HH9Afn/X9bEDHjHPfgn8fXjjH0x7UD/H+l/S30IGPb+vX8z3x3z9aB/1/XcgY9+3GceoJ6cZ6H8M80gIlR5pEjjVnkdgqIOpYnAAGB34PQDGSaTaim27JK7b7FwhOpONOEXKc2oxildtvZL+tOp6DpmmRabCWO1rqRR50mOF4H7qM/wBxTwx4aQ8ngKq+TWrOtLqoJ+7H/wBufn+S073+2y/AU8DSu7SxE0vaVO19fZwvtFdXvJ+87WUVNNJnqcDA6459enH5evGRWaR2Sk/6/rZ6mXLJ7/4dfrkYzx26ehq0jCUt/wCn/X9dxsE/yOpyQGyAD6/n0IOB2JxjpWdSOqfdW/Q6cNVahKN/hlfz1++2qfrp5FWefJOCcY5xnkZyf/r5OO46cijpt/X9dvmVOpu/6/pmTNMckZ6ZHGec54znOMHnkngdq0jFb+a/4f8ArQ5Z1Pv1+eve3p17mXLN25Hr6nvx6dODjnPtWiRyzq9F/X9enToZk03J5/kcn1/wPUk9eMVoo/1/wf6/z5J1f+B/X6/i9jJnlXo2OeOScY4/HI7E459D8taJdV/X9fkclSopXv8An+v+VuhkyPgkk5/U8Y9eOvpwF5HPTVL+v6/4c4pSs3r+XTUpu5PTpznv/wDr/wA/Wnb+kZud+v8AXT+kVWYn/E57YHUen8vxqtib3/r+vl/mQO3XAx+WM+v9OR3oF/WpA5GD+XbpwB1x+vt3pFFdicHnt+fH6/j09BzQMhJx3Gfx5OP85wOe+TQFv0/r+v8AM+7ycn/PH8+/OB9e1df9f18jwzbsdbKAQ3jFlGAk/LMB6SdSyjON4ywwAwYZI5alC75ofOPR76rb7n8tT2MLmLilSxDcktI1dW15TX2l/eXvbJq12td5FkG9GDKwJV1O4EHgHK5H+fTpg01ZNarv/X9ep6jlGSTi1JNXTTunfz/Az5m5Oex4+hx/n6YxTWxlLb+r/wBaGbMe+fbkkfj9OD69Ogq4mL+7+v69dDOmbgjOSPw6/wBAOo56VSWv9ev36GMv6/r+v882VgevPP58f5xz698Vf9f1/wANb7jCX9dNv6RmSMeemT9ccAn059TwT9ORVpf1/XQxk/Tb8f6/rvnORn15PTuRwOeOenHvmmjFlZj6fh7n+mB9M/QUw8v6/rv+hA3B468/h09cdvbr70hr+v69SuxycDt+OfUjj1H1/XB/X9f1+IyFj9Ce+OBgfkf59DwKAK7/AIng/h074785B7cZ9UMgYjv3Hrz6Zxzn/wCucY5wFL7/AC/r7iBj+I46ev8AX36c4wec0DX9f8AgbnPf9PX2/Env360g/r+v6/4EDHORgY56kDkevGO3+I6mgZ1nhuwVUbUZVJZtyW+egUfLJLz1LHdGPTDHgMMcGLq3fslsrOfr0Xy3+a7H0+R4NRi8bNXlLmhRT6RWk5rzbvBPspfzJm9LJn8sD3Pb8vp3+tcaR70pf1+JmTPkev8Ah198Dr2A6Z7VVjCUrf1/Xp8jMmk64PTjnv27n8R0PbI5NWkYSl1/r+v66so+dsf/AHsr1wPbv6gDGScZ45puOj7r+vyJp1eWe+ktH89vx69EyCafB6k4455P489SR/8AqxxKjc0nU8/+D80zLmmJzkcEn8edoHr6/gO3BrS1rf15HJOp/Wv6PuZU0p6Z68YPsOehPHue/StIxOWdTz/rv/w3mZcsvUepPoMkH73YZ556j2xWqics6l/+D/VjNllJznrnJOfc4/T1P4ZHFqKOadTdf1/X6/hQZs9T6epz7joOPp+NXYwbv16eX9fj0IWJI/TueewPA9PyPFAf1t/w/wDXoVz0P5evH+V+vqaA/r+uuhA5I7Dkfy/Pofzz0pDK5OT3+nfv165x149c9qBkDnk/5B/Dp14P/wBY0D/r+vl/TIGIPtgH/DnH+c/oD/rr8v6v+B94sev+ex//AFY+vpXV/X9f1+Z4a/r+u/crseueck49PqfwP068+gMfBeT2zExPwSNyMdysR6r2PHVcOcAZ45iUIzXvL0dtV6P/AD0N6VerR+CWj1cXrF/Lp6qz8y8urRuMTIY2/vL8yH3PQj6AMOOWxWToyWzv+D/y79jvhjoSspxcH3XvR/zXpZ7bg00UnMcitnsGGc5OOM8ED29emTU8rS1X9f1Y09pCfwzUuujV/u3KErcnAPb06jv+R/oaaX9IiX9fIzZm/wAOuPr+R5456+nNLcwf5f1/X4mbMwGeCfQ49upPHt9cAc5FWjF9Sg5/PJ5/+vxz+I/MmqMyu+Bznr6HseQfXuex6d+aP6/r+tg3/rQhPrgen0Ge3of5+3WkUV29fUgdDxnH4dPz49aP6/rzD+rEDH3HHGT17enrnv8ATg5JBkDHrn0HTPX/AB9OO+M9aQEDH/P0/PvnJ6+5oH/W/wAyu35D0/D8Px69frQP+vu7kDnHf2IB457Y9eo49uBxSGNjiaeaOFOXkkSMccZdgobpnAJyevHfrSk+WMpPZJyfyTZpSg6tSnTj8VScYL1k1H9T0rCQRJBHwkKLGMccKuAT6kkZY4wSWPUmvGbc25PeTbfzPv4xjRp06cb8tOEYRXlFJLbT8N362oSyHkD8evrgY5HB655/KnYiUv69bf8AD/02ZssmOOMjv9Bk4PPPrkdMVdv1MJS/q/8AX9dTMlkwDjAyeuev644z7dOvpaXf+v6/pHPKX3X/AA/rp+mhmyydfcfr6+2B/TGapK/9f1+RjKX9f1+fmUpZMg5/Tp+HXHXPTjrwafLb+v6f5/cKVbTX5+vdfO1jMllI6H1H04OD+J6fr6VcYr+v6/r5HNOp/X9f1+BnSyHkk54789ff1HPbnrWiS22OaU2/6f8AXp2M+R/frnPXpnHfHsOuM89BVpHPJ/11KDkHv+OOMdvYZAx049+lUkYt3ICcZ5BPP0P+f89aA/r+kV39Pbj34wOvX/PAoH/T/wCDb/h+hAx65/z/AFxjjFIf9f1/WxCxH0z2B79OvJ6ntxz2NAyBjnPoTngeoPp7cH8fxP6/r7gK7Hr3yT6gZ9/8+vOTwD1ICckn6fXp/n3J57Uh/wDDf1/XkfeDHv0wPpge/cdevT866/66Hh+X/Df1+pCx7Yz9Pfrz9eBx1A9MUf1/Xy1GV2Pqc8HnPTnnPt1zxjrj2P8Agf1/XzGQMR9f55H6enr6etIZA3X/AD3/AKZ498nkY4P6Ybff/XkQs7r0Zuc5G4+/HX+v6Yot6FqUtlJ29WQNI+fvMSemSSfY9T+H/wBelp2Dmk/tP7yux46/4/mc44PTOOw7YA1K7H6ZHTp/hjsRx1/PAMgb6/j34Off356UgRAxI5z1Hbp7549fc84HSj+v6/r/AID/AK/r+r/eQMRx78k5/XrnHp/XIFAyBz37k9ueMZ79+o9OmKQyux4HPt1Ht064x29OTx2BkDHr3Gen9ceuKB/1/X/D/kQP+ffHT39Bxj17+2KB/d/X9MgbnOPTj09Ouenfg8fkaQzQ0SMPqMOeREHlI/3Y2C84OSGZSpx24IHXDEu1KX95pfJvX70mellMFPHUm9oKc/motR+6TT+R2MsmQR7YyORj2Bz9M9uteakfXSlu/wDg9DMlfGe3UnufUZ56f4c9cVSMJSv/AF/Xp6GZK/UA5z7/AP1h+Ga0S6nPKV7/ANf8AzpXOeTkHJxnn3B54wf649KpK/oYyl/X9fn2M2Rjyc8dc9unsMD0POe545q7WMJS+/1/r/Mz5ZMdOeO2Ohz6fz7j1GSaS/r+v679DCT/AK/r+vxM+Rse57fj+XH51aX9f1/X32MZS/D+vXf5GfI/XpkDjBPf29Pz/lVJf15f18zCUv6/r+tii7Z6HjkZ9QOpAzz7/XPPNWkYtlZu/t1/Pv8A5J6/WmL+v69SBj2//V36Z+vt2ye1If8Aw+/9aFdv06dvXPPOe3b9O4P+vz8v6/AgY84PHX+XPr1/n+QA/FkLnP5/l79+/HUEHqRkGl/X9f194yBjz0+nQce/U/ieM9yKP62/r/MfT+v6/wCHIG9MZ/lk/X/DrjJ4xSH/AF/Xz0IGPuOnXJ9eevPPPQeoo3GfdzE4/X8cE12df68jwv8AgfiRN/POfzP+FSNbEBPJ9sgfTOP5UdP68hkB6D3Bz+HT8qfUfX+uxA3IP4/zH+J+vel/wP0H/l+j/wAiu33V/wA/xYp9/wCugyFuh/3sfgOlJ/on+IyqT8v+f9ul1+78QRC33gOxx/PH8qAIGPP+fY/59uOlIpa/15srsTkj6f0/xo7j6L5EX8bDsP6Yxz1P40f1/X3gtisxPP1P8gf6mkUv0Ij0J74P8qBFd+me/H60iu3y/Jld+v8AwE/1P8wPyx0pvZDK8h5Ps3H5A/jz60n/AJfkC2Rr6B/x+v8A9e7/AKPHiubFfw1/jX5SPXyb/e5/9eJ/+lUzpZidpOegB/Hg1wr9T6SRlyk5IzxjP478VS3Ri3v8vyRnv1Yeg4/HH+Jqui+Zi92jNlP3fcDPvliK0jsYP+vuZmTMcHnsP1HNUv1/U55b2/rexnyk/p/jVrZephN6/O3yKE/C/in6l8/ngVa6ev8AmYy6/P8AMz5OTz6/+zEdvb/HrVowl+q/O35FZ+o+gP8AOmQisSfzGf1P5fhSH1/rsQsTnqe4/Uj+goH38v8AJsgPIz3yP1Gf50DXX+u/+RA3f/dH/oVALZELdP8APc0v+CNFRifX0P4460Df9feyJup+n/s1BX+b/Uhbr9MgfTKj+Rqeglt/XYD/2Q==") no-repeat center;
+      background-size: cover;
+    }
+    .vi-scroll-block .vi-scroll-block-img.default-img:before {
+      display: none;
+    }
+    .vi-scroll-block .vi-scroll-block-img img {
+      width: 100%;
+      margin-top: -36px;
+    }
+    .vi-scroll-block .vi-scroll-block-txt {
+      width: 100%;
+      padding: 12px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .vi-scroll-block .vi-scroll-block-txt .vi-txt-white,
+    .vi-scroll-block .vi-scroll-block-link .vi-txt-white {
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, .2);
+    }
+    .vi-scroll-block .vi-scroll-block-link {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+    }
+    
+
+    
+    
+    
+    
+    
+    
+    .vi-confidence-box-block .box-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -2px;
+    }
+    .vi-confidence-box-block.box-10 .box-item {
+      width: calc(50% - 4px);
+      margin: 0 2px 4px;
+    }
+    .vi-confidence-box-block.box-10 .box-item:not(:nth-of-type(-n+2)) {
+      width: calc(25% - 4px);
+    }
+    
+    .vi-confidence-box-block.box-7 .box-item {
+      width: calc((100% / 3) - 4px);
+      margin: 0 2px 4px;
+    }
+    .vi-confidence-box-block.box-7 .box-item:nth-of-type(-n+4) {
+      width: calc(50% - 4px);
+    }
+    
+    .vi-confidence-box-block.box-8 .box-item {
+      width: calc((100% / 3) - 4px);
+      margin: 0 2px 4px;
+    }
+    .vi-confidence-box-block.box-8 .box-item:nth-of-type(-n+2) {
+      width: calc(50% - 4px);
+    }
+    .vi-confidence-box-block.box-8 .box-item:nth-last-child(-n+4) {
+      width: calc((100% / 3) - 4px);
+    }
+    
+    .vi-confidence-box-block.box-10 .box-item:nth-of-type(-n+2) .name-percent .name,
+    .vi-confidence-box-block.box-7 .box-item:nth-of-type(-n+4) .name-percent .name,
+    .vi-confidence-box-block.box-8 .box-item:nth-of-type(-n+2) .name-percent .name {
+      font-size: 20px;
+    }
+
+    .vi-confidence-box-block .box-item {
+      height: 114px;
+      margin-bottom: 4px;
+      position: relative;
+      border-radius: 6px;
+      border: 2px solid transparent;
+      background-clip: padding-box, border-box;
+      background-origin: padding-box, border-box;
+    }
+    .vi-confidence-box-block .box-item-content {
+      padding: 8px;
+      height: 110px;
+      border-radius: 6px;
+    }
+    .vi-confidence-box-block .box-item.high-confidence {
+      background-image: linear-gradient(to bottom, #FFF1DD, #ffffff), linear-gradient(180deg, #ffffff, #FFF1DD);
+    }
+    .vi-confidence-box-block .box-item.low-confidence {
+      background-image: linear-gradient(to bottom, #E7F0FF, #ffffff), linear-gradient(180deg, #ffffff, #E7F0FF);
+    }
+    .vi-confidence-box-block .box-item.high-confidence .box-item-content {
+      background: rgb(255,255,255);
+      background: linear-gradient(0deg, rgba(255,255,255,1) 10%, rgba(255,249,240,1) 70%);
+    }
+    .vi-confidence-box-block .box-item.low-confidence .box-item-content {
+      background: rgb(255,255,255);
+      background: linear-gradient(0deg, rgba(255,255,255,1) 10%, rgba(231,240,255,1) 100%);
+    }
+    .vi-confidence-box-block .box-item.high-confidence.active {
+      border: 2px solid #FFA31A;
+    }
+    .vi-confidence-box-block .box-item.low-confidence.active {
+      border: 2px solid #4383E3;
+    }
+    
+    .vi-confidence-box-block .box-item .face-value {
+      display: flex;
+    }
+    .vi-confidence-box-block .box-item .name-percent {
+      position: absolute;
+      right: 8px;
+      bottom: 4px;
+      left: 8px;
+      text-align: right;
+    }
+    .vi-confidence-box-block .box-item .name-percent .name {
+      margin-left: auto;
+    }
+    .vi-confidence-box-block .box-item .name-percent .percent {
+      font-size: 15px;
+    }
+    .vi-confidence-box-block .box-highlight {
+      margin-top: 16px;
+      padding: 12px 16px 8px;
+      width: 100%;
+      border-radius: 12px;
+      position: relative;
+    }
+    .vi-confidence-box-block .box-highlight:before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 45%;
+    }
+    .vi-confidence-box-block .box-highlight-content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .vi-confidence-box-block .box-highlight .box-highlight-triangle {
+      display: block;
+      height: 20px;
+      width: 20px;
+      background-color: inherit;
+      border: inherit;
+      position: absolute;
+      top: -10px;
+      left: calc(50% - 10px);
+      clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+      transform: rotate(135deg);
+      border-radius: 0 0 0 4px;
+      background: #fff;
+    }
+    .vi-confidence-box-block .box-highlight-content .col {
+      text-align: center;
+    }
+    .vi-confidence-box-block .box-highlight.high-confidence {
+      border: 2px solid #FFA31A;
+    }
+    .vi-confidence-box-block .box-highlight.low-confidence {
+      border: 2px solid #4383E3;
+    }
+    
+    
+    
+    
+    
+    
+    .radius-square-color-mark {
+      display: flex;
+      justify-content: center;
+    }
+    .radius-square-color-mark .radius-square-color {
+      width: 10px;
+      height: 10px;
+      margin-right: 8px;
+      border-radius: 3px;
+    }
+    .radius-square-color-mark.circle .radius-square-color {
+      border-radius: 50%;
+    }
+    .radius-square-color-mark .radius-square-color.line {
+      width: 10px;
+      height: 2px;
+      margin-right: 8px;
+      border-radius: 3px;
+      background: #757575;
+    }
+    .radius-square-color-mark .radius-square-color.green {
+      background: #009891;
+    }
+    .radius-square-color-mark .radius-square-color.gray {
+      background: #C2D2D3;
+    }
+    .radius-square-color-mark .radius-square-color.yellow {
+      background: rgba(255, 163, 26, 0.6);
+    }
+    .radius-square-color-mark .radius-square-color.blue {
+      background: rgba(67, 131, 227, 0.6);
+    }
+    
+    .radius-square-color-mark.radius {
+      border-radius: 3px;
+    }
+    .radius-square-color-mark .radius-square-color.high {
+      background: rgba(255, 163, 26, 1);
+    }
+    .radius-square-color-mark .radius-square-color.low {
+      background: rgba(67, 131, 227, 1);
+    }
+    
+    
+    .vi-table-card {
+      border-radius: 12px 0 0 0;
+      overflow: hidden;
+    }
+    .vi-table-card th {
+      font-size: 17px;
+      background: #F5F5F5;
+      border-bottom: 1px solid #DAE1E5;
+    }
+    .vi-table-card th:first-child {
+      padding: 12px 16px;
+    }
+    .vi-table-card th:last-child {
+      padding: 12px 16px 12px 0;
+    }
+    .vi-table-card td:first-child {
+      padding: 20px 0 20px 16px;
+    }
+    .vi-table-card td:last-child {
+      padding: 20px 16px 20px 0;
+    }
+    .vi-table-card tr:nth-child(even) td {
+      background: #F5F5F5;
+    }
+    .vi-table-card td .name {
+      width: 110px;
+      max-width: 110px;
+      margin-right: 8px;
+      display: block;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 1;
+      text-align: left;
+      text-overflow: ellipsis;
+    }
+    .vi-table-card td .number-x {
+      min-width: 68px;
+      margin-right: 8px;
+    }
+    .vi-table-card .gradient-bar-wrap {
+      width: 100%;
+      position: relative;
+      top: 3px;
+    }
+    .vi-table-card .gradient-bar-green {
+      height: 16px;
+      background: linear-gradient(-90deg, rgba(0, 152, 145, 1) 0%, rgba(0, 152, 145, .5) 100%);
+    }
+    .vi-table-card .gradient-bar-gray {
+      height: 16px;
+      background: linear-gradient(-90deg, rgba(165, 186, 188, 1) 0%, rgba(165, 186, 188, .5) 100%);
+    }
+    
+    
+    
+    
+    .positive-negative-bar-wrap {
+      padding-bottom: 36px;
+    }
+    .positive-negative-bar {
+      position: relative;
+    }
+    .positive-negative-bar .item {
+      display: flex;
+      width: 100%;
+    }
+    .positive-negative-bar .item .name {
+      min-width: 72px;
+      max-width: 72px;
+      margin-right: 8px;
+      padding: 12px 0 16px;
+      display: block;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 1;
+      text-align: left;
+      text-overflow: ellipsis;
+    }
+    .positive-negative-bar .item.bg-item {
+      position: absolute;
+      top: -16px;
+      left: 0;
+      width: 100%;
+      height: calc(100% + 32px);
+      z-index: 1;
+    }
+    .positive-negative-bar .item.bg-item .bg-wrap {
+      position: absolute;
+      top: 0;
+      left: 80px;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .positive-negative-bar .item.bg-item .bg-wrap .col-bg {
+      width: 100%;
+      background: #C9EBE9;
+    }
+    .positive-negative-bar .item.bg-item .bg-wrap .col-bg:nth-child(2) {
+      background: linear-gradient(-90deg, #EFFFFE 0%, #ffffff 100%);
+      border-left: 2px dashed #8FD3DC;
+    }
+    .positive-negative-bar .item.bg-item .bg-wrap .col-bg:nth-child(3) {
+      background: linear-gradient(90deg, #EFFFFE 0%, #ffffff 100%);
+      border-right: 2px dashed #8FD3DC;
+    }
+    .positive-negative-bar .item:not(.bg-item) {
+      z-index: 2;
+    }
+    .positive-negative-bar .bar-wrap {
+      /* width: 50px; */
+      padding: 16px 0;
+      width: calc(100% - 80px);
+    }
+    .positive-negative-bar .bar-wrap.negative {
+      width: calc((100% - 80px) / 2);
+      border-right: 1px solid #8FD3DC;
+      z-index: 2;
+    }
+    .positive-negative-bar .bar-wrap.positive {
+      margin-left: calc((100% - 80px) / 2);
+      border-left: 1px solid #8FD3DC;
+      position: relative;
+      left: -1px;
+      z-index: 2;
+    }
+    .positive-negative-bar .bar-wrap .bar {
+      height: 16px;
+      background: linear-gradient(-90deg, rgba(0, 152, 145, 1) 0%, rgba(0, 152, 145, .5) 100%);
+    }
+    .positive-negative-bar .bar-wrap.negative .bar {
+      max-width: 100%;
+      float: right;
+      background: linear-gradient(90deg, rgba(0, 152, 145, 1) 0%, rgba(0, 152, 145, .5) 100%);
+    }
+    .positive-negative-bar .item.txt-item {
+      position: absolute;
+      bottom: -42px;
+      left: 0;
+      width: 100%;
+    }
+    .positive-negative-bar .item.txt-item .col-wrap {
+      text-align: center;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 320px) {
+      .positive-negative-bar .item.txt-item {
+        bottom: -60px;
+      }
+      .vi-table-card td:first-child {
+        padding-left: 12px;
+      }
+      .vi-table-card td:last-child {
+        padding-right: 12px;
+      }
+      .vi-confidence-box-block.box-10 .box-item:nth-of-type(-n+2) .name-percent .name,
+      .vi-confidence-box-block.box-7 .box-item:nth-of-type(-n+4) .name-percent .name,
+      .vi-confidence-box-block.box-9 .box-item:nth-of-type(-n+2) .name-percent .name {
+        font-size: 17px;
+      }
+      .vi-confidence-box-block .box-item .name-percent .percent {
+        font-size: 13px;
+      }
+    }
+    
+    
+    .ml-auto {
+      margin-left: auto;
+    }
+    .icon-question-mark-g {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iOCIgY3k9IjgiIHI9IjcuMjUiIHN0cm9rZT0iIzAwOTg5MSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPHBhdGggZD0iTTUuNSA2LjQ4ODA2QzUuNSAzLjgzNzMyIDEwLjExNTQgMy44MzczMSAxMC4xMTU0IDYuNDg4MDZDMTAuMTE1NCA4LjI4NTE2IDcuODA3NjkgNy42Nzc3IDcuODA3NjkgOS4xMTUzOCIgc3Ryb2tlPSIjMDA5ODkxIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxlbGxpcHNlIGN4PSI3Ljc1IiBjeT0iMTEuNTk1NyIgcng9IjAuNzUiIHJ5PSIwLjc1IiBmaWxsPSIjMDA5ODkxIi8+Cjwvc3ZnPgo=);
+    }
+    .flex-justify-between {
+      justify-content: space-between;
+    }
+    .overflow-hidden {
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+
+<body>
+  <!-- 投資市場趨勢 從這裡開始 -->
+       
+  <div class="vi-card-s pad_top24 mb16">
+    <div class="vi-card-body overflow-hidden">
+      <div class="vi-tab-line">
+        <ul class="nav">
+          <li class="active" href="#tab1-1" data-toggle="tab">
+            <a class=""><span>產業</span></a>
+          </li>
+          <li href="#tab1-2" data-toggle="tab">
+            <a class=""><span>區域</span></a>
+          </li>
+          <li href="#tab1-3" data-toggle="tab">
+            <a class=""><span>貨幣</span></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-content pad_top24">
+        
+        <!-- 產業 tab -->
+        <div id="tab1-1" class="tab-pane active" role="tabpanel">
+          <div class="mb16">
+            <div class="vi-line-title mb16">看漲信心
+              <!-- id 是 demo 用的，開發請拉掉 -->
+              <span id="trigger-modal1" class="vi-icon vi-icon-xs icon-question-mark-g ml4"></span>
+            </div>
+          
+            <div class="vi-txt-body vi-txt-b600">提供市場板塊地圖與短期看漲信心，以利您分析當前趨勢。</div>
+          </div>
+          
+          <div class="vi-row">
+            <div class="bg-light-gray-gradient pad_top16">
+              <div class="vi-container">
+                
+                <div class="d-flex mb16">
+                  <div class="d-flex mr-auto">
+                    <div class="vi-icon vi-icon-base icon-display-block-g mr8 active"></div>
+                    <!-- 已選取 加 active -->
+                    <div class="vi-icon vi-icon-base icon-display-list-g"></div>
+                  </div>
+                  <!-- id 是 demo 用的，開發請拉掉 -->
+                  <div id="trigger-sort-option1" class="d-flex ml-auto">
+                    <div class="vi-icon-link ml-auto flex-shrink-0">
+                      <div class="vi-txt-body vi-txt-b600">近 1 月漲跌幅</div>
+                      <div class="vi-icon vi-icon-xs icon-direction-down-g flex-shrink-0 ml4"></div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- id 是 demo 用的，開發請拉掉 -->
+                <div id="target-display-block1" class="active">
+                  
+                  <!-- 10 個時加 box-10, 方格會自動往下排, 寬度已在 css 設定好 -->
+                  <div class="vi-confidence-box-block box-10">
+                    <div class="radius-square-color-mark radius flex-justify-end mb16">
+                      <div class="d-flex align-items-center mr12">
+                        <span class="radius-square-color high"></span>
+                        <span class="vi-txt-callout vi-txt-b600">信心指數高（8~10分）</span>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="radius-square-color low"></span>
+                        <span class="vi-txt-callout vi-txt-b600">信心指數低（1~7分）</span>
+                      </div>
+                    </div>
+                    <div class="box-wrap">
+                      <!-- 選取時 加 active -->
+                      <div class="box-item high-confidence active">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-high-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-y500 mt-2 value">10</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">能源</div>
+                            <div class="vi-txt-g400 percent">+66.26%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item high-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-high-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-y500 mt-2 value">10</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">公用事業</div>
+                            <div class="vi-txt-r500 percent">-18.26%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item high-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-high-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-y500 mt-2 value">9</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">金融</div>
+                            <div class="vi-txt-g400 percent">+8.11%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item high-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-high-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-y500 mt-2 value">8</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">原物料</div>
+                            <div class="vi-txt-r500 percent">-7.10%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item high-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-high-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-y500 mt-2 value">8</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">健護</div>
+                            <div class="vi-txt-g400 percent">+4.25%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item low-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-low-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-bl500 mt-2 value">7</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">工業</div>
+                            <div class="vi-txt-r500 percent">-8.26%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item low-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-low-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-bl500 mt-2 value">6</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">核心消費</div>
+                            <div class="vi-txt-r500 percent">-19.26%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item low-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-low-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-bl500 mt-2 value">5</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">科技</div>
+                            <div class="vi-txt-g400 percent">+10.25%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item low-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-low-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-bl500 mt-2 value">3</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">地產</div>
+                            <div class="vi-txt-r500 percent">-1.26%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item low-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-low-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-bl500 mt-2 value">2</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">非核心消費</div>
+                            <div class="vi-txt-g400 percent">+4.25%</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- .high-confidence .low-confidence 二種 class-->
+                    <div class="box-highlight high-confidence">
+                      <div class="box-highlight-triangle"></div>
+                      <div class="box-highlight-content">
+                        <div class="col">
+                          <div class="vi-txt-callout vi-txt-b500 mb4">產業</div>
+                          <div class="vi-txt-b600 name">美國</div>
+                        </div>
+                        <div class="col">
+                          <div class="vi-txt-callout vi-txt-b500">看漲信心</div>
+                          <div class="d-flex align-items-center flex-justify-center">
+                            <span class="vi-icon vi-icon-base icon-high-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-y500 top-2px">
+                              <span class="value">10</span>分
+                            </span>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="vi-txt-callout vi-txt-b500 mb4">漲跌幅</div>
+                          <div class="vi-txt-body vi-txt-g400 percent">+66.26%</div>
+                        </div>
+                      </div>
+                      <div class="vi-dashed-divider mt12 mb8"></div>
+                      <div class="vi-btn-group">
+                        <div class="vi-btn vi-btn-primary vi-btn-m">看投資策略</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- id 是 demo 用的，開發請拉掉 -->
+                <div id="target-display-list1" class="hide">
+                  <div class="fixed-colume-table mb-16">
+                    <div class="row fixed-colume-table-header">
+                      <div class="th fixed-colume-table-sticky">
+                        <div class="vi-txt-body vi-txt-b600">產業</div>
+                      </div>
+                      <div class="th">
+                        <div class="vi-txt-body vi-txt-b600">看漲信心</div>
+                      </div>
+                      <div class="th">
+                        <div class="vi-txt-body vi-txt-b600">月線<br>乖離率</div>
+                      </div>
+                      <div class="th">
+                        <div class="vi-txt-body vi-txt-b600">近1月</div>
+                      </div>
+                      <div class="th">
+                        <div class="vi-txt-body vi-txt-b600">近3個月</div>
+                      </div>
+                      <div class="th">
+                        <div class="vi-txt-body vi-txt-b600">近6個月</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">能源</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold high">10分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+88.88%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-88.88%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <!-- 首頁進到條列模式 產業名稱會有 highlight 樣式 -->
+                    <div class="row highlight">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">公用事業</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold high">9分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+888.88%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-888.88%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">金融</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold high">8分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-bcalloutody vi-txt-g400">+888.88%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">原物料</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">7分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">健護</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">5分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">工業</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">4分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">核心消費</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">3分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">科技</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">2分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">地產</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">1分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">非核心消費</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">1分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="vi-dashed-divider"></div>
+            
+                <div class="vi-txt-callout vi-txt-b500">資料來源：中國信託智能量化模型, 截至 2022/01/19</div>
+              
+              </div>
+            </div>
+          </div>
+
+          <div class="vi-row">
+            <!-- 產業 及 區域（有tab：市場廣度/本益比） -->
+            <div class="pad_top24 mt16">
+              <div class="vi-container">
+                <div class="vi-line-title mb16">投資觀察指標</div>
+                <div class="vi-txt-body vi-txt-b600 mb16">提供資產指標數據，以評估投資產品當前價格是否適合買入或賣出。</div>
+              </div>
+              
+              <div class="nav-scroll">
+                <ul class="vi-tab">
+                  <li class="vi-tab-item active" href="#tab2-1" data-toggle="tab">
+                    <a class="vi-tab-link"><span>市場廣度</span></a>
+                  </li>
+                  <li class="vi-tab-item" href="#tab2-2" data-toggle="tab">
+                    <a class="vi-tab-link"><span>本益比</span></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-content">
+                <div id="tab2-1" class="tab-pane active" role="tabpanel">
+                  <div class="vi-container">
+                    <div class="dis-flex mt24">
+                      <div class="radius-square-color-mark flex-justify-end mb16 mr-auto">
+                        <div class="d-flex align-items-center mr8">
+                          <span class="radius-square-color green"></span>
+                          <span class="vi-txt-callout vi-txt-b600">當前佔比</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <span class="radius-square-color gray"></span>
+                          <span class="vi-txt-callout vi-txt-b600">1 個月前佔比</span>
+                        </div>
+                      </div>
+                      <div class="ml-auto">
+                        <a href="#">
+                          <span class="vi-icon vi-icon-xs icon-info-mark-g mr4 top-2px"></span>
+                          <span span class="vi-txt-body-bold vi-txt-g500">圖表說明</span>
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <table class="vi-table-card w-100">
+                      <thead>
+                        <tr>
+                          <th class="wid_40per">指數</th>
+                          <th>企業佔比</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-b600 name">新興指數</div>
+                            <div class="vi-tag-group">
+                              <!-- vi-tag-g200, vi-tag-r300 -->
+                              <div class="vi-tag vi-tag-r300 mt4">
+                                <div class="vi-txt">留意漲多回檔</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">25.4x</div>
+                              <div class="gradient-bar-wrap">
+                                <!-- 依邏輯算出百分比放到 width 上 -->
+                                <div class="gradient-bar-green" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">2.3x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 10%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-b600 name">美國羅素2000</div>
+                            <div class="vi-tag-group">
+                              <!-- vi-tag-g200, vi-tag-r300 -->
+                              <div class="vi-tag vi-tag-g200 mt4">
+                                <div class="vi-txt">把握跌深反彈</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">5.41x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-green" style="width: 25%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">25.3x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-b600 name">世界指數</div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">25.4x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-green" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">20.3x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 80%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-b600 name">歐洲道瓊50</div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">10.4x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-green" style="width: 50%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">20.6x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-b600 name">美國標普500</div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">10.4x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-green" style="width: 50%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">20.6x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    
+                    <div class="vi-dashed-divider mt16 mb16"></div>
+                      
+                    <div class="vi-txt-callout vi-txt-b500 mb16">資料來源：彭博 Bloomberg, 截至：2021/08/03</div>
+                    
+                  </div>
+                </div>
+                
+                <div id="tab2-2" class="tab-pane" role="tabpanel">
+                  <div class="vi-container">
+                    <div class="dis-flex mt24">
+                      <div class="radius-square-color-mark flex-justify-end mb16 mr-auto">
+                        <div class="d-flex align-items-center mr8">
+                          <span class="radius-square-color green"></span>
+                          <span class="vi-txt-callout vi-txt-b600">預估本益比</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <span class="radius-square-color gray"></span>
+                          <span class="vi-txt-callout vi-txt-b600">10年平均本益比</span>
+                        </div>
+                      </div>
+                      <div class="ml-auto">
+                        <span class="vi-icon vi-icon-xs icon-info-mark-g mr4 top-2px"></span>
+                        <span class="vi-txt-body-bold vi-txt-g500">圖表說明</span>
+                      </div>
+                    </div>
+                    
+                    <table class="vi-table-card w-100">
+                      <thead>
+                        <tr>
+                          <th class="wid_40per">指數</th>
+                          <th>預估本益比</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-body vi-txt-b600">世界指數</div>
+                            <div class="vi-tag-group">
+                              <!-- vi-tag-g200, vi-tag-r300 -->
+                              <div class="vi-tag vi-tag-r300 mt4">
+                                <div class="vi-txt">估值偏高</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">25.4x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-green" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">2.3x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 10%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-body vi-txt-b600">歐州道瓊50</div>
+                            <div class="vi-tag-group">
+                              <!-- vi-tag-g200, vi-tag-r300 -->
+                              <div class="vi-tag vi-tag-g200 mt4">
+                                <div class="vi-txt">估值偏低</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">5.41x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-green" style="width: 25%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">25.3x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-body vi-txt-b600">世界指數</div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">25.4x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-green" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">20.3x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 80%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-body vi-txt-b600">美標普500</div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">10.4x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-green" style="width: 50%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">20.6x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    
+                    <div class="vi-dashed-divider mt16 mb16"></div>
+                      
+                    <div class="vi-txt-callout vi-txt-b500 mb16">資料來源：彭博 Bloomberg, 截至：2021/08/03</div>
+                    <div class="vi-txt-footnote vi-txt-b500">若出現以下標籤表示：</div>
+                    <ul class="vi-list vi-list-dot vi-list-noline">
+                      <li class="vi-list-item vi-txt-footnote vi-txt-b500">估值過高：表示當前本益比已超過其十年平均值一倍標準差，需警惕。</li>
+                      <li class="vi-list-item vi-txt-footnote vi-txt-b500">估值過低：表示當前本益比已少於其十年平均值一倍標準差，可留意。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- 區域 tab -->
+        <div id="tab1-2" class="tab-pane" role="tabpanel">
+          <div class="mb16">
+            <div class="vi-line-title mb16">看漲信心
+              <!-- id 是 demo 用的，開發請拉掉 -->
+              <span id="trigger-modal1" class="vi-icon vi-icon-xs icon-question-mark-g ml4"></span>
+            </div>
+          
+            <div class="vi-txt-body vi-txt-b600">提供市場板塊地圖與短期看漲信心，以利您分析當前趨勢。</div>
+          </div>
+
+          <div class="vi-row">
+            <div class="bg-light-gray-gradient pad_top16">
+              <div class="vi-container">
+                
+                <div class="d-flex mb16">
+                  <div class="d-flex mr-auto">
+                    <div class="vi-icon vi-icon-base icon-display-block-g mr8 active"></div>
+                    <!-- 已選取 加 active -->
+                    <div class="vi-icon vi-icon-base icon-display-list-g "></div>
+                  </div>
+                  <!-- id 是 demo 用的，開發請拉掉 -->
+                  <div id="trigger-sort-option2" class="d-flex ml-auto">
+                    <div class="vi-icon-link ml-auto flex-shrink-0">
+                      <div class="vi-txt-body vi-txt-b600">近 1 月漲跌幅</div>
+                      <div class="vi-icon vi-icon-xs icon-direction-down-g flex-shrink-0 ml4"></div>
+                    </div>
+                  </div>
+                </div>
+                
+
+                <!-- id 是 demo 用的，開發請拉掉 -->
+                <div id="target-display-block2" class="active">
+                  
+                  <!-- 7 個時加 box-7, 方格會自動往下排, 寬度已在 css 設定好 -->
+                  <div class="vi-confidence-box-block box-7">
+                    <div class="radius-square-color-mark radius flex-justify-end mb16">
+                      <div class="d-flex align-items-center mr12">
+                        <span class="radius-square-color high"></span>
+                        <span class="vi-txt-callout vi-txt-b600">信心指數高（8~10分）</span>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="radius-square-color low"></span>
+                        <span class="vi-txt-callout vi-txt-b600">信心指數低（1~7分）</span>
+                      </div>
+                    </div>
+                    <div class="box-wrap">
+                      <!-- 選取時 加 active -->
+                      <div class="box-item high-confidence active">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-high-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-y500 mt-2 value">10</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">美國</div>
+                            <div class="vi-txt-g400 percent">+66.26%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item high-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-high-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-y500 mt-2 value">10</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">東協</div>
+                            <div class="vi-txt-r500 percent">-18.26%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item high-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-high-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-y500 mt-2 value">10</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">中國</div>
+                            <div class="vi-txt-g400 percent">+66.26%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item high-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-high-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-y500 mt-2 value">10</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">泛太平洋</div>
+                            <div class="vi-txt-r500 percent">-18.26%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item low-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-low-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-bl500 mt-2 value">5</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">歐洲</div>
+                            <div class="vi-txt-g400 percent">+10.25%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item low-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-low-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-bl500 mt-2 value">3</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">新興亞洲</div>
+                            <div class="vi-txt-r500 percent">-1.26%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item low-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-low-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-bl500 mt-2 value">3</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">拉丁美洲</div>
+                            <div class="vi-txt-r500 percent">-1.26%</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- .high-confidence .low-confidence 二種 class-->
+                    <div class="box-highlight high-confidence">
+                      <div class="box-highlight-triangle"></div>
+                      <div class="box-highlight-content">
+                        <div class="col">
+                          <div class="vi-txt-callout vi-txt-b500 mb4">區域</div>
+                          <div class="vi-txt-b600 name">美國</div>
+                        </div>
+                        <div class="col">
+                          <div class="vi-txt-callout vi-txt-b500">看漲信心</div>
+                          <div class="d-flex align-items-center flex-justify-center">
+                            <span class="vi-icon vi-icon-base icon-high-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-y500 top-2px">
+                              <span class="value">10</span>分
+                            </span>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="vi-txt-callout vi-txt-b500 mb4">漲跌幅</div>
+                          <div class="vi-txt-body vi-txt-g400 percent">+66.26%</div>
+                        </div>
+                      </div>
+                      <div class="vi-dashed-divider mt12 mb8"></div>
+                      <div class="vi-btn-group">
+                        <div class="vi-btn vi-btn-primary vi-btn-m">看投資策略</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- id 是 demo 用的，開發請拉掉 -->
+                <div id="target-display-list2" class="hide">
+                  <div class="fixed-colume-table mb-16">
+                    <div class="row fixed-colume-table-header">
+                      <div class="th fixed-colume-table-sticky">
+                        <div class="vi-txt-body vi-txt-b600">產業</div>
+                      </div>
+                      <div class="th">
+                        <div class="vi-txt-body vi-txt-b600">看漲信心</div>
+                      </div>
+                      <div class="th">
+                        <div class="vi-txt-body vi-txt-b600">月線<br>乖離率</div>
+                      </div>
+                      <div class="th">
+                        <div class="vi-txt-body vi-txt-b600">近1月</div>
+                      </div>
+                      <div class="th">
+                        <div class="vi-txt-body vi-txt-b600">近3個月</div>
+                      </div>
+                      <div class="th">
+                        <div class="vi-txt-body vi-txt-b600">近6個月</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">能源</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold high">10分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+88.88%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-88.88%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <!-- 首頁進到條列模式 產業名稱會有 highlight 樣式 -->
+                    <div class="row highlight">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">公用事業</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold high">9分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+888.88%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-888.88%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">金融</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold high">8分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-bcalloutody vi-txt-g400">+888.88%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">原物料</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">7分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">健護</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">5分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">工業</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">4分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">核心消費</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">3分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">科技</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">2分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">地產</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">1分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">非核心消費</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">1分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="vi-dashed-divider"></div>
+            
+                <div class="vi-txt-callout vi-txt-b500">資料來源：中國信託智能量化模型, 截至 2022/01/19</div>
+              
+              </div>
+            </div>
+
+
+            <!-- 產業 及 區域（有tab：市場廣度/本益比） -->
+            <div class="pad_top24 mt16">
+              <div class="vi-container">
+                <div class="vi-line-title mb16">投資觀察指標</div>
+                <div class="vi-txt-body vi-txt-b600 mb16">提供資產指標數據，以評估投資產品當前價格是否適合買入或賣出。</div>
+              </div>
+              
+              <div class="nav-scroll">
+                <ul class="vi-tab">
+                  <li class="vi-tab-item active" href="#tab2-3" data-toggle="tab">
+                    <a class="vi-tab-link"><span>市場廣度</span></a>
+                  </li>
+                  <li class="vi-tab-item" href="#tab2-4" data-toggle="tab">
+                    <a class="vi-tab-link"><span>本益比</span></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-content">
+                <div id="tab2-3" class="tab-pane active" role="tabpanel">
+                  <div class="vi-container">
+                    <div class="dis-flex mt24">
+                      <div class="radius-square-color-mark flex-justify-end mb16 mr-auto">
+                        <div class="d-flex align-items-center mr8">
+                          <span class="radius-square-color green"></span>
+                          <span class="vi-txt-callout vi-txt-b600">當前佔比</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <span class="radius-square-color gray"></span>
+                          <span class="vi-txt-callout vi-txt-b600">1 個月前佔比</span>
+                        </div>
+                      </div>
+                      <div class="ml-auto">
+                        <span class="vi-icon vi-icon-xs icon-info-mark-g mr4 top-2px"></span>
+                        <span class="vi-txt-body-bold vi-txt-g500">圖表說明</span>
+                      </div>
+                    </div>
+                    
+                    <table class="vi-table-card w-100">
+                      <thead>
+                        <tr>
+                          <th class="wid_40per">指數</th>
+                          <th>企業佔比</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-b600 name">新興指數</div>
+                            <div class="vi-tag-group">
+                              <!-- vi-tag-g200, vi-tag-r300 -->
+                              <div class="vi-tag vi-tag-r300 mt4">
+                                <div class="vi-txt">留意漲多回檔</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">25.4x</div>
+                              <div class="gradient-bar-wrap">
+                                <!-- 依邏輯算出百分比放到 width 上 -->
+                                <div class="gradient-bar-green" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">2.3x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 10%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-b600 name">美國羅素2000</div>
+                            <div class="vi-tag-group">
+                              <!-- vi-tag-g200, vi-tag-r300 -->
+                              <div class="vi-tag vi-tag-g200 mt4">
+                                <div class="vi-txt">把握跌深反彈</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">5.41x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-green" style="width: 25%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">25.3x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-b600 name">世界指數</div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">25.4x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-green" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">20.3x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 80%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-b600 name">歐洲道瓊50</div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">10.4x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-green" style="width: 50%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">20.6x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-b600 name">美國標普500</div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">10.4x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-green" style="width: 50%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">20.6x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    
+                    <div class="vi-dashed-divider mt16 mb16"></div>
+                      
+                    <div class="vi-txt-callout vi-txt-b500 mb16">資料來源：彭博 Bloomberg, 截至：2021/08/03</div>
+                    <div class="vi-txt-footnote vi-txt-b500">若出現以下標籤表示：</div>
+                    <ul class="vi-list vi-list-dot vi-list-noline">
+                      <li class="vi-list-item vi-txt-footnote vi-txt-b500">估值過高：表示當前本益比已超過其十年平均值一倍標準差，需警惕。</li>
+                      <li class="vi-list-item vi-txt-footnote vi-txt-b500">估值過低：表示當前本益比已少於其十年平均值一倍標準差，可留意。</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div id="tab2-4" class="tab-pane" role="tabpanel">
+                  <div class="vi-container">
+                    <div class="dis-flex mt24">
+                      <div class="radius-square-color-mark flex-justify-end mb16 mr-auto">
+                        <div class="d-flex align-items-center mr8">
+                          <span class="radius-square-color green"></span>
+                          <span class="vi-txt-callout vi-txt-b600">預估本益比</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <span class="radius-square-color gray"></span>
+                          <span class="vi-txt-callout vi-txt-b600">10年平均本益比</span>
+                        </div>
+                      </div>
+                      <div class="ml-auto">
+                        <span class="vi-icon vi-icon-xs icon-info-mark-g mr4 top-2px"></span>
+                        <span class="vi-txt-body-bold vi-txt-g500">圖表說明</span>
+                      </div>
+                    </div>
+                    
+                    <table class="vi-table-card w-100">
+                      <thead>
+                        <tr>
+                          <th class="wid_40per">指數</th>
+                          <th>預估本益比</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-body vi-txt-b600">世界指數</div>
+                            <div class="vi-tag-group">
+                              <!-- vi-tag-g200, vi-tag-r300 -->
+                              <div class="vi-tag vi-tag-r300 mt4">
+                                <div class="vi-txt">估值偏高</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">25.4x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-green" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">2.3x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 10%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-body vi-txt-b600">歐州道瓊50</div>
+                            <div class="vi-tag-group">
+                              <!-- vi-tag-g200, vi-tag-r300 -->
+                              <div class="vi-tag vi-tag-g200 mt4">
+                                <div class="vi-txt">估值偏低</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">5.41x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-green" style="width: 25%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">25.3x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-body vi-txt-b600">世界指數</div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">25.4x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-green" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">20.3x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 80%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="vi-txt-body vi-txt-b600">美標普500</div>
+                          </td>
+                          <td>
+                            <div class="d-flex w-100 mb8">
+                              <div class="vi-txt-body-bold vi-txt-b900 number-x">10.4x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-green" style="width: 50%;"></div>
+                              </div>
+                            </div>
+                            <div class="d-flex w-100">
+                              <div class="vi-txt-body vi-txt-b900 number-x">20.6x</div>
+                              <div class="gradient-bar-wrap">
+                                <div class="gradient-bar-gray" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    
+                    <div class="vi-dashed-divider mt16 mb16"></div>
+                      
+                    <div class="vi-txt-callout vi-txt-b500 mb16">資料來源：彭博 Bloomberg, 截至：2021/08/03</div>
+                    <div class="vi-txt-footnote vi-txt-b500">若出現以下標籤表示：</div>
+                    <ul class="vi-list vi-list-dot vi-list-noline">
+                      <li class="vi-list-item vi-txt-footnote vi-txt-b500">估值過高：表示當前本益比已超過其十年平均值一倍標準差，需警惕。</li>
+                      <li class="vi-list-item vi-txt-footnote vi-txt-b500">估值過低：表示當前本益比已少於其十年平均值一倍標準差，可留意。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        
+        <!-- 貨幣 tab -->
+        <div id="tab1-3" class="tab-pane" role="tabpanel">
+          <div class="mb16">
+            <div class="vi-line-title mb16">看漲信心
+              <!-- id 是 demo 用的，開發請拉掉 -->
+              <span id="trigger-modal3" class="vi-icon vi-icon-xs icon-question-mark-g ml4"></span>
+            </div>
+          
+            <div class="vi-txt-body vi-txt-b600">提供市場板塊地圖與短期看漲信心，以利您分析當前趨勢。</div>
+          </div>
+          
+          <div class="vi-row">
+            <div class="bg-light-gray-gradient pad_top16">
+              <div class="vi-container">
+                
+                <div class="d-flex mb16">
+                  <div class="d-flex mr-auto">
+                    <div class="vi-icon vi-icon-base icon-display-block-g mr8 active"></div>
+                    <!-- 已選取 加 active -->
+                    <div class="vi-icon vi-icon-base icon-display-list-g "></div>
+                  </div>
+                  <!-- id 是 demo 用的，開發請拉掉 -->
+                  <div id="trigger-sort-option3" class="d-flex ml-auto">
+                    <div class="vi-icon-link ml-auto flex-shrink-0">
+                      <div class="vi-txt-body vi-txt-b600">近 1 月漲跌幅</div>
+                      <div class="vi-icon vi-icon-xs icon-direction-down-g flex-shrink-0 ml4"></div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- id 是 demo 用的，開發請拉掉 -->
+                <div id="target-display-block3" class="active">
+                  
+                  <!-- 8 個時加 box-8, 方格會自動往下排, 寬度已在 css 設定好 -->
+                  <div class="vi-confidence-box-block box-8">
+                    <div class="radius-square-color-mark radius flex-justify-end mb16">
+                      <div class="d-flex align-items-center mr12">
+                        <span class="radius-square-color high"></span>
+                        <span class="vi-txt-callout vi-txt-b600">信心指數高（8~10分）</span>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="radius-square-color low"></span>
+                        <span class="vi-txt-callout vi-txt-b600">信心指數低（1~7分）</span>
+                      </div>
+                    </div>
+                    <div class="box-wrap">
+                      <!-- 選取時 加 active -->
+                      <div class="box-item high-confidence active">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-high-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-y500 mt-2 value">10</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">美元指數</div>
+                            <div class="vi-txt-g400 percent">+66.26%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item high-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-high-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-y500 mt-2 value">10</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">歐元對美元</div>
+                            <div class="vi-txt-r500 percent">-18.26%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item high-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-high-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-y500 mt-2 value">9</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">日圓對美元</div>
+                            <div class="vi-txt-g400 percent">+8.11%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item high-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-high-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-y500 mt-2 value">9</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">英鎊對美元</div>
+                            <div class="vi-txt-r500 percent">-7.10%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item low-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-low-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-bl500 mt-2 value">3</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">人民幣對美元</div>
+                            <div class="vi-txt-r500 percent">-8.26%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item low-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-low-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-bl500 mt-2 value">6</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">澳幣對美元</div>
+                            <div class="vi-txt-r500 percent">-19.26%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item low-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-low-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-bl500 mt-2 value">3</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">加幣對美元</div>
+                            <div class="vi-txt-r500 percent">-1.26%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box-item low-confidence">
+                        <div class="box-item-content">
+                          <div class="face-value">
+                            <span class="vi-icon vi-icon-base icon-low-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-bl500 mt-2 value">2</span>
+                          </div>
+                          <div class="name-percent">
+                            <div class="vi-txt-b600 name">南非幣對美元</div>
+                            <div class="vi-txt-g400 percent">+4.25%</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- .high-confidence .low-confidence 二種 class-->
+                    <div class="box-highlight high-confidence">
+                      <div class="box-highlight-triangle"></div>
+                      <div class="box-highlight-content">
+                        <div class="col">
+                          <div class="vi-txt-callout vi-txt-b500 mb4">貨幣</div>
+                          <div class="vi-txt-b600 name">美國</div>
+                        </div>
+                        <div class="col">
+                          <div class="vi-txt-callout vi-txt-b500">看漲信心</div>
+                          <div class="d-flex align-items-center flex-justify-center">
+                            <span class="vi-icon vi-icon-base icon-high-confidence-face mr4"></span>
+                            <span class="vi-txt-title vi-txt-y500 top-2px">
+                              <span class="value">10</span>分
+                            </span>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="vi-txt-callout vi-txt-b500 mb4">漲跌幅</div>
+                          <div class="vi-txt-body vi-txt-g400 percent">+66.26%</div>
+                        </div>
+                      </div>
+                      <div class="vi-dashed-divider mt12 mb8"></div>
+                      <div class="vi-btn-group">
+                        <div class="vi-btn vi-btn-primary vi-btn-m">看匯率</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- id 是 demo 用的，開發請拉掉 -->
+                <div id="target-display-list3" class="hide">
+                  <div class="fixed-colume-table mb-16">
+                    <div class="row fixed-colume-table-header">
+                      <div class="th fixed-colume-table-sticky">
+                        <div class="vi-txt-body vi-txt-b600">產業</div>
+                      </div>
+                      <div class="th">
+                        <div class="vi-txt-body vi-txt-b600">看漲信心</div>
+                      </div>
+                      <div class="th">
+                        <div class="vi-txt-body vi-txt-b600">月線<br>乖離率</div>
+                      </div>
+                      <div class="th">
+                        <div class="vi-txt-body vi-txt-b600">近1月</div>
+                      </div>
+                      <div class="th">
+                        <div class="vi-txt-body vi-txt-b600">近3個月</div>
+                      </div>
+                      <div class="th">
+                        <div class="vi-txt-body vi-txt-b600">近6個月</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">能源</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold high">10分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+88.88%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-88.88%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <!-- 首頁進到條列模式 產業名稱會有 highlight 樣式 -->
+                    <div class="row highlight">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">公用事業</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold high">9分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+888.88%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-888.88%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">金融</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold high">8分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-bcalloutody vi-txt-g400">+888.88%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">原物料</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">7分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">健護</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">5分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">工業</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">4分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">核心消費</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">3分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">科技</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">2分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">地產</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">1分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <a href="twrbm-invest-qu055-020.html" class="td fixed-colume-table-sticky">
+                        <div class="vi-txt-body-bold vi-txt-g500">非核心消費</div>
+                      </a>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-bold low">1分</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+0.22%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-r500">-14.26%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                      <div class="td">
+                        <div class="vi-txt-callout vi-txt-g400">+29.78%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="vi-dashed-divider"></div>
+            
+                <div class="vi-txt-callout vi-txt-b500">資料來源：中國信託智能量化模型, 截至 2022/01/19</div>
+              
+              </div>
+            </div>
+
+            <!-- 貨幣（無tab，僅只有圖表） -->
+            <div class="pad_top24 mt16">
+              <div class="vi-container">
+                <div class="vi-line-title mb16">投資觀察指標</div>
+                <div class="vi-txt-body vi-txt-b600 mb16">提供資產指標數據，以評估投資產品當前價格是否適合買入或賣出。</div>
+
+                <div class="mt16 mb16">
+                  <div class="dis-flex flex-justify-between">
+                    <div>
+                      <div class="vi-txt-body-bold vi-txt-b900">法人籌碼</div>
+                    </div>
+                    <div>
+                      <span class="vi-icon vi-icon-xs icon-question-mark-g mr4 top-2px"></span>
+                      <span class="vi-txt-callout vi-txt-g500">圖表說明</span>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <div class="positive-negative-bar-wrap">
+                  <div class="positive-negative-bar">
+                    <div class="item bg-item">
+                      <div class="name"></div>
+                      <div class="bar-wrap bg-wrap">
+                        <div class="col-bg"></div>
+                        <div class="col-bg"></div>
+                        <div class="col-bg"></div>
+                        <div class="col-bg"></div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="name">美元指數</div>
+                      <div class="bar-wrap positive">
+                        <div class="bar" style="width: 80%;"></div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="name">歐元</div>
+                      <div class="bar-wrap negative">
+                        <div class="bar" style="width: 40%;"></div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="name">英鎊</div>
+                      <div class="bar-wrap negative">
+                        <div class="bar" style="width: 100%;"></div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="name">日圓</div>
+                      <div class="bar-wrap positive">
+                        <div class="bar" style="width: 20%;"></div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="name">澳幣</div>
+                      <div class="bar-wrap negative">
+                        <div class="bar" style="width: 65%;"></div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="name">加幣</div>
+                      <div class="bar-wrap negative">
+                        <div class="bar" style="width: 58%;"></div>
+                      </div>
+                    </div>
+                    <div class="item txt-item">
+                      <div class="name"></div>
+                      <div class="bar-wrap">
+                        <div class="col-wrap">
+                          <div class="vi-txt-callout vi-txt-b600 col-name">反轉區</div>
+                          <div class="vi-txt-callout vi-txt-b600 col-name">籌碼偏空</div>
+                          <div class="vi-txt-callout vi-txt-b600 col-name">籌碼偏多</div>
+                          <div class="vi-txt-callout vi-txt-b600 col-name">反轉區</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="vi-dashed-divider mt16 mb16"></div>
+                  
+                <div class="vi-txt-callout vi-txt-b500 mb16">資料來源：美國商品期貨交易委員會的持倉報告  ,截至：2021/08/03</div>
+                
+              </div>
+            </div>
+            
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-select-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">顯示設定</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" ontouchstart="" data-dismiss="modal" ></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <ul class="vi-list vi-list-px8 vi-list-py12 super-card-select">
+          <!-- 已選取 加 active -->
+          <a class="vi-list-item active" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">漲跌幅</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">乖離率</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">近 5 日漲跌幅</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">近 1 月漲跌幅</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">近 3 月漲跌幅</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">近 1 年漲跌幅</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">與月線乖離率</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">與季線乖離率</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">與年線乖離率</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">請依狀態顯示對應選項</div>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<script>
+$(document).ready(function(){
+  
+  // 漲跌幅 modal demo
+  $('#trigger-sort-option1, #trigger-sort-option2, #trigger-sort-option3').on('click', function() {
+    $('#target-select-supercard').toggleClass('hide vi-modal-in');
+  });
+  
+  // box-item active demo
+  $('.vi-confidence-box-block .box-item').on('click', function(e) {
+    $('.vi-confidence-box-block .box-item').removeClass('active');
+    $(this).addClass('active');
+    // 下方 box-highlight 切換 class 
+    $(this).hasClass('high-confidence') ? $('.box-highlight').addClass('high-confidence').removeClass('low-confidence') : $('.box-highlight').addClass('low-confidence').removeClass('high-confidence');
+    // box-highlight 示意用 請依資料狀態顯示
+    const name = $(this).find('.name').text(),
+          percent = $(this).find('.percent').text(),
+          value = $(this).find('.value').text();
+    
+    $('.box-highlight .name').text(name);
+    
+    $(this).find('.percent').hasClass('vi-txt-r500') ? $('.box-highlight .percent').addClass('vi-txt-r500').removeClass('vi-txt-g400') : $('.box-highlight .percent').addClass('vi-txt-g400').removeClass('vi-txt-r500');
+    $('.box-highlight .percent').text(percent);
+    
+    $(this).hasClass('high-confidence') ? $('.box-highlight .vi-icon').addClass('icon-high-confidence-face').removeClass('icon-low-confidence-face') : $('.box-highlight .vi-icon').addClass('icon-low-confidence-face').removeClass('icon-high-confidence-face');
+    
+    $(this).hasClass('high-confidence') ? $('.box-highlight .value').text(value) : $('.box-highlight .value').text(value);
+    
+    $(this).hasClass('high-confidence') ? $('.box-highlight .vi-txt-title').addClass('vi-txt-y500').removeClass('vi-txt-bl500') : $('.box-highlight .vi-txt-title').addClass('vi-txt-bl500').removeClass('vi-txt-y500');
+  });
+  
+  
+  // tab init 時會不顯示 active  故再加回 active
+  $('.icon-display-block-g').addClass('active');
+  
+  // 區塊 表格 icon 切換顯示
+  $('.icon-display-block-g').on('click', function(e) {
+    e.preventDefault();
+    $('.icon-display-list-g').removeClass('active');
+    $('.icon-display-block-g').addClass('active');
+    $('#target-display-block1, #target-display-block2, #target-display-block3').removeClass('hide');
+    $('#target-display-list1, #target-display-list2, #target-display-list3').addClass('hide');
+    // 示意用 請依資料狀態顯示
+    $('#trigger-sort-option1, #trigger-sort-option2, #trigger-sort-option3').find('.vi-txt-body.vi-txt-b600').text('近 1 月漲跌幅');
+  });
+  
+  // 區塊 表格 icon 切換顯示
+  $('.icon-display-list-g').on('click', function(e) {
+    e.preventDefault();
+    $('.icon-display-block-g').removeClass('active');
+    $('.icon-display-list-g').addClass('active');
+    $('#target-display-list1, #target-display-list2, #target-display-list3').removeClass('hide');
+    $('#target-display-block1, #target-display-block2, #target-display-block3').addClass('hide');
+    // 示意用 請依資料狀態顯示
+    $('#trigger-sort-option1, #trigger-sort-option2, #trigger-sort-option3').find('.vi-txt-body.vi-txt-b600').text('漲跌幅');
+  });
+  
+  // modal close demo，關閉時的動態效果依照現行
+  $('.vi-modal .popup-footer .vi-btn').on('click', function() {
+    $(this).closest('.vi-modal').toggleClass('vi-modal-in');
+  });
+  
+  $('.vi-modal .popup-footer .vi-btn').on('click', function() {
+    $(this).closest('.vi-modal').toggleClass('vi-modal-in');
+  });
+  
+  $('.vi-modal .vi-modal-close').on('click', function() {
+    $(this).closest('.vi-modal').toggleClass('vi-modal-in hide');
+  });
+
+});
+</script>

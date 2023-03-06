@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+
+<body class="vi-bg-mint ">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <!-- <h1 class="vi-page-title"></h1> -->
+      </div>
+      <div class="vi-page-header-rt">
+        <a class="vi-icon vi-icon-base icon-start-default-w"></a>
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap vi-bg-mint">
+    
+    <div class="main_container vi-has-foot-btn">
+      
+      <div class="vi-page-indicator">
+        <div class="vi-progress-bar"></div>
+        <div class="vi-txt-title vi-txt-b900">您預計將資產傳承給哪些家人？</div>
+      </div>
+      
+
+      <div class="vi-container">
+        
+        <div class="vi-txt-body vi-txt-b500 mb8">(可複選)</div>
+        
+        <!-- 點選時加 .selected -->
+        <div class="vi-card vi-card-select selected">
+          <div class="vi-card-header">
+            <div class="dis-flex flex-justify-between align-items-center w-100">
+              <div class="dis-flex align-items-center">
+                <div class="mr16">
+                  <img src="../../../../inc/img/health/inherited-select-1.svg">
+                  <!-- 預設圖 -->
+                  <!-- <img src="../../../../inc/img/health/select-default.svg"> -->
+                </div>
+                <div class="vi-txt-body-bold vi-txt-b600">配偶</div>
+              </div>
+              <div class="vi-txt-body-bold vi-txt-b600 flex-shrink-0 ml8">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 點選時加 .selected, 錯誤時加 .has-error -->
+        <!-- id 是 demo 用的，開發請拉掉 -->
+        <div id="trigger-parent-supercard" class="vi-card vi-card-select has-error">
+          <div class="vi-card-header">
+            <div class="dis-flex flex-justify-between align-items-center w-100">
+              <div class="dis-flex align-items-center">
+                <div class="mr16">
+                  <img src="../../../../inc/img/health/inherited-select-2.svg">
+                  <!-- 預設圖 -->
+                  <!-- <img src="../../../../inc/img/health/select-default.svg"> -->
+                </div>
+                <div class="vi-txt-body-bold vi-txt-b600">父母親</div>
+              </div>
+              <div class="vi-txt-body-bold vi-txt-b600 flex-shrink-0 ml8">
+                1 位
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 錯誤 -->
+        <div class="vi-form-group mt-12">
+          <div class="vi-form-error">人數超過上限，請重新輸入</div>
+        </div>
+        
+        <!-- 點選時加 .selected -->
+        <!-- id 是 demo 用的，開發請拉掉 -->
+        <div id="trigger-child-supercard" class="vi-card vi-card-select">
+          <div class="vi-card-header">
+            <div class="dis-flex flex-justify-between align-items-center w-100">
+              <div class="dis-flex align-items-center">
+                <div class="mr16">
+                  <img src="../../../../inc/img/health/inherited-select-3.svg">
+                  <!-- 預設圖 -->
+                  <!-- <img src="../../../../inc/img/health/select-default.svg"> -->
+                </div>
+                <div class="vi-txt-body-bold vi-txt-b600">子女</div>
+              </div>
+              <div class="vi-txt-body-bold vi-txt-b600 flex-shrink-0 ml8">
+                2 位
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div id="footer">
+        <div class="vi-page-footer">
+          <div class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-l vi-btn-primary">下一步</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-parent-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal" (click)=""></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">父母親人數</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" ontouchstart="" data-dismiss="modal" (click)=""></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-form-group has-error" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+          <div class="vi-input-group vi-counter-group">
+            <span class="btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+              <span class="vi-icon vi-icon-minus"></span>
+            </span>
+            <input type="tel" name="quant[1]" class="input-number" value="1" min="0" max="10">
+            <span class="btn-number" data-type="plus" data-field="quant[1]">
+              <span class="vi-icon vi-icon-plus"></span>
+            </span>
+          </div>
+        </div>
+
+        <div class="vi-btn-group mt20">
+          <div class="vi-btn vi-btn-primary" ontouchstart="" (click)="">確認</div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </ng-template>
+</div>
+
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-child-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal" (click)=""></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">子女人數</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" ontouchstart="" data-dismiss="modal" (click)=""></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-form-group has-error" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+          <div class="vi-input-group vi-counter-group">
+            <span class="btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+              <span class="vi-icon vi-icon-minus"></span>
+            </span>
+            <input type="tel" name="quant[1]" class="input-number" value="1" min="0" max="10">
+            <span class="btn-number" data-type="plus" data-field="quant[1]">
+              <span class="vi-icon vi-icon-plus"></span>
+            </span>
+          </div>
+        </div>
+
+        <div class="vi-btn-group mt20">
+          <div class="vi-btn vi-btn-primary" ontouchstart="" (click)="">確認</div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </ng-template>
+</div>
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// 選擇父母 demo 
+document.getElementById('trigger-parent-supercard').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-parent-supercard').classList.toggle('hide');
+  document.getElementById('target-parent-supercard').classList.toggle('vi-modal-in');
+});
+
+// 選擇子女 demo 
+document.getElementById('trigger-child-supercard').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-child-supercard').classList.toggle('hide');
+  document.getElementById('target-child-supercard').classList.toggle('vi-modal-in');
+});
+
+// 超人卡片 close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('vi-modal-close');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+  });
+}
+
+  
+$(document).ready(function(){
+
+  $('.vi-card-select').on('click', function() {
+    $(this).siblings().removeClass('selected');
+    $(this).siblings().find('.vi-card-body').addClass('hide')
+    $(this).addClass('selected');
+    $(this).find('.vi-card-body').removeClass('hide')
+  });
+  
+  
+  // counter group
+  $('.btn-number').click(function(e){
+    e.preventDefault();
+    
+    fieldName = $(this).attr('data-field');
+    type      = $(this).attr('data-type');
+    var input = $("input[name='" + fieldName + "']");
+    var currentVal = parseInt(input.val());
+    
+    if (!isNaN(currentVal)) {
+      if (type == 'minus') {
+        if (currentVal > input.attr('min')) {
+          input.val(currentVal - 1).change();
+        } 
+        if (parseInt(input.val()) == input.attr('min')) {
+          $(this).attr('disabled', true).addClass('disabled');
+        }
+      } 
+      else if (type == 'plus') {
+        if (currentVal < input.attr('max')) {
+          input.val(currentVal + 1).change();
+        }
+        if (parseInt(input.val()) == input.attr('max')) {
+          $(this).attr('disabled', true);
+          $(this).attr('disabled', true).addClass('disabled');
+        }
+      }
+    } 
+    else {
+      input.val(0);
+    }
+  });
+
+  $('.input-number').focusin(function() {
+    $(this).data('oldValue', $(this).val());
+  });
+
+  $('.input-number').change(function() {
+      minValue =  parseInt($(this).attr('min'));
+      maxValue =  parseInt($(this).attr('max'));
+      valueCurrent = parseInt($(this).val());
+      
+      name = $(this).attr('name');
+      if (valueCurrent >= minValue) {
+        $(".btn-number[data-type='minus'][data-field='" + name + "']").removeAttr('disabled').removeClass('disabled');
+      }
+      else {
+        $(this).val($(this).data('oldValue'));
+      }
+      if (valueCurrent <= maxValue) {
+        $(".btn-number[data-type='plus'][data-field='" + name + "']").removeAttr('disabled').removeClass('disabled');
+      } 
+      else {
+        $(this).val($(this).data('oldValue'));
+      }
+  });
+
+});
+</script>

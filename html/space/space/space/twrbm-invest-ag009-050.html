@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+
+<!-- if scroll, add .vi-page-header-fix -->
+<body class="vi-bg-mint">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">編輯/查看保單</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <!-- <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500" href="">諮詢專人</a> -->
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap vi-bg-mint">
+    
+    <div class="main_container has-foot-btn pad_top24">
+      
+      <!-- toast, 參考 import { CTBCMBToastWidget } from '../view/ui-2022/toast/ctbc-mb-toast.widget';-->
+      <div class="toast">
+        <span>儲存成功</span>
+      </div>
+      
+
+      <div class="vi-container">
+        <div class="vi-txt-title vi-txt-b900 mb4">我的醫療保單</div>
+        <div class="vi-txt-body mb12">還有其他保單嗎？可以自行輸入或聯繫理專更新資料</div>
+        
+        <!-- id 是 demo 用的，開發請拉掉 -->
+        <div id="trigger-add-other" class="vi-btn vi-btn-dashed vi-btn-lightgreen vi-btn-block mb16">
+          <span class="vi-icon vi-icon-xs icon-add-g mr8 top-2px"></span>輸入其他保單
+        </div>
+        
+        <div class="vi-card vi-rounded-card">
+          <div class="vi-card-header">
+            <div class="dis-flex w-100 align-items-start flex-justify-between">
+              <div class="">
+                <div class="vi-txt-body-bold vi-txt-b600 mb4">泰安產物新中信平安福專案 - 臺幣</div>
+                <div class="vi-txt-body vi-txt-b500">008799002571210</div>
+              </div>
+              <div class="flex-shrink-0 ml12">
+                <div class="vi-tag-group">
+                  <div class="vi-tag vi-tag-b200">
+                    <div class="vi-txt">理專建立</div>
+                  </div>
+                </div>
+                <!-- <div class="vi-txt-body-bold vi-txt-g500">編輯保單</div> -->
+              </div>
+            </div>
+          </div>
+          <div class="vi-card-body">
+            <div class="dis-flex w-100 align-items-end flex-justify-between mb16">
+              <div class="dis-flex align-items-center">
+                <div class="vi-txt-body vi-txt-b600">住院日額</div>
+              </div>
+              <div class="">
+                <div class="vi-txt-body-bold ml4 vi-txt-b600">1,700元</div>
+              </div>
+            </div>
+            <div class="dis-flex w-100 align-items-end flex-justify-between mb16">
+              <div class="dis-flex align-items-center">
+                <div class="vi-txt-body vi-txt-b600">實支實付</div>
+              </div>
+              <div class="">
+                <div class="vi-txt-body-bold ml4 vi-txt-b600">12,000元</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="vi-card vi-rounded-card">
+          <div class="vi-card-header">
+            <div class="dis-flex w-100 align-items-start flex-justify-between">
+              <div class="">
+                <div class="vi-txt-body-bold vi-txt-b600 mb4">泰安產物新中信平安福專案 - 臺幣</div>
+                <div class="vi-txt-body vi-txt-b500">008799002571210</div>
+              </div>
+              <div class="flex-shrink-0 ml12">
+                <div class="vi-tag-group">
+                  <div class="vi-tag vi-tag-b200">
+                    <div class="vi-txt">理專建立</div>
+                  </div>
+                </div>
+                <!-- <div class="vi-txt-body-bold vi-txt-g500">編輯保單</div> -->
+              </div>
+            </div>
+          </div>
+          <div class="vi-card-body">
+            <div class="dis-flex w-100 align-items-end flex-justify-between mb16">
+              <div class="dis-flex align-items-center">
+                <div class="vi-txt-body vi-txt-b600">住院日額</div>
+              </div>
+              <div class="">
+                <div class="vi-txt-body-bold ml4 vi-txt-b600">1,700元</div>
+              </div>
+            </div>
+            <div class="dis-flex w-100 align-items-end flex-justify-between mb16">
+              <div class="dis-flex align-items-center">
+                <div class="vi-txt-body vi-txt-b600">實支實付</div>
+              </div>
+              <div class="">
+                <div class="vi-txt-body-bold ml4 vi-txt-b600">12,000元</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="vi-txt-callout vi-txt-b500">以上保單資料為理專健檢時所紀錄的資料 (非即時更新)，實際應以保單條款與契約內容為準。</div>
+        
+        <div class="mb32"></div>
+
+      </div>
+      
+      
+      <div id="footer">
+        <div class="vi-page-footer">
+          <div class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-secondary">取消</div>
+            <div class="btn vi-btn vi-btn-primary">確認</div>
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
+
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+
+<!-- 輸入其他保單 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-add-other-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">請輸入您的其他醫療保障額度</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="ct">
+          <div class="vi-txt-body vi-txt-b600">請填入已持有保單的醫療額度合計</div>
+        </div>
+        <div>
+          <div class="vi-form-group">
+            <div class="vi-input-group">
+              <span class="title">住院日額</span>
+              <input type="tel" placeholder="保障給付金合計">
+              <span class="unit">元</span>
+            </div>
+            <div class="vi-form-info"></div>
+            <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div>
+          </div>
+          <div class="vi-form-group">
+            <div class="vi-input-group">
+              <span class="title">實支實付</span>
+              <input type="tel" placeholder="保障給付金合計">
+              <span class="unit">元</span>
+            </div>
+          </div>
+          <div class="vi-form-group">
+            <div class="vi-input-group">
+              <span class="title">重大傷病</span>
+              <input type="tel" placeholder="保障給付金合計">
+              <span class="unit">元</span>
+            </div>
+          </div>
+          <div class="vi-form-group">
+            <div class="vi-input-group">
+              <span class="title">失能殘廢</span>
+              <input type="tel" placeholder="保障給付金合計">
+              <span class="unit">元</span>
+            </div>
+          </div>
+          <div class="vi-form-group">
+            <div class="vi-input-group">
+              <span class="title">癌症</span>
+              <input type="tel" placeholder="保障給付金合計">
+              <span class="unit">元</span>
+            </div>
+          </div>
+          <div class="vi-form-group">
+            <div class="vi-input-group">
+              <span class="title">長期照護</span>
+              <input type="tel" placeholder="保障給付金合計">
+              <span class="unit">元</span>
+            </div>
+          </div>
+
+          <div class="mt8">不會填？<span class="vi-txt-body-bold vi-txt-g500 ml4">預約理專幫你填</span>
+          
+          <div class="vi-btn-group mt24">
+            <div class="vi-btn vi-btn-secondary">取消</div>
+            <div class="vi-btn vi-btn-primary">儲存</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+  
+// 輸入其他保單 demo
+document.getElementById('trigger-add-other').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-add-other-supercard').classList.toggle('hide');
+  document.getElementById('target-add-other-supercard').classList.toggle('vi-modal-in');
+});
+
+
+// 超人卡片 close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('vi-modal-close');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+  });
+}
+
+  
+// scroll fixed header
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 0) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+  }
+}
+</script>

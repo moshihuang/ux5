@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="428" height="761" viewBox="0 0 428 761">
+    <defs>
+        <path id="jqhze0g8ha" d="M0 0H428V761H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g transform="translate(-4520.000000, -185.000000) translate(4520.000000, 185.000000)">
+                <mask id="ne1gxat0fb" fill="#fff">
+                    <use xlink:href="#jqhze0g8ha"/>
+                </mask>
+                <g mask="url(#ne1gxat0fb)">
+                    <g transform="translate(-21.685333, 35.939280)">
+                        <path fill="#00B1A4" d="M342.4 49.06h86.741c2.522 0 4.566 2.044 4.566 4.565v91.273h-95.872V53.625c0-2.521 2.044-4.565 4.565-4.565zM233.973 144.898H448.544V344.56100000000004H233.973z"/>
+                        <rect width="214.571" height="344.561" fill="#00B1A4" rx="4.565"/>
+                        <ellipse cx="385.771" cy="96.979" fill="#00CDC3" rx="36.523" ry="36.51"/>
+                        <path fill="#00B1A4" d="M362.944 90.133H408.59700000000004V103.824H362.944z"/>
+                        <path fill="#00B1A4" d="M362.952 90.131L408.589 90.131 408.589 103.827 362.952 103.827z" transform="translate(385.770667, 96.979010) rotate(-90.000000) translate(-385.770667, -96.979010)"/>
+                        <rect width="45.653" height="41.073" x="392.619" y="158.589" fill="#00CDC3" rx="4.565"/>
+                        <rect width="32.166" height="48.408" x="154.493" y="27.382" fill="#00CDC3" rx="4.565"/>
+                        <rect width="32.166" height="48.408" x="154.493" y="151.744" fill="#00CDC3" rx="4.565"/>
+                        <rect width="32.166" height="48.408" x="63.186" y="27.382" fill="#00CDC3" rx="4.565"/>
+                        <rect width="32.166" height="48.408" x="63.186" y="151.744" fill="#00CDC3" rx="4.565"/>
+                        <rect width="45.653" height="41.073" x="392.619" y="213.354" fill="#00CDC3" rx="4.565"/>
+                        <rect width="32.166" height="48.408" x="154.493" y="89.481" fill="#00CDC3" rx="4.565"/>
+                        <rect width="32.166" height="48.408" x="154.493" y="213.843" fill="#00CDC3" rx="4.565"/>
+                        <rect width="32.166" height="48.408" x="63.186" y="89.481" fill="#00CDC3" rx="4.565"/>
+                        <rect width="32.166" height="48.408" x="63.186" y="213.843" fill="#00CDC3" rx="4.565"/>
+                        <path fill="#00CDC3" d="M385.77 278.387c12.607 0 22.827 10.22 22.827 22.826v43.348h-45.653v-43.348c0-12.606 10.22-22.826 22.827-22.826z"/>
+                        <rect width="45.653" height="41.073" x="333.269" y="158.589" fill="#00CDC3" rx="4.565"/>
+                        <rect width="32.166" height="48.408" x="108.63" y="27.382" fill="#00CDC3" rx="4.565"/>
+                        <rect width="32.166" height="48.408" x="108.63" y="151.744" fill="#00CDC3" rx="4.565"/>
+                        <rect width="32.166" height="48.408" x="17.324" y="27.382" fill="#00CDC3" rx="4.565"/>
+                        <rect width="32.166" height="48.408" x="17.324" y="151.744" fill="#00CDC3" rx="4.565"/>
+                        <rect width="45.653" height="41.073" x="333.269" y="213.354" fill="#00CDC3" rx="4.565"/>
+                        <rect width="32.166" height="48.408" x="108.63" y="89.481" fill="#00CDC3" rx="4.565"/>
+                        <rect width="32.166" height="48.408" x="108.63" y="213.843" fill="#00CDC3" rx="4.565"/>
+                        <rect width="32.166" height="48.408" x="17.324" y="89.481" fill="#00CDC3" rx="4.565"/>
+                        <rect width="32.166" height="48.408" x="17.324" y="213.843" fill="#00CDC3" rx="4.565"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

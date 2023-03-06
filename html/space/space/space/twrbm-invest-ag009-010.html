@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+
+<body class="vi-bg-mint ">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <!-- <h1 class="vi-page-title"></h1> -->
+      </div>
+      <div class="vi-page-header-rt">
+        <a class="vi-icon vi-icon-base icon-start-default-w"></a>
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap vi-bg-mint">
+    
+    <div class="main_container vi-has-foot-btn">
+      
+      <div class="vi-page-indicator">
+        <div class="vi-progress-bar"></div>
+        <div class="vi-txt-title vi-txt-b900">首先，先試算您的醫療需求：<br>若不幸住院，希望住哪種病房呢？</div>
+      </div>
+      
+
+      <div class="vi-container">
+        
+        <!-- 點選時加 .selected -->
+        <div class="vi-card vi-card-select">
+          <div class="vi-card-header">
+            <div class="dis-flex flex-justify-between align-items-center w-100">
+              <div class="dis-flex align-items-center">
+                <div class="mr16">
+                  <img src="../../../../inc/img/health/hospital-room-vip.svg">
+                  <!-- 預設圖 -->
+                  <!-- <img src="../../../../inc/img/health/select-default.svg"> -->
+                </div>
+                <div class="vi-txt-body-bold vi-txt-b600">高級單人房</div>
+              </div>
+              <div class="vi-txt-body-bold vi-txt-b600">
+                5,000/日
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 點選時加 .selected -->
+        <div class="vi-card vi-card-select">
+          <div class="vi-card-header">
+            <div class="dis-flex flex-justify-between align-items-center w-100">
+              <div class="dis-flex align-items-center">
+                <div class="mr16">
+                  <img src="../../../../inc/img/health/hospital-room-single.svg">
+                  <!-- 預設圖 -->
+                  <!-- <img src="../../../../inc/img/health/select-default.svg"> -->
+                </div>
+                <div class="vi-txt-body-bold vi-txt-b600">一般單人房</div>
+              </div>
+              <div class="vi-txt-body-bold vi-txt-b600">
+                4,000/日
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 點選時加 .selected -->
+        <div class="vi-card vi-card-select">
+          <div class="vi-card-header">
+            <div class="dis-flex flex-justify-between align-items-center w-100">
+              <div class="dis-flex align-items-center">
+                <div class="mr16">
+                  <img src="../../../../inc/img/health/hospital-room-double.svg">
+                  <!-- 預設圖 -->
+                  <!-- <img src="../../../../inc/img/health/select-default.svg"> -->
+                </div>
+                <div class="vi-txt-body-bold vi-txt-b600">雙人房</div>
+              </div>
+              <div class="vi-txt-body-bold vi-txt-b600">
+                3,000/日
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 點選時加 .selected -->
+        <div class="vi-card vi-card-select">
+          <div class="vi-card-header">
+            <div class="dis-flex flex-justify-between align-items-center w-100">
+              <div class="dis-flex flex-column">
+                <div class="vi-txt-body-bold vi-txt-b600 mb8">自己填</div>
+                <div class="vi-txt-body vi-txt-b600">已知你常去醫院的房價嗎？</div>
+              </div>
+            </div>
+          </div>
+          <div class="vi-card-body pad_btm16 hide">
+            <div class="vi-form-group mt0 mb0" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group">
+                <span class="title large-title">住院日額</span>
+                <input type="tel" placeholder="請輸入金額">
+                <span class="unit">元/日</span>
+              </div>
+              <div class="vi-form-error">請輸入1~999,999,999的金額</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- id 是 demo 用的，開發請拉掉 -->
+        <div id="trigger-popup-info" class="ct mt24 mb40">
+          <span class="vi-icon vi-icon-xs icon-info-mark-g top-2px"></span>
+          <span class="vi-txt-body-bold vi-txt-g500">看各區的病房價格</span>
+        </div>
+        
+      </div>
+
+      <div id="footer">
+        <div class="vi-page-footer">
+          <div class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-l vi-btn-primary">下一步</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+<!-- vi-modal popup 現有版型 這裡僅示意，可參考 ctbc-mb-alert.widget -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-popup-info" class="vi-modal">
+  <div class="vi-modal-backdrop" (bindClick)="onClickBackDrop($event)"></div>
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-header-ct">
+        <span class="popup-title">各區的病房價格</span>
+      </div>
+    </div>
+    <div class="popup-body" *ngIf="hasText" [inject-dom]="text" (bindCreate)="onCreatePopupBody($event)">
+      <div class="vi-modal-list-gray-header">
+        <div class="lt">
+          <div class="vi-txt-body vi-txt-b600">北部</div>
+        </div>
+        <div class="rt">
+          <div class="vi-txt-body vi-txt-b600">費用/日</div>
+        </div>
+      </div>
+      <ul class="vi-list vi-list-baseline vi-list-px8">
+        <li class="vi-list-item">
+          <div class="vi-list-lt flex-auto wid_30per">
+            <div class="vi-txt-body vi-txt-b600">教學大大醫院</div>
+          </div>
+          <div class="vi-list-rt dis-flex flex-auto flex-justify-between wid_60per">
+            <div class="">
+              <div class="vi-txt-body vi-txt-b600 mb16">單人房</div>
+              <div class="vi-txt-body vi-txt-b600">雙人房</div>
+            </div>
+            <div>
+              <div class="vi-txt-body-bold vi-txt-b900 mb16">3,000~8,000</div>
+              <div class="vi-txt-body-bold vi-txt-b900">1,500~3,000</div>
+            </div>
+          </div>
+        </li>
+        <li class="vi-list-item">
+          <div class="vi-list-lt flex-auto wid_30per">
+            <div class="vi-txt-body vi-txt-b600">地區醫院</div>
+          </div>
+          <div class="vi-list-rt dis-flex flex-auto flex-justify-between wid_60per">
+            <div class="">
+              <div class="vi-txt-body vi-txt-b600 mb16">單人房</div>
+              <div class="vi-txt-body vi-txt-b600">雙人房</div>
+            </div>
+            <div>
+              <div class="vi-txt-body-bold vi-txt-b900 mb16">4,000</div>
+              <div class="vi-txt-body-bold vi-txt-b900">1,500~3,000</div>
+            </div>
+          </div>
+        </li>
+        <li class="vi-list-item">
+          <div class="vi-list-lt flex-auto wid_30per">
+            <div class="vi-txt-body vi-txt-b600">小醫院</div>
+          </div>
+          <div class="vi-list-rt dis-flex flex-auto flex-justify-between wid_60per">
+            <div class="">
+              <div class="vi-txt-body vi-txt-b600 mb16">單人房</div>
+              <div class="vi-txt-body vi-txt-b600">雙人房</div>
+            </div>
+            <div>
+              <div class="vi-txt-body-bold vi-txt-b900 mb16">3,000</div>
+              <div class="vi-txt-body-bold vi-txt-b900">1,500</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="vi-modal-list-gray-header">
+        <div class="lt">
+          <div class="vi-txt-body vi-txt-b600">中部</div>
+        </div>
+        <div class="rt">
+          <div class="vi-txt-body vi-txt-b600">費用/日</div>
+        </div>
+      </div>
+      <ul class="vi-list vi-list-baseline vi-list-px8">
+        <li class="vi-list-item">
+          <div class="vi-list-lt flex-auto wid_30per">
+            <div class="vi-txt-body vi-txt-b600">地區醫院</div>
+          </div>
+          <div class="vi-list-rt dis-flex flex-auto flex-justify-between wid_60per">
+            <div class="">
+              <div class="vi-txt-body vi-txt-b600 mb16">單人房</div>
+              <div class="vi-txt-body vi-txt-b600">雙人房</div>
+            </div>
+            <div>
+              <div class="vi-txt-body-bold vi-txt-b900 mb16">3,000~8,000</div>
+              <div class="vi-txt-body-bold vi-txt-b900">2,000~3,500</div>
+            </div>
+          </div>
+        </li>
+        <li class="vi-list-item">
+          <div class="vi-list-lt flex-auto wid_30per">
+            <div class="vi-txt-body vi-txt-b600">一般醫院</div>
+          </div>
+          <div class="vi-list-rt dis-flex flex-auto flex-justify-between wid_60per">
+            <div class="">
+              <div class="vi-txt-body vi-txt-b600 mb16">單人房</div>
+              <div class="vi-txt-body vi-txt-b600">雙人房</div>
+            </div>
+            <div>
+              <div class="vi-txt-body-bold vi-txt-b900 mb16">1,500~6,000</div>
+              <div class="vi-txt-body-bold vi-txt-b900">1,500~2,500</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="vi-modal-list-gray-header">
+        <div class="lt">
+          <div class="vi-txt-body vi-txt-b600">南部</div>
+        </div>
+        <div class="rt">
+          <div class="vi-txt-body vi-txt-b600">費用/日</div>
+        </div>
+      </div>
+      <ul class="vi-list vi-list-baseline vi-list-px8">
+        <li class="vi-list-item">
+          <div class="vi-list-lt flex-auto wid_30per">
+            <div class="vi-txt-body vi-txt-b600">地區醫院</div>
+          </div>
+          <div class="vi-list-rt dis-flex flex-auto flex-justify-between wid_60per">
+            <div class="">
+              <div class="vi-txt-body vi-txt-b600 mb16">單人房</div>
+              <div class="vi-txt-body vi-txt-b600">雙人房</div>
+            </div>
+            <div>
+              <div class="vi-txt-body-bold vi-txt-b900 mb16">3,000~8,000</div>
+              <div class="vi-txt-body-bold vi-txt-b900">2,000~3,500</div>
+            </div>
+          </div>
+        </li>
+        <li class="vi-list-item">
+          <div class="vi-list-lt flex-auto wid_30per">
+            <div class="vi-txt-body vi-txt-b600">地區醫院</div>
+          </div>
+          <div class="vi-list-rt dis-flex flex-auto flex-justify-between wid_60per">
+            <div class="">
+              <div class="vi-txt-body vi-txt-b600 mb16">單人房</div>
+              <div class="vi-txt-body vi-txt-b600">雙人房</div>
+            </div>
+            <div>
+              <div class="vi-txt-body-bold vi-txt-b900 mb16">3,000~8,000</div>
+              <div class="vi-txt-body-bold vi-txt-b900">2,000~3,500</div>
+            </div>
+          </div>
+        </li>
+        <li class="vi-list-item">
+          <div class="vi-list-lt flex-auto wid_30per">
+            <div class="vi-txt-body vi-txt-b600">一般醫院</div>
+          </div>
+          <div class="vi-list-rt dis-flex flex-auto flex-justify-between wid_60per">
+            <div class="">
+              <div class="vi-txt-body vi-txt-b600 mb16">單人房</div>
+              <div class="vi-txt-body vi-txt-b600">雙人房</div>
+            </div>
+            <div>
+              <div class="vi-txt-body-bold vi-txt-b900 mb16">1,500~6,000</div>
+              <div class="vi-txt-body-bold vi-txt-b900">1,500~2,500</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="vi-modal-list-gray-header">
+        <div class="lt">
+          <div class="vi-txt-body vi-txt-b600">東部</div>
+        </div>
+        <div class="rt">
+          <div class="vi-txt-body vi-txt-b600">費用/日</div>
+        </div>
+      </div>
+      <ul class="vi-list vi-list-baseline vi-list-px8">
+        <li class="vi-list-item">
+          <div class="vi-list-lt flex-auto wid_30per">
+            <div class="vi-txt-body vi-txt-b600">地區醫院</div>
+          </div>
+          <div class="vi-list-rt dis-flex flex-auto flex-justify-between wid_60per">
+            <div class="">
+              <div class="vi-txt-body vi-txt-b600 mb16">單人房</div>
+              <div class="vi-txt-body vi-txt-b600">雙人房</div>
+            </div>
+            <div>
+              <div class="vi-txt-body-bold vi-txt-b900 mb16">2,000~3,000</div>
+              <div class="vi-txt-body-bold vi-txt-b900">1,000~1,200</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="popup-footer">
+      <div class="vi-btn-group">
+        <button (bindClick)="onClickConfirm($event)" class="vi-btn vi-btn-primary" ontouchstart>我知道了</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// 看統計資訊 demo
+document.getElementById('trigger-popup-info').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-popup-info').classList.toggle('vi-modal-in');
+});
+
+// modal close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('popup-footer');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+  });
+}
+
+
+$(document).ready(function(){
+
+  $('.vi-card-select').on('click', function() {
+    $(this).siblings().removeClass('selected');
+    $(this).siblings().find('.vi-card-body').addClass('hide')
+    $(this).addClass('selected');
+    $(this).find('.vi-card-body').removeClass('hide')
+  });
+
+});
+</script>

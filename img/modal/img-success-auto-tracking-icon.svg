@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="224" height="181" viewBox="0 0 224 181">
+    <defs>
+        <linearGradient id="7nwtn4ep1a" x1="50%" x2="50%" y1="21.04%" y2="100%">
+            <stop offset="0%" stop-color="#24EBB5"/>
+            <stop offset="100%" stop-color="#42E8E0"/>
+            <stop offset="100%" stop-color="#8CE5E1" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="jhrecz8t8c" x1="50%" x2="50%" y1="21.04%" y2="100%">
+            <stop offset="0%" stop-color="#24EBB5"/>
+            <stop offset="100%" stop-color="#42E8E0"/>
+            <stop offset="100%" stop-color="#8CE5E1" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="d6ta0jkorb">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-84 -639) translate(31 639) translate(53)">
+                    <circle cx="114.865" cy="91" r="45" fill="url(#7nwtn4ep1a)"/>
+                    <g>
+                        <path d="M0 0H60V60H0z" transform="translate(86 60)"/>
+                        <g filter="url(#d6ta0jkorb)" transform="translate(86 60)">
+                            <g>
+                                <g>
+                                    <g fill="#FFF">
+                                        <path d="M4.213 45.334c-.346.05-.697.05-1.043 0-2.017-.286-3.42-2.154-3.133-4.171l2.285-16.054L27.33 0l17.864 17.935-25.01 25.108z" transform="translate(3 3)"/>
+                                    </g>
+                                    <g fill="url(#jhrecz8t8c)" transform="translate(3 3) translate(33.64 30.435)">
+                                        <path d="M4.84 0c-.432 0-.812.262-.931.64L.037 13.014c-.083.266-.024.552.159.774.183.222.468.352.772.352h3.277l-2.278 8.328c-.108.39.086.794.47.988.147.074.307.11.467.11.257 0 .511-.094.699-.273L19.09 8.564c.27-.255.345-.631.193-.957-.152-.326-.503-.537-.891-.537h-5.756l2.157-5.907c.1-.269.049-.566-.133-.796-.182-.23-.474-.367-.785-.367H4.84z"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <circle cx="123.258" cy="9.994" r="9.994" fill="#FF5928"/>
+                    <circle cx="178.779" cy="121.037" r="6.663" fill="#FF5928"/>
+                    <circle cx="9.994" cy="94.387" r="9.994" fill="#FEC602"/>
+                    <circle cx="113.264" cy="171.006" r="9.994" fill="#00F5B3"/>
+                    <circle cx="49.969" cy="58.853" r="6.663" fill="#00F5B3"/>
+                    <circle cx="213.202" cy="101.049" r="9.994" fill="#0E7CF4"/>
+                    <circle cx="41.086" cy="127.699" r="6.663" fill="#0E7CF4"/>
+                    <circle cx="163.233" cy="37.755" r="6.663" fill="#FEC602"/>
+                    <path stroke="#0E7CF4" stroke-linecap="round" stroke-width="7" d="M54.411 7.72c0 8.668 2.356 13.378 9.426 13.378s9.249 3.331 9.249 9.994"/>
+                    <path stroke="#00F5B3" stroke-linecap="round" stroke-width="7" d="M184.995 59.422c7.725 6.693 16.981.715 13.7-8.953-3.283-9.669 3.195-17.156 13.693-12.399"/>
+                    <path stroke="#FEC602" stroke-linecap="round" stroke-width="7" d="M165.454 155.407c0 5.765 4.414 7.99 6.27 8.898 1.855.909 4.944 2.955 6.151 6.648"/>
+                    <path stroke="#FA7048" stroke-linecap="round" stroke-width="7" d="M53.226 169.422c8.035 4.883 14.815.242 12.71-4.986-2.107-5.229 3.24-9.391 8.761-5.87"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

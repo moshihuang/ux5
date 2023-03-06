@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-radio-group .vi-radio {
+      display: flex;
+    }
+    .vi-radio-group .vi-form-error {
+      padding-top: 0;
+    }
+    .pb-16 {
+      padding-bottom: 16px;
+    }
+    .ml36 {
+      margin-left: 36px;
+    }
+    .align-center {
+      align-items: center;
+    }
+
+    .notice-icon-list {
+      display: flex;
+      justify-content: space-between;
+    }
+    .notice-icon-item {
+      text-align: center;
+    }
+    .notice-icon-item .icon {
+      width: 72px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #C9EBE9;
+      border-radius: 50%;
+    }
+
+    .vi-txt-title .vi-icon {
+      position: relative;
+      top: 4px;
+    }
+
+    .vi-input-group .title.large-title {
+      width: 86px;
+    }
+
+    .vi-card.vi-card-count-day {
+      overflow: visible;
+    }
+    .vi-card.vi-card-count-day .vi-calendar-bi {
+      width: 85px;
+      height: 70px;
+      position: absolute;
+      top: -18px;
+      right: 0;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iNzQiIHZpZXdCb3g9IjAgMCA5NiA3NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPG1hc2sgaWQ9Im1hc2swXzQ2ODFfNTgwNjEiIHN0eWxlPSJtYXNrLXR5cGU6YWxwaGEiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjAiIHk9IjIiIHdpZHRoPSI4NSIgaGVpZ2h0PSI3MCI+CjxwYXRoIGQ9Ik04NSAxNEM4NSA3LjM3MjU4IDc5LjYyNzQgMiA3MyAySDBWNjBDMCA2Ni42Mjc0IDUuMzcyNTggNzIgMTIgNzJIODVWMTRaIiBmaWxsPSJ3aGl0ZSIvPgo8L21hc2s+CjxnIG1hc2s9InVybCgjbWFzazBfNDY4MV81ODA2MSkiPgo8cGF0aCBkPSJNMy41NTgwNCA3LjUxMDQ5QzMuNDg3OTYgNS44NzY4MyA0Ljc1NTQ5IDQuNDk1NjggNi4zODkxNSA0LjQyNTYxTDUyLjIzODEgMi40NTg5QzUzLjg3MTcgMi4zODg4MiA1NS4yNTI5IDMuNjU2MzYgNTUuMzIzIDUuMjkwMDFMNTYuNjU1MyAzNi4zNDlDNTYuNzI1MyAzNy45ODI2IDU1LjQ1NzggMzkuMzYzOCA1My44MjQxIDM5LjQzMzlMNy45NzUyIDQxLjQwMDZDNi4zNDE1NSA0MS40NzA2IDQuOTYwNCA0MC4yMDMxIDQuODkwMzIgMzguNTY5NEwzLjU1ODA0IDcuNTEwNDlaIiBmaWxsPSIjM0E3MUU1Ii8+CjxwYXRoIGQ9Ik01LjI5MzQyIDEzLjM2NEM1LjI1ODM4IDEyLjU0NzIgNS44OTIxNSAxMS44NTY2IDYuNzA4OTggMTEuODIxNkw1Mi41NTc5IDkuODU0ODZDNTMuMzc0NyA5LjgxOTgyIDU0LjA2NTMgMTAuNDUzNiA1NC4xMDA0IDExLjI3MDRMNTUuMTc4OSAzNi40MTM0QzU1LjIxMzkgMzcuMjMwMiA1NC41ODAxIDM3LjkyMDggNTMuNzYzMyAzNy45NTU4TDcuOTE0MzggMzkuOTIyNUM3LjA5NzU1IDM5Ljk1NzYgNi40MDY5OCAzOS4zMjM4IDYuMzcxOTQgMzguNTA3TDUuMjkzNDIgMTMuMzY0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTExLjcyMzEgNy45MDE0NkMxMS43NzU2IDkuMTI2NyAxMC44MjUgMTAuMTYyNiA5LjU5OTc0IDEwLjIxNTFDOC4zNzQ1IDEwLjI2NzcgNy4zMzg2NCA5LjMxNzAzIDcuMjg2MDggOC4wOTE3OUM3LjIzMzUyIDYuODY2NTUgOC4xODQxNyA1LjgzMDY5IDkuNDA5NDEgNS43NzgxM0MxMC42MzQ3IDUuNzI1NTcgMTEuNjcwNSA2LjY3NjIyIDExLjcyMzEgNy45MDE0NloiIGZpbGw9IiMxRjQ4OUYiLz4KPHBhdGggZD0iTTguMTkxNjIgMy4yMzg0QzguMTY1MzUgMi42MjU3OCA4LjY0MDY3IDIuMTA3ODUgOS4yNTMyOSAyLjA4MTU3QzkuODY1OTEgMi4wNTUyOSAxMC4zODM4IDIuNTMwNjEgMTAuNDEwMSAzLjE0MzI0TDEwLjYwMDQgNy41ODAyM0MxMC42MjY3IDguMTkyODUgMTAuMTUxNCA4LjcxMDc4IDkuNTM4NzggOC43MzcwNkM4LjkyNjE2IDguNzYzMzQgOC40MDgyMyA4LjI4ODAxIDguMzgxOTUgNy42NzUzOUw4LjE5MTYyIDMuMjM4NFoiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl80NjgxXzU4MDYxKSIvPgo8cGF0aCBkPSJNMTkuODU5OCA3LjU1MzA3QzE5LjkxMjQgOC43NzgzMiAxOC45NjE3IDkuODE0MTggMTcuNzM2NSA5Ljg2NjczQzE2LjUxMTIgOS45MTkyOSAxNS40NzU0IDguOTY4NjQgMTUuNDIyOCA3Ljc0MzRDMTUuMzcwMiA2LjUxODE2IDE2LjMyMDkgNS40ODIzIDE3LjU0NjEgNS40Mjk3NEMxOC43NzE0IDUuMzc3MTggMTkuODA3MiA2LjMyNzgzIDE5Ljg1OTggNy41NTMwN1oiIGZpbGw9IiMxRjQ4OUYiLz4KPHBhdGggZD0iTTE2LjMyODMgMi44OTAwMUMxNi4zMDIxIDIuMjc3MzkgMTYuNzc3NCAxLjc1OTQ2IDE3LjM5IDEuNzMzMThDMTguMDAyNiAxLjcwNjkgMTguNTIwNiAyLjE4MjIzIDE4LjU0NjggMi43OTQ4NUwxOC43MzcyIDcuMjMxODRDMTguNzYzNCA3Ljg0NDQ2IDE4LjI4ODEgOC4zNjIzOSAxNy42NzU1IDguMzg4NjdDMTcuMDYyOSA4LjQxNDk1IDE2LjU0NDkgNy45Mzk2MyAxNi41MTg3IDcuMzI3TDE2LjMyODMgMi44OTAwMVoiIGZpbGw9InVybCgjcGFpbnQxX2xpbmVhcl80NjgxXzU4MDYxKSIvPgo8cGF0aCBkPSJNMjcuOTg5OSA3LjIwMjQ5QzI4LjA0MjUgOC40Mjc3MyAyNy4wOTE4IDkuNDYzNTkgMjUuODY2NiA5LjUxNjE1QzI0LjY0MTMgOS41Njg3IDIzLjYwNTUgOC42MTgwNiAyMy41NTI5IDcuMzkyODFDMjMuNTAwNCA2LjE2NzU3IDI0LjQ1MSA1LjEzMTcxIDI1LjY3NjMgNS4wNzkxNUMyNi45MDE1IDUuMDI2NiAyNy45Mzc0IDUuOTc3MjQgMjcuOTg5OSA3LjIwMjQ5WiIgZmlsbD0iIzFGNDg5RiIvPgo8cGF0aCBkPSJNMjQuNDU4NSAyLjUzOTQyQzI0LjQzMjIgMS45MjY4IDI0LjkwNzUgMS40MDg4NyAyNS41MjAxIDEuMzgyNTlDMjYuMTMyOCAxLjM1NjMyIDI2LjY1MDcgMS44MzE2NCAyNi42NzcgMi40NDQyNkwyNi44NjczIDYuODgxMjZDMjYuODkzNiA3LjQ5Mzg4IDI2LjQxODIgOC4wMTE4MSAyNS44MDU2IDguMDM4MDlDMjUuMTkzIDguMDY0MzYgMjQuNjc1MSA3LjU4OTA0IDI0LjY0ODggNi45NzY0MkwyNC40NTg1IDIuNTM5NDJaIiBmaWxsPSJ1cmwoI3BhaW50Ml9saW5lYXJfNDY4MV81ODA2MSkiLz4KPHBhdGggZD0iTTM2LjEyMzUgNi44NTQzNEMzNi4xNzYgOC4wNzk1OCAzNS4yMjU0IDkuMTE1NDUgMzQuMDAwMSA5LjE2OEMzMi43NzQ5IDkuMjIwNTYgMzEuNzM5IDguMjY5OTEgMzEuNjg2NSA3LjA0NDY3QzMxLjYzMzkgNS44MTk0MyAzMi41ODQ2IDQuNzgzNTcgMzMuODA5OCA0LjczMTAxQzM1LjAzNSA0LjY3ODQ1IDM2LjA3MDkgNS42MjkxIDM2LjEyMzUgNi44NTQzNFoiIGZpbGw9IiMxRjQ4OUYiLz4KPHBhdGggZD0iTTMyLjU5MiAyLjE5MTI4QzMyLjU2NTcgMS41Nzg2NiAzMy4wNDExIDEuMDYwNzMgMzMuNjUzNyAxLjAzNDQ1QzM0LjI2NjMgMS4wMDgxNyAzNC43ODQyIDEuNDgzNSAzNC44MTA1IDIuMDk2MTJMMzUuMDAwOCA2LjUzMzExQzM1LjAyNzEgNy4xNDU3MyAzNC41NTE4IDcuNjYzNjYgMzMuOTM5MiA3LjY4OTk0QzMzLjMyNjYgNy43MTYyMiAzMi44MDg2IDcuMjQwOSAzMi43ODIzIDYuNjI4MjdMMzIuNTkyIDIuMTkxMjhaIiBmaWxsPSJ1cmwoI3BhaW50M19saW5lYXJfNDY4MV81ODA2MSkiLz4KPHBhdGggZD0iTTQ0LjI1NzMgNi41MDQ5OEM0NC4zMDk4IDcuNzMwMjIgNDMuMzU5MiA4Ljc2NjA4IDQyLjEzMzkgOC44MTg2NEM0MC45MDg3IDguODcxMTkgMzkuODcyOCA3LjkyMDU1IDM5LjgyMDMgNi42OTUzQzM5Ljc2NzcgNS40NzAwNiA0MC43MTg0IDQuNDM0MiA0MS45NDM2IDQuMzgxNjRDNDMuMTY4OCA0LjMyOTA5IDQ0LjIwNDcgNS4yNzk3NCA0NC4yNTczIDYuNTA0OThaIiBmaWxsPSIjMUY0ODlGIi8+CjxwYXRoIGQ9Ik00MC43MjU4IDEuODQxOTFDNDAuNjk5NSAxLjIyOTI5IDQxLjE3NDkgMC43MTEzNjMgNDEuNzg3NSAwLjY4NTA4NEM0Mi40MDAxIDAuNjU4ODA2IDQyLjkxOCAxLjEzNDEzIDQyLjk0NDMgMS43NDY3NUw0My4xMzQ2IDYuMTgzNzVDNDMuMTYwOSA2Ljc5NjM3IDQyLjY4NTYgNy4zMTQzIDQyLjA3MyA3LjM0MDU4QzQxLjQ2MDMgNy4zNjY4NSA0MC45NDI0IDYuODkxNTMgNDAuOTE2MSA2LjI3ODkxTDQwLjcyNTggMS44NDE5MVoiIGZpbGw9InVybCgjcGFpbnQ0X2xpbmVhcl80NjgxXzU4MDYxKSIvPgo8cGF0aCBkPSJNNTIuMzk0IDYuMTU2ODNDNTIuNDQ2NSA3LjM4MjA3IDUxLjQ5NTkgOC40MTc5NCA1MC4yNzA2IDguNDcwNDlDNDkuMDQ1NCA4LjUyMzA1IDQ4LjAwOTUgNy41NzI0IDQ3Ljk1NyA2LjM0NzE2QzQ3LjkwNDQgNS4xMjE5MiA0OC44NTUxIDQuMDg2MDYgNTAuMDgwMyA0LjAzMzVDNTEuMzA1NiAzLjk4MDk0IDUyLjM0MTQgNC45MzE1OSA1Mi4zOTQgNi4xNTY4M1oiIGZpbGw9IiMxRjQ4OUYiLz4KPHBhdGggZD0iTTQ4Ljg2MjUgMS40OTM3N0M0OC44MzYyIDAuODgxMTQ5IDQ5LjMxMTYgMC4zNjMyMTggNDkuOTI0MiAwLjMzNjk0QzUwLjUzNjggMC4zMTA2NjEgNTEuMDU0NyAwLjc4NTk4NiA1MS4wODEgMS4zOTg2MUw1MS4yNzEzIDUuODM1NkM1MS4yOTc2IDYuNDQ4MjIgNTAuODIyMyA2Ljk2NjE1IDUwLjIwOTcgNi45OTI0M0M0OS41OTcxIDcuMDE4NzEgNDkuMDc5MSA2LjU0MzM5IDQ5LjA1MjggNS45MzA3Nkw0OC44NjI1IDEuNDkzNzdaIiBmaWxsPSJ1cmwoI3BhaW50NV9saW5lYXJfNDY4MV81ODA2MSkiLz4KPHBhdGggZD0iTTYuODA0NDQgMTQuMDM5NkwxMi45Mzc3IDEzLjc3NjVMMTMuMDAxMSAxNS4yNTU1TDYuODY3ODkgMTUuNTE4NUw2LjgwNDQ0IDE0LjAzOTZaIiBmaWxsPSIjREQ3RDNGIi8+CjxwYXRoIGQ9Ik0yNi40NDk1IDEzLjE5N0wzMi41ODI3IDEyLjkzMzlMMzIuNjQ2MSAxNC40MTI5TDI2LjUxMjkgMTQuNjc2TDI2LjQ0OTUgMTMuMTk3WiIgZmlsbD0iI0REN0QzRiIvPgo8cGF0aCBkPSJNMTMuMzU1IDEzLjc1OUwxOS40ODgyIDEzLjQ5NTlMMTkuNTUxNiAxNC45NzQ5TDEzLjQxODQgMTUuMjM4TDEzLjM1NSAxMy43NTlaIiBmaWxsPSIjRjJERjM1Ii8+CjxwYXRoIGQ9Ik0zMy4wMDM5IDEyLjkxNjNMMzkuMTM3MSAxMi42NTMyTDM5LjIwMDYgMTQuMTMyMkwzMy4wNjczIDE0LjM5NTNMMzMuMDAzOSAxMi45MTYzWiIgZmlsbD0iI0YyREYzNSIvPgo8cGF0aCBkPSJNMTkuOTAyMyAxMy40NzhMMjYuMDM1NiAxMy4yMTQ5TDI2LjA5OSAxNC42OTM5TDE5Ljk2NTggMTQuOTU3TDE5LjkwMjMgMTMuNDc4WiIgZmlsbD0iIzNBNzFFNSIvPgo8cGF0aCBkPSJNMzkuNTUxIDEyLjYzNTNMNDUuNjg0MiAxMi4zNzIyTDQ1Ljc0NzcgMTMuODUxMkwzOS42MTQ1IDE0LjExNDNMMzkuNTUxIDEyLjYzNTNaIiBmaWxsPSIjM0E3MUU1Ii8+CjxwYXRoIGQ9Ik00NS45OTggMTIuMzU4NEw1Mi42NTM1IDEyLjA3MjlMNTIuNzE3IDEzLjU1MTlMNDYuMDYxNSAxMy44Mzc0TDQ1Ljk5OCAxMi4zNTg0WiIgZmlsbD0iI0REN0QzRiIvPgo8cGF0aCBkPSJNMjAuMzY2OSAxOS4zODQzTDI2LjI4MjkgMTkuMTMwNUwyNi41MzY3IDI1LjA0NjVMMjAuNjIwNyAyNS4zMDAzTDIwLjM2NjkgMTkuMzg0M1oiIGZpbGw9IiNGRkQ0QkMiLz4KPHBhdGggZD0iTTM5LjQwNDEgMTQuMTIyOEw0Ni4wNTk1IDEzLjgzNzNMNDYuMjQ5OSAxOC4yNzQzTDM5LjU5NDQgMTguNTU5OEwzOS40MDQxIDE0LjEyMjhaIiBmaWxsPSIjQzJENkZGIi8+CjxwYXRoIGQ9Ik0xNC4yMTggMzEuNTAxN0wyMC44NzM1IDMxLjIxNjJMMjEuMDk1NiAzNi4zOTI3TDE0LjQ0MDEgMzYuNjc4MkwxNC4yMTggMzEuNTAxN1oiIGZpbGw9IiNGQUYzRTIiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMy45MTkxIDM3LjQ0MThMMTIuOTA0MSAxMy43Nzc4TDEzLjI3MzggMTMuNzYyTDE0LjI4ODkgMzcuNDI1OUwxMy45MTkxIDM3LjQ0MThaIiBmaWxsPSIjRTlFOUU5Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjAuOTQ1IDM3LjE0MDhMMTkuOTI5OSAxMy40NzY4TDIwLjI5OTcgMTMuNDYwOUwyMS4zMTQ4IDM3LjEyNDlMMjAuOTQ1IDM3LjE0MDhaIiBmaWxsPSIjRTlFOUU5Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjYuODYwOCAzNi44ODcxTDI1Ljg0NTcgMTMuMjIzMUwyNi4yMTU1IDEzLjIwNzNMMjcuMjMwNSAzNi44NzEzTDI2Ljg2MDggMzYuODg3MVoiIGZpbGw9IiNFOUU5RTkiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zMy41MTU4IDM2LjYwMTJMMzIuNTAwNyAxMi45MzczTDMyLjg3MDUgMTIuOTIxNEwzMy44ODU2IDM2LjU4NTRMMzMuNTE1OCAzNi42MDEyWiIgZmlsbD0iI0U5RTlFOSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQwLjE3MDYgMzYuMzE1OEwzOS4xNTU1IDEyLjY1MTlMMzkuNTI1MyAxMi42MzZMNDAuNTQwMyAzNi4zTDQwLjE3MDYgMzYuMzE1OFoiIGZpbGw9IiNFOUU5RTkiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni44MjU2IDM2LjAyOTlMNDUuODEwNSAxMi4zNjZMNDYuMTgwMyAxMi4zNTAxTDQ3LjE5NTQgMzYuMDE0MUw0Ni44MjU2IDM2LjAyOTlaIiBmaWxsPSIjRTlFOUU5Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNTMuNDgwNCAzNS43NDQ1TDUyLjQ2NTMgMTIuMDgwNkw1Mi44MzUxIDEyLjA2NDdMNTMuODUwMiAzNS43Mjg3TDUzLjQ4MDQgMzUuNzQ0NVoiIGZpbGw9IiNFOUU5RTkiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03LjYzMjAyIDM3LjcxMTFMNi42MTY5NCAxNC4wNDcxTDYuOTg2NjkgMTQuMDMxM0w4LjAwMTc3IDM3LjY5NTJMNy42MzIwMiAzNy43MTExWiIgZmlsbD0iI0U5RTlFOSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTUzLjY1NjUgMzUuNTUxN0w3LjgwNzYxIDM3LjUxODRMNy43OTE3NSAzNy4xNDg3TDUzLjY0MDcgMzUuMTgyTDUzLjY1NjUgMzUuNTUxN1oiIGZpbGw9IiNFOUU5RTkiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01My40MTkyIDMwLjAwNTZMNy41NzAzIDMxLjk3MjNMNy41NTQ0NCAzMS42MDI1TDUzLjQwMzQgMjkuNjM1OEw1My40MTkyIDMwLjAwNTZaIiBmaWxsPSIjRTlFOUU5Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNTMuMTY0NiAyNC4wODkzTDcuMzE1NjcgMjYuMDU2TDcuMjk5OCAyNS42ODYzTDUzLjE0ODcgMjMuNzE5Nkw1My4xNjQ2IDI0LjA4OTNaIiBmaWxsPSIjRTlFOUU5Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNTIuNzIxMiAxMy43MzY1TDYuODcyMzEgMTUuNzAzMkw2Ljg1NjQ1IDE1LjMzMzVMNTIuNzA1NCAxMy4zNjY4TDUyLjcyMTIgMTMuNzM2NVoiIGZpbGw9IiNFOUU5RTkiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01Mi45MTMxIDE4LjE3NEw3LjA2NDIgMjAuMTQwN0w3LjA0ODM0IDE5Ljc3MUw1Mi44OTczIDE3LjgwNDNMNTIuOTEzMSAxOC4xNzRaIiBmaWxsPSIjRTlFOUU5Ii8+CjxwYXRoIGQ9Ik00Ny4wMjI1IDE4Ljk4MzJMNTIuMTk5IDE4Ljc2MTFMNTIuMjMwNyAxOS41MDA2TDQ3LjA1NDIgMTkuNzIyN0w0Ny4wMjI1IDE4Ljk4MzJaIiBmaWxsPSIjRTlFOUU5Ii8+CjxwYXRoIGQ9Ik00Ny4wODU0IDIwLjQ2MTlMNTAuMDQzNCAyMC4zMzVMNTAuMDc1MiAyMS4wNzQ1TDQ3LjExNzIgMjEuMjAxNEw0Ny4wODU0IDIwLjQ2MTlaIiBmaWxsPSIjRTlFOUU5Ii8+CjxwYXRoIGQ9Ik0yNy4zMTI1IDI1Ljc1NTRMMzIuNDg5IDI1LjUzMzNMMzIuNTIwNyAyNi4yNzI4TDI3LjM0NDIgMjYuNDk0OUwyNy4zMTI1IDI1Ljc1NTRaIiBmaWxsPSIjRTlFOUU5Ii8+CjxwYXRoIGQ9Ik0yNy4zNzU1IDI3LjIzNDFMMzAuMzMzNSAyNy4xMDcyTDMwLjM2NTIgMjcuODQ2N0wyNy40MDcyIDI3Ljk3MzZMMjcuMzc1NSAyNy4yMzQxWiIgZmlsbD0iI0U5RTlFOSIvPgo8cGF0aCBkPSJNNy44Mjc4OCAyMC42NjM2TDEzLjAwNDQgMjAuNDQxNUwxMy4wMzYxIDIxLjE4MUw3Ljg1OTYgMjEuNDAzMUw3LjgyNzg4IDIwLjY2MzZaIiBmaWxsPSIjRTlFOUU5Ii8+CjxwYXRoIGQ9Ik03Ljg5MDg3IDIyLjE0MjNMMTAuODQ4OSAyMi4wMTU0TDEwLjg4MDYgMjIuNzU0OUw3LjkyMjU5IDIyLjg4MThMNy44OTA4NyAyMi4xNDIzWiIgZmlsbD0iI0U5RTlFOSIvPgo8cGF0aCBkPSJNNDAuODcxMyAzMS4wOTk5TDQ2LjA0NzggMzAuODc3OEw0Ni4wNzk2IDMxLjYxNzNMNDAuOTAzMSAzMS44Mzk0TDQwLjg3MTMgMzEuMDk5OVoiIGZpbGw9IiNFOUU5RTkiLz4KPHBhdGggZD0iTTQwLjkzNDMgMzIuNTc4Nkw0My44OTIzIDMyLjQ1MTdMNDMuOTI0IDMzLjE5MTJMNDAuOTY2IDMzLjMxODFMNDAuOTM0MyAzMi41Nzg2WiIgZmlsbD0iI0U5RTlFOSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTI3LjA5NjIgMTguNTIyNUMyNy40MjMzIDE4Ljc2NzUgMjcuNDg5OSAxOS4yMzE0IDI3LjI0NDkgMTkuNTU4NkwyNC4wOTE2IDIzLjc2ODZDMjMuOTY2MiAyMy45MzYgMjMuNzc1OSAyNC4wNDI1IDIzLjU2NzcgMjQuMDYxOUMyMy4zNTk0IDI0LjA4MTIgMjMuMTUyNyAyNC4wMTE2IDIyLjk5ODcgMjMuODcwMkwyMS40NTYyIDIyLjQ1NDdDMjEuMTU1MSAyMi4xNzgzIDIxLjEzNSAyMS43MSAyMS40MTE0IDIxLjQwODlDMjEuNjg3OCAyMS4xMDc3IDIyLjE1NiAyMS4wODc2IDIyLjQ1NzIgMjEuMzY0TDIzLjM5NyAyMi4yMjY1TDI2LjA2IDE4LjY3MTJDMjYuMzA1MSAxOC4zNDQgMjYuNzY5IDE4LjI3NzQgMjcuMDk2MiAxOC41MjI1WiIgZmlsbD0iI0ZGM0YzRiIvPgo8cGF0aCBkPSJNMzUuMzc5IDI5LjY3MDZDMzEuMTc0NiAzMC42MTA0IDMzLjQ2NjQgMzcuMjk5MyAzNC43Mzg1IDM5Ljg2OTFMMTcuODkxMiA0MC42ODU5QzIwLjg3MTEgNDUuMjIwNyAzMC4zMDgyIDU3LjIxNDIgNDMuNDEzNSA2MS4zNjI5QzU2LjUxODcgNjUuNTExNyA2MC43ODkxIDU2LjI0MTkgNjEuMjg2MiA1MS4wODg0TDQxLjkwMTUgMzYuMjk4N0M0MS40NzkyIDMzLjY5NzggMzkuNTgzMyAyOC43MzA3IDM1LjM3OSAyOS42NzA2WiIgZmlsbD0iIzk4OTg5OSIvPgo8cGF0aCBkPSJNNTMuMzc5MSAyMC4xMjI3QzUzLjM3OTEgMjAuMTIyNyA1My40MjM4IDE3LjY2NzIgNTQuNDk1MiAxNS43MDI5QzU1LjA3NTYgMTQuNTg2OCA1NS40Nzc0IDEzLjczODUgNTQuODA3NyAxMy43Mzg1QzUzLjUxMyAxMy43ODMyIDUyLjcwOTQgMTUuNjEzNiA1My4zNzkxIDIwLjEyMjdaIiBmaWxsPSIjOTg5ODk5Ii8+CjxwYXRoIGQ9Ik05OC45MTggNDUuNzA0Qzk4LjkxOCA0NS43MDQgOTQuODU1MyA0Ni42NDE2IDkyLjI2NTkgNDMuNzM5N0M4Ny4xMzE4IDM2LjU5NjUgODEuMTk0MSAxNS4yNTY0IDYxLjkwNzYgMTYuOTk3NkMzNS45NjkxIDE5LjM2MzcgMzYuOTA2NiA0MC41Njk5IDQyLjA0MDggNDkuMjMxQzQxLjQ2MDQgNTEuOTU0MyA0Mi4wNDA4IDU2LjczMTIgNDIuNzU1MSA1OS4xNDJDNDUuNTIzIDY4LjQ3MjggNTUuODgwNiA3Mi44NDc5IDY5LjAwNjEgNzEuMzc0N0M3MS42NDAxIDcxLjA2MjIgNzQuNDA4MSA3MC43OTQzIDc2LjY0MDMgNzAuMTY5M0M5OS4wNTE5IDYzLjgyOTcgOTguOTE4IDQ1LjcwNCA5OC45MTggNDUuNzA0WiIgZmlsbD0iI0Q3RDdENyIvPgo8cGF0aCBkPSJNMzguNjkwOSAzOC4zODIzQzM4LjMzMzggNDUuOTcxOSA0Mi4wMzkzIDUwLjEyMzggNDIuMDM5MyA1MC4xMjM4QzQyLjAzOTMgNTAuMTIzOCA0NC4wOTI5IDQ5LjgxMTMgNDYuNzI2OSA1MC42NTk1QzUxLjA1NzUgNTIuMDQzNSA2My45NTk4IDUxLjY0MTcgNjYuMDU4MSAzOS40OTg0QzY3LjY2NTMgMzAuMzkwOSA1OS44NTI1IDIxLjE0OTUgNTEuNDE0NiAyMS43Mjk4QzQzLjY0NjUgMjIuMzEwMiAzOS4yNzEzIDI2LjM3MjkgMzguNjkwOSAzOC4zODIzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQzLjY1NjEgMzYuMTQzNEM0My42MDQyIDMzLjc3NjkgNDQuNTIxNCAzMS44Mzc0IDQ1LjcwNDYgMzEuODExNEM0Ni44ODc5IDMxLjc4NTUgNDcuODg5MiAzMy42ODI5IDQ3Ljk0MTIgMzYuMDQ5NEM0Ny45OTMxIDM4LjQxNiA0Ny4wNzU5IDQwLjM1NTUgNDUuODkyNiA0MC4zODE1QzQ0LjcwOTQgNDAuNDA3NCA0My43MDgxIDM4LjUxIDQzLjY1NjEgMzYuMTQzNFoiIGZpbGw9IiMyMzFGMjAiLz4KPHBhdGggZD0iTTQ0LjA4NzIgMzUuMjY1NEM0NC4wNjgzIDM0LjQwMjYgNDQuNDcyNyAzMy42OTQgNDQuOTkwNCAzMy42ODI2QzQ1LjUwOCAzMy42NzEzIDQ1Ljk0MyAzNC4zNjE2IDQ1Ljk2MTkgMzUuMjI0NEM0NS45ODA4IDM2LjA4NzIgNDUuNTc2NCAzNi43OTU4IDQ1LjA1ODcgMzYuODA3MUM0NC41NDExIDM2LjgxODUgNDQuMTA2MSAzNi4xMjgyIDQ0LjA4NzIgMzUuMjY1NFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0zNi40NTk1IDQyLjMxMTJDMzYuNDU5NSA0Mi4zMTEyIDM4LjUxMzIgNDEuOTk4NiAzOS45ODY0IDQyLjU3OUM0MS4xOTE4IDQzLjAyNTUgNDEuNDU5NyA0MC4xMjM2IDQwLjUyMjIgMzkuMzJDMzkuNTg0NiAzOC41MTY0IDM2LjQ1OTUgNDIuMzExMiAzNi40NTk1IDQyLjMxMTJaIiBmaWxsPSIjRUM2QzIyIi8+CjxwYXRoIGQ9Ik01NS4yNTU2IDE4LjkxNzRDNTUuMjU1NiAxOC45MTc0IDU3LjUzMjUgMTYuNzI5OCA1OS45ODc5IDE2LjMyOEM2Mi4yMjAyIDE1LjkyNjIgNjEuMTA0IDE0LjIyOTcgNTkuMDUwNCAxNS4xMjI2QzU3LjIyIDE1Ljk3MDggNTUuMjU1NiAxOC45MTc0IDU1LjI1NTYgMTguOTE3NFoiIGZpbGw9IiM5ODk4OTkiLz4KPHBhdGggZD0iTTU0LjA1MDMgMTkuMzE5MUM1NC4wNTAzIDE5LjMxOTEgNTUuMTIxNyAxNi41MDY1IDU3LjYyMTggMTQuOTg4NkM1OS43MjAxIDEzLjczODYgNjAuMTY2NiAxMi40ODg1IDU5LjQ5NjkgMTIuMTc2QzU4LjE1NzYgMTEuNTUxIDU1LjU2ODIgMTIuNTMzMiA1NC4wNTAzIDE5LjMxOTFaIiBmaWxsPSIjOTg5ODk5Ii8+CjxwYXRoIGQ9Ik01NC44OTgzIDY0LjIzMTdDNTUuODM1OCA2My42NTEzIDU2LjM3MTUgNjIuNjI0NSA1Ni40MTYyIDYxLjU5NzdDNTcuMTc1MSA2Mi44NDc3IDU2LjgxOCA2NC40NTQ5IDU1LjU2NzkgNjUuMjU4NUM1NC4zMTc5IDY2LjA2MjEgNTIuNjY2IDY1LjcwNSA1MS44MTc4IDY0LjQ5OTZDNTIuOCA2NC45MDE0IDUzLjk2MDcgNjQuODEyMSA1NC44OTgzIDY0LjIzMTdaIiBmaWxsPSIjOTg5ODk5Ii8+CjxwYXRoIGQ9Ik01NS43OTExIDU2Ljc3NTlDNTYuODE3OSA1NS45Mjc2IDU3LjI2NDQgNTQuNzIyMiA1Ny4xNzUxIDUzLjUxNjhDNTguMjQ2NiA1NC44NTYyIDU4LjA2OCA1Ni43NzU5IDU2LjcyODcgNTcuODQ3NEM1NS40MzQgNTguOTE4OCA1My40Njk2IDU4Ljc4NDkgNTIuMzA4OCA1Ny41MzQ5QzUzLjQ2OTYgNTcuODQ3NCA1NC43NjQzIDU3LjU3OTUgNTUuNzkxMSA1Ni43NzU5WiIgZmlsbD0iIzk4OTg5OSIvPgo8cGF0aCBkPSJNNDcuNTc3MiA2MC44Mzg0QzQ4LjgyNzMgNjAuMzkxOSA0OS42NzU1IDU5LjM2NTEgNDkuOTg4IDU4LjIwNDNDNTAuNTIzOCA1OS44MTE2IDQ5LjY3NTUgNjEuNTUyNyA0OC4wNjgzIDYyLjEzMzFDNDYuNDYxMSA2Mi43MTM0IDQ0LjY3NTMgNjEuOTU0NSA0NC4wMDU3IDYwLjM5MTlDNDUuMDMyNSA2MS4xMDYzIDQ2LjM3MTggNjEuMzI5NSA0Ny41NzcyIDYwLjgzODRaIiBmaWxsPSIjOTg5ODk5Ii8+CjxwYXRoIGQ9Ik00OS40OTYyIDY1LjYxNTVDNDkuNDk2MiA2NS42MTU1IDUwLjM0NDUgNjcuMDg4OCA1MC4wNzY2IDY3Ljk4MTdDNTAuMDc2NiA2Ny45ODE3IDQ5LjE4MzcgNjguMDI2MyA0OC41NTg3IDY3LjEzMzRDNDguNTU4NyA2Ny4xMzM0IDQ5LjE4MzcgNjcuMTc4IDQ5LjQ5NjIgNjUuNjE1NVoiIGZpbGw9IiM5ODk4OTkiLz4KPHBhdGggZD0iTTY0LjA0MyA1NC40MDE3QzY0LjUzNCA1MS43MjMgNjguOTA5MiAzOC4wNjE3IDgzLjI0MDEgMzMuNzc1OUM5NC45ODE3IDMwLjI5MzYgODguOTk5MyAzOS41MzUgODUuNTE3IDQxLjcyMjZDODUuNTE3IDQxLjcyMjYgODguMTA2NCA0MC4xMTU0IDg5LjQ5MDQgNDEuNjMzM0M5MC44NzQ0IDQzLjEwNjYgODkuODAyOSA0OC4yODU0IDgzLjUwOCA1MC4zODM3QzgzLjUwOCA1MC4zODM3IDg4Ljk5OTMgNDguNzc2NSA4OS40MDExIDUzLjE1MTZDODkuODAyOSA1Ny41MjY4IDg0LjA0MzcgNjEuNjM0MSA3NS45NjMxIDYzLjE5NjdDNjcuODgyNCA2NC43NTkyIDYzLjUwNzIgNTcuMDgwMyA2NC4wNDMgNTQuNDAxN1oiIGZpbGw9IiM5ODk4OTkiLz4KPHBhdGggZD0iTTM4LjYwMzUgMzYuMTk0NEMzOC42MDM1IDM2LjE5NDQgMzYuMzcxMyAzNy41Nzg0IDM2LjEwMzQgNDEuNTA3MUMzNi4xMDM0IDQxLjUwNzEgMzguNDI0OSAzOS45NDQ1IDQwLjM4OTMgMzkuODU1M0M0MS45NTE5IDM5Ljc2NiAzOS44NTM2IDM2LjAxNTggMzguNjAzNSAzNi4xOTQ0WiIgZmlsbD0iI0VDODgyMiIvPgo8L2c+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfNDY4MV81ODA2MSIgeDE9IjkuMjUzMjkiIHkxPSIyLjA4MTU3IiB4Mj0iOS41Mzg3OCIgeTI9IjguNzM3MDYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0U2RTZFNiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IndoaXRlIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQxX2xpbmVhcl80NjgxXzU4MDYxIiB4MT0iMTcuMzkiIHkxPSIxLjczMzE4IiB4Mj0iMTcuNjc1NSIgeTI9IjguMzg4NjciIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0U2RTZFNiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IndoaXRlIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQyX2xpbmVhcl80NjgxXzU4MDYxIiB4MT0iMjUuNTIwMSIgeTE9IjEuMzgyNTkiIHgyPSIyNS44MDU2IiB5Mj0iOC4wMzgwOSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjRTZFNkU2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0id2hpdGUiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDNfbGluZWFyXzQ2ODFfNTgwNjEiIHgxPSIzMy42NTM3IiB5MT0iMS4wMzQ0NSIgeDI9IjMzLjkzOTIiIHkyPSI3LjY4OTk0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiNFNkU2RTYiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSJ3aGl0ZSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50NF9saW5lYXJfNDY4MV81ODA2MSIgeDE9IjQxLjc4NzUiIHkxPSIwLjY4NTA4NCIgeDI9IjQyLjA3MyIgeTI9IjcuMzQwNTgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0U2RTZFNiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IndoaXRlIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQ1X2xpbmVhcl80NjgxXzU4MDYxIiB4MT0iNDkuOTI0MiIgeTE9IjAuMzM2OTQiIHgyPSI1MC4yMDk3IiB5Mj0iNi45OTI0MyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjRTZFNkU2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0id2hpdGUiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K");
+    }
+
+    .vi-card.vi-card-success {
+      overflow: visible;
+    }
+    .vi-card.vi-card-success .vi-success-bi {
+      width: 92px;
+      height: 104px;
+      position: absolute;
+      top: -48px;
+      right: 0;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAzIiBoZWlnaHQ9IjEwNiIgdmlld0JveD0iMCAwIDEwMyAxMDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxtYXNrIGlkPSJtYXNrMF80NjgxXzU5MDkxIiBzdHlsZT0ibWFzay10eXBlOmFscGhhIiBtYXNrVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4PSI3IiB5PSIzNCIgd2lkdGg9Ijg1IiBoZWlnaHQ9IjcxIj4KPHBhdGggZD0iTTkyIDQ2LjQyMzhDOTIgMzkuNzk2NCA4Ni42Mjc0IDM0LjQyMzggODAgMzQuNDIzOEg3VjkyLjQyMzhDNyA5OS4wNTEyIDEyLjM3MjYgMTA0LjQyNCAxOSAxMDQuNDI0SDkyVjQ2LjQyMzhaIiBmaWxsPSJ3aGl0ZSIvPgo8L21hc2s+CjxnIG1hc2s9InVybCgjbWFzazBfNDY4MV81OTA5MSkiPgo8cGF0aCBkPSJNNjIuMDA3OSA3MS44NDU1QzYwLjkzMTQgNjkuMzQyNyA1My42Mzc1IDU2Ljk3OCAzOC44NTQ2IDU1Ljg2OTdDMjYuNzQ5MyA1NC45OTAxIDM0LjU5OCA2Mi43MDgxIDM4LjQ0ODEgNjQuMDkzM0MzOC40NDgxIDY0LjA5MzMgMzUuNTg5NSA2My4wODIyIDM0LjU5NjggNjQuODU2QzMzLjU5NCA2Ni41ODYyIDM1Ljc5MjkgNzEuMzk5MSA0Mi4zMzQ5IDcyLjA5NTlDNDIuMzM0OSA3Mi4wOTU5IDM2LjY3ODMgNzEuNzA1MyAzNy4yNzU3IDc2LjA1MDhDMzcuODczMiA4MC4zOTYzIDQ0LjM1MDkgODMuMTYzNiA1Mi40OTQxIDgyLjk1N0M2MC42Mzc0IDgyLjc1MDMgNjMuMTI3NCA3NC4zMzg5IDYyLjAwNzkgNzEuODQ1NVoiIGZpbGw9IiM5ODk4OTkiLz4KPHBhdGggZD0iTTYwLjM3OTEgNTIuNTQ2NUM2MC4zNzkxIDUyLjU0NjUgNjAuNDIzOCA1MC4wOTExIDYxLjQ5NTIgNDguMTI2N0M2Mi4wNzU2IDQ3LjAxMDYgNjIuNDc3NCA0Ni4xNjI0IDYxLjgwNzcgNDYuMTYyNEM2MC41MTMgNDYuMjA3IDU5LjcwOTQgNDguMDM3NCA2MC4zNzkxIDUyLjU0NjVaIiBmaWxsPSIjOTg5ODk5Ii8+CjxwYXRoIGQ9Ik0xMDUuOTIyIDc4LjEyNzlDMTA1LjkyMiA3OC4xMjc5IDEwMS44NTkgNzkuMDY1NCA5OS4yNjk4IDc2LjE2MzVDOTQuMTM1NyA2OS4wMjA0IDg4LjE5OCA0Ny42ODAzIDY4LjkxMTUgNDkuNDIxNEM0Mi45NzMgNTEuNzg3NiA0My45MTA1IDcyLjk5MzggNDkuMDQ0NyA4MS42NTQ4QzQ4LjQ2NDMgODQuMzc4MSA0OS4wNDQ3IDg5LjE1NTEgNDkuNzU5IDkxLjU2NTlDNTIuNTI2OSAxMDAuODk3IDYyLjg4NDUgMTA1LjI3MiA3Ni4wMSAxMDMuNzk5Qzc4LjY0NCAxMDMuNDg2IDgxLjQxMiAxMDMuMjE4IDgzLjY0NDIgMTAyLjU5M0MxMDYuMDU2IDk2LjI1MzYgMTA1LjkyMiA3OC4xMjc5IDEwNS45MjIgNzguMTI3OVoiIGZpbGw9IiNEN0Q3RDciLz4KPHBhdGggZD0iTTQ1LjY5NDggNzAuODA2MUM0NS4zMzc3IDc4LjM5NTcgNDkuMDQzMiA4Mi41NDc2IDQ5LjA0MzIgODIuNTQ3NkM0OS4wNDMyIDgyLjU0NzYgNTEuMDk2OCA4Mi4yMzUxIDUzLjczMDkgODMuMDgzNEM1OC4wNjE0IDg0LjQ2NzMgNzAuOTYzNyA4NC4wNjU1IDczLjA2MiA3MS45MjIyQzc0LjY2OTIgNjIuODE0NyA2Ni44NTY0IDUzLjU3MzMgNTguNDE4NSA1NC4xNTM3QzUwLjY1MDQgNTQuNzM0IDQ2LjI3NTIgNTguNzk2NyA0NS42OTQ4IDcwLjgwNjFaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNTAuNjYgNjguNTY3M0M1MC42MDgxIDY2LjIwMDcgNTEuNTI1MyA2NC4yNjEyIDUyLjcwODYgNjQuMjM1M0M1My44OTE4IDY0LjIwOTMgNTQuODkzMSA2Ni4xMDY3IDU0Ljk0NTEgNjguNDczM0M1NC45OTcgNzAuODM5OCA1NC4wNzk4IDcyLjc3OTMgNTIuODk2NiA3Mi44MDUzQzUxLjcxMzMgNzIuODMxMyA1MC43MTIgNzAuOTMzOCA1MC42NiA2OC41NjczWiIgZmlsbD0iIzIzMUYyMCIvPgo8cGF0aCBkPSJNNTEuMDkxMSA2Ny42ODkyQzUxLjA3MjIgNjYuODI2NCA1MS40NzY2IDY2LjExNzggNTEuOTk0MyA2Ni4xMDY1QzUyLjUxMTkgNjYuMDk1MSA1Mi45NDY5IDY2Ljc4NTQgNTIuOTY1OCA2Ny42NDgyQzUyLjk4NDcgNjguNTExIDUyLjU4MDMgNjkuMjE5NiA1Mi4wNjI2IDY5LjIzMUM1MS41NDUgNjkuMjQyMyA1MS4xMSA2OC41NTIgNTEuMDkxMSA2Ny42ODkyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQzLjQ2MzQgNzQuNzM1QzQzLjQ2MzQgNzQuNzM1IDQ1LjUxNzEgNzQuNDIyNSA0Ni45OTAzIDc1LjAwMjlDNDguMTk1NyA3NS40NDkzIDQ4LjQ2MzYgNzIuNTQ3NCA0Ny41MjYxIDcxLjc0MzhDNDYuNTg4NSA3MC45NDAyIDQzLjQ2MzQgNzQuNzM1IDQzLjQ2MzQgNzQuNzM1WiIgZmlsbD0iI0VDNkMyMiIvPgo8cGF0aCBkPSJNNjIuMjU5NSA1MS4zNDEyQzYyLjI1OTUgNTEuMzQxMiA2NC41MzY0IDQ5LjE1MzYgNjYuOTkxOCA0OC43NTE4QzY5LjIyNDEgNDguMzUgNjguMTA3OSA0Ni42NTM1IDY2LjA1NDMgNDcuNTQ2NEM2NC4yMjM5IDQ4LjM5NDcgNjIuMjU5NSA1MS4zNDEyIDYyLjI1OTUgNTEuMzQxMloiIGZpbGw9IiM5ODk4OTkiLz4KPHBhdGggZD0iTTYxLjA1NDIgNTEuNzQzQzYxLjA1NDIgNTEuNzQzIDYyLjEyNTYgNDguOTMwNCA2NC42MjU3IDQ3LjQxMjRDNjYuNzI0IDQ2LjE2MjQgNjcuMTcwNSA0NC45MTIzIDY2LjUwMDggNDQuNTk5OEM2NS4xNjE1IDQzLjk3NDggNjIuNTcyMSA0NC45NTcgNjEuMDU0MiA1MS43NDNaIiBmaWxsPSIjOTg5ODk5Ii8+CjxwYXRoIGQ9Ik02MS44OTgzIDk2LjY1NTVDNjIuODM1OCA5Ni4wNzUxIDYzLjM3MTUgOTUuMDQ4MyA2My40MTYyIDk0LjAyMTVDNjQuMTc1MSA5NS4yNzE1IDYzLjgxOCA5Ni44Nzg3IDYyLjU2NzkgOTcuNjgyM0M2MS4zMTc5IDk4LjQ4NTkgNTkuNjY2IDk4LjEyODggNTguODE3OCA5Ni45MjM0QzU5LjggOTcuMzI1MiA2MC45NjA3IDk3LjIzNTkgNjEuODk4MyA5Ni42NTU1WiIgZmlsbD0iIzk4OTg5OSIvPgo8cGF0aCBkPSJNNjIuNzk1IDg5LjE5OTdDNjMuODIxOCA4OC4zNTE1IDY0LjI2ODMgODcuMTQ2MSA2NC4xNzkgODUuOTQwN0M2NS4yNTA1IDg3LjI4IDY1LjA3MTkgODkuMTk5NyA2My43MzI2IDkwLjI3MTJDNjIuNDM3OSA5MS4zNDI3IDYwLjQ3MzUgOTEuMjA4NyA1OS4zMTI3IDg5Ljk1ODdDNjAuNDczNSA5MC4yNzEyIDYxLjc2ODIgOTAuMDAzMyA2Mi43OTUgODkuMTk5N1oiIGZpbGw9IiM5ODk4OTkiLz4KPHBhdGggZD0iTTU0LjU4NTEgOTMuMjYyMkM1NS44MzUxIDkyLjgxNTggNTYuNjgzMyA5MS43ODg5IDU2Ljk5NTkgOTAuNjI4MkM1Ny41MzE2IDkyLjIzNTQgNTYuNjgzMyA5My45NzY1IDU1LjA3NjEgOTQuNTU2OUM1My40Njg5IDk1LjEzNzMgNTEuNjgzMiA5NC4zNzgzIDUxLjAxMzUgOTIuODE1OEM1Mi4wNDAzIDkzLjUzMDEgNTMuMzc5NiA5My43NTMzIDU0LjU4NTEgOTMuMjYyMloiIGZpbGw9IiM5ODk4OTkiLz4KPHBhdGggZD0iTTU2LjUwMDEgOTguMDM5M0M1Ni41MDAxIDk4LjAzOTMgNTcuMzQ4NCA5OS41MTI2IDU3LjA4MDUgMTAwLjQwNUM1Ny4wODA1IDEwMC40MDUgNTYuMTg3NiAxMDAuNDUgNTUuNTYyNiA5OS41NTcyQzU1LjU2MjYgOTkuNTU3MiA1Ni4xODc2IDk5LjYwMTkgNTYuNTAwMSA5OC4wMzkzWiIgZmlsbD0iIzk4OTg5OSIvPgo8cGF0aCBkPSJNNzEuMDQ2OSA4Ni44MjU1QzcxLjUzOCA4NC4xNDY4IDc1LjkxMzEgNzAuNDg1NiA5MC4yNDQgNjYuMTk5N0MxMDEuOTg2IDYyLjcxNzQgOTYuMDAzMiA3MS45NTg4IDkyLjUyMDkgNzQuMTQ2NEM5Mi41MjA5IDc0LjE0NjQgOTUuMTEwMyA3Mi41MzkyIDk2LjQ5NDMgNzQuMDU3MUM5Ny44NzgzIDc1LjUzMDQgOTYuODA2OCA4MC43MDkyIDkwLjUxMTkgODIuODA3NUM5MC41MTE5IDgyLjgwNzUgOTYuMDAzMiA4MS4yMDAzIDk2LjQwNSA4NS41NzU1Qzk2LjgwNjggODkuOTUwNiA5MS4wNDc2IDk0LjA1NzkgODIuOTY3IDk1LjYyMDVDNzQuODg2MyA5Ny4xODMgNzAuNTExMSA4OS41MDQyIDcxLjA0NjkgODYuODI1NVoiIGZpbGw9IiM5ODk4OTkiLz4KPHBhdGggZD0iTTQ1LjYwNzQgNjguNjE4MkM0NS42MDc0IDY4LjYxODIgNDMuMzc1MiA3MC4wMDIyIDQzLjEwNzMgNzMuOTMwOUM0My4xMDczIDczLjkzMDkgNDUuNDI4OCA3Mi4zNjg0IDQ3LjM5MzIgNzIuMjc5MUM0OC45NTU4IDcyLjE4OTggNDYuODU3NSA2OC40Mzk3IDQ1LjYwNzQgNjguNjE4MloiIGZpbGw9IiNFQzg4MjIiLz4KPC9nPgo8ZWxsaXBzZSByeD0iMjEuMTMwNiIgcnk9IjIxLjAxNzIiIHRyYW5zZm9ybT0ibWF0cml4KDAuOTk4NjI0IDAuMDUyNDQ1NiAtMC4wNDczNTA5IDAuOTk4ODc4IDIxLjk1ODQgMjIuMjQpIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfNDY4MV81OTA5MSkiLz4KPG1hc2sgaWQ9Im1hc2sxXzQ2ODFfNTkwOTEiIHN0eWxlPSJtYXNrLXR5cGU6YWxwaGEiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjAiIHk9IjEiIHdpZHRoPSI0NCIgaGVpZ2h0PSI0MyI+CjxlbGxpcHNlIHJ4PSIyMS4xMzA2IiByeT0iMjEuMDE3MiIgdHJhbnNmb3JtPSJtYXRyaXgoMC45OTg2MjQgMC4wNTI0NDU2IC0wLjA0NzM1MDkgMC45OTg4NzggMjEuOTU4NCAyMi4yNCkiIGZpbGw9IiNFMjczNzMiLz4KPC9tYXNrPgo8ZyBtYXNrPSJ1cmwoI21hc2sxXzQ2ODFfNTkwOTEpIj4KPC9nPgo8cGF0aCBkPSJNMjUuMTQ1MiA0Mi44NzQ5QzIyLjcxOTkgNDMuMDUzOCAyMS41MTM5IDQyLjk5MzMgMjAuMDA2NSA0Mi45MTc2QzIwLjAwNjUgNDIuOTE3NiAyMC4xNTkyIDQ0LjE3NTEgMjEuNjAxNSA0NC42NjY0QzIxLjg5MTkgNDQuNzY1MyAyMS4xMDQ0IDQ1LjM3NzcgMjEuMDYzOCA0Ni4yNzc1QzIxLjM2NTkgNDYuMjkyNyAyMy4xNjA3IDQ2LjY4MzQgMjQuNDA3MiA0NS44NDQxQzI0LjQ0NzcgNDQuOTQ0MiAyMy4zOTUxIDQ0LjY3NjcgMjMuNTU2OCA0NC41OTg5QzI0LjY1MDUgNDQuMDcyMiAyNS4xNDUyIDQyLjg3NDkgMjUuMTQ1MiA0Mi44NzQ5WiIgZmlsbD0iI0VBODk3RSIvPgo8cGF0aCBkPSJNMjIuNDU5MiA0NC44NTc2QzI1LjM3MjYgNTUuNTAwNyAyOS40NDQxIDU4LjE2ODQgMzIuNDk2NiA1OS45OTk5QzQyLjQ5NjYgNjUuOTk5OSA0NC40OTY3IDc1Ljk5OTkgNDAuNDk2NyA4Ny40OTk5IiBzdHJva2U9IiNCREJEQkQiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yOS41Mzc5IDE0LjczNjhDMzAuMzEyOCAxNS4zMTk5IDMwLjQ3OCAxNi40MjQzIDI5LjkwNjggMTcuMjAzNUwxOC41MTc2IDMyLjczOThDMTguMjEyMSAzMy4xNTY1IDE3LjczOSAzMy40MTQxIDE3LjIyNTIgMzMuNDQzNEMxNi43MTEzIDMzLjQ3MjcgMTYuMjA5MyAzMy4yNzA5IDE1Ljg1MzcgMzIuODkxOUwxMC4zMDQgMjYuOTc2OEM5LjYzOTA1IDI2LjI2ODIgOS42NjQ0OCAyNS4xNTI5IDEwLjM2MDcgMjQuNDg1OUMxMS4wNTcgMjMuODE4OCAxMi4xNjA1IDIzLjg1MjUgMTIuODI1NCAyNC41NjEyTDE2Ljk0MjIgMjguOTQ5TDI3LjEwMDMgMTUuMDkyQzI3LjY3MTYgMTQuMzEyOCAyOC43NjI5IDE0LjE1MzggMjkuNTM3OSAxNC43MzY4WiIgZmlsbD0id2hpdGUiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl80NjgxXzU5MDkxIiB4MT0iMjEuMTMwNiIgeTE9IjAiIHgyPSIyMS4xMzA2IiB5Mj0iNDIuMDM0NSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjRkZERkRCIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0Y4QkVCOCIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=");
+    }
+
+  </style>
+</head>
+
+<!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+<header class="">
+  <div class="vi-page-header-normal">
+    <div class="vi-page-header-lt">
+      <button class="vi-btn" ontouchstart="">
+        <span class="vi-icon vi-icon-base icon-page-back"></span>
+      </button>
+    </div>
+    <div class="vi-page-header-ct">
+      <h1 class="vi-page-title">線上開數位帳戶</h1>
+    </div>
+    <!-- <div class="vi-page-header-rt">
+      <span class="vi-icon vi-icon-base vi-modal-close"></span>
+    </div> -->
+  </div>
+</header>
+
+<body class="body-wrap scroll vi-bg-mint">
+  <div class="main_container">
+    
+    <!-- toast, 參考 import { CTBCMBToastWidget } from '../view/ui-2022/toast/ctbc-mb-toast.widget';-->
+    <div class="toast show">
+      <span>已下載相互授權同意書</span>
+    </div>
+    
+    <!-- 這邊的 id 是 demo 用的，請開發自行決定是否採用 -->
+    <div id="page-has-step5">
+      <div class="vi-page-indicator">
+        <div class="vi-progress-bar">
+          <progress class="progress-bar-handle" max="100" value="100"></progress>
+        </div>
+        <div class="vi-txt-b900 vi-txt-title">
+          法定代理人驗證
+          <span class="vi-icon vi-icon-base icon-question-mark"></span>
+        </div>
+        <div class="vi-step vi-txt-g600">
+          步驟
+          <span class="vi-step-current">5</span><span class="vi-txt-b500">/5</span>
+        </div>
+      </div>
+
+      <div class="vi-container">
+        <form>
+
+          <div class="vi-txt-body vi-txt-b900 mb16 forAEM">
+            由於您未成年，請於 <span class="vi-txt-r500">2022/02/17</span> 前，通知您的家長（法定代理人）來幫您驗證身份，才能完成申請喔！超過期限須重新申請。
+          </div>
+
+          <div class="vi-card">
+            <div class="vi-card-header flex-wrap">
+              <div class="vi-line-title">你的法定代理人是</div>
+            </div>
+
+            <div class="vi-card-body">
+              <div class="vi-radio-group clearfix">
+                <label class="vi-radio">
+                  <input type="radio" name="type1">
+                  <span class="vi-radio-mark"></span>
+                  <span class="vi-radio-txt">爸媽兩個人都是</span>
+                </label>
+                <label class="vi-radio">
+                  <input type="radio" name="type1">
+                  <span class="vi-radio-mark"></span>
+                  <span class="vi-radio-txt">只有爸爸、只有媽媽或其他家長</span>
+                </label>
+                <div class="vi-form-error">{{formClazz.formErrors?.bankMobile}}</div>
+
+                <!-- <div class="js_demo_show">
+                  <div class="vi-card-default rounded-xs vi-bg-b100 mb16 ml24 pb-16">
+                    <div class="vi-card-body">
+                      <div class="vi-txt-body-bold vi-txt-b900 mt16 mb16">
+                        你有幾位法定代理人
+                      </div>
+
+                      <div class="vi-radio-group has-error" [ngClass]="{'has-error' : formClazz.formErrors?.workType}">
+                        <label class="vi-radio is-error" [ngClass]="{'is-error' : formClazz.formErrors?.workType}">
+                          <input type="radio" name="statutoryAgents" value="statutoryAgents1">
+                          <span class="vi-radio-mark"></span>
+                          <span class="vi-radio-txt">1 位</span>
+                        </label>
+                        
+                        <label class="vi-radio is-error" [ngClass]="{'is-error' : formClazz.formErrors?.workType}">
+                          <input type="radio" name="statutoryAgents" value="statutoryAgents2">
+                          <span class="vi-radio-mark"></span>
+                          <span class="vi-radio-txt">2 位</span>
+                        </label>
+
+                        <label class="vi-radio is-error" [ngClass]="{'is-error' : formClazz.formErrors?.workType}">
+                          <input type="radio" name="statutoryAgents" value="statutoryAgents3">
+                          <span class="vi-radio-mark"></span>
+                          <span class="vi-radio-txt">3 位以上</span>
+                        </label>
+                        
+                        <div class="vi-form-info"></div>
+                        <div class="vi-form-error" [ngClass]="formClazz.formErrors?.pxd ? '' : 'hide'">{{formClazz.formErrors?.pxd}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              
+              
+
+              <div class="vi-top-line mt16 mb16"></div>
+
+              <div class="vi-txt-callout vi-txt-b600 pb-16">法定代理人通常是你的爸媽，但每個家庭狀況不同，務必詢問家長，或者查看戶籍謄本，來確認你的法定代理人喔！</div>
+
+            </div>
+          </div>
+
+          <!-- 如果選了三位以上法代 -->
+          <div class="vi-card">
+            <div class="vi-card-header flex-wrap">
+              <div class="vi-line-title" translate="deposit_ot002_100.title.2">攜帶下列物品至分行開戶</div>
+            </div>
+
+            <div class="vi-card-body">
+              <div class="vi-txt-body vi-txt-b600 mb16 forAEM">
+                由於您有 3 位以上的法定代理人，請至少 1 位法定代理人準備下列物品，到分行驗證開戶：
+              </div>
+
+              <ul class="vi-list-px0">
+                
+                <!-- 身分證這個結構跟其它不一樣 -->
+                <div class="vi-list-item">
+                  <div class="dis-flex align-center flex-nowrap w-100">
+                    <div class="vi-rank-mark flex-shrink-0 mr8">1</div>
+                    <div class="vi-idimg-area">
+                      <img src="../../../../../inc/img/img/icon/bi-id-card.png">
+                    </div>
+                    <div>
+                      <div class="vi-txt-body vi-txt-b600">
+                        身分證
+                      </div>
+                      <div class="vi-txt-callout vi-txt-b500">
+                        (王小明及所有法定代理人)
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt12 ml36">
+                    <div class="vi-bg-b100 p-8 padx_12 vi-txt-footnote vi-txt-gr500 rounded-xs">
+                      提醒：若未成年人無身分證，可攜帶新式戶口名簿代替。
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="vi-list-item flex-nowrap">
+                  <div class="vi-rank-mark flex-shrink-0 mr8">2</div>
+                  <div class="vi-idimg-area">
+                    <img src="../../../../../inc/img/img/icon/bi-health-card.png">
+                  </div>
+                  <div>
+                    <div class="vi-txt-body vi-txt-b600">
+                      第二證件<br>(駕照、健保卡、護照)
+                    </div>
+                    <div class="vi-txt-callout vi-txt-b500">
+                      (王小明及所有法定代理人)
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="vi-list-item flex-nowrap">
+                  <div class="vi-rank-mark flex-shrink-0 mr8">3</div>
+                  <div class="vi-idimg-area">
+                    <img src="../../../../../inc/img/img/icon/bi-seal.png">
+                  </div>
+                  <div>
+                    <div class="vi-txt-body vi-txt-b600">
+                      印章
+                    </div>
+                    <div class="vi-txt-callout vi-txt-b500">
+                      (王小明及所有法定代理人)
+                    </div>
+                  </div>
+                </div>
+
+                <div class="vi-list-item flex-nowrap">
+                  <div class="vi-rank-mark flex-shrink-0 mr8">5</div>
+                  <div class="vi-idimg-area">
+                    <img src="../../../../../inc/img/img/icon/bi-account-book.png">
+                  </div>
+                  <div>
+                    <div class="vi-txt-body vi-txt-b600">
+                      新式戶口名簿、電子戶籍謄本
+                    </div>
+                    <div class="vi-txt-callout vi-txt-b500">
+                      (擇一，需載明監護權歸屬)
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="vi-list-item flex-nowrap">
+                  <div class="vi-rank-mark flex-shrink-0 mr8">6</div>
+                  <div class="vi-idimg-area">
+                    <img src="../../../../../inc/img/img/icon/bi-insure-default.png">
+                  </div>
+                  <div class="vi-txt-body vi-txt-b600">
+                    未到場法定代理人填妥的相互授權同意書<br>
+                    <a href="https://www.ctbcbank.com/content/dam/twrbo/pdf/deposit/E211new.pdf" class="vi-txt-body-bold vi-txt-g500 dis-inline-flex mt4" target="_blank">下載</a>   
+                  </div>
+                </div>
+                
+                <div class="vi-list-item flex-nowrap">
+                  <div class="vi-rank-mark flex-shrink-0 mr8">7</div>
+                  <div class="vi-idimg-area">
+                    <img src="../../../../../inc/img/img/icon/bi-financial.png">
+                  </div>
+                  <div class="vi-txt-body vi-txt-b600">
+                    新台幣 1,000 元<br>（開戶起存額）
+                  </div>
+                </div>
+              </ul>
+              
+            </div>
+          </div>
+          
+
+          <div class="vi-card">
+            <div class="vi-card-header">
+              <div class="vi-line-title">你想用什麼方式通知呢？</div>
+            </div>
+
+            <div class="vi-card-body pb-16">
+              <div class="notice-icon-list">
+                <div class="notice-icon-item" id="notice-icon-item-sms">
+                  <div class="icon">
+                    <img src="../../../../../inc/img/img/icon/phone-sms-40px-g.svg">
+                  </div>
+                  <div class="vi-txt-body mt8">簡訊</div>
+                </div>
+                <div class="notice-icon-item" id="notice-icon-item-line">
+                  <div class="icon">
+                    <img src="../../../../../inc/img/img/icon/line-40px-g.svg">
+                  </div>
+                  <div class="vi-txt-body mt8">LINE</div>
+                </div>
+                <div class="notice-icon-item" id="notice-icon-item-email">
+                  <div class="icon">
+                    <img src="../../../../../inc/img/img/icon/email-40px-g.svg">
+                  </div>
+                  <div class="vi-txt-body mt8">Email</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="vi-btn-group mt24">
+            <button class="vi-btn vi-btn-primary" ontouchstart="">下一步</button>
+          </div>
+
+          
+         <div class="vi-remarks forAEM">
+            <div>備註：</div>
+            <div>內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</div>
+            <div class="mt24">
+              頁面切換
+              <div id="trigger-no-step5" class="vi-txt-g500">-> 無 Step 雙親法代驗證頁</div>
+            </div>
+          </div>  
+
+        </form>
+      </div>
+    </div>
+
+
+    <!-- 這邊的 id 是 demo 用的，請開發自行決定是否採用 -->
+    <div id="page-no-step5" class="hide">
+      <div class="vi-container">
+        <form>
+
+          <div class="vi-txt-b900 vi-txt-title pad_top24 mb16">
+            法定代理人驗證
+            <span class="vi-icon vi-icon-base icon-question-mark"></span>
+          </div>
+
+          <div class="vi-card vi-card-count-day">
+            <div class="vi-calendar-bi"></div>
+            <div class="vi-card-body pad_top16 pb-16">
+              <div class="mb24 ct">
+                <div class="vi-txt-titlexl vi-txt-r500">29天</div>
+                <div class="vi-txt-body vi-txt-b600">剩餘驗證天數</div>
+              </div>
+              <div class="vi-txt-body vi-txt-b900">爸媽皆需於 <span class="vi-txt-r500">2022/02/17</span> 前驗證身份，才能完成申請喔！超過期限須重新申請。</div>
+            </div>
+          </div>
+
+          <div class="vi-card">
+            <div class="vi-card-header">
+              <div class="vi-line-title">法定代理人驗證狀態</div>
+            </div>
+
+            <div class="vi-card-body">
+              <div class="vi-txt-b600 mb16 mt-12">上次通知時間：2022/01/19 13:37</div>
+              <div class="vi-list-px0">
+                <div class="vi-list-item flex-nowrap">
+                  <div class="flex-shrink-0 mr8">
+                    <div class="vi-icon vi-icon-base icon-error-r mt4"></div>
+                  </div>
+                  <div class="vi-txt-body">爸爸</div>
+                  <div class="ml-auto flex-shrink-0">
+                    <span class="vi-txt-body">未驗證</span>
+                    <button class="vi-btn vi-btn-primary vi-btn-xs disabled ml12">今日已通知</button>
+                  </div>
+                </div>
+                <div class="vi-list-item flex-nowrap">
+                  <div class="flex-shrink-0 mr8">
+                    <div class="vi-icon vi-icon-base icon-error-r mt4"></div>
+                  </div>
+                  <div class="vi-txt-body">媽媽</div>
+                  <div class="ml-auto flex-shrink-0">
+                    <span class="vi-txt-body">未驗證</span>
+                    <button class="vi-btn vi-btn-primary vi-btn-xs ml12">重新通知</button>
+                  </div>
+                </div>
+                <div class="vi-list-item flex-nowrap">
+                  <div class="flex-shrink-0 mr8">
+                    <div class="vi-icon vi-icon-base icon-check-ok mt4"></div>
+                  </div>
+                  <div class="vi-txt-body">爸爸 (王Ｏ帥)</div>
+                  <div class="ml-auto flex-shrink-0">
+                    <span class="vi-txt-body">已驗證</span>
+                  </div>
+                </div>
+                <div class="ct pad_top16 pb-16">法定代理人選錯了 <a class="vi-txt-body-bold vi-txt-g500">更改法代</a></div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="vi-card vi-card-success">
+            <div class="vi-success-bi"></div>
+            <div class="vi-card-body pad_top16">
+              <div class="mb24 ct">
+                <div class="vi-txt-title vi-txt-br500 mb8">驗證完成，已送出申請</div>
+                <div class="vi-txt-body vi-txt-b900">審核需 1-3 個工作天<br>完成審核會簡訊通知你喔～</div>
+              </div>
+
+              <div class="vi-line-title mb16">申請項目</div>
+              <div class="vi-list-px0">
+                <div class="vi-list-item flex-nowrap">
+                  <div class="flex-shrink-0 mr8">
+                    <div class="vi-icon vi-icon-base icon-check-ok mt4"></div>
+                  </div>
+                  <div class="vi-txt-body">My Way 臺幣數位帳戶</div>
+                </div>
+              </div>
+              
+              <div class="vi-line-title">加辦服務</div>
+              <div class="vi-list-px0">
+                <div class="vi-list-item flex-nowrap">
+                  <div class="flex-shrink-0 mr8">
+                    <div class="vi-icon vi-icon-base icon-check-ok mt4"></div>
+                  </div>
+                  <div class="vi-txt-body">綁定中國信託 LINE 官方帳號</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="vi-card">
+            <div class="vi-card-header">
+              <div class="vi-line-title">法定代理人驗證狀態</div>
+            </div>
+            
+            <div class="vi-card-body">
+              <div class="vi-txt-b600 mb16 mt-12">上次通知時間：2022/01/19 13:37</div>
+              <div class="vi-list-px0">
+                <div class="vi-list-item flex-nowrap">
+                  <div class="flex-shrink-0 mr8">
+                    <div class="vi-icon vi-icon-base icon-check-ok mt4"></div>
+                  </div>
+                  <div class="vi-txt-body">爸爸 (王Ｏ帥)</div>
+                  <div class="ml-auto">
+                    <span class="vi-txt-body">已驗證</span>
+                  </div>
+                </div>
+                <div class="vi-list-item flex-nowrap">
+                  <div class="flex-shrink-0 mr8">
+                    <div class="vi-icon vi-icon-base icon-check-ok mt4"></div>
+                  </div>
+                  <div class="vi-txt-body">媽媽 (林Ｏ美)</div>
+                  <div class="ml-auto">
+                    <span class="vi-txt-body">已驗證</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+
+          
+          <div class="vi-btn-group mt24">
+            <button class="vi-btn vi-btn-secondary" ontouchstart="">取消本次申請</button>
+          </div>
+
+
+          <div class="vi-remarks forAEM">
+            <div>備註：</div>
+            <div>內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</div>
+            <div class="mt24">
+              頁面切換
+              <div id="trigger-has-step5" class="vi-txt-g500">-> Step5 法定代理人驗證</div>
+            </div>
+          </div>  
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+
+
+<!--超人卡片 vi-modal-in -->
+<div id="super-card-sms" class="vi-modal" style="z-index: 1005;">
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal" (click)="closeSlide($event)"></div>
+
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <span class="super-card-title" translate="deposit_ot002_280.slide.email.title">簡訊</span>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" ontouchstart data-dismiss="modal" (click)="closeSlide($event)"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-txt-body-bold vi-txt-b600 mb12">請輸入手機號碼</div>
+        <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.bankMobile}">
+          <div class="vi-input-group">
+            <!-- title 請自行置換成對應文字 -->
+            <span class="title">第一位法代手機</span>
+            <input type="tel" placeholderTransKey="請輸入" maxlength="10">
+          </div>
+          <div class="vi-form-info"></div>
+          <div class="vi-form-error">
+            {{formClazz.formErrors?.bankMobile}}
+          </div>
+        </div>
+
+        <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.bankMobile}">
+          <div class="vi-input-group">
+            <span class="title">媽媽手機</span>
+            <input type="tel" placeholderTransKey="請輸入" maxlength="10">
+          </div>
+          <div class="vi-form-info"></div>
+          <div class="vi-form-error">
+            {{formClazz.formErrors?.bankMobile}}
+          </div>
+        </div>
+      </div>
+
+      <div class="super-card-footer">
+        <div class="vi-btn-group">
+          <button class="vi-btn vi-btn-secondary" ontouchstart data-dismiss="modal">取消</button>
+          <button class="vi-btn vi-btn-primary disabled" ontouchstart data-dismiss="modal">確認</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!--超人卡片 vi-modal-in -->
+<div id="super-card-line" class="vi-modal" style="z-index: 1005;">
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal" (click)="closeSlide($event)"></div>
+
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <span class="super-card-title">LINE</span>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" ontouchstart data-dismiss="modal" (click)="closeSlide($event)"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-txt-body-bold vi-txt-b600 mb12">請選擇通知人</div>
+
+        <div class="vi-list-px0">
+          <div class="vi-list-item flex-nowrap">
+            <div class="vi-rank-mark flex-shrink-0 mr8">1</div>
+            <div class="vi-txt-body">
+              第一位法代
+            </div>
+            <div class="ml-auto">
+              <button class="vi-btn vi-btn-primary vi-btn-xs disabled">今日已通知</button>
+            </div>
+          </div>
+          <div class="vi-list-item flex-nowrap">
+            <div class="vi-rank-mark flex-shrink-0 mr8">2</div>
+            <div class="vi-txt-body">
+              第一位法代
+            </div>
+            <div class="ml-auto">
+              <button class="vi-btn vi-btn-primary vi-btn-xs">LINE 通知</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="super-card-footer">
+        <div class="vi-btn-group">
+          <button class="vi-btn vi-btn-secondary" ontouchstart data-dismiss="modal">取消</button>
+          <button class="vi-btn vi-btn-primary disabled" ontouchstart data-dismiss="modal">確認</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!--超人卡片 vi-modal-in -->
+<div id="super-card-email" class="vi-modal" style="z-index: 1005;">
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal" (click)="closeSlide($event)"></div>
+
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <span class="super-card-title">Email</span>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" ontouchstart data-dismiss="modal" (click)="closeSlide($event)"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-txt-body-bold vi-txt-b600 mb12">請輸入Email</div>
+        <div class="vi-form-group">
+          <div class="vi-input-group">
+            <span class="title large-title">第一位法代 Email</span>
+            <input type="email" placeholderTransKey="請輸入" maxlength="">
+          </div>
+          <div class="vi-form-info"></div>
+          <div class="vi-form-error">
+            {{formClazz.formErrors?.bankMobile}}
+          </div>
+        </div>
+
+        <div class="vi-form-group">
+          <div class="vi-input-group">
+            <span class="title large-title">媽媽 Email</span>
+            <input type="email" placeholderTransKey="請輸入" maxlength="">
+          </div>
+          <div class="vi-form-info"></div>
+          <div class="vi-form-error">
+            {{formClazz.formErrors?.bankMobile}}
+          </div>
+        </div>
+      </div>
+
+      <div class="super-card-footer">
+        <div class="vi-btn-group">
+          <button class="vi-btn vi-btn-secondary" ontouchstart data-dismiss="modal">取消</button>
+          <button class="vi-btn vi-btn-primary disabled" ontouchstart data-dismiss="modal">確認</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+<!-- js event demo code -->
+<script>
+window.onload = function() {
+
+  const items = ["sms","line", "email"];
+  const arrayLength = items.length;
+
+  items.forEach(function(item, index){
+    document.getElementById('notice-icon-item-' + item).addEventListener('click', function() {
+      document.getElementById('super-card-' + item).classList.toggle('vi-modal-in');
+    });
+  });
+  
+};
+
+document.getElementById('trigger-has-step5').addEventListener('click', function() {
+  event.preventDefault();
+  document.getElementById('page-has-step5').classList.toggle('hide');
+  document.getElementById('page-no-step5').classList.toggle('hide');
+});
+
+document.getElementById('trigger-no-step5').addEventListener('click', function() {
+  event.preventDefault();
+  document.getElementById('page-has-step5').classList.toggle('hide');
+  document.getElementById('page-no-step5').classList.toggle('hide');
+});
+
+
+
+</script>
+
+</html>

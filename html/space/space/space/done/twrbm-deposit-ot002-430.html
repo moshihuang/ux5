@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    
+  </style>
+</head>
+
+<!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+<header class="">
+  <div class="vi-page-header-normal">
+    <div class="vi-page-header-lt">
+      <button class="vi-btn" ontouchstart="">
+        <span class="vi-icon vi-icon-base icon-page-back"></span>
+      </button>
+    </div>
+    <div class="vi-page-header-ct">
+      <h1 class="vi-page-title">線上開數位帳戶</h1>
+    </div>
+    <!-- <div class="vi-page-header-rt">
+      <span class="vi-icon vi-icon-base vi-modal-close"></span>
+    </div> -->
+  </div>
+</header>
+
+<body class="body-wrap scroll vi-bg-mint">
+  <div class="main_container">
+
+    <div class="vi-page-indicator">
+      <div class="vi-progress-bar">
+        <progress class="progress-bar-handle" max="100" value="100"></progress>
+      </div>
+      <div class="vi-txt-b900 vi-txt-title">身分認證</div>
+      <div class="vi-step vi-txt-g600">
+        <i18n>步驟</i18n>
+        <span class="vi-step-current">3</span><span class="vi-txt-b500">/3</span>
+      </div>
+    </div>
+
+    <div class="vi-container">
+      <form [formGroup]="formClazz.form" #formRef>
+        <div class="vi-txt-body vi-txt-b600 mb16 forAEM" [inject-dom]="pageData.model.otpDesc">
+          為保證您的資料安全性，系統已發送簡訊密碼至您留存於本行的手機 091345**00。
+        </div>
+
+        <div class="vi-card vi-account">
+          <div class="vi-card-body">
+
+            <div class="vi-txt-body-bold vi-txt-b600 mt16 mb8 ct">
+              <i18n>密碼有效時間</i18n>
+              <span class="ct" [ngClass]="pageControl.showNextStep? 'vi-txt-br500' : 'vi-txt-r500'">
+                {{pageControl.countdownTimer}}
+              </span>
+            </div>
+
+            <div class="vi-txt-callout vi-txt-b500 mb8 ct">
+              <i18n>網頁識別碼</i18n>
+              {{pageData.model.authId}}
+            </div>
+
+            <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.otp}">
+              <div class="vi-input-group" [ngClass]="{'disabled' : pageControl.disabledOtpInput}">
+                <span class="title">驗證密碼 </span>
+                <input type="tel" placeholderTransKey="" maxlength="7"
+                  [attrDisabled]="pageControl.disabledOtpInput" formControlName="otp">
+              </div>
+              <div class="vi-form-info"></div>
+              <div class="vi-form-error">{{formClazz.formErrors?.otp}}</div>
+            </div>
+
+            <div class="rt">
+              <a href="" class="vi-txt-body-bold vi-txt-g500" (click)="">
+                收不到簡訊？
+              </a>
+            </div>
+
+            <div class="vi-btn-group mt24 mb16">
+              <button class="vi-btn vi-btn-primary" ontouchstart="" (click)="next($event)" >下一步</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="vi-remarks forAEM" [inject-dom]="pageData.model.remark" *ngIf="pageData.model.remark">
+          <h4 class="vi-remarks-title">備註</h4>
+          <ol class="vi-ordered-list-num">
+            <li>簡訊密碼 5 分鐘有效，請於時間內將簡訊中的密碼輸入於欄位中，逾時未輸入視同取消。</li>
+            <li>若密碼輸入錯誤連續達三次食，本行將立即暫停您使用設備認證碼交易服務，如擬恢復使用，您本人須持身份證明文件至分行辦已解鎖作業。</li>
+          </ol>
+        </div>
+      </form>
+    </div>
+    
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>

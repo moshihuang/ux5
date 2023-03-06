@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+    .main_container {
+      min-height: calc(100vh - 102px);
+      min-height: calc(100vh - 102px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+      min-height: calc(100vh - 102px - constant(safe-area-inset-top) - constant(safe-area-inset-bottom));
+      position: relative;
+      z-index: 9;
+    }
+
+    .pady_8 {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<body class="vi-bg-mint">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">確認個人資料</h1>
+      </div>
+      <!-- <div class="vi-page-header-rt">
+        <span class="vi-icon vi-icon-base vi-modal-close"></span>
+      </div> -->
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap vi-bg-mint">
+    
+    <div class="main_container add-title-space vi-has-foot-btn">
+
+      <div class="vi-container">
+        <div class="vi-txt-body vi-txt-b600 mb16">在做整體的理財健檢之前，請先確認您的資訊，以利後續幫你進行全方位理財健檢。</div>
+        
+        <div class="vi-card pady_8">
+          <div class="vi-card-body">
+            <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group">
+                <span class="title large-title">目前薪資</span>
+                <input type="text" placeholder="請輸入金額" type="">
+                <span class="unit">元</span>
+              </div>
+              <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div>
+              <div class="vi-form-info"></div>
+            </div>
+            
+            <!-- id 是 demo 用的，開發請拉掉 -->
+            <div id="trigger-select-child" class="vi-form-group vi-for-select">
+              <div class="vi-input-group">
+                <span class="title large-title">子女數</span>
+                <input placeholder="請選擇" type="text" readonly="readonly">
+              </div>
+              <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div>
+              <div class="vi-form-info"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+      <div id="footer">
+        <div class="vi-page-footer">
+          <div class="vi-btn-group">
+            <button (click)="" class="vi-btn vi-btn-l vi-btn-primary">下一步</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-child-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal" (click)=""></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">子女人數</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" ontouchstart="" data-dismiss="modal" (click)=""></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-form-group has-error" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+          <div class="vi-input-group vi-counter-group">
+            <span class="btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+              <span class="vi-icon vi-icon-minus"></span>
+            </span>
+            <input type="tel" name="quant[1]" class="input-number" value="1" min="0" max="10">
+            <span class="btn-number" data-type="plus" data-field="quant[1]">
+              <span class="vi-icon vi-icon-plus"></span>
+            </span>
+          </div>
+          <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div>
+          <div class="vi-form-info">Info Info Info Info Info Info </div>
+        </div>
+        
+        
+
+
+        <div class="vi-btn-group mt20">
+          <div class="vi-btn vi-btn-primary" ontouchstart="" (click)="">確認</div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </ng-template>
+</div>
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+$(document).ready(function(){
+  // counter group
+  $('.btn-number').click(function(e){
+    e.preventDefault();
+    
+    fieldName = $(this).attr('data-field');
+    type      = $(this).attr('data-type');
+    var input = $("input[name='" + fieldName + "']");
+    var currentVal = parseInt(input.val());
+    
+    if (!isNaN(currentVal)) {
+      if (type == 'minus') {
+        if (currentVal > input.attr('min')) {
+          input.val(currentVal - 1).change();
+        } 
+        if (parseInt(input.val()) == input.attr('min')) {
+          $(this).attr('disabled', true).addClass('disabled');
+        }
+      } 
+      else if (type == 'plus') {
+        if (currentVal < input.attr('max')) {
+          input.val(currentVal + 1).change();
+        }
+        if (parseInt(input.val()) == input.attr('max')) {
+          $(this).attr('disabled', true);
+          $(this).attr('disabled', true).addClass('disabled');
+        }
+      }
+    } 
+    else {
+      input.val(0);
+    }
+  });
+
+  $('.input-number').focusin(function() {
+    $(this).data('oldValue', $(this).val());
+  });
+
+  $('.input-number').change(function() {
+      minValue =  parseInt($(this).attr('min'));
+      maxValue =  parseInt($(this).attr('max'));
+      valueCurrent = parseInt($(this).val());
+      
+      name = $(this).attr('name');
+      if (valueCurrent >= minValue) {
+        $(".btn-number[data-type='minus'][data-field='" + name + "']").removeAttr('disabled').removeClass('disabled');
+      }
+      else {
+        $(this).val($(this).data('oldValue'));
+      }
+      if (valueCurrent <= maxValue) {
+        $(".btn-number[data-type='plus'][data-field='" + name + "']").removeAttr('disabled').removeClass('disabled');
+      } 
+      else {
+        $(this).val($(this).data('oldValue'));
+      }
+  });
+});
+
+// 選擇子女 demo 
+document.getElementById('trigger-select-child').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-child-supercard').classList.toggle('hide');
+  document.getElementById('target-child-supercard').classList.toggle('vi-modal-in');
+});
+
+// 超人卡片 close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('vi-modal-close');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+  });
+}
+</script>

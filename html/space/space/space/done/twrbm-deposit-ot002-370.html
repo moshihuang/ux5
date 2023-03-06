@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    
+  </style>
+</head>
+
+<!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+<header class="">
+  <div class="vi-page-header-normal">
+    <div class="vi-page-header-lt">
+      <button class="vi-btn" ontouchstart="">
+        <span class="vi-icon vi-icon-base icon-page-back"></span>
+      </button>
+    </div>
+    <div class="vi-page-header-ct">
+      <h1 class="vi-page-title">法定代理人驗證</h1>
+    </div>
+    <!-- <div class="vi-page-header-rt">
+      <span class="vi-icon vi-icon-base vi-modal-close"></span>
+    </div> -->
+  </div>
+</header>
+
+<body class="body-wrap scroll vi-bg-mint">
+  <div class="main_container">
+
+    <div class="vi-page-indicator">
+      <div class="vi-progress-bar">
+        <progress class="progress-bar-handle" max="100" value="20"></progress>
+      </div>
+      <div class="vi-txt-b900 vi-txt-title">手機驗證</div>
+      <div class="vi-step vi-txt-g600">
+        <i18n translate="deposit_ot002.step">步驟</i18n>
+        <span class="vi-step-current">1</span><span class="vi-txt-b500">/5</span>
+      </div>
+    </div>
+
+    <div class="vi-container">
+      <div class="vi-txt-body vi-txt-b900 mb16">為保證您的資料安全性，系統已發送簡訊密碼至您留存於本行的手機 <span class="vi-txt-body-bold">091345**00</span>。</div>
+      <div class="vi-card vi-account">
+        <div class="vi-card-body">
+            <div class="vi-txt-body-bold vi-txt-b900 mt16 mb8 ct">
+              簡訊密碼有效時間 <span class="vi-txt-br500 ct">4:59</span>
+              <!--span class="vi-txt-r500 ct">0:00</span-->
+            </div>
+
+            <div class="vi-txt-callout vi-txt-b500 mb8 ct">網頁識別碼 ABCD</div>
+
+            <div class="vi-form-group">
+              <div class="vi-input-group">
+                <span class="title">簡訊密碼 </span>
+                <input placeholder="六位數字密碼" value="" maxlength="100" type="text">
+              </div>
+            </div>
+            <div class="rt mb24">
+              <a href="javascript:;" class="vi-txt-body-bold vi-txt-g500">收不到簡訊？</a>
+            </div>
+            <div class="vi-btn-group mb16">
+              <button class="vi-btn vi-btn-primary">下一步</button>
+            </div>
+
+            <div class="ct mt24 mb16">
+              <div class="vi-txt-body vi-txt-b600">
+                號碼打錯了？
+                <a href="" class="vi-txt-body-bold vi-txt-g500">修改手機號碼</a>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- 備註 Component -->
+      <!-- <memo-remarks [format]="1" [viStyle]="true" [key]="'TWRBMTransferTX001_inputmemo'"></memo-remarks> -->
+      <div class="vi-remarks forAEM" [inject-dom]="pageData.model.remark" *ngIf="pageData.model.remark">
+        <h4 class="vi-remarks-title">備註</h4>
+        <ol class="vi-ordered-list-num">
+          <li>簡訊密碼 5 分鐘有效，請於時間內將簡訊中的密碼輸入於欄位中，逾時未輸入視同取消。</li>
+          <li>若密碼輸入錯誤連續達三次食，本行將立即暫停您使用設備認證碼交易服務，如擬恢復使用，您本人須持身份證明文件至分行辦已解鎖作業。</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>

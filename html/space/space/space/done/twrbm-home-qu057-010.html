@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-card-footer-event .vi-card-footer {
+      width: 100%;
+      padding: 10px 12px;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+    .vi-card-footer-event .vi-card-footer .event-txt {
+      width: 100%;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 1;
+    }
+    .vi-arrow-right-br-link {
+      display: flex;
+      align-items: center;
+    }
+    .vi-arrow-right-br-link:after { 
+      width: 16px;
+      height: 16px;
+      content: '';
+      margin-left: 2px;
+      display: block;
+      flex-shrink: 0;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuNzA3MTEgMi4yOTI0QzYuMzE2NTggMS45MDE4OCA1LjY4MzQyIDEuOTAxODggNS4yOTI4OSAyLjI5MjRDNC45MDIzNyAyLjY4MjkzIDQuOTAyMzcgMy4zMTYwOSA1LjI5Mjg5IDMuNzA2NjJMNi43MDcxMSAyLjI5MjRaTTUuMjkyODkgMTIuMjkyNEM0LjkwMjM3IDEyLjY4MjkgNC45MDIzNyAxMy4zMTYxIDUuMjkyODkgMTMuNzA2NkM1LjY4MzQyIDE0LjA5NzEgNi4zMTY1OCAxNC4wOTcxIDYuNzA3MTEgMTMuNzA2Nkw1LjI5Mjg5IDEyLjI5MjRaTTExIDcuOTk5NTFMMTEuNzA3MSA4LjcwNjYyQzEyLjA5NzYgOC4zMTYwOSAxMi4wOTc2IDcuNjgyOTMgMTEuNzA3MSA3LjI5MjQxTDExIDcuOTk5NTFaTTUuMjkyODkgMy43MDY2MkwxMC4yOTI5IDguNzA2NjJMMTEuNzA3MSA3LjI5MjQxTDYuNzA3MTEgMi4yOTI0TDUuMjkyODkgMy43MDY2MlpNMTAuMjkyOSA3LjI5MjQxTDUuMjkyODkgMTIuMjkyNEw2LjcwNzExIDEzLjcwNjZMMTEuNzA3MSA4LjcwNjYyTDEwLjI5MjkgNy4yOTI0MVoiIGZpbGw9IiM5ODY3NDQiLz4KPC9zdmc+Cg==);
+    }
+  </style>
+</head>
+
+
+<body class="vi-bg-mint">
+  <!-- EBMW content start from here -->
+  <div class="body-wrap vi-bg-mint-only">
+    <div class="main_container no-header has-foot-btn">
+        <div class="vi-home-back-bg" ng-reflect-ng-style="[object Object]" ng-reflect-scroll-to-this="false" style="background-image: url(&quot;./inc/img/home/home-layer-bottom.svg&quot;);">
+            
+            <toolbar ng-reflect-home-page-type="MY" ng-reflect-show-parent-child-btn="false" ng-reflect-show-enterprise-btn="false"><div class="vi-tool-block">
+  <div class="dis-flex wid_100per">
+    <a class="btn-home-top-function btn-home-notify is-new" ng-reflect-klass="btn-home-top-function btn-home" ng-reflect-ng-class="[object Object]">
+      <span class="vi-icon vi-icon-base icon-notification-g"></span>
+    </a>
+    <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="dis-flex align-items-center ml16">
+      <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><button class="vi-btn-home-top vi-btn-premium"><i18n translate="home_qu057.00000023" ng-reflect-bundle-key="home_qu057.00000023">我的權益</i18n></button>
+      <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+      <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+    </div>
+    <div class="ml-auto dis-flex align-items-center">
+      <div class="btn-home-top-function mr16" ng-reflect-klass="btn-home-top-function mr16" ng-reflect-ng-class="[object Object]">
+        <span class="vi-icon vi-icon-base icon-cs-g"></span>
+      </div>
+      <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="btn-home-top-function">
+        <span class="vi-icon vi-icon-base icon-search-g"></span>
+      </div>
+    </div>
+  </div>
+  <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+</div>
+</toolbar>
+            <div class="vi-home-info-block">
+                <div class="vi-container" ng-reflect-klass="vi-container" ng-reflect-ng-class="[object Object]">
+                    <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-txt-body-bold vi-txt-b600 ct">
+                      早安，J288431191
+                    </div>
+
+                    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+
+                    <!--bindings={}-->
+                    <!--bindings={}-->
+
+                    <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-txt-titlexl vi-txt-b900 ct mt12 vi-balance-mask" ng-reflect-klass="vi-txt-titlexl vi-txt-b900 ct " ng-reflect-ng-class="[object Object]">
+                        <span>103,064,959</span>
+                    </div>
+
+                    <!--bindings={}-->
+
+                    <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="ct mt4" ng-reflect-klass="ct" ng-reflect-ng-class="[object Object]">
+                      <a class="vi-icon-link">
+                        <span class="vi-txt-body vi-txt-b600 mr4">
+                          <i18n translate="home_qu057.00000053" ng-reflect-bundle-key="home_qu057.00000053">資產總額</i18n>
+                        </span>
+                        <span class="vi-icon vi-icon-base icon-eye icon-eye-half-close" id="js_demo_change" ng-reflect-klass="vi-icon vi-icon-base icon-eye" ng-reflect-ng-class="icon-eye-half-close"></span>
+                      </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="vi-home-middle-block">
+              <div class="vi-home-middle-bg js-load-animation" data-isloop="true" data-path="./inc/json/my-ocean.json"></div>
+              <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="pos_relative" ng-reflect-ng-style="[object Object]" style="display: block;">
+                <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!---->
+                  <div class="vi-home-balance-txt vi-txt-b900 ct">102,905,492</div>
+                  <div class="vi-txt-body vi-txt-b600 ct"><i18n translate="home_qu057.00000063" ng-reflect-bundle-key="home_qu057.00000063">總淨值</i18n></div>
+                
+                <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+                <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!---->
+                  <div class="vi-flex-row no-gutters flex-justify-center">
+                    <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-col-6">
+                      <div class="vi-pie-chart vi-pie-line js_pie1" data-highcharts-chart="0"><div id="highcharts-nt3861d-0" class="highcharts-container " style="position: relative; overflow: hidden; width: 188px; height: 180px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" class="highcharts-root" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="188" height="180" viewBox="0 0 188 180"><desc>Created with Highcharts 5.0.14</desc><defs><clipPath id="highcharts-nt3861d-1"><rect x="0" y="0" width="188" height="180" fill="none"></rect></clipPath></defs><rect fill="none" class="highcharts-background" x="0" y="0" width="188" height="180" rx="0" ry="0"></rect><rect fill="none" class="highcharts-plot-background" x="0" y="0" width="188" height="180"></rect><circle cx="94" cy="90" r="80" fill="#2A708E" class="pieBg"></circle><rect fill="none" class="highcharts-plot-border" x="0" y="0" width="188" height="180"></rect><g class="highcharts-series-group"><g class="highcharts-series highcharts-series-0 highcharts-pie-series highcharts-color-undefined " transform="translate(0,0) scale(1 1)"><path fill="#00ADA5" d="M 93.98370614370438 10.000001659310968 A 80 80 0 1 1 88.9322769835877 10.160672701801118 L 90.45259388851139 34.112470891260784 A 56 56 0 1 0 93.98859430059306 34.00000116151768 Z" transform="translate(0,0)" stroke="transparent" stroke-width="1" stroke-linejoin="round" class="highcharts-point highcharts-color-0"></path><path fill="#7AE37E" d="M 89.01211883144067 10.15564489928964 A 80 80 0 0 1 93.88888160495428 10.000077170647955 L 93.92221712346799 34.000054019453565 A 56 56 0 0 0 90.50848318200846 34.10895142950275 Z" transform="translate(0,0)" stroke="transparent" stroke-width="1" stroke-linejoin="round" class="highcharts-point highcharts-color-1"></path></g><g class="highcharts-markers highcharts-series-0 highcharts-pie-series highcharts-color-undefined " transform="translate(0,0) scale(1 1)"></g></g></svg><span style="font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif; font-size: 18px; position: absolute; white-space: nowrap; margin-left: 0px; margin-top: 0px; left: 45px; top: 7px; color: rgb(51, 51, 51);" class="highcharts-title" transform="translate(0,0)"><div class="vi-home-piechart-txt"><div class="vi-txt-body-bold ct">103,064,959</div><div class="vi-txt-body ct">資產總額</div></div></span></div></div>
+                    </div>
+                    <!--bindings={}-->
+
+                    <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-col-6">
+                      <div class="vi-pie-chart vi-pie-line js_pie2" data-highcharts-chart="1"><div id="highcharts-nt3861d-2" class="highcharts-container " style="position: relative; overflow: hidden; width: 188px; height: 180px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" class="highcharts-root" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="188" height="180" viewBox="0 0 188 180"><desc>Created with Highcharts 5.0.14</desc><defs><clipPath id="highcharts-nt3861d-3"><rect x="0" y="0" width="188" height="180" fill="none"></rect></clipPath></defs><rect fill="none" class="highcharts-background" x="0" y="0" width="188" height="180" rx="0" ry="0"></rect><rect fill="none" class="highcharts-plot-background" x="0" y="0" width="188" height="180"></rect><circle cx="94" cy="90" r="80" fill="#2A708E" class="pieBg"></circle><rect fill="none" class="highcharts-plot-border" x="0" y="0" width="188" height="180"></rect><g class="highcharts-series-group"><g class="highcharts-series highcharts-series-0 highcharts-pie-series highcharts-color-undefined " transform="translate(0,0) scale(1 1)"><path fill="#FF5441" d="M 93.98370614370438 10.000001659310968 A 80 80 0 0 1 168.41127073524012 119.37622827333009 L 146.08788951466806 110.56335979133105 A 56 56 0 0 0 93.98859430059306 34.00000116151768 Z" transform="translate(0,0)" stroke="transparent" stroke-width="1" stroke-linejoin="round" class="highcharts-point highcharts-color-0"></path><path fill="#F49085" d="M 168.38185730623056 119.45062484355053 A 80 80 0 1 1 93.88888160495428 10.000077170647955 L 93.92221712346799 34.000054019453565 A 56 56 0 1 0 146.0673001143614 110.61543739048537 Z" transform="translate(0,0)" stroke="transparent" stroke-width="1" stroke-linejoin="round" class="highcharts-point highcharts-color-1"></path></g><g class="highcharts-markers highcharts-series-0 highcharts-pie-series highcharts-color-undefined " transform="translate(0,0) scale(1 1)"></g></g></svg><span style="font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif; font-size: 18px; position: absolute; white-space: nowrap; margin-left: 0px; margin-top: 0px; left: 41.5px; top: 7px; color: rgb(51, 51, 51);" class="highcharts-title" transform="translate(0,0)"><div class="vi-home-piechart-txt"><div class="vi-txt-body-bold ct">159,467</div><div class="vi-txt-body ct">貸款與信用卡</div></div></span></div></div>
+                    </div>
+                    <!--bindings={}-->
+                  </div>
+                  <div class="mt8">
+                    <div class="vi-flex-row no-gutters flex-justify-center">
+                      <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-col-6">
+                        <div class="vi-pie-lengend-block">
+                          <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-pie-lengend">
+                            <div class="chart-legend shape-circle-s chart-color-series-asset color1 mr4"></div>
+                            <div class="vi-pie-lengend-title"><i18n translate="home_qu057.00000065" ng-reflect-bundle-key="home_qu057.00000065">臺幣</i18n></div>
+                            <div class="vi-pie-lengend-info">99%</div>
+                          </div>
+                          <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-pie-lengend">
+                            <div class="chart-legend shape-circle-s chart-color-series-asset color2 mr4"></div>
+                            <div class="vi-pie-lengend-title"><i18n translate="home_qu057.00000054" ng-reflect-bundle-key="home_qu057.00000054">外幣</i18n></div>
+                            <div class="vi-pie-lengend-info">1%</div>
+                          </div>
+                          <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-pie-lengend">
+                            <div class="chart-legend shape-circle-s chart-color-series-asset color3 mr4"></div>
+                            <div class="vi-pie-lengend-title"><i18n translate="home_qu057.00000042" ng-reflect-bundle-key="home_qu057.00000042">投資</i18n></div>
+                            <div class="vi-pie-lengend-info">0%</div>
+                          </div>
+                          <!--bindings={}-->
+                          <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-pie-lengend">
+                          </div>
+                        </div>
+                      </div>
+                      <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-col-6">
+                        <div class="vi-flex-row no-gutters flex-column align-items-center">
+                          <div class="vi-pie-lengend-block flex-column">
+                            <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-pie-lengend">
+                              <div class="chart-legend shape-circle-s chart-color-series-debit color1 mr4"></div>
+                              <div class="vi-pie-lengend-title"><i18n translate="home_qu057.00000035" ng-reflect-bundle-key="home_qu057.00000035">信用卡</i18n></div>
+                              <div class="vi-pie-lengend-info">31%</div>
+                            </div>
+                            <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-pie-lengend">
+                              <div class="chart-legend shape-circle-s chart-color-series-debit color2 mr4"></div>
+                              <div class="vi-pie-lengend-title"><i18n translate="home_qu057.00000044" ng-reflect-bundle-key="home_qu057.00000044">貸款</i18n></div>
+                              <div class="vi-pie-lengend-info">69%</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="ct mt16 mb16">
+                      <memo-help ng-reflect-key="TWRBMHomeQU057_010_calculate" ng-reflect-desc="看數字怎麼計算" ng-reflect-format="6"><!---->
+
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+    
+    <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!---->
+      <a class="vi-icon-link" ng-reflect-klass="vi-icon-link">
+        <span class="vi-icon vi-icon-xs icon-question-mark"></span>
+        <!--bindings={
+  "ng-reflect-ng-if": "看數字怎麼計算"
+}--><span class="vi-txt-footnote vi-txt-g500 ml4">看數字怎麼計算</span>
+      </a>
+    
+    
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+    
+
+</memo-help>
+                    </div>
+                    <!--bindings={}-->
+                  </div>
+                
+              </div>
+            </div>
+            
+            <div class="vi-home-front-block">
+                <div class="vi-home-front-bg" ng-reflect-ng-style="[object Object]" style="background-image: url(&quot;./inc/img/home/home-layer-top.svg&quot;);"></div>
+                <div class="vi-mascot-bi js-default-bi" ng-reflect-ng-style="[object Object]" style="background-image: url(&quot;./inc/img/home/home-mascot-b3.svg&quot;);"></div>
+                <div class="vi-mascot-bi js-chart-bi mascot-hide" ng-reflect-ng-style="[object Object]" style="background-image: url(&quot;./inc/img/home/home-mascot-b2.svg&quot;);"></div>
+            </div>
+        </div>
+        
+        <div class="vi-home-main-block">
+            <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!---->
+              
+              <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-home-collapse"></div>
+              <div class="vi-container dis-flex flex-column">
+
+                
+                <twd-card class="order-1" ng-reflect-ng-class="order-1" ng-reflect-mask="false"><card-panel ng-reflect-ng-class="[object Object]" ng-reflect-scroll-to-this="false"><div class="vi-card vi-min-ht120" ng-reflect-klass="vi-card" ng-reflect-ng-class="[object Object]">
+  <div class="vi-card-header flex-wrap">
+    <!---->
+    <a class="wid_100per vi-select-link flex-justify-between" ng-reflect-klass="wid_100per" ng-reflect-ng-class="[object Object]">
+      <div class="vi-line-title"><i18n translate="home_qu057.00000027" ng-reflect-bundle-key="home_qu057.00000027">臺幣存款</i18n></div>
+      <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="ml-auto rt flex-grow">
+        <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-txt-title vi-txt-b900" ng-reflect-klass="vi-txt-title vi-txt-b900" ng-reflect-ng-class="[object Object]">101,591,608</div>
+        <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+      </div>
+    </a>
+  
+  </div>
+  <div class="vi-card-body" style="display: none;">
+    <ul class="vi-list vi-list-noline vi-list-py8 mr4" pre-loading-card="">
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_30per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_40per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_40per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+  </ul>
+  </div>
+  <div class="vi-card-body" style="display: block;" ng-reflect-klass="vi-card-body" ng-reflect-ng-class="[object Object]">
+    <ul class="vi-list vi-list-lt-w1 vi-list-noline vi-list-py8 vi-list-baseline mr4" panel-body="">
+    <!--bindings={
+  "ng-reflect-ng-if": "101,591,608"
+}--><li class="vi-list-item">
+      <div class="vi-list-lt">
+        <div class="vi-txt-body vi-txt-b600"><i18n translate="home_qu057.00000028" ng-reflect-bundle-key="home_qu057.00000028">活期存款</i18n></div>
+      </div>
+      <div class="vi-list-rt">
+        <div class="vi-txt-body vi-txt-b600" ng-reflect-klass="vi-txt-body vi-txt-b600" ng-reflect-ng-class="[object Object]">
+          <span>101,591,608</span>
+        </div>
+      </div>
+    </li>
+    <!--bindings={
+  "ng-reflect-ng-if": ""
+}-->
+    <!--bindings={
+  "ng-reflect-ng-if": ""
+}-->
+  </ul>
+  </div>
+  <div class="vi-card-body" style="display:none;">
+    <div class="vi-list-full vi-txt-body vi-txt-b500 ct">
+      整理中，稍後再試
+    </div>
+  </div>
+</div>
+</card-panel>
+</twd-card>
+
+
+                <!-- 有卡產品但只有網銀者 我的首頁引導升級雙身分網銀 add .vi-card-footer-event -->
+                <credit-card-card>
+                  <div class="vi-card vi-card-footer-event">
+                    <div class="vi-card-header flex-wrap">
+                      <a class="wid_100per vi-select-link flex-justify-between">
+                        <div class="vi-line-title">信用卡</div>
+                        <div class="ml-auto rt flex-grow">
+                          <div class="vi-txt-headline vi-txt-b900 mb4">線上辦卡</div>
+                          <div class="vi-txt-body vi-txt-b600">送你電競耳機開戶禮</div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="vi-card-footer vi-bg-r100 flex-justify-end">
+                      <a class="w-100 vi-arrow-right-br-link" href="">
+                        <div class="event-txt rt">
+                          <span class="vi-txt-body vi-txt-br500">已經有卡？<span class="vi-txt-bold">立即查看信用卡帳務</span></span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </credit-card-card>
+
+                
+                <credit-card-card class="order-2" ng-reflect-ng-class="order-2" ng-reflect-mask="false"><card-panel ng-reflect-ng-class="[object Object]" ng-reflect-scroll-to-this="false"><div class="vi-card vi-min-ht120" ng-reflect-klass="vi-card" ng-reflect-ng-class="[object Object]">
+  <div class="vi-card-header flex-wrap">
+    <!---->
+    <a class="wid_100per vi-select-link flex-justify-between" ng-reflect-klass="wid_100per" ng-reflect-ng-class="[object Object]">
+      <div class="vi-line-title"><i18n translate="home_qu057.00000035" ng-reflect-bundle-key="home_qu057.00000035">信用卡</i18n></div>
+      <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="ml-auto rt flex-grow">
+        <!--bindings={}-->
+      </div>
+    </a>
+  
+  </div>
+  <div class="vi-card-body" style="display: none;">
+    <ul class="vi-list vi-list-noline vi-list-py8 mr4" pre-loading-card="">
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_30per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_40per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_40per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+  </ul>
+  </div>
+  <div class="vi-card-body" style="display: block;" ng-reflect-klass="vi-card-body" ng-reflect-ng-class="[object Object]">
+    <!---->
+    <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!---->
+      <!--bindings={
+  "ng-reflect-ng-for-of": "[object Object]"
+}--><ul class="vi-list vi-list-lt-w1 vi-list-noline vi-list-py8 vi-list-baseline mr4">
+        <li class="vi-list-item">
+          <div class="vi-list-lt">
+            <div class="vi-txt-body vi-txt-b600"><i18n translate="home_qu057.00000036" ng-reflect-bundle-key="home_qu057.00000036">未出帳金額</i18n></div>
+          </div>
+          <div class="vi-list-rt flex-grow">
+            <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-txt-title vi-txt-b900" ng-reflect-klass="vi-txt-title vi-txt-b900" ng-reflect-ng-class="[object Object]">281</div>
+            <!--bindings={}-->
+          </div>
+        </li>
+        <li class="vi-list-item">
+          <div class="vi-list-lt">
+            <div class="vi-txt-body vi-txt-b600"><i18n translate="home_qu057.00000037" ng-reflect-bundle-key="home_qu057.00000037">本期應繳</i18n></div>
+          </div>
+          <div class="vi-list-rt">
+            <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-txt-body vi-txt-b600" ng-reflect-klass="vi-txt-body vi-txt-b600" ng-reflect-ng-class="[object Object]">
+              <span>27,450</span>
+            </div>
+            <!--bindings={}-->
+          </div>
+          <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-list-full">
+            <div class="vi-tag mt4">
+              <div class="vi-txt-footnote vi-txt-g600">7/10自動扣繳</div>
+            </div>
+            <memo-help ng-reflect-key="TWRBMHomeQU057_010_card_suppor" ng-reflect-key-params="TWD" ng-reflect-custom-class="vmid" ng-reflect-format="7"><!---->
+
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+    
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+    
+    <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!---->
+      <a class="vi-icon-link vmid" ng-reflect-klass="vi-icon-link" ng-reflect-ng-class="vmid">
+        <span class="vi-icon vi-icon-base icon-question-mark"></span>
+        <!--bindings={
+  "ng-reflect-ng-if": ""
+}-->
+      </a>
+    
+    
+
+</memo-help>
+          </div>
+        </li>
+        <li class="vi-list-item">
+          <div class="vi-list-lt">
+            <div class="vi-txt-body vi-txt-b600"><i18n translate="home_qu057.00000038" ng-reflect-bundle-key="home_qu057.00000038">可用額度</i18n></div>
+          </div>
+          <div class="vi-list-rt">
+            <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-txt-body vi-txt-b600" ng-reflect-klass="vi-txt-body vi-txt-b600" ng-reflect-ng-class="[object Object]">
+              <span>861,023</span>
+            </div>
+            <!--bindings={}-->
+          </div>
+        </li>
+        <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><li class="vi-list-item">
+          <div class="vi-list-rt ml-auto">
+            <button class="vi-btn vi-btn-xs vi-btn-primary" ontouchstart=""><i18n translate="home_qu057.00000039" ng-reflect-bundle-key="home_qu057.00000039">看即時消費明細</i18n></button>
+          </div>
+        </li>
+      </ul>
+    
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+  
+  </div>
+  <div class="vi-card-body" style="display:none;">
+    <div class="vi-list-full vi-txt-body vi-txt-b500 ct">
+      整理中，稍後再試
+    </div>
+  </div>
+</div>
+</card-panel>
+</credit-card-card>
+
+                
+                <fx-card class="order-3" ng-reflect-ng-class="order-3" ng-reflect-mask="false"><card-panel ng-reflect-ng-class="[object Object]" ng-reflect-scroll-to-this="false"><div class="vi-card vi-min-ht120" ng-reflect-klass="vi-card" ng-reflect-ng-class="[object Object]">
+  <div class="vi-card-header flex-wrap">
+    <!---->
+    <a class="wid_100per vi-select-link flex-justify-between" ng-reflect-klass="wid_100per" ng-reflect-ng-class="[object Object]">
+      <div class="vi-line-title"><i18n translate="home_qu057.00000041" ng-reflect-bundle-key="home_qu057.00000041">外幣存款</i18n></div>
+      <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="ml-auto rt flex-grow">
+        <div class="vi-txt-title vi-txt-b900" ng-reflect-klass="vi-txt-title vi-txt-b900" ng-reflect-ng-class="[object Object]">971,673</div>
+      </div>
+    </a>
+    <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="wid_100per pr20 rt mt4">
+      <span class="vi-txt-footnote vi-txt-b500"><i18n translate="home_qu057.00000040" ng-reflect-bundle-key="home_qu057.00000040">(約當新臺幣)</i18n></span>
+    </div>
+  
+  </div>
+  <div class="vi-card-body" style="display: none;">
+    <ul class="vi-list vi-list-noline vi-list-py8 mr4" pre-loading-card="">
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_30per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_40per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_40per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+  </ul>
+  </div>
+  <div class="vi-card-body" style="display: block;" ng-reflect-klass="vi-card-body" ng-reflect-ng-class="[object Object]">
+    <ul class="vi-list vi-list-lt-w1 vi-list-noline vi-list-py8 vi-list-baseline mr4" panel-body="">
+    <!--bindings={
+  "ng-reflect-ng-for-of": "[object Object]"
+}--><!---->
+      <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><li class="vi-list-item">
+        <div class="vi-list-lt">
+          <div class="vi-txt-body vi-txt-b600"><i18n translate="home_qu057.00000028" ng-reflect-bundle-key="home_qu057.00000028">活期存款</i18n></div>
+        </div>
+        <div class="vi-list-rt">
+          <div class="vi-txt-body vi-txt-b600" ng-reflect-klass="vi-txt-body vi-txt-b600" ng-reflect-ng-class="[object Object]">
+            <span>971,673</span>
+          </div>
+        </div>
+      </li>
+      <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+    
+  </ul>
+  </div>
+  <div class="vi-card-body" style="display:none;">
+    <div class="vi-list-full vi-txt-body vi-txt-b500 ct">
+      整理中，稍後再試
+    </div>
+  </div>
+</div>
+</card-panel>
+</fx-card>
+
+                
+                <invest-card class="order-4" ng-reflect-ng-class="order-4" ng-reflect-mask="false"><card-panel class="" ng-reflect-ng-class="[object Object]" ng-reflect-scroll-to-this="false"><div class="vi-card vi-min-ht120" ng-reflect-klass="vi-card" ng-reflect-ng-class="[object Object]">
+  <div class="vi-card-header flex-wrap">
+    <!---->
+    <div class="wid_100per vi-select-link flex-justify-between" ng-reflect-klass="wid_100per" ng-reflect-ng-class="[object Object]">
+      <div class="vi-line-title"><i18n translate="home_qu057.00000042" ng-reflect-bundle-key="home_qu057.00000042">投資</i18n></div>
+      <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="ml-auto rt flex-grow">
+        <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-txt-title vi-txt-b900" ng-reflect-klass="vi-txt-title vi-txt-b900" ng-reflect-ng-class="[object Object]">501,678</div>
+        <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+      </div>
+    </div>
+    <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="wid_100per pr20 rt mt4">
+      <span class="vi-txt-footnote vi-txt-b500"><i18n translate="home_qu057.00000043" ng-reflect-bundle-key="home_qu057.00000043">(總參考市值 | 約當新臺幣)</i18n></span>
+    </div>
+  
+  </div>
+  <div class="vi-card-body" style="display: none;">
+    <ul class="vi-list vi-list-noline vi-list-py8 mr4" pre-loading-card="">
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_30per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_40per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_40per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+  </ul>
+  </div>
+  <div class="vi-card-body" style="display: block;" ng-reflect-klass="vi-card-body" ng-reflect-ng-class="[object Object]">
+    <table class="wid_100per mb16 tb-py-8" panel-body="">
+    <tbody>
+      <!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--><tr>
+        <td class="wid_102px pl16 vtop">
+          <div class="vi-txt-body vi-txt-b600">基金</div>
+        </td>
+        <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!---->
+          <td class="rt vtop" ng-reflect-klass="rt vtop" ng-reflect-ng-class="[object Object]">
+            <div class="vi-txt-body vi-txt-b600" ng-reflect-klass="vi-txt-body vi-txt-b600" ng-reflect-ng-class="[object Object]">
+              <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><span>9,530</span>
+              <!--bindings={}-->
+            </div>
+          </td>
+          <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!---->
+            <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><td class="rt pr20 pl8 wid_60px vtop">
+              <div class="vi-txt-red-nu" ng-reflect-ng-class="[object Object]">-4.70%</div>
+            </td>
+            <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+          
+        
+        <!--bindings={
+  "ng-reflect-ng-if": null
+}-->
+      </tr><tr>
+        <td class="wid_102px pl16 vtop">
+          <div class="vi-txt-body vi-txt-b600">智動GO</div>
+        </td>
+        <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!---->
+          <td class="rt vtop" ng-reflect-klass="rt vtop" ng-reflect-ng-class="[object Object]">
+            <div class="vi-txt-body vi-txt-b600" ng-reflect-klass="vi-txt-body vi-txt-b600" ng-reflect-ng-class="[object Object]">
+              <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><span>492,148</span>
+              <!--bindings={}-->
+            </div>
+          </td>
+          <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!---->
+            <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><td class="rt pr20 pl8 wid_60px vtop">
+              <div class="vi-txt-red-nu" ng-reflect-ng-class="[object Object]">-0.13%</div>
+            </td>
+            <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+          
+        
+        <!--bindings={
+  "ng-reflect-ng-if": null
+}-->
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="vi-card-body" style="display:none;">
+    <div class="vi-list-full vi-txt-body vi-txt-b500 ct">
+      整理中，稍後再試
+    </div>
+  </div>
+</div>
+</card-panel>
+</invest-card>
+
+                
+                <loan-card class="order-5" ng-reflect-ng-class="order-5" ng-reflect-mask="false"><card-panel class="" ng-reflect-ng-class="[object Object]" ng-reflect-scroll-to-this="false"><div class="vi-card vi-min-ht120" ng-reflect-klass="vi-card" ng-reflect-ng-class="[object Object]">
+  <div class="vi-card-header flex-wrap">
+    <!---->
+    <a class="wid_100per vi-select-link flex-justify-between" ng-reflect-klass="wid_100per" ng-reflect-ng-class="[object Object]">
+      <div class="vi-line-title"><i18n translate="home_qu057.00000044" ng-reflect-bundle-key="home_qu057.00000044">貸款</i18n></div>
+      <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="ml-auto rt flex-grow">
+        <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-txt-title vi-txt-b900" ng-reflect-klass="vi-txt-title vi-txt-b900" ng-reflect-ng-class="[object Object]">110,490</div>
+        <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+      </div>
+    </a>
+  
+  </div>
+  <div class="vi-card-body" style="display: none;">
+    <ul class="vi-list vi-list-noline vi-list-py8 mr4" pre-loading-card="">
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_30per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_40per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_40per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+  </ul>
+  </div>
+  <div class="vi-card-body" style="display: block;" ng-reflect-klass="vi-card-body" ng-reflect-ng-class="[object Object]">
+    <ul class="vi-list vi-list-lt-w1 vi-list-noline vi-list-py8 vi-list-baseline mr4" panel-body="">
+    <!--bindings={
+  "ng-reflect-ng-for-of": "[object Object]"
+}--><!---->
+      <li class="vi-list-item">
+        <div class="vi-list-lt" ng-reflect-klass="vi-list-lt" ng-reflect-ng-class="[object Object]">
+          <div class="vi-txt-body vi-txt-b600">信貸餘額</div>
+        </div>
+        <div class="vi-list-rt">
+          <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="vi-txt-body vi-txt-b600" ng-reflect-klass="vi-txt-body vi-txt-b600" ng-reflect-ng-class="[object Object]">
+            <span>110,490</span>
+          </div>
+          <!--bindings={}-->
+        </div>
+      </li>
+    
+  </ul>
+  </div>
+  <div class="vi-card-body" style="display:none;">
+    <div class="vi-list-full vi-txt-body vi-txt-b500 ct">
+      整理中，稍後再試
+    </div>
+  </div>
+</div>
+</card-panel>
+</loan-card>
+
+                
+                <insurance-card class="order-6" ng-reflect-ng-class="order-6" ng-reflect-mask="false"><card-panel class="hide" ng-reflect-ng-class="[object Object]" ng-reflect-scroll-to-this="false"><div class="vi-card vi-min-ht120" ng-reflect-klass="vi-card" ng-reflect-ng-class="[object Object]">
+  <div class="vi-card-header flex-wrap">
+    <!---->
+    <a class="wid_100per vi-select-link flex-justify-between" ng-reflect-klass="wid_100per" ng-reflect-ng-class="[object Object]">
+      <div class="vi-line-title"><i18n translate="home_qu057.00000045" ng-reflect-bundle-key="home_qu057.00000045">保險</i18n></div>
+      <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="ml-auto rt flex-grow">
+        <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+        <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+      </div>
+    </a>
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+  
+  </div>
+  <div class="vi-card-body" style="display: none;">
+    <ul class="vi-list vi-list-noline vi-list-py8 mr4" pre-loading-card="">
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_30per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_40per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+    <li class="vi-list-item">
+      <div class="vi-list-lt mr60">
+        <div class="loading-line"></div>
+      </div>
+      <div class="vi-list-rt wid_40per">
+        <div class="loading-line"></div>
+      </div>
+    </li>
+  </ul>
+  </div>
+  <div class="vi-card-body" style="display: block;" ng-reflect-klass="vi-card-body" ng-reflect-ng-class="[object Object]">
+    <ul class="vi-list vi-list-lt-w1 vi-list-noline vi-list-py8 vi-list-baseline mr4" panel-body="">
+    <!--bindings={
+  "ng-reflect-ng-if": ""
+}-->
+    <!--bindings={
+  "ng-reflect-ng-if": ""
+}-->
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+  </ul>
+  </div>
+  <div class="vi-card-body" style="display:none;">
+    <div class="vi-list-full vi-txt-body vi-txt-b500 ct">
+      整理中，稍後再試
+    </div>
+  </div>
+</div>
+</card-panel>
+</insurance-card>
+
+                
+                <trust-card class="order-7" ng-reflect-ng-class="order-7" ng-reflect-mask="false"><card-panel class="hide" ng-reflect-ng-class="[object Object]" ng-reflect-scroll-to-this="false"><div class="vi-card vi-min-ht120" ng-reflect-klass="vi-card" ng-reflect-ng-class="[object Object]">
+  <div class="vi-card-header flex-wrap">
+    <!---->
+        <a class="wid_100per no-arrow" ng-reflect-klass="wid_100per" ng-reflect-ng-class="[object Object]">
+            <div class="vi-line-title">
+                <i18n translate="home_qu057.00000080" ng-reflect-bundle-key="home_qu057.00000080">信託</i18n>
+            </div>
+        </a>
+    
+  </div>
+  <div class="vi-card-body" style="display: none;">
+    <ul class="vi-list vi-list-noline vi-list-py8 mr4" pre-loading-card="">
+        <li class="vi-list-item">
+            <div class="vi-list-lt mr60">
+                <div class="loading-line"></div>
+            </div>
+            <div class="vi-list-rt wid_30per">
+                <div class="loading-line"></div>
+            </div>
+        </li>
+        <li class="vi-list-item">
+            <div class="vi-list-lt mr60">
+                <div class="loading-line"></div>
+            </div>
+            <div class="vi-list-rt wid_40per">
+                <div class="loading-line"></div>
+            </div>
+        </li>
+        <li class="vi-list-item">
+            <div class="vi-list-lt mr60">
+                <div class="loading-line"></div>
+            </div>
+            <div class="vi-list-rt wid_40per">
+                <div class="loading-line"></div>
+            </div>
+        </li>
+    </ul>
+  </div>
+  <div class="vi-card-body" style="display: block;" ng-reflect-klass="vi-card-body" ng-reflect-ng-class="[object Object]">
+    <ul class="vi-list vi-list-lt-w1 vi-list-noline vi-list-py8 vi-list-baseline mr4" panel-body="">
+        <li class="vi-list-item">
+            <div class="vi-list-lt wid_110px">
+                <div class="vi-txt-body vi-txt-b600">
+                    <i18n translate="home_qu057.00000081" ng-reflect-bundle-key="home_qu057.00000081">個人信託</i18n>
+                </div>
+            </div>
+            <div class="vi-list-rt">
+                <div class="vi-txt-body vi-txt-b600" ng-reflect-klass="vi-txt-body vi-txt-b600" ng-reflect-ng-class="[object Object]">
+                    <span>
+                        <i18n translate="home_qu057.00000082" ng-reflect-bundle-key="home_qu057.00000082">持有中</i18n>
+                    </span>
+                </div>
+            </div>
+        </li>
+    </ul>
+  </div>
+  <div class="vi-card-body" style="display:none;">
+    <div class="vi-list-full vi-txt-body vi-txt-b500 ct">
+      整理中，稍後再試
+    </div>
+  </div>
+</div>
+</card-panel>
+</trust-card>
+
+              </div>
+            
+
+            
+            <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><card-sorting ng-reflect-task-id="TWRBM_Home_QU057" ng-reflect-card-items="[object Object],[object Object">
+<div class="ct mb24">
+  <a class="vi-icon-link insight" data-modal=".js_demo_sort">
+    <span class="vi-icon vi-icon-xs icon-sort-g"></span>
+    <span class="vi-txt-body-bold vi-txt-g500 ml4"><i18n translate="home_qu057.00000051" ng-reflect-bundle-key="home_qu057.00000051">調整顯示順序</i18n></span>
+  </a>
+</div>
+
+
+<slide-panel-projection><div class="vi-modal" ng-reflect-klass="vi-modal" ng-reflect-ng-class="" style="z-index: 1005;">
+  <!--bindings={}-->
+</div>
+</slide-panel-projection>
+<!---->
+</card-sorting>
+
+            
+            <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><estimate-card><div class="vi-card-s mb12" ng-reflect-klass="vi-card-s mb12" ng-reflect-ng-class="[object Object]" ng-reflect-scroll-to-this="false">
+  <div class="vi-card-header">
+    <div class="vi-txt-headline vi-txt-b900"><i18n translate="home_qu057.00000058" ng-reflect-bundle-key="home_qu057.00000058">你的可貸額度估算</i18n></div>
+  </div>
+  <div class="vi-card-body">
+    <div class="vi-card-column">
+      <!--bindings={
+  "ng-reflect-ng-for-of": ""
+}-->
+    </div>
+  </div>
+</div>
+
+
+<modal-projection><div ng-reflect-ng-style="[object Object]" class="modal modal-date modal-footer-close " style="z-index: 99989;">
+	
+  <div class="modal-vertical-middle">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+                  <h4 class="modal-title ct" ng-reflect-bundle-key="invest_qu010_010.confirm.messa">確認訊息</h4>
+              </div>
+              <div class="modal-body">
+                  <p>
+                      <i18n translate="invest_qu010_010.url.hloan.message1" ng-reflect-bundle-key="invest_qu010_010.url.hloan.mes">本人已詳閱</i18n>
+                      <a translate="invest_qu010_010.url.hloan.message2" ng-reflect-bundle-key="invest_qu010_010.url.hloan.mes">個人資料運用告知聲明書</a>
+                      <i18n translate="invest_qu010_010.url.hloan.message3" ng-reflect-bundle-key="invest_qu010_010.url.hloan.mes">，並同意貴行使用本人留存於貴行之職業別、收入，及貴行前向聯徵中心查得之信用資料等，作為試算本人本次申請貸款額度之用</i18n>
+                  </p>
+              </div>
+              <div class="modal-footer">
+                  <div class="btn-group btn-group-justified">
+                      <a class="btn btn-success cancel" href="" ng-reflect-bundle-key="invest_qu010_010.cancel">取消</a>
+                      <a class="btn btn-success" href="" ng-reflect-bundle-key="invest_qu010_010.readed.and.ag">已閱讀及瞭解並同意</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div></modal-projection>
+</estimate-card>
+
+            
+            <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><marketing-popprod-card ng-reflect-show-pop-prod="true"><div class="vi-card-s mb12">
+  
+  <!--bindings={}-->
+  
+  
+  <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!---->
+    <div class="vi-card-header flex-wrap" ng-reflect-scroll-to-this="false">
+      <div class="vi-txt-headline vi-txt-b900 wid_100per">
+        <i18n translate="home_qu057.00000001" ng-reflect-bundle-key="home_qu057.00000001">最近這些服務超熱門</i18n>
+      </div>
+      <!--bindings={}-->
+    </div>
+    <div class="vi-card-body">
+      <!--bindings={}-->
+      <div class="rt mt16">
+        <a class="vi-icon-link">
+          <span class="vi-icon vi-icon-xs icon icon-forward-arrow vi-txt-g500"></span>
+          <span class="vi-txt-body-bold vi-txt-g500 ml4"><i18n translate="home_qu057.00000002" ng-reflect-bundle-key="home_qu057.00000002">提供你更多產品</i18n></span>
+        </a>
+      </div>
+      <a class="vi-card-xs vi-bg-red-light mt16" href="javascript:;">
+        <div class="vi-card-header flex-wrap">
+          <div class="vi-select-link wid_100per">
+            <div class="vi-txt-body-bold vi-txt-b900 mr-auto"></div>
+          </div>
+          <div class="mt4 vi-txt-callout vi-txt-b600"></div>
+        </div>
+      </a>
+    </div>
+  
+  
+</div>
+</marketing-popprod-card>
+
+            
+            <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><exchange-card><div class="vi-card-s mb12" ng-reflect-klass="vi-card-s mb12" ng-reflect-ng-class="[object Object]">
+  <div class="vi-card-header flex-wrap" ng-reflect-scroll-to-this="false">
+    <div class="wid_100per dis-flex">
+      <div class="vi-txt-headline vi-txt-b900 mr-auto">看看今天市場走勢</div>
+      <a class="vi-icon-link">
+        <span class="vi-icon vi-icon-base icon-setting-g"></span>
+        <span class="vi-txt-body-bold vi-txt-g500 ml4"><i18n translate="home_qu057.00000006" ng-reflect-bundle-key="home_qu057.00000006">自訂幣別</i18n></span>
+      </a>
+    </div>
+    <div class="vi-txt-body vi-txt-b600 mt4">讓你輕鬆掌握最新匯率</div>
+  </div>
+  <div class="vi-card-body">
+    <table class="wid_100per tb-py-8 tb-py-exclude-first">
+      <tbody><tr>
+        <td></td>
+        <td class="rt wid_24per">
+          <span class="vi-txt-body vi-txt-b500"><i18n translate="home_qu057.00000008" ng-reflect-bundle-key="home_qu057.00000008">銀行買進</i18n></span>
+        </td>
+        <td class="rt wid_24per">
+          <span class="vi-txt-body vi-txt-b500"><i18n translate="home_qu057.00000009" ng-reflect-bundle-key="home_qu057.00000009">銀行賣出</i18n></span>
+        </td>
+        <td class="wid_20px"></td>
+      </tr>
+      <!--bindings={}-->
+    </tbody></table>
+    <div class="vi-btm-line mt4 mb16"></div>
+    <div class="dis-flex align-items-start flex-justify-between">
+      <!--bindings={}-->
+      <a class="dis_block clear-space rt">
+        <span class="vi-icon vi-icon-base icon icon-forward-arrow vi-txt-g500 vmid"></span>
+        <span class="vi-txt-body-bold vi-txt-g500 vmid ml4"><i18n translate="home_qu057.00000012" ng-reflect-bundle-key="home_qu057.00000012">看更多幣別</i18n></span>
+      </a>
+    </div>
+    
+  </div>
+</div>
+</exchange-card>
+
+            
+            <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><market-card><div class="vi-card-s mb12" ng-reflect-scroll-to-this="false">
+  <div class="vi-card-header flex-wrap">
+    <div class="vi-txt-headline vi-txt-b900 wid_100per"><i18n translate="home_qu057.00000013" ng-reflect-bundle-key="home_qu057.00000013">My Way樂活誌</i18n></div>
+    <div class="vi-txt-body vi-txt-b600 mt4"></div>
+  </div>
+  <nav-tabs-market ng-reflect-init-tab-idx="0" ng-reflect-tabs-label-txt="哈燒話題,熱門影片" ng-reflect-tabs-id4-digital-tracking="tab0,tab1" ng-reflect-refresh-every-click="true"><ul class="vi-tab-fitted col-2" role="tablist" ng-reflect-klass="vi-tab-fitted" ng-reflect-ng-class="">
+  <!--bindings={
+  "ng-reflect-ng-for-of": "哈燒話題,熱門影片"
+}--><!---->
+    <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!---->
+      <li class="vi-tab-item" ng-reflect-klass="vi-tab-item" ng-reflect-ng-class="">
+        <a class="vi-tab-link">
+          <span>哈燒話題</span>
+        </a>
+      </li>
+    
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+  <!---->
+    <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!---->
+      <li class="vi-tab-item" ng-reflect-klass="vi-tab-item" ng-reflect-ng-class="">
+        <a class="vi-tab-link">
+          <span>熱門影片</span>
+        </a>
+      </li>
+    
+    <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+  
+</ul>
+<div class="vi-card-body">
+	
+	<div class="tab-content" ng-reflect-ng-style="[object Object]">
+		
+		<!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="tab-pane"><div class="pre-loading-card"></div><div style="display:none;"><!---->
+        <ul class="vi-list vi-article-list vi-btm-line mt16">
+          <!--bindings={}-->
+        </ul>
+    </div></div>
+		<!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div class="tab-pane"><div class="pre-loading-card"></div><div style="display:none;"><!---->
+        <ul class="vi-list vi-article-list vi-btm-line mt16">
+          <!--bindings={}-->
+        </ul>
+    </div></div>
+		<!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+		<!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+		<!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+		<!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+		<!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+		<!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+	</div>
+	<!---->
+      <div class="rt mt16">
+        <a class="vi-icon-link">
+          <span class="vi-icon vi-icon-xs icon icon-forward-arrow vi-txt-g500"></span>
+          <span class="vi-txt-body-bold vi-txt-g500 ml4">
+            <i18n translate="home_qu057.00000018" ng-reflect-bundle-key="home_qu057.00000018">提供你更多新鮮話題</i18n>
+          </span>
+        </a>
+      </div>
+    
+</div>
+</nav-tabs-market>
+</div>
+</market-card>
+
+            <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!---->
+              <div class="vi-container">
+                <div class="mb24"></div>
+                
+                <memo-remarks-card ng-reflect-key="TWRBMHomeQU057_010_home_asset_" ng-reflect-title-key="memo_title" ng-reflect-content-key="memo_content"><div class="vi-note-accordion">
+  <!--bindings={
+  "ng-reflect-ng-if": "true",
+  "ng-reflect-ng-if-then": "[object Object]",
+  "ng-reflect-ng-if-else": "[object Object]"
+}-->
+  
+  <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button">
+    <div class="forAEM base-style break-word mr4">備註(我的首頁標題AEM)</div>
+    <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+  </div>
+  <div class="panel-collapse collapse" id="collapseNote" role="tabpanel">
+    <div class="vi-card-body forAEM base-style break-word"><p>備註(我的首頁內文AEM)</p>
+<ul>
+<li>豆豆1</li>
+<li>豆豆2</li>
+</ul>
+<ol>
+<li>數字1</li>
+<li>數字2</li>
+<li>數字3</li>
+</ol>
+<ul>
+<li>超連結<ul>
+<li>官網樂活誌文章：<a href="https://www.ctbcbank.com/twrbo/zh_tw/index/ctbc_article/blog_market/blog_market_news/20200107001.html">https://www.ctbcbank.com/twrbo/zh_tw/index/ctbc_article/blog_market/blog_market_news/20200107001.html</a></li>
+<li><a href="https://www.ctbcbank.com/twrbo/zh_tw/index/ctbc_article/blog_market/blog_market_news/20200107001.html">樂活誌文章</a></li>
+<li>測試PDF：<a href="https://ebtest.ctbcbank.com:7777/content/dam/minisite/long/test/testpdf.pdf">https://ebtest.ctbcbank.com:7777/content/dam/minisite/long/test/testpdf.pdf</a></li>
+</ul>
+<p><span style="color: rgb(255,0,0);">文字顏色 </span><span style="color: rgb(153,102,51);">顏色</span> <span style="color: rgb(0,255,255);">顏色 </span><b>粗體歐歐歐歐 </b><i>斜體&nbsp; </i><u>底線</u></p>
+<ul>
+</ul>
+</li>
+</ul>
+<ul>
+<li>備註：</li>
+</ul>
+<ol>
+<li>本頁資料，不得做為存款餘額證明或往來憑證之用。<br>
+</li>
+<li>活期存款之可用餘額，內含有本行預先撥款予您的定存質借之金額（即定期存款金額的九成），以利讓您靈活運用資金。<br>
+</li>
+<li>貸款總額為前一日結餘並非為即時資料。</li>
+<li>如您已持有證券帳戶或期貨帳戶但本網頁未顯示您的帳務明細資訊，敬請本人攜帶身分證明文件及原留印鑑，親臨中國信託證券各營業據點櫃檯辦理。<br>
+</li>
+<li>上述信託投資(基金)、我的資產/負債配置、配置明細查詢等均未含雷曼連動債，且雷曼兄弟所發行或保證之連動債均無法再提供最新參考報價，故本行亦將不提供該等連動債之總參考現值。<br>
+</li>
+<li>外幣存款之"約當臺幣總額"係以本行最近一次收盤買匯換算。<br>
+</li>
+<li>以上基金、ETF/股票、債券、連動債(不含雷曼)、雷曼兄弟發行連動債之資料均不含申購中金額、贖回/轉換中單位數和贖回/轉換中本金。<br>
+</li>
+<li>境內結構型商品不含投資中未取得參考市值之本金，待本行取得後即於帳戶總覽中揭露相關資訊。<br>
+</li>
+<li>上述所揭載之保險產品總覽資料係以您透過本行通路經攬投保之各家保險公司之一般壽險(扣除提領金額)、年金及萬能保險(扣除提領金額)及投資型保險產品為準，且不含意外保險、產險及其他非屬前述險種之保險產品，另亦不包含附約及未計入資產之險種。前述保險產品資料係本行為提供您便利及優質服務，經您書面同意後提供本行。若本查詢中未揭載保險相關資料，表示您於本行尚未簽署中國信託商業銀行保險代理業務同意書(或於中國信託保經存續期間，未簽署同意將您在中國信託保經之基本資料以外之往來交易資料提供予本行交互運用)，故本行無法於本查詢內揭載保險產品資料。欲進一步了解，請向為您服務的業務員洽詢。<br>
+</li>
+<li>上述保險商品之『投資金額/保費』、『參考市值/保費』及『約當新臺幣總參考市值/保費』欄位金額為依查詢前一日收盤各外幣幣別之參考匯率計算之新臺幣金額，如欲查詢保險相關明細，請點選『保單查詢』查詢之。<br>
+</li>
+<li>上述信託投資(基金)之”約當新臺幣總參考市值”係依據每營業日上午約10點之本行牌告即期買匯匯率換算。&nbsp;<br>
+</li>
+<li>重頭來</li>
+<li><a></a><a>ctbcmobilebank://?task_id=twrbm_invest_tx001?prodNo=00119601&amp;fundVType=0</a><br>
+</li>
+<li><a href="ctbcmobilebank://?task_id=TWRBM_Card_OT004">ctbcmobilebank://?task_id=TWRBM_Card_OT004</a></li>
+<li><a href="ctbcmobilebank://?task_id=twrbm_mf_qu034">ctbcmobilebank://?task_id=twrbm_mf_qu034</a></li>
+<li><a></a><a>ctbcmobilebank://?task_id=twrbm_mf_ag009&amp;MGMID=2uMRNGXu3VqlujryPac2KQ==</a></li>
+<li><a></a><a>ctbcmobilebank://?task_id=twrbm_mf_ag009&amp;MGMID=1234567890&amp;ActivityCode=01</a></li>
+<li><a></a><a>ctbcmobilebank://?task_id=twrbm_mf_ag009&amp;MGMID=1uMRNGXu3VqlujryPac2KQ==&amp;ActivityCode=%$#@</a></li>
+<li><a href="https://www.ctbcbank.com/content/dam/minisite/long/mobile/PRO_URL.html?TWRBM_Mf_AG009&amp;MGMID=1/7bXSRQEg0euNrsQzmNiEUX+es7vOjtH/UbR+ZpRew=&amp;ActivityCode=ABCDE">https://www.ctbcbank.com/content/dam/minisite/long/mobile/PRO_URL.html?TWRBM_Mf_AG009&amp;MGMID=1/7bXSRQEg0euNrsQzmNiEUX+es7vOjtH/UbR+ZpRew=&amp;ActivityCode=ABCDE</a></li>
+<li><a href="https://www.ctbcbank.com/content/dam/minisite/long/mobile/PRO_URL.html?TWRBM_Mf_AG009">https://www.ctbcbank.com/content/dam/minisite/long/mobile/PRO_URL.html?TWRBM_Mf_AG009</a></li>
+<li><a></a><a>ctbcmobilebank://?task_id=twrbm_mf_ag009&amp;MGMID=1/7bXSRQEg0euNrsQzmNiEUX+es7vOjtH/UbR+ZpRew=&amp;ActivityCode=ABCDE</a></li>
+<li><a></a><a>ctbcmobilebank://?task_id=twrbm_mf_ag009&amp;MGMID=c0JCYgQREE5EHKWgA6SU/g==&amp;ActivityCode=AB123</a></li>
+<li><a></a><a>ctbcmobilebank://?task_id=twrbm_mf_ag009&amp;MGMID=XXSl2hCNHrv3R4IuEWxfvkUX+es7vOjtH/UbR+ZpRew=</a></li>
+<li><a href="ctbcmobilebank://?task_id=twrbm_mf_ag009">ctbcmobilebank://?task_id=twrbm_mf_ag009</a></li>
+<li><a href="ctbcmobilebank://?task_id=twrbm_invest_tx009">ctbcmobilebank://?task_id=twrbm_invest_tx009</a></li>
+<li><a></a><a>ctbcmobilebank://?task_id=twrbm_invest_tx009&amp;prodNo=602B0001</a></li>
+<li><a></a><a>ctbcmobilebank://?task_id=twrbm_invest_tx009&amp;prodNo=602B0005</a></li>
+<li><a></a><a>ctbcmobilebank://?task_id=twrbm_invest_tx009&amp;prodNo=1234</a></li>
+<li><a></a><a>ctbcmobilebank://?task_id=twrbm_invest_tx009&amp;prodNo=12345678</a></li>
+<li>Prod官網保險：<a href="https://www.ctbcbank.com/twrbo/zh_tw/ins_index/ins_smart/ins_smart_travel/ins_TaiwanLife_product_018.html">https://www.ctbcbank.com/twrbo/zh_tw/ins_index/ins_smart/ins_smart_travel/ins_TaiwanLife_product_018.html</a></li>
+<li>SIT官網保險：<br>
+<a href="https://ebtest.ctbcbank.com:7777/twrbo/zh_tw/ins_index/ins_smart/ins_termlife/term-life_estimate.html">https://ebtest.ctbcbank.com:7777/twrbo/zh_tw/ins_index/ins_smart/ins_termlife/term-life_estimate.html</a></li>
+<li>隱私權：<a href="https://www.ctbcbank.com/content/ctbc-ib/zh_rb/General/privacy.html">https://www.ctbcbank.com/content/ctbc-ib/zh_rb/General/privacy.html</a></li>
+<li>交易安全：<a href="https://www.ctbcbank.com/content/ctbc-ib/zh_rb/General/security.html">https://www.ctbcbank.com/content/ctbc-ib/zh_rb/General/security.html</a></li>
+<li>客服中心：<a href="https://servicetest.ctbcbank.com">https://servicetest.ctbcbank.com</a></li>
+<li>客服中心：<a href="https://service.ctbcbank.com">https://service.ctbcbank.com</a></li>
+<li>官網樂活誌文章：<a href="https://www.ctbcbank.com/twrbo/zh_tw/index/ctbc_article/blog_market/blog_market_news/20200107001.html">https://www.ctbcbank.com/twrbo/zh_tw/index/ctbc_article/blog_market/blog_market_news/20200107001.html</a></li>
+<li><a href="https://www.ctbcbank.com">https://www.ctbcbank.com</a>：以In-App Browser開啟</li>
+<li><a href="https://www.openpoint.com.tw">https://www.openpoint.com.tw</a>：以In-App Browser開啟</li>
+<li><a></a><a>htts://webchat.ctbcbank.com</a>：另開原生瀏覽器</li>
+<li><a href="https://www.google.com">https://www.google.com</a>：另開原生瀏覽器</li>
+<li>iPlay：<a href="https://ob.ctbcbank.com/iPlay">https://ob.ctbcbank.com/iPlay</a><br>
+</li>
+<li>信貸試算頁 <a href="https://ebtest.ctbcbank.com:7777/twrbo/zh_tw/loan/personal-loan/personal-loan-calcuate.html">https://ebtest.ctbcbank.com:7777/twrbo/zh_tw/loan/personal-loan/personal-loan-calcuate.html</a></li>
+<li>信貸立即申請 <a href="https://ebtest.ctbcbank.com:7777/twrbo/zh_tw/loan/personal-loan/pLoan.html">https://ebtest.ctbcbank.com:7777/twrbo/zh_tw/loan/personal-loan/pLoan.html</a></li>
+<li>保險試算頁 <a href="https://ebtest.ctbcbank.com:7777/twrbo/zh_tw/ins_index/ins_smart/ins_termlife/term-life_estimate.html">https://ebtest.ctbcbank.com:7777/twrbo/zh_tw/ins_index/ins_smart/ins_termlife/term-life_estimate.html</a></li>
+<li>保險試算頁 <a href="https://ebtest.ctbcbank.com:1111/twrbo/zh_tw/ins_index/ins_smart/ins_termlife/term-life_estimate.html">https://ebtest.ctbcbank.com:1111/twrbo/zh_tw/ins_index/ins_smart/ins_termlife/term-life_estimate.html</a></li>
+<li>信貸試算頁 <a href="https://ebtest.ctbcbank.com:8888/twrbo/zh_tw/loan/personal-loan/personal-loan-calcuate.html">https://ebtest.ctbcbank.com:8888/twrbo/zh_tw/loan/personal-loan/personal-loan-calcuate.html</a></li>
+<li>信貸立即申請 <a href="https://ebtest.ctbcbank.com:7777/twrbo/zh_tw/loan/personal-loan/pLoan.html">https://ebtest.ctbcbank.com:8888/twrbo/zh_tw/loan/personal-loan/pLoan.html</a></li>
+<li>保險試算頁 <a href="https://ebtest.ctbcbank.com:8888/twrbo/zh_tw/ins_index/ins_smart/ins_termlife/term-life_estimate.html">https://ebtest.ctbcbank.com:8888/twrbo/zh_tw/ins_index/ins_smart/ins_termlife/term-life_estimate.html</a></li>
+</ol>
+<p>----in app browser白名單----<br>
+</p>
+<ul>
+<li>(A)官網：https://www.ctbcbank.com/twrbo/打頭<br>
+</li>
+<li>(B)官網：https://www.ctbcbank.com/content/twrbo/打頭<ul>
+<li>官網樂活誌文章：<a href="https://www.ctbcbank.com/twrbo/zh_tw/index/ctbc_article/blog_market/blog_market_news/20200107001.html">https://www.ctbcbank.com/twrbo/zh_tw/index/ctbc_article/blog_market/blog_market_news/20200107001.html</a></li>
+<li>官網樂活誌文章：<a href="https://www.ctbcbank.com/zh_tw/index/ctbc_article/blog_market/blog_market_news/20200107001.html">https://www.ctbcbank.com/zh_tw/index/ctbc_article/blog_market/blog_market_news/20200107001.html</a></li>
+<li>最新優惠PROD：<a href="https://www.ctbcbank.com/twrbo/zh_tw/index/ctbc_news/ctbc_offer.html?targetTab=ctbc_offer_tab3">https://www.ctbcbank.com/twrbo/zh_tw/index/ctbc_news/ctbc_offer.html?targetTab=ctbc_offer_tab3</a></li>
+<li>最新優惠UAT：<a href="https://ebtest.ctbcbank.com:8888/twrbo/zh_tw/index/ctbc_news/ctbc_offer.html?targetTab=ctbc_offer_tab1">https://ebtest.ctbcbank.com:8888/twrbo/zh_tw/index/ctbc_news/ctbc_offer.html?targetTab=ctbc_offer_tab1</a></li>
+<li>最新優惠STG：<a href="https://ebtest.ctbcbank.com:9999/twrbo/zh_tw/index/ctbc_news/ctbc_offer.html?targetTab=ctbc_offer_tab3https://ebtest.ctbcbank.com:9999/twrbo/zh_tw/index/ctbc_news/ctbc_offer.html?targetTab=ctbc_offer_tab3">https://ebtest.ctbcbank.com:9999/twrbo/zh_tw/index/ctbc_news/ctbc_offer.html?targetTab=ctbc_offer_tab3</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>(C)官網：https://www.ctbcbank.com/content/dam/minisite/long<br>
+</li>
+<li>(D)官網：https://www.ctbcbank.com/content/dam/minisite/recent<br>
+</li>
+<li>(F)domain name包含openpoint<ul>
+<li><a href="https://group.openpoint.com.tw/cdn/index.html">https://group.openpoint.com.tw/cdn/index.html</a><br>
+</li>
+</ul>
+</li>
+<li>(G)隱私權保護：{URL}/content/ctbc-ib/zh_rb/General/privacy.html<br>
+</li>
+<li>(H)交易安全：{URL}/content/ctbc-ib/zh_rb/General/security.html<ul>
+<li>隱私權：<a href="https://www.ctbcbank.com/content/ctbc-ib/zh_rb/General/privacy.html">https://www.ctbcbank.com/content/ctbc-ib/zh_rb/General/privacy.html</a></li>
+<li>交易安全：<a href="https://www.ctbcbank.com/content/ctbc-ib/zh_rb/General/security.html">https://www.ctbcbank.com/content/ctbc-ib/zh_rb/General/security.html</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>(I)隱私權保護(英文版)：{URL}/content/ctbc-ib/zh_rb/General/privacy_en_US.html<br>
+</li>
+<li>(J)交易安全(英文版)：{URL}/content/ctbc-ib/zh_rb/General/security_en_US.html<ul>
+<li>隱私權：<a href="https://www.ctbcbank.com/content/ctbc-ib/zh_rb/General/privacy_en_US.html">https://www.ctbcbank.com/content/ctbc-ib/zh_rb/General/privacy_en_US.html</a></li>
+<li>交易安全：<a href="https://www.ctbcbank.com/content/ctbc-ib/zh_rb/General/security_en_US.html">https://www.ctbcbank.com/content/ctbc-ib/zh_rb/General/security_en_US.html</a></li>
+</ul>
+</li>
+<li>(K)客服中心：<a href="https://servicetest.ctbcbank.com">https://servicetest.ctbcbank.com</a><br>
+</li>
+<li>(L)客服中心：<a href="https://service.ctbcbank.com">https://service.ctbcbank.com</a><br>
+</li>
+<li>(M)iPlay：<a href="https://ob.ctbcbank.com/iPlay">https://ob.ctbcbank.com/iPlay</a></li>
+<li>(N)網銀基金報酬率及費用率：<ul>
+<li><a href="https://ebtest.ctbcbank.com:7777/twrbc/twrbc-mf/qu030/010?prodNo=55400013">https://ebtest.ctbcbank.com:7777/twrbc/twrbc-mf/qu030/010?prodNo=55400013</a></li>
+<li><a href="https://www.ctbcbank.com/twrbc/twrbc-mf/qu030/010?prodNo=55400013">https://www.ctbcbank.com/twrbc/twrbc-mf/qu030/010?prodNo=55400013</a></li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>----轉址服務測試----</p>
+<ol>
+<li>優惠首頁：<a href="https://ebtest.ctbcbank.com:7070/content/dam/minisite/long/mobile/redirect.html?TWRBM_Home_QU041">https://ebtest.ctbcbank.com:7070/content/dam/minisite/long/mobile/redirect.html?TWRBM_Home_QU041</a></li>
+<li>信用卡申請：<a href="https://ebtest.ctbcbank.com:7070/content/dam/minisite/long/mobile/redirect.html?TWRBM_Card_OT015">https://ebtest.ctbcbank.com:7070/content/dam/minisite/long/mobile/redirect.html?TWRBM_Card_OT015</a></li>
+<li>優惠活動登錄：<a href="https://ebtest.ctbcbank.com:7070/content/dam/minisite/long/mobile/redirect.html?TWRBM_Card_OT007">https://ebtest.ctbcbank.com:7070/content/dam/minisite/long/mobile/redirect.html?TWRBM_Card_OT007</a></li>
+<li>沒有行銀功能：<a href="https://ebtest.ctbcbank.com:7070/content/dam/minisite/long/mobile/redirect.html?TWRBM_Card_AG018">https://ebtest.ctbcbank.com:7070/content/dam/minisite/long/mobile/redirect.html?TWRBM_Card_AG018</a></li>
+</ol>
+<p>&nbsp;</p>
+<p>----轉址服務測試(內網)----</p>
+<ol>
+<li>優惠首頁：<a href="https://ebtest.ctbcbank.com:7777/content/dam/minisite/long/mobile/redirect.html?TWRBM_Home_QU041">https://ebtest.ctbcbank.com:7777/content/dam/minisite/long/mobile/redirect.html?TWRBM_Home_QU041</a></li>
+<li>信用卡申請：<a href="https://ebtest.ctbcbank.com:7777/content/dam/minisite/long/mobile/redirect.html?TWRBM_Card_OT015">https://ebtest.ctbcbank.com:7777/content/dam/minisite/long/mobile/redirect.html?TWRBM_Card_OT015</a></li>
+<li>優惠活動登錄：<a href="https://ebtest.ctbcbank.com:7777/content/dam/minisite/long/mobile/redirect.html?TWRBM_Card_OT007">https://ebtest.ctbcbank.com:7777/content/dam/minisite/long/mobile/redirect.html?TWRBM_Card_OT007</a></li>
+<li>沒有行銀功能：<a href="https://ebtest.ctbcbank.com:7777/content/dam/minisite/long/mobile/redirect.html?TWRBM_Card_AG018">https://ebtest.ctbcbank.com:7777/content/dam/minisite/long/mobile/redirect.html?TWRBM_Card_AG018</a></li>
+</ol>
+<p>----下載PDF測試---</p>
+<ul>
+<li><a href="https://ebtest.ctbcbank.com:8080/content/dam/minisite/long/aaa/aaa.pdf">https://ebtest.ctbcbank.com:8080/content/dam/minisite/long/aaa/aaa.pdf</a></li>
+<li><a href="https://ebtest.ctbcbank.com:8888/content/dam/minisite/long/aaa/aaa.pdf">https://ebtest.ctbcbank.com:8888/content/dam/minisite/long/aaa/aaa.pdf</a></li>
+<li><a href="https://www.ctbcbank.com/content/dam/twrbo/pdf/creditcard/applyform/CC_B_CTCB.pdf">https://www.ctbcbank.com/content/dam/twrbo/pdf/creditcard/applyform/CC_B_CTCB.pdf</a></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>----測試表情符號----</p>
+<p>😀😄😅🤣🤞🤘🤌✋🐭🐹🥎</p>
+<p><br>
+<br>
+</p>
+</div>
+  </div>
+
+</div>
+<!---->
+<!----></memo-remarks-card>
+              </div>
+            
+
+            <div class="mb60">
+              
+            </div>
+        </div>
+
+        
+        <bottom-b1><div class="vi-page-bottom">
+  <div class="js_page_bottom" data-isloop="false" data-path="./inc/json/mic.json"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 165" width="375" height="165" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);"><defs><clipPath id="__lottie_element_2"><rect width="375" height="165" x="0" y="0"></rect></clipPath><image xlink:href="./inc/json/images/bottom_bg.png"></image><clipPath id="__lottie_element_10"><path d="M0,0 L152,0 L152,165 L0,165z"></path></clipPath><clipPath id="__lottie_element_14"><path d="M0,0 L13,0 L13,13 L0,13z"></path></clipPath><clipPath id="__lottie_element_21"><path d="M0,0 L13,0 L13,13 L0,13z"></path></clipPath><clipPath id="__lottie_element_28"><path d="M0,0 L13,0 L13,13 L0,13z"></path></clipPath><linearGradient id="__lottie_element_40" spreadMethod="pad" gradientUnits="userSpaceOnUse" x1="41.707000732421875" y1="-1.5859999656677246" x2="114.81600189208984" y2="24.783000946044922"><stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity="0.6000000238418579"></stop><stop offset="50%" stop-color="rgb(243,252,254)" stop-opacity="0.6499999761581421"></stop><stop offset="100%" stop-color="rgb(230,249,252)" stop-opacity="0.699999988079071"></stop></linearGradient><linearGradient id="__lottie_element_41" spreadMethod="pad" gradientUnits="userSpaceOnUse" x1="41.707000732421875" y1="-1.5859999656677246" x2="101.96800231933594" y2="24.385000228881836"><stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity="0.6000000238418579"></stop><stop offset="50%" stop-color="rgb(243,252,254)" stop-opacity="0.6499999761581421"></stop><stop offset="100%" stop-color="rgb(230,249,252)" stop-opacity="0.699999988079071"></stop></linearGradient><linearGradient id="__lottie_element_42" spreadMethod="pad" gradientUnits="userSpaceOnUse" x1="-2.503999948501587" y1="-2.5769999027252197" x2="2.697999954223633" y2="9.399999618530273"><stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity="0.6000000238418579"></stop><stop offset="50%" stop-color="rgb(243,252,254)" stop-opacity="0.6499999761581421"></stop><stop offset="100%" stop-color="rgb(230,249,252)" stop-opacity="0.699999988079071"></stop></linearGradient><clipPath id="__lottie_element_50"><path d="M0,0 L170,0 L170,147 L0,147z"></path></clipPath><clipPath id="__lottie_element_60"><path d="M0,0 L170,0 L170,147 L0,147z"></path></clipPath><clipPath id="__lottie_element_67"><path d="M0,0 L170,0 L170,147 L0,147z"></path></clipPath><clipPath id="__lottie_element_74"><path d="M0,0 L170,0 L170,147 L0,147z"></path></clipPath><linearGradient id="__lottie_element_86" spreadMethod="pad" gradientUnits="userSpaceOnUse" x1="1.0700000524520874" y1="-72.26599884033203" x2="0.7990000247955322" y2="67.54100036621094"><stop offset="0%" stop-color="rgb(228,240,239)"></stop><stop offset="26%" stop-color="rgb(213,233,225)"></stop><stop offset="52%" stop-color="rgb(198,226,211)"></stop><stop offset="76%" stop-color="rgb(221,235,223)"></stop><stop offset="100%" stop-color="rgb(243,244,236)"></stop></linearGradient></defs><g clip-path="url(#__lottie_element_2)"><g class="png" transform="matrix(0.5012099742889404,0,0,0.4855499863624573,-4.4634246826171875,-1.5001449584960938)" opacity="1" style="display: block;"><image width="766px" height="346px" preserveAspectRatio="xMidYMid slice" xlink:href="./inc/json/images/bottom_bg.png"></image></g><g transform="matrix(1,0,0,1,-0.8809967041015625,-0.25)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,188.3800048828125,82.75)"><path fill="url(#__lottie_element_86)" fill-opacity="1" d="M0 0"></path></g><g opacity="1" transform="matrix(1,0,0,1,188.3800048828125,154.75)"><path fill="rgb(232,136,112)" fill-opacity="1" d=" M-187.5,10.5 C-187.5,10.5 187.5,10.5 187.5,10.5 C187.5,10.5 187.5,-10.5 187.5,-10.5 C187.5,-10.5 -187.5,-10.5 -187.5,-10.5 C-187.5,-10.5 -187.5,10.5 -187.5,10.5z"></path></g><g opacity="1" transform="matrix(1,0,0,1,188.4459991455078,154.75)"><path fill="rgb(241,211,176)" fill-opacity="1" d=" M-187.43499755859375,10.5 C-187.43499755859375,10.5 187.43499755859375,10.5 187.43499755859375,10.5 C187.43499755859375,10.5 187.43499755859375,-10.5 187.43499755859375,-10.5 C187.43499755859375,-10.5 -187.43499755859375,-10.5 -187.43499755859375,-10.5 C-187.43499755859375,-10.5 -187.43499755859375,10.5 -187.43499755859375,10.5z"></path></g><g opacity="1" transform="matrix(1,0,0,1,188.4459991455078,143.75)"><path fill="rgb(126,153,138)" fill-opacity="1" d=" M-187.43499755859375,3.5 C-187.43499755859375,3.5 187.43499755859375,3.5 187.43499755859375,3.5 C187.43499755859375,3.5 187.43499755859375,-3.5 187.43499755859375,-3.5 C187.43499755859375,-3.5 -187.43499755859375,-3.5 -187.43499755859375,-3.5 C-187.43499755859375,-3.5 -187.43499755859375,3.5 -187.43499755859375,3.5z"></path></g><g opacity="1" transform="matrix(1,0,0,1,188.4459991455078,150.25)"><path fill="rgb(66,104,85)" fill-opacity="1" d=" M-187.43499755859375,6 C-187.43499755859375,6 187.43499755859375,6 187.43499755859375,6 C187.43499755859375,6 187.43499755859375,-6 187.43499755859375,-6 C187.43499755859375,-6 -187.43499755859375,-6 -187.43499755859375,-6 C-187.43499755859375,-6 -187.43499755859375,6 -187.43499755859375,6z"></path></g><g opacity="1" transform="matrix(1,0,0,1,105.79100036621094,161.34100341796875)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(200,167,129)" stroke-opacity="1" stroke-width="1" d=" M2.7730000019073486,-4.8420000076293945 C2.7730000019073486,-4.8420000076293945 -2.7739999294281006,4.8420000076293945 -2.7739999294281006,4.8420000076293945"></path></g><g opacity="1" transform="matrix(1,0,0,1,148.66799926757812,161.31300354003906)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(200,167,129)" stroke-opacity="1" stroke-width="1" d=" M1.2899999618530273,-4.936999797821045 C1.2899999618530273,-4.936999797821045 -1.2899999618530273,4.936999797821045 -1.2899999618530273,4.936999797821045"></path></g><g opacity="1" transform="matrix(1,0,0,1,267.989990234375,161.37399291992188)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(200,167,129)" stroke-opacity="1" stroke-width="1" d=" M-2.7929999828338623,-4.875999927520752 C-2.7929999828338623,-4.875999927520752 2.7929999828338623,4.875999927520752 2.7929999828338623,4.875999927520752"></path></g><g opacity="1" transform="matrix(1,0,0,1,225.03799438476562,161.10499572753906)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(200,167,129)" stroke-opacity="1" stroke-width="1" d=" M-1.2359999418258667,-4.729000091552734 C-1.2359999418258667,-4.729000091552734 1.2359999418258667,4.729000091552734 1.2359999418258667,4.729000091552734"></path></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(200,167,129)" stroke-opacity="1" stroke-width="1" d=" M183.44200134277344,156.25 C183.44200134277344,156.25 183.44200134277344,166.73599243164062 183.44200134277344,166.73599243164062"></path></g><g opacity="1" transform="matrix(1,0,0,1,17.875,113.88999938964844)"><path fill="rgb(25,141,135)" fill-opacity="1" d=" M-16.864999771118164,47.24599838256836 C-16.864999771118164,47.24599838256836 -5.998000144958496,51.36000061035156 -5.998000144958496,51.36000061035156 C-5.998000144958496,51.36000061035156 1.3669999837875366,50.87699890136719 1.3669999837875366,50.87699890136719 C1.3669999837875366,50.87699890136719 8.95199966430664,36.895999908447266 10.581999778747559,31.566999435424805 C10.581999778747559,31.566999435424805 7.0279998779296875,27.076000213623047 7.0279998779296875,27.076000213623047 C7.0279998779296875,27.076000213623047 12.498000144958496,26.409000396728516 12.498000144958496,26.409000396728516 C12.498000144958496,26.409000396728516 16.96500015258789,15.6850004196167 16.96500015258789,15.6850004196167 C16.96500015258789,15.6850004196167 10.125,12.77400016784668 10.125,12.77400016784668 C10.125,12.77400016784668 14.967000007629395,10.550000190734863 14.967000007629395,10.550000190734863 C14.967000007629395,10.550000190734863 16.548999786376953,2.0390000343322754 16.548999786376953,2.0390000343322754 C16.548999786376953,2.0390000343322754 11.61299991607666,-2.0959999561309814 11.61299991607666,-2.0959999561309814 C11.61299991607666,-2.0959999561309814 15.760000228881836,-3.1610000133514404 15.760000228881836,-3.1610000133514404 C15.760000228881836,-3.1610000133514404 16.993999481201172,-11.090999603271484 16.993999481201172,-11.090999603271484 C16.993999481201172,-11.090999603271484 9.11400032043457,-12.260000228881836 9.11400032043457,-12.260000228881836 C9.11400032043457,-12.260000228881836 16.48699951171875,-14.152000427246094 16.48699951171875,-14.152000427246094 C16.48699951171875,-14.152000427246094 16.378999710083008,-28.767000198364258 16.378999710083008,-28.767000198364258 C16.378999710083008,-28.767000198364258 10.842000007629395,-30.139999389648438 10.842000007629395,-30.139999389648438 C12.51099967956543,-30.32200050354004 15.954000473022461,-30.86199951171875 16.371000289916992,-31.55900001525879 C16.892000198364258,-32.42900085449219 14.145999908447266,-37.61800003051758 13.291000366210938,-40.099998474121094 C12.435999870300293,-42.582000732421875 9.86400032043457,-48.06100082397461 10.277999877929688,-51.36000061035156 C8.065999984741211,-50.79199981689453 -1.9479999542236328,-43.9640007019043 -6.677999973297119,-40.62200164794922 C-6.677999973297119,-40.62200164794922 -3.4110000133514404,-36.303001403808594 -3.4110000133514404,-36.303001403808594 C-3.4110000133514404,-36.303001403808594 -7.833000183105469,-38.74300003051758 -7.833000183105469,-38.74300003051758 C-7.833000183105469,-38.74300003051758 -15.01099967956543,-26.69499969482422 -15.01099967956543,-26.69499969482422 C-15.01099967956543,-26.69499969482422 -9.553999900817871,-23.43000030517578 -9.553999900817871,-23.43000030517578 C-9.553999900817871,-23.43000030517578 -16.9950008392334,-23.408000946044922 -16.9950008392334,-23.408000946044922 C-16.9950008392334,-23.408000946044922 -16.9950008392334,-8.105999946594238 -16.9950008392334,-8.105999946594238 C-16.9950008392334,-8.105999946594238 -15.762999534606934,-7.8379998207092285 -15.762999534606934,-7.8379998207092285 C-15.762999534606934,-7.8379998207092285 -17.3700008392334,-3.765000104904175 -17.3700008392334,-3.765000104904175 C-17.3700008392334,-3.765000104904175 -16.864999771118164,11.475000381469727 -16.864999771118164,11.475000381469727 C-16.864999771118164,11.475000381469727 -16.864999771118164,47.24599838256836 -16.864999771118164,47.24599838256836z"></path></g><g opacity="1" transform="matrix(1,0,0,1,23.100000381469727,89.64900207519531)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(30,162,154)" stroke-opacity="1" stroke-width="1" d=" M-5.448999881744385,3.240000009536743 C-1.8830000162124634,2.3310000896453857 3.492000102996826,-0.5559999942779541 5.448999881744385,-3.240999937057495"></path></g><g opacity="1" transform="matrix(1,0,0,1,10.722999572753906,98.01699829101562)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(30,162,154)" stroke-opacity="1" stroke-width="1" d=" M3.8440001010894775,5.242000102996826 C1.2230000495910645,2.88700008392334 -3.8429999351501465,-2.509000062942505 -3.1429998874664307,-5.242000102996826"></path></g><g opacity="1" transform="matrix(1,0,0,1,18.798999786376953,111.50499725341797)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(30,162,154)" stroke-opacity="1" stroke-width="1" d=" M-6.921999931335449,4.7230000495910645 C-3.253999948501587,3.819000005722046 3.552999973297119,-0.14800000190734863 6.921999931335449,-4.723999977111816"></path></g><g opacity="1" transform="matrix(1,0,0,1,15.628999710083008,130.49099731445312)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(30,162,154)" stroke-opacity="1" stroke-width="1" d=" M-6.695000171661377,5.646999835968018 C-3.3320000171661377,3.7200000286102295 4.056000232696533,-1.2380000352859497 6.695000171661377,-5.6479997634887695"></path></g><g opacity="1" transform="matrix(1,0,0,1,13.086000442504883,151.03599548339844)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(30,162,154)" stroke-opacity="1" stroke-width="1" d=" M-5.833000183105469,6.163000106811523 C-3.7739999294281006,4.243000030517578 1.4420000314712524,-0.9110000133514404 5.833000183105469,-6.164000034332275"></path></g><g opacity="1" transform="matrix(1,0,0,1,5.821000099182129,118.51899719238281)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(30,162,154)" stroke-opacity="1" stroke-width="1" d=" M4.821000099182129,5.639999866485596 C1.6059999465942383,3.190999984741211 -4.821000099182129,-2.49399995803833 -4.810999870300293,-5.639999866485596"></path></g><g opacity="1" transform="matrix(1,0,0,1,55.608001708984375,113.70899963378906)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(37,217,207)" stroke-opacity="1" stroke-width="1" d=" M0.37400001287460327,7.931000232696533 C2.5239999294281006,1.4129999876022339 0.1940000057220459,-6.584000110626221 -2.5230000019073486,-7.931000232696533"></path></g><g opacity="1" transform="matrix(1,0,0,1,56.55699920654297,132.71299743652344)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(37,217,207)" stroke-opacity="1" stroke-width="1" d=" M-8.00100040435791,0.48100000619888306 C-3.5220000743865967,1.0540000200271606 5.947999954223633,1.468000054359436 8.00100040435791,-1.468000054359436"></path></g><g opacity="1" transform="matrix(1,0,0,1,37.56999969482422,135.9429931640625)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(37,217,207)" stroke-opacity="1" stroke-width="1" d=" M0.7179999947547913,10.57699966430664 C1.7890000343322754,4.5929999351501465 1.7089999914169312,-5.84499979019165 -1.7890000343322754,-10.57699966430664"></path></g><g opacity="1" transform="matrix(1,0,0,1,20.190000534057617,154.41900634765625)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(37,217,207)" stroke-opacity="1" stroke-width="1" d=" M1.0460000038146973,10.831000328063965 C0.08100000023841858,5.995999813079834 -1.0460000038146973,-4.638999938964844 0.996999979019165,-10.831000328063965"></path></g><g opacity="1" transform="matrix(1,0,0,1,41.15999984741211,155.52099609375)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(37,217,207)" stroke-opacity="1" stroke-width="1" d=" M-9.494999885559082,-1.2480000257492065 C-4.427000045776367,-0.17900000512599945 6.465000152587891,1.3079999685287476 9.494999885559082,-1.3070000410079956"></path></g><g opacity="1" transform="matrix(1,0,0,1,47.86199951171875,151.11599731445312)"><path fill="rgb(23,121,116)" fill-opacity="1" d=" M36.56399917602539,-4.130000114440918 C16.79800033569336,-14.133999824523926 -20.423999786376953,25.95800018310547 -36.56399917602539,47.25400161743164 C-36.56399917602539,47.25400161743164 -30.43600082397461,47.89699935913086 -30.43600082397461,47.89699935913086 C-11.664999961853027,31.69499969482422 15.989999771118164,-0.9210000038146973 36.56399917602539,-4.130000114440918z"></path></g><g opacity="1" transform="matrix(1,0,0,1,87.53099822998047,150.14500427246094)"><path fill="rgb(40,190,182)" fill-opacity="1" d=" M5.921999931335449,-2.6019999980926514 C-0.3140000104904175,-6.146999835968018 -6.289999961853027,-4.296000003814697 -14.503000259399414,-4.744999885559082 C-14.503000259399414,-4.744999885559082 14.503000259399414,6.145999908447266 14.503000259399414,6.145999908447266 C13.720999717712402,4.4120001792907715 10.91100025177002,0.23499999940395355 5.921999931335449,-2.6019999980926514z"></path></g><g opacity="1" transform="matrix(1,0,0,1,22.3799991607666,153.7270050048828)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M-1.7619999647140503,2.8499999046325684 C-1.7619999647140503,2.8499999046325684 1.7619999647140503,-2.8499999046325684 1.7619999647140503,-2.8499999046325684"></path></g><g opacity="1" transform="matrix(1,0,0,1,20.783000946044922,157.1219940185547)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M-0.2529999911785126,-8.128000259399414 C0.10199999809265137,-7.638000011444092 -0.453000009059906,-0.9729999899864197 0.45399999618530273,8.128000259399414"></path></g><g opacity="1" transform="matrix(1,0,0,1,19.000999450683594,155.27200317382812)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M1.6180000305175781,1.3029999732971191 C0.7009999752044678,0.7699999809265137 -1.2309999465942383,-0.49900001287460327 -1.6180000305175781,-1.3029999732971191"></path></g><g opacity="1" transform="matrix(1,0,0,1,23.395999908447266,160.41299438476562)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M-2.311000108718872,3.0220000743865967 C-0.9570000171661377,1.6670000553131104 1.8630000352859497,-1.4420000314712524 2.311000108718872,-3.0220000743865967"></path></g><g opacity="1" transform="matrix(1,0,0,1,18.958999633789062,162.0500030517578)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M2.125999927520752,1.3849999904632568 C1.3049999475479126,1.0789999961853027 -0.6940000057220459,0.0989999994635582 -2.125999927520752,-1.3849999904632568"></path></g><g opacity="1" transform="matrix(1,0,0,1,38.72600173950195,151.1510009765625)"><path fill="rgb(247,149,47)" fill-opacity="1" d=" M2.624000072479248,-10.137999534606934 C-3.7100000381469727,-14.098999977111816 -11.46399974822998,24.114999771118164 -10.482000350952148,34.74800109863281 C0.8009999990463257,31.12700080871582 11.46399974822998,-4.609000205993652 2.624000072479248,-10.137999534606934z"></path></g><g opacity="1" transform="matrix(1,0,0,1,38.63800048828125,147.53399658203125)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M1.534999966621399,3.309000015258789 C1.534999966621399,3.309000015258789 -1.534999966621399,-3.309000015258789 -1.534999966621399,-3.309000015258789"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.8120002746582,164.3939971923828)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M6.440999984741211,-21.736000061035156 C5.632999897003174,-20.86199951171875 5.421000003814697,2.171999931335449 -6.440999984741211,21.735000610351562"></path></g><g opacity="1" transform="matrix(1,0,0,1,42.090999603271484,149.64500427246094)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M-1.9179999828338623,1.1990000009536743 C-0.8569999933242798,0.7409999966621399 1.3960000276565552,-0.3799999952316284 1.9179999828338623,-1.1990000009536743"></path></g><g opacity="1" transform="matrix(1,0,0,1,36.67300033569336,154.6320037841797)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M2.1070001125335693,3.566999912261963 C0.8190000057220459,1.9240000247955322 -1.8279999494552612,-1.7999999523162842 -2.1070001125335693,-3.566999912261963"></path></g><g opacity="1" transform="matrix(1,0,0,1,41.257999420166016,156.97799682617188)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M-2.4790000915527344,1.2209999561309814 C-1.5520000457763672,0.9959999918937683 0.7379999756813049,0.19599999487400055 2.4790000915527344,-1.2209999561309814"></path></g><g opacity="1" transform="matrix(1,0,0,1,35.5260009765625,161.13600158691406)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M2.0959999561309814,3.2869999408721924 C0.7360000014305115,2.0299999713897705 -2.007999897003174,-1.0440000295639038 -2.0959999561309814,-3.2869999408721924"></path></g><g opacity="1" transform="matrix(1,0,0,1,39.95399856567383,163.06700134277344)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M-2.3440001010894775,1.0750000476837158 C-1.0509999990463257,0.6499999761581421 1.6979999542236328,-0.375 2.3440001010894775,-1.0750000476837158"></path></g><g opacity="1" transform="matrix(1,0,0,1,33.96900177001953,167.93600463867188)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M-1.6749999523162842,-3.303999900817871 C-1.0399999618530273,-1.4559999704360962 0.5180000066757202,2.450000047683716 1.6749999523162842,3.302999973297119"></path></g><g opacity="1" transform="matrix(1,0,0,1,46.72600173950195,159.8300018310547)"><path fill="rgb(247,149,47)" fill-opacity="1" d=" M12.494999885559082,0.21799999475479126 C9.595999717712402,-5.420000076293945 -12.644000053405762,19.077999114990234 -16.54199981689453,27.2549991607666 C-6.74399995803833,29.51300048828125 16.541000366210938,8.086000442504883 12.494999885559082,0.21799999475479126z"></path></g><g opacity="1" transform="matrix(1,0,0,1,54.41400146484375,163.6269989013672)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M-0.31700000166893005,3.0789999961853027 C-0.31700000166893005,3.0789999961853027 0.31700000166893005,-3.078000068664551 0.31700000166893005,-3.078000068664551"></path></g><g opacity="1" transform="matrix(1,0,0,1,44.30699920654297,174.25799560546875)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M14.130000114440918,-13.052000045776367 C13.16100025177002,-12.765999794006348 3.009000062942505,3.937000036239624 -14.130000114440918,13.052000045776367"></path></g><g opacity="1" transform="matrix(1,0,0,1,49.63100051879883,167.947998046875)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M0.257999986410141,3.515000104904175 C0.03099999949336052,1.7589999437332153 -0.2809999883174896,-2.1050000190734863 0.28200000524520874,-3.515000104904175"></path></g><g opacity="1" transform="matrix(1,0,0,1,15.121000289916992,116.11699676513672)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(30,162,154)" stroke-opacity="1" stroke-width="1" d=" M10.555000305175781,-48.37099838256836 C6.429999828338623,-40.86600112915039 -10.555999755859375,16.77899932861328 -7.669000148773193,48.37099838256836"></path></g><g opacity="1" transform="matrix(1,0,0,1,23.100000381469727,89.64900207519531)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(30,162,154)" stroke-opacity="1" stroke-width="1" d=" M-5.448999881744385,3.240000009536743 C-1.8830000162124634,2.3310000896453857 3.492000102996826,-0.5559999942779541 5.448999881744385,-3.240999937057495"></path></g><g opacity="1" transform="matrix(1,0,0,1,10.722999572753906,98.01699829101562)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(30,162,154)" stroke-opacity="1" stroke-width="1" d=" M3.8440001010894775,5.242000102996826 C1.2230000495910645,2.88700008392334 -3.8429999351501465,-2.509000062942505 -3.1429998874664307,-5.242000102996826"></path></g><g opacity="1" transform="matrix(1,0,0,1,18.798999786376953,111.50499725341797)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(30,162,154)" stroke-opacity="1" stroke-width="1" d=" M-6.921999931335449,4.7230000495910645 C-3.253999948501587,3.819000005722046 3.552999973297119,-0.14800000190734863 6.921999931335449,-4.723999977111816"></path></g><g opacity="1" transform="matrix(1,0,0,1,15.628999710083008,130.49099731445312)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(30,162,154)" stroke-opacity="1" stroke-width="1" d=" M-6.695000171661377,5.646999835968018 C-3.3320000171661377,3.7200000286102295 4.056000232696533,-1.2380000352859497 6.695000171661377,-5.6479997634887695"></path></g><g opacity="1" transform="matrix(1,0,0,1,13.086000442504883,151.03599548339844)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(30,162,154)" stroke-opacity="1" stroke-width="1" d=" M-5.833000183105469,6.163000106811523 C-3.7739999294281006,4.243000030517578 1.4420000314712524,-0.9110000133514404 5.833000183105469,-6.164000034332275"></path></g><g opacity="1" transform="matrix(1,0,0,1,5.821000099182129,118.51899719238281)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(30,162,154)" stroke-opacity="1" stroke-width="1" d=" M4.821000099182129,5.639999866485596 C1.6059999465942383,3.190999984741211 -4.821000099182129,-2.49399995803833 -4.810999870300293,-5.639999866485596"></path></g><g opacity="1" transform="matrix(1,0,0,1,40.62099838256836,125.8219985961914)"><path fill="rgb(40,190,182)" fill-opacity="1" d=" M-39.74100112915039,39.428001403808594 C-39.611000061035156,35.31399917602539 -39.74100112915039,31.569000244140625 -39.611000061035156,28.809999465942383 C-39.611000061035156,28.809999465942383 -37.178001403808594,28.625999450683594 -37.178001403808594,28.625999450683594 C-37.178001403808594,28.625999450683594 -39.74100112915039,22.62299919128418 -39.74100112915039,22.62299919128418 C-39.74100112915039,22.62299919128418 -34.525001525878906,9.62600040435791 -34.525001525878906,9.62600040435791 C-34.525001525878906,9.62600040435791 -25.96500015258789,13.805000305175781 -25.96500015258789,13.805000305175781 C-25.96500015258789,13.805000305175781 -27.885000228881836,7.298999786376953 -27.885000228881836,7.298999786376953 C-27.885000228881836,7.298999786376953 -20.993000030517578,-1.2680000066757202 -20.993000030517578,-1.2680000066757202 C-20.993000030517578,-1.2680000066757202 -12.848999977111816,0.06199999898672104 -12.848999977111816,0.06199999898672104 C-12.848999977111816,0.06199999898672104 -15.305000305175781,-4.813000202178955 -15.305000305175781,-4.813000202178955 C-15.305000305175781,-4.813000202178955 -8.682999610900879,-12.565999984741211 -8.682999610900879,-12.565999984741211 C-8.682999610900879,-12.565999984741211 -0.9300000071525574,-5.941999912261963 -0.9300000071525574,-5.941999912261963 C-0.9300000071525574,-5.941999912261963 -5.297999858856201,-14.611000061035156 -5.297999858856201,-14.611000061035156 C-5.297999858856201,-14.611000061035156 7.150000095367432,-24.959999084472656 7.150000095367432,-24.959999084472656 C7.150000095367432,-24.959999084472656 14.890999794006348,-22.4060001373291 14.890999794006348,-22.4060001373291 C13.664999961853027,-24.165000915527344 11.293000221252441,-27.93000030517578 11.614999771118164,-28.908000946044922 C12.019000053405762,-30.1299991607666 19.33799934387207,-31.77899932861328 22.45400047302246,-33.0099983215332 C25.570999145507812,-34.24100112915039 33.0260009765625,-36.29999923706055 35.8650016784668,-39.428001403808594 C37.17599868774414,-36.827999114990234 38.994998931884766,-21.530000686645508 39.74100112915039,-14.206999778747559 C39.74100112915039,-14.206999778747559 32.82400131225586,-13.779000282287598 32.82400131225586,-13.779000282287598 C32.82400131225586,-13.779000282287598 37.85900115966797,-8.505000114440918 37.85900115966797,-8.505000114440918 C37.85900115966797,-8.505000114440918 33.290000915527344,5.3470001220703125 33.290000915527344,5.3470001220703125 C33.290000915527344,5.3470001220703125 25.551000595092773,2.7929999828338623 25.551000595092773,2.7929999828338623 C25.551000595092773,2.7929999828338623 28.9689998626709,11.600000381469727 28.9689998626709,11.600000381469727 C28.9689998626709,11.600000381469727 22.23200035095215,26.542999267578125 22.23200035095215,26.542999267578125 C22.23200035095215,26.542999267578125 15.706000328063965,21.68000030517578 15.706000328063965,21.68000030517578 C15.706000328063965,21.68000030517578 17.770999908447266,31.847999572753906 17.770999908447266,31.847999572753906 C17.770999908447266,31.847999572753906 12.392999649047852,39.428001403808594 12.392999649047852,39.428001403808594 C12.392999649047852,39.428001403808594 -39.74100112915039,39.428001403808594 -39.74100112915039,39.428001403808594z"></path></g><g opacity="1" transform="matrix(1,0,0,1,48.23400115966797,128.9720001220703)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(37,217,207)" stroke-opacity="1" stroke-width="1" d=" M25.295000076293945,-35.87300109863281 C22.530000686645508,-28.430999755859375 -0.32899999618530273,7.789000034332275 -25.29400062561035,35.87300109863281"></path></g><g opacity="1" transform="matrix(1,0,0,1,55.608001708984375,113.70899963378906)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(37,217,207)" stroke-opacity="1" stroke-width="1" d=" M0.37400001287460327,7.931000232696533 C2.5239999294281006,1.4129999876022339 0.1940000057220459,-6.584000110626221 -2.5230000019073486,-7.931000232696533"></path></g><g opacity="1" transform="matrix(1,0,0,1,56.55699920654297,132.71299743652344)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(37,217,207)" stroke-opacity="1" stroke-width="1" d=" M-8.00100040435791,0.48100000619888306 C-3.5220000743865967,1.0540000200271606 5.947999954223633,1.468000054359436 8.00100040435791,-1.468000054359436"></path></g><g opacity="1" transform="matrix(1,0,0,1,37.56999969482422,135.9429931640625)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(37,217,207)" stroke-opacity="1" stroke-width="1" d=" M0.7179999947547913,10.57699966430664 C1.7890000343322754,4.5929999351501465 1.7089999914169312,-5.84499979019165 -1.7890000343322754,-10.57699966430664"></path></g><g opacity="1" transform="matrix(1,0,0,1,20.190000534057617,154.41900634765625)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(37,217,207)" stroke-opacity="1" stroke-width="1" d=" M1.0460000038146973,10.831000328063965 C0.08100000023841858,5.995999813079834 -1.0460000038146973,-4.638999938964844 0.996999979019165,-10.831000328063965"></path></g><g opacity="1" transform="matrix(1,0,0,1,41.15999984741211,155.52099609375)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(37,217,207)" stroke-opacity="1" stroke-width="1" d=" M-9.494999885559082,-1.2480000257492065 C-4.427000045776367,-0.17900000512599945 6.465000152587891,1.3079999685287476 9.494999885559082,-1.3070000410079956"></path></g><g opacity="1" transform="matrix(1,0,0,1,87.53099822998047,150.14500427246094)"><path fill="rgb(40,190,182)" fill-opacity="1" d=" M5.921999931335449,-2.6019999980926514 C-0.3140000104904175,-6.146999835968018 -6.289999961853027,-4.296000003814697 -14.503000259399414,-4.744999885559082 C-14.503000259399414,-4.744999885559082 14.503000259399414,6.145999908447266 14.503000259399414,6.145999908447266 C13.720999717712402,4.4120001792907715 10.91100025177002,0.23499999940395355 5.921999931335449,-2.6019999980926514z"></path></g><g opacity="1" transform="matrix(1,0,0,1,67.84200286865234,139.81199645996094)"><path fill="rgb(23,121,116)" fill-opacity="1" d=" M38.37699890136719,-24.159000396728516 C7.919000148773193,-25.437999725341797 -19.165000915527344,-0.7429999709129333 -38.37699890136719,25.43899917602539 C-35.54800033569336,24.820999145507812 -30.22100067138672,24.61199951171875 -27.341999053955078,25.341999053955078 C-3.2190001010894775,-4.698999881744385 22.61400032043457,-15.430999755859375 38.37699890136719,-24.159000396728516z"></path></g><g opacity="1" transform="matrix(1,0,0,1,21.59000015258789,155.6060028076172)"><path fill="rgb(247,149,47)" fill-opacity="1" d=" M-0.968999981880188,-8.121000289916992 C2.2699999809265137,-9.644000053405762 4.604000091552734,-0.6600000262260437 5.804999828338623,9.645000457763672 C3.4140000343322754,9.581999778747559 -0.5049999952316284,9.645000457763672 -4.864999771118164,9.645000457763672 C-5.804999828338623,1.312000036239624 -4.808000087738037,-6.316999912261963 -0.968999981880188,-8.121000289916992z"></path></g><g opacity="1" transform="matrix(1,0,0,1,22.3799991607666,153.7270050048828)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M-1.7619999647140503,2.8499999046325684 C-1.7619999647140503,2.8499999046325684 1.7619999647140503,-2.8499999046325684 1.7619999647140503,-2.8499999046325684"></path></g><g opacity="1" transform="matrix(1,0,0,1,20.783000946044922,157.1219940185547)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M-0.2529999911785126,-8.128000259399414 C0.10199999809265137,-7.638000011444092 -0.453000009059906,-0.9729999899864197 0.45399999618530273,8.128000259399414"></path></g><g opacity="1" transform="matrix(1,0,0,1,19.000999450683594,155.27200317382812)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M1.6180000305175781,1.3029999732971191 C0.7009999752044678,0.7699999809265137 -1.2309999465942383,-0.49900001287460327 -1.6180000305175781,-1.3029999732971191"></path></g><g opacity="1" transform="matrix(1,0,0,1,23.395999908447266,160.41299438476562)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M-2.311000108718872,3.0220000743865967 C-0.9570000171661377,1.6670000553131104 1.8630000352859497,-1.4420000314712524 2.311000108718872,-3.0220000743865967"></path></g><g opacity="1" transform="matrix(1,0,0,1,18.958999633789062,162.0500030517578)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M2.125999927520752,1.3849999904632568 C1.3049999475479126,1.0789999961853027 -0.6940000057220459,0.0989999994635582 -2.125999927520752,-1.3849999904632568"></path></g><g opacity="1" transform="matrix(1,0,0,1,38.72600173950195,151.1510009765625)"><path fill="rgb(247,149,47)" fill-opacity="1" d=" M2.624000072479248,-10.137999534606934 C-3.7100000381469727,-14.098999977111816 -11.46399974822998,24.114999771118164 -10.482000350952148,34.74800109863281 C0.8009999990463257,31.12700080871582 11.46399974822998,-4.609000205993652 2.624000072479248,-10.137999534606934z"></path></g><g opacity="1" transform="matrix(1,0,0,1,38.63800048828125,147.53399658203125)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M1.534999966621399,3.309000015258789 C1.534999966621399,3.309000015258789 -1.534999966621399,-3.309000015258789 -1.534999966621399,-3.309000015258789"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.8120002746582,164.3939971923828)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M6.440999984741211,-21.736000061035156 C5.632999897003174,-20.86199951171875 5.421000003814697,2.171999931335449 -6.440999984741211,21.735000610351562"></path></g><g opacity="1" transform="matrix(1,0,0,1,42.090999603271484,149.64500427246094)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M-1.9179999828338623,1.1990000009536743 C-0.8569999933242798,0.7409999966621399 1.3960000276565552,-0.3799999952316284 1.9179999828338623,-1.1990000009536743"></path></g><g opacity="1" transform="matrix(1,0,0,1,36.67300033569336,154.6320037841797)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M2.1070001125335693,3.566999912261963 C0.8190000057220459,1.9240000247955322 -1.8279999494552612,-1.7999999523162842 -2.1070001125335693,-3.566999912261963"></path></g><g opacity="1" transform="matrix(1,0,0,1,41.257999420166016,156.97799682617188)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M-2.4790000915527344,1.2209999561309814 C-1.5520000457763672,0.9959999918937683 0.7379999756813049,0.19599999487400055 2.4790000915527344,-1.2209999561309814"></path></g><g opacity="1" transform="matrix(1,0,0,1,35.5260009765625,161.13600158691406)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M2.0959999561309814,3.2869999408721924 C0.7360000014305115,2.0299999713897705 -2.007999897003174,-1.0440000295639038 -2.0959999561309814,-3.2869999408721924"></path></g><g opacity="1" transform="matrix(1,0,0,1,39.95399856567383,163.06700134277344)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M-2.3440001010894775,1.0750000476837158 C-1.0509999990463257,0.6499999761581421 1.6979999542236328,-0.375 2.3440001010894775,-1.0750000476837158"></path></g><g opacity="1" transform="matrix(1,0,0,1,33.96900177001953,167.93600463867188)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M-1.6749999523162842,-3.303999900817871 C-1.0399999618530273,-1.4559999704360962 0.5180000066757202,2.450000047683716 1.6749999523162842,3.302999973297119"></path></g><g opacity="1" transform="matrix(1,0,0,1,46.72600173950195,159.8300018310547)"><path fill="rgb(247,149,47)" fill-opacity="1" d=" M12.494999885559082,0.21799999475479126 C9.595999717712402,-5.420000076293945 -12.644000053405762,19.077999114990234 -16.54199981689453,27.2549991607666 C-6.74399995803833,29.51300048828125 16.541000366210938,8.086000442504883 12.494999885559082,0.21799999475479126z"></path></g><g opacity="1" transform="matrix(1,0,0,1,54.41400146484375,163.6269989013672)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M-0.31700000166893005,3.0789999961853027 C-0.31700000166893005,3.0789999961853027 0.31700000166893005,-3.078000068664551 0.31700000166893005,-3.078000068664551"></path></g><g opacity="1" transform="matrix(1,0,0,1,44.30699920654297,174.25799560546875)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M14.130000114440918,-13.052000045776367 C13.16100025177002,-12.765999794006348 3.009000062942505,3.937000036239624 -14.130000114440918,13.052000045776367"></path></g><g opacity="1" transform="matrix(1,0,0,1,49.63100051879883,167.947998046875)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,193,83)" stroke-opacity="1" stroke-width="1" d=" M0.257999986410141,3.515000104904175 C0.03099999949336052,1.7589999437332153 -0.2809999883174896,-2.1050000190734863 0.28200000524520874,-3.515000104904175"></path></g></g><g transform="matrix(1,0,0,1,223.25,51.850006103515625)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,45.70000076293945,106.05000305175781)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M9.850000381469727,6.599999904632568 C9.850000381469727,6.599999904632568 -9.649999618530273,6.599999904632568 -9.649999618530273,6.599999904632568 C-9.649999618530273,6.599999904632568 -9.850000381469727,-6.599999904632568 -9.850000381469727,-6.599999904632568 C-9.850000381469727,-6.599999904632568 9.449999809265137,-6.400000095367432 9.449999809265137,-6.400000095367432 C9.449999809265137,-6.400000095367432 9.850000381469727,6.599999904632568 9.850000381469727,6.599999904632568z"></path></g><g opacity="1" transform="matrix(1,0,0,1,45.75,105.30000305175781)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M9.800000190734863,5.75 C9.800000190734863,5.75 -9.699999809265137,5.75 -9.699999809265137,5.75 C-9.699999809265137,5.75 -9.800000190734863,-5.75 -9.800000190734863,-5.75 C-9.800000190734863,-5.75 9.5,-5.551000118255615 9.5,-5.551000118255615 C9.5,-5.551000118255615 9.800000190734863,5.75 9.800000190734863,5.75z"></path></g><g opacity="1" transform="matrix(1,0,0,1,45.54999923706055,105.0999984741211)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M6.800000190734863,3.8499999046325684 C6.800000190734863,3.8499999046325684 -6.699999809265137,3.8499999046325684 -6.699999809265137,3.8499999046325684 C-6.699999809265137,3.8499999046325684 -6.800000190734863,-3.8499999046325684 -6.800000190734863,-3.8499999046325684 C-6.800000190734863,-3.8499999046325684 6.699999809265137,-3.6500000953674316 6.699999809265137,-3.6500000953674316 C6.699999809265137,-3.6500000953674316 6.800000190734863,3.8499999046325684 6.800000190734863,3.8499999046325684z"></path></g><g opacity="1" transform="matrix(1,0,0,1,67.8499984741211,100.3499984741211)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M8.199999809265137,7.199999809265137 C8.199999809265137,7.199999809265137 -9.399999618530273,5 -9.399999618530273,5 C-9.399999618530273,5 -8,-7.199999809265137 -8,-7.199999809265137 C-8,-7.199999809265137 9.399999618530273,-4.699999809265137 9.399999618530273,-4.699999809265137 C9.399999618530273,-4.699999809265137 8.199999809265137,7.199999809265137 8.199999809265137,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,67.94999694824219,99.75)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M8.300000190734863,6.301000118255615 C8.300000190734863,6.301000118255615 -9.300000190734863,4.10099983215332 -9.300000190734863,4.10099983215332 C-9.300000190734863,4.10099983215332 -8.100000381469727,-6.301000118255615 -8.100000381469727,-6.301000118255615 C-8.100000381469727,-6.301000118255615 9.300000190734863,-3.9000000953674316 9.300000190734863,-3.9000000953674316 C9.300000190734863,-3.9000000953674316 8.300000190734863,6.301000118255615 8.300000190734863,6.301000118255615z"></path></g><g opacity="1" transform="matrix(1,0,0,1,68,99.5)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M5.550000190734863,4.150000095367432 C5.550000190734863,4.150000095367432 -6.150000095367432,2.6500000953674316 -6.150000095367432,2.6500000953674316 C-6.150000095367432,2.6500000953674316 -5.349999904632568,-4.150000095367432 -5.349999904632568,-4.150000095367432 C-5.349999904632568,-4.150000095367432 6.150000095367432,-2.549999952316284 6.150000095367432,-2.549999952316284 C6.150000095367432,-2.549999952316284 5.550000190734863,4.150000095367432 5.550000190734863,4.150000095367432z"></path></g><g opacity="1" transform="matrix(1,0,0,1,11.449999809265137,105.6500015258789)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M-11.199999809265137,7.199999809265137 C-11.199999809265137,7.199999809265137 11.199999809265137,7.199999809265137 11.199999809265137,7.199999809265137 C11.199999809265137,7.199999809265137 10.899999618530273,-6.900000095367432 10.899999618530273,-6.900000095367432 C10.899999618530273,-6.900000095367432 -11.199999809265137,-7.199999809265137 -11.199999809265137,-7.199999809265137 C-11.199999809265137,-7.199999809265137 -11.199999809265137,7.199999809265137 -11.199999809265137,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,11.449999809265137,104.25)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M-11.199999809265137,7.199999809265137 C-11.199999809265137,7.199999809265137 11.199999809265137,7.199999809265137 11.199999809265137,7.199999809265137 C11.199999809265137,7.199999809265137 10.899999618530273,-6.900000095367432 10.899999618530273,-6.900000095367432 C10.899999618530273,-6.900000095367432 -11.199999809265137,-7.199999809265137 -11.199999809265137,-7.199999809265137 C-11.199999809265137,-7.199999809265137 -11.199999809265137,7.199999809265137 -11.199999809265137,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,11.5,104.30000305175781)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M9.050000190734863,4.949999809265137 C9.050000190734863,4.949999809265137 -9.050000190734863,4.949999809265137 -9.050000190734863,4.949999809265137 C-9.050000190734863,4.949999809265137 -9.050000190734863,-4.949999809265137 -9.050000190734863,-4.949999809265137 C-9.050000190734863,-4.949999809265137 8.949999809265137,-4.749000072479248 8.949999809265137,-4.749000072479248 C8.949999809265137,-4.749000072479248 9.050000190734863,4.949999809265137 9.050000190734863,4.949999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,11.449999809265137,103.4000015258789)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M-11.199999809265137,7.150000095367432 C-11.199999809265137,7.150000095367432 11.199999809265137,7.150000095367432 11.199999809265137,7.150000095367432 C11.199999809265137,7.150000095367432 10.899999618530273,-6.849999904632568 10.899999618530273,-6.849999904632568 C10.899999618530273,-6.849999904632568 -11.199999809265137,-7.151000022888184 -11.199999809265137,-7.151000022888184 C-11.199999809265137,-7.151000022888184 -11.199999809265137,7.150000095367432 -11.199999809265137,7.150000095367432z"></path></g><g opacity="1" transform="matrix(1,0,0,1,11.399999618530273,102.05000305175781)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M-11.149999618530273,7.099999904632568 C-11.149999618530273,7.099999904632568 11.149999618530273,7.198999881744385 11.149999618530273,7.198999881744385 C11.149999618530273,7.198999881744385 10.949999809265137,-6.798999786376953 10.949999809265137,-6.798999786376953 C10.949999809265137,-6.798999786376953 -11.149999618530273,-7.199999809265137 -11.149999618530273,-7.199999809265137 C-11.149999618530273,-7.199999809265137 -11.149999618530273,7.099999904632568 -11.149999618530273,7.099999904632568z"></path></g><g opacity="1" transform="matrix(1,0,0,1,11.399999618530273,102)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M9.050000190734863,4.949999809265137 C9.050000190734863,4.949999809265137 -9.050000190734863,4.849999904632568 -9.050000190734863,4.849999904632568 C-9.050000190734863,4.849999904632568 -9.050000190734863,-4.949999809265137 -9.050000190734863,-4.949999809265137 C-9.050000190734863,-4.949999809265137 8.850000381469727,-4.651000022888184 8.850000381469727,-4.651000022888184 C8.850000381469727,-4.651000022888184 9.050000190734863,4.949999809265137 9.050000190734863,4.949999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,11.399999618530273,101.1500015258789)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M-11.149999618530273,7.098999977111816 C-11.149999618530273,7.098999977111816 11.149999618530273,7.199999809265137 11.149999618530273,7.199999809265137 C11.149999618530273,7.199999809265137 10.949999809265137,-6.800000190734863 10.949999809265137,-6.800000190734863 C10.949999809265137,-6.800000190734863 -11.149999618530273,-7.199999809265137 -11.149999618530273,-7.199999809265137 C-11.149999618530273,-7.199999809265137 -11.149999618530273,7.098999977111816 -11.149999618530273,7.098999977111816z"></path></g><g opacity="1" transform="matrix(1,0,0,1,11.399999618530273,99.75)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M-11.149999618530273,7.099999904632568 C-11.149999618530273,7.099999904632568 11.149999618530273,7.199999809265137 11.149999618530273,7.199999809265137 C11.149999618530273,7.199999809265137 10.949999809265137,-6.801000118255615 10.949999809265137,-6.801000118255615 C10.949999809265137,-6.801000118255615 -11.149999618530273,-7.199999809265137 -11.149999618530273,-7.199999809265137 C-11.149999618530273,-7.199999809265137 -11.149999618530273,7.099999904632568 -11.149999618530273,7.099999904632568z"></path></g><g opacity="1" transform="matrix(1,0,0,1,11.449999809265137,99.75)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M9,5 C9,5 -9,4.801000118255615 -9,4.801000118255615 C-9,4.801000118255615 -9,-5 -9,-5 C-9,-5 8.899999618530273,-4.698999881744385 8.899999618530273,-4.698999881744385 C8.899999618530273,-4.698999881744385 9,5 9,5z"></path></g><g opacity="1" transform="matrix(1,0,0,1,11.399999618530273,98.94999694824219)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M-11.149999618530273,7 C-11.149999618530273,7 11.149999618530273,7.199999809265137 11.149999618530273,7.199999809265137 C11.149999618530273,7.199999809265137 10.850000381469727,-6.800000190734863 10.850000381469727,-6.800000190734863 C10.850000381469727,-6.800000190734863 -11.149999618530273,-7.199999809265137 -11.149999618530273,-7.199999809265137 C-11.149999618530273,-7.199999809265137 -11.149999618530273,7 -11.149999618530273,7z"></path></g><g opacity="1" transform="matrix(1,0,0,1,11.399999618530273,97.5999984741211)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M-11.149999618530273,7.051000118255615 C-11.149999618530273,7.051000118255615 11.149999618530273,7.150000095367432 11.149999618530273,7.150000095367432 C11.149999618530273,7.150000095367432 10.850000381469727,-6.650000095367432 10.850000381469727,-6.650000095367432 C10.850000381469727,-6.650000095367432 -11.149999618530273,-7.150000095367432 -11.149999618530273,-7.150000095367432 C-11.149999618530273,-7.150000095367432 -11.149999618530273,7.051000118255615 -11.149999618530273,7.051000118255615z"></path></g><g opacity="1" transform="matrix(1,0,0,1,11.449999809265137,97.55000305175781)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M9,5 C9,5 -9,4.800000190734863 -9,4.800000190734863 C-9,4.800000190734863 -9,-5 -9,-5 C-9,-5 8.899999618530273,-4.60099983215332 8.899999618530273,-4.60099983215332 C8.899999618530273,-4.60099983215332 9,5 9,5z"></path></g><g opacity="1" transform="matrix(1,0,0,1,11.399999618530273,96.75)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M-11.149999618530273,6.999000072479248 C-11.149999618530273,6.999000072479248 11.149999618530273,7.199999809265137 11.149999618530273,7.199999809265137 C11.149999618530273,7.199999809265137 10.850000381469727,-6.699999809265137 10.850000381469727,-6.699999809265137 C10.850000381469727,-6.699999809265137 -11.149999618530273,-7.199999809265137 -11.149999618530273,-7.199999809265137 C-11.149999618530273,-7.199999809265137 -11.149999618530273,6.999000072479248 -11.149999618530273,6.999000072479248z"></path></g><g opacity="1" transform="matrix(1,0,0,1,11.399999618530273,96)"><path fill="rgb(247,149,47)" fill-opacity="1" d=" M-11.149999618530273,6.050000190734863 C-11.149999618530273,6.050000190734863 11.149999618530273,6.25 11.149999618530273,6.25 C11.149999618530273,6.25 10.850000381469727,-5.849999904632568 10.850000381469727,-5.849999904632568 C10.850000381469727,-5.849999904632568 -11.149999618530273,-6.25 -11.149999618530273,-6.25 C-11.149999618530273,-6.25 -11.149999618530273,6.050000190734863 -11.149999618530273,6.050000190734863z"></path></g><g opacity="1" transform="matrix(1,0,0,1,11.449999809265137,95.6500015258789)"><path fill="rgb(255,193,83)" fill-opacity="1" d=" M9,4.400000095367432 C9,4.400000095367432 -9,4.201000213623047 -9,4.201000213623047 C-9,4.201000213623047 -9,-4.400000095367432 -9,-4.400000095367432 C-9,-4.400000095367432 8.800000190734863,-4.099999904632568 8.800000190734863,-4.099999904632568 C8.800000190734863,-4.099999904632568 9,4.400000095367432 9,4.400000095367432z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.79999923706055,104.05000305175781)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M10.949999809265137,7 C10.949999809265137,7 -10.850000381469727,7 -10.850000381469727,7 C-10.850000381469727,7 -10.949999809265137,-7 -10.949999809265137,-7 C-10.949999809265137,-7 10.649999618530273,-6.60099983215332 10.649999618530273,-6.60099983215332 C10.649999618530273,-6.60099983215332 10.949999809265137,7 10.949999809265137,7z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.79999923706055,102.69999694824219)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M10.949999809265137,7.050000190734863 C10.949999809265137,7.050000190734863 -10.850000381469727,6.949999809265137 -10.850000381469727,6.949999809265137 C-10.850000381469727,6.949999809265137 -10.949999809265137,-7.050000190734863 -10.949999809265137,-7.050000190734863 C-10.949999809265137,-7.050000190734863 10.649999618530273,-6.64900016784668 10.649999618530273,-6.64900016784668 C10.649999618530273,-6.64900016784668 10.949999809265137,7.050000190734863 10.949999809265137,7.050000190734863z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.75,102.69999694824219)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M8.899999618530273,4.849999904632568 C8.899999618530273,4.849999904632568 -8.800000190734863,4.749000072479248 -8.800000190734863,4.749000072479248 C-8.800000190734863,4.749000072479248 -8.899999618530273,-4.849999904632568 -8.899999618530273,-4.849999904632568 C-8.899999618530273,-4.849999904632568 8.600000381469727,-4.550000190734863 8.600000381469727,-4.550000190734863 C8.600000381469727,-4.550000190734863 8.899999618530273,4.849999904632568 8.899999618530273,4.849999904632568z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.79999923706055,101.9000015258789)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M10.949999809265137,7.050000190734863 C10.949999809265137,7.050000190734863 -10.850000381469727,6.949999809265137 -10.850000381469727,6.949999809265137 C-10.850000381469727,6.949999809265137 -10.949999809265137,-7.050000190734863 -10.949999809265137,-7.050000190734863 C-10.949999809265137,-7.050000190734863 10.550000190734863,-6.650000095367432 10.550000190734863,-6.650000095367432 C10.550000190734863,-6.650000095367432 10.949999809265137,7.050000190734863 10.949999809265137,7.050000190734863z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.79999923706055,100.44999694824219)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M10.949999809265137,7.099999904632568 C10.949999809265137,7.099999904632568 -10.850000381469727,6.900000095367432 -10.850000381469727,6.900000095367432 C-10.850000381469727,6.900000095367432 -10.949999809265137,-7.099999904632568 -10.949999809265137,-7.099999904632568 C-10.949999809265137,-7.099999904632568 10.550000190734863,-6.599999904632568 10.550000190734863,-6.599999904632568 C10.550000190734863,-6.599999904632568 10.949999809265137,7.099999904632568 10.949999809265137,7.099999904632568z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.79999923706055,100.55000305175781)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M8.850000381469727,4.900000095367432 C8.850000381469727,4.900000095367432 -8.75,4.699999809265137 -8.75,4.699999809265137 C-8.75,4.699999809265137 -8.850000381469727,-4.900000095367432 -8.850000381469727,-4.900000095367432 C-8.850000381469727,-4.900000095367432 8.649999618530273,-4.599999904632568 8.649999618530273,-4.599999904632568 C8.649999618530273,-4.599999904632568 8.850000381469727,4.900000095367432 8.850000381469727,4.900000095367432z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.70000076293945,99.6500015258789)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M10.949999809265137,7.099999904632568 C10.949999809265137,7.099999904632568 -10.850000381469727,6.900000095367432 -10.850000381469727,6.900000095367432 C-10.850000381469727,6.900000095367432 -10.949999809265137,-7.099999904632568 -10.949999809265137,-7.099999904632568 C-10.949999809265137,-7.099999904632568 10.550000190734863,-6.599999904632568 10.550000190734863,-6.599999904632568 C10.550000190734863,-6.599999904632568 10.949999809265137,7.099999904632568 10.949999809265137,7.099999904632568z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.75,98.4000015258789)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M10.899999618530273,7.050000190734863 C10.899999618530273,7.050000190734863 -10.800000190734863,6.849999904632568 -10.800000190734863,6.849999904632568 C-10.800000190734863,6.849999904632568 -10.899999618530273,-7.050000190734863 -10.899999618530273,-7.050000190734863 C-10.899999618530273,-7.050000190734863 10.600000381469727,-6.550000190734863 10.600000381469727,-6.550000190734863 C10.600000381469727,-6.550000190734863 10.899999618530273,7.050000190734863 10.899999618530273,7.050000190734863z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.70000076293945,98.3499984741211)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M8.850000381469727,4.900000095367432 C8.850000381469727,4.900000095367432 -8.75,4.701000213623047 -8.75,4.701000213623047 C-8.75,4.701000213623047 -8.850000381469727,-4.900000095367432 -8.850000381469727,-4.900000095367432 C-8.850000381469727,-4.900000095367432 8.550000190734863,-4.499000072479248 8.550000190734863,-4.499000072479248 C8.550000190734863,-4.499000072479248 8.850000381469727,4.900000095367432 8.850000381469727,4.900000095367432z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.75,97.5)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M10.899999618530273,7.051000118255615 C10.899999618530273,7.051000118255615 -10.800000190734863,6.85099983215332 -10.800000190734863,6.85099983215332 C-10.800000190734863,6.85099983215332 -10.899999618530273,-7.051000118255615 -10.899999618530273,-7.051000118255615 C-10.899999618530273,-7.051000118255615 10.600000381469727,-6.551000118255615 10.600000381469727,-6.551000118255615 C10.600000381469727,-6.551000118255615 10.899999618530273,7.051000118255615 10.899999618530273,7.051000118255615z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.650001525878906,96.19999694824219)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M10.899999618530273,7.050000190734863 C10.899999618530273,7.050000190734863 -10.800000190734863,6.85099983215332 -10.800000190734863,6.85099983215332 C-10.800000190734863,6.85099983215332 -10.899999618530273,-7.050000190734863 -10.899999618530273,-7.050000190734863 C-10.899999618530273,-7.050000190734863 10.5,-6.550000190734863 10.5,-6.550000190734863 C10.5,-6.550000190734863 10.899999618530273,7.050000190734863 10.899999618530273,7.050000190734863z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.75,96.30000305175781)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M8.800000190734863,4.849999904632568 C8.800000190734863,4.849999904632568 -8.699999809265137,4.650000095367432 -8.699999809265137,4.650000095367432 C-8.699999809265137,4.650000095367432 -8.800000190734863,-4.849999904632568 -8.800000190734863,-4.849999904632568 C-8.800000190734863,-4.849999904632568 8.600000381469727,-4.449999809265137 8.600000381469727,-4.449999809265137 C8.600000381469727,-4.449999809265137 8.800000190734863,4.849999904632568 8.800000190734863,4.849999904632568z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.650001525878906,95.4000015258789)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M10.899999618530273,7.050000190734863 C10.899999618530273,7.050000190734863 -10.800000190734863,6.75 -10.800000190734863,6.75 C-10.800000190734863,6.75 -10.899999618530273,-7.050000190734863 -10.899999618530273,-7.050000190734863 C-10.899999618530273,-7.050000190734863 10.5,-6.550000190734863 10.5,-6.550000190734863 C10.5,-6.550000190734863 10.899999618530273,7.050000190734863 10.899999618530273,7.050000190734863z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.70000076293945,94.0999984741211)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M10.850000381469727,7.050000190734863 C10.850000381469727,7.050000190734863 -10.75,6.75 -10.75,6.75 C-10.75,6.75 -10.850000381469727,-7.050000190734863 -10.850000381469727,-7.050000190734863 C-10.850000381469727,-7.050000190734863 10.550000190734863,-6.449999809265137 10.550000190734863,-6.449999809265137 C10.550000190734863,-6.449999809265137 10.850000381469727,7.050000190734863 10.850000381469727,7.050000190734863z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.650001525878906,94.05000305175781)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M8.800000190734863,4.900000095367432 C8.800000190734863,4.900000095367432 -8.699999809265137,4.599999904632568 -8.699999809265137,4.599999904632568 C-8.699999809265137,4.599999904632568 -8.800000190734863,-4.900000095367432 -8.800000190734863,-4.900000095367432 C-8.800000190734863,-4.900000095367432 8.600000381469727,-4.400000095367432 8.600000381469727,-4.400000095367432 C8.600000381469727,-4.400000095367432 8.800000190734863,4.900000095367432 8.800000190734863,4.900000095367432z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.650001525878906,93.19999694824219)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M10.899999618530273,7.050000190734863 C10.899999618530273,7.050000190734863 -10.699999809265137,6.75 -10.699999809265137,6.75 C-10.699999809265137,6.75 -10.899999618530273,-7.050000190734863 -10.899999618530273,-7.050000190734863 C-10.899999618530273,-7.050000190734863 10.5,-6.449999809265137 10.5,-6.449999809265137 C10.5,-6.449999809265137 10.899999618530273,7.050000190734863 10.899999618530273,7.050000190734863z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.599998474121094,91.8499984741211)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M10.850000381469727,7.099999904632568 C10.850000381469727,7.099999904632568 -10.75,6.701000213623047 -10.75,6.701000213623047 C-10.75,6.701000213623047 -10.850000381469727,-7.099999904632568 -10.850000381469727,-7.099999904632568 C-10.850000381469727,-7.099999904632568 10.550000190734863,-6.5 10.550000190734863,-6.5 C10.550000190734863,-6.5 10.850000381469727,7.099999904632568 10.850000381469727,7.099999904632568z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.650001525878906,91.8499984741211)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M8.800000190734863,4.900000095367432 C8.800000190734863,4.900000095367432 -8.699999809265137,4.599999904632568 -8.699999809265137,4.599999904632568 C-8.699999809265137,4.599999904632568 -8.800000190734863,-4.900000095367432 -8.800000190734863,-4.900000095367432 C-8.800000190734863,-4.900000095367432 8.5,-4.400000095367432 8.5,-4.400000095367432 C8.5,-4.400000095367432 8.800000190734863,4.900000095367432 8.800000190734863,4.900000095367432z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.599998474121094,91.05000305175781)"><path fill="rgb(25,141,135)" fill-opacity="1" d=" M10.850000381469727,7.099999904632568 C10.850000381469727,7.099999904632568 -10.75,6.699999809265137 -10.75,6.699999809265137 C-10.75,6.699999809265137 -10.850000381469727,-7.099999904632568 -10.850000381469727,-7.099999904632568 C-10.850000381469727,-7.099999904632568 10.449999809265137,-6.400000095367432 10.449999809265137,-6.400000095367432 C10.449999809265137,-6.400000095367432 10.850000381469727,7.099999904632568 10.850000381469727,7.099999904632568z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.5,90.30000305175781)"><path fill="rgb(40,190,182)" fill-opacity="1" d=" M10.850000381469727,6.25 C10.850000381469727,6.25 -10.75,5.948999881744385 -10.75,5.948999881744385 C-10.75,5.948999881744385 -10.850000381469727,-6.25 -10.850000381469727,-6.25 C-10.850000381469727,-6.25 10.449999809265137,-5.650000095367432 10.449999809265137,-5.650000095367432 C10.449999809265137,-5.650000095367432 10.850000381469727,6.25 10.850000381469727,6.25z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.54999923706055,90.6500015258789)"><path fill="rgb(25,141,135)" fill-opacity="1" d=" M8.800000190734863,4.901000022888184 C8.800000190734863,4.901000022888184 -8.699999809265137,4.500999927520752 -8.699999809265137,4.500999927520752 C-8.699999809265137,4.500999927520752 -8.800000190734863,-4.900000095367432 -8.800000190734863,-4.900000095367432 C-8.800000190734863,-4.900000095367432 8.5,-4.400000095367432 8.5,-4.400000095367432 C8.5,-4.400000095367432 8.800000190734863,4.901000022888184 8.800000190734863,4.901000022888184z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.149999618530273,107.75)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M11.199999809265137,7.199999809265137 C11.199999809265137,7.199999809265137 -11.199999809265137,7.199999809265137 -11.199999809265137,7.199999809265137 C-11.199999809265137,7.199999809265137 -11.199999809265137,-7.198999881744385 -11.199999809265137,-7.198999881744385 C-11.199999809265137,-7.198999881744385 10.899999618530273,-6.900000095367432 10.899999618530273,-6.900000095367432 C10.899999618530273,-6.900000095367432 11.199999809265137,7.199999809265137 11.199999809265137,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.149999618530273,106.3499984741211)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M11.199999809265137,7.199999809265137 C11.199999809265137,7.199999809265137 -11.199999809265137,7.199999809265137 -11.199999809265137,7.199999809265137 C-11.199999809265137,7.199999809265137 -11.199999809265137,-7.199999809265137 -11.199999809265137,-7.199999809265137 C-11.199999809265137,-7.199999809265137 10.899999618530273,-6.901000022888184 10.899999618530273,-6.901000022888184 C10.899999618530273,-6.901000022888184 11.199999809265137,7.199999809265137 11.199999809265137,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.200000762939453,106.4000015258789)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M9.050000190734863,4.949999809265137 C9.050000190734863,4.949999809265137 -9.050000190734863,4.949999809265137 -9.050000190734863,4.949999809265137 C-9.050000190734863,4.949999809265137 -9.050000190734863,-4.949999809265137 -9.050000190734863,-4.949999809265137 C-9.050000190734863,-4.949999809265137 8.949999809265137,-4.75 8.949999809265137,-4.75 C8.949999809265137,-4.75 9.050000190734863,4.949999809265137 9.050000190734863,4.949999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.149999618530273,105.5)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M11.199999809265137,7.150000095367432 C11.199999809265137,7.150000095367432 -11.199999809265137,7.150000095367432 -11.199999809265137,7.150000095367432 C-11.199999809265137,7.150000095367432 -11.199999809265137,-7.150000095367432 -11.199999809265137,-7.150000095367432 C-11.199999809265137,-7.150000095367432 10.899999618530273,-6.75 10.899999618530273,-6.75 C10.899999618530273,-6.75 11.199999809265137,7.150000095367432 11.199999809265137,7.150000095367432z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.200000762939453,104.1500015258789)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M11.149999618530273,7.199999809265137 C11.149999618530273,7.199999809265137 -11.149999618530273,7.098999977111816 -11.149999618530273,7.098999977111816 C-11.149999618530273,7.098999977111816 -11.149999618530273,-7.199999809265137 -11.149999618530273,-7.199999809265137 C-11.149999618530273,-7.199999809265137 10.949999809265137,-6.901000022888184 10.949999809265137,-6.901000022888184 C10.949999809265137,-6.901000022888184 11.149999618530273,7.199999809265137 11.149999618530273,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.200000762939453,104.1500015258789)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M9.050000190734863,5 C9.050000190734863,5 -9.050000190734863,4.900000095367432 -9.050000190734863,4.900000095367432 C-9.050000190734863,4.900000095367432 -9.050000190734863,-5 -9.050000190734863,-5 C-9.050000190734863,-5 8.850000381469727,-4.699999809265137 8.850000381469727,-4.699999809265137 C8.850000381469727,-4.699999809265137 9.050000190734863,5 9.050000190734863,5z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.200000762939453,103.25)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M11.149999618530273,7.199999809265137 C11.149999618530273,7.199999809265137 -11.149999618530273,7.099999904632568 -11.149999618530273,7.099999904632568 C-11.149999618530273,7.099999904632568 -11.149999618530273,-7.199999809265137 -11.149999618530273,-7.199999809265137 C-11.149999618530273,-7.199999809265137 10.949999809265137,-6.801000118255615 10.949999809265137,-6.801000118255615 C10.949999809265137,-6.801000118255615 11.149999618530273,7.199999809265137 11.149999618530273,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.200000762939453,101.94999694824219)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M11.149999618530273,7.199999809265137 C11.149999618530273,7.199999809265137 -11.149999618530273,7.099999904632568 -11.149999618530273,7.099999904632568 C-11.149999618530273,7.099999904632568 -11.149999618530273,-7.199999809265137 -11.149999618530273,-7.199999809265137 C-11.149999618530273,-7.199999809265137 10.949999809265137,-6.800000190734863 10.949999809265137,-6.800000190734863 C10.949999809265137,-6.800000190734863 11.149999618530273,7.199999809265137 11.149999618530273,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.200000762939453,101.9000015258789)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M9.050000190734863,4.949999809265137 C9.050000190734863,4.949999809265137 -9.050000190734863,4.848999977111816 -9.050000190734863,4.848999977111816 C-9.050000190734863,4.848999977111816 -9.050000190734863,-4.949999809265137 -9.050000190734863,-4.949999809265137 C-9.050000190734863,-4.949999809265137 8.850000381469727,-4.651000022888184 8.850000381469727,-4.651000022888184 C8.850000381469727,-4.651000022888184 9.050000190734863,4.949999809265137 9.050000190734863,4.949999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.100000381469727,101.05000305175781)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M11.149999618530273,7.199999809265137 C11.149999618530273,7.199999809265137 -11.149999618530273,7.099999904632568 -11.149999618530273,7.099999904632568 C-11.149999618530273,7.099999904632568 -11.149999618530273,-7.199999809265137 -11.149999618530273,-7.199999809265137 C-11.149999618530273,-7.199999809265137 10.850000381469727,-6.801000118255615 10.850000381469727,-6.801000118255615 C10.850000381469727,-6.801000118255615 11.149999618530273,7.199999809265137 11.149999618530273,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.100000381469727,99.6500015258789)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M11.149999618530273,7.199999809265137 C11.149999618530273,7.199999809265137 -11.149999618530273,7 -11.149999618530273,7 C-11.149999618530273,7 -11.149999618530273,-7.199999809265137 -11.149999618530273,-7.199999809265137 C-11.149999618530273,-7.199999809265137 10.850000381469727,-6.699999809265137 10.850000381469727,-6.699999809265137 C10.850000381469727,-6.699999809265137 11.149999618530273,7.199999809265137 11.149999618530273,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.149999618530273,99.6500015258789)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M9,5 C9,5 -9,4.800000190734863 -9,4.800000190734863 C-9,4.800000190734863 -9,-5 -9,-5 C-9,-5 8.899999618530273,-4.599999904632568 8.899999618530273,-4.599999904632568 C8.899999618530273,-4.599999904632568 9,5 9,5z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.100000381469727,98.8499984741211)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M11.149999618530273,7.199999809265137 C11.149999618530273,7.199999809265137 -11.149999618530273,7 -11.149999618530273,7 C-11.149999618530273,7 -11.149999618530273,-7.199999809265137 -11.149999618530273,-7.199999809265137 C-11.149999618530273,-7.199999809265137 10.850000381469727,-6.699999809265137 10.850000381469727,-6.699999809265137 C10.850000381469727,-6.699999809265137 11.149999618530273,7.199999809265137 11.149999618530273,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.149999618530273,98.05000305175781)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M11.100000381469727,6.301000118255615 C11.100000381469727,6.301000118255615 -11.100000381469727,6.10099983215332 -11.100000381469727,6.10099983215332 C-11.100000381469727,6.10099983215332 -11.100000381469727,-6.301000118255615 -11.100000381469727,-6.301000118255615 C-11.100000381469727,-6.301000118255615 10.899999618530273,-5.801000118255615 10.899999618530273,-5.801000118255615 C10.899999618530273,-5.801000118255615 11.100000381469727,6.301000118255615 11.100000381469727,6.301000118255615z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.149999618530273,97.75)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M9,4.400000095367432 C9,4.400000095367432 -9,4.199999809265137 -9,4.199999809265137 C-9,4.199999809265137 -9,-4.400000095367432 -9,-4.400000095367432 C-9,-4.400000095367432 8.800000190734863,-4 8.800000190734863,-4 C8.800000190734863,-4 9,4.400000095367432 9,4.400000095367432z"></path></g><g opacity="1" transform="matrix(1,0,0,1,24.950000762939453,96.25)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M11.199999809265137,7.199999809265137 C11.199999809265137,7.199999809265137 -11.199999809265137,7.199999809265137 -11.199999809265137,7.199999809265137 C-11.199999809265137,7.199999809265137 -11.199999809265137,-7.199999809265137 -11.199999809265137,-7.199999809265137 C-11.199999809265137,-7.199999809265137 11,-6.901000022888184 11,-6.901000022888184 C11,-6.901000022888184 11.199999809265137,7.199999809265137 11.199999809265137,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,24.950000762939453,94.94999694824219)"><path fill="rgb(40,190,182)" fill-opacity="1" d=" M11.199999809265137,7.199999809265137 C11.199999809265137,7.199999809265137 -11.199999809265137,7.199999809265137 -11.199999809265137,7.199999809265137 C-11.199999809265137,7.199999809265137 -11.199999809265137,-7.199999809265137 -11.199999809265137,-7.199999809265137 C-11.199999809265137,-7.199999809265137 10.899999618530273,-6.800000190734863 10.899999618530273,-6.800000190734863 C10.899999618530273,-6.800000190734863 11.199999809265137,7.199999809265137 11.199999809265137,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25,94.9000015258789)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M9.050000190734863,4.949999809265137 C9.050000190734863,4.949999809265137 -9.050000190734863,4.949999809265137 -9.050000190734863,4.949999809265137 C-9.050000190734863,4.949999809265137 -9.050000190734863,-4.949999809265137 -9.050000190734863,-4.949999809265137 C-9.050000190734863,-4.949999809265137 8.949999809265137,-4.75 8.949999809265137,-4.75 C8.949999809265137,-4.75 9.050000190734863,4.949999809265137 9.050000190734863,4.949999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25,94.05000305175781)"><path fill="rgb(25,141,135)" fill-opacity="1" d=" M11.149999618530273,7.199999809265137 C11.149999618530273,7.199999809265137 -11.149999618530273,7.199999809265137 -11.149999618530273,7.199999809265137 C-11.149999618530273,7.199999809265137 -11.149999618530273,-7.199999809265137 -11.149999618530273,-7.199999809265137 C-11.149999618530273,-7.199999809265137 10.949999809265137,-6.801000118255615 10.949999809265137,-6.801000118255615 C10.949999809265137,-6.801000118255615 11.149999618530273,7.199999809265137 11.149999618530273,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25,92.69999694824219)"><path fill="rgb(40,190,182)" fill-opacity="1" d=" M11.149999618530273,7.150000095367432 C11.149999618530273,7.150000095367432 -11.149999618530273,7.150000095367432 -11.149999618530273,7.150000095367432 C-11.149999618530273,7.150000095367432 -11.149999618530273,-7.150000095367432 -11.149999618530273,-7.150000095367432 C-11.149999618530273,-7.150000095367432 10.949999809265137,-6.75 10.949999809265137,-6.75 C10.949999809265137,-6.75 11.149999618530273,7.150000095367432 11.149999618530273,7.150000095367432z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25,92.69999694824219)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M9.050000190734863,4.949999809265137 C9.050000190734863,4.949999809265137 -9.050000190734863,4.849999904632568 -9.050000190734863,4.849999904632568 C-9.050000190734863,4.849999904632568 -9.050000190734863,-4.949999809265137 -9.050000190734863,-4.949999809265137 C-9.050000190734863,-4.949999809265137 8.850000381469727,-4.75 8.850000381469727,-4.75 C8.850000381469727,-4.75 9.050000190734863,4.949999809265137 9.050000190734863,4.949999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25,91.8499984741211)"><path fill="rgb(190,115,36)" fill-opacity="1" d=" M11.149999618530273,7.199999809265137 C11.149999618530273,7.199999809265137 -11.149999618530273,7.098999977111816 -11.149999618530273,7.098999977111816 C-11.149999618530273,7.098999977111816 -11.149999618530273,-7.199999809265137 -11.149999618530273,-7.199999809265137 C-11.149999618530273,-7.199999809265137 10.949999809265137,-6.800000190734863 10.949999809265137,-6.800000190734863 C10.949999809265137,-6.800000190734863 11.149999618530273,7.199999809265137 11.149999618530273,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,24.899999618530273,90.44999694824219)"><path fill="rgb(247,149,47)" fill-opacity="1" d=" M11.149999618530273,7.199999809265137 C11.149999618530273,7.199999809265137 -11.149999618530273,7.099999904632568 -11.149999618530273,7.099999904632568 C-11.149999618530273,7.099999904632568 -11.149999618530273,-7.199999809265137 -11.149999618530273,-7.199999809265137 C-11.149999618530273,-7.199999809265137 10.850000381469727,-6.800000190734863 10.850000381469727,-6.800000190734863 C10.850000381469727,-6.800000190734863 11.149999618530273,7.199999809265137 11.149999618530273,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,24.899999618530273,90.5)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M9.050000190734863,4.949999809265137 C9.050000190734863,4.949999809265137 -9.050000190734863,4.849999904632568 -9.050000190734863,4.849999904632568 C-9.050000190734863,4.849999904632568 -9.050000190734863,-4.949999809265137 -9.050000190734863,-4.949999809265137 C-9.050000190734863,-4.949999809265137 8.850000381469727,-4.651000022888184 8.850000381469727,-4.651000022888184 C8.850000381469727,-4.651000022888184 9.050000190734863,4.949999809265137 9.050000190734863,4.949999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,24.899999618530273,89.55000305175781)"><path fill="rgb(25,141,135)" fill-opacity="1" d=" M11.149999618530273,7.199999809265137 C11.149999618530273,7.199999809265137 -11.149999618530273,7.099999904632568 -11.149999618530273,7.099999904632568 C-11.149999618530273,7.099999904632568 -11.149999618530273,-7.198999881744385 -11.149999618530273,-7.198999881744385 C-11.149999618530273,-7.198999881744385 10.850000381469727,-6.801000118255615 10.850000381469727,-6.801000118255615 C10.850000381469727,-6.801000118255615 11.149999618530273,7.199999809265137 11.149999618530273,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,24.899999618530273,88.25)"><path fill="rgb(40,190,182)" fill-opacity="1" d=" M11.149999618530273,7.199999809265137 C11.149999618530273,7.199999809265137 -11.149999618530273,7 -11.149999618530273,7 C-11.149999618530273,7 -11.149999618530273,-7.199999809265137 -11.149999618530273,-7.199999809265137 C-11.149999618530273,-7.199999809265137 10.850000381469727,-6.699999809265137 10.850000381469727,-6.699999809265137 C10.850000381469727,-6.699999809265137 11.149999618530273,7.199999809265137 11.149999618530273,7.199999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,24.950000762939453,88.19999694824219)"><path fill="rgb(25,141,135)" fill-opacity="1" d=" M9,4.949999809265137 C9,4.949999809265137 -9,4.75 -9,4.75 C-9,4.75 -9,-4.949999809265137 -9,-4.949999809265137 C-9,-4.949999809265137 8.899999618530273,-4.650000095367432 8.899999618530273,-4.650000095367432 C8.899999618530273,-4.650000095367432 9,4.949999809265137 9,4.949999809265137z"></path></g><g opacity="1" transform="matrix(1,0,0,1,29.100000381469727,86.6500015258789)"><path fill="rgb(247,149,47)" fill-opacity="1" d=" M9.350000381469727,8.300000190734863 C9.350000381469727,8.300000190734863 -12.25,3.700000047683716 -12.25,3.700000047683716 C-12.25,3.700000047683716 -8.949999809265137,-8.300000190734863 -8.949999809265137,-8.300000190734863 C-8.949999809265137,-8.300000190734863 12.25,-3.5 12.25,-3.5 C12.25,-3.5 9.350000381469727,8.300000190734863 9.350000381469727,8.300000190734863z"></path></g><g opacity="1" transform="matrix(1,0,0,1,29.25,86.30000305175781)"><path fill="rgb(255,193,83)" fill-opacity="1" d=" M7.699999809265137,6.051000118255615 C7.699999809265137,6.051000118255615 -9.800000190734863,2.250999927520752 -9.800000190734863,2.250999927520752 C-9.800000190734863,2.250999927520752 -7.5,-6.051000118255615 -7.5,-6.051000118255615 C-7.5,-6.051000118255615 9.800000190734863,-2.1489999294281006 9.800000190734863,-2.1489999294281006 C9.800000190734863,-2.1489999294281006 7.699999809265137,6.051000118255615 7.699999809265137,6.051000118255615z"></path></g><g opacity="1" transform="matrix(1,0,0,1,41.70000076293945,104.1500015258789)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M9.550000190734863,8.100000381469727 C9.550000190734863,8.100000381469727 -10.949999809265137,5.599999904632568 -10.949999809265137,5.599999904632568 C-10.949999809265137,5.599999904632568 -9.25,-8.100000381469727 -9.25,-8.100000381469727 C-9.25,-8.100000381469727 10.949999809265137,-5.300000190734863 10.949999809265137,-5.300000190734863 C10.949999809265137,-5.300000190734863 9.550000190734863,8.100000381469727 9.550000190734863,8.100000381469727z"></path></g><g opacity="1" transform="matrix(1,0,0,1,41.849998474121094,102.44999694824219)"><path fill="rgb(40,190,182)" fill-opacity="1" d=" M9.600000381469727,7.099999904632568 C9.600000381469727,7.099999904632568 -10.800000190734863,4.599999904632568 -10.800000190734863,4.599999904632568 C-10.800000190734863,4.599999904632568 -9.399999618530273,-7.099999904632568 -9.399999618530273,-7.099999904632568 C-9.399999618530273,-7.099999904632568 10.800000190734863,-4.400000095367432 10.800000190734863,-4.400000095367432 C10.800000190734863,-4.400000095367432 9.600000381469727,7.099999904632568 9.600000381469727,7.099999904632568z"></path></g><g opacity="1" transform="matrix(1,0,0,1,42,103.0999984741211)"><path fill="rgb(25,141,135)" fill-opacity="1" d=" M6.349999904632568,4.650000095367432 C6.349999904632568,4.650000095367432 -7.150000095367432,3.049999952316284 -7.150000095367432,3.049999952316284 C-7.150000095367432,3.049999952316284 -6.25,-4.650000095367432 -6.25,-4.650000095367432 C-6.25,-4.650000095367432 7.150000095367432,-2.8499999046325684 7.150000095367432,-2.8499999046325684 C7.150000095367432,-2.8499999046325684 6.349999904632568,4.650000095367432 6.349999904632568,4.650000095367432z"></path></g><g opacity="1" transform="matrix(1,0,0,1,35,116.55000305175781)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M7.25,4.599999904632568 C7.25,4.599999904632568 -7.150000095367432,4.599999904632568 -7.150000095367432,4.599999904632568 C-7.150000095367432,4.599999904632568 -7.25,-4.599999904632568 -7.25,-4.599999904632568 C-7.25,-4.599999904632568 6.949999809265137,-4.400000095367432 6.949999809265137,-4.400000095367432 C6.949999809265137,-4.400000095367432 7.25,4.599999904632568 7.25,4.599999904632568z"></path></g><g opacity="1" transform="matrix(1,0,0,1,30.950000762939453,115.30000305175781)"><path fill="rgb(244,189,41)" fill-opacity="1" d=" M10.100000381469727,9.649999618530273 C10.100000381469727,9.649999618530273 -11.600000381469727,6.650000095367432 -11.600000381469727,6.650000095367432 C-11.600000381469727,6.650000095367432 -9.800000190734863,-9.649999618530273 -9.800000190734863,-9.649999618530273 C-9.800000190734863,-9.649999618530273 11.600000381469727,-6.349999904632568 11.600000381469727,-6.349999904632568 C11.600000381469727,-6.349999904632568 10.100000381469727,9.649999618530273 10.100000381469727,9.649999618530273z"></path></g><g opacity="1" transform="matrix(1,0,0,1,31.100000381469727,114.44999694824219)"><path fill="rgb(250,231,55)" fill-opacity="1" d=" M10.149999618530273,8.5 C10.149999618530273,8.5 -11.449999809265137,5.5 -11.449999809265137,5.5 C-11.449999809265137,5.5 -9.850000381469727,-8.5 -9.850000381469727,-8.5 C-9.850000381469727,-8.5 11.449999809265137,-5.199999809265137 11.449999809265137,-5.199999809265137 C11.449999809265137,-5.199999809265137 10.149999618530273,8.5 10.149999618530273,8.5z"></path></g><g opacity="1" transform="matrix(1,0,0,1,31.25,114.19999694824219)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M6.699999809265137,5.550000190734863 C6.699999809265137,5.550000190734863 -7.599999904632568,3.549999952316284 -7.599999904632568,3.549999952316284 C-7.599999904632568,3.549999952316284 -6.599999904632568,-5.550000190734863 -6.599999904632568,-5.550000190734863 C-6.599999904632568,-5.550000190734863 7.599999904632568,-3.450000047683716 7.599999904632568,-3.450000047683716 C7.599999904632568,-3.450000047683716 6.699999809265137,5.550000190734863 6.699999809265137,5.550000190734863z"></path></g><g opacity="1" transform="matrix(1,0,0,1,58.25,115.4000015258789)"><path fill="rgb(147,92,25)" fill-opacity="1" d=" M-2.200000047683716,5.550000190734863 C-2.200000047683716,5.550000190734863 -5.599999904632568,-5.550000190734863 -5.599999904632568,-5.550000190734863 C-5.599999904632568,-5.550000190734863 4.800000190734863,-3.549999952316284 4.800000190734863,-3.549999952316284 C5.599999904632568,-0.550000011920929 4.800000190734863,5.449999809265137 4.800000190734863,5.449999809265137 C4.800000190734863,5.449999809265137 -2.200000047683716,5.449999809265137 -2.200000047683716,5.449999809265137 C-2.200000047683716,5.449999809265137 -2.200000047683716,5.550000190734863 -2.200000047683716,5.550000190734863z"></path></g><g opacity="1" transform="matrix(1,0,0,1,124.94999694824219,124.3499984741211)"><path fill="rgb(147,92,25)" fill-opacity="1" d=" M5.099999904632568,-4.300000190734863 C5.099999904632568,-4.300000190734863 -5.099999904632568,-4.300000190734863 -5.099999904632568,-4.300000190734863 C-5.099999904632568,-4.300000190734863 -1.899999976158142,4.300000190734863 -1.899999976158142,4.300000190734863 C-1.899999976158142,4.300000190734863 2.4000000953674316,4.300000190734863 2.4000000953674316,4.300000190734863 C2.4000000953674316,4.300000190734863 5.099999904632568,-4.300000190734863 5.099999904632568,-4.300000190734863z"></path></g><g opacity="1" transform="matrix(1,0,0,1,156.6999969482422,108.75)"><path fill="rgb(147,92,25)" fill-opacity="1" d=" M4.949999809265137,-6.301000118255615 C4.949999809265137,-6.301000118255615 -4.949999809265137,-6.301000118255615 -4.949999809265137,-6.301000118255615 C-4.949999809265137,-6.301000118255615 -1.8509999513626099,6.301000118255615 -1.8509999513626099,6.301000118255615 C-1.8509999513626099,6.301000118255615 2.3489999771118164,6.301000118255615 2.3489999771118164,6.301000118255615 C2.3489999771118164,6.301000118255615 4.949999809265137,-6.301000118255615 4.949999809265137,-6.301000118255615z"></path></g><g opacity="1" transform="matrix(1,0,0,1,104,61.54999923706055)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M9.350000381469727,-59.29999923706055 C-23.149999618530273,-61.29999923706055 -36.45000076293945,-31.5 -37.349998474121094,-20.5 C-37.349998474121094,-20.5 -35.54899978637695,11.600000381469727 -35.54899978637695,11.600000381469727 C-40.849998474121094,14 -52.75,20.399999618530273 -58.349998474121094,26.700000762939453 C-61.25,31.700000762939453 -59.95000076293945,42.70000076293945 -55.45000076293945,47 C-28.548999786376953,61.29999923706055 10.550000190734863,60.5 26.75,58.29999923706055 C26.75,58.29999923706055 42.54999923706055,51.79999923706055 42.54999923706055,51.79999923706055 C47.54999923706055,45.29999923706055 58.25,25.200000762939453 61.25,-3.700000047683716 C60.1510009765625,-39.20000076293945 41.849998474121094,-57.29999923706055 9.350000381469727,-59.29999923706055z"></path></g><g opacity="1" transform="matrix(1,0,0,1,104.19999694824219,61.599998474121094)"><path fill="rgb(220,188,50)" fill-opacity="1" d=" M6.949999809265137,-43.349998474121094 C-16.950000762939453,-44.849998474121094 -26.75,-23.049999237060547 -27.350000381469727,-14.949999809265137 C-27.350000381469727,-14.949999809265137 -26.049999237060547,8.449999809265137 -26.049999237060547,8.449999809265137 C-29.950000762939453,10.25 -38.6510009765625,14.949999809265137 -42.849998474121094,19.549999237060547 C-45.04999923706055,23.149999618530273 -44.04999923706055,31.25 -40.6510009765625,34.45000076293945 C-20.850000381469727,44.849998474121094 7.848999977111816,44.349998474121094 19.64900016784668,42.75 C19.64900016784668,42.75 31.25,37.95000076293945 31.25,37.95000076293945 C34.8489990234375,33.25 42.75,18.450000762939453 45.04999923706055,-2.6500000953674316 C44.25,-28.649999618530273 30.75,-41.849998474121094 6.949999809265137,-43.349998474121094z"></path></g><g opacity="1" transform="matrix(1,0,0,1,94.6500015258789,98)"><path fill="rgb(236,189,21)" fill-opacity="1" d=" M36.099998474121094,21.850000381469727 C36.099998474121094,21.850000381469727 51.900001525878906,15.350000381469727 51.900001525878906,15.350000381469727 C17.100000381469727,-19.350000381469727 11.100000381469727,-13.350000381469727 -26.200000762939453,-24.850000381469727 C-31.5,-22.450000762939453 -43.400001525878906,-16.049999237060547 -49,-9.75100040435791 C-51.900001525878906,-4.750999927520752 -50.599998474121094,6.249000072479248 -46.099998474121094,10.550000190734863 C-19.200000762939453,24.850000381469727 19.899999618530273,24.049999237060547 36.099998474121094,21.850000381469727z"></path></g><g opacity="1" transform="matrix(1,0,0,1,88.6500015258789,105.55000305175781)"><path fill="rgb(234,185,5)" fill-opacity="1" d=" M42.099998474121094,14.300999641418457 C42.099998474121094,14.300999641418457 45.900001525878906,-4.699999809265137 45.900001525878906,-4.699999809265137 C25.600000381469727,-9 6.199999809265137,-9.899999618530273 -43,-17.301000595092773 C-45.900001525878906,-12.300999641418457 -44.599998474121094,-1.2999999523162842 -40.099998474121094,3.000999927520752 C-13.199999809265137,17.301000595092773 25.899999618530273,16.500999450683594 42.099998474121094,14.300999641418457z"></path></g><g opacity="1" transform="matrix(1,0,0,1,56.25,64.75)"><path fill="rgb(236,189,21)" fill-opacity="1" d=" M9.699999809265137,-23.700000762939453 C1.2999999523162842,-21.899999618530273 -10.199999809265137,-14.399999618530273 -11.100000381469727,-14 C-11.100000381469727,-14 -24.600000381469727,18.100000381469727 -11.100000381469727,25.5 C-2.700000047683716,16.700000762939453 22.100000381469727,8.800000190734863 22.100000381469727,8.800000190734863 C22.200000762939453,7.599999904632568 22.600000381469727,3.5 23.5,-3.200000047683716 C24.600000381469727,-11.5 18.100000381469727,-25.5 9.699999809265137,-23.700000762939453z"></path></g><g opacity="1" transform="matrix(1,0,0,1,48.95000076293945,70.0999984741211)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M13.800000190734863,0.550000011920929 C13.800000190734863,4.050000190734863 13.199999809265137,7.349999904632568 12.199999809265137,10.25 C7.699999809265137,12.75 4.699999809265137,13.649999618530273 3.0999999046325684,14.949999809265137 C-3,16.049999237060547 -4.099999904632568,20.549999237060547 -4.099999904632568,20.549999237060547 C-9.699999809265137,17.950000762939453 -13.800000190734863,9.949999809265137 -13.800000190734863,0.44999998807907104 C-13.800000190734863,-11.149999618530273 -7.599999904632568,-20.549999237060547 0,-20.549999237060547 C7.599999904632568,-20.549999237060547 13.800000190734863,-11.050000190734863 13.800000190734863,0.550000011920929z"></path></g><g opacity="1" transform="matrix(1,0,0,1,87.05000305175781,100.19999694824219)"><path fill="rgb(245,197,27)" fill-opacity="1" d=" M-23.700000762939453,-14.649999618530273 C-30.700000762939453,-15.550000190734863 -37.400001525878906,-16.450000762939453 -41.70000076293945,-11.048999786376953 C-42.79999923706055,-9.848999977111816 -44.400001525878906,-3.3489999771118164 -41,4.75 C-33.29999923706055,7.25 5,16.451000213623047 29.700000762939453,11.75 C40.5,10.35099983215332 44,1.2489999532699585 44.400001525878906,-3.1500000953674316 C44,-4.750999927520752 42.29999923706055,-7.750999927520752 38.29999923706055,-7.250999927520752 C33.29999923706055,-6.550000190734863 -16.600000381469727,-13.75100040435791 -23.5,-14.649999618530273 C-23.5,-14.649999618530273 -23.700000762939453,-14.649999618530273 -23.700000762939453,-14.649999618530273z"></path></g></g><g clip-path="url(#__lottie_element_50)" style="display: none;"><g clip-path="url(#__lottie_element_74)" style="display: none;"><g style="display: none;"><g><path></path></g></g></g><g clip-path="url(#__lottie_element_67)" style="display: none;"><g style="display: none;"><g><path></path></g></g></g><g clip-path="url(#__lottie_element_60)" style="display: none;"><g style="display: none;"><g><path></path></g></g></g><g style="display: none;"><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g></g><g style="display: none;"><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g></g></g><g clip-path="url(#__lottie_element_10)" transform="matrix(1,0,0,1,219,-9)" opacity="1" style="display: block;"><g transform="matrix(1,0,0,1,44.4530029296875,92.76699829101562)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,30.9060001373291,22.01300048828125)"><path fill="rgb(152,152,153)" fill-opacity="1" d=" M7.0269999504089355,-21.222999572753906 C-11.465999603271484,-17.868000030517578 -17.535999298095703,15.777000427246094 -17.535999298095703,15.777000427246094 C-17.535999298095703,15.777000427246094 1.5420000553131104,21.76300048828125 13.020000457763672,1.6390000581741333 C17.53700065612793,-6.2820000648498535 16.107999801635742,-21.76300048828125 7.0269999504089355,-21.222999572753906z"></path></g><g opacity="1" transform="matrix(1,0,0,1,21.683000564575195,43.790000915527344)"><path fill="rgb(40,190,182)" fill-opacity="1" d=" M4.050000190734863,-8 C1.75,-7 -6.75,-7 -6.75,-7 C-6.75,-7 0.25,8 0.25,8 C0.25,8 6.75,1 6.75,1 C6.75,1 4.25,-6 4.050000190734863,-8z"></path></g><g opacity="1" transform="matrix(1,0,0,1,21.183000564575195,44.18199920654297)"><path fill="rgb(247,149,47)" fill-opacity="1" d=" M0.75,7.607999801635742 C0.75,7.607999801635742 5.75,1.6080000400543213 5.75,1.6080000400543213 C6.25,-1.3919999599456787 2.25,-7.607999801635742 -0.25,-7.607999801635742 C-3.193000078201294,-7.392000198364258 -6.25,-7.392000198364258 -6.25,-7.392000198364258 C-6.25,-7.392000198364258 0.75,7.607999801635742 0.75,7.607999801635742z"></path></g><g opacity="1" transform="matrix(1,0,0,1,13.163000106811523,48.02000045776367)"><path fill="rgb(59,70,70)" fill-opacity="1" d=" M-2.941999912261963,-11.288000106811523 C3.2920000553131104,-12.913000106811523 9.663000106811523,-9.177000045776367 11.288000106811523,-2.941999912261963 C12.913000106811523,3.2920000553131104 9.175999641418457,9.663000106811523 2.941999912261963,11.288000106811523 C-3.2929999828338623,12.913000106811523 -9.663999557495117,9.175999641418457 -11.288000106811523,2.940999984741211 C-12.913000106811523,-3.2929999828338623 -9.175999641418457,-9.663999557495117 -2.941999912261963,-11.288000106811523z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.683000564575195,44.790000915527344)"><path fill="rgb(152,152,153)" fill-opacity="1" d=" M1.25,-4.5 C-0.75,-4.5 -2.75,0 -0.75,4.5 C1.25,4.5 2.75,1.5 2.75,0 C2.75,-0.5 1.25,-4 1.25,-4.5z"></path></g><g opacity="1" transform="matrix(1,0,0,1,14.454000473022461,47.4379997253418)"><path fill="rgb(247,149,47)" fill-opacity="1" d=" M-3.1019999980926514,-8.10200023651123 C-5.050000190734863,-8.821000099182129 -7.052999973297119,-8.88599967956543 -8.510000228881836,-8.10200023651123 C-8.593000411987305,-8.54800033569336 -8.232999801635742,-9.248000144958496 -7.739999771118164,-9.394000053405762 C-6.192999839782715,-9.85200023651123 -4.460000038146973,-9.666999816894531 -2.75600004196167,-9.038000106811523 C-0.6389999985694885,-8.256999969482422 1.4880000352859497,-6.769999980926514 3.2809998989105225,-4.8480000495910645 C6.583000183105469,-1.309999942779541 8.593000411987305,3.2690000534057617 7.479000091552734,8.35200023651123 C7.1579999923706055,8.95199966430664 6.0970001220703125,9.85200023651123 5.979000091552734,9.85200023651123 C7.554999828338623,4.881999969482422 5.938000202178955,-0.5360000133514404 2.5480000972747803,-4.166999816894531 C0.8410000205039978,-5.997000217437744 -1.156999945640564,-7.382999897003174 -3.1019999980926514,-8.10200023651123z"></path></g><g opacity="1" transform="matrix(1,0,0,1,13.647000312805176,47.709999084472656)"><path fill="rgb(247,149,47)" fill-opacity="1" d=" M-3.2309999465942383,-8.013999938964844 C-5.178999900817871,-8.732999801635742 -7.181000232696533,-8.79800033569336 -8.637999534606934,-8.013999938964844 C-8.720999717712402,-8.460000038146973 -8.361000061035156,-9.15999984741211 -7.868000030517578,-9.305999755859375 C-6.321000099182129,-9.763999938964844 -4.5879998207092285,-9.579999923706055 -2.884000062942505,-8.951000213623047 C-0.7670000195503235,-8.170000076293945 1.3580000400543213,-6.682000160217285 3.1519999504089355,-4.761000156402588 C6.453999996185303,-1.2230000495910645 8.720999717712402,3.8970000743865967 7.60699987411499,8.979999542236328 C7.285999774932861,9.579999923706055 6.480999946594238,9.763999938964844 6.36299991607666,9.763999938964844 C7.939000129699707,4.795000076293945 5.809999942779541,-0.4480000138282776 2.4200000762939453,-4.078999996185303 C0.7139999866485596,-5.9079999923706055 -1.2860000133514404,-7.295000076293945 -3.2309999465942383,-8.013999938964844z"></path></g><g opacity="1" transform="matrix(1,0,0,1,5.433000087738037,47.790000915527344)"><path fill="rgb(62,85,85)" fill-opacity="1" d=" M0,-3 C1.3799999952316284,-3 2.5,-1.656999945640564 2.5,0 C2.5,1.656999945640564 1.3799999952316284,3 0,3 C-1.38100004196167,3 -2.5,1.656999945640564 -2.5,0 C-2.5,-1.656999945640564 -1.38100004196167,-3 0,-3z"></path></g></g><g transform="matrix(1,0,0,1,67.25,71.39700317382812)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,39.72999954223633,43.84600067138672)"><path fill="rgb(231,228,226)" fill-opacity="1" d=" M2.1730000972747803,-40.5359992980957 C-18.9950008392334,-42.770999908447266 -38.053001403808594,-26.69300079345703 -39.47999954223633,-6.394000053405762 C-39.47999954223633,13.663000106811523 -36.154998779296875,26.52899932861328 -27.57699966430664,33.527000427246094 C-24.908000946044922,35.32699966430664 -22.38599967956543,38.17100143432617 -16.9689998626709,36.236000061035156 C-13.583000183105469,35.027000427246094 -12.680000305175781,34.43000030517578 -6.585000038146973,36.236000061035156 C-3.9560000896453857,37.01499938964844 -1.8020000457763672,39.04600143432617 -0.24899999797344208,40.16299819946289 C2.4210000038146973,42.0880012512207 8.878000259399414,42.770999908447266 11.857000350952148,41.9630012512207 C26.31999969482422,37.9900016784668 34.88800048828125,24.084999084472656 37.185001373291016,2.109999895095825 C39.48099899291992,-19.305999755859375 24.02400016784668,-38.23899841308594 2.1730000972747803,-40.5359992980957z"></path></g><g opacity="1" transform="matrix(1,0,0,1,30.62700080871582,39.27000045776367)"><path fill="rgb(255,255,255)" fill-opacity="1" d=" M13.621999740600586,-18.100000381469727 C7.127999782562256,-18.3799991607666 4.025000095367432,-14.36400032043457 1.121999979019165,-13.166999816894531 C-0.949999988079071,-12.295999526977539 -3.3329999446868896,-12.968000411987305 -5.160999774932861,-14.225000381469727 C-7.255000114440918,-15.619999885559082 -11.104999542236328,-18.187000274658203 -15.366999626159668,-18.100000381469727 C-23.972000122070312,-17.923999786376953 -29.468000411987305,-10.01200008392334 -29.47100067138672,-1.1629999876022339 C-29.47100067138672,6.888000011444092 -19.954999923706055,16.586999893188477 -7.877999782562256,12.833000183105469 C-4.660999774932861,11.833000183105469 -3.878000020980835,10.333000183105469 1.121999979019165,12.833000183105469 C12.217000007629395,18.3799991607666 25.121999740600586,11.333000183105469 27.621999740600586,-1.1629999876022339 C29.47100067138672,-10.404999732971191 23.621999740600586,-17.667999267578125 13.621999740600586,-18.100000381469727z"></path></g><g opacity="1" transform="matrix(1,0,0,1,9.657999992370605,55.888999938964844)"><path fill="rgb(152,152,153)" fill-opacity="1" d=" M-0.3720000088214874,0.4650000035762787 C-1.7999999523162842,-0.09399999678134918 -2.7939999103546143,-1.3969999551773071 -3.1659998893737793,-2.9489998817443848 C-3.7249999046325684,-0.8389999866485596 -2.7939999103546143,1.4589999914169312 -0.9319999814033508,2.2039999961853027 C0.9309999942779541,2.9489998817443848 2.9800000190734863,1.8930000066757202 3.7249999046325684,-0.15600000321865082 C2.5450000762939453,0.7129999995231628 1.055999994277954,1.0240000486373901 -0.3720000088214874,0.4650000035762787z"></path></g><g opacity="1" transform="matrix(1,0,0,1,15.184000015258789,69.05000305175781)"><path fill="rgb(152,152,153)" fill-opacity="1" d=" M-0.5590000152587891,0.5899999737739563 C-1.9249999523162842,-0.27900001406669617 -2.7309999465942383,-1.8309999704360962 -2.8550000190734863,-3.382999897003174 C-3.8489999771118164,-1.3960000276565552 -3.2279999256134033,1.024999976158142 -1.4279999732971191,2.2039999961853027 C0.37299999594688416,3.384000062942505 2.6689999103546143,2.825000047683716 3.8489999771118164,0.9629999995231628 C2.4210000038146973,1.5219999551773071 0.8069999814033508,1.4589999914169312 -0.5590000152587891,0.5899999737739563z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.922000885009766,74.35700225830078)"><path fill="rgb(152,152,153)" fill-opacity="1" d=" M-0.24799999594688416,0.3109999895095825 C-1.9859999418258667,-0.061000000685453415 -3.4140000343322754,-1.2419999837875366 -4.158999919891357,-2.7320001125335693 C-4.4070000648498535,-0.4350000023841858 -2.7929999828338623,1.7389999628067017 -0.4970000088214874,2.2360000610351562 C1.7999999523162842,2.7320001125335693 3.9730000495910645,1.3040000200271606 4.4070000648498535,-0.9300000071525574 C3.2279999256134033,0.18700000643730164 1.5520000457763672,0.6840000152587891 -0.24799999594688416,0.3109999895095825z"></path></g><g opacity="1" transform="matrix(1,0,0,1,38.98899841308594,73.08499908447266)"><path fill="rgb(152,152,153)" fill-opacity="1" d=" M0.27900001406669617,0.3409999907016754 C1.9570000171661377,-0.03200000151991844 3.197000026702881,-1.2109999656677246 3.756999969482422,-2.638000011444092 C4.314000129699707,-0.46700000762939453 3.010999917984009,1.5820000171661377 0.8389999866485596,2.1410000324249268 C-1.3339999914169312,2.638000011444092 -3.569000005722046,1.3960000276565552 -4.314000129699707,-0.6520000100135803 C-3.072999954223633,0.27900001406669617 -1.3969999551773071,0.7760000228881836 0.27900001406669617,0.3409999907016754z"></path></g><g opacity="1" transform="matrix(1,0,0,1,20.770000457763672,62.09600067138672)"><path fill="rgb(152,152,153)" fill-opacity="1" d=" M-0.3720000088214874,0.46700000762939453 C-1.9859999418258667,-0.15399999916553497 -3.2279999256134033,-1.4579999446868896 -3.7249999046325684,-3.072000026702881 C-4.283999919891357,-0.8989999890327454 -3.1040000915527344,1.4600000381469727 -0.9319999814033508,2.2669999599456787 C1.2410000562667847,3.072999954223633 3.5390000343322754,1.9559999704360962 4.283999919891357,-0.15399999916553497 C2.9800000190734863,0.777999997138977 1.2419999837875366,1.0870000123977661 -0.3720000088214874,0.46700000762939453z"></path></g><g opacity="1" transform="matrix(1,0,0,1,48.207000732421875,61.41400146484375)"><path fill="rgb(152,152,153)" fill-opacity="1" d=" M0.4339999854564667,0.4650000035762787 C2.0480000972747803,-0.09399999678134918 3.1659998893737793,-1.4589999914169312 3.5380001068115234,-3.072999954223633 C4.4079999923706055,-0.7139999866485596 3.3519999980926514,1.7079999446868896 1.1790000200271606,2.3910000324249268 C-0.9300000071525574,3.072999954223633 -3.4140000343322754,1.8320000171661377 -4.4079999923706055,-0.4020000100135803 C-2.9800000190734863,0.652999997138977 -1.1790000200271606,1.0240000486373901 0.4339999854564667,0.4650000035762787z"></path></g><g opacity="1" transform="matrix(1,0,0,1,34.612998962402344,63.64899826049805)"><path fill="rgb(152,152,153)" fill-opacity="1" d=" M0.125,0.21699999272823334 C1.9869999885559082,0.1550000011920929 3.5390000343322754,-0.8389999866485596 4.4079999923706055,-2.2660000324249268 C4.531000137329102,0.1550000011920929 2.6700000762939453,2.1410000324249268 0.24899999797344208,2.203000068664551 C-2.171999931335449,2.265000104904175 -4.2210001945495605,0.4650000035762787 -4.531000137329102,-1.8940000534057617 C-3.4140000343322754,-0.527999997138977 -1.7369999885559082,0.27900001406669617 0.125,0.21699999272823334z"></path></g><g opacity="1" transform="matrix(1,0,0,1,43.3120002746582,37.86899948120117)"><path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" d=" M4.677999973297119,-3.7360000610351562 C5.531000137329102,-0.9490000009536743 3.937999963760376,2.009000062942505 1.1169999837875366,2.871999979019165 C-1.7009999752044678,3.7360000610351562 -4.677999973297119,2.177000045776367 -5.531000137329102,-0.6100000143051147"></path></g><g opacity="1" transform="matrix(1,0,0,1,44.75,42.10200119018555)"><path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" d=" M-0.5,-1 C-0.5,-1 0.5,1 0.5,1"></path></g><g opacity="1" transform="matrix(1,0,0,1,48.75,39.10200119018555)"><path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" d=" M-1,-0.5 C-1,-0.5 1,0.5 1,0.5"></path></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" d=" M11.75,41.10200119018555 C11.75,41.10200119018555 11.75,43.10200119018555 11.75,43.10200119018555"></path></g><g opacity="1" transform="matrix(1,0,0,1,8.25,40.35200119018555)"><path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" d=" M1,-0.75 C1,-0.75 -1,0.75 -1,0.75"></path></g><g opacity="1" transform="matrix(1,0,0,1,16,40.85200119018555)"><path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" d=" M-0.75,-0.75 C-0.75,-0.75 0.75,0.75 0.75,0.75"></path></g><g opacity="1" transform="matrix(1,0,0,1,39.75,41.60200119018555)"><path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" d=" M0.5,-1 C0.5,-1 -0.5,1 -0.5,1"></path></g><g opacity="1" transform="matrix(1,0,0,1,40.19200134277344,34.72200012207031)"><path fill="rgb(255,255,255)" fill-opacity="1" d=" M1.4270000457763672,0.4300000071525574 C1.6749999523162842,-0.38999998569488525 1.2369999885559082,-1.2480000257492065 0.4480000138282776,-1.4859999418258667 C-0.3400000035762787,-1.7239999771118164 -1.1790000200271606,-1.2510000467300415 -1.4279999732971191,-0.4300000071525574 C-1.6749999523162842,0.38999998569488525 -1.2369999885559082,1.2480000257492065 -0.4490000009536743,1.4859999418258667 C0.33899998664855957,1.7239999771118164 1.1790000200271606,1.2510000467300415 1.4270000457763672,0.4300000071525574z"></path></g><g opacity="1" transform="matrix(1,0,0,1,12.517000198364258,38.1870002746582)"><path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" d=" M5.0929999351501465,-2.3359999656677246 C4.951000213623047,0.574999988079071 2.5880000591278076,2.825000047683716 -0.1860000044107437,2.688999891281128 C-2.9600000381469727,2.553999900817871 -5.0929999351501465,0.08500000089406967 -4.951000213623047,-2.825000047683716"></path></g><g opacity="1" transform="matrix(1,0,0,1,41,4.331999778747559)"><path fill="rgb(152,152,153)" fill-opacity="1" d=" M0.006000000052154064,3.2300000190734863 C0.006000000052154064,3.2300000190734863 0.9020000100135803,0.16699999570846558 1.25,-1.2300000190734863 C1.75,-3.2300000190734863 -1.75,-3.2300000190734863 -1.25,-1.2300000190734863 C-0.828000009059906,0.46000000834465027 0.006000000052154064,3.2300000190734863 0.006000000052154064,3.2300000190734863z"></path></g><g opacity="1" transform="matrix(1,0,0,1,33.91699981689453,3.875)"><path fill="rgb(152,152,153)" fill-opacity="1" d=" M4.668000221252441,3.625999927520752 C4.668000221252441,3.625999927520752 0.9890000224113464,-0.7730000019073486 -2.1679999828338623,-0.7730000019073486 C-4.168000221252441,-0.7730000019073486 -4.668000221252441,-3.625999927520752 -1.7369999885559082,-3.625999927520752 C2.0409998893737793,-3.625999927520752 3.8329999446868896,-0.27300000190734863 4.668000221252441,3.625999927520752z"></path></g><g opacity="1" transform="matrix(1,0,0,1,32.51499938964844,5.8520002365112305)"><path fill="rgb(152,152,153)" fill-opacity="1" d=" M4.269999980926514,0.7179999947547913 C-0.7649999856948853,-0.25 -2.265000104904175,2.75 -3.265000104904175,1.25 C-4.269999980926514,0.34700000286102295 -2.765000104904175,-2.75 4.269999980926514,0.7179999947547913z"></path></g><g opacity="1" transform="matrix(1,0,0,1,25.75,38.94900131225586)"><path fill="rgb(236,136,34)" fill-opacity="1" d=" M-2.5,-1.2020000219345093 C-2.5,-1.2020000219345093 -0.5,2.6519999504089355 -0.5,2.6519999504089355 C-0.5,2.6519999504089355 2.5,-1.2020000219345093 2.5,-1.2020000219345093 C2.5,-1.2020000219345093 0.05000000074505806,-2.6519999504089355 -2.5,-1.2020000219345093z"></path></g><g opacity="1" transform="matrix(1,0,0,1,68.80000305175781,56.650001525878906)"><path fill="rgb(152,152,153)" fill-opacity="1" d=" M-1.5499999523162842,-25.5 C-1.5499999523162842,-25.5 -13.449999809265137,-22.700000762939453 -14.050000190734863,-9 C-14.75,4.60099983215332 -3.6500000953674316,11.800000190734863 -9.75,27.5 C-9.75,27.5 11.75,16.399999618530273 13.550000190734863,-4.699999809265137 C14.75,-19.700000762939453 9.25,-27.5 -1.5499999523162842,-25.5z"></path></g></g><g transform="matrix(1,0,0,1,-29.5,102.5)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="url(#__lottie_element_40)" fill-opacity="1" d="M0 0"></path></g><g opacity="1" transform="matrix(1.0102900266647339,0,0,1,0,0)"><path fill="url(#__lottie_element_41)" fill-opacity="1" d=" M89.89800262451172,1 C76.70999908447266,-29.5 32.2239990234375,-9.720999717712402 50.02000045776367,17.871000289916992 C62.358001708984375,37 109.3740005493164,29 115.5,21 C106,26 93.51899719238281,9.375 89.89800262451172,1z"></path></g><g opacity="1" transform="matrix(0.9552680253982544,-0.29574140906333923,0.29574140906333923,0.9552680253982544,65.14700317382812,-3.127000093460083)"><path fill="url(#__lottie_element_42)" fill-opacity="1" d=" M0,-6.284999847412109 C5.562600135803223,-6.284999847412109 10.079000473022461,-3.468691349029541 10.079000473022461,0 C10.079000473022461,3.468691349029541 5.562600135803223,6.284999847412109 0,6.284999847412109 C-5.562600135803223,6.284999847412109 -10.079000473022461,3.468691349029541 -10.079000473022461,0 C-10.079000473022461,-3.468691349029541 -5.562600135803223,-6.284999847412109 0,-6.284999847412109z"></path></g></g><g style="display: none;"><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g></g><g clip-path="url(#__lottie_element_28)" transform="matrix(1,0,0,1,67.5,64.5)" opacity="0" style="display: block;"><g transform="matrix(1,0,0,1,-0.25,-0.25)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,6.75,11.392999649047852)"><path fill="rgb(196,196,196)" fill-opacity="1" d=" M0,-1.8569999933242798 C0,-1.8569999933242798 0,-1.8569999933242798 0,-1.8569999933242798 C0.5130000114440918,-1.8569999933242798 0.9290000200271606,-1.4420000314712524 0.9290000200271606,-0.9290000200271606 C0.9290000200271606,-0.9290000200271606 0.9290000200271606,0.9279999732971191 0.9290000200271606,0.9279999732971191 C0.9290000200271606,1.440999984741211 0.5130000114440918,1.8569999933242798 0,1.8569999933242798 C-0.5130000114440918,1.8569999933242798 -0.9290000200271606,1.440999984741211 -0.9290000200271606,0.9279999732971191 C-0.9290000200271606,0.9279999732971191 -0.9290000200271606,-0.9290000200271606 -0.9290000200271606,-0.9290000200271606 C-0.9290000200271606,-1.4420000314712524 -0.5130000114440918,-1.8569999933242798 0,-1.8569999933242798z"></path></g><g opacity="1" transform="matrix(1,0,0,1,6.75,2.1070001125335693)"><path fill="rgb(196,196,196)" fill-opacity="1" d=" M0,-1.8569999933242798 C0,-1.8569999933242798 0,-1.8569999933242798 0,-1.8569999933242798 C0.5130000114440918,-1.8569999933242798 0.9290000200271606,-1.440999984741211 0.9290000200271606,-0.9279999732971191 C0.9290000200271606,-0.9279999732971191 0.9290000200271606,0.9290000200271606 0.9290000200271606,0.9290000200271606 C0.9290000200271606,1.440999984741211 0.5130000114440918,1.8569999933242798 0,1.8569999933242798 C-0.5130000114440918,1.8569999933242798 -0.9290000200271606,1.440999984741211 -0.9290000200271606,0.9290000200271606 C-0.9290000200271606,0.9290000200271606 -0.9290000200271606,-0.9279999732971191 -0.9290000200271606,-0.9279999732971191 C-0.9290000200271606,-1.440999984741211 -0.5130000114440918,-1.8569999933242798 0,-1.8569999933242798z"></path></g><g opacity="1" transform="matrix(1,0,0,1,11.392999649047852,6.75)"><path fill="rgb(196,196,196)" fill-opacity="1" d=" M-1.8569999933242798,0 C-1.8569999933242798,0 -1.8569999933242798,0 -1.8569999933242798,0 C-1.8569999933242798,-0.5130000114440918 -1.4420000314712524,-0.9290000200271606 -0.9290000200271606,-0.9290000200271606 C-0.9290000200271606,-0.9290000200271606 0.9279999732971191,-0.9290000200271606 0.9279999732971191,-0.9290000200271606 C1.440999984741211,-0.9290000200271606 1.8569999933242798,-0.5130000114440918 1.8569999933242798,0 C1.8569999933242798,0.5130000114440918 1.440999984741211,0.9290000200271606 0.9279999732971191,0.9290000200271606 C0.9279999732971191,0.9290000200271606 -0.9290000200271606,0.9290000200271606 -0.9290000200271606,0.9290000200271606 C-1.4420000314712524,0.9290000200271606 -1.8569999933242798,0.5130000114440918 -1.8569999933242798,0z"></path></g><g opacity="1" transform="matrix(1,0,0,1,2.1070001125335693,6.75)"><path fill="rgb(196,196,196)" fill-opacity="1" d=" M-1.8569999933242798,0 C-1.8569999933242798,0 -1.8569999933242798,0 -1.8569999933242798,0 C-1.8569999933242798,-0.5130000114440918 -1.440999984741211,-0.9290000200271606 -0.9279999732971191,-0.9290000200271606 C-0.9279999732971191,-0.9290000200271606 0.9290000200271606,-0.9290000200271606 0.9290000200271606,-0.9290000200271606 C1.440999984741211,-0.9290000200271606 1.8569999933242798,-0.5130000114440918 1.8569999933242798,0 C1.8569999933242798,0.5130000114440918 1.440999984741211,0.9290000200271606 0.9290000200271606,0.9290000200271606 C0.9290000200271606,0.9290000200271606 -0.9279999732971191,0.9290000200271606 -0.9279999732971191,0.9290000200271606 C-1.440999984741211,0.9290000200271606 -1.8569999933242798,0.5130000114440918 -1.8569999933242798,0z"></path></g><g opacity="1" transform="matrix(1,0,0,1,9.960000038146973,9.960000038146973)"><path fill="rgb(196,196,196)" fill-opacity="1" d=" M-1.3869999647140503,-1.3869999647140503 C-1.3869999647140503,-1.3869999647140503 -1.3869999647140503,-1.3869999647140503 -1.3869999647140503,-1.3869999647140503 C-1.024999976158142,-1.7489999532699585 -0.4359999895095825,-1.7489999532699585 -0.07400000095367432,-1.3869999647140503 C-0.07400000095367432,-1.3869999647140503 1.3869999647140503,0.07400000095367432 1.3869999647140503,0.07400000095367432 C1.75,0.4359999895095825 1.75,1.0240000486373901 1.3869999647140503,1.3869999647140503 C1.024999976158142,1.75 0.43700000643730164,1.75 0.07400000095367432,1.3869999647140503 C0.07400000095367432,1.3869999647140503 -1.3869999647140503,-0.07500000298023224 -1.3869999647140503,-0.07500000298023224 C-1.75,-0.43799999356269836 -1.75,-1.024999976158142 -1.3869999647140503,-1.3869999647140503z"></path></g><g opacity="1" transform="matrix(1,0,0,1,3.566999912261963,3.566999912261963)"><path fill="rgb(196,196,196)" fill-opacity="1" d=" M-1.4129999876022339,-1.4129999876022339 C-1.4129999876022339,-1.4129999876022339 -1.4129999876022339,-1.4129999876022339 -1.4129999876022339,-1.4129999876022339 C-1.0499999523162842,-1.7760000228881836 -0.4620000123977661,-1.7760000228881836 -0.10000000149011612,-1.4129999876022339 C-0.10000000149011612,-1.4129999876022339 1.4129999876022339,0.10000000149011612 1.4129999876022339,0.10000000149011612 C1.7760000228881836,0.4620000123977661 1.7760000228881836,1.0499999523162842 1.4129999876022339,1.4129999876022339 C1.0499999523162842,1.7760000228881836 0.4620000123977661,1.7760000228881836 0.10000000149011612,1.4129999876022339 C0.10000000149011612,1.4129999876022339 -1.4129999876022339,-0.10000000149011612 -1.4129999876022339,-0.10000000149011612 C-1.7760000228881836,-0.4620000123977661 -1.7760000228881836,-1.0499999523162842 -1.4129999876022339,-1.4129999876022339z"></path></g><g opacity="1" transform="matrix(1,0,0,1,10.034000396728516,3.4670000076293945)"><path fill="rgb(196,196,196)" fill-opacity="1" d=" M1.3140000104904175,-1.3140000104904175 C1.3140000104904175,-1.3140000104904175 1.3140000104904175,-1.3140000104904175 1.3140000104904175,-1.3140000104904175 C1.6759999990463257,-0.9509999752044678 1.6759999990463257,-0.3630000054836273 1.3140000104904175,-0.0010000000474974513 C1.3140000104904175,-0.0010000000474974513 0.0010000000474974513,1.312000036239624 0.0010000000474974513,1.312000036239624 C-0.3619999885559082,1.6749999523162842 -0.949999988079071,1.6749999523162842 -1.312000036239624,1.312000036239624 C-1.6749999523162842,0.949999988079071 -1.6749999523162842,0.3619999885559082 -1.312000036239624,-0.0010000000474974513 C-1.312000036239624,-0.0010000000474974513 0.0010000000474974513,-1.3140000104904175 0.0010000000474974513,-1.3140000104904175 C0.36399999260902405,-1.6759999990463257 0.9520000219345093,-1.6759999990463257 1.3140000104904175,-1.3140000104904175z"></path></g><g opacity="1" transform="matrix(1,0,0,1,3.5429999828338623,9.958000183105469)"><path fill="rgb(196,196,196)" fill-opacity="1" d=" M1.312999963760376,-1.3140000104904175 C1.312999963760376,-1.3140000104904175 1.312999963760376,-1.3140000104904175 1.312999963760376,-1.3140000104904175 C1.6759999990463257,-0.9520000219345093 1.6759999990463257,-0.36399999260902405 1.312999963760376,-0.0010000000474974513 C1.312999963760376,-0.0010000000474974513 0,1.3140000104904175 0,1.3140000104904175 C-0.3630000054836273,1.6759999990463257 -0.9509999752044678,1.6759999990463257 -1.312999963760376,1.3140000104904175 C-1.6759999990463257,0.9509999752044678 -1.6759999990463257,0.3619999885559082 -1.312999963760376,-0.0010000000474974513 C-1.312999963760376,-0.0010000000474974513 0,-1.3140000104904175 0,-1.3140000104904175 C0.3630000054836273,-1.6759999990463257 0.9509999752044678,-1.6759999990463257 1.312999963760376,-1.3140000104904175z"></path></g></g></g><g clip-path="url(#__lottie_element_21)" style="display: none;"><g style="display: none;"><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g></g></g><g clip-path="url(#__lottie_element_14)" style="display: none;"><g style="display: none;"><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g><g><path></path></g></g></g></g><g transform="matrix(1,0,0,1,295.427001953125,107.05799865722656)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,35.25400161743164,39.566001892089844)"><path fill="rgb(236,136,34)" fill-opacity="1" d=" M0.6370000243186951,-2.4140000343322754 C1.0089999437332153,-2.8350000381469727 1.6349999904632568,-2.9159998893737793 2.1010000705718994,-2.6019999980926514 C2.6610000133514404,-2.2249999046325684 2.763000011444092,-1.440000057220459 2.315999984741211,-0.9340000152587891 C2.315999984741211,-0.9340000152587891 -0.6380000114440918,2.4140000343322754 -0.6380000114440918,2.4140000343322754 C-1.0099999904632568,2.8359999656677246 -1.6360000371932983,2.9159998893737793 -2.1019999980926514,2.6029999256134033 C-2.6640000343322754,2.2260000705718994 -2.763000011444092,1.440999984741211 -2.315999984741211,0.9350000023841858 C-2.315999984741211,0.9350000023841858 0.6370000243186951,-2.4140000343322754 0.6370000243186951,-2.4140000343322754z"></path></g><g opacity="1" transform="matrix(1,0,0,1,30.54199981689453,43.22800064086914)"><path fill="rgb(236,136,34)" fill-opacity="1" d=" M1.2059999704360962,3.2130000591278076 C1.0119999647140503,3.197000026702881 0.8149999976158142,3.181999921798706 0.6439999938011169,3.1089999675750732 C0.09700000286102295,2.811000108718872 -0.14399999380111694,2.1029999256134033 0.1550000011920929,1.5549999475479126 C0.1550000011920929,1.5549999475479126 0.9940000176429749,-0.1120000034570694 0.9940000176429749,-0.1120000034570694 C0.9940000176429749,-0.1120000034570694 -2.7980000972747803,1.0479999780654907 -2.7980000972747803,1.0479999780654907 C-3.424999952316284,1.2549999952316284 -4.0289998054504395,0.9319999814033508 -4.236000061035156,0.3050000071525574 C-4.441999912261963,-0.32199999690055847 -4.119999885559082,-0.9269999861717224 -3.49399995803833,-1.1339999437332153 C-3.49399995803833,-1.1339999437332153 2.9200000762939453,-3.072000026702881 2.9200000762939453,-3.072000026702881 C3.384000062942505,-3.2130000591278076 3.865000009536743,-3.0769999027252197 4.111999988555908,-2.703000068664551 C4.439000129699707,-2.361999988555908 4.441999912261963,-1.8899999856948853 4.248000144958496,-1.4329999685287476 C4.248000144958496,-1.4329999685287476 2.115999937057495,2.6530001163482666 2.115999937057495,2.6530001163482666 C1.972000002861023,2.996999979019165 1.621999979019165,3.186000108718872 1.2059999704360962,3.2130000591278076z"></path></g><g opacity="1" transform="matrix(0.9975494146347046,0.06996539980173111,-0.06996539980173111,0.9975494146347046,3.4210000038146973,37.007999420166016)"><path fill="rgb(236,136,34)" fill-opacity="1" d=" M-2.007999897003174,2.884000062942505 C-2.1589999198913574,2.7799999713897705 -2.2170000076293945,2.6059999465942383 -2.2760000228881836,2.431999921798706 C-2.4860000610351562,1.8630000352859497 -2.1500000953674316,1.246999979019165 -1.593000054359436,1.1180000305175781 C-1.593000054359436,1.1180000305175781 0.10100000351667404,0.5709999799728394 0.10100000351667404,0.5709999799728394 C0.10100000351667404,0.5709999799728394 -3.2219998836517334,-1.1419999599456787 -3.2219998836517334,-1.1419999599456787 C-3.7219998836517334,-1.4210000038146973 -3.9210000038146973,-2.069999933242798 -3.6429998874664307,-2.569999933242798 C-3.365000009536743,-3.069999933242798 -2.7149999141693115,-3.2679998874664307 -2.2160000801086426,-2.990000009536743 C-2.2160000801086426,-2.990000009536743 3.303999900817871,-0.09600000083446503 3.303999900817871,-0.09600000083446503 C3.687999963760376,0.12300000339746475 3.9210000038146973,0.5299999713897705 3.864000082015991,0.9359999895095825 C3.805999994277954,1.3420000076293945 3.5399999618530273,1.7599999904632568 3.1110000610351562,1.8650000095367432 C3.1110000610351562,1.8650000095367432 -0.9739999771118164,3.197000026702881 -0.9739999771118164,3.197000026702881 C-1.3569999933242798,3.2679998874664307 -1.7519999742507935,3.128000020980835 -2.007999897003174,2.884000062942505z"></path></g><g opacity="1" transform="matrix(0.9777246713638306,-0.20989160239696503,0.20989160239696503,0.9777246713638306,7.486999988555908,36.00299835205078)"><path fill="rgb(236,136,34)" fill-opacity="1" d=" M0.6380000114440918,-2.4149999618530273 C1.0099999904632568,-2.8359999656677246 1.6360000371932983,-2.9159998893737793 2.1010000705718994,-2.6019999980926514 C2.6619999408721924,-2.2260000705718994 2.763000011444092,-1.440999984741211 2.315999984741211,-0.9350000023841858 C2.315999984741211,-0.9350000023841858 -0.6370000243186951,2.4140000343322754 -0.6370000243186951,2.4140000343322754 C-1.0089999437332153,2.8350000381469727 -1.6349999904632568,2.9159998893737793 -2.1010000705718994,2.6029999256134033 C-2.6619999408721924,2.2249999046325684 -2.763000011444092,1.440000057220459 -2.315999984741211,0.9340000152587891 C-2.315999984741211,0.9340000152587891 0.6380000114440918,-2.4149999618530273 0.6380000114440918,-2.4149999618530273z"></path></g></g><g transform="matrix(0.9996236562728882,0.027433134615421295,-0.027433134615421295,0.9996236562728882,345.76422119140625,105.33956146240234)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,27.750999450683594,33)"><path fill="rgb(236,189,21)" fill-opacity="1" d=" M5.300000190734863,-31.75 C-1.3009999990463257,-28.549999237060547 -15.800999641418457,-20.450000762939453 -20.899999618530273,-13.949999809265137 C-19.301000595092773,-3.75 -16.200000762939453,17.549999237060547 -16.200000762939453,20.549999237060547 C-16.200000762939453,23.649999618530273 -18.000999450683594,29.950000762939453 -18.899999618530273,32.75 C-17.200000762939453,32.04999923706055 -10.800999641418457,29.35099983215332 1.899999976158142,23.950000762939453 C24.698999404907227,9.050000190734863 21.799999237060547,-13.949999809265137 19.100000381469727,-24.350000381469727 C16.899999618530273,-32.650001525878906 8.99899959564209,-32.75 5.300000190734863,-31.75z"></path></g><g opacity="1" transform="matrix(1,0,0,1,14.050999641418457,35.95000076293945)"><path fill="rgb(250,213,55)" fill-opacity="1" d=" M0.0010000000474974513,-21 C7.622000217437744,-21 13.800000190734863,-11.597999572753906 13.800000190734863,0 C13.800000190734863,11.597999572753906 7.622000217437744,21 0.0010000000474974513,21 C-7.620999813079834,21 -13.800000190734863,11.597999572753906 -13.800000190734863,0 C-13.800000190734863,-11.597999572753906 -7.620999813079834,-21 0.0010000000474974513,-21z"></path></g></g></g></svg></div>
+  <div class="vi-page-bottom-txt ct js_btm_txt hide">
+    <span class="vi-txt-callout vi-txt-b900 vi-rows-1"><span style="color: rgb(0,0,255);">小B小幫手小B小幫手小B小幫手小B小幫手</span></span>
+    <a class="vi-txt-callout vi-txt-bold vi-txt-g500 mt4 vi-rows-1">info滑到底小B模組1按鈕(info)</a>
+  </div>
+  <div class="bi-mask"></div>
+</div>
+</bottom-b1>
+
+    </div>
+    
+    <div class="vi-gotop" style="bottom: 226.5px;"></div>
+  </div>
+</body>
+<!-- body-wrap -->
+</html>

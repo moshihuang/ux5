@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="240" viewBox="0 0 240 240">
+    <defs>
+        <filter id="ikvvalg4le" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <filter id="cay6l51n9f" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <path id="h4mrav98va" d="M12.288 17.325c7.01 0 11.857-6.372 11.857-8.358 0-1.996-4.857-8.358-11.857-8.358C5.33.61.42 6.971.42 8.967c0 1.986 4.945 8.358 11.867 8.358z"/>
+        <path id="2d0ppjz14c" d="M12.287 17.325c7.01 0 11.858-6.372 11.858-8.358 0-1.996-4.857-8.358-11.858-8.358C5.33.61.421 6.971.421 8.967c0 1.986 4.945 8.358 11.866 8.358z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g transform="translate(-68 -179) translate(68 179)">
+                <path stroke="#324148" stroke-width="3.733" d="M134.185 100.5c6.884-3.59 13.843-4.17 20.876-1.744M108.006 100.507c-6.884-3.59-13.843-4.17-20.876-1.744" opacity=".8"/>
+                <g transform="translate(132.247 105.233)">
+                    <mask id="9cfdned5db" fill="#fff">
+                        <use xlink:href="#h4mrav98va"/>
+                    </mask>
+                    <use fill="#FFF" fill-rule="nonzero" transform="rotate(-3 12.283 8.967)" xlink:href="#h4mrav98va"/>
+                    <ellipse cx="12.117" cy="14.189" fill="#324148" mask="url(#9cfdned5db)" rx="7.549" ry="8.358"/>
+                </g>
+                <g transform="translate(84.08 105.233)">
+                    <mask id="93umn5oqsd" fill="#fff">
+                        <use xlink:href="#2d0ppjz14c"/>
+                    </mask>
+                    <use fill="#FFF" fill-rule="nonzero" transform="rotate(3 12.283 8.967)" xlink:href="#2d0ppjz14c"/>
+                    <ellipse cx="12.836" cy="14.189" fill="#324148" mask="url(#93umn5oqsd)" rx="7.549" ry="8.358"/>
+                </g>
+                <ellipse cx="77.736" cy="126.675" fill="#FF918E" filter="url(#ikvvalg4le)" rx="7.467" ry="8.206"/>
+                <ellipse cx="162.856" cy="126.675" fill="#FF918E" filter="url(#cay6l51n9f)" rx="7.467" ry="8.206"/>
+            </g>
+        </g>
+    </g>
+</svg>

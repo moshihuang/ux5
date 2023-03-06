@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <path id="rgs782rjca" d="M1.116 1.203C3.847.401 6.58 0 9.316 0c2.737 0 5.474.401 8.21 1.204.662.194 1.117.8 1.117 1.49v9.939c0 .95-.633 1.784-1.549 2.04-2.57.718-5.152 1.077-7.747 1.077-2.598 0-5.196-.36-7.794-1.08C.635 14.415 0 13.58 0 12.628V2.694c0-.69.454-1.296 1.116-1.49z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <path d="M0 0H24V24H0z" transform="translate(-570.000000, -192.000000) translate(570.000000, 192.000000)"/>
+                <g transform="translate(-570.000000, -192.000000) translate(570.000000, 192.000000) translate(1.125000, 4.125000)">
+                    <ellipse cx="2.719" cy="8.014" stroke="#8DCBC7" stroke-width="1.412" rx="2.719" ry="2.671"/>
+                    <ellipse cx="19.031" cy="8.014" stroke="#8DCBC7" stroke-width="1.412" rx="2.719" ry="2.671"/>
+                    <g transform="translate(1.553571, 0.000000)">
+                        <mask id="vy1kdts82b" fill="#fff">
+                            <use xlink:href="#rgs782rjca"/>
+                        </mask>
+                        <use fill="#00F5B3" xlink:href="#rgs782rjca"/>
+                        <path fill="#00C1B3" d="M.886 3.314c2.826-.846 5.648-1.269 8.464-1.269 2.811 0 5.616.422 8.412 1.265.984.297 1.658 1.203 1.658 2.231v8.112c0 1.074-.804 1.978-1.87 2.104-2.721.321-5.455.482-8.2.482-2.752 0-5.503-.162-8.255-.484-1.067-.125-1.872-1.03-1.872-2.104V5.546c0-1.03.676-1.937 1.663-2.232z" mask="url(#vy1kdts82b)"/>
+                        <g fill="#00F5B3" mask="url(#vy1kdts82b)">
+                            <g transform="translate(2.330357, 5.724119)">
+                                <path d="M.382 0H13.6c.21 0 .381.17.381.382 0 .21-.17.381-.381.381H.382C.17.763 0 .593 0 .382S.17 0 .382 0z"/>
+                                <rect width="13.982" height="1" y="2.671" rx=".5"/>
+                                <rect width="13.982" height="1" y="5.343" rx=".5"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

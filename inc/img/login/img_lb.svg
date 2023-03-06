@@ -1,0 +1,571 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="772.784" height="380.933" viewBox="0 0 772.784 380.933">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="パス_3" data-name="パス 3" d="M988.288,288.683s-6.216,3-6.781,15.763c-.631,14.253,12.243,25.333,25.993,29.084Z" transform="translate(-981.486 -288.683)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="長方形_5" data-name="長方形 5" width="1553" height="722" transform="translate(-0.02 -0.306)" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <path id="パス_4" data-name="パス 4" d="M1060.058,288.683s6.216,3,6.781,15.763c.633,14.253-12.243,25.333-25.993,29.084Z" transform="translate(-1040.846 -288.683)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-5">
+      <path id="パス_5" data-name="パス 5" d="M1016.587,333.446a1.707,1.707,0,0,1-1.359-.668l-2.923-3.813-3.251,3.872a1.706,1.706,0,0,1-2.621-2.183l4.622-5.507a1.683,1.683,0,0,1,1.349-.608,1.7,1.7,0,0,1,1.318.668l4.221,5.507a1.7,1.7,0,0,1-1.357,2.733" transform="translate(-1006.035 -324.538)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-7">
+      <path id="パス_6" data-name="パス 6" d="M1036.406,333.446a1.706,1.706,0,0,1-1.359-.668l-2.925-3.813-3.249,3.872a1.714,1.714,0,0,1-2.406.214,1.7,1.7,0,0,1-.215-2.4l4.622-5.507a1.68,1.68,0,0,1,1.348-.608,1.709,1.709,0,0,1,1.32.668l4.22,5.507a1.7,1.7,0,0,1-1.356,2.733" transform="translate(-1025.855 -324.538)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-9">
+      <path id="パス_7" data-name="パス 7" d="M1038.123,252.164c-28.923,0-52.369,23.019-52.369,51.413,0,29.8,13.23,51.392,32.071,60.3a13.846,13.846,0,0,0,12.5-.526,16.467,16.467,0,0,1,15.6,0,13.843,13.843,0,0,0,12.495.526c18.842-8.908,32.074-30.5,32.074-60.3,0-28.394-23.447-51.413-52.369-51.413" transform="translate(-985.754 -252.164)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-11">
+      <path id="パス_8" data-name="パス 8" d="M1059.668,260.194a27.365,27.365,0,0,0-14.281,2.883,19.16,19.16,0,0,1-17.363,0,27.226,27.226,0,1,0,.175,48.47,18.579,18.579,0,0,1,17.015,0,27.257,27.257,0,1,0,14.454-51.352" transform="translate(-988.322 -260.129)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-13">
+      <path id="パス_9" data-name="パス 9" d="M999.948,305.235a7.461,7.461,0,0,1-4.645-5.044,6.1,6.1,0,0,0,11.457,4.162,7.5,7.5,0,0,1-6.811.882" transform="translate(-995.007 -300.191)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-15">
+      <path id="パス_10" data-name="パス 10" d="M1008.4,315.7a7.461,7.461,0,0,1-4.647-5.044,6.1,6.1,0,0,0,11.458,4.162,7.485,7.485,0,0,1-6.812.882" transform="translate(-1003.456 -310.653)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-17">
+      <path id="パス_11" data-name="パス 11" d="M1023.078,317.264a7.475,7.475,0,0,1-5.963-3.4,6.1,6.1,0,0,0,12.184.492,7.483,7.483,0,0,1-6.221,2.9" transform="translate(-1017.115 -313.868)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-19">
+      <path id="パス_12" data-name="パス 12" d="M1036.242,315.262a7.465,7.465,0,0,0,4.644-5.044,6.1,6.1,0,0,1-11.458,4.161,7.5,7.5,0,0,0,6.815.884" transform="translate(-1029.427 -310.218)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-21">
+      <path id="パス_13" data-name="パス 13" d="M1013.172,307.723a7.465,7.465,0,0,1-5.363-4.277,6.1,6.1,0,0,0,11.96,2.366,7.492,7.492,0,0,1-6.6,1.911" transform="translate(-1007.733 -303.446)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-23">
+      <path id="パス_14" data-name="パス 14" d="M1043.221,305.235a7.461,7.461,0,0,0,4.645-5.044,6.1,6.1,0,0,1-11.458,4.162,7.5,7.5,0,0,0,6.813.882" transform="translate(-1036.408 -300.191)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-25">
+      <path id="パス_15" data-name="パス 15" d="M1030.1,307.723a7.468,7.468,0,0,0,5.363-4.277,6.1,6.1,0,0,1-11.961,2.366,7.5,7.5,0,0,0,6.6,1.911" transform="translate(-1023.499 -303.446)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-27">
+      <path id="パス_16" data-name="パス 16" d="M1020.524,259.6a21.35,21.35,0,0,1,9.717-6.117c4.865-1.241,2.946-4.693-1.519-2.194-3.656,2.047-8.2,8.311-8.2,8.311" transform="translate(-1020.524 -250.402)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-29">
+      <path id="パス_17" data-name="パス 17" d="M1020.736,260.149s-.884-5.43-4.566-8.51c-2.632-2.2-1.052-4.393.3-4.548,2.5-.294,4.565,3.373,4.271,13.058" transform="translate(-1014.748 -247.074)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-31">
+      <path id="パス_18" data-name="パス 18" d="M1021.712,257.573s-7.751-9.091-12.667-6.75c-3.386,1.615,7.218,3.229,12.667,6.75" transform="translate(-1008.392 -250.438)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-33">
+      <path id="パス_19" data-name="パス 19" d="M1016.789,281.207l4.579,8.079,3.974-8.079a9.073,9.073,0,0,0-8.552,0" transform="translate(-1016.789 -280.116)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-35">
+      <path id="パス_20" data-name="パス 20" d="M1015.063,279.724a7.977,7.977,0,1,1-7.976-7.946,7.963,7.963,0,0,1,7.976,7.946" transform="translate(-999.11 -271.778)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-37">
+      <path id="パス_21" data-name="パス 21" d="M1006.806,276.615a2.839,2.839,0,1,1-2.839-2.827,2.834,2.834,0,0,1,2.839,2.827" transform="translate(-1001.127 -273.788)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-39">
+      <path id="パス_22" data-name="パス 22" d="M1045.545,279.592s-2.453-4.6-6.638-4.6-8.8,5.032-9.665,7.905c0,0,6.926-9.485,16.3-3.3" transform="translate(-1029.242 -274.99)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-41">
+      <path id="パス_23" data-name="パス 23" d="M991.955,268.66s1.846-2.032,2.469,3.723-2.021,27.729-1.14,37.4-5.073,9.886-5.953,8.128,4.624-49.246,4.624-49.246" transform="translate(-987.236 -268.312)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-43">
+      <path id="パス_24" data-name="パス 24" d="M1049.807,269.085s-1.846-2.029-2.471,3.724,2.021,27.727,1.14,37.4,5.071,9.888,5.954,8.13-4.624-49.249-4.624-49.249" transform="translate(-1047.24 -268.738)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-45">
+      <path id="パス_25" data-name="パス 25" d="M1084.8,290.521l-1.168-6.609a46.735,46.735,0,0,0-91.974-.744l-.648,3.361-3.244-.631.65-3.361a50.035,50.035,0,0,1,98.468.8l1.167,6.607Z" transform="translate(-987.77 -241.807)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-47">
+      <path id="パス_26" data-name="パス 26" d="M1066.887,262.446a1.63,1.63,0,0,1-2.272-.026,44.155,44.155,0,0,0-62.54-.288,1.634,1.634,0,0,1-2.275.009l-3.6-3.42a1.657,1.657,0,0,1-.046-2.367,52.379,52.379,0,0,1,74.406.308,1.675,1.675,0,0,1-.037,2.4Z" transform="translate(-995.677 -241)" fill="#fbbf1f" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-48">
+      <rect id="長方形_51" data-name="長方形 51" width="1553" height="722" transform="translate(-0.02 -0.306)" fill="#fbbf1f"/>
+    </clipPath>
+    <clipPath id="clip-path-49">
+      <path id="パス_27" data-name="パス 27" d="M1069.922,259.621l.6-.559a1.676,1.676,0,0,0,.037-2.4,52.381,52.381,0,0,0-74.408-.308,1.656,1.656,0,0,0,.048,2.367s16.455-15.585,36.077-15.8c17.807-.2,32.2,9.267,37.646,16.7" transform="translate(-995.677 -241)" fill="#fef8c5" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-50">
+      <rect id="長方形_53" data-name="長方形 53" width="1553" height="722" transform="translate(-0.02 -0.306)" fill="#fef8c5"/>
+    </clipPath>
+    <clipPath id="clip-path-51">
+      <path id="パス_28" data-name="パス 28" d="M991.19,270.264l-1.776,42.724-5.119-1.51a12.768,12.768,0,0,1-9.154-12.872l.757-15.129a12.774,12.774,0,0,1,9.538-11.707Z" transform="translate(-975.125 -270.264)" fill="#ffd54f" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-52">
+      <rect id="長方形_55" data-name="長方形 55" width="1553" height="722" transform="translate(-0.02 -0.306)" fill="#ffd54f"/>
+    </clipPath>
+    <clipPath id="clip-path-53">
+      <path id="パス_29" data-name="パス 29" d="M985.278,271.77a12.774,12.774,0,0,0-9.538,11.707l-.327,6.552c2.089-16.928,14.918-17.4,14.918-17.4l.61-.2.091-2.166Z" transform="translate(-975.413 -270.263)" fill="#fef8c5" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-55">
+      <path id="パス_30" data-name="パス 30" d="M986.384,270.426a139.786,139.786,0,0,0-2.365,44.717,2.933,2.933,0,0,0,2.134,2.491,9.774,9.774,0,0,0,6.53-.232,2.893,2.893,0,0,0,1.77-2.986,131.383,131.383,0,0,1,2.169-41.814,2.873,2.873,0,0,0-.884-2.747,7.308,7.308,0,0,0-7.423-1.533,2.861,2.861,0,0,0-1.932,2.1" transform="translate(-983.221 -267.914)" fill="#fbbf1f" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-57">
+      <path id="パス_31" data-name="パス 31" d="M987.343,298.436c-2.733.136-3.722-1.373-4.08-2.488a142.745,142.745,0,0,0,.757,18.508,2.925,2.925,0,0,0,2.134,2.49,9.8,9.8,0,0,0,6.531-.229,2.894,2.894,0,0,0,1.769-2.986,131.39,131.39,0,0,1,2.169-41.816,2.871,2.871,0,0,0-.884-2.745s-4.1,29.053-8.4,29.267" transform="translate(-983.222 -269.169)" fill="#f39c1a" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-58">
+      <rect id="長方形_61" data-name="長方形 61" width="1553" height="722" transform="translate(-0.02 -0.306)" fill="#f39c1a"/>
+    </clipPath>
+    <clipPath id="clip-path-59">
+      <rect id="長方形_66" data-name="長方形 66" width="772.784" height="52.974" fill="#d4eae7"/>
+    </clipPath>
+    <clipPath id="clip-path-60">
+      <rect id="長方形_65" data-name="長方形 65" width="6007.981" height="4796.814" fill="#d4eae7"/>
+    </clipPath>
+    <clipPath id="clip-path-61">
+      <rect id="長方形_64" data-name="長方形 64" width="777.926" height="61.629" fill="#d4eae7"/>
+    </clipPath>
+    <clipPath id="clip-path-62">
+      <path id="パス_32" data-name="パス 32" d="M969.183,367.6H1715.6c7.277,0,13.183-10.107,13.183-22.546V314.615H956V345.05c0,12.439,5.906,22.546,13.183,22.546" transform="translate(-956 -314.615)" fill="#d4eae7" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-64">
+      <path id="パス_34" data-name="パス 34" d="M1038.514,319.158A60.553,60.553,0,0,1,1027.2,318a1.276,1.276,0,1,1,.483-2.505c12.187,2.33,21.8.987,28.558-3.992a24.485,24.485,0,0,0,9.292-15.517,1.281,1.281,0,0,1,2.549.271,26.624,26.624,0,0,1-10.282,17.272c-5.069,3.749-11.532,5.626-19.286,5.626" transform="translate(-1026.161 -294.849)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-66">
+      <path id="パス_35" data-name="パス 35" d="M1030.717,313.562l-4.622-.936a3.286,3.286,0,0,1-2.58-3.876l.274-1.337a3.3,3.3,0,0,1,3.893-2.567l4.622.935a3.289,3.289,0,0,1,2.576,3.879l-.271,1.335a3.3,3.3,0,0,1-3.893,2.567" transform="translate(-1023.448 -304.779)" fill="#f0b71e" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-67">
+      <rect id="長方形_75" data-name="長方形 75" width="1553" height="722" transform="translate(-0.02 -0.306)" fill="#f0b71e"/>
+    </clipPath>
+    <clipPath id="clip-path-68">
+      <path id="パス_36" data-name="パス 36" d="M1031.047,313.136l-5.863-1.187a2.229,2.229,0,0,1-1.747-2.626l.186-.9a2.237,2.237,0,0,1,2.635-1.741l5.865,1.187a2.227,2.227,0,0,1,1.744,2.626l-.184.907a2.232,2.232,0,0,1-2.635,1.738" transform="translate(-1023.392 -306.634)" fill="#f89f1b" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-69">
+      <rect id="長方形_77" data-name="長方形 77" width="1553" height="722" transform="translate(-0.02 -0.306)" fill="#f89f1b"/>
+    </clipPath>
+    <clipPath id="clip-path-70">
+      <path id="パス_37" data-name="パス 37" d="M1053.928,270.544l1.776,42.726,5.117-1.51a12.769,12.769,0,0,0,9.154-12.876l-.757-15.127a12.774,12.774,0,0,0-9.538-11.706Z" transform="translate(-1053.928 -270.544)" fill="#ffd54f" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-72">
+      <path id="パス_38" data-name="パス 38" d="M1059.681,272.051a12.775,12.775,0,0,1,9.538,11.707l.328,6.551c-2.09-16.928-14.918-17.4-14.918-17.4l-.611-.195-.09-2.166Z" transform="translate(-1053.928 -270.544)" fill="#fef8c5" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-74">
+      <path id="パス_39" data-name="パス 39" d="M1057.818,270.707a139.877,139.877,0,0,1,2.363,44.714,2.933,2.933,0,0,1-2.134,2.494,9.776,9.776,0,0,1-6.531-.234,2.888,2.888,0,0,1-1.769-2.985,131.323,131.323,0,0,0-2.171-41.814,2.875,2.875,0,0,1,.885-2.747,7.308,7.308,0,0,1,7.423-1.533,2.869,2.869,0,0,1,1.934,2.1" transform="translate(-1047.508 -268.195)" fill="#fbbf1f" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-76">
+      <path id="パス_40" data-name="パス 40" d="M1056.855,298.717c2.733.136,3.722-1.373,4.082-2.488a142.446,142.446,0,0,1-.758,18.506,2.925,2.925,0,0,1-2.134,2.491,9.792,9.792,0,0,1-6.531-.231,2.894,2.894,0,0,1-1.769-2.986,131.439,131.439,0,0,0-2.168-41.814,2.875,2.875,0,0,1,.882-2.747s4.105,29.053,8.4,29.268" transform="translate(-1047.509 -269.449)" fill="#f89f1b" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-78">
+      <path id="パス_41" data-name="パス 41" d="M1004.429,309.154h9.683l-5.924,5.642Z" transform="translate(-1004.429 -309.154)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-80">
+      <path id="パス_42" data-name="パス 42" d="M999.067,292.638l13.043,30.009-.987,1.189Z" transform="translate(-999.067 -292.638)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-82">
+      <path id="パス_43" data-name="パス 43" d="M1007.469,315.763l5.46-5.037-.126-1.632-5.917,5.273Z" transform="translate(-1006.886 -309.094)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-84">
+      <path id="パス_44" data-name="パス 44" d="M1033.047,325.9H974.526a2.014,2.014,0,0,1-1.875-1.272l-12.353-31.3a2.009,2.009,0,0,1,1.875-2.742h53.506a5.037,5.037,0,0,1,4.685,3.181Z" transform="translate(-960.157 -290.582)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-86">
+      <path id="パス_45" data-name="パス 45" d="M991.178,306.968c.029,2.549-2.163,4.446-5.037,4.608a8.2,8.2,0,0,1-7.729-4.475c-1.51-3.5.942-6.79,5.448-6.547,4.138.223,7.283,3.356,7.317,6.414" transform="translate(-977.967 -300.542)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-88">
+      <path id="パス_46" data-name="パス 46" d="M966.138,315.288l3.239,8.21a2.014,2.014,0,0,0,1.875,1.272h58.521l-12.682-32.132c-19.13,21.255-47.493,22.57-50.953,22.65" transform="translate(-966.138 -292.638)" fill="none" clip-rule="evenodd"/>
+    </clipPath>
+  </defs>
+  <g id="グループ_839" data-name="グループ 839" transform="translate(397.784 -415.495)">
+    <g id="グループ_198" data-name="グループ 198" transform="translate(-269.012 306.162)">
+      <g id="グループ_197" data-name="グループ 197" transform="translate(480 128)">
+        <g id="グループ_10" data-name="グループ 10" transform="translate(9.516 55.116)">
+          <g id="グループ_9" data-name="グループ 9" transform="translate(0 0)" clip-path="url(#clip-path)">
+            <g id="グループ_8" data-name="グループ 8" transform="translate(-1238.484 -213.972)">
+              <g id="グループ_7" data-name="グループ 7" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_4" data-name="長方形 4" width="41.489" height="60.321" transform="translate(1230.746 206.235)" fill="#989899"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_14" data-name="グループ 14" transform="translate(101.368 55.116)">
+          <g id="グループ_13" data-name="グループ 13" transform="translate(0 0)" clip-path="url(#clip-path-3)">
+            <g id="グループ_12" data-name="グループ 12" transform="translate(-1330.336 -213.972)">
+              <g id="グループ_11" data-name="グループ 11" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_6" data-name="長方形 6" width="41.49" height="60.321" transform="translate(1322.599 206.235)" fill="#989899"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_18" data-name="グループ 18" transform="translate(47.502 110.596)">
+          <g id="グループ_17" data-name="グループ 17" transform="translate(0)" clip-path="url(#clip-path-5)">
+            <g id="グループ_16" data-name="グループ 16" transform="translate(-1276.47 -269.452)">
+              <g id="グループ_15" data-name="グループ 15" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_8" data-name="長方形 8" width="27.732" height="24.382" transform="translate(1268.734 261.716)" fill="#ec8822"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_22" data-name="グループ 22" transform="translate(78.171 110.596)">
+          <g id="グループ_21" data-name="グループ 21" transform="translate(0)" clip-path="url(#clip-path-7)">
+            <g id="グループ_20" data-name="グループ 20" transform="translate(-1307.139 -269.452)">
+              <g id="グループ_19" data-name="グループ 19" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_10" data-name="長方形 10" width="27.731" height="24.382" transform="translate(1299.402 261.716)" fill="#ec8822"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_26" data-name="グループ 26" transform="translate(16.12 -1.392)">
+          <g id="グループ_25" data-name="グループ 25" transform="translate(0)" clip-path="url(#clip-path-9)">
+            <g id="グループ_24" data-name="グループ 24" transform="translate(-1245.088 -157.464)">
+              <g id="グループ_23" data-name="グループ 23" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_12" data-name="長方形 12" width="120.212" height="128.434" transform="translate(1237.351 149.726)" fill="#e7e4e2"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_30" data-name="グループ 30" transform="translate(20.093 10.933)">
+          <g id="グループ_29" data-name="グループ 29" transform="translate(0 0)" clip-path="url(#clip-path-11)">
+            <g id="グループ_28" data-name="グループ 28" transform="translate(-1249.061 -169.789)">
+              <g id="グループ_27" data-name="グループ 27" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_14" data-name="長方形 14" width="112.245" height="69.925" transform="translate(1241.324 162.053)" fill="#fff"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_34" data-name="グループ 34" transform="translate(30.438 72.923)">
+          <g id="グループ_33" data-name="グループ 33" clip-path="url(#clip-path-13)">
+            <g id="グループ_32" data-name="グループ 32" transform="translate(-1259.406 -231.779)">
+              <g id="グループ_31" data-name="グループ 31" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_16" data-name="長方形 16" width="27.226" height="23.451" transform="translate(1251.669 224.042)" fill="#989899"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_38" data-name="グループ 38" transform="translate(43.511 89.111)">
+          <g id="グループ_37" data-name="グループ 37" transform="translate(0 0)" clip-path="url(#clip-path-15)">
+            <g id="グループ_36" data-name="グループ 36" transform="translate(-1272.479 -247.967)">
+              <g id="グループ_35" data-name="グループ 35" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_18" data-name="長方形 18" width="27.226" height="23.452" transform="translate(1264.743 240.231)" fill="#989899"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_42" data-name="グループ 42" transform="translate(64.647 94.086)">
+          <g id="グループ_41" data-name="グループ 41" transform="translate(0 0)" clip-path="url(#clip-path-17)">
+            <g id="グループ_40" data-name="グループ 40" transform="translate(-1293.615 -252.942)">
+              <g id="グループ_39" data-name="グループ 39" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_20" data-name="長方形 20" width="27.657" height="21.605" transform="translate(1285.878 245.205)" fill="#989899"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_46" data-name="グループ 46" transform="translate(83.698 88.438)">
+          <g id="グループ_45" data-name="グループ 45" transform="translate(0 0)" clip-path="url(#clip-path-19)">
+            <g id="グループ_44" data-name="グループ 44" transform="translate(-1312.666 -247.294)">
+              <g id="グループ_43" data-name="グループ 43" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_22" data-name="長方形 22" width="27.227" height="23.45" transform="translate(1304.93 239.558)" fill="#989899"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_50" data-name="グループ 50" transform="translate(50.131 77.959)">
+          <g id="グループ_49" data-name="グループ 49" transform="translate(0 0)" clip-path="url(#clip-path-21)">
+            <g id="グループ_48" data-name="グループ 48" transform="translate(-1279.098 -236.816)">
+              <g id="グループ_47" data-name="グループ 47" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_24" data-name="長方形 24" width="27.509" height="22.546" transform="translate(1271.361 229.079)" fill="#989899"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_54" data-name="グループ 54" transform="translate(94.5 72.923)">
+          <g id="グループ_53" data-name="グループ 53" transform="translate(0)" clip-path="url(#clip-path-23)">
+            <g id="グループ_52" data-name="グループ 52" transform="translate(-1323.468 -231.779)">
+              <g id="グループ_51" data-name="グループ 51" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_26" data-name="長方形 26" width="27.226" height="23.451" transform="translate(1315.732 224.042)" fill="#989899"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_58" data-name="グループ 58" transform="translate(74.526 77.959)">
+          <g id="グループ_57" data-name="グループ 57" transform="translate(0 0)" clip-path="url(#clip-path-25)">
+            <g id="グループ_56" data-name="グループ 56" transform="translate(-1303.494 -236.816)">
+              <g id="グループ_55" data-name="グループ 55" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_28" data-name="長方形 28" width="27.509" height="22.546" transform="translate(1295.757 229.079)" fill="#989899"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_62" data-name="グループ 62" transform="translate(69.922 -4.118)">
+          <g id="グループ_61" data-name="グループ 61" transform="translate(0 0)" clip-path="url(#clip-path-27)">
+            <g id="グループ_60" data-name="グループ 60" transform="translate(-1298.89 -154.738)">
+              <g id="グループ_59" data-name="グループ 59" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_30" data-name="長方形 30" width="28.045" height="24.67" transform="translate(1291.153 147.001)" fill="#989899"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_66" data-name="グループ 66" transform="translate(60.985 -9.268)">
+          <g id="グループ_65" data-name="グループ 65" transform="translate(0 0)" clip-path="url(#clip-path-29)">
+            <g id="グループ_64" data-name="グループ 64" transform="translate(-1289.953 -149.588)">
+              <g id="グループ_63" data-name="グループ 63" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_32" data-name="長方形 32" width="21.489" height="28.548" transform="translate(1282.217 141.851)" fill="#989899"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_70" data-name="グループ 70" transform="translate(51.149 -4.063)">
+          <g id="グループ_69" data-name="グループ 69" transform="translate(0 0)" clip-path="url(#clip-path-31)">
+            <g id="グループ_68" data-name="グループ 68" transform="translate(-1280.117 -154.793)">
+              <g id="グループ_67" data-name="グループ 67" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_34" data-name="長方形 34" width="28.793" height="22.608" transform="translate(1272.38 147.056)" fill="#989899"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_74" data-name="グループ 74" transform="translate(64.143 41.859)">
+          <g id="グループ_73" data-name="グループ 73" transform="translate(0 0)" clip-path="url(#clip-path-33)">
+            <g id="グループ_72" data-name="グループ 72" transform="translate(-1293.111 -200.715)">
+              <g id="グループ_71" data-name="グループ 71" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_36" data-name="長方形 36" width="24.026" height="24.644" transform="translate(1285.374 192.979)" fill="#ec8822"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_78" data-name="グループ 78" transform="translate(36.787 28.958)">
+          <g id="グループ_77" data-name="グループ 77" transform="translate(0 0)" clip-path="url(#clip-path-35)">
+            <g id="グループ_76" data-name="グループ 76" transform="translate(-1265.755 -187.814)">
+              <g id="グループ_75" data-name="グループ 75" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_38" data-name="長方形 38" width="31.426" height="31.368" transform="translate(1258.019 180.077)" fill="#231f20"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_82" data-name="グループ 82" transform="translate(39.908 32.068)">
+          <g id="グループ_81" data-name="グループ 81" transform="translate(0 0)" clip-path="url(#clip-path-37)">
+            <g id="グループ_80" data-name="グループ 80" transform="translate(-1268.876 -190.924)">
+              <g id="グループ_79" data-name="グループ 79" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_40" data-name="長方形 40" width="21.152" height="21.129" transform="translate(1261.14 183.187)" fill="#fff"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_86" data-name="グループ 86" transform="translate(83.412 33.928)">
+          <g id="グループ_85" data-name="グループ 85" transform="translate(0)" clip-path="url(#clip-path-39)">
+            <g id="グループ_84" data-name="グループ 84" transform="translate(-1312.38 -192.784)">
+              <g id="グループ_83" data-name="グループ 83" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_42" data-name="長方形 42" width="31.776" height="23.379" transform="translate(1304.644 185.048)" fill="#231f20"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_90" data-name="グループ 90" transform="translate(18.414 23.595)">
+          <g id="グループ_89" data-name="グループ 89" transform="translate(0 0)" clip-path="url(#clip-path-41)">
+            <g id="グループ_88" data-name="グループ 88" transform="translate(-1247.382 -182.451)">
+              <g id="グループ_87" data-name="グループ 87" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_44" data-name="長方形 44" width="22.759" height="65.916" transform="translate(1239.645 174.714)" fill="#eee"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_94" data-name="グループ 94" transform="translate(111.261 24.253)">
+          <g id="グループ_93" data-name="グループ 93" transform="translate(0 0)" clip-path="url(#clip-path-43)">
+            <g id="グループ_92" data-name="グループ 92" transform="translate(-1340.229 -183.109)">
+              <g id="グループ_91" data-name="グループ 91" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_46" data-name="長方形 46" width="22.761" height="65.917" transform="translate(1332.492 175.373)" fill="#eee"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_98" data-name="グループ 98" transform="translate(19.24 -17.418)">
+          <g id="グループ_97" data-name="グループ 97" transform="translate(0 0)" clip-path="url(#clip-path-45)">
+            <g id="グループ_96" data-name="グループ 96" transform="translate(-1248.208 -141.438)">
+              <g id="グループ_95" data-name="グループ 95" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_48" data-name="長方形 48" width="115.757" height="64.188" transform="translate(1240.471 133.701)" fill="#37474f"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_102" data-name="グループ 102" transform="translate(31.475 -18.667)">
+          <g id="グループ_101" data-name="グループ 101" clip-path="url(#clip-path-47)">
+            <g id="グループ_100" data-name="グループ 100" transform="translate(-1260.443 -140.189)">
+              <g id="グループ_99" data-name="グループ 99" transform="translate(0 0)" clip-path="url(#clip-path-48)">
+                <rect id="長方形_50" data-name="長方形 50" width="90.843" height="37.367" transform="translate(1252.707 132.453)" fill="#fbbf1f"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_106" data-name="グループ 106" transform="translate(31.476 -18.667)">
+          <g id="グループ_105" data-name="グループ 105" transform="translate(0)" clip-path="url(#clip-path-49)">
+            <g id="グループ_104" data-name="グループ 104" transform="translate(-1260.443 -140.189)">
+              <g id="グループ_103" data-name="グループ 103" transform="translate(0 0)" clip-path="url(#clip-path-50)">
+                <rect id="長方形_52" data-name="長方形 52" width="90.844" height="34.094" transform="translate(1252.706 132.453)" fill="#fef8c5"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_110" data-name="グループ 110" transform="translate(-0.327 26.615)">
+          <g id="グループ_109" data-name="グループ 109" transform="translate(0 0)" clip-path="url(#clip-path-51)">
+            <g id="グループ_108" data-name="グループ 108" transform="translate(-1228.641 -185.471)">
+              <g id="グループ_107" data-name="グループ 107" transform="translate(0 0)" clip-path="url(#clip-path-52)">
+                <rect id="長方形_54" data-name="長方形 54" width="31.538" height="58.198" transform="translate(1220.904 177.734)" fill="#ffd54f"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_114" data-name="グループ 114" transform="translate(0.119 26.613)">
+          <g id="グループ_113" data-name="グループ 113" transform="translate(0 0)" clip-path="url(#clip-path-53)">
+            <g id="グループ_112" data-name="グループ 112" transform="translate(-1229.087 -185.469)">
+              <g id="グループ_111" data-name="グループ 111" transform="translate(0 0)" clip-path="url(#clip-path-50)">
+                <rect id="長方形_56" data-name="長方形 56" width="31.092" height="35.239" transform="translate(1221.35 177.733)" fill="#fef8c5"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_118" data-name="グループ 118" transform="translate(12.201 22.978)">
+          <g id="グループ_117" data-name="グループ 117" transform="translate(0 0)" clip-path="url(#clip-path-55)">
+            <g id="グループ_116" data-name="グループ 116" transform="translate(-1241.169 -181.834)">
+              <g id="グループ_115" data-name="グループ 115" transform="translate(0 0)" clip-path="url(#clip-path-48)">
+                <rect id="長方形_58" data-name="長方形 58" width="28.945" height="65.635" transform="translate(1233.432 174.097)" fill="#fbbf1f"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_122" data-name="グループ 122" transform="translate(12.202 24.921)">
+          <g id="グループ_121" data-name="グループ 121" transform="translate(0 0)" clip-path="url(#clip-path-57)">
+            <g id="グループ_120" data-name="グループ 120" transform="translate(-1241.17 -183.777)">
+              <g id="グループ_119" data-name="グループ 119" transform="translate(0 0)" clip-path="url(#clip-path-58)">
+                <rect id="長方形_60" data-name="長方形 60" width="28.943" height="63.692" transform="translate(1233.433 176.039)" fill="#f39c1a"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_133" data-name="グループ 133" transform="translate(-608.771 93.35)">
+          <g id="グループ_132" data-name="グループ 132" transform="translate(0 -4.911)" clip-path="url(#clip-path-59)">
+            <g id="グループ_131" data-name="グループ 131" transform="translate(-4637.635 -1690.856)">
+              <g id="グループ_130" data-name="グループ 130" transform="translate(0)" clip-path="url(#clip-path-60)">
+                <g id="グループ_129" data-name="グループ 129" transform="translate(4637.635 1684.534)" style="isolation: isolate">
+                  <g id="グループ_128" data-name="グループ 128">
+                    <g id="グループ_127" data-name="グループ 127" clip-path="url(#clip-path-61)">
+                      <g id="グループ_126" data-name="グループ 126" transform="translate(0 6.317)">
+                        <g id="グループ_125" data-name="グループ 125" clip-path="url(#clip-path-62)">
+                          <g id="グループ_124" data-name="グループ 124" transform="translate(0 -6.317)">
+                            <g id="グループ_123" data-name="グループ 123" clip-path="url(#clip-path-61)">
+                              <rect id="長方形_62" data-name="長方形 62" width="832.631" height="155.69" transform="translate(-29.922 -45.037)" fill="#d4eae7"/>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_148" data-name="グループ 148" transform="translate(78.644 64.657)">
+          <g id="グループ_147" data-name="グループ 147" transform="translate(0 0)" clip-path="url(#clip-path-64)">
+            <g id="グループ_146" data-name="グループ 146" transform="translate(-1307.612 -223.513)">
+              <g id="グループ_145" data-name="グループ 145" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_72" data-name="長方形 72" width="57.401" height="39.782" transform="translate(1299.875 215.777)" fill="#37474f"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_152" data-name="グループ 152" transform="translate(74.448 80.022)">
+          <g id="グループ_151" data-name="グループ 151" transform="translate(0)" clip-path="url(#clip-path-66)">
+            <g id="グループ_150" data-name="グループ 150" transform="translate(-1303.416 -238.878)">
+              <g id="グループ_149" data-name="グループ 149" transform="translate(0 0)" clip-path="url(#clip-path-67)">
+                <rect id="長方形_74" data-name="長方形 74" width="26.973" height="24.325" transform="translate(1295.679 231.141)" fill="#f0b71e"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_156" data-name="グループ 156" transform="translate(74.36 82.893)">
+          <g id="グループ_155" data-name="グループ 155" transform="translate(0 0)" clip-path="url(#clip-path-68)">
+            <g id="グループ_154" data-name="グループ 154" transform="translate(-1303.328 -241.749)">
+              <g id="グループ_153" data-name="グループ 153" transform="translate(0 0)" clip-path="url(#clip-path-69)">
+                <rect id="長方形_76" data-name="長方形 76" width="25.994" height="22.02" transform="translate(1295.591 234.012)" fill="#f89f1b"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_160" data-name="グループ 160" transform="translate(121.61 27.048)">
+          <g id="グループ_159" data-name="グループ 159" transform="translate(0)" clip-path="url(#clip-path-70)">
+            <g id="グループ_158" data-name="グループ 158" transform="translate(-1350.578 -185.904)">
+              <g id="グループ_157" data-name="グループ 157" transform="translate(0 0)" clip-path="url(#clip-path-52)">
+                <rect id="長方形_78" data-name="長方形 78" width="31.538" height="58.198" transform="translate(1342.841 178.168)" fill="#ffd54f"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_164" data-name="グループ 164" transform="translate(121.61 27.048)">
+          <g id="グループ_163" data-name="グループ 163" transform="translate(0)" clip-path="url(#clip-path-72)">
+            <g id="グループ_162" data-name="グループ 162" transform="translate(-1350.578 -185.904)">
+              <g id="グループ_161" data-name="グループ 161" transform="translate(0 0)" clip-path="url(#clip-path-50)">
+                <rect id="長方形_80" data-name="長方形 80" width="31.092" height="35.239" transform="translate(1342.841 178.168)" fill="#fef8c5"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_168" data-name="グループ 168" transform="translate(111.676 23.413)">
+          <g id="グループ_167" data-name="グループ 167" transform="translate(0 0)" clip-path="url(#clip-path-74)">
+            <g id="グループ_166" data-name="グループ 166" transform="translate(-1340.644 -182.269)">
+              <g id="グループ_165" data-name="グループ 165" transform="translate(0 0)" clip-path="url(#clip-path-48)">
+                <rect id="長方形_82" data-name="長方形 82" width="28.945" height="65.635" transform="translate(1332.907 174.532)" fill="#fbbf1f"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_172" data-name="グループ 172" transform="translate(111.677 25.354)">
+          <g id="グループ_171" data-name="グループ 171" transform="translate(0)" clip-path="url(#clip-path-76)">
+            <g id="グループ_170" data-name="グループ 170" transform="translate(-1340.645 -184.21)">
+              <g id="グループ_169" data-name="グループ 169" transform="translate(0 0)" clip-path="url(#clip-path-69)">
+                <rect id="長方形_84" data-name="長方形 84" width="28.943" height="63.692" transform="translate(1332.908 176.474)" fill="#f89f1b"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_176" data-name="グループ 176" transform="translate(45.018 86.792)">
+          <g id="グループ_175" data-name="グループ 175" clip-path="url(#clip-path-78)">
+            <g id="グループ_174" data-name="グループ 174" transform="translate(-1273.985 -245.648)">
+              <g id="グループ_173" data-name="グループ 173" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_86" data-name="長方形 86" width="25.156" height="21.115" transform="translate(1266.249 237.911)" fill="#37474f"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_180" data-name="グループ 180" transform="translate(36.72 61.236)">
+          <g id="グループ_179" data-name="グループ 179" transform="translate(0 0)" clip-path="url(#clip-path-80)">
+            <g id="グループ_178" data-name="グループ 178" transform="translate(-1265.688 -220.092)">
+              <g id="グループ_177" data-name="グループ 177" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_88" data-name="長方形 88" width="28.516" height="46.672" transform="translate(1257.951 212.355)" fill="#90a4ae"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_184" data-name="グループ 184" transform="translate(48.819 86.699)">
+          <g id="グループ_183" data-name="グループ 183" transform="translate(0 0)" clip-path="url(#clip-path-82)">
+            <g id="グループ_182" data-name="グループ 182" transform="translate(-1277.787 -245.555)">
+              <g id="グループ_181" data-name="グループ 181" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_90" data-name="長方形 90" width="21.517" height="22.143" transform="translate(1270.051 237.818)" fill="#90a4ae"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_188" data-name="グループ 188" transform="translate(-23.488 58.054)">
+          <g id="グループ_187" data-name="グループ 187" transform="translate(0 0)" clip-path="url(#clip-path-84)">
+            <g id="グループ_186" data-name="グループ 186" transform="translate(-1205.48 -216.91)">
+              <g id="グループ_185" data-name="グループ 185" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_92" data-name="長方形 92" width="88.364" height="50.787" transform="translate(1197.743 209.174)" fill="#546e7a"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_192" data-name="グループ 192" transform="translate(4.071 73.466)">
+          <g id="グループ_191" data-name="グループ 191" transform="translate(0 0)" clip-path="url(#clip-path-86)">
+            <g id="グループ_190" data-name="グループ 190" transform="translate(-1233.039 -232.322)">
+              <g id="グループ_189" data-name="グループ 189" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_94" data-name="長方形 94" width="28.685" height="26.52" transform="translate(1225.303 224.585)" fill="#b0bec5"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="グループ_196" data-name="グループ 196" transform="translate(-14.233 61.236)">
+          <g id="グループ_195" data-name="グループ 195" transform="translate(0)" clip-path="url(#clip-path-88)">
+            <g id="グループ_194" data-name="グループ 194" transform="translate(-1214.735 -220.092)">
+              <g id="グループ_193" data-name="グループ 193" transform="translate(0 0)" clip-path="url(#clip-path-2)">
+                <rect id="長方形_96" data-name="長方形 96" width="79.109" height="47.606" transform="translate(1206.998 212.355)" fill="#78909c" opacity="0.403"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <path id="パス_49" data-name="パス 49" d="M0,0H772.784V249.565H0Z" transform="translate(-397.784 546.863)" fill="#d4eae7"/>
+  </g>
+</svg>

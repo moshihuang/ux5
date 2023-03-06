@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-page-indicator .vi-step {
+      height: 28px;
+      margin-left: 12px;
+      flex-shrink: 0;
+    }
+
+
+    .red-hint {
+      width: 8px;
+      height: 8px;
+      background: #FF5441;
+      border-radius: 8px;
+      position: absolute;
+      right: 8px;
+      top: 8px;
+    } 
+
+
+    .vi-overview-card-group .vi-list-card .list-slider-btn {
+      border-radius: 12px;
+    }
+    .vi-overview-card-group .vi-list-card:last-child {
+      margin-bottom: 0;
+    }
+
+    
+    /* loader animation */
+    .loader {
+      position: relative;
+      overflow: hidden;
+    }
+    .loader-spinner {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      border: 12px solid #F5F5F5;
+      border-top: 12px solid #009891;
+      border-radius: 50%;
+    }
+    .loader-spinner {
+      transition-property: transform;
+      animation: rotate 0.8s infinite linear;
+    }
+    @keyframes rotate {
+      from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+    }
+    .loader-img {
+      width: 100%;
+      position: absolute;
+      top: 1px;
+      text-align: center;
+    }
+    .loader-img-bi-animation {
+      width: 100%;
+      height: 100px;
+      animation: swapImg 1s infinite;
+      background: url('../inc/img/health/loader-bi-run-1.svg') no-repeat center;
+    }
+    @keyframes swapImg {
+      0% {
+        background: url('../inc/img/health/loader-bi-run-1.svg') no-repeat center;
+      }
+      25% {
+        background: url('../inc/img/health/loader-bi-run-2.svg') no-repeat center;
+      }
+      50% {
+        background: url('../inc/img/health/loader-bi-run-3.svg') no-repeat center;
+      }
+      75% {
+        background: url('../inc/img/health/loader-bi-run-2.svg') no-repeat center;
+      }
+      100% {
+        background: url('../inc/img/health/loader-bi-run-1.svg') no-repeat center;
+      }
+    }
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+
+<body class="vi-bg-mint ">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <!-- <h1 class="vi-page-title"></h1> -->
+      </div>
+      <div class="vi-page-header-rt">
+        <a class="vi-icon vi-icon-base icon-start-default-w"></a>
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap vi-bg-mint">
+    
+    <div class="main_container vi-has-foot-btn">
+      
+      <div class="vi-page-indicator">
+        <div class="vi-progress-bar"></div>
+        <div class="vi-txt-title vi-txt-b900">目前持有的資產中，要分配哪些給$買房使用？</div>
+        <div class="vi-step vi-txt-g600">
+          步驟
+          <span class="vi-step-current">4</span><span class="vi-txt-b500">/4</span>
+        </div>
+      </div>
+      
+
+      <div class="vi-container pad_btm50">
+
+        <div class="dis-flex flex-justify-end mb8">
+          <div class="vi-txt-body vi-txt-b600">參考市值<span class="vi-txt-callout vi-txt-b500">（約當新臺幣）</span></div>
+        </div>
+      
+        <div class="vi-card has-select-link">
+          <a class="vi-card-header align-items-center vi-w-100 vi-select-link">
+            <div class="vi-txt-headline vi-txt-b600 mr-auto">臺幣定存</div>
+            <div class="vi-txt-body vi-txt-b500 top-2px ml-auto">請分配金額</div>
+          </a>
+        </div>
+        
+        <div class="vi-card">
+          <div class="red-hint"></div>
+          <a class="vi-card-header align-items-center vi-w-100 vi-select-link">
+            <div class="vi-txt-headline vi-txt-b600 mr-auto">ETF</div>
+            <!-- 有紅點的 class 不一樣 -->
+            <div class="vi-txt-headline vi-txt-b900 top-2px ml-auto">20,000</div>
+          </a>
+        </div>
+        
+        <div class="vi-card">
+          <a class="vi-card-header align-items-center vi-w-100 vi-select-link">
+            <div class="vi-txt-headline vi-txt-b600 mr-auto">股票</div>
+            <div class="vi-txt-body vi-txt-b500 top-2px ml-auto">請分配金額</div>
+          </a>
+        </div>
+        
+        <div class="vi-card">
+          <a class="vi-card-header align-items-center vi-w-100 vi-select-link">
+            <div class="vi-txt-headline vi-txt-b600 mr-auto">基金</div>
+            <div class="vi-txt-body vi-txt-b500 top-2px ml-auto">請分配金額</div>
+          </a>
+        </div>
+        
+        
+        <div class="vi-overview-card-group">
+          <div class="vi-overview-card-group-header pad_top16">
+            <div class="vi-txt-body vi-txt-b600">
+              想讓健檢結果更精準嗎？你可以在此新增他行資產讓健檢更完整。
+            </div>
+          </div>
+          <div id="trigger-add-other" class="vi-btn vi-btn-dashed vi-btn-lightgreen vi-btn-block mb12">
+            <span class="vi-icon vi-icon-xs icon-add-g mr8 top-2px"></span>新增他行資產
+          </div>
+          
+          <!-- 常按時會出現 刪除  可參考 account-list-slider.component 及 slider.directive -->
+          <div class="vi-list-card list-slider">
+            <a class="list-slider-left list-link-msg js_slider_left">
+              <div class="red-hint"></div>
+              <div class="dis-flex flex-column vi-w-100">
+                <div class="dis-flex flex-justify-between w-100">
+                  <div class="vi-txt-headline vi-txt-b600">國泰銀行</div>
+                  <div class="vi-txt-headline vi-txt-b600">100,000</div>
+                </div>
+                <div class="dis-flex flex-justify-between w-100 mt4">
+                  <div class="vi-txt-body vi-txt-b600">存款</div>
+                  <div class="vi-icon vi-icon-base icon-pencil-g"></div>
+                </div>
+              </div> 
+            </a>
+            <div class="list-slider-right js_slider_right slider-show">
+              <button class="vi-btn list-slider-btn vi-bg-r500">刪除</i18n></button>
+            </div>
+          </div>
+          <div class="vi-list-card list-slider">
+            <a class="list-slider-left list-link-msg js_slider_left">
+              <div class="red-hint"></div>
+              <div class="dis-flex flex-column vi-w-100">
+                <div class="dis-flex flex-justify-between w-100">
+                  <div class="vi-txt-headline vi-txt-b600">國泰銀行</div>
+                  <div class="vi-txt-headline vi-txt-b600">100,000</div>
+                </div>
+                <div class="dis-flex flex-justify-between w-100 mt4">
+                  <div class="vi-txt-body vi-txt-b600">存款</div>
+                  <div class="vi-icon vi-icon-base icon-pencil-g"></div>
+                </div>
+              </div> 
+            </a>
+            <div class="list-slider-right js_slider_right slider-show">
+              <button class="vi-btn list-slider-btn vi-bg-r500">刪除</i18n></button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      
+
+      <div id="footer">
+        <div class="vi-page-footer">
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="target-pass-step" class="vi-txt-callout vi-txt-b500 ct mb8">(可略過此步驟，後續仍可進行分配)</div>
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="target-has-select-item" class="vi-txt-callout vi-txt-b900 ct mb8 hide">選擇資產小計，共 100,000 元</div>
+          <div class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-primary">開始分析</div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="trigger-loading" class="vi-txt-g500 mb24">-> loading demo</div>
+      <div id="trigger-has-select-item" class="vi-txt-g500 mb24">-> 略過此步驟 與 選擇資產小計 切換 demo</div>
+      <div id="trigger-show-money-supercard" class="vi-txt-g500 mb60">-> 是否加入資產（成立帳戶）-> 否 demo</div>
+
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+<!-- loading popup 現有版型 這裡僅示意 但好像還沒有 無 button 的 vi-modal ? -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-loading-popup" class="vi-modal" style="z-index: 99979;">
+  <div class="vi-modal-backdrop"></div>
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-header-ct">
+        <span class="popup-title">正在分析並試算...</span>
+      </div>
+    </div>
+    <div class="popup-body">
+      <div class="loader loader-bi-run">
+        <div class="loader-spinner"></div>
+        <div class="loader-img">
+          <div class="loader-img-bi-animation"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 輸入其他保單 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-add-other-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">新增他行資產</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-txt-body vi-txt-b600 mb8">您可以新增他行資產一起納入理財規劃，也能讓之後的健檢結果更準確唷！</div>
+
+        <!-- id 是 demo 用的，開發請拉掉 -->
+        <div id="trigger-select-type" class="vi-form-group vi-for-select">
+          <div class="vi-input-group">
+            <span class="title">資產種類</span>
+            <input placeholder="請選擇" type="text" readonly="readonly">
+          </div>
+          <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div>
+          <div class="vi-form-info"></div>
+        </div>
+        
+        <div class="vi-form-group">
+          <div class="vi-input-group">
+            <span class="title">金額</span>
+            <input type="tel" placeholder="請輸入金額">
+          </div>
+          <div class="vi-form-info"></div>
+          <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div>
+        </div>
+
+        <div class="vi-form-group">
+          <div class="vi-input-group">
+            <span class="title">備註</span>
+            <input type="text" placeholder="例如：存放在哪家銀行">
+          </div>
+          <div class="vi-form-info"></div>
+          <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div>
+        </div>
+        
+        <!-- 編輯資產 時才會顯示 -->
+        <!-- <div class="rt vi-txt-body-bold vi-txt-g500">刪除此筆</div> -->
+        
+        <div class="vi-btn-group mt24">
+          <div class="vi-btn vi-btn-secondary">取消</div>
+          <div class="vi-btn vi-btn-primary">新增</div>
+        </div>
+
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!-- 資產種類 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-type-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal" (click)=""></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">資產種類</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" ontouchstart="" data-dismiss="modal" (click)=""></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <ul class="vi-list vi-list-px8 vi-list-py12 super-card-select">
+          <!-- 如果已是選取 加 .active -->
+          <a class="vi-list-item active" href="">
+            <span class="vi-txt-body-bold vi-txt-g500">保險</span>
+          </a>
+          <a class="vi-list-item" href="">
+            <span class="vi-txt-body-bold vi-txt-g500">基金</span>
+          </a>
+          <a class="vi-list-item" href="">
+            <span class="vi-txt-body-bold vi-txt-g500">存款</span>
+          </a>
+          <a class="vi-list-item" href="">
+            <span class="vi-txt-body-bold vi-txt-g500">股票</span>
+          </a>
+          <a class="vi-list-item" href="">
+            <span class="vi-txt-body-bold vi-txt-g500">其他</span>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+<!-- 調整分配金額 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-money-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal" (click)=""></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">啟動夢想只差一小步，你目前準備多少錢啟動呢？</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" ontouchstart="" data-dismiss="modal" (click)=""></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+          <div class="vi-input-group">
+            <span class="title large-title">已準備金額</span>
+            <input type="tel" placeholder="請輸入至少 1 元">
+          </div>
+
+          <div class="vi-btn-group mt24">
+            <div class="btn vi-btn vi-btn-primary">確認</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// loading demo
+document.getElementById('trigger-loading').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-loading-popup').classList.toggle('vi-modal-in');
+});
+
+// 輸入其他保單 demo
+document.getElementById('trigger-add-other').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-add-other-supercard').classList.toggle('hide');
+  document.getElementById('target-add-other-supercard').classList.toggle('vi-modal-in');
+});
+
+// 資產種類 demo 
+document.getElementById('trigger-select-type').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-type-supercard').classList.toggle('hide');
+  document.getElementById('target-type-supercard').classList.toggle('vi-modal-in');
+});
+
+// 是否加入資產（成立帳戶）-> 否 demo 
+document.getElementById('trigger-show-money-supercard').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-money-supercard').classList.toggle('hide');
+  document.getElementById('target-money-supercard').classList.toggle('vi-modal-in');
+});
+
+// 略過此步驟 與 選擇資產小計 切換 demo
+document.getElementById('trigger-has-select-item').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-pass-step').classList.toggle('hide');
+  document.getElementById('target-has-select-item').classList.toggle('hide');
+});
+
+// 超人卡片 close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('vi-modal-close');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+  });
+}
+
+$(document).ready(function(){
+
+  // 顯示刪除 demo，這裡用 click 只是示意，正確效果請參考 account-list-slider.component 及 slider.directive
+  $('.list-slider').on('click', function() {
+    const btnWidth = $(this).find('.list-slider-btn').outerWidth() + 8;
+    $(this).find('.js_slider_left').css({'left': -btnWidth})
+  });
+
+});
+</script>

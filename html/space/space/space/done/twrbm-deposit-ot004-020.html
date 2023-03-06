@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-card .vi-card-header {
+        /* padding: 16px; */
+        justify-content: space-between;
+    }
+    .vi-card .vi-card-footer {
+        padding: 24px 16px 16px 16px;
+    }
+
+    .vi-btn-tag-group {
+        display: flex;
+        margin: 8px -4px;
+    }
+    .vi-btn-tag-group .vi-btn-tag {
+        padding: 6px 8px;
+    }
+
+    .pt-8 {
+        padding-top: 8px;
+    }
+    .pb-16 {
+        padding-bottom: 16px;
+    }
+    .py-8 {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .vi-title-g-line {
+    padding: 4px 0 16px 0;
+        margin: 0px;
+        position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    }
+    .vi-title-g-line:before {
+    content: '';
+    display: block;
+    width: 100%;
+    position: absolute;
+        left: 50%;
+    top: 37%;
+        border-top: 1px dashed #C0C0C0;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    }
+    .vi-title-g-line span {
+    padding: 0 12px;
+        font-size: 20px;
+    z-index: 1;
+        color: #36444D;
+        background: #e3f0ef;
+    }
+  </style>
+</head>
+
+<!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+<header class="">
+    <div class="vi-page-header-normal">
+        <div class="vi-page-header-lt">
+            <button class="vi-btn" ontouchstart="">
+                <span class="vi-icon vi-icon-base icon-page-back"></span>
+            </button>
+        </div>
+        <div class="vi-page-header-ct">
+            <h1 class="vi-page-title">數位帳戶進度查詢</h1>
+        </div>
+        <!-- <div class="vi-page-header-rt">
+            <span class="vi-icon vi-icon-base vi-modal-close"></span>
+        </div> -->
+    </div>
+</header>
+
+<body class="body-wrap scroll vi-bg-mint">
+    <div class="main_container">
+        <div class="vi-container pad_top12">
+            <ng-container>
+                <div class="vi-txt-title vi-txt-b900 mb16 pad_top12">手機驗證</div>
+                <div class="vi-txt-body vi-txt-b900 mb16">為保證您的資料安全性，系統已發送簡訊密碼至您留存於本行的手機 <span class="vi-txt-body-bold">091345**00</span>。</div>
+                <div class="vi-card vi-account">
+                    <div class="vi-card-body">
+                        <div class="vi-txt-body-bold vi-txt-b900 mt16 mb8 ct">
+                            簡訊密碼有效時間 <span class="vi-txt-br500 ct">4:59</span>
+                        </div>
+
+                        <div class="vi-txt-callout vi-txt-b500 mb8 ct">網頁識別碼 ABCD</div>
+
+                        <div class="vi-form-group">
+                            <div class="vi-input-group">
+                                <span class="title">簡訊密碼 </span>
+                                <input placeholder="六位數字密碼" value="" maxlength="100" type="text">
+                            </div>
+                        </div>
+                        <div class="rt mb24">
+                            <a href="javascript:;" class="vi-txt-body-bold vi-txt-g500">收不到簡訊？</a>
+                        </div>
+                        <div class="vi-btn-group mb16">
+                            <button class="vi-btn vi-btn-primary">下一步</button>
+                        </div>
+
+                        <div class="ct mt24 mb16">
+                            <div class="vi-txt-body vi-txt-b600">
+                                號碼打錯了？
+                                <a href="" class="vi-txt-body-bold vi-txt-g500">修改手機號碼</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 備註 Component -->
+                <!-- <memo-remarks [format]="1" [viStyle]="true" [key]="'TWRBMTransferTX001_inputmemo'"></memo-remarks> -->
+                <div class="vi-remark">
+                    <div class="forAEM">
+                        <p>備註：</p>
+                        <ol>
+                            <li>這是一段備註使用規範，標題請用 “備註”，若有法規問題則可用 “注意事項”。</li>
+                            <li>斷行請搭配數字，並對齊數字後面，字體大小固定為 15px，文字顏色一律使用 #36444D，且為一般字體不加粗不調細也不能加底線。</li>
+                            <li>若需加連結，文字顏色使用 #009891，文字粗體。</li>
+                        </ol>
+                    </div>
+                </div>
+            </ng-container>
+        </div><!-- END container -->
+    </div>
+    <!-- main_container -->
+  
+  </div>
+  <!-- body-wrap -->  
+</html>
+
+
+<!-- vi-modal component．demo 用，加 .vi-modal-in 來看，內容請自行置換-->
+<!-- <modal-memo>
+    <div class="vi-modal vi-modal-in" style="z-index: 99969; display: block;">
+        <div class="vi-modal-backdrop"></div>
+        <div class="popup">
+            <div class="popup-header">
+                <div class="popup-header-ct">
+                    <span class="popup-title">收不到簡訊？</span>
+                </div>
+            </div>
+            <div class="popup-body forAEM">
+                <div class="forAEM">
+                    以下原因可能導致收不到簡訊密碼：<br>
+                    1. 訊號不佳或者信號堵塞，建議可至訊號良好的地方再次獲取驗證碼，或者稍後重新獲取。<br>
+                    2. 簡訊密碼容易可能被判定為廣告，而被「攔截APP」（例如：whoscall）攔截。<br>
+                    3. 若開啟「手機勿擾模式」，可能導致簡訊接收失敗，建議自行調整手機設定。<br>
+                    4. 部分電信商提供「拒收企業簡訊」功能，可能導致無法收受簡訊驗證碼。建議自行洽詢所屬電信商。
+                </div>
+            </div>
+            <div class="popup-footer">
+                <div class="vi-btn-group">
+                    <button class="vi-btn vi-btn-primary">我知道了</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</modal-memo> -->

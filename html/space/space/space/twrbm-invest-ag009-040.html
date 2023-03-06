@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-txt-blue-green {
+      color: #3EADB4;
+    }
+    .bg-blue-green {
+      background: #3EADB4;
+    }
+    .bg-light-brown {
+      background: #FFF8F0;
+    }
+    
+    
+    .page-gradient {
+      content: '';
+      width: 100%;
+      height: 1300px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgb(255,255,255);
+      background: linear-gradient(180deg, rgba(255,255,255,1) 100px, rgba(191,237,229,1) 25%, rgba(191,237,229,1) 75%, rgba(228,240,239,0) 100%);
+    }
+    
+    
+    .status-wrap {
+      position: relative;
+    }
+    .status-wrap.status-done {
+      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM1IiBoZWlnaHQ9IjEyNSIgdmlld0JveD0iMCAwIDEzNSAxMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8zMzc2XzEyMjk3NikiPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTgwLjU2NTMgNi41NDYwOEM4MC42MjYzIDcuNDgxMjMgNzkuOTE3NyA4LjI4ODgxIDc4Ljk4MjYgOC4zNDk4N0M3OC4wNDc1IDguNDEwOTMgNzcuMjM5OSA3LjcwMjM1IDc3LjE3ODggNi43NjcyMUM3Ny4xMTc3IDUuODMyMDcgNzcuODI2MyA1LjAyNDQ5IDc4Ljc2MTUgNC45NjM0M0M3OS42OTY2IDQuOTAyMzYgODAuNTA0MiA1LjYxMDk0IDgwLjU2NTMgNi41NDYwOFpNMTIuNzg5OSA0NC45ODAyQzEyLjg1MDkgNDUuOTE1MyAxMi4xNDIzIDQ2LjcyMjkgMTEuMjA3MiA0Ni43ODRDMTAuODU1MiA0Ni44MDY5IDEwLjUyMTQgNDYuNzIwOSAxMC4yMzg1IDQ2LjU1NDhDNC4yMzMxMSA1OC41ODYgMS4yMzkwMyA3Mi4zMjAxIDIuMTc4NDEgODYuNzA2QzIuMzM1MDUgODkuMTA0OSAyLjU5Nzc4IDkxLjQ3MTYgMi45NjE3MyA5My44MDE4QzMuMjY0NjYgOTMuNzkyOCAzLjUyMjU5IDk0LjAyNTUgMy41NDI1IDk0LjMzMDNDMy41NTk5NyA5NC41OTc4IDMuMzg4NTYgOTQuODMzOSAzLjE0MjYzIDk0LjkwODVDOS44MzEyMSAxMzQuMDc0IDQ1LjE4MTcgMTYyLjYzOSA4NS43MDUxIDE1OS45OTNDMTI5LjAwOCAxNTcuMTY1IDE2MS44MiAxMTkuNzY5IDE1OC45OTIgNzYuNDY2NEMxNTYuMTY0IDMzLjE2MzUgMTE4Ljc2OCAwLjM1MTc5IDc1LjQ2NTQgMy4xNzkzOUM0Ny43NTkgNC45ODg1NiAyNC4zNDc1IDIwLjk0OTQgMTEuODE3OSA0My41NTQ1QzEyLjM1ODUgNDMuODA4OSAxMi43NDgyIDQ0LjM0MTggMTIuNzg5OSA0NC45ODAyWk0xMTIuNTc3IDEwLjY5MTFDMTEyLjYxOCAxMS4zMTQ2IDExMi4xNDYgMTEuODUyOSAxMTEuNTIyIDExLjg5MzdDMTEwLjg5OSAxMS45MzQ0IDExMC4zNiAxMS40NjIgMTEwLjMyIDEwLjgzODVDMTEwLjI3OSAxMC4yMTUxIDExMC43NTEgOS42NzY3MyAxMTEuMzc1IDkuNjM2MDJDMTExLjk5OCA5LjU5NTMyIDExMi41MzcgMTAuMDY3NyAxMTIuNTc3IDEwLjY5MTFaTTQ1LjI2NDkgMTIuODE4OEM0NS41NzY3IDEyLjc5ODQgNDUuODEyOSAxMi41MjkyIDQ1Ljc5MjUgMTIuMjE3NUM0NS43NzIxIDExLjkwNTggNDUuNTAzIDExLjY2OTYgNDUuMTkxMiAxMS42OUM0NC44Nzk1IDExLjcxMDMgNDQuNjQzMyAxMS45Nzk1IDQ0LjY2MzcgMTIuMjkxMkM0NC42ODQgMTIuNjAyOSA0NC45NTMyIDEyLjgzOTEgNDUuMjY0OSAxMi44MTg4Wk0yMS41MzY0IDMxLjM3MkMyMS44NDgxIDMxLjM1MTcgMjIuMDg0MyAzMS4wODI1IDIyLjA2NCAzMC43NzA3QzIyLjA0MzYgMzAuNDU5IDIxLjc3NDQgMzAuMjIyOCAyMS40NjI3IDMwLjI0MzJDMjEuMTUxIDMwLjI2MzUgMjAuOTE0OCAzMC41MzI3IDIwLjkzNTIgMzAuODQ0NUMyMC45NTU1IDMxLjE1NjIgMjEuMjI0NyAzMS4zOTI0IDIxLjUzNjQgMzEuMzcyWk04NS4wMzI4IDE1My4zNDZDMTIyLjY1IDE1MC44OSAxNTQuODAyIDExNC43NTYgMTUyLjM0NSA3Ny4xMzg2QzE0OS44ODkgMzkuNTIxNCAxMTMuNzU1IDcuMzY5ODQgNzYuMTM3NyA5LjgyNjE3QzM4LjUyMDQgMTIuMjgyNSA2LjM2ODg2IDQ4LjQxNjUgOC44MjUyIDg2LjAzMzhDMTEuMjgxNSAxMjMuNjUxIDQ3LjQxNTYgMTU1LjgwMyA4NS4wMzI4IDE1My4zNDZaTTg0LjY3ODggMTQ0LjE5NEMxMTkuMjU1IDE0MS45MzYgMTQ1LjQ1NCAxMTIuMDc3IDE0My4xOTYgNzcuNTAwN0MxNDAuOTM4IDQyLjkyNDggMTExLjA3OSAxNi43MjU3IDc2LjUwMjggMTguOTgzNEM0MS45MjY4IDIxLjI0MTIgMTUuNzI3NyA1MS4xMDA4IDE3Ljk4NTUgODUuNjc2N0MyMC4yNDMyIDEyMC4yNTMgNTAuMTAyOCAxNDYuNDUyIDg0LjY3ODggMTQ0LjE5NFpNODQuNzUwNCAxNDUuMjkxQzExOS45MzIgMTQyLjk5NCAxNDYuNTkxIDExMi42MTEgMTQ0LjI5MyA3Ny40MjkxQzE0MS45OTYgNDIuMjQ3MSAxMTEuNjEzIDE1LjU4ODggNzYuNDMxMSAxNy44ODYxQzQxLjI0OTEgMjAuMTgzNCAxNC41OTA5IDUwLjU2NjQgMTYuODg4MiA4NS43NDg0QzE5LjE4NTUgMTIwLjkzIDQ5LjU2ODUgMTQ3LjU4OSA4NC43NTA0IDE0NS4yOTFaIiBmaWxsPSIjRjJGMkYyIi8+CjxwYXRoIGQ9Ik01OS45OTEgNDAuNjk4OEw1NC4zMTczIDQwLjgxOTVMNTQuMzc2MyA0My41OTM5TDU3LjE3NTcgNDMuNTM0M0w1Ny4zMTI0IDQ5Ljk1NzhMNjAuMTg2NyA0OS44OTY3TDU5Ljk5MSA0MC42OTg4Wk02MC4xNjE3IDQ4LjcyMkw1Ny41NjIzIDQ4Ljc3NzNDNTYuNDgyMiA0OS43MjU1IDU1LjI3NjYgNTAuNjUxMyA1NC4yNDEyIDUxLjM0ODVMNTUuNzI5MiA1NC4yOTI1QzU2Ljk1NiA1My4xOTEyIDU3Ljk4NTYgNTIuMjE5IDU4Ljk2NDYgNTEuMjIzQzYwLjUwNTIgNTMuMTE1NyA2Mi41NDUyIDUzLjc5NzQgNjUuNTQ3MiA1My44NTg2QzY4LjU5OTcgNTMuOTQzNyA3My45MjI0IDUzLjc4MDQgNzcuMDQzNSA1My41NjRDNzcuMTQ5OSA1Mi42ODY1IDc3LjU5NTUgNTEuMzAxNyA3Ny45MDYxIDUwLjYyQzc0LjQzNzcgNTAuOTY4OCA2OC41MTU3IDUxLjE2OTggNjUuNTEzMiA1MS4wODM3QzYyLjkzNjYgNTEuMDM4NSA2MS4xNDY2IDUwLjM1MTQgNjAuMTYxNyA0OC43MjJaTTU0LjIzNDQgMzMuMzk0NkM1NS42ODUxIDM0LjU4OSA1Ny4zOTY0IDM2LjI3OCA1OC4wOTczIDM3LjQ4ODNMNjAuNTMxMyAzNS41MzYxQzU5LjczMTUgMzQuMzc3OSA1Ny45NDYzIDMyLjc0MDUgNTYuNDk4MiAzMS42NzFMNTQuMjM0NCAzMy4zOTQ2Wk02My43MzI3IDM3LjkxODZDNjQuMTQ4NiAzOC42NTk5IDY0LjU0NTMgMzkuNjc2NyA2NC42MzQxIDQwLjMyNDlMNjcuMzcwMiAzOS42NDE2QzY3LjIwNjQgMzguOTk0OSA2Ni43NjA4IDM4LjAyOTIgNjYuMjk1NSAzNy4zMTM5TDYzLjczMjcgMzcuOTE4NlpNNjIuMzY0NCAzMi4zNzE0TDYyLjQwODYgMzQuNDQ1OUw3NS41MzA2IDM0LjE2NjhMNzUuNDg2NSAzMi4wOTIzTDYyLjM2NDQgMzIuMzcxNFpNNjIuMzE4NyA0My4xNDk4TDYyLjM2MjggNDUuMjI0NEw3Ni4wODQ3IDQ0LjkzMjRMNzYuMDQwNiA0Mi44NTc5TDYyLjMxODcgNDMuMTQ5OFpNNjEuMjI1MyAzOS45NDc0TDYxLjI3MDUgNDIuMDcxOUw3Ni45NDIgNDEuNzM4NUw3Ni44OTY4IDM5LjYxNEw2MS4yMjUzIDM5Ljk0NzRaTTYwLjc2MDUgMzUuNzMxM0w2MC44MDY4IDM3LjkwNThMNzcuMTUzMSAzNy41NThMNzcuMTA2OSAzNS4zODM1TDYwLjc2MDUgMzUuNzMxM1pNNjEuMzM4NiA0Ni40NDY0TDYxLjM4NDggNDguNjIwOUw3Ny4xMzEzIDQ4LjI4NTlMNzcuMDg1IDQ2LjExMTRMNjEuMzM4NiA0Ni40NDY0Wk02Ny4yODIgMzAuNzkxNUw2Ny40MTMzIDM2Ljk2NTFMNzAuMzg3NiAzNi45MDE4TDcwLjI1NjMgMzAuNzI4Mkw2Ny4yODIgMzAuNzkxNVpNNjcuNDk2MiA0MC44NjQyTDY3LjY5MzUgNTAuMTM3MUw3MC42Njc4IDUwLjA3MzhMNzAuNDcwNiA0MC44MDA5TDY3LjQ5NjIgNDAuODY0MlpNNzEuMzE4MyAzNy4xNTcxQzcxLjE1NzcgMzcuODM1NiA3MC43Nzk2IDM4Ljg2ODkgNzAuNDcgMzkuNjAwNkw3Mi45MDc4IDQwLjE3MzlDNzMuMjY5OSAzOS41NjYxIDczLjc1MTcgMzguNzA1NiA3NC4yODIgMzcuNzY5Mkw3MS4zMTgzIDM3LjE1NzFaIiBmaWxsPSIjRThFOEU4Ii8+CjxwYXRoIGQ9Ik04Mi44Nzg0IDM5Ljg2MThMODIuOTM2OSA0Mi42MTEyTDg4LjcxMDYgNDIuNDg4M0w4OC42NTIxIDM5LjczOUw4Mi44Nzg0IDM5Ljg2MThaTTg3LjUwMjQgMzkuNzYzNEw4Ny41MTE5IDQwLjIxMzNDODcuNTY1MSA0NS4wNjMzIDg3LjUwMjMgNDYuODE1IDg3LjIxMDkgNDcuMjIxM0M4Ny4wMTYzIDQ3LjQ3NTUgODYuNzkyNCA0Ny41MzAzIDg2LjQ0MjUgNDcuNTM3N0M4Ni4wNDI2IDQ3LjU0NjIgODUuMTkyOCA0Ny41NjQzIDg0LjI5MDggNDcuNDgzNUM4NC43NTY3IDQ4LjIyMzcgODUuMTA2NiA0OS4zOTE2IDg1LjE3NTIgNTAuMjY1M0M4Ni4zNTA1IDUwLjI2NTMgODcuNDI1MiA1MC4yNDI0IDg4LjA5NzkgNTAuMTI4MUM4OC44MjAxIDQ5Ljk4NzcgODkuMzE1MiA0OS43NTIxIDg5LjgwMTggNDkuMTE2NkM5MC4zNjAyIDQ4LjMyOTYgOTAuNDM3OCA0Ni4xMDI0IDkwLjQyNTEgNDAuODAxNUM5MC40MTc3IDQwLjQ1MTYgOTAuNDI2NyAzOS43MDEyIDkwLjQyNjcgMzkuNzAxMkw4Ny41MDI0IDM5Ljc2MzRaTTk0Ljg1OTIgMzEuNzgwMUM5Ni4yNzU5IDMyLjU1MDIgOTguMDc2NiAzMy43MzcyIDk4LjkyIDM0LjU5NDRMMTAwLjgwMSAzMi41Mjg5Qzk5Ljg4NDIgMzEuNzIzMyA5OC4wMTAxIDMwLjYxMjkgOTYuNjIgMjkuOTE3M0w5NC44NTkyIDMxLjc4MDFaTTk3Ljk0NTIgMzguMTQwOUM5Ni4zNDQgNDMuOTc2MyA5My4wOTEgNDguNTcxNSA4OC4zNDY4IDUxLjI0ODFDODguOTg0NCA1MS44MzQ2IDkwLjExMDggNTMuMDYxIDkwLjU3NCA1My42NzYyQzk1LjQ1OCA1MC41MjE2IDk5LjAyNDIgNDUuMzY5NiAxMDAuOTg1IDM4LjgwMTRMOTcuOTQ1MiAzOC4xNDA5Wk04Mi45MzMyIDM0LjIwOTNMODIuOTk1OSAzNy4xNTg3TDEwMi4yNjcgMzYuNzQ4N0wxMDIuMjA0IDMzLjc5OTRMODIuOTMzMiAzNC4yMDkzWk04MC45MzM2IDM0LjI1MTlMODEuMDg5NCA0MS41NzUyQzgxLjE1OTEgNDQuODQ5NSA4MS4wNzcyIDQ5LjIyNzIgNzkuMjE2NCA1Mi4yNjc1Qzc5LjkyMzcgNTIuNjAyNSA4MS4yOTY4IDUzLjY3MzYgODEuODA5NSA1NC4yNjI4Qzg0LjAxMjIgNTAuODQwMiA4NC4zMTkgNDUuMjgyNCA4NC4yMzkzIDQxLjUzMzJMODQuMDgyOSAzNC4xODQ5TDgwLjkzMzYgMzQuMjUxOVpNOTEuMDAyMSAzMC4zMTE4QzkxLjMxOTYgNDEuNzA3NyA5My41OTY3IDUzLjUzNjkgOTkuMDQ1NSA1My40MjFDMTAxLjM5NSA1My4zNzEgMTAyLjM3MSA1Mi4yMjUgMTAyLjc0NyA0Ny41NjZDMTAxLjk0MSA0Ny4yODMgMTAwLjg1MSA0Ni42MDYxIDEwMC4xNjEgNDUuOTIwNkMxMDAuMDc4IDQ5LjA3MyA5OS44MDU0IDUwLjM1NDEgOTkuMjMwNSA1MC4zNjY0Qzk2LjcwNjEgNTAuNDIwMSA5NC4xOTM0IDQwLjQ0NjMgOTQuMTUxNCAzMC4yNDQ4TDkxLjAwMjEgMzAuMzExOFoiIGZpbGw9IiNFOEU4RTgiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF8zMzc2XzEyMjk3NiI+CjxyZWN0IHdpZHRoPSIxMzUiIGhlaWdodD0iMTI1IiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=) no-repeat right top;
+    }
+    
+    .status-wrap.status-done .service-card {
+      padding-top: 16px;
+    }
+    
+    
+    .goal-card .vi-card-header {
+      position: relative;
+      z-index: 4;
+    }
+    .goal-card .vi-card-body {
+      padding-bottom: 16px;
+    }
+    .goal-card.status-done .vi-card-body {
+      position: relative;
+    }
+    .goal-card.status-done .vi-card-body:before {
+      content: '';
+      width: 225px;
+      height: 43px;
+      position: absolute;
+      top: -8px;
+      /* left: 8px; */
+      left: calc(50% - 118px);
+      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjI1IiBoZWlnaHQ9IjQzIiB2aWV3Qm94PSIwIDAgMjI1IDQzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMjE2LjA1MyAzNC44NTY2TDIxOS4xNzcgMzQuNTExNEMyMjAuMDYgMzguMTQxNSAyMjAuMTA5IDM4LjA4NDEgMjIzLjc5OSAzOC42NjVMMjIyLjY3NCA0MC45NTNDMjE4Ljk4MyA0MC4zNzIgMjE2LjkzNiAzOC40ODY3IDIxNi4wNTMgMzQuODU2NloiIGZpbGw9IiMzMUNFRkYiLz4KPHBhdGggZD0iTTIyMC40MyAxNi4yNzY4TDIyMS41OTUgMTkuNzM4OUMyMTguNDAzIDE4LjkxNzcgMjE2LjA1OCAxOS43MDY3IDIxNC4wMTIgMjIuMjkwM0wyMTIuODQ3IDE4LjgyODFDMjE0Ljg5MyAxNi4yNDQ2IDIxNy4yMzggMTUuNDU1NiAyMjAuNDMgMTYuMjc2OFoiIGZpbGw9IiNGRjY4NUYiLz4KPHJlY3QgeD0iMTkxIiB5PSIxMyIgd2lkdGg9IjUiIGhlaWdodD0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTguNTI4OCAxOTEgMTMpIiBmaWxsPSIjRkZENjAwIi8+CjxwYXRoIGQ9Ik0yLjk5NzA3IDEuNDk2MDlMNC44OTU5MSAyNi40MjU3QzExLjExMyAyOS44MjE2IDE5LjUwNDcgMjQuNjAwOCAxOS40NzM5IDIwLjMwMDVMMi45OTcwNyAxLjQ5NjA5WiIgZmlsbD0iI0ZGN0Y0OCIvPgo8bWFzayBpZD0ibWFzazBfMTY2OF80MDg4MSIgc3R5bGU9Im1hc2stdHlwZTphbHBoYSIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMiIgeT0iMSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjI3Ij4KPHBhdGggZD0iTTIuOTkzMTYgMS40OTIxOUw0Ljg5MiAyNi40MjE4QzExLjEwOTEgMjkuODE3NyAxOS41MDA4IDI0LjU5NjkgMTkuNDcgMjAuMjk2NkwyLjk5MzE2IDEuNDkyMTlaIiBmaWxsPSIjRkZENjAwIi8+CjwvbWFzaz4KPGcgbWFzaz0idXJsKCNtYXNrMF8xNjY4XzQwODgxKSI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMS4yNDI5OSAxMC44MzIyQzIuMDM1OTkgMTAuMDAxMyAzLjAwNDM5IDkuMzM3NDkgMy45MTMyNSA4LjcxNDUzQzQuNzE2ODEgOC4xNjM3NSA1LjQ3MzgzIDcuNjQ0ODcgNi4wMjE5MiA3LjA3MDU4QzYuNjY0NzcgNi4zOTcgNy4wOTY3MiA1LjY3MDEgNy41NTUyMSA0Ljg5ODVDOC4wNzM3OSA0LjAyNTggOC42MjYzNCAzLjA5NTkyIDkuNTU2NDUgMi4xMjEzNkwxMi4wNDUzIDQuNDk2NjNDMTEuMTgzMyA1LjM5OTc1IDEwLjU5NzQgNi4zNjQ5NCAxMC4wNDc3IDcuMjcwMzVDOS41NjIxMSA4LjA3MDE2IDkuMTA0ODYgOC44MjMzMyA4LjUxMDcyIDkuNDQ1ODZDNy45MTY1OSAxMC4wNjg0IDcuMTg1NTggMTAuNTYwMyA2LjQwOTI5IDExLjA4MjZDNS41MzA1MSAxMS42NzQgNC41OTM3MSAxMi4zMDQzIDMuNzMxNzkgMTMuMjA3NEwxLjI0Mjk5IDEwLjgzMjJaTTUuNjIzMjEgMTUuOTAzTDUuNjIzMjIgMTUuOTAzTDUuNjIzMjUgMTUuOTAzQzYuNzIxNTUgMTUuMzM1OCA3Ljc1NjIyIDE0LjgwMTUgOC41OTQ0OCAxNC4yMTkyQzkuNTc3NjYgMTMuNTM2MiAxMC4zNjE0IDEyLjgwNzMgMTEuMTkzMyAxMi4wMzM2TDExLjE5MzMgMTIuMDMzNUMxMi4xMzQyIDExLjE1ODQgMTMuMTM2OCAxMC4yMjYgMTQuNTU5MyA5LjIzNzc3TDE2LjEyOTUgMTEuNDk4MkMxNC44MTEzIDEyLjQxMzkgMTMuNzU3NSAxMy4zODIyIDEyLjc2OSAxNC4yOTA1QzExLjg5NTcgMTUuMDkyOCAxMS4wNzM0IDE1Ljg0ODQgMTAuMTY0NyAxNi40Nzk2QzkuMjU2MDYgMTcuMTEwOCA4LjI2MTAyIDE3LjYxNzggNy4yMDQzNiAxOC4xNTYxQzYuMDA4MTggMTguNzY1NSA0LjczMzAzIDE5LjQxNTEgMy40MTQ4IDIwLjMzMDhMMS44NDQ1NSAxOC4wNzA0QzMuMDU3MzggMTcuMjI3OSA0LjM4MDk5IDE2LjU0NDQgNS42MjMyMSAxNS45MDNaTTcuMzA4MzMgMjIuNjY3M0M1Ljc4NjYyIDIzLjQzNDEgNC4xNjUyMSAyNC4yNTEgMi42NDkyNCAyNS4yMzA2TDQuMTQyOTkgMjcuNTQyM0M1Ljc5MDcgMjYuNDc3NSA3LjM1MTUxIDI1LjY5OTkgOC44MTU2NiAyNC45NzA1QzEwLjEwOSAyNC4zMjYxIDExLjMyNyAyMy43MTkzIDEyLjQ2MjggMjIuOTg1NEMxMy41OTg2IDIyLjI1MTUgMTQuNjUyMiAyMS4zOTA0IDE1Ljc3MTEgMjAuNDc2QzE3LjAzNzcgMTkuNDQwOSAxOC4zODggMTguMzM3NCAyMC4wMzU3IDE3LjI3MjdMMTguNTQxOSAxNC45NjExQzE2Ljc2MzkgMTYuMTEgMTUuNDc3NyAxNy4xNzE5IDE0LjI3MDYgMTguMTY4NEMxMy4yMDM0IDE5LjA0OTYgMTIuMTk4IDE5Ljg3OTYgMTAuOTY5IDIwLjY3MzdDOS45MjEyNCAyMS4zNTA4IDguNjUzNzYgMjEuOTg5NCA3LjMwODMzIDIyLjY2NzNaIiBmaWxsPSIjRkZENjAwIi8+CjwvZz4KPHBhdGggZD0iTTAuMDY0NzQ4NSAzLjU4NjU4TDEuNzc4MjggMi4yMTI4OUwxLjk4MzUgMC4wMjYzMTkxTDMuODE5NDYgMS4yMzE0OUw1Ljk2MjQzIDAuNzUwOTc2TDUuMzgzNTkgMi44Njk1TDYuNTAyOCA0Ljc1OTFMNC4zMDkwOSA0Ljg2MzI1TDIuODU3ODMgNi41MTE2TDIuMDgwODkgNC40NTc0NEwwLjA2NDc0ODUgMy41ODY1OFoiIGZpbGw9IiNGRkY1MDAiLz4KPC9zdmc+Cg==) no-repeat;
+    }
+
+    .service-card .goal-tip-wrap {
+      height: 58px;
+      padding: 8px 12px 8px 16px;
+      margin-left: 24px;
+      background: rgb(255,239,220);
+      background: linear-gradient(90deg, rgba(255,239,220,1) 0%, rgba(255,239,220,0) 100%);
+      border-radius: 6px;
+      position: relative;
+    }
+    .service-card .goal-tip-wrap:before {
+      content: '';
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: calc(50% - 5px);
+      left: -10px;
+      border-style: solid;
+      border-width: 5px 10px 5px 0;
+      border-color: transparent #ffefdd transparent transparent;
+    }
+    .service-card .goal-tip {
+      overflow: hidden;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    
+    .service-card .vi-divider-light-brown {
+      height: 1px;
+      width: 100%;
+      margin: 16px 0 0 0;
+      border-top: 1px dashed #DCC1A1;
+    }
+    .service-card .service-txt {
+      min-height: 64px;
+    }
+    .service-card .service-img {
+      width: 100px;
+      position: relative;
+      bottom: 0;
+    }
+    .service-card .service-img img {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+    
+    
+    
+
+
+    /* highchart */
+    .main-highcharts-wrap {
+      margin: 0 -16px;
+      padding: 0;
+    }
+
+    .highcharts-info {
+      width: 100%;
+      padding-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .highcharts-info .info-box {
+      display: flex;
+      align-items: center;
+    }
+    .highcharts-info .info-box .bg-box {
+      width: 8px;
+      height: 8px;
+      margin-right: 8px;
+    }
+    .highcharts-info .info-box .color-box {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .highcharts-info .info-box .color-yellow {
+      margin-right: 12px;
+      color: #F4EB93;
+    }
+    .highcharts-info .info-box .color-white {
+      color: #fff;
+    }
+    .highcharts-info .info-box .color-yellow .bg-box {
+      background: #F4EB93;
+    }
+    .highcharts-info .info-box .color-white .bg-box {
+      background: #fff;
+    }
+    
+
+    .progress-status-bar-wrap {
+      position: relative;
+    }
+    .progress-status-bar {
+      padding: 1px 8px 1px 28px;
+      background: #fff;
+      border-radius: 24px;
+      z-index: 5;
+    }
+    .progress-status-bar .vi-icon {
+      position: absolute;
+    }
+    
+    .highcharts-axis-labels {
+      text-align: center;
+    }
+    .highcharts-axis-labels span {
+      word-break: break-all !important;
+      width: 110px !important;
+      white-space: normal !important;
+      text-align: center;
+      opacity: 1 !important;
+      font-size: 13px;
+    }
+    .highcharts-axis-labels > span:first-child {
+      top: -2px !important;
+    }
+    @media (max-width: 320px) {
+      .highcharts-axis-labels span {
+        font-size: 12px;
+      }
+    }
+    
+    
+    
+    
+
+    .icon-status-not-yet {
+      width: 54px;
+      height: 38px;
+      left: -31px;
+      bottom: 1px;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTQiIGhlaWdodD0iMzgiIHZpZXdCb3g9IjAgMCA1NCAzOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE3IDIwLjQ0NThMMTUgMjAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMjUgMTFMMjUuNDkxMyAxMyIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xOSAxMkwyMCAxNCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zMSAxNUwzMiAxMyIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zNC42OTk0IDMxLjMzNTJDMzQuNTA0OSAyNS4yMzE1IDI5LjM4NzYgMjYuMjI0NCAyOS45MDQ2IDE5LjYyMzJDMzIuNDIyMiAxNy43ODQ0IDI5LjYxNDIgMTUuNzQ0OSAyOC4wMTIyIDE4Ljk4MzFDMjcuNjEzOCAxNy4wNjYxIDIzLjY1MTggMTcuNjAzNiAyNC45MTM2IDIwLjIxNTZDMjIuNTMxNyAxOC41NjIyIDIwLjkxNzMgMjAuMjI5OSAyMi42NDQyIDIxLjYxOThDMTguNjkzNyAyMC41NzEyIDE3LjM4OCAyNS42OTUyIDIyLjcxODEgMjMuOTY3MkMyNS43MzE4IDI2LjM5NTYgMjMuNDI4OSAzMS4wMjI4IDI1LjM2NDUgMzQuMzYxQzI3LjMwMDEgMzcuNjk5MiAzNC44NzkgMzYuOTY5NSAzNC42OTk0IDMxLjMzNTJaIiBmaWxsPSIjRjhDMTI3Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjguMjc4NSAyNS4xNkMyOC43OTI0IDI1LjI5NDEgMjkuMjUxOSAyNS42Mjk1IDI5LjUxNDMgMjYuMTcyNkMyOS42NzQ1IDI2LjUwNDEgMjkuNTI3IDI2Ljg4MzIgMjkuMTg0OCAyNy4wMTkzQzI4Ljg0MjcgMjcuMTU1MyAyOC40MzU1IDI2Ljk5NjkgMjguMjc1NCAyNi42NjUzQzI4LjE5OTQgMjYuNTA4MiAyOC4wOTU1IDI2LjQ0MTQgMjcuOTc1NiAyNi40MTAyQzI3LjgzMzEgMjYuMzczIDI3LjYzNjcgMjYuMzgyNiAyNy40Mzg0IDI2LjQ2MTVDMjcuMjQwMSAyNi41NDAzIDI3LjA5OTIgMjYuNjY0OSAyNy4wMzI3IDI2Ljc4NTJDMjYuOTc2OSAyNi44ODYzIDI2Ljk2MDUgMjcuMDAwOSAyNy4wMzY0IDI3LjE1ODFDMjcuMTAzMSAyNy4yOTYyIDI3LjE3NzkgMjcuMzQ0NyAyNy4zMTM1IDI3LjM3ODdDMjcuNTAzNSAyNy40MjYzIDI3Ljc1NzYgMjcuNDI0IDI4LjEzMDcgMjcuNDAyMUMyOC4xNjMyIDI3LjQwMDIgMjguMTk3MSAyNy4zOTgxIDI4LjIzMjMgMjcuMzk1OUMyOC41NDE2IDI3LjM3NjYgMjguOTQ2MyAyNy4zNTE0IDI5LjMwNzEgMjcuNDExMkMyOS43NjQzIDI3LjQ4NjkgMzAuMjYgMjcuNzE2MiAzMC41MjkzIDI4LjI3MzZDMzAuNzkxNyAyOC44MTY4IDMwLjc1MjEgMjkuMzUwNiAzMC41MTI1IDI5Ljc4NDRDMzAuMjgzNSAzMC4xOTkxIDI5Ljg4OTUgMzAuNDk2IDI5LjQ2ODMgMzAuNjYzNUMyOS4wNDcxIDMwLjgzMSAyOC41Mzk1IDMwLjg5MjcgMjguMDQ4MyAzMC43NjQ1QzI3LjUzNDMgMzAuNjMwMyAyNy4wNzQ4IDMwLjI5NSAyNi44MTI0IDI5Ljc1MThDMjYuNjUyMyAyOS40MjAzIDI2Ljc5OTggMjkuMDQxMiAyNy4xNDE5IDI4LjkwNTJDMjcuNDg0MSAyOC43NjkxIDI3Ljg5MTIgMjguOTI3NiAyOC4wNTE0IDI5LjI1OTFDMjguMTI3MyAyOS40MTYzIDI4LjIzMTMgMjkuNDgzIDI4LjM1MTEgMjkuNTE0M0MyOC40OTM2IDI5LjU1MTUgMjguNjkwMSAyOS41NDE4IDI4Ljg4ODQgMjkuNDYyOUMyOS4wODY2IDI5LjM4NDEgMjkuMjI3NiAyOS4yNTk2IDI5LjI5NCAyOS4xMzkzQzI5LjM0OTkgMjkuMDM4MSAyOS4zNjYzIDI4LjkyMzUgMjkuMjkwMyAyOC43NjY0QzI5LjI4OTEgMjguNzYzOSAyOS4yODgxIDI4Ljc2MTQgMjkuMjg3IDI4Ljc1ODlDMjkuMjc2OCAyOC43MzUxIDI5LjI2NjYgMjguNzExIDI5LjEzNTUgMjguNjg5M0MyOC45NDcgMjguNjU4MSAyOC43MSAyOC42NzIxIDI4LjM0OTEgMjguNjkzNEMyOC4zMjY4IDI4LjY5NDcgMjguMzA0IDI4LjY5NiAyOC4yODA2IDI4LjY5NzRDMjcuOTM1NiAyOC43MTc2IDI3LjQ2NDUgMjguNzQyOCAyNy4wMjQzIDI4LjYzMjNDMjYuNTI5NiAyOC41MDgyIDI2LjA2OTEgMjguMjEzIDI1Ljc5NzUgMjcuNjUwOEMyNS41MzUxIDI3LjEwNzYgMjUuNTc0NyAyNi41NzM4IDI1LjgxNDMgMjYuMTRDMjYuMDQzMyAyNS43MjUzIDI2LjQzNzIgMjUuNDI4NCAyNi44NTg0IDI1LjI2MDlDMjcuMjc5NiAyNS4wOTM0IDI3Ljc4NzIgMjUuMDMxOCAyOC4yNzg1IDI1LjE2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNi41MzY0IDI0LjE4ODdDMjYuNzkzIDI0LjA4NjYgMjcuMTMwOCAyNC4yNzI3IDI3LjI5MSAyNC42MDQyTDI3LjU4MSAyNS4yMDQ1QzI3Ljc0MTEgMjUuNTM2IDI3LjY2MjkgMjUuODg3NSAyNy40MDYzIDI1Ljk4OTZDMjcuMTQ5NyAyNi4wOTE2IDI2LjgxMTkgMjUuOTA1NiAyNi42NTE3IDI1LjU3NEwyNi4zNjE4IDI0Ljk3MzdDMjYuMjAxNiAyNC42NDIyIDI2LjI3OTggMjQuMjkwNyAyNi41MzY0IDI0LjE4ODdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTI5LjQ2NjEgMzAuMTg0OEMyOS43MjI3IDMwLjA4MjcgMzAuMDYwNSAzMC4yNjg4IDMwLjIyMDcgMzAuNjAwM0wzMC41MTA2IDMxLjIwMDZDMzAuNjcwOCAzMS41MzIxIDMwLjU5MjYgMzEuODgzNiAzMC4zMzYgMzEuOTg1NkMzMC4wNzk0IDMyLjA4NzcgMjkuNzQxNiAzMS45MDE3IDI5LjU4MTQgMzEuNTcwMUwyOS4yOTE0IDMwLjk2OThDMjkuMTMxMyAzMC42MzgzIDI5LjIwOTUgMzAuMjg2OCAyOS40NjYxIDMwLjE4NDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjkuMzUgMjQuNzMwNkMyNS42MjIyIDIwLjg0OTkgMzAuNTk5NCAxNi45NzE4IDMyLjQ2NTEgMjAuMjA0M0MzMy44NzUyIDIyLjY0NzQgMzcuMTkwNyAyMy4yMTAxIDQwIDIzLjk5MTZDMzkuNTcyNiAyNS41MTcyIDM5LjU3MjYgMjcuMDIxMSAzOS43MTQ4IDI4QzM2LjI1NSAyNy45MDk0IDMxLjcwNTIgMjcuMTgyNCAyOS4zNSAyNC43MzA2WiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyXzE0MTJfNDEwNTApIi8+CjxjaXJjbGUgY3g9IjQ2IiBjeT0iMjYiIHI9IjgiIGZpbGw9IiMzRUFDQjQiLz4KPGVsbGlwc2UgY3g9IjQzLjg1MzMiIGN5PSIyOC42MDY3IiByeD0iMS4wNjY2NyIgcnk9IjEuNzc3MzQiIHRyYW5zZm9ybT0icm90YXRlKDI4LjkyMjkgNDMuODUzMyAyOC42MDY3KSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iNDMuMzMzMyIgY3k9IjIzLjMzMjMiIHI9IjEuMDY2NjciIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjQ4LjY2NjgiIGN5PSIyNi41MzE1IiByPSIxLjA2NjY3IiBmaWxsPSJ3aGl0ZSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzE0MTJfNDEwNTAiIHgxPSIzNi41IiB5MT0iMjUiIHgyPSIzMCIgeTI9IjE5LjUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzNFQUNCNCIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM0NkQzREQiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K);
+    }
+    .icon-status-done {
+      width: 54px;
+      height: 38px;
+      left: -31px;
+      bottom: 1px;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTQiIGhlaWdodD0iMzgiIHZpZXdCb3g9IjAgMCA1NCAzOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuOTc4MTkgMTMuMzEwMUM2LjkzNjk5IDEzLjA3MTggNy4wOTYwOCAxMi44NDUxIDcuMzM0MTEgMTIuODAyOUwyNC44NzEyIDkuNjg5MTdDMjUuMTEwOCA5LjY0NjY1IDI1LjMzOTIgOS44MDY5NyAyNS4zODA3IDEwLjA0NjdMMjguOTk1NiAzMC45NDc2QzI5LjI3OCAzMi41ODAyIDI4LjE4MzQgMzQuMTMyNiAyNi41NTA4IDM0LjQxNUwxNC4wNDcgMzYuNTc3NkMxMi40MTQ0IDM2Ljg2IDEwLjg2MiAzNS43NjU0IDEwLjU3OTYgMzQuMTMyOEw2Ljk3ODE5IDEzLjMxMDFaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNOC4zMjMyNCAxNC45Mjk3QzguMzIzMjQgMTQuOTI5NyAxMi41NjA4IDE2LjAyNCAxNS44NDczIDE1LjkzMjFDMTkuMTMzOCAxNS44NDAzIDI1LjE1NDYgMTQuNDU5MSAyNS4xNTQ2IDE0LjQ1OTFMMjcuOTk5MiAzMC42OTIzQzI4LjE4OTYgMzEuNzc4NSAyNy40NjQ3IDMyLjgxMzkgMjYuMzc4OSAzMy4wMDY3TDEzLjk1NTcgMzUuMjEyNEMxMi44NjgxIDM1LjQwNTUgMTEuODMgMzQuNjgwNCAxMS42MzY5IDMzLjU5MjhMOC4zMjMyNCAxNC45Mjk3WiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyXzE0MTJfNDEwMTcpIi8+CjxyZWN0IHg9IjExLjk4MzQiIHk9IjE3LjczMDUiIHdpZHRoPSIyLjA3NjYyIiBoZWlnaHQ9IjEzLjU5MjUiIHJ4PSIxLjAzODMxIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTAuMDY3OSAxMS45ODM0IDE3LjczMDUpIiBmaWxsPSJ1cmwoI3BhaW50MV9saW5lYXJfMTQxMl80MTAxNykiLz4KPHJlY3QgeD0iMTYuMDY5MyIgeT0iMTcuMDAzOSIgd2lkdGg9IjIuMDc2NjIiIGhlaWdodD0iMTMuNTkyNSIgcng9IjEuMDM4MzEiIHRyYW5zZm9ybT0icm90YXRlKC0xMC4wNjc5IDE2LjA2OTMgMTcuMDAzOSkiIGZpbGw9InVybCgjcGFpbnQyX2xpbmVhcl8xNDEyXzQxMDE3KSIvPgo8cmVjdCB4PSIyMC4xNjMxIiB5PSIxNi4yNzczIiB3aWR0aD0iMi4wNzY2MiIgaGVpZ2h0PSIxMy41OTI1IiByeD0iMS4wMzgzMSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEwLjA2NzkgMjAuMTYzMSAxNi4yNzczKSIgZmlsbD0idXJsKCNwYWludDNfbGluZWFyXzE0MTJfNDEwMTcpIi8+CjxwYXRoIGQ9Ik04LjExMTQ1IDEzLjAzMjJDMTIuODE2MiAxMi40Mjg0IDIyLjY3MDcgMTAuOTI1MiAyNC40NTA3IDkuNzQyNTNDMjQuODYwNyA0LjA2MzAxIDIwLjE5MyA4LjgwMTk3IDE4Ljk5NTUgNy4wNTk4NkMxNS43NDcyIDIuMzM0NDQgMTMuNDYyNSA0LjU2MjY5IDEyLjE0NjUgNS4yNjc3OEM4LjEwMTE1IDcuNDM1MTYgNC4xMDE3MSAxLjI0NTE4IDQuMTg3NzEgNC4zNTcyM0M0LjI5NzI2IDguMzIxNTMgNy45MzcyOCA2LjgwMjM3IDguMTExNDUgMTMuMDMyMloiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjEuOTIyNzQiIGN5PSI0LjQyMzExIiByPSIwLjg0OTUyOCIgdHJhbnNmb3JtPSJyb3RhdGUoLTEuNjAxNDggMS45MjI3NCA0LjQyMzExKSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iOC42NTcxOSIgY3k9IjEuOTY2NTYiIHI9IjAuMjgzMTc2IiB0cmFuc2Zvcm09InJvdGF0ZSgtMS42MDE0OCA4LjY1NzE5IDEuOTY2NTYpIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI0LjM0ODYiIGN5PSIxMC4wMjEyIiByPSIwLjI4MzE3NiIgdHJhbnNmb3JtPSJyb3RhdGUoLTEuNjAxNDggNC4zNDg2IDEwLjAyMTIpIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIxOC45MTExIiBjeT0iMy45NDcwMyIgcj0iMC4yODMxNzYiIHRyYW5zZm9ybT0icm90YXRlKC0xLjYwMTQ4IDE4LjkxMTEgMy45NDcwMykiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik05LjY5OTk3IDE3LjA1NEM5LjY2MjA2IDE2LjgzNDggOS43OTQ5IDE2LjYyMjEgMTAuMDA4NSAxNi41NkMxMC4yNTg3IDE2LjQ4NzMgMTAuNTE2NiAxNi42NDgzIDEwLjU2MSAxNi45MDUxTDEzLjQ3MjYgMzMuNzQwNEMxMy41MTA1IDMzLjk1OTYgMTMuMzc3NyAzNC4xNzIzIDEzLjE2NDEgMzQuMjM0NEMxMi45MTM4IDM0LjMwNzEgMTIuNjU2IDM0LjE0NjEgMTIuNjExNiAzMy44ODkzTDkuNjk5OTcgMTcuMDU0WiIgZmlsbD0id2hpdGUiIGZpbGwtb3BhY2l0eT0iMC4yIi8+CjxjaXJjbGUgY3g9IjE4LjU2NzMiIGN5PSIzMi4yODMiIHI9IjAuMjgzMTc2IiB0cmFuc2Zvcm09InJvdGF0ZSgtMS42MDE0OCAxOC41NjczIDMyLjI4MykiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjE5LjY0MzUiIGN5PSIyMC4wNzM3IiByPSIwLjU2NjM1MiIgdHJhbnNmb3JtPSJyb3RhdGUoLTEuNjAxNDggMTkuNjQzNSAyMC4wNzM3KSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMjQuNzg4IiBjeT0iMjEuNjI4NCIgcj0iMC41NjYzNTIiIHRyYW5zZm9ybT0icm90YXRlKC0xLjYwMTQ4IDI0Ljc4OCAyMS42Mjg0KSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMjQuMzg3NyIgY3k9IjE3LjM5MjMiIHI9IjAuMjgzMTc2IiB0cmFuc2Zvcm09InJvdGF0ZSgtMS42MDE0OCAyNC4zODc3IDE3LjM5MjMpIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIxNC43NTg4IiBjeT0iMTcuNjYxOSIgcj0iMC4yODMxNzYiIHRyYW5zZm9ybT0icm90YXRlKC0xLjYwMTQ4IDE0Ljc1ODggMTcuNjYxOSkiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNS4wNTY5IDEzLjg3ODZMMjYuODI3NyAxMy41NzIzQzI3LjM1NzkgMTMuNDgwNiAyNy44NjU2IDEzLjgyNDkgMjcuOTc2NiAxNC4zNTE0TDMwLjU1IDI2LjU1NjVDMzAuNjYyNiAyNy4wOTAyIDMwLjMyNjcgMjcuNjE1NiAyOS43OTUgMjcuNzM3NUwyNy41NDc2IDI4LjI1MjciIHN0cm9rZT0id2hpdGUiLz4KPHBhdGggZD0iTTMxLjY0ODEgMjAuMjAyOUMzMy4yMDIgMjIuNzg2MyAzNi45Nzg3IDIzLjI2NDggNDAgMjQuMTI1OVYyOEMzNi4zMzEzIDI4LjAwMDQgMzEuMDQ0NiAyNy4zNjA2IDI4LjQwNTMgMjQuNzI0MkMyNC41MjQ3IDIwLjg0NzggMjkuNzA2IDE2Ljk3NDEgMzEuNjQ4MSAyMC4yMDI5WiIgZmlsbD0idXJsKCNwYWludDRfbGluZWFyXzE0MTJfNDEwMTcpIi8+CjxjaXJjbGUgY3g9IjQ2IiBjeT0iMjYiIHI9IjgiIGZpbGw9IiMzRUFDQjQiLz4KPHBhdGggZD0iTTQyLjI2NjYgMjcuNTQ2OUM0My4zMzMzIDMwLjgxODEgNDcuNTk5OSAzMC4yODQ3IDQ4LjY2NjYgMjcuNTQ2OSIgc3Ryb2tlPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI0Mi4yNjY5IiBjeT0iMjMuMzMyMyIgcj0iMS4wNjY2NyIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iNDguNjY2OCIgY3k9IjIzLjMzMjMiIHI9IjEuMDY2NjciIGZpbGw9IndoaXRlIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfMTQxMl80MTAxNyIgeDE9IjE2LjUwMTgiIHkxPSIxMy40Nzc2IiB4Mj0iMjAuMTY1MSIgeTI9IjM0LjEwOTkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0ZGQUYxNCIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRkQ3MDQiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDFfbGluZWFyXzE0MTJfNDEwMTciIHgxPSIxMy4wMjE3IiB5MT0iMTcuNzMwNSIgeDI9IjEzLjAyMTciIHkyPSIzMS4zMjI5IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRjg0MTMiLz4KPHN0b3Agb2Zmc2V0PSIwLjAwMDEiIHN0b3AtY29sb3I9IiNGRjkyMTMiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRkZCODAyIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQyX2xpbmVhcl8xNDEyXzQxMDE3IiB4MT0iMTcuMTA3NiIgeTE9IjE3LjAwMzkiIHgyPSIxNy4xMDc2IiB5Mj0iMzAuNTk2NCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjRkY4NDEzIi8+CjxzdG9wIG9mZnNldD0iMC4wMDAxIiBzdG9wLWNvbG9yPSIjRkY5MjEzIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0ZGQjgwMiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50M19saW5lYXJfMTQxMl80MTAxNyIgeDE9IjIxLjIwMTQiIHkxPSIxNi4yNzczIiB4Mj0iMjEuMjAxNCIgeTI9IjI5Ljg2OTgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0ZGODQxMyIvPgo8c3RvcCBvZmZzZXQ9IjAuMDAwMSIgc3RvcC1jb2xvcj0iI0ZGOTIxMyIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRkI4MDIiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDRfbGluZWFyXzE0MTJfNDEwMTciIHgxPSIzNi4yMDgzIiB5MT0iMjUiIHgyPSIyOS42NDIzIiB5Mj0iMTguOTgxMSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjM0VBQ0I0Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzQ2RDNERCIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=);
+    }
+    
+    
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+
+<!-- if scroll, add .vi-page-header-fix -->
+<body class="vi-bg-mint">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">醫療健檢結果</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500" href="">諮詢專人</a>
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap vi-bg-mint">
+    
+    <div class="main_container vi-has-foot-btn">
+      
+      <div class="page-gradient"></div>
+      
+      
+      <!-- toast, 參考 import { CTBCMBToastWidget } from '../view/ui-2022/toast/ctbc-mb-toast.widget';-->
+      <div class="toast">
+        <span>儲存成功</span>
+      </div>
+
+    
+      <div class="status-wrap status-not-yet pad_top24">
+        
+        <div class="vi-container">
+          <div class="vi-txt-title vi-txt-b900 mb12">
+            您的<span class="txt-blue-green">醫療保障</span>分析如下：
+          </div>
+          
+          
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="status-not-yet">
+            <!-- status .status-not-yet, .status-good, .status-done -->
+            <div class="vi-card vi-rounded-card goal-card status-not-yet">
+              <div class="vi-card-header flex-column">
+                <div class="vi-txt-callout vi-txt-b500 mb8">各項醫療所需金額依據您每月收入 <span class="vi-txt-bold vi-txt-blue-green">7 萬</span> 來試算，並搭配您的醫療額度，已備狀態如下：
+                </div>
+                <div class="dis-flex vi-txt-body-bold vi-txt-g500 w-100 flex-justify-end">編輯目標</div>
+              </div>
+              <div class="vi-card-body dis-flex flex-column bg-blue-green pad_top16">
+                <div class="highcharts-wrap">
+                  <div class="highcharts-info">
+                    <div class="info-box">
+                      <div class="color-box color-yellow">
+                        <div class="bg-box"></div>已準備額度
+                      </div>
+                      <div class="color-box color-white">
+                        <div class="bg-box"></div>目標額度
+                      </div>
+                    </div>
+                    <div class="progress-status-bar-wrap">
+                      <div class="progress-status-bar">
+                        <span class="vi-icon vi-icon-xs icon-status-not-yet"></span>
+                        <span class="vi-txt-footnote vi-txt-bold vi-txt-blue-green">尚無準備</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="main-highcharts-wrap">
+                    <figure class="main-highcharts-figure">
+                      <div id="chart1"></div>
+                    </figure>
+                  </div>
+                  
+                  <div class="dis-flex flex-justify-center">
+                    <div class="vi-btn vi-btn-xs vi-btn-white">編輯/查看保單</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="vi-card vi-rounded-card bg-light-brown service-card pad_btm16">
+              <div class="vi-card-header">
+                <div class="vi-txt-callout vi-txt-bold vi-txt-br500">您尚需準備</div>
+              </div>
+              <div class="vi-card-body">
+                <ul class="vi-list vi-list-noline vi-list-baseline vi-list-no-bg vi-list-px0 vi-list-py8">
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">
+                      <div class="vi-txt-body-bold vi-txt-b600">住院日額<span class="vi-txt-normal  vi-txt-b500 ml8">(日)</span></div>
+                    </div>
+                    <div class="vi-list-rt">
+                      <div class="vi-txt-body-bold vi-txt-b600">3,000 元</div>
+                    </div>
+                  </li>
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">
+                      <div class="vi-txt-body-bold vi-txt-b600">實支實付</div>
+                    </div>
+                    <div class="vi-list-rt">
+                      <div class="vi-txt-body-bold vi-txt-b600">25,000 元</div>
+                    </div>
+                  </li>
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">
+                      <div class="vi-txt-body-bold vi-txt-b600">重大傷病<span class="vi-txt-normal  vi-txt-b500 ml8">(兩年生活費)</span></div>
+                    </div>
+                    <div class="vi-list-rt">
+                      <div class="vi-txt-body-bold vi-txt-b600">117.9 萬</div>
+                    </div>
+                  </li>
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">
+                      <div class="vi-txt-body-bold vi-txt-b600">失能殘廢<span class="vi-txt-normal vi-txt-b500 ml8">(三年生活費)</span></div>
+                    </div>
+                    <div class="vi-list-rt">
+                      <div class="vi-txt-body-bold vi-txt-b600">280 萬</div>
+                    </div>
+                  </li>
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">
+                      <div class="vi-txt-body-bold vi-txt-b600">癌症<span class="vi-txt-normal  vi-txt-b500 ml8">(一年治療費)</span></div>
+                    </div>
+                    <div class="vi-list-rt">
+                      <div class="vi-txt-body-bold vi-txt-b600">49.6 萬</div>
+                    </div>
+                  </li>
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">
+                      <div class="vi-txt-body-bold vi-txt-b600">長期照護<span class="vi-txt-normal  vi-txt-b500 ml8">(月)</span></div>
+                    </div>
+                    <div class="vi-list-rt">
+                      <div class="vi-txt-body-bold vi-txt-b600">3 萬</div>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="vi-txt-callout vi-txt-b600">以上金額試算僅供參考，萬元將四捨五入取到小數點第一位。</div>
+
+                <div class="vi-divider-light-brown"></div>
+
+                <div class="dis-flex w-100 mt16 flex-justify-between">
+                  <div class="service-txt">
+                    <div class="vi-txt-body-bold vi-txt-br500 mb24">希望了解符合自己的壽險保單嗎？</div>
+                    <!-- 有無理專 -->
+                    <!-- <div class="d-flex mt-12 mb16">
+                      <span class="vi-txt-callout vi-txt-b500">理專</span>
+                      <span class="vi-txt-callout vi-txt-bold vi-txt-b600">謝佳雯 (永吉分行)</span>
+                    </div> -->
+                  </div>
+                  <div class="flex-shrink-0 service-img">
+                    <img src="../../../../inc/img/health/service-person.svg" alt="" />
+                  </div>
+                </div>
+                <div class="btn vi-btn vi-btn-primary vi-btn-s">預約專人，聽取進一步諮詢</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="status-good" class="hide">
+            <!-- status .status-not-yet, .status-good, .status-done -->
+            <div class="vi-card vi-rounded-card goal-card status-good">
+              <div class="vi-card-header flex-column">
+                <div class="vi-txt-callout vi-txt-b500 mb8">各項醫療所需金額依據您每月收入 <span class="vi-txt-bold vi-txt-blue-green">7 萬</span> 來試算，並搭配您的醫療額度，已備狀態如下：
+                </div>
+                <div class="dis-flex vi-txt-body-bold vi-txt-g500 w-100 flex-justify-end">編輯目標</div>
+              </div>
+              <div class="vi-card-body dis-flex flex-column bg-blue-green pad_top16">
+                <div class="highcharts-wrap">
+                  <div class="highcharts-info">
+                    <div class="info-box">
+                      <div class="color-box color-yellow">
+                        <div class="bg-box"></div>已準備額度
+                      </div>
+                      <div class="color-box color-white">
+                        <div class="bg-box"></div>目標額度
+                      </div>
+                    </div>
+                    <!-- 部分已準備 不顯示 -->
+                    <!-- <div class="progress-status-bar-wrap">
+                      <div class="progress-status-bar">
+                        <span class="vi-icon vi-icon-xs icon-status-not-yet"></span>
+                        <span class="vi-txt-footnote vi-txt-bold vi-txt-blue-green">尚無準備</span>
+                      </div>
+                    </div> -->
+                  </div>
+                  
+                  <div class="main-highcharts-wrap">
+                    <figure class="main-highcharts-figure">
+                      <div id="chart2"></div>
+                    </figure>
+                  </div>
+                  
+                  <div class="dis-flex flex-justify-center">
+                    <div class="vi-btn vi-btn-xs vi-btn-white">編輯/查看保單</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="vi-card vi-rounded-card bg-light-brown service-card pad_btm16">
+              <div class="vi-card-header">
+                <div class="vi-txt-callout vi-txt-bold vi-txt-br500">您尚需準備</div>
+              </div>
+              <div class="vi-card-body">
+                <ul class="vi-list vi-list-noline vi-list-baseline vi-list-no-bg vi-list-px0 vi-list-py8">
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">
+                      <div class="vi-txt-body-bold vi-txt-b600">住院日額<span class="vi-txt-normal  vi-txt-b500 ml8">(日)</span></div>
+                    </div>
+                    <div class="vi-list-rt">
+                      <div class="vi-txt-body-bold vi-txt-b600">3,000 元</div>
+                    </div>
+                  </li>
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">
+                      <div class="vi-txt-body-bold vi-txt-b600">實支實付</div>
+                    </div>
+                    <div class="vi-list-rt">
+                      <div class="vi-txt-body-bold vi-txt-b600">25,000 元</div>
+                    </div>
+                  </li>
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">
+                      <div class="vi-txt-body-bold vi-txt-b600">重大傷病<span class="vi-txt-normal  vi-txt-b500 ml8">(兩年生活費)</span></div>
+                    </div>
+                    <div class="vi-list-rt">
+                      <div class="vi-txt-body-bold vi-txt-b600">117.9 萬</div>
+                    </div>
+                  </li>
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">
+                      <div class="vi-txt-body-bold vi-txt-b600">失能殘廢<span class="vi-txt-normal vi-txt-b500 ml8">(三年生活費)</span></div>
+                    </div>
+                    <div class="vi-list-rt">
+                      <div class="vi-txt-body-bold vi-txt-b600">280 萬</div>
+                    </div>
+                  </li>
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">
+                      <div class="vi-txt-body-bold vi-txt-b600">癌症<span class="vi-txt-normal  vi-txt-b500 ml8">(一年治療費)</span></div>
+                    </div>
+                    <div class="vi-list-rt">
+                      <div class="vi-txt-body-bold vi-txt-b600">49.6 萬</div>
+                    </div>
+                  </li>
+                  <li class="vi-list-item">
+                    <div class="vi-list-lt">
+                      <div class="vi-txt-body-bold vi-txt-b600">長期照護<span class="vi-txt-normal  vi-txt-b500 ml8">(月)</span></div>
+                    </div>
+                    <div class="vi-list-rt">
+                      <div class="vi-txt-body-bold vi-txt-b600">3 萬</div>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="vi-txt-callout vi-txt-b600">以上金額試算僅供參考，萬元將四捨五入取到小數點第一位。</div>
+
+                <div class="vi-divider-light-brown"></div>
+
+                <div class="dis-flex w-100 mt16 flex-justify-between">
+                  <div class="service-txt">
+                    <div class="vi-txt-body-bold vi-txt-br500 mb24">希望了解符合自己的壽險保單嗎？</div>
+                    <!-- 有無理專 -->
+                    <!-- <div class="d-flex mt-12 mb16">
+                      <span class="vi-txt-callout vi-txt-b500">理專</span>
+                      <span class="vi-txt-callout vi-txt-bold vi-txt-b600">謝佳雯 (永吉分行)</span>
+                    </div> -->
+                  </div>
+                  <div class="flex-shrink-0 service-img">
+                    <img src="../../../../inc/img/health/service-person.svg" alt="" />
+                  </div>
+                </div>
+                <div class="btn vi-btn vi-btn-primary vi-btn-s">預約專人，聽取進一步諮詢</div>
+              </div>
+            </div>
+          </div>
+          
+          
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="status-done" class="hide">
+            <!-- status .status-not-yet, .status-good, .status-done -->
+            <div class="vi-card vi-rounded-card goal-card status-done">
+              <div class="vi-card-header flex-column">
+                <div class="vi-txt-callout vi-txt-b500 mb8">各項醫療所需金額依據您每月收入 <span class="vi-txt-bold vi-txt-blue-green">7 萬</span> 來試算，並搭配您的醫療額度，已備狀態如下：
+                </div>
+                <div class="dis-flex vi-txt-body-bold vi-txt-g500 w-100 flex-justify-end">編輯目標</div>
+              </div>
+              <div class="vi-card-body dis-flex flex-column bg-blue-green pad_top16">
+                <div class="highcharts-wrap">
+                  <div class="vi-txt-headline vi-txt-white ct pad_btm24">恭喜你！已達成目標！</div>
+                  <div class="highcharts-info">
+                    <div class="info-box">
+                      <div class="color-box color-yellow">
+                        <div class="bg-box"></div>已準備額度
+                      </div>
+                      <div class="color-box color-white">
+                        <div class="bg-box"></div>目標額度
+                      </div>
+                    </div>
+                    <div class="progress-status-bar-wrap">
+                      <div class="progress-status-bar">
+                        <span class="vi-icon vi-icon-xs icon-status-done"></span>
+                        <span class="vi-txt-footnote vi-txt-bold vi-txt-blue-green">恭喜達標</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="main-highcharts-wrap">
+                    <figure class="main-highcharts-figure">
+                      <div id="chart3"></div>
+                    </figure>
+                  </div>
+                  
+                  <div class="dis-flex flex-justify-center">
+                    <div class="vi-btn vi-btn-xs vi-btn-white">編輯/查看保單</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="vi-card vi-rounded-card bg-light-brown service-card pad_btm16">
+              <div class="vi-card-body">
+                <!-- 已完成沒有 .mt16 -->
+                <div class="dis-flex w-100">
+                  <div class="service-txt">
+                    <div class="vi-txt-body-bold vi-txt-br500 mb24">希望了解符合自己的壽險保單嗎？</div>
+                    <!-- 有無理專 -->
+                    <div class="d-flex mt-12 mb16">
+                      <span class="vi-txt-callout vi-txt-b500">理專</span>
+                      <span class="vi-txt-callout vi-txt-bold vi-txt-b600">謝佳雯 (永吉分行)</span>
+                    </div>
+                  </div>
+                  <div class="flex-shrink-0 service-img">
+                    <img src="../../../../inc/img/health/service-person.svg" alt="" />
+                  </div>
+                </div>
+                <div class="btn vi-btn vi-btn-primary vi-btn-s">預約專人，聽取進一步諮詢</div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+          
+          
+        <div class="vi-card-s">
+          <div class="vi-card-header">
+            <div class="vi-line-title vi-w-100">如何達成目標</div>
+          </div>
+          
+          <div class="vi-card-body">
+            <div class="vertical-timeline mb24">
+              <div class="timeline-item">
+                <div class="timeline-header">
+                  <div class="vi-txt-body-bold vi-txt-white step">步驟 1</div>
+                  <div class="vi-txt-body-bold vi-txt-b600 top-2px step-title">完善您的保單資料</div>
+                </div>
+                <div class="timeline-body">
+                  <div class="vi-txt-body vi-txt-b600 mb12">有其他保單未加入健診嗎？完善您的保單資料，讓我們給您更精準的建議</div>
+                  <div class="btn vi-btn vi-btn-secondary vi-btn-xs">編輯/查看保單</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-header">
+                  <div class="vi-txt-body-bold vi-txt-white step">步驟 2</div>
+                  <div class="vi-txt-body-bold vi-txt-b600 top-2px step-title">購買醫療保單</div>
+                </div>
+                <div class="timeline-body">
+                  <div class="vi-txt-body vi-txt-b600 mb8">補足你的<span class="vi-txt-body-bold vi-txt-r500 ml4">重大傷病、失能殘廢、癌症、長期照護</span>給付金額，若不幸發生意外，可由保險公司給付金額讓生活品質可以延續下去。</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="vi-line-title mb16 vi-w-100">推薦您適合的壽險</div>
+
+            <!-- 不同 保險子頁 喔 下方不一樣 -->
+            <div class="vi-img-list vi-btm-line">
+              <div class="vi-list-item flex-column">
+                <div class="dis-flex">
+                  <div class="vi-img-block">
+                    <div class="vi-article-pic">
+                      <img src="../../../../inc/img/layout/06-pic.svg">
+                    </div>
+                  </div>
+                  <div class="vi-list-content">
+                    <div class="vi-txt-body-bold vi-txt-b900 mb4">泰安產物智遊保旅行綜合保險專案</div>
+                    <div class="vi-txt-callout vi-txt-b600 mt4">旅平險及旅遊不便險兩大保障，一次購足</div>
+                  </div>
+                </div>
+                <div class="dis-flex flex-row mt12">
+                  <div class="dis-flex flex-shrink-0 vi-txt-body vi-txt-b600">保障項目：</div>
+                  <div class="vi-txt-callout vi-txt-br500">#重大傷病 #失能殘廢 #癌症 #長期照護 #住院日額 ＃實支實付 </div>
+                </div>
+              </div>
+              <div class="vi-list-item flex-column">
+                <div class="dis-flex">
+                  <div class="vi-img-block">
+                    <div class="vi-article-pic">
+                      <img src="../../../../inc/img/layout/06-pic.svg">
+                    </div>
+                  </div>
+                  <div class="vi-list-content">
+                    <div class="vi-txt-body-bold vi-txt-b900 mb4">泰安產物智遊保旅行綜合保險專案</div>
+                    <div class="vi-txt-callout vi-txt-b600 mt4">旅平險及旅遊不便險兩大保障，一次購足</div>
+                  </div>
+                </div>
+                <div class="dis-flex flex-row mt12">
+                  <div class="dis-flex flex-shrink-0 vi-txt-body vi-txt-b600">保障項目：</div>
+                  <div class="vi-txt-callout vi-txt-br500">#重大傷病 #失能殘廢 #癌症 #長期照護 #住院日額 ＃實支實付 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="vi-container">
+
+          <!-- 備註 -->
+          <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+          <div class="mt24 mb32">
+            <div class="vi-note-accordion">
+              <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+                <div class="forAEM base-style break-word mr4">
+                  標題
+                </div>
+                <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+              </div>
+              <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                <div class="vi-card-body forAEM base-style break-word">
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      
+      </div>
+      
+      <div id="footer">
+        <div class="vi-page-footer">
+          <div class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-secondary">添加/編輯保單</div>
+            <div class="btn vi-btn vi-btn-primary">回健診首頁</div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div id="trigger-status-some" class="vi-txt-g500 mb24 pb24">-> 卡片狀態 有部分準備金 demo</div>
+      <div id="trigger-status-no" class="vi-txt-g500 mb24 pb24">-> 卡片狀態 無準備金 demo</div>
+      <div id="trigger-status-done" class="vi-txt-g500 mb24 pb24">-> 卡片狀態 已完成，有理專 demo</div>
+      
+    </div>
+
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<!-- spiderweb chart 需要的 highcharts-more, local 放在 src/applibs/ctbc/highcharts-more.js, 要注意 highcharts.js 要使用相同版本 v5.0.14 才不會有問題 -->
+<!-- <script src="../../../../applibs/ctbc/highcharts-more.js"></script> -->
+<script src="../../../../js/highcharts-more.js"></script>
+
+<script>
+// 無準備額度
+Highcharts.chart('chart1', {
+  credits: {
+    enabled: false
+  },
+  chart: {
+    polar: true,
+    spacing: [12, 72, 24, 72],
+    height: 300,
+    backgroundColor: 'transparent',
+  },
+  pane: {
+    size: '70%',
+  },
+  title: {
+    text: ''
+  },
+  exporting: {
+    enabled: false,
+  },
+  xAxis: {
+    categories: [
+      '住院日額<br><span style="color: #F4EB93; font-weight: 700;">1,000,000,000元</span><br><span style="font-weight: 700;">53,333元</span>', 
+      '實支實付<br><span style="color: #F4EB93; font-weight: 700;">2,000,000,000元</span><br><span style="font-weight: 700;">70,000元</span>', 
+      '意外殘廢<br><span style="color: #F4EB93; font-weight: 700;">400,000萬</span><br><span style="font-weight: 700;">455萬</span>', 
+      '癌症保障<br><span style="color: #F4EB93; font-weight: 700;">500,000萬</span><br><span style="font-weight: 700;">6.5萬</span>', 
+      '重大疾病<br><span style="color: #F4EB93; font-weight: 700;">300,000萬</span><br><span style="font-weight: 700;">78.5萬</span>', 
+      '長期照護<br><span style="color: #F4EB93; font-weight: 700;">600,000萬</span><br><span style="font-weight: 700;">654.4萬</span>'
+    ],
+    tickmarkPlacement: 'on',
+    lineWidth: 0,
+    gridLineWidth: 0,
+    labels: {
+      distance: 8,
+      y: 8,
+      style: {
+        // fontSize: '13px',
+        color: '#fff',
+      },
+      useHTML: true,
+    },
+  },
+  yAxis: {
+    labels: {
+      enabled: false
+    },
+    gridLineInterpolation: 'polygon',
+    gridLineWidth: 0,
+    min: 0,
+    max: 5,
+    softMax: 5,
+    endOnTick: false,
+    lineWidth: 0,
+    alternateGridColor: '#fff',
+    radius: 4,
+    plotBands: [{
+      from: 0,
+      to: 1,
+      color: '#D6F2F1'
+    }, {
+      from: 1,
+      to: 2,
+      color: '#D6F2F1'
+    }, {
+      from: 2,
+      to: 3,
+      color: '#D6F2F1'
+    }, {
+      from: 3,
+      to: 4,
+      color: '#D6F2F1'
+    }, {
+      from: 4,
+      to: 5,
+      color: '#D6F2F1'
+    }],
+    plotLines: [{
+      from: 0,
+      to: 1,
+      color: '#fff'
+    }, {
+      value: 1,
+      color: '#fff'
+    }, {
+      value: 2,
+      color: '#D6F2F1'
+    }, {
+      value: 3,
+      color: '#fff'
+    }, {
+      value: 4,
+      color: '#D6F2F1'
+    }, {
+      from: 4,
+      to: 5,
+      color: '#fff'
+    }]
+  },
+  tooltip: {
+    enabled: false
+  },
+  legend: {
+    enabled: false,
+  },
+  series: [{
+    type: 'area',
+    data: [5, 5, 5, 0, 5, 5],
+    color: 'rgba(240, 219, 27, 0.6)',
+    fillColor: 'rgba(240, 219, 27, 0.6)',
+    fillOpacity: .5,
+    pointPlacement: 'on',
+    marker: {
+      fillColor: 'rgba(240, 219, 27, 0.6)',
+      lineColor: 'rgba(240, 219, 27, 0.6)',
+      lineWidth: 0,
+      radius: 0,
+      states: {
+        hover: {
+          enabled: false
+        }
+      }
+    }
+  }],
+});
+
+// 部分已準備
+Highcharts.chart('chart2', {
+  credits: {
+    enabled: false
+  },
+  chart: {
+    polar: true,
+    spacing: [12, 72, 24, 72],
+    height: 300,
+    backgroundColor: 'transparent',
+  },
+  pane: {
+    size: '70%',
+  },
+  title: {
+    text: ''
+  },
+  exporting: {
+    enabled: false,
+  },
+  xAxis: {
+    categories: [
+      '住院日額<br><span style="color: #F4EB93; font-weight: 700;">11,000 元</span><br><span style="font-weight: 700;">4,000元</span>', 
+      '實支實付<br><span style="color: #F4EB93; font-weight: 700;">6,000 元</span><br><span style="font-weight: 700;">50,000元</span>', 
+      '意外殘廢<br><span style="color: #F4EB93; font-weight: 700;">200.3萬</span><br><span style="font-weight: 700;">400萬</span>', 
+      '癌症保障<br><span style="color: #F4EB93; font-weight: 700;">6.4萬</span><br><span style="font-weight: 700;">150萬</span>', 
+      '重大疾病<br><span style="color: #F4EB93; font-weight: 700;">0.5萬</span><br><span style="font-weight: 700;">240萬</span>', 
+      '長期照護<br><span style="color: #F4EB93; font-weight: 700;">4.2萬</span><br><span style="font-weight: 700;">6萬</span>'
+    ],
+    tickmarkPlacement: 'on',
+    lineWidth: 0,
+    gridLineWidth: 0,
+    labels: {
+      distance: 8,
+      y: 8,
+      style: {
+        // fontSize: '13px',
+        color: '#fff',
+      },
+      useHTML: true,
+    },
+  },
+  yAxis: {
+    labels: {
+      enabled: false
+    },
+    gridLineInterpolation: 'polygon',
+    gridLineWidth: 0,
+    min: 0,
+    max: 5,
+    softMax: 5,
+    endOnTick: false,
+    lineWidth: 0,
+    alternateGridColor: '#fff',
+    radius: 4,
+    plotBands: [{
+      from: 0,
+      to: 1,
+      color: '#D6F2F1'
+    }, {
+      from: 1,
+      to: 2,
+      color: '#D6F2F1'
+    }, {
+      from: 2,
+      to: 3,
+      color: '#D6F2F1'
+    }, {
+      from: 3,
+      to: 4,
+      color: '#D6F2F1'
+    }, {
+      from: 4,
+      to: 5,
+      color: '#D6F2F1'
+    }],
+    plotLines: [{
+      from: 0,
+      to: 1,
+      color: '#fff'
+    }, {
+      value: 1,
+      color: '#fff'
+    }, {
+      value: 2,
+      color: '#D6F2F1'
+    }, {
+      value: 3,
+      color: '#fff'
+    }, {
+      value: 4,
+      color: '#D6F2F1'
+    }, {
+      from: 4,
+      to: 5,
+      color: '#fff'
+    }]
+  },
+  tooltip: {
+    enabled: false
+  },
+  legend: {
+    enabled: false,
+  },
+  series: [{
+    type: 'area',
+    data: [1, 1, 0, 1, 2, 5],
+    color: 'rgba(240, 219, 27, 0.6)',
+    fillColor: 'rgba(240, 219, 27, 0.6)',
+    fillOpacity: .5,
+    pointPlacement: 'on',
+    marker: {
+      fillColor: 'rgba(240, 219, 27, 0.6)',
+      lineColor: 'rgba(240, 219, 27, 0.6)',
+      lineWidth: 0,
+      radius: 0,
+      states: {
+        hover: {
+          enabled: false
+        }
+      }
+    }
+  }],
+});
+
+// 已完成
+Highcharts.chart('chart3', {
+  credits: {
+    enabled: false
+  },
+  chart: {
+    polar: true,
+    spacing: [12, 72, 24, 72],
+    height: 300,
+    backgroundColor: 'transparent',
+  },
+  pane: {
+    size: '70%',
+  },
+  title: {
+    text: ''
+  },
+  exporting: {
+    enabled: false,
+  },
+  xAxis: {
+    categories: [
+      '住院日額<br><span style="color: #F4EB93; font-weight: 700;">11,000 元</span><br><span style="font-weight: 700;">11,000元</span>', 
+      '實支實付<br><span style="color: #F4EB93; font-weight: 700;">6,000 元</span><br><span style="font-weight: 700;">50,000元</span>', 
+      '意外殘廢<br><span style="color: #F4EB93; font-weight: 700;">200.3萬</span><br><span style="font-weight: 700;">400萬</span>', 
+      '癌症保障<br><span style="color: #F4EB93; font-weight: 700;">6.4萬</span><br><span style="font-weight: 700;">150萬</span>', 
+      '重大疾病<br><span style="color: #F4EB93; font-weight: 700;">0.5萬</span><br><span style="font-weight: 700;">240萬</span>', 
+      '長期照護<br><span style="color: #F4EB93; font-weight: 700;">4.2萬</span><br><span style="font-weight: 700;">6萬</span>'
+    ],
+    tickmarkPlacement: 'on',
+    lineWidth: 0,
+    gridLineWidth: 0,
+    labels: {
+      distance: 8,
+      y: 8,
+      style: {
+        // fontSize: '13px',
+        color: '#fff',
+      },
+      useHTML: true,
+    },
+  },
+  yAxis: {
+    labels: {
+      enabled: false
+    },
+    gridLineInterpolation: 'polygon',
+    gridLineWidth: 0,
+    min: 0,
+    max: 5,
+    softMax: 5,
+    endOnTick: false,
+    lineWidth: 0,
+    alternateGridColor: '#fff',
+    radius: 4,
+    plotBands: [{
+      from: 0,
+      to: 1,
+      color: '#D6F2F1'
+    }, {
+      from: 1,
+      to: 2,
+      color: '#D6F2F1'
+    }, {
+      from: 2,
+      to: 3,
+      color: '#D6F2F1'
+    }, {
+      from: 3,
+      to: 4,
+      color: '#D6F2F1'
+    }, {
+      from: 4,
+      to: 5,
+      color: '#D6F2F1'
+    }],
+    plotLines: [{
+      from: 0,
+      to: 1,
+      color: '#fff'
+    }, {
+      value: 1,
+      color: '#fff'
+    }, {
+      value: 2,
+      color: '#D6F2F1'
+    }, {
+      value: 3,
+      color: '#fff'
+    }, {
+      value: 4,
+      color: '#D6F2F1'
+    }, {
+      from: 4,
+      to: 5,
+      color: '#fff'
+    }]
+  },
+  tooltip: {
+    enabled: false
+  },
+  legend: {
+    enabled: false,
+  },
+  series: [{
+    type: 'area',
+    data: [5, 5, 5, 5, 5, 5],
+    color: 'rgba(240, 219, 27, 0.6)',
+    fillColor: 'rgba(240, 219, 27, 0.6)',
+    fillOpacity: .5,
+    pointPlacement: 'on',
+    marker: {
+      fillColor: 'rgba(240, 219, 27, 0.6)',
+      lineColor: 'rgba(240, 219, 27, 0.6)',
+      lineWidth: 0,
+      radius: 0,
+      states: {
+        hover: {
+          enabled: false
+        }
+      }
+    }
+  }],
+});
+
+
+// 卡片狀態 無準備金 demo
+document.getElementById('trigger-status-no').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementsByClassName('status-wrap')[0].classList.add('status-not-yet');
+  document.getElementsByClassName('status-wrap')[0].classList.remove('status-good');
+  document.getElementsByClassName('status-wrap')[0].classList.remove('status-done');
+  document.getElementById('status-not-yet').classList.remove('hide');
+  document.getElementById('status-good').classList.add('hide');
+  document.getElementById('status-done').classList.add('hide');
+});
+
+// 卡片狀態 有部分準備金 demo
+document.getElementById('trigger-status-some').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementsByClassName('status-wrap')[0].classList.add('status-good');
+  document.getElementsByClassName('status-wrap')[0].classList.remove('status-not-yet');
+  document.getElementsByClassName('status-wrap')[0].classList.remove('status-done');
+  document.getElementById('status-not-yet').classList.add('hide');
+  document.getElementById('status-good').classList.remove('hide');
+  document.getElementById('status-done').classList.add('hide');
+});
+
+// 卡片狀態 已完成 demo
+document.getElementById('trigger-status-done').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementsByClassName('status-wrap')[0].classList.add('status-done');
+  document.getElementsByClassName('status-wrap')[0].classList.remove('status-not-yet');
+  document.getElementsByClassName('status-wrap')[0].classList.remove('status-good');
+  document.getElementById('status-not-yet').classList.add('hide');
+  document.getElementById('status-good').classList.add('hide');
+  document.getElementById('status-done').classList.remove('hide');
+});
+
+
+// scroll fixed header
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 0) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+  }
+}
+</script>

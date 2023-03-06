@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base_2023.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style> 
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<!-- if scroll, add .vi-page-header-fix -->
+<body class="vi-bg-mint">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">外幣轉帳</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500" href="twrbm-fxex-tx003-041.html">最近轉帳</a>
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap scroll vi-bg-mint">
+
+    <div class="main_container pad_top24">
+      
+      <div class="vi-container">
+        <div class="vi-card">
+          <div class="vi-card-body pad_top24 pad_btm8">
+
+            <!-- id 是 demo 用的，開發請拉掉 -->
+            <div id="trigger-out-account-supercard" class="vi-form-group vi-for-select">
+              <!-- 如果 disabled 加 .disabled -->
+              <div class="vi-input-group">
+                <span class="title">轉出帳號</span>
+                <input type="text" placeholder="請選擇">
+                <div class="fake-input flex-column vi-txt-ellipsis hide">
+                  <div class="dis-flex mb4">
+                    <span class="vi-flag vi-flag-twd mr8 flex-shrink-0"></span>
+                    <span class="vi-txt-body-bold vi-txt-b600 vi-txt-ellipsis vi-txt-ellipsis-1-line">美元-活期存款</span>
+                  </div>
+                  <div class="vi-txt-body vi-txt-b600 vi-txt-ellipsis vi-txt-ellipsis-1-line">0000251300001234</div>
+                </div>
+              </div>
+              <div class="vi-form-info hide">餘額 6,253</div>
+            </div>
+            
+            <div class="vi-form-group">
+              <div class="vi-input-group">
+                <span class="title">轉多少</span>
+                <input type="tel" placeholder="請輸入">
+                <span class="unit">美元</span>
+              </div>
+            </div>
+            
+            <div class="rt mt8">
+              <!-- id 是 demo 用的，開發請拉掉 -->
+              <div id="trigger-usually-account-supercard" href="#" class="vi-text-link">約定/常用帳號</div>
+            </div>
+            <!-- id 是 demo 用的，開發請拉掉 -->
+            <div id="trigger-out-account-input" class="vi-form-group">
+              <!-- id 是 demo 用的，開發請拉掉 -->
+              <div id="target-to-who-input-1" class="vi-input-group">
+                <span class="title">轉給誰</span>
+                <div class="fake-input flex-column vi-txt-ellipsis">
+                  <!-- 有值時才出現 -->
+                  <div class="dis-flex mb4 hide">
+                    <span class="vi-txt-body-bold vi-txt-b600 vi-txt-ellipsis vi-txt-ellipsis-1-line">美元-活期存款</span>
+                  </div>
+                  <input type="tel" placeholder="僅可輸入中信外幣帳號">
+                </div>
+                <!-- 有值時才出現 -->
+                <!-- id 是 demo 用的，開發請拉掉 -->
+                <a id="clear-out-input-account" class="vi-icon vi-icon-base icon-input-delete hide"></a>
+              </div>
+              
+              <!-- id 是 demo 用的，開發請拉掉 -->
+              <div id="target-to-who-input-2" class="vi-input-group hide">
+                <span class="title">轉給誰</span>
+                <div class="fake-input flex-column vi-txt-ellipsis">
+                  <!-- 有值時才出現 -->
+                  <div class="dis-flex mb4">
+                    <span class="vi-txt-body-bold vi-txt-b600 vi-txt-ellipsis vi-txt-ellipsis-1-line">美元-活期存款</span>
+                  </div>
+                  <input type="tel" placeholder="僅可輸入中信外幣帳號" value="123456789">
+                </div>
+                <!-- 有值時才出現 -->
+                <!-- id 是 demo 用的，開發請拉掉 -->
+                <a id="clear-out-input-account" class="vi-icon vi-icon-base icon-input-delete"></a>
+              </div>
+            </div>
+            <div class="rt mb8">
+              <!-- id 是 demo 用的，開發請拉掉 -->
+              <div id="add-to-usually3" class="d-flex align-items-center justify-content-end">
+                <div class="vi-icon vi-icon-xs icon-add-g"></div>
+                <div class="vi-txt-body-bold vi-txt-g500 ml8">加入常用</div>
+              </div>
+            </div>
+            
+            <div class="vi-form-group">
+              <div class="vi-input-group">
+                <span class="title">註記</span>
+                <input type="text" maxlength="7" placeholder="非必填，最多輸入7字">
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        <div class="vi-btn-group mt24 mb24">
+          <a class="btn insight vi-btn vi-btn-primary" href="twrbm-fxex-tx003-042.html">下一步</a>
+        </div>
+        
+        <!-- 備註 現有版型 這裡僅示意 -->
+        <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+        <div class="">
+          <div class="vi-note-accordion">
+            <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+              <div class="forAEM base-style break-word mr4">
+                標題
+              </div>
+              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+            </div>
+            <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+              <div class="vi-card-body forAEM base-style break-word">
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+                <p>備註(我的首頁內文AEM)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div id="trigger-to-who-input" class="d-block vi-txt-g500 mb16">-> 轉給誰 input 一行二行切換</div>
+
+      </div>
+
+    </div>
+    <!-- main_container -->
+  </div>
+</body>
+<!-- body-wrap -->
+</html>
+
+
+
+
+<!-- vi-modal popup 現有版型 這裡僅示意，可參考 ctbc-mb-alert.widget -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-discount-notice" class="vi-modal">
+  <div class="vi-modal-backdrop"></div>
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-header-ct">
+        <span class="popup-title">數位通路優惠說明</span>
+      </div>
+    </div>
+    <div class="popup-body">
+      <div class="vi-row mt-16">
+        <!-- 可參考 nav-tabs-notice.component, 但這裡預設要有 fixed, 請開發再確認是否做的到 -->
+        <div class="nav-scroll has-tab-info js_scroll_fixed_top fixed-top fixed-position-tab-nav-popup">
+          <div class="vi-tab-line-area">
+            <div class="vi-tab-line">
+              <ul class="nav" role="tablist">
+                <li class="active">
+                  <a>
+                    <span>立即換匯</span>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <span>定期定額換匯</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content fixed-position-tab-content-popup">
+        <div class="tab-pane active">
+          <div class="vi-txt-body vi-txt-b600 mb12">於<strong>數位通路</strong>換匯，如：網/行銀、語音服務、企業收付e-Cash，單筆新臺幣交易金額可享匯差優惠，<strong>比牌告匯率還優！</strong></div>
+          
+          <table class="vi-table-card no-even-bg w-100">
+            <thead>
+              <tr>
+                <th class="wid_40per">新臺幣換</th>
+                <th class="wid_35per">金額(新臺幣)</th>
+                <th>匯差優惠</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="dashed-line">
+                <td rowspan="3">
+                  <div class="dis-flex align-items-center">
+                    <span class="vi-flag vi-flag-usd mr8"></span>
+                    <span class="vi-txt-body vi-txt-b600">美元美元</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="vi-txt-callout vi-txt-b600">5萬(不含)以下</div>
+                </td>
+                <td>
+                  <div class="vi-txt-callout vi-txt-b600">0.0004</div>
+                </td>
+              </tr>
+              <tr class="dashed-line">
+                <td>
+                  <div class="vi-txt-callout vi-txt-b600">5萬(含)~10萬(不含)</div>
+                </td>
+                <td>
+                  <div class="vi-txt-callout vi-txt-b600">0.015</div>
+                </td>
+              </tr>
+              <tr class="solid-line">
+                <td>
+                  <div class="vi-txt-callout vi-txt-b600">10萬(含)以上</div>
+                </td>
+                <td>
+                  <div class="vi-txt-callout vi-txt-b600">0.020</div>
+                </td>
+              </tr>
+              <tr class="dashed-line">
+                <td rowspan="3">
+                  <div class="dis-flex align-items-center">
+                    <span class="vi-flag vi-flag-jpy mr8"></span>
+                    <span class="vi-txt-body vi-txt-b600">日元</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="vi-txt-callout vi-txt-b600">5萬(不含)以下</div>
+                </td>
+                <td>
+                  <div class="vi-txt-callout vi-txt-b600">0.0004</div>
+                </td>
+              </tr>
+              <tr class="dashed-line">
+                <td>
+                  <div class="vi-txt-callout vi-txt-b600">5萬(含)~10萬(不含)</div>
+                </td>
+                <td>
+                  <div class="vi-txt-callout vi-txt-b600">0.0006</div>
+                </td>
+              </tr>
+              <tr class="solid-line">
+                <td>
+                  <div class="vi-txt-callout vi-txt-b600">10萬(含)以上</div>
+                </td>
+                <td>
+                  <div class="vi-txt-callout vi-txt-b600">0.0008</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <!-- 備註 現有版型 這裡僅示意 -->
+          <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+          <div class="mt16">
+            <div class="vi-note-accordion">
+              <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote1" role="button" aria-expanded="false">
+                <div class="forAEM base-style break-word mr4">
+                  標題
+                </div>
+                <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+              </div>
+              <div class="panel-collapse collapse" id="collapseNote1" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                <div class="vi-card-body forAEM base-style break-word">
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="tab-pane">
+          <div class="vi-txt-body vi-txt-b600 mb12">於<strong>數位通路</strong>換匯，如：網/行銀、語音服務、企業收付e-Cash，單筆新臺幣交易金額可享匯差優惠，<strong>比牌告匯率還優！</strong></div>
+          
+          <table class="vi-table-card no-even-bg w-100">
+            <thead>
+              <tr>
+                <th class="wid_40per">新臺幣換</th>
+                <th>匯差優惠</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="dashed-line">
+                <td >
+                  <div class="dis-flex align-items-center">
+                    <span class="vi-flag vi-flag-usd mr8"></span>
+                    <span class="vi-txt-body vi-txt-b600">美元</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="vi-txt-body vi-txt-b600">0.020</div>
+                </td>
+              </tr>
+              <tr class="dashed-line">
+                <td >
+                  <div class="dis-flex align-items-center">
+                    <span class="vi-flag vi-flag-jpy mr8"></span>
+                    <span class="vi-txt-body vi-txt-b600">日元</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="vi-txt-body vi-txt-b600">0.0008</div>
+                </td>
+              </tr>
+              <tr class="dashed-line">
+                <td >
+                  <div class="dis-flex align-items-center">
+                    <span class="vi-flag vi-flag-cny mr8"></span>
+                    <span class="vi-txt-body vi-txt-b600">人民幣</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="vi-txt-body vi-txt-b600">0.020</div>
+                </td>
+              </tr>
+              <tr class="dashed-line">
+                <td >
+                  <div class="dis-flex align-items-center">
+                    <span class="vi-flag vi-flag-hkd mr8"></span>
+                    <span class="vi-txt-body vi-txt-b600">港幣</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="vi-txt-body vi-txt-b600">0.0008</div>
+                </td>
+              </tr>
+              <tr class="dashed-line">
+                <td >
+                  <div class="dis-flex align-items-center">
+                    <span class="vi-flag vi-flag-eur mr8"></span>
+                    <span class="vi-txt-body vi-txt-b600">歐元</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="vi-txt-body vi-txt-b600">0.020</div>
+                </td>
+              </tr>
+              <tr class="dashed-line">
+                <td >
+                  <div class="dis-flex align-items-center">
+                    <span class="vi-flag vi-flag-gbp mr8"></span>
+                    <span class="vi-txt-body vi-txt-b600">英鎊</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="vi-txt-body vi-txt-b600">0.0008</div>
+                </td>
+              </tr>
+              <tr class="dashed-line">
+                <td >
+                  <div class="dis-flex align-items-center">
+                    <span class="vi-flag vi-flag-sgd mr8"></span>
+                    <span class="vi-txt-body vi-txt-b600">新加坡幣</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="vi-txt-body vi-txt-b600">0.020</div>
+                </td>
+              </tr>
+              <tr class="dashed-line">
+                <td >
+                  <div class="dis-flex align-items-center">
+                    <span class="vi-flag vi-flag-jpy mr8"></span>
+                    <span class="vi-txt-body vi-txt-b600">南非幣</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="vi-txt-body vi-txt-b600">0.0008</div>
+                </td>
+              </tr>
+              <tr class="dashed-line">
+                <td >
+                  <div class="dis-flex align-items-center">
+                    <span class="vi-flag vi-flag-usd mr8"></span>
+                    <span class="vi-txt-body vi-txt-b600">泰銖</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="vi-txt-body vi-txt-b600">0.020</div>
+                </td>
+              </tr>
+              <tr class="dashed-line">
+                <td >
+                  <div class="dis-flex align-items-center">
+                    <span class="vi-flag vi-flag-jpy mr8"></span>
+                    <span class="vi-txt-body vi-txt-b600">瑞典幣</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="vi-txt-body vi-txt-b600">0.0008</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <!-- 備註 現有版型 這裡僅示意 -->
+          <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+          <div class="mt16">
+            <div class="vi-note-accordion">
+              <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote2" role="button" aria-expanded="false">
+                <div class="forAEM base-style break-word mr4">
+                  標題
+                </div>
+                <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+              </div>
+              <div class="panel-collapse collapse" id="collapseNote2" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                <div class="vi-card-body forAEM base-style break-word">
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                  <p>備註(我的首頁內文AEM)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    
+    <!-- 有 has-shadow -->
+    <div class="popup-footer has-shadow">
+      <div class="vi-btn-group">
+        <div class="btn vi-btn vi-btn-primary">我知道了</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-in-account-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">選擇轉入帳號</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="d-flex justify-content-between align-items-center w320-flex-column w320-align-items-start mb16">
+          <div class="vi-btn-tag-group">
+            <div class="vi-btn vi-btn-tag vi-btn-selected">全部</div>
+            <div class="vi-btn vi-btn-tag vi-btn-default">約定帳號</div>
+            <div class="vi-btn vi-btn-tag vi-btn-default">常用帳號</div>
+          </div>
+          <!-- id 是 demo 用的，開發請拉掉 -->
+          <div id="add-to-usually1" class="vi-txt-body-bold vi-txt-g500 w320-align-self-end w320-mt8">新增常用</div>
+        </div>
+      
+        <div class="vi-avatar-nickname-account-card-wrap">
+          <!-- 選取時加 is-selected -->
+          <div class="vi-avatar-nickname-account-card is-selected">
+            <div class="avatar-nickname">
+              <div class="vi-txt-body-bold vi-txt-b500 nickname">我</div>
+            </div>
+            <div class="name-account vi-txt-ellipsis">
+              <div class="mb4 name vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                <span class="vi-txt-body-bold vi-txt-b600">我的外幣活存我的外幣活存我的外幣活存</span>
+              </div>
+              <div class="account vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                <div class="vi-txt-callout vi-txt-b500">0000 0000 0000 1234<span class="ml4">(本人)</span></div>
+              </div>
+            </div>
+            <div class="ml-auto">
+              <div class="vi-tag-group">
+                <div class="vi-tag vi-tag-b200">
+                  <div class="vi-txt">約定</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="vi-avatar-nickname-account-card">
+            <div class="avatar-nickname">
+              <div class="vi-txt-body-bold vi-txt-b500 nickname">媽</div>
+            </div>
+            <div class="name-account vi-txt-ellipsis">
+              <div class="mb4 name vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                <span class="vi-txt-body-bold vi-txt-b600">媽外幣帳戶</span>
+              </div>
+              <div class="account vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                <div class="vi-txt-callout vi-txt-b500">0000 8342 3434 3298<span class="ml4">(本人)</span></div>
+              </div>
+            </div>
+            <div class="ml-auto">
+              <div class="vi-tag-group">
+                <div class="vi-tag vi-tag-b200">
+                  <div class="vi-txt">約定</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="vi-avatar-nickname-account-card">
+            <div class="avatar-nickname">
+              <div class="vi-txt-body-bold vi-txt-b500 nickname">一</div>
+            </div>
+            <div class="name-account vi-txt-ellipsis">
+              <div class="mb4 name vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                <span class="vi-txt-body-bold vi-txt-b600">一二三四五六七八九十一二三四五六七八九十</span>
+              </div>
+              <div class="account vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                <div class="vi-txt-callout vi-txt-b500">0000 9999 3434 3298</div>
+              </div>
+            </div>
+            <div class="ml-auto">
+              <div class="vi-icon vi-icon-base icon-pencil-g"></div>
+            </div>
+          </div>
+          <div class="vi-avatar-nickname-account-card">
+            <div class="avatar-nickname">
+              <div class="vi-txt-body-bold vi-txt-b500 nickname">廠</div>
+            </div>
+            <div class="name-account vi-txt-ellipsis">
+              <div class="mb4 name vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                <span class="vi-txt-body-bold vi-txt-b600">廠商帳號</span>
+              </div>
+              <div class="account vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                <div class="vi-txt-callout vi-txt-b500">0000 8888 3434 3298</div>
+              </div>
+            </div>
+            <div class="ml-auto">
+              <div class="vi-icon vi-icon-base icon-pencil-g"></div>
+            </div>
+          </div>
+          <div class="vi-avatar-nickname-account-card">
+            <div class="avatar-nickname">
+              <div class="vi-txt-body-bold vi-txt-b500 nickname">爸</div>
+            </div>
+            <div class="name-account vi-txt-ellipsis">
+              <div class="mb4 name vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                <span class="vi-txt-body-bold vi-txt-b600">爸爸</span>
+              </div>
+              <div class="account vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                <div class="vi-txt-callout vi-txt-b500">0000 7777 3434 3298</div>
+              </div>
+            </div>
+            <div class="ml-auto">
+              <div class="vi-icon vi-icon-base icon-pencil-g"></div>
+            </div>
+          </div>
+          <div class="vi-avatar-nickname-account-card">
+            <div class="avatar-nickname">
+              <div class="vi-txt-body-bold vi-txt-b500 nickname">金</div>
+            </div>
+            <div class="name-account vi-txt-ellipsis">
+              <div class="mb4 name vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                <span class="vi-txt-body-bold vi-txt-b600">金小五</span>
+              </div>
+              <div class="account vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                <div class="vi-txt-callout vi-txt-b500">0000 6666 3434 3298</div>
+              </div>
+            </div>
+            <div class="ml-auto">
+              <div class="vi-icon vi-icon-base icon-pencil-g"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="vi-empty pad_top32">
+          <div class="vi-txt-body vi-txt-b600">目前還沒有常用帳號喔！</div>
+        </div>
+
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-add-to-usually-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">新增常用帳號</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-form-group disabled">
+          <div class="vi-input-group">
+            <span class="title">帳號</span>
+            <input type="text" value="000123456789">
+          </div>
+        </div>
+        
+        <div class="vi-form-group disabled">
+          <div class="vi-input-group">
+            <span class="title">暱稱</span>
+            <input type="text" placeholder="必填，可輸入15個字">
+          </div>
+          <div class="vi-form-info">0/15</div>
+        </div>
+      </div>
+      
+      <div class="super-card-footer">
+        <div class="vi-btn-group">
+          <div class="vi-btn vi-btn-secondary" ontouchstart="" data-dismiss="modal">取消</div>
+          <div class="vi-btn vi-btn-primary" ontouchstart="" data-dismiss="modal">確認</div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-add-to-usually-supercard3" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">新增常用帳號</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-form-group disabled">
+          <div class="vi-input-group">
+            <span class="title">帳號</span>
+            <input type="text" value="000123456789">
+          </div>
+        </div>
+        
+        <div class="vi-form-group disabled">
+          <div class="vi-input-group">
+            <span class="title">暱稱</span>
+            <input type="text" placeholder="必填，可輸入15個字">
+          </div>
+          <div class="vi-form-info">0/15</div>
+        </div>
+      </div>
+      
+      <div class="super-card-footer">
+        <div class="vi-btn-group">
+          <div class="vi-btn vi-btn-secondary" ontouchstart="" data-dismiss="modal">取消</div>
+          <div class="vi-btn vi-btn-primary" ontouchstart="" data-dismiss="modal">確認</div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-edit-usually-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">編輯常用帳號</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-form-group disabled">
+          <div class="vi-input-group">
+            <span class="title">帳號</span>
+            <input type="text" value="000123456789">
+          </div>
+        </div>
+        
+        <div class="vi-form-group disabled">
+          <div class="vi-input-group">
+            <span class="title">暱稱</span>
+            <input type="text" value="留學外幣">
+          </div>
+        </div>
+        
+        <div class="rt">
+          <div class="vi-txt-body-bold vi-txt-g500 mt8">刪除此帳號</div>
+        </div>
+      </div>
+      
+      <div class="super-card-footer">
+        <div class="vi-btn-group">
+          <div class="vi-btn vi-btn-secondary" ontouchstart="" data-dismiss="modal">取消</div>
+          <div class="vi-btn vi-btn-primary" ontouchstart="" data-dismiss="modal">確認</div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-out-account-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">選擇轉出幣別與帳號</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-txt-body vi-txt-b600 rt mb8">可用餘額</div>
+        <ul class="vi-list vi-list-px8 vi-list-py8 vi-list-noline vi-list-bg-gray super-card-select-account">
+          <!-- 目前的帳戶 加上 active -->
+          <a class="vi-list-item active" href="">
+            <div class="dis-flex justify-content-between w-100">
+              <div class="vi-list-lt">
+                <div class="dis-flex align-items-center mb8">
+                  <span class="vi-flag vi-flag-usd mr8"></span>
+                  <span class="vi-txt-body-bold vi-txt-b600 name">美元 - My Way 數位</span>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold"></div>
+              </div>
+            </div>
+            <div class="dis-flex justify-content-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body vi-txt-b600 account">0000251300001234</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold">
+                  <span class="currency mr4">USD</span>
+                  <span>10,294</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="dis-flex justify-content-between w-100">
+              <div class="vi-list-lt">
+                <div class="dis-flex align-items-center mb8">
+                  <span class="vi-flag vi-flag-jpy mr8"></span>
+                  <span class="vi-txt-body-bold vi-txt-b600 name">日圓 - My Way 數位</span>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold vi-txt-b600"></div>
+              </div>
+            </div>
+            <div class="dis-flex justify-content-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body vi-txt-b600 account">0000251300001234</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold vi-txt-b600">
+                  <span class="currency mr4">JPY</span>
+                  <span>100,000,000</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-fx-type-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">選擇申報性質</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <div class="vi-txt-body-bold vi-txt-b600 mb8">最多人用</div>
+        <ul class="vi-list vi-list-px4">
+          <a class="vi-list-item" href="javascript:;">
+            <div class="vi-txt-body-bold vi-txt-g500">作外匯存款不再匯出</div>
+          </a>
+          <a class="vi-list-item" href="javascript:;">
+            <div class="vi-txt-body-bold vi-txt-g500">國內貨款收付</div>
+          </a>
+          <a class="vi-list-item" href="javascript:;">
+            <div class="vi-txt-body-bold vi-txt-g500">國內外幣保單、基金及債券等投資款項（含孳息等收益）收付</div>
+          </a>
+          <a class="vi-list-item" href="javascript:;">
+            <div class="vi-txt-body-bold vi-txt-g500">國家內用、捐贈、繼承等移轉收支</div>
+          </a>
+          <a class="vi-list-item" href="javascript:;">
+            <div class="vi-txt-body-bold vi-txt-g500">國內外幣借貸之收付</div>
+          </a>
+          <a class="vi-list-item" href="javascript:;">
+            <div class="vi-txt-body-bold vi-txt-g500">國內服務之收付</div>
+          </a>
+        </ul>
+        
+        <div class="vi-txt-body-bold vi-txt-b600 mb8">最近使用</div>
+        <ul class="vi-list vi-list-px4">
+          <a class="vi-list-item" href="javascript:;">
+            <div class="vi-txt-body-bold vi-txt-g500">作外匯存款不再匯出</div>
+          </a>
+        </ul>
+        
+        <div class="d-flex align-items-center justify-content-between mt24 mb12">
+          <div class="vi-txt-body-bold vi-txt-b600">自行選擇</div>
+          <div class="d-flex align-items-center">
+            <span class="vi-icon vi-icon-base icon-question-mark-g mr8"></span>
+            <span class="vi-txt-body-bold vi-txt-g500">詳細說明</span>
+          </div>
+        </div>
+        
+        <!-- 可參考 app\ng\view\product\faq\faq.component.html 但 裡面 vi-card-accordion 要加新的 class .vi-card-accordion-g300  再請評估可以套用 還是要另外拉一個新模組 -->
+        <div id="accordion" class="vi-card-group">
+          <div class="vi-card-accordion vi-card-accordion-g300 panel">
+            <a class="vi-card-header flex-justify-between collapsed" role="button" data-toggle="collapse"
+              data-parent="#accordion" href="#collapse1">
+              <h4 class="vi-txt-body vi-txt-b900">
+                旅行支出
+              </h4>
+              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+            </a>
+            <div id="collapse1" class="panel-collapse collapse" role="tabpanel">
+              <div class="vi-card-body padx_12 pady_16">
+                <ul class="vi-list vi-list-px0">
+                  <a class="vi-list-item" href="javascript:;">
+                    <div class="vi-txt-body-bold vi-txt-g500">商務支出</div>
+                  </a>
+                  <a class="vi-list-item" href="javascript:;">
+                    <div class="vi-txt-body-bold vi-txt-g500">觀光支出</div>
+                  </a>
+                  <a class="vi-list-item" href="javascript:;">
+                    <div class="vi-txt-body-bold vi-txt-g500">探親支出</div>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="vi-card-accordion vi-card-accordion-g300 panel">
+            <a class="vi-card-header flex-justify-between collapsed" role="button" data-toggle="collapse"
+              data-parent="#accordion" href="#collapse2">
+              <h4 class="vi-txt-body vi-txt-b900">
+                保險支出
+              </h4>
+              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+            </a>
+            <div id="collapse2" class="panel-collapse collapse" role="tabpanel">
+              <div class="vi-card-body padx_12 pady_16">
+                <ul class="vi-list vi-list-px0">
+                  <a class="vi-list-item" href="javascript:;">
+                    <div class="vi-txt-body-bold vi-txt-g500">保險支出11</div>
+                  </a>
+                  <a class="vi-list-item" href="javascript:;">
+                    <div class="vi-txt-body-bold vi-txt-g500">保險支出22</div>
+                  </a>
+                  <a class="vi-list-item" href="javascript:;">
+                    <div class="vi-txt-body-bold vi-txt-g500">保險支出33</div>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="vi-card-accordion vi-card-accordion-g300 panel">
+            <a class="vi-card-header flex-justify-between collapsed" role="button" data-toggle="collapse"
+              data-parent="#accordion" href="#collapse3">
+              <h4 class="vi-txt-body vi-txt-b900">
+                運輸支出
+              </h4>
+              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+            </a>
+            <div id="collapse3" class="panel-collapse collapse" role="tabpanel">
+              <div class="vi-card-body padx_12 pady_16">
+                <ul class="vi-list vi-list-px0">
+                  <a class="vi-list-item" href="javascript:;">
+                    <div class="vi-txt-body-bold vi-txt-g500">運輸支出11</div>
+                  </a>
+                  <a class="vi-list-item" href="javascript:;">
+                    <div class="vi-txt-body-bold vi-txt-g500">運輸支出22</div>
+                  </a>
+                  <a class="vi-list-item" href="javascript:;">
+                    <div class="vi-txt-body-bold vi-txt-g500">運輸支出33</div>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="vi-card-accordion vi-card-accordion-g300 panel">
+            <a class="vi-card-header flex-justify-between collapsed" role="button" data-toggle="collapse"
+              data-parent="#accordion" href="#collapse4">
+              <h4 class="vi-txt-body vi-txt-b900">
+                其他服務支出
+              </h4>
+              <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+            </a>
+            <div id="collapse4" class="panel-collapse collapse" role="tabpanel">
+              <div class="vi-card-body padx_12 pady_16">
+                <ul class="vi-list vi-list-px0">
+                  <a class="vi-list-item" href="javascript:;">
+                    <div class="vi-txt-body-bold vi-txt-g500">其他服務支出11</div>
+                  </a>
+                  <a class="vi-list-item" href="javascript:;">
+                    <div class="vi-txt-body-bold vi-txt-g500">其他服務支出22</div>
+                  </a>
+                  <a class="vi-list-item" href="javascript:;">
+                    <div class="vi-txt-body-bold vi-txt-g500">其他服務支出33</div>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// scroll fixed header
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 0) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+  }
+}
+
+
+$(document).ready(function(){
+  
+  // 選擇轉出帳號 demo
+  $('#trigger-out-account-supercard').on('click', function() {
+    $('body').addClass('modal-open');
+    $('#target-out-account-supercard').toggleClass('vi-modal-in hide');
+  });
+  $('#target-out-account-supercard .vi-list-item').on('click', function(e) {
+    e.preventDefault();
+    $('body').removeClass('modal-open');
+    $('#target-out-account-supercard').toggleClass('vi-modal-in hide');
+    $(this).siblings('.vi-list-item').removeClass('active');
+    $(this).addClass('active');
+    const name = $(this).find('.name').text(),
+          account = $(this).find('.account').text();
+    $('#trigger-out-account-supercard .vi-input-group input').addClass('hide');
+    $('#trigger-out-account-supercard .fake-input .vi-txt-b600').html(name);
+    $('#trigger-out-account-supercard .fake-input .vi-txt-body').html(account);
+    $('#trigger-out-account-supercard .fake-input').removeClass('hide');
+    $('#trigger-out-account-supercard .vi-form-info').removeClass('hide');
+  });
+
+  // 轉給誰 demo
+  $('#trigger-in-account-supercard').on('click', function() {
+    $('body').addClass('modal-open');
+    $('#target-in-account-supercard').toggleClass('vi-modal-in hide');
+  });
+  
+  // 約定/常用 demo
+  $('#trigger-usually-account-supercard').on('click', function(e) {
+    $('#target-in-account-supercard').toggleClass('vi-modal-in hide');
+  });
+  
+  // 選擇轉入帳號 約定/常用 編輯
+  $('#target-in-account-supercard .vi-avatar-nickname-account-card .icon-pencil-g').on('click', function(e) {
+    // 外層排卡事件冒泡阻止
+    e.stopPropagation();
+    $('#target-in-account-supercard').toggleClass('vi-modal-in hide');
+    $('#target-edit-usually-supercard').toggleClass('vi-modal-in hide');
+  });
+  
+  // 選擇轉入帳號 約定/常用 選取牌卡 demo
+  $('.vi-avatar-nickname-account-card-wrap .vi-avatar-nickname-account-card').on('click', function() {
+    $(this).siblings('.vi-avatar-nickname-account-card').removeClass('is-selected');
+    $(this).addClass('is-selected');
+    $('#target-in-account-supercard').toggleClass('vi-modal-in hide');
+    const name = $(this).find('.name span').text(),
+          account = $(this).find('.account div').text();
+    $('#trigger-out-account-input .vi-input-group input').addClass('hide');
+    $('#trigger-out-account-input .fake-input').removeClass('hide');
+    $('#trigger-out-account-input .fake-input .vi-txt-b600').html(name);
+    $('#trigger-out-account-input .fake-input .vi-txt-body').html(account);
+    $('#clear-out-input-account').removeClass('hide');
+  });
+
+  // 加入常用
+  $('#add-to-usually1').on('click', function() {
+    $('#target-in-account-supercard').toggleClass('vi-modal-in hide');
+    $('#target-add-to-usually-supercard').toggleClass('vi-modal-in hide');
+  });
+  $('#add-to-usually2').on('click', function() {
+    $('#target-in-account-supercard').toggleClass('vi-modal-in hide');
+    $('#target-add-to-usually-supercard').toggleClass('vi-modal-in hide');
+  });
+  $('#add-to-usually3').on('click', function() {
+    $('#target-add-to-usually-supercard3').toggleClass('vi-modal-in hide');
+  });
+  
+  $('#target-add-to-usually-supercard .vi-btn, #target-add-to-usually-supercard .vi-modal-close').on('click', function() {
+    $('#target-in-account-supercard').toggleClass('vi-modal-in hide');
+  });
+  $('#target-add-to-usually-supercard3 .vi-btn, #target-add-to-usually-supercard3 .vi-modal-close').on('click', function() {
+    $('#target-in-account-supercard3').toggleClass('vi-modal-in hide');
+  });
+
+  // 轉給誰 input 一行二行切換
+  $('#trigger-to-who-input').on('click', function() {
+    $('#target-to-who-input-1, #target-to-who-input-2').toggleClass('hide');
+  });
+  // 清除 轉給誰
+  $('#clear-out-input-account').on('click', function(e) {
+    $('#target-to-who-input-1, #target-to-who-input-2').toggleClass('hide');
+  });
+
+
+  // modal close demo，關閉時的動態效果依照現行
+  $('.vi-modal .popup-footer .vi-btn').on('click', function() {
+    $(this).closest('.vi-modal').toggleClass('vi-modal-in');
+    $('body').removeClass('modal-open');
+  });
+  // 超人卡片 close demo，關閉時的動態效果依照現行
+  const modalClose = document.getElementsByClassName('vi-modal-close');
+  for (var i = 0; i < modalClose.length; i++){
+    modalClose[i].addEventListener('click', function(e) {
+      e.preventDefault();
+      this.closest('.vi-modal').classList.toggle('vi-modal-in');
+      this.closest('.vi-modal').classList.toggle('hide');
+      document.body.classList.remove('modal-open');
+    });
+  }
+  // 超人卡片 btn click demo，關閉時的動態效果依照現行
+  $('.super-card .vi-btn-group .vi-btn').on('click', function() {
+    $(this).closest('.vi-modal').toggleClass('vi-modal-in hide');
+    $('body').removeClass('modal-open');
+  });
+  
+
+});
+</script>

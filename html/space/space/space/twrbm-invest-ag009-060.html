@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+
+<body class="vi-bg-mint ">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">編輯目標</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <a class="vi-icon vi-icon-base icon-start-default-w"></a>
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap vi-bg-mint">
+    
+    <div class="main_container vi-has-foot-btn pad_top24">
+
+      <div class="vi-container">
+
+        <div class="vi-card pad_btm16">
+          <div class="vi-card-header">
+            <div class="vi-line-title">住院日額</div>
+          </div>
+          <div class="vi-card-body">
+            <div class="vi-txt-body vi-txt-b600 mb8">根據「住院天數」定額給付</div>
+            <!-- id 是 demo 用的，開發請拉掉 -->
+            <div id="trigger-select-supercard" class="vi-form-group vi-for-select">
+              <div class="vi-input-group">
+                <input placeholder="請選擇" type="text" readonly="readonly" value="雙人房：3000/日" class="">
+              </div>
+              <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div>
+              <div class="vi-form-info"></div>
+            </div>
+            
+            <div class="rt mt8">
+              <span class="vi-icon vi-icon-xs icon-info-mark-g top-2px"></span>
+              <span class="vi-txt-body-bold vi-txt-g500">看各區的病房價格</span>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="vi-card pad_btm8">
+          <div class="vi-card-header">
+            <div class="vi-line-title">實支實付<span class="vi-icon vi-icon-xs icon-info-mark-g ml4"></span></div>
+          </div>
+          <div class="vi-card-body">
+            <div class="vi-txt-body vi-txt-b600 mb8">補貼健保未給付的自費項目</div>
+            <div class="vi-form-group vi-for-select">
+              <div class="vi-input-group">
+                <input value="重大手術費約 25 萬" placeholder="" type="text" readonly="readonly" class="">
+              </div>
+              <!-- <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div>
+              <div class="vi-form-info"></div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="vi-card pad_btm16">
+          <div class="vi-card-header">
+            <div class="vi-line-title">重大傷病<span class="vi-icon vi-icon-xs icon-info-mark-g ml4"></span></div>
+          </div>
+          <div class="vi-card-body"> 
+            <div class="vi-form-group mt0" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group">
+                <span class="title">每月收入</span>
+                <input type="tel" placeholder="請輸入" class="">
+                <span class="unit">萬</span>
+              </div>
+            </div>
+            <div class="vi-txt-body vi-txt-b600 mt8">依照你的每月收入，試算兩年需要 168 萬</div>
+          </div>
+        </div>
+        
+        <div class="vi-card pad_btm16">
+          <div class="vi-card-header">
+            <div class="vi-line-title">意外殘廢<span class="vi-icon vi-icon-xs icon-info-mark-g ml4"></span></div>
+          </div>
+          <div class="vi-card-body"> 
+            <div class="vi-txt-body vi-txt-b600">依照你的每月收入，試算三年需要 280 萬</div>
+          </div>
+        </div>
+        
+        <div class="vi-card pad_btm8">
+          <div class="vi-card-header">
+            <div class="vi-line-title">癌症保障</div>
+          </div>
+          <div class="vi-card-body">
+            <div class="vi-txt-body vi-txt-b600 mb8">建議準備1年~3年自費用藥</div>
+            <div class="vi-form-group vi-for-select">
+              <div class="vi-input-group">
+                <input value="治療 1 年 (約花費 150 萬)" placeholder="" type="text" readonly="readonly" class="">
+              </div>
+              <!-- <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div>
+              <div class="vi-form-info"></div> -->
+            </div>
+          </div>
+        </div>
+        
+        <div class="vi-card pad_btm8">
+          <div class="vi-card-header">
+            <div class="vi-line-title">長期照護</div>
+          </div>
+          <div class="vi-card-body">
+            <div class="vi-txt-body vi-txt-b600 mb8">因疾病或意外造成失能或失智，通常需長期聘請看謢人員給予生活照料</div>
+            <div class="vi-form-group vi-for-select">
+              <div class="vi-input-group">
+                <input value="外籍看護照顧 2.4萬/月" placeholder="" type="text" readonly="readonly" class="">
+              </div>
+              <!-- <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div>
+              <div class="vi-form-info"></div> -->
+            </div>
+          </div>
+        </div>
+        
+        <div class="mb32"></div>
+        
+      </div>
+
+      <div id="footer">
+        <div class="vi-page-footer">
+          <div class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-secondary">取消</div>
+            <div class="btn vi-btn vi-btn-primary">儲存</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-select-supercard" class="vi-modal hide">
+  <slide-panel-projection #projection></slide-panel-projection>
+
+  <ng-template #projectionTemplate>
+    <div class="vi-modal-backdrop" data-dismiss="modal" (click)=""></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">住院日額</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" ontouchstart="" data-dismiss="modal" (click)=""></button>
+        </div>
+      </div>
+
+      <div class="super-card-body">
+        <ul class="vi-list vi-list-px8 super-card-select">
+          <!-- 已選取 加 active -->
+          <a class="vi-list-item active" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">高級單人房 5,000/日</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">一般單人房 4,000/日</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">雙人房 3,000/日</div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="vi-txt-body-bold vi-txt-g500">自己填</div>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// 超人卡片 demo
+document.getElementById('trigger-select-supercard').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-select-supercard').classList.toggle('hide');
+  document.getElementById('target-select-supercard').classList.toggle('vi-modal-in');
+});
+
+// 超人卡片 close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('vi-modal-close');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+  });
+}
+
+
+// scroll fixed header
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 0) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+  }
+}
+</script>

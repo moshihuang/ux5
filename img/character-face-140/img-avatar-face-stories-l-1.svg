@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="140" height="140" viewBox="0 0 140 140">
+    <defs>
+        <filter id="nmrx9aq8rc" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <filter id="ihwebtfh2d" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <path id="2vjsiawl4a" d="M55.913 71.84c4.089 0 6.917-3.72 6.917-4.878 0-1.165-2.833-4.877-6.917-4.877-4.058 0-6.922 3.712-6.922 4.877 0 1.159 2.884 4.877 6.922 4.877z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g transform="translate(-1537.000000, -830.000000) translate(1537.000000, 830.000000)">
+                <path stroke="#FF625E" stroke-width="2.613" d="M70.119 96.274c4.875-.06 8.894-.967 12.055-2.723"/>
+                <path stroke="#324148" stroke-width="2.178" d="M89.235 67.616c-4.343-3.406-8.413-3.248-12.211.474"/>
+                <mask id="z92bzcavfb" fill="#fff">
+                    <use xlink:href="#2vjsiawl4a"/>
+                </mask>
+                <use fill="#FFF" fill-rule="nonzero" transform="translate(55.910359, 66.961901) rotate(3.000000) translate(-55.910359, -66.961901)" xlink:href="#2vjsiawl4a"/>
+                <ellipse cx="56.287" cy="65.833" fill="#324148" mask="url(#z92bzcavfb)" rx="4.403" ry="4.877"/>
+                <ellipse cx="45.044" cy="74.242" fill="#FF918E" filter="url(#nmrx9aq8rc)" rx="4.356" ry="4.789"/>
+                <ellipse cx="94.697" cy="74.242" fill="#FF918E" filter="url(#ihwebtfh2d)" rx="4.356" ry="4.789"/>
+                <path stroke="#324148" stroke-width="2.178" d="M77.957 58.552c4.016-2.094 8.075-2.433 12.178-1.017M62.686 58.557c-4.016-2.095-8.075-2.434-12.178-1.018" opacity=".8"/>
+            </g>
+        </g>
+    </g>
+</svg>

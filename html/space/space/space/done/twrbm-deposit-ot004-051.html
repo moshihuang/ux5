@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-photo-step {
+        padding: 12px;
+    }
+    .vi-photo-step li .vi-photo-step-label span {
+        margin-top: 4px;	
+    }
+
+    .vi-photo-step li:last-child:before {
+        background: #fff;
+    }
+
+    .vi-photo-step li .vi-photo-step-label span {
+        color: #C0C0C0;
+        font-size: 17px;
+    }
+    .vi-photo-step li.is-visited .vi-photo-step-label span,
+    .vi-photo-step li.is-current .vi-photo-step-label span {
+        color: #757575;
+        font-weight: 700;
+    }
+
+    .vi-photo-step li.is-processing .vi-photo-step-label:after {
+        width: 20px;
+        height: 20px;
+        color: #FF5441;
+        background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDMgMTMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyLjY2NjY3IiBoZWlnaHQ9IjguODg4ODkiIHJ4PSIxLjMzMzMzIiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB5PSIxMC4xNTg3IiB3aWR0aD0iMi42NjY2NyIgaGVpZ2h0PSIyLjUzOTY4IiByeD0iMS4yNjk4NCIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==") #FF5441 center center no-repeat;
+    }
+
+    .vi-photo-step li.is-processing .vi-photo-step-label span {
+        color: #FF5441;
+        font-weight: 700;
+    }
+
+    .vi-photo-step li .vi-photo-step-label .date {
+        font-weight: 700;
+        text-align: center;
+        color: #324148 !important;
+        font-size: 14px !important;
+    }
+  </style>
+</head>
+
+
+<body class="body-wrap scroll vi-bg-none">
+    <div class="main_container pad_btm0">
+
+        <!--
+            參考 04RC 遠距投保 
+            twrbm-invest-ag008-070.component
+            twrbm-deposit-ot002-063.component.html
+            
+            相機 component
+            twrbm-deposit-ot002-063.component
+            web-ui\EBMW\webapp\src\app\ng\view\ui-2022\camera\camera.component.html
+        -->
+
+        <div class="vi-photo-step">
+            <ul>
+                <li
+                    [ngClass]="{'is-visited' : pageData.model.fileUpload1.visited, 'is-current' : pageData.model.fileUpload1.current}"
+                    *ngIf="pageData.model.showStep1">
+                    <div class="vi-photo-step-label" [attr.data-count]="pageData.model.fileUpload1.index">
+                    <span>身分證正面</span>
+                    </div>
+                </li>
+                <li
+                    [ngClass]="{'is-visited' : pageData.model.fileUpload2.visited, 'is-current' : pageData.model.fileUpload2.current}"
+                    *ngIf="pageData.model.showStep2">
+                    <div class="vi-photo-step-label" [attr.data-count]="pageData.model.fileUpload2.index">
+                    <span>身分證反面</span>
+                    </div>
+                </li>
+                <li
+                    [ngClass]="{'is-visited' : pageData.model.fileUpload3.visited, 'is-current' : pageData.model.fileUpload3.current}"
+                    *ngIf="pageData.model.showStep3">
+                    <div class="vi-photo-step-label" [attr.data-count]="pageData.model.fileUpload3.index">
+                    <span>第二證件</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="vi-camera">
+            <ng-container #viewRootElement>
+                <div #screen class="vi-camera-window">
+                    <!-- 未拍照 -->
+                    <div class="vi-camera-frame frameClass">
+                        <ng-container>
+                            <div class="vi-camera-frame-txt vi-name-area">
+                                <span class="vi-name forAEM" [inject-dom]="title"></span>
+                                <span class="vi-info forAEM" [inject-dom]="subTitle">身分證正面</span>
+                            </div>
+                            <div #cropper class="vi-camera-photo"></div>
+                        </ng-container>
+
+                        <ng-container *ngIf="!title">
+                            <div class="vi-camera-frame-txt forAEM" [inject-dom]="subTitle">身分證正面</div>
+                            <div #cropper class="vi-camera-photo"></div>
+                        </ng-container>
+                    </div>
+
+                    <!-- 已拍照 -->
+                    <div class="vi-camera-frame">
+                        <div class="vi-camera-frame-txt">確認文字照片清晰、無反光再點擊使用這張唷！</div>
+                        <div class="vi-camera-photo">
+                            <img [src]="fileUpload.data">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vi-camera-tool">
+                    <!-- 未拍照按鈕 -->
+                    <div *ngIf="!fileUpload?.data" class="vi-flex-row no-gutters align-items-center ht_30px">
+                        <div class="vi-col-5">
+                            <a (click)="openAlbum($event)" class="vi-icon-link vi-txt-white ml12">
+                                <span class="vi-icon vi-icon-base icon-photo-w"></span>
+                                <span class="vi-txt-body-bold ml4" >相片上傳</span>
+                            </a>
+                        </div>
+
+                        <div class="vi-col-auto">
+                            <a (click)="takePicture($event)" class="vi-btn-take"></a>
+                        </div>
+                    </div>
+
+                    <!-- 已拍照按鈕 -->
+                    <div class="vi-flex-row no-gutters align-items-center">
+                        <div class="vi-col-6 ct">
+                            <a (click)="takePictureAgain($event)" class="vi-icon-link vi-txt-white">
+                                <span class="vi-icon vi-icon-base icon-reload-w"></span>
+                                <span class="vi-txt-body-bold ml4">重新拍攝</span>
+                            </a>
+                        </div>
+
+                        <div class="vi-col-6 ct">
+                            <div class="vi-btn-group">
+                                <button (click)="usePicture($event)" class="vi-btn vi-btn-primary">使用這張</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <!-- main_container -->
+  </div>
+  <!-- body-wrap -->  
+
+</html>

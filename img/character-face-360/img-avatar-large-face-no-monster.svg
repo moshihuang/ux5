@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 360 360">
+    <defs>
+        <filter id="lpuljqzc5a" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <filter id="xisazhum8b" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-8 -40) translate(-83 40) translate(91)">
+                    <path stroke="#FF625E" stroke-width="5.199" d="M180 239.337l1.496-.012c3.75-.037 3.75 6.675 8.121 6.675 4.37 0 2.386-8 6.547-8s2.651 8 7.21 8c4.56 0 4.56-8.017 8.788-8 4.227.017 4.973 5.41 6.229 8"/>
+                    <path stroke="#4F4F4F" stroke-linejoin="round" stroke-width="5.999" d="M226.978 178.624l-24.833-6.26c8.238-3.56 15.456-6.456 21.656-8.687M133 177.998l24.833-6.26c-8.238-3.56-15.457-6.456-21.656-8.687"/>
+                    <ellipse cx="115.828" cy="190.907" fill="#FF918E" filter="url(#lpuljqzc5a)" rx="11.2" ry="12.314"/>
+                    <ellipse cx="243.508" cy="190.907" fill="#FF918E" filter="url(#xisazhum8b)" rx="11.2" ry="12.314"/>
+                    <path stroke="#324148" stroke-width="5.6" d="M200.46 150.563c10.327-5.386 20.765-6.258 31.315-2.616M161.193 150.574c-10.327-5.386-20.765-6.258-31.315-2.616" opacity=".8"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

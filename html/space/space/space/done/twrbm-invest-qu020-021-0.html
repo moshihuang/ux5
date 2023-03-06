@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .main_container {
+      background: #e4f0ef;
+      min-height: calc(100vh);
+      /* min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+      min-height: calc(100vh - constant(safe-area-inset-top) - constant(safe-area-inset-bottom)); */
+    }
+    
+    .vi-list.vi-list-bg-gray .vi-list-item {
+      margin-bottom: 16px;
+      background: #F5F5F5;
+      border-radius: 6px;
+    }
+    .vi-list.vi-list-bg-gray .vi-list-item:last-child {
+      margin-bottom: 0;
+    }
+
+
+    .overview-info {
+      padding-bottom: 16px;
+      background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzc1IiBoZWlnaHQ9IjE2NSIgdmlld0JveD0iMCAwIDM3NSAxNjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIG9wYWNpdHk9IjAuNSIgZD0iTTk3LjUgMzkuNDk5OEMyMy41IDUzLjUyODIgNDYgMTE0LjUgMCAxMjVWMC45OTk3NTZDNjIuNTg2MSAwLjk5OTc1NiAxODIgLTAuMzQyMzc3IDIwMy41IDAuOTk5NzU2QzIwMC4yOTQgMi45MzM1OCAxOTUuMjYxIDYuMzI2NTUgMTkxLjM4NiA4LjQ5OTc2QzE3MC4yMjIgMjAuMzcwOCAxNDAuNTA1IDMxLjM0NzIgOTcuNSAzOS40OTk4WiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyXzMyMDNfMTQ4MzExKSIvPgo8cGF0aCBvcGFjaXR5PSIwLjUiIGQ9Ik0zNzUgMzMuOTk5OFYxNjVIMjA0LjEzOEMyMTEgMTM3LjUgMjQwLjkwMiAxMTIuMzQgMjkwIDEwNy41QzM2MSAxMDAuNSAzNDQuMDUxIDUyLjA2ODcgMzc1IDMzLjk5OThaIiBmaWxsPSJ1cmwoI3BhaW50MV9saW5lYXJfMzIwM18xNDgzMTEpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfMzIwM18xNDgzMTEiIHgxPSI3MC41IiB5MT0iODkuNDk5OCIgeDI9IjcyLjk1MTEiIHkyPSIxLjQwMzQ5IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMxMjc4NzIiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMTQ4NzgwIiBzdG9wLW9wYWNpdHk9IjAiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDFfbGluZWFyXzMyMDNfMTQ4MzExIiB4MT0iMjY5IiB5MT0iNDQuOTk5OCIgeDI9IjI2OS45IiB5Mj0iMTc3LjU4MSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMTI3ODcyIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE0ODc4MCIgc3RvcC1vcGFjaXR5PSIwIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+Cg=="), linear-gradient(180deg, rgba(15,143,136,1) 0%, rgba(15,143,136,1) 40%, rgba(15,143,136,1) 100%) no-repeat center top;
+      background-size: 100%;
+    }
+    .overview-info.has-tab {
+      padding-bottom: 20px;
+      /* padding-bottom: 0; */
+    }
+    .overview-info.has-tab .overview-info-content {
+      padding: 24px 0 32px 0;
+    }
+    .overview-info-content {
+      /* min-height: 116px; */
+      padding: 24px 0 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .overview-content {
+      padding-top: 12px;
+      position: relative;
+      top: -20px;
+      border-radius: 24px 0 0 0;
+      background: #E4F0EF;
+      transition: all 0.3s;
+    }
+    .overview-content.has-tab {
+      padding-top: 42px;
+      top: 0;
+    }
+    .overview-content.has-tab .nav-scroll {
+      top: -32px;
+    }
+    .tab-pane .overview-content {
+      padding-top: 20px;
+    }
+    .overview-content .nav-scroll {
+      width: 100%;
+      position: absolute;
+      top: -40px;
+      left: 0;
+    }
+    .overview-content .nav-scroll.fixed-top {
+      position: fixed;
+      top: 44px;
+      background: none;
+    }
+    .overview-content .fixed-top.nav-tab-green .vi-tab-line-area {
+      top: 0;
+    }
+    .overview-content .fixed-top.nav-tab-green .vi-tab-line-area .vi-tab-line .nav {
+      margin-top: 0;
+    }
+    
+    .vi-empty {
+      padding-top: 80px;
+    }
+    .vi-empty span {
+      width: 120px;
+      height: 120px;
+    }
+    
+    
+    .tab-content {
+      min-height: calc(100vh - 160px - 44px);
+      position: relative;
+      top: -20px;
+    }
+    
+
+    .vi-overview-card {
+      border-radius: 12px 0 12px 0;
+      overflow: hidden;
+    }
+    .vi-overview-card .vi-card-body {
+      background: #fff;
+    }
+    .vi-overview-card .flex-basis-50 {
+      flex: 0 0 40%;
+    }
+    .vi-overview-card.vi-card-body-gray .vi-card-body {
+      background: rgb(246,246,246);
+      background: linear-gradient(180deg, rgba(246,246,246,1) 0%, rgba(246,246,246,0.4) 40%, rgba(246,246,246,0) 100%);
+    }
+    
+
+
+    .vi-list.vi-list-overview .vi-list-item {
+      padding: 0 0 16px 0;
+      align-items: start;
+    }
+    .vi-list.vi-list-overview .vi-list-item .vi-icon-link {
+      position: relative;
+      top: 4px;
+    }
+    .vi-list.vi-list-overview .vi-list-item.vi-list-item-border-top {
+      padding-top: 16px;
+      border-top: 1px dashed #C0C0C0;
+    }
+    .vi-list.vi-list-overview .vi-list-item .vi-txt-red-nu {
+      position: relative;
+      top: -2px;
+    }
+    .vi-list.vi-list-overview .currency {
+      padding-left: 24px;
+      position: relative;
+    }
+    .vi-list.vi-list-overview .currency:before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 12px;
+      width: 1px;
+      height: 16px;
+      background: #DAE1E5;
+    }
+    
+    .has-select-link .vi-stock-tag {
+      margin-right: 16px;
+    }
+
+
+    @media (max-width: 320px) {
+      .vi-list.vi-list-overview .vi-list-item {
+        padding: 0 0 8px 0;
+      }
+    }
+
+  
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+<!-- 不需要 scroll 事件，預設 fixed header -->
+<body class="vi-bg-mint vi-page-header-fix">
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <!-- 新增 .vi-page-header-green -->
+    <div class="container-header vi-page-header vi-page-header-green">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">個人信託資產</h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap scroll vi-bg-g550">
+
+    <div class="main_container pad_btm0">
+      
+      <!-- 如果下方有 tab, add .has-tab -->
+      <div class="overview-info vi-bg-green-gradient-dark has-tab">
+        <div class="overview-info-content">
+          <div class="ct">
+            <a class="vi-icon-link mb4">
+              <span class="vi-txt-body vi-txt-white">存款總額</span>
+            </a>
+            <div class="vi-txt-title vi-txt-white mb4">
+              <span>100,000,000</span>
+            </div>
+            <div class="vi-txt-callout vi-txt-b200">
+              <span>（約當新臺幣）</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 如果下方有 tab, add .has-tab -->
+      <div class="overview-content has-tab">
+        <!-- scroll down fixed 效果同 通知中心，可參考 notice-qu001-010.component 與 nav-tabs-notice.component，但需要確認 nav-scroll 碰到頂端的事件是否正常，fixed 時綁定樣式同下方 [ngClass] 規則 -->
+        <!-- 新增 .nav-tab-green 綠色 tab -->
+        <div class="nav-scroll has-tab-info js_scroll_fixed_top nav-tab-green" [ngClass]="{'fixed-top': fixTab, 'fixed-position-1': fixTab}">
+          <div class="nav-scroll-bg"></div>
+          <div class="vi-tab-line-area">
+            <div class="vi-tab-line" #viewRootElement>
+              <ul class="nav" role="tablist">
+                <li class="active">
+                  <a (click)="">
+                    <span>臺幣</span>
+                  </a>
+                </li>
+                <li>
+                  <a (click)="">
+                    <span>外幣</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="">
+          <div class="tab-content">
+            <div class="tab-pane active">
+
+              <div class="overview-content">
+                
+                <!-- 如果有資料 -->
+                <div class="vi-container">
+                  <div class="vi-line-title mt24 mb12 vi-dis-flex">
+                    活期存款
+                    <span class="ml-auto vi-txt-callout vi-txt-b500 txt_normal top-2px">
+                      以下幣別為原幣金額
+                    </span>
+                  </div>
+                  <!-- 這裡請做成共用 vi-overview-card component -->
+                  <!-- 沒有 has-select-link -->
+                  <div class="vi-card vi-overview-card">
+                    <a class="vi-card-header flex-wrap flex-justify-between vi-w-100" (click)="">
+                      <div class="vi-txt-headline mr-auto">
+                        臺幣活期
+                      </div>
+                      <div class="ml-auto rt flex-grow">
+                        <div class="vi-txt-headline vi-txt-b900">342,800</div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="vi-card vi-overview-card">
+                    <a class="vi-card-header flex-wrap flex-justify-between vi-w-100" (click)="">
+                      <div class="vi-txt-headline mr-auto dis-flex align-items-center">
+                        <span class="vi-flag vi-flag-usd mr8"></span>
+                        美元活期
+                      </div>
+                      <div class="ml-auto rt flex-grow">
+                        <div class="vi-txt-headline vi-txt-b900">342,800</div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="vi-card vi-overview-card">
+                    <a class="vi-card-header flex-wrap flex-justify-between vi-w-100" (click)="">
+                      <div class="vi-txt-headline mr-auto dis-flex align-items-center">
+                        <span class="vi-flag vi-flag-eur mr8"></span>
+                        歐元活期
+                      </div>
+                      <div class="ml-auto rt flex-grow">
+                        <div class="vi-txt-headline vi-txt-b900">342,800</div>
+                      </div>
+                    </a>
+                  </div>
+                  
+                  
+                  <div class="vi-line-title mt12 mb12">定期存款</div>
+                  <!-- 這裡請做成共用 vi-overview-card component -->
+                  <!-- 沒有 has-select-link -->
+                  <div class="vi-card vi-overview-card vi-card-body-gray">
+                    <a class="vi-card-header flex-wrap flex-justify-between vi-w-100" (click)="">
+                      <div class="vi-txt-headline mr-auto">
+                        臺幣定存
+                      </div>
+                      <div class="ml-auto rt flex-grow">
+                        <div class="vi-txt-headline vi-txt-b900">500,000,000</div>
+                        <div class="vi-txt-callout vi-txt-b500"></div>
+                      </div>
+                    </a>
+                    <div class="vi-card-body">
+                      <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview pad_top16">
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">存款種類</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <!-- 沒有 has-select-link 時 這邊是正常字粗 -->
+                            <div class="vi-txt-body vi-txt-b600">定存中信銀城中</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">
+                              利率
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <!-- 沒有 has-select-link 時 這邊是正常字粗 -->
+                            <div class="vi-txt-body vi-txt-b600">0.5320</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">
+                              起存日
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <!-- 沒有 has-select-link 時 這邊是正常字粗 -->
+                            <div class="vi-txt-body vi-txt-b600">2020/08/26</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">
+                              到期日
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <!-- 沒有 has-select-link 時 這邊是正常字粗 -->
+                            <div class="vi-txt-body vi-txt-b600">2028/20/26</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">
+                              備註
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <!-- 沒有 has-select-link 時 這邊是正常字粗 -->
+                            <div class="vi-txt-body vi-txt-b600">到期/機動/單利</div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="vi-card vi-overview-card vi-card-body-gray">
+                    <a class="vi-card-header flex-wrap flex-justify-between vi-w-100" (click)="">
+                      <div class="vi-txt-headline mr-auto dis-flex align-items-center">
+                        <span class="vi-flag vi-flag-usd mr8"></span>
+                        美金定存
+                      </div>
+                      <div class="ml-auto rt flex-grow">
+                        <div class="vi-txt-headline vi-txt-b900">500,000,000</div>
+                        <div class="vi-txt-callout vi-txt-b500"></div>
+                      </div>
+                    </a>
+                    <div class="vi-card-body">
+                      <ul class="vi-list vi-list-noline vi-list-baseline vi-list-overview pad_top16">
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">存款種類</div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <!-- 沒有 has-select-link 時 這邊是正常字粗 -->
+                            <div class="vi-txt-body vi-txt-b600">定存中信銀城中</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">
+                              利率
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <!-- 沒有 has-select-link 時 這邊是正常字粗 -->
+                            <div class="vi-txt-body vi-txt-b600">0.5320</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">
+                              起存日
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <!-- 沒有 has-select-link 時 這邊是正常字粗 -->
+                            <div class="vi-txt-body vi-txt-b600">2020/08/26</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">
+                              到期日
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <!-- 沒有 has-select-link 時 這邊是正常字粗 -->
+                            <div class="vi-txt-body vi-txt-b600">2028/20/26</div>
+                          </div>
+                        </li>
+                        <li class="vi-list-item">
+                          <div class="vi-list-lt">
+                            <div class="vi-txt-body vi-txt-b600">
+                              備註
+                            </div>
+                          </div>
+                          <div class="vi-list-rt">
+                            <!-- 沒有 has-select-link 時 這邊是正常字粗 -->
+                            <div class="vi-txt-body vi-txt-b600">到期/機動/單利</div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  
+                  
+                  
+                  <!-- 備註 -->
+                  <!-- <memo-remarks-card [key]="''" [titleKey]="''" [contentKey]="''"></memo-remarks-card> -->
+                  <div class="mt16">
+                    <div class="vi-note-accordion">
+                      <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+                        <div class="forAEM base-style break-word mr4">
+                          標題
+                        </div>
+                        <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+                      </div>
+                      <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                        <div class="vi-card-body forAEM base-style break-word">
+                          <p>備註(我的首頁內文AEM)</p>
+                          <p>備註(我的首頁內文AEM)</p>
+                          <p>備註(我的首頁內文AEM)</p>
+                          <p>備註(我的首頁內文AEM)</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                
+                <!-- 如果空值 -->
+                <div class="vi-container">
+                  <div class="vi-empty">
+                    <span class="vi-empty-img"></span>  
+                    <div class="vi-txt-body vi-txt-b500">你目前沒有外幣信託唷！</div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- end 個人信託 tab -->
+
+
+            <div class="tab-pane">
+              員工福利信託 tab content
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- main_container -->
+  </div>
+</body>
+<!-- body-wrap -->
+</html>
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+$(document).ready(function(){
+  
+  // scroll to fixed header
+  $(window).scroll(function(){
+    const scrollGap = $('.overview-info-content').innerHeight();
+    const scrollTop = $(document).scrollTop() + 12;
+    
+    if ( scrollTop >= scrollGap ) {
+      $('.nav-tab-green').addClass('fixed-top fixed-position-1');
+    }
+    else {
+      $('.nav-tab-green').removeClass('fixed-top fixed-position-1');
+    }
+  });
+  
+});
+</script>

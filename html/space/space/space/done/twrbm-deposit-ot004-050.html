@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../../index.css">
+  <script type="text/javascript" src="../../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../../inc/bundle_base.js"></script>
+  <style>
+    .vi-updload-status-list .vi-list-item {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMuMjAwMiA4LjQxNjVMNi4zMTY3MiAxMS4zMzMyTDEyLjE2MDIgNC42NjY1IiBzdHJva2U9IiMwMDk4OTEiIHN0cm9rZS13aWR0aD0iMi4wNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=");
+        background-repeat: no-repeat;
+        background-position: left 4px;
+    }
+
+    .vi-updload-status-list .vi-list-item:not(:last-child) {
+        padding: 0 0 16px 32px;
+        margin-bottom: 16px;
+        border-bottom: 1px dashed #DAE1E5;
+    }
+    .vi-updload-status-list .vi-list-item:last-child {
+        padding: 0 0 16px 32px;
+        margin-bottom: 0;
+    }
+    
+    .vi-upload-area .vi-img-area.ml-0:last-child {
+        margin-left: 0 !important;
+    }
+
+
+  </style>
+</head>
+
+<!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+<header class="">
+    <div class="vi-page-header-normal">
+        <div class="vi-page-header-lt">
+            <button class="vi-btn" ontouchstart="">
+                <span class="vi-icon vi-icon-base icon-page-back"></span>
+            </button>
+        </div>
+        <div class="vi-page-header-ct">
+            <h1 class="vi-page-title">數位帳戶進度查詢</h1>
+        </div>
+        <!-- <div class="vi-page-header-rt">
+            <span class="vi-icon vi-icon-base vi-modal-close"></span>
+        </div> -->
+    </div>
+</header>
+
+<body class="body-wrap scroll vi-bg-mint">
+    <div class="main_container vi-has-foot-btn">
+
+        <!--
+            參考 04RC 遠距投保 
+            twrbm-invest-ag008-070.component
+            twrbm-deposit-ot002-063.component.html
+            
+            相機 component
+            web-ui\EBMW\webapp\src\app\ng\view\ui-2022\camera\camera.component.html
+        -->
+
+        <div class="vi-container pad_top12">
+
+            <ng-container>
+                <div class="vi-txt-b900 mb16 pad_top12">[ MyWay 臺幣帳戶、MyWay 外幣帳戶、好證點數位臺幣帳戶 ] 補件文件上傳：</div>
+
+                <div class="vi-card vi-account">
+                    <div class="vi-card-body">
+                        <div class="vi-btm-line pad_btm24">
+                            <ng-container>
+                                <!-- 遠距投保是 mt16，這裡是 mt24 -->
+                                <div class="vi-line-title mb16 mt24">身分證正面</div>
+                                <div class="vi-txt-body vi-txt-b600 mb16">請上傳本人身分證正面</div>
+                                <div class="vi-upload-area">
+                                    <ng-container>
+                                        <div style=" width: 0px; height: 0px; overflow: hidden;">
+                                            <input type="file" multiple="false" accept="image/*"/>
+                                        </div>
+                                        <div class="vi-img-area ml-0">
+                                            <a class="delete-btn">
+                                                <div class="vi-icon vi-icon-base icon-color-delete"></div>
+                                            </a>
+                                            <img src="http://placehold.jp/190x150.png" />
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </ng-container>
+
+                            <ng-container>
+                                <div class="vi-line-title mb16 mt24">身分證反面</div>
+                                <div class="vi-txt-body vi-txt-b600 mb16">請上傳本人身分證反面</div>
+                                <div class="vi-upload-area">
+                                    <a class="vi-buttun-area">
+                                        <div>
+                                            <div class="vi-icon vi-icon-s icon-plus-g"></div>
+                                            <div class="vi-txt-body-bold vi-txt-g500">上傳檔案</div>
+                                        </div>
+                                    </a>
+                                    <ng-container>
+                                        <div style=" width: 0px; height: 0px; overflow: hidden;">
+                                            <input type="file" multiple="false" accept="image/*"/>
+                                        </div>
+                                        <div class="vi-img-area">
+                                            <a class="delete-btn">
+                                                <div class="vi-icon vi-icon-base icon-color-delete"></div>
+                                            </a>
+                                            <img src="http://placehold.jp/190x150.png" />
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </ng-container>
+
+                            <ng-container>
+                                <div class="vi-line-title mb16 mt24">第二證件</div>
+                                <div class="vi-txt-body vi-txt-b600 mb16">請上傳有照片之健保卡、駕照或護照</div>
+                                <div class="vi-upload-area">
+                                    <a class="vi-buttun-area">
+                                        <div>
+                                            <div class="vi-icon vi-icon-s icon-plus-g"></div>
+                                            <div class="vi-txt-body-bold vi-txt-g500">上傳檔案</div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="vi-line-title mb16 mt24">新式戶口名簿或電子戶籍謄本</div>
+                                <div class="vi-txt-body vi-txt-b600 mb16">新式戶口名簿請拍入整份文件包含詳細記事、流水號；電子戶籍謄本請拍入近三個月內申請的最新文件，包含謄本檢查號 (手機可螢幕截圖每頁並選擇相簿上傳)</div>
+                                <div class="vi-upload-area">
+                                    <a class="vi-buttun-area">
+                                        <div>
+                                            <div class="vi-icon vi-icon-s icon-plus-g"></div>
+                                            <div class="vi-txt-body-bold vi-txt-g500">上傳檔案</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </ng-container>
+
+                            <ng-container>
+                                <div class="vi-line-title mb16 mt24">電信帳單</div>
+                                <div class="vi-txt-body vi-txt-b600 mb16">因您行動電話號碼與他人共用，請上傳包含本人姓名與電話號碼的電信帳單 </div>
+                                <div class="vi-upload-area">
+                                    <a class="vi-buttun-area">
+                                        <div>
+                                            <div class="vi-icon vi-icon-s icon-plus-g"></div>
+                                            <div class="vi-txt-body-bold vi-txt-g500">上傳檔案</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </ng-container>
+                        </div>
+                        <div class="vi-txt-callout vi-txt-b500 rt mb16 mt16">
+                            剩餘上傳容量：{{ roundRemainSize }} MB
+                        </div>
+                    </div>
+                </div>
+                <div class="mb24"></div>
+                <div class="vi-btn-group mb16">
+                    <button class="vi-btn vi-btn-primary disabled">確認，下一步</button>
+                </div>
+
+                <!-- 備註 Component -->
+                <!-- <memo-remarks [format]="1" [viStyle]="true" [key]="'TWRBMTransferTX001_inputmemo'"></memo-remarks> -->
+                <div class="vi-remark">
+                    <div class="forAEM">
+                        <p>備註：</p>
+                        <p>1. 若選擇檔案上傳，格式需為：jpg、png、jpeg、bmp，且每張檔案大小需小於 6 MB。</p>
+                    </div>
+                </div>  
+
+            </ng-container>
+            
+        </div><!-- END container -->
+    </div>
+    <!-- main_container -->
+  
+  </div>
+  <!-- body-wrap -->  
+
+</html>

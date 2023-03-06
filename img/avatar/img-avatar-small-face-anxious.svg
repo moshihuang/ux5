@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+    <defs>
+        <filter id="nauxzjsape" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <filter id="aywl36vzrf" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <filter id="set6p4e1jg">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 0.479990 0 0 0 0 0.510945 0 0 0 0 0.525391 0 0 0 1.000000 0"/>
+        </filter>
+        <path id="5j1gmm2nha" d="M29.57 32.906c1.874.098 3.258-1.538 3.286-2.07.028-.533-1.18-2.302-3.05-2.4-1.86-.097-3.26 1.535-3.288 2.069-.028.53 1.203 2.304 3.053 2.4z"/>
+        <path id="gdexkzs2tc" d="M16.64 32.72c1.875 0 3.172-1.706 3.172-2.238 0-.534-1.3-2.238-3.173-2.238-1.86 0-3.174 1.704-3.174 2.238 0 .532 1.323 2.239 3.174 2.239z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-419 -1203) translate(419 1203) translate(8.9 1)">
+                    <path stroke="#FF625E" stroke-width="1.199" d="M23.01 42.946c.138 0 .23-.001.273-.002.684-.007.684 1.217 1.481 1.217s.435-1.458 1.194-1.458c.759 0 .483 1.458 1.315 1.458.831 0 .831-1.461 1.602-1.458.77.003.907.986 1.136 1.458"/>
+                    <mask id="akhg38jbnb" fill="#fff">
+                        <use xlink:href="#5j1gmm2nha"/>
+                    </mask>
+                    <use fill="#FFF" fill-rule="nonzero" xlink:href="#5j1gmm2nha"/>
+                    <ellipse cx="31.108" cy="30.733" fill="#324148" mask="url(#akhg38jbnb)" rx="2.02" ry="2.238"/>
+                    <mask id="tmtnlbwbod" fill="#fff">
+                        <use xlink:href="#gdexkzs2tc"/>
+                    </mask>
+                    <use fill="#FFF" fill-rule="nonzero" transform="rotate(3 16.638 30.482)" xlink:href="#gdexkzs2tc"/>
+                    <ellipse cx="18.06" cy="30.545" fill="#324148" mask="url(#tmtnlbwbod)" rx="2.02" ry="2.238"/>
+                    <ellipse cx="11.575" cy="33.773" fill="#FF918E" filter="url(#nauxzjsape)" rx="1.998" ry="2.197"/>
+                    <ellipse cx="34.349" cy="33.773" fill="#FF918E" filter="url(#aywl36vzrf)" rx="1.998" ry="2.197"/>
+                    <path stroke="#324148" stroke-width=".999" d="M26.535 26.496c1.42.784 3.281.628 5.586-.467M20.085 26.496c-1.418.784-3.28.628-5.585-.467" opacity=".8"/>
+                    <g filter="url(#set6p4e1jg)">
+                        <g fill="#324148" transform="rotate(90 23.25 23.25)">
+                            <rect width="28" height="1.5" x="1" y="8" rx=".75"/>
+                            <rect width="25" height="1.5" y="17" rx=".75"/>
+                            <rect width="24" height="1.5" y="25" rx=".75"/>
+                            <rect width="27" height="1.5" y="33" rx=".75"/>
+                            <rect width="30" height="1.5" x="1" y="41" rx=".75"/>
+                            <rect width="31" height="1.5" x="3" rx=".75"/>
+                            <rect width="27" height="1.5" y="12" rx=".75"/>
+                            <rect width="24" height="1.5" y="21" rx=".75"/>
+                            <rect width="25" height="1.5" y="29" rx=".75"/>
+                            <rect width="28" height="1.5" x="1" y="37" rx=".75"/>
+                            <rect width="31" height="1.5" x="3" y="45" rx=".75"/>
+                            <rect width="30" height="1.5" x="1" y="4" rx=".75"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

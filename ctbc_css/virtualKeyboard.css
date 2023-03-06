@@ -1,0 +1,75 @@
+/* keyboard - jQuery UI Widget */
+.ui-keyboard{
+	text-align: center;
+	padding: .3em;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 16000;
+	/* see issue #484 */
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+}
+
+
+.ui-keyboard-button , .ui-stata-active {
+	border: 1px solid #404040;
+	padding: 0 0.5em;
+	margin: 1px;
+	min-width: 3em;
+	height: 3em;
+	line-height: 3em;
+	vertical-align: top;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #24A09A;
+	text-align: center;
+	border-radius: 5px;
+	-webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.5);
+	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.5);
+	background: #fff;
+	cursor: pointer;
+	overflow: hidden;
+	-moz-user-focus: ignore;
+	font-weight:bold;
+}
+.ui-keyboard-button:not([disabled]):hover {
+	background: #29d6cd;
+	font-weight:bold;
+}
+.ui-keyboard-accept {
+	min-width: 6em;
+	background: #24A09A;
+	font-weight:bold;
+	color:#fff;
+}
+.ui-keyboard-cancel{
+	min-width: 3em;
+	background: #D9D9D9;
+	font-weight:bold;
+	color:#d62935;
+}
+
+.ui-keyboard-button span {
+	display: block;
+	width: 100%;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.ui-widget-content{
+	border:2px solid #666;
+	background:#000
+}
+
+
+.keyboardItem{
+    float: right;
+    padding-right: 20px;
+}
+.keyBoardImg{
+    padding-top: 16px;
+    position: absolute;
+}
+.keyBoardImg:hover{
+	cursor: pointer;
+}

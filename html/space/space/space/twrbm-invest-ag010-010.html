@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style>
+    /* loader animation */
+    .loader {
+      position: relative;
+      overflow: hidden;
+    }
+    .loader-spinner {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      border: 12px solid #F5F5F5;
+      border-top: 12px solid #009891;
+      border-radius: 50%;
+    }
+    .loader-spinner {
+      transition-property: transform;
+      animation: rotate 0.8s infinite linear;
+    }
+    @keyframes rotate {
+      from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+    }
+    .loader-img {
+      width: 100%;
+      position: absolute;
+      top: 1px;
+      text-align: center;
+    }
+    .loader-img-bi-animation {
+      width: 100%;
+      height: 100px;
+      animation: swapImg 1s infinite;
+      background: url('../inc/img/health/loader-bi-run-1.svg') no-repeat center;
+    }
+    @keyframes swapImg {
+      0% {
+        background: url('../inc/img/health/loader-bi-run-1.svg') no-repeat center;
+      }
+      25% {
+        background: url('../inc/img/health/loader-bi-run-2.svg') no-repeat center;
+      }
+      50% {
+        background: url('../inc/img/health/loader-bi-run-3.svg') no-repeat center;
+      }
+      75% {
+        background: url('../inc/img/health/loader-bi-run-2.svg') no-repeat center;
+      }
+      100% {
+        background: url('../inc/img/health/loader-bi-run-1.svg') no-repeat center;
+      }
+    }
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+
+<body class="vi-bg-mint ">
+  
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <!-- <h1 class="vi-page-title"></h1> -->
+      </div>
+      <div class="vi-page-header-rt">
+        <a class="vi-icon vi-icon-base icon-start-default-w"></a>
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="body-wrap vi-bg-mint">
+    
+    <div class="main_container vi-has-foot-btn">
+
+      <div class="vi-container">
+        <div class="vi-txt-title vi-txt-b900 pad_top24 mb16">請問您目前每月家庭支出與花費金額？</div>
+        
+        <div class="vi-card pad_top8 pad_btm16">
+          <div class="vi-card-body">
+            <div class="vi-form-group" [ngClass]="{'has-error' : formClazz.formErrors?.custName}">
+              <div class="vi-input-group">
+                <span class="title large-title">家庭月支出</span>
+                <input type="tel" placeholder="請輸入">
+                <span class="unit">元</span>
+              </div>
+              <div class="vi-form-error">{{formClazz.formErrors?.custName}}</div>
+            </div>
+            <div class="vi-txt-info">(主計處統計家庭每戶平均月支出約 7 萬元)</div>
+            
+            <div class="dis-flex mt16">
+              <div class="vi-btn vi-btn-xs vi-btn-secondary mr8">50,000</div>
+              <div class="vi-btn vi-btn-xs vi-btn-secondary mr8">70,000</div>
+              <div class="vi-btn vi-btn-xs vi-btn-secondary mr8">100,000</div>
+            </div>
+            
+            <!-- id 是 demo 用的，開發請拉掉 -->
+            <div id="trigger-popup-info" class="ct mt24">
+              <span class="vi-icon vi-icon-xs icon-info-mark-g top-2px"></span>
+              <span class="vi-txt-body-bold vi-txt-g500">看統計資訊</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div id="footer">
+        <div class="vi-page-footer">
+          <div class="vi-btn-group">
+            <div class="btn vi-btn vi-btn-l vi-btn-primary">開始試算</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="trigger-loading" class="vi-txt-g500 mb24 pb24">-> loading demo</div>
+
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+
+
+<!-- loading popup 現有版型 這裡僅示意 但好像還沒有 無 button 的 vi-modal ? -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-loading-popup" class="vi-modal" style="z-index: 99979;">
+  <div class="vi-modal-backdrop"></div>
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-header-ct">
+        <span class="popup-title">正在分析並試算...</span>
+      </div>
+    </div>
+    <div class="popup-body">
+      <div class="loader loader-bi-run">
+        <div class="loader-spinner"></div>
+        <div class="loader-img">
+          <div class="loader-img-bi-animation"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- vi-modal popup 現有版型 這裡僅示意，可參考 ctbc-mb-alert.widget -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-popup-info" class="vi-modal">
+  <div class="vi-modal-backdrop" (bindClick)="onClickBackDrop($event)"></div>
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-header-ct">
+        <span class="popup-title">統計資訊</span>
+      </div>
+    </div>
+    <div class="popup-body" *ngIf="hasText" [inject-dom]="text" (bindCreate)="onCreatePopupBody($event)">
+      <div class="vi-txt-body mb16">根據主計處109年家庭收支調查報告之平均每戶消費支出概算：</div>
+      <div class="vi-modal-list-gray-header">
+        <div class="lt">
+          <div class="vi-txt-body vi-txt-b600">每戶</div>
+        </div>
+        <div class="rt">
+          <div class="vi-txt-body vi-txt-b600">平均</div>
+        </div>
+      </div>
+      <ul class="vi-list vi-list-baseline vi-list-px8">
+        <li class="vi-list-item">
+          <div class="vi-list-lt">
+            <div class="vi-txt-body vi-txt-b600">平均所得</div>
+          </div>
+          <div class="vi-list-rt">
+            <div class="vi-txt-body-bold vi-txt-b900">6.5萬／月</div>
+          </div>
+        </li>
+        <li class="vi-list-item">
+          <div class="vi-list-lt">
+            <div class="vi-txt-body vi-txt-b600">中位數所得</div>
+          </div>
+          <div class="vi-list-rt">
+            <div class="vi-txt-body-bold vi-txt-b900">8萬／月</div>
+          </div>
+        </li>
+        <li class="vi-list-item">
+          <div class="vi-list-lt">
+            <div class="vi-txt-body vi-txt-b600">高位數所得</div>
+          </div>
+          <div class="vi-list-rt">
+            <div class="vi-txt-body-bold vi-txt-b900">11萬／月</div>
+          </div>
+        </li>
+        <!-- <div class="mt-12 rt">
+          <div class="vi-txt-callout vi-txt-b500">(以上金額均為美元)</div>
+        </div> -->
+      </ul>
+    </div>
+    <div class="popup-footer">
+      <div class="vi-btn-group">
+        <button (bindClick)="onClickConfirm($event)" class="vi-btn vi-btn-primary" ontouchstart>我知道了</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+// 看統計資訊 demo
+document.getElementById('trigger-popup-info').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-popup-info').classList.toggle('vi-modal-in');
+});
+
+// modal close demo，關閉時的動態效果依照現行
+const modalClose1 = document.getElementsByClassName('popup-footer');
+for (var i = 0; i < modalClose1.length; i++){
+  modalClose1[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+  });
+}
+
+// loading demo
+document.getElementById('trigger-loading').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-loading-popup').classList.toggle('vi-modal-in');
+});
+
+
+// 超人卡片 close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('vi-modal-close');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+  });
+}
+
+
+// scroll fixed header
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  
+  if (scrollObject.y > 0) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+  }
+}
+
+</script>
