@@ -1,74 +1,732 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<html>
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache"/>
+  <meta http-equiv="Cache-Control" content="no-store"/>
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../inc/bundle_base.css">
+  <link rel="stylesheet" href="../inc/bundle_base_2023.css">
+  <link rel="stylesheet" href="../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../index.css">
+  <script type="text/javascript" src="../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../inc/bundle_base.js"></script>
   <style>
-    .mb16 {
-      margin-bottom: 16px;
+    .vi-ordered-list-dot {
+      padding-left: 24px;
+    }
+    .vi-ordered-list-dot li:not(:last-child) {
+      margin-bottom: 12px; 
     }
   </style>
 </head>
-<body>
-  <h2>Demo site</h2>
-  
-  <!-- <h4>202209RC</h4>
-  <ul class="">
-    <li class="mb16">
-      <a href="202209RC/html/index.html" class="vi-txt-g500">臺外幣概要 共通錯誤頁</a>
-    </li>
-  </ul> -->
-  
-  <!-- <h4>202212RC</h4>
-  <ul class="">
-    <li class="mb16">
-      <a href="202212RC/html/index-12RC.html" class="vi-txt-g500">保險概要</a>
-    </li>
-  </ul> -->
-  
-  <!-- <h4>202302RC</h4>
-  <ul class="">
-    <li class="mb16">
-      <a href="202302RC/html/index-02RC.html" class="vi-txt-g500">信用卡概要</a>
-    </li>
-  </ul>
-  
-  <h4>理財健檢</h4>
-  <ul class="">
-    <li class="mb16">
-      <a href="UIfinancialanalysis/html/index.html" class="vi-txt-g500">連結清單</a>
-    </li>
-  </ul> -->
-  
-  <h4>投資市場趨勢</h4>
-  <ul class="">
-    <li class="mb16">
-      <a href="etf-ai/html/index.html" class="vi-txt-g500">連結清單</a>
-    </li>
-  </ul>
-  
-  <h4>Design system</h4>
-  <ul class="">
-    <li class="mb16">
-      <a href="design-system/" class="vi-txt-g500">Design system</a>
-    </li>
-  </ul>
-  
-  <h4>202304RC</h4>
-  <ul class="">
-    <li class="mb16">
-      <a href="html/space/space/space/index-04RC.html" class="vi-txt-g500">換匯/外幣轉帳、常用快捷</a>
-    </li>
-  </ul>
-  
-  <h4>202305RC</h4>
-  <ul class="">
-    <li class="mb16">
-      <a href="html/space/space/space/index-05RC.html" class="vi-txt-g500">轉帳</a>
-    </li>
-  </ul>
 
+<body class="body-wrap vi-bg-mint">
+  <div class="main_container">
+    
+    <div class="vi-container">
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">轉帳優化 7RC ( 跨 RC 開發，有分 5RC、7RC )</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="space/space/space/twrbm-transfer-tx001-010.html" class="vi-txt-g500">臺幣轉帳 輸入頁</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-transfer-tx001-020.html" class="vi-txt-g500">臺幣轉帳 確認頁</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-transfer-tx001-030.html" class="vi-txt-g500">臺幣轉帳 結果頁</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mb24">
+        <div class="vi-line-title mb12">轉帳優化 5RC ( 跨 RC 開發，有分 5RC、7RC )</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="space/space/space/twrbm-transfer-ag001-010.html" class="vi-txt-g500">預約轉帳查詢</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-transfer-ag001-020.html" class="vi-txt-g500">預約轉帳查詢 確認頁</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">QRCode 無卡提款 UI 調整</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="space/space/space/twrbm-deposit-tx007-020.html" class="vi-txt-g500">資訊確認頁</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-deposit-tx007-030.html" class="vi-txt-g500">資訊結果頁</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">問卷 survey sample</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="space/space/space/survey-sample.html" class="vi-txt-g500">問卷 survey sample</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">常用快捷</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="space/space/space/twrbm-home-qu055-010.html" class="vi-txt-g500">收付 未新增常用功能設定</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-home-qu055-010-1.html" class="vi-txt-g500">收付 已新增常用功能設定</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-home-qu055-020.html" class="vi-txt-g500">常用功能快捷</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-home-qu055-020-ori.html" class="vi-txt-g500">常用功能快捷 Tabs 調整前</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">換匯流程</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-010.html" class="vi-txt-g500">輸入頁 a.立即換匯流程 & b.定期定額換匯流程</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-011.html" class="vi-txt-g500">輸入頁 c.外幣轉帳</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-020.html" class="vi-txt-g500">確認頁 申請金融憑證</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-021.html" class="vi-txt-g500">確認頁 a.立即換匯流程 大額</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-022.html" class="vi-txt-g500">確認頁 a.立即換匯流程 小額</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-023.html" class="vi-txt-g500">確認頁 b.定期定額換匯流程</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-030.html" class="vi-txt-g500">結果頁 a.立即換匯流程</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-030-1.html" class="vi-txt-g500">結果頁 a.立即換匯流程 已收到大額換匯申請</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-031.html" class="vi-txt-g500">結果頁 b.定期定額換匯流程</a>
+          </li>
+        </ul>
+      </div>
+      <div class="mb24">
+        <div class="vi-line-title mb12">外幣轉帳流程</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-040.html" class="vi-txt-g500">外幣轉帳 輸入頁</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-041.html" class="vi-txt-g500">外幣轉帳 最近轉帳</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-042.html" class="vi-txt-g500">外幣轉帳 確認頁</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-043.html" class="vi-txt-g500">外幣轉帳 結果頁</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">換匯流程 英文版</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-010-en.html" class="vi-txt-g500">輸入頁 a.立即換匯流程 & b.定期定額換匯流程</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-011-en.html" class="vi-txt-g500">輸入頁 c.外幣轉帳</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-020-en.html" class="vi-txt-g500">確認頁 申請金融憑證</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-021-en.html" class="vi-txt-g500">確認頁 a.立即換匯流程 大額</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-022-en.html" class="vi-txt-g500">確認頁 a.立即換匯流程 小額</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-023-en.html" class="vi-txt-g500">確認頁 b.定期定額換匯流程</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-030-en.html" class="vi-txt-g500">結果頁 a.立即換匯流程</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-030-1-en.html" class="vi-txt-g500">結果頁 a.立即換匯流程 已收到大額換匯申請</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-031-en.html" class="vi-txt-g500">結果頁 b.定期定額換匯流程</a>
+          </li>
+        </ul>
+      </div>
+      <div class="mb24">
+        <div class="vi-line-title mb12">外幣轉帳流程 英文版</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-040-en.html" class="vi-txt-g500">外幣轉帳 輸入頁</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-041-en.html" class="vi-txt-g500">外幣轉帳 最近轉帳</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-042-en.html" class="vi-txt-g500">外幣轉帳 確認頁</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-fxex-tx003-043-en.html" class="vi-txt-g500">外幣轉帳 結果頁</a>
+          </li>
+        </ul>
+      </div>
+      
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">金融卡解鎖 APP 流程</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="space/space/space/twrbm-general-ot047-010.html" class="vi-txt-g500">顯示解鎖畫面</a>
+          </li>
+          <li>
+            <a href="space/space/space/twrbm-general-ot047-020.html" class="vi-txt-g500">POP 一次性密碼</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">投資市場趨勢</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="twrbm-invest-qu055-000.html" class="vi-txt-g500">入口牌卡</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu055-010.html" class="vi-txt-g500">投資市場趨勢 首頁</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu055-020.html" class="vi-txt-g500">策略頁面 / 取得專家推薦 ETF</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu055-000-micro-f2e.html" class="vi-txt-g500">入口牌卡 微前端</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu055-010-micro-f2e.html" class="vi-txt-g500">投資市場趨勢 首頁 微前端</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu055-020-micro-f2e.html" class="vi-txt-g500">策略頁面 / 取得專家推薦 ETF 微前端</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">信用卡概要</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="twrbm-card-qu000-010.html" class="vi-txt-g500">我的信用卡 twrbm-card-qu000-010</a>
+          </li>
+          <li>
+            <a href="twrbm-card-qu000-030.html" class="vi-txt-g500">分期與利率 循環利率 twrbm-card-qu000-030</a>
+          </li>
+          <li>
+            <a href="twrbm-card-qu000-020.html" class="vi-txt-g500">預借現金 twrbm-card-qu000-020</a>
+          </li>
+          <li>
+            <a href="twrbm-card-qu006-010.html" class="vi-txt-g500">帳單明細 未出帳明細 twrbm-card-qu006-010</a>
+          </li>
+          <li>
+            <a href="twrbm-card-qu002-010.html" class="vi-txt-g500">帳單明細 twrbm-card-qu002-010</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">信用卡概要 英文版</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="twrbm-card-qu000-010-en.html" class="vi-txt-g500">我的信用卡 英文版 twrbm-card-qu000-010</a>
+          </li>
+          <li>
+            <a href="twrbm-card-qu000-030-en.html" class="vi-txt-g500">分期與利率 循環利率 英文版 twrbm-card-qu000-030</a>
+          </li>
+          <li>
+            <a href="twrbm-card-qu000-020-en.html" class="vi-txt-g500">預借現金 英文版 twrbm-card-qu000-020</a>
+          </li>
+          <li>
+            <a href="twrbm-card-qu006-010-en.html" class="vi-txt-g500">帳單明細 未出帳明細 英文版 twrbm-card-qu006-010</a>
+          </li>
+          <li>
+            <a href="twrbm-card-qu002-010-en.html" class="vi-txt-g500">帳單明細 英文版 twrbm-card-qu002-010</a>
+          </li>
+        </ul>
+      </div>
+      
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">保險概要</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="twrbm-invest-qu006-010.html" class="vi-txt-g500">壽險／年金險</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu006-020.html" class="vi-txt-g500">投資保險</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu006-050.html" class="vi-txt-g500">其他保險</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu006-010-invest.html" class="vi-txt-g500">投資組合 - 壽險／年金險</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu006-020-invest.html" class="vi-txt-g500">投資組合 - 投資保險</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu006-050-invest.html" class="vi-txt-g500">投資組合 - 其他保險</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu006-010-en.html" class="vi-txt-g500">壽險／年金險 英文版</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu006-020-en.html" class="vi-txt-g500">投資保險 英文版</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu006-050-en.html" class="vi-txt-g500">其他保險 英文版</a>
+          </li>
+        </ul>
+      </div>
+      
+      
+      <div class="vi-txt-body mb24">理財健診 目前只有拿到最外層 id 類別，完整正確 id 請參考規格</div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">理財健診 Part 1 首頁</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="twrbm-invest-qu057-010.html" class="vi-txt-g500">首次歡迎頁面</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu057-020.html" class="vi-txt-g500">更新資料（初診）確認個人資料</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu057-030.html" class="vi-txt-g500">更新資料（初診）確認行內資料</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu057-040.html" class="vi-txt-g500">健檢首頁 尚未健檢</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu057-050.html" class="vi-txt-g500">健檢首頁 全部已健檢</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">理財健診 Part 2 首頁詳細資產分配、家庭 </div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="twrbm-invest-qu057-060.html" class="vi-txt-g500">持有投資資產</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu057-070.html" class="vi-txt-g500">持有保單</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu057-080.html" class="vi-txt-g500">檢視資產分配 尚未分配</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu057-090.html" class="vi-txt-g500">檢視資產分配 已分配</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-qu057-100.html" class="vi-txt-g500">檢視資產內頁</a>
+          </li>
+        </ul>
+        
+        <ul class="vi-ordered-list-dot mt24">
+          <li>
+            <a href="twrbm-invest-ag010-010.html" class="vi-txt-g500">未健檢過</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag010-020.html" class="vi-txt-g500">家庭首頁</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag010-030.html" class="vi-txt-g500">添加/編輯我的保單</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag010-040.html" class="vi-txt-g500">編輯目標</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">理財健診 Part 3 退休 7/18</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="twrbm-invest-ag012-010.html" class="vi-txt-g500">Step 1 預計退休年齡</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag012-020.html" class="vi-txt-g500">Step 2 估算退休花費</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag012-030.html" class="vi-txt-g500">Step 3 了解國家給付退休金</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag012-040.html" class="vi-txt-g500">資產分配頁</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag012-050.html" class="vi-txt-g500">檢視資產分配頁 尚未分配</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag012-060.html" class="vi-txt-g500">檢視資產分配頁 已分配</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag012-070.html" class="vi-txt-g500">退休 已健檢過頁面</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag012-080.html" class="vi-txt-g500">編輯目標</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">理財健診 Part 3 醫療 7/18</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="twrbm-invest-ag009-010.html" class="vi-txt-g500">首次健檢 Step 1</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag009-020.html" class="vi-txt-g500">首次健檢 Step 2</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag009-030.html" class="vi-txt-g500">首次健檢 Step 3</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag009-040.html" class="vi-txt-g500">已健檢過頁面</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag009-050.html" class="vi-txt-g500">添加/編輯我的保單</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag009-060.html" class="vi-txt-g500">編輯目標</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">理財健診 Part 4 目標 7/25</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="twrbm-invest-ag013-010.html" class="vi-txt-g500">首次健檢 Step 1</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag013-020.html" class="vi-txt-g500">首次健檢 Step 2</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag013-030.html" class="vi-txt-g500">首次健檢 Step 3</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag013-040.html" class="vi-txt-g500">首次健檢 Step 4</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag013-050.html" class="vi-txt-g500">檢視資產分配頁 尚未分配</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag013-060.html" class="vi-txt-g500">檢視資產分配頁 已分配</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag013-070.html" class="vi-txt-g500">目標 已健檢過頁面</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag013-080.html" class="vi-txt-g500">編輯目標</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">理財健診 Part 4 傳承 7/25</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="twrbm-invest-ag011-010.html" class="vi-txt-g500">首次健檢 Step 1</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag011-020.html" class="vi-txt-g500">首次健檢 Step 2</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag011-030.html" class="vi-txt-g500">已健檢過頁面</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag011-040.html" class="vi-txt-g500">添加/編輯我的保單</a>
+          </li>
+          <li>
+            <a href="twrbm-invest-ag011-050.html" class="vi-txt-g500">編輯目標</a>
+          </li>
+        </ul>
+      </div>
+      
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">錢寶寶 Part2 明細頁</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="done/twrbm-deposit-ag007-010.html" class="vi-txt-g500">未到期</a>
+          </li>
+          <li>
+            <a href="done/twrbm-deposit-ag007-020.html" class="vi-txt-g500">已到期/取消</a>
+          </li>
+          <li>
+            <a href="done/twrbm-deposit-ag007-030.html" class="vi-txt-g500">錢寶寶外幣明細</a>
+          </li>
+          <li>
+            <a href="done/twrbm-deposit-ag007-040.html" class="vi-txt-g500">修改 設定頁</a>
+          </li>
+          <li>
+            <a href="done/twrbm-deposit-ag007-050.html" class="vi-txt-g500">修改 確認頁</a>
+          </li>
+          <li>
+            <a href="done/twrbm-deposit-ag007-060.html" class="vi-txt-g500">修改 結果頁</a>
+          </li>
+          <li>
+            <a href="done/twrbm-deposit-ag007-070.html" class="vi-txt-g500">修改 修改紀錄</a>
+          </li>
+        </ul>
+      </div>
+      
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">錢寶寶 設定頁</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="done/twrbm-fx-qu001-010-baby.html" class="vi-txt-g500">錢寶寶前置頁</a>
+          </li>
+          <li>
+            <a href="done/twrbm-deposit-tx005-020.html" class="vi-txt-g500">錢寶寶設定頁</a>
+          </li>
+          <li>
+            <a href="done/twrbm-deposit-tx005-030.html" class="vi-txt-g500">錢寶寶確認頁</a>
+          </li>
+          <li>
+            <a href="done/twrbm-deposit-tx005-040.html" class="vi-txt-g500">錢寶寶成功頁</a>
+          </li>
+        </ul>
+      </div>
+      
+      
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">9RC 共通</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="done/vi-common-error.html" class="vi-txt-g500">共通 - 錯誤頁</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">9RC 臺外幣概要</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="done/twrbm-deposit-qu001-010.html" class="vi-txt-g500">deposit-qu001-010 臺幣概要 - 活期存款 tab</a>
+          </li>
+          <li>
+            <a href="done/twrbm-deposit-qu001-020.html" class="vi-txt-g500">deposit-qu001-020 臺幣概要 - 定期存款 tab</a>
+          </li>
+          <li>
+            <a href="done/twrbm-deposit-qu001-030.html" class="vi-txt-g500">deposit-qu001-030 臺幣概要 - 支票存款 tab</a>
+          </li>
+          <li>
+            <a href="done/twrbm-fx-qu001-010.html" class="vi-txt-g500">fx-qu001-010 外幣概要 - 活期存款 tab</a>
+          </li>
+          <li>
+            <a href="done/twrbm-fx-qu001-020.html" class="vi-txt-g500">fx-qu001-020 外幣概要 - 定期存款 tab</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">9RC 臺外幣概要 明細 </div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="done/twrbm-deposit-qu002-010.html" class="vi-txt-g500">deposit-qu002-010 臺幣概要 - 臺幣明細頁</a>
+          </li>
+          <li>
+            <a href="done/twrbm-deposit-qu003-010.html" class="vi-txt-g500">deposit-qu003-010 臺幣概要 - 支票明細頁</a>
+          </li>
+          <li>
+            <a href="done/twrbm-fx-qu002-010.html" class="vi-txt-g500">fx-qu002-010 外幣概要 - 外幣明細頁</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">9RC 臺外幣概要 帳戶資訊</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="done/twrbm-deposit-qu012-010.html" class="vi-txt-g500">deposit-qu012-010 臺幣概要 - 帳戶資訊</a>
+          </li>
+          <li>
+            <a href="done/twrbm-fx-qu006-010.html" class="vi-txt-g500">fx-qu006-010 外幣概要 - 帳戶資訊</a>
+          </li>
+        </ul>
+      </div>
+      
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">9RC 臺外幣概要 英文版</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="done/twrbm-deposit-qu001-010-en.html" class="vi-txt-g500">deposit-qu001-010 臺幣概要 - 活期存款 tab</a>
+          </li>
+          <li>
+            <a href="done/twrbm-deposit-qu001-020-en.html" class="vi-txt-g500">deposit-qu001-020 臺幣概要 - 定期存款 tab</a>
+          </li>
+          <li>
+            <a href="done/twrbm-deposit-qu001-030-en.html" class="vi-txt-g500">deposit-qu001-030 臺幣概要 - 支票存款 tab</a>
+          </li>
+          <li>
+            <a href="done/twrbm-fx-qu001-010-en.html" class="vi-txt-g500">fx-qu001-010 外幣概要 - 活期存款 tab</a>
+          </li>
+          <li>
+            <a href="done/twrbm-fx-qu001-020-en.html" class="vi-txt-g500">fx-qu001-020 外幣概要 - 定期存款 tab</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">9RC 臺外幣 明細 英文版</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="done/twrbm-deposit-qu002-010-en.html" class="vi-txt-g500">deposit-qu002-010 臺幣概要 - 臺幣明細頁</a>
+          </li>
+          <li>
+            <a href="done/twrbm-fx-qu002-010-en.html" class="vi-txt-g500">fx-qu002-010 外幣概要 - 外幣明細頁</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">9RC 臺外幣 帳戶資訊 英文版</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="done/twrbm-deposit-qu012-010-en.html" class="vi-txt-g500">deposit-qu012-010 臺幣概要 - 帳戶資訊</a>
+          </li>
+          <li>
+            <a href="done/twrbm-fx-qu006-010-en.html" class="vi-txt-g500">fx-qu006-010 外幣概要 - 帳戶資訊</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">9RC 臺外幣明細 投資帳戶的臺外幣</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="done/twrbm-deposit-qu001-010-invest.html" class="vi-txt-g500">投資帳戶的臺幣概要 活存</a>
+          </li>
+          <li>
+            <a href="done/twrbm-deposit-qu001-020-invest.html" class="vi-txt-g500">投資帳戶的臺幣概要 定存</a>
+          </li>
+          <li>
+            <a href="done/twrbm-fx-qu001-010-invest.html" class="vi-txt-g500">投資帳戶的外幣概要 活存</a>
+          </li>
+          <li>
+            <a href="done/twrbm-fx-qu001-020-invest.html" class="vi-txt-g500">投資帳戶的外幣概要 定存</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">9RC 臺外幣明細 親子帳戶的臺外幣</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="done/twrbm-deposit-qu001-010-kids.html" class="vi-txt-g500">臺幣概要 - 活期存款 tab 親子帳戶</a>
+          </li>
+          <li>
+            <a href="done/twrbm-deposit-qu001-020-kids.html" class="vi-txt-g500">臺幣概要 - 定期存款 tab 親子帳戶</a>
+          </li>
+        </ul>
+      </div>
+      
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">卡片管理優化</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="done/twrbm-card-ag023-010.html" class="vi-txt-g500">卡片管理優化</a>
+          </li>
+        </ul>
+      </div>
+      
+      
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">登入後 我的 頁</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="done/twrbm-home-qu057-010.html" class="vi-txt-g500">新增已申辦卡片 未啟動信用卡服務情境</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">個人信託概要</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="done/twrbm-invest-qu020-010.html" class="vi-txt-g500">個人信託 概要 7RC</a>
+          </li>
+          <li>
+            <a href="done/twrbm-invest-qu020-010-tab.html" class="vi-txt-g500">個人信託 概要 9RC</a>
+          </li>
+          <li>
+            <a href="done/twrbm-invest-qu020-020.html" class="vi-txt-g500">個人信託 金錢信託</a>
+          </li>
+          <li>
+            <a href="done/twrbm-invest-qu020-021-0.html" class="vi-txt-g500">個人信託 臺外幣</a>
+          </li>
+          <li>
+            <a href="done/twrbm-invest-qu020-021-1.html" class="vi-txt-g500">個人信託 基金</a>
+          </li>
+          <li>
+            <a href="done/twrbm-invest-qu020-021-2.html" class="vi-txt-g500">個人信託 不動產</a>
+          </li>
+          <li>
+            <a href="done/twrbm-invest-qu020-010-empty-en.html" class="vi-txt-g500">個人信託 英文版 空值</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb24">
+        <div class="vi-line-title mb12">員工福利信託概要</div>
+        <ul class="vi-ordered-list-dot">
+          <li>
+            <a href="done/twrbm-invest-qu021-010.html" class="vi-txt-g500">員工福利信託 概要</a>
+          </li>
+          <li>
+            <a href="done/twrbm-invest-qu021-020.html" class="vi-txt-g500">員工福利信託 明細各狀態</a>
+          </li>
+          <li>
+            <a href="done/twrbm-invest-qu021-030.html" class="vi-txt-g500">員工福利信託 明細 僅有一筆信託</a>
+          </li>
+        </ul>
+      </div>
+      
+
+    </div>
+    
+  </div>
+  <!-- main_container -->
 </body>
+<!-- body-wrap -->
 </html>
