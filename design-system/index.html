@@ -1,0 +1,202 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><title>Webpack App</title><meta name="viewport" content="width=device-width,initial-scale=1"/><style>html, body {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }</style><script>/* globals window */
+  /* eslint-disable no-underscore-dangle */
+  try {
+    if (window.top !== window) {
+      window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.top.__REACT_DEVTOOLS_GLOBAL_HOOK__;
+    }
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.warn('unable to connect to top frame for connecting dev tools');
+  }
+
+  window.onerror = function onerror(message, source, line, column, err) {
+    if (window.CONFIG_TYPE !== 'DEVELOPMENT') return;
+    // eslint-disable-next-line no-var, vars-on-top
+    var xhr = new window.XMLHttpRequest();
+    xhr.open('POST', '/runtime-error');
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xhr.send(
+      JSON.stringify({
+        /* eslint-disable object-shorthand */
+        message: message,
+        source: source,
+        line: line,
+        column: column,
+        error: err && { message: err.message, name: err.name, stack: err.stack },
+        origin: 'manager',
+        /* eslint-enable object-shorthand */
+      })
+    );
+  };</script><style>/* styles for the storybook sidebar */
+  .sidebar-item {
+    padding-top: 0.75em !important;
+    padding-bottom: 0.75em !important;
+    font-size: 14px !important;
+    line-height: normal !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .sidebar-item:hover,
+  .sidebar-item:focus {
+    color: #333 !important;
+    background: #E4F0EF !important;
+  }
+
+  /* let flex and align-items control alignment */
+  .sidebar-item > span,
+  .sidebar-item > svg {
+    margin-top: 0 !important;
+  }
+
+  /* icon size */
+  .sidebar-svg-icon,
+  .sidebar-item svg {
+    width: 14px !important;
+    height: 14px !important;
+    color: inherit !important;
+  }
+
+  /* www should be in uppercase */
+  .sidebar-item#www {
+    text-transform: uppercase;
+  }
+
+  /* create illusion of hrs between sidebar sections */
+  .sidebar-item#www,
+  .sidebar-item#appendix {
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    margin-top: 0.5rem;
+    padding-top: 1rem !important;
+  }
+
+  /* hide the mdx stub story */
+  .sidebar-item#stub--page {
+    display: none !important;
+  }
+
+  /* logo placement tweaks */
+  .sidebar-header > div {
+    margin-right: 0 !important;
+  }
+  .sidebar-header a {
+    margin: 6px 0 !important;
+  }
+
+
+  /* custom style */
+  .sidebar-subheading {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-right: 12px !important;
+    font-weight: normal !important;
+  }
+  .sidebar-subheading button {
+    padding-top: 16px !important;
+    padding-bottom: 8px !important;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+  .sidebar-subheading button:not(.sidebar-subheading-action) {
+    width: 100%;
+    color: #009891 !important;
+    font-weight: 700;
+  }
+  
+  .sidebar-item,
+  button.sidebar-item {
+    font-size: 15px !important;
+    padding-right: 32px !important;
+  }
+  button.sidebar-item[data-nodetype="group"] {
+    padding-left: 18px;
+    color: #12171a !important;
+  }
+  button.sidebar-item[data-nodetype="component"] {
+    padding-left: 36px;
+    color: #36444d !important;
+    /* color: #757575 !important; */
+  }
+  a.sidebar-item {
+    font-size: 15px !important;
+  }
+  a.sidebar-item[data-nodetype="document"] {
+    color: #12171a !important;
+  }
+  a.sidebar-item[data-nodetype="story"] {
+    padding-left: 48px;
+    font-size: 15px !important;
+    color: #757575 !important;
+    /* color: #999 !important; */
+  }
+  button.sidebar-item > span {
+    position: absolute;
+    right: 16px;
+  }
+  .sidebar-item > span {
+    color: rgba(153,153,153,1);
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid;
+  }
+  .sidebar-item[data-selected="true"]:hover,
+  a.sidebar-item[data-selected="true"]:hover,
+  button.sidebar-item[data-selected="true"]:hover,
+  .sidebar-item[data-selected="true"]:focus,
+  a.sidebar-item[data-selected="true"]:focus,
+  button.sidebar-item[data-selected="true"]:focus {
+    background: #009891 !important;
+  }
+  .sidebar-item[data-selected="true"],
+  a.sidebar-item[data-selected="true"],
+  button.sidebar-item[data-selected="true"] {
+    color: #fff !important;
+  }
+  .sidebar-subheading[aria-expanded="true"] button {
+    color: #009891;
+  }
+  a.sidebar-item[aria-expanded="true"],
+  button.sidebar-item[aria-expanded="true"] {
+    font-weight: 700;
+  }
+  
+  
+  /* 之後要再觀察一下 這邊看起來像亂數的 class 會不會跑掉 */
+  button.sidebar-item[data-nodetype="group"].sto-8skhtv {
+    padding-left: 36px;
+  }
+  button.sidebar-item[data-nodetype="component"].sto-1y7hsit {
+    padding-left: 48px;
+  }
+  .sto-79elbk a.sidebar-item[data-nodetype="story"].sto-1iksjae {
+    padding-left: 60px;
+  }</style><link rel="shortcut icon" href="img/favicon.ico"><link rel="icon" type="image/png" href="img/touch-icon-192x192.png" sizes="192x192"><style>#root[hidden],
+      #docs-root[hidden] {
+        display: none !important;
+      }</style></head><body><div id="root"></div><div id="docs-root"></div><script>window['CONFIG_TYPE'] = "PRODUCTION";
+          
+      
+          
+            window['LOGLEVEL'] = "info";
+          
+      
+          
+            window['FEATURES'] = {"postcss":false,"emotionAlias":false,"warnOnLegacyHierarchySeparator":true,"buildStoriesJson":false,"storyStoreV7":false,"modernInlineRender":false,"breakingChangesV7":false,"interactionsDebugger":false,"babelModeV7":false,"argTypeTargetsV7":false,"previewMdx2":false};
+          
+      
+          
+      
+          
+      
+          
+            window['DOCS_MODE'] = false;</script><script src="runtime~main.5c52153ac8e1be44e0f1.manager.bundle.js"></script><script src="vendors~main.781380a61cd1d0e02737.manager.bundle.js"></script><script src="main.10b1d1b8fdff8be9c8e4.manager.bundle.js"></script></body></html>

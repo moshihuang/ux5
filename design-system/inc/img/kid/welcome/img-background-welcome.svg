@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="813" viewBox="0 0 375 813">
+    <defs>
+        <path id="sahg30ewya" d="M0 0H375V813H0z"/>
+        <path id="n1stye0kmc" d="M0 0H545V1190H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g transform="translate(-2217 -515) translate(2217 515)">
+                <mask id="eb691ns96b" fill="#fff">
+                    <use xlink:href="#sahg30ewya"/>
+                </mask>
+                <g mask="url(#eb691ns96b)">
+                    <g transform="translate(-85 -275)">
+                        <mask id="83bnfoq92d" fill="#fff">
+                            <use xlink:href="#n1stye0kmc"/>
+                        </mask>
+                        <use fill="#EEF8F7" xlink:href="#n1stye0kmc"/>
+                        <g mask="url(#83bnfoq92d)">
+                            <g transform="translate(31 67)">
+                                <path fill="#FF625E" d="M510.872 77.872c34.61 0 67.035 9.352 94.887 25.668 27.852 16.315 51.13 39.593 67.446 67.445 16.315 27.852 25.667 60.277 25.667 94.887s-9.352 67.035-25.667 94.887c-16.316 27.852-39.594 51.13-67.446 67.446-27.852 16.315-60.277 25.667-94.887 25.667s-67.035-9.352-94.887-25.667c-27.852-16.316-51.13-39.594-67.445-67.446-16.316-27.852-25.668-60.277-25.668-94.887s9.352-67.035 25.668-94.887c16.315-27.852 39.593-51.13 67.445-67.445 27.852-16.316 60.277-25.668 94.887-25.668z" transform="rotate(45 510.872 265.872)"/>
+                                <circle cx="58" cy="329" r="58" fill="#FA0"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

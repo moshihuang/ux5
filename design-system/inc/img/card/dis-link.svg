@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <clipPath id="clip-刷卡優惠">
+      <rect width="40" height="40"/>
+    </clipPath>
+  </defs>
+  <g id="刷卡優惠" clip-path="url(#clip-刷卡優惠)">
+    <g id="组_63" data-name="组 63" transform="translate(1.256 1.256)">
+      <circle id="椭圆_3" data-name="椭圆 3" cx="12.244" cy="12.244" r="12.244" transform="translate(6.5 6.5)" fill="none" stroke="#8aa1ac" stroke-width="1.2"/>
+      <path id="多边形_1" data-name="多边形 1" d="M6.906.409a.2.2,0,0,1,.365,0l1.9,4.249a.2.2,0,0,0,.156.117l4.446.588a.2.2,0,0,1,.114.341L10.6,8.938a.2.2,0,0,0-.056.178l.844,4.635a.2.2,0,0,1-.3.209L7.189,11.7a.2.2,0,0,0-.2,0L3.082,13.96a.2.2,0,0,1-.3-.209l.844-4.635a.2.2,0,0,0-.056-.178L.291,5.7a.2.2,0,0,1,.114-.341l4.446-.588a.2.2,0,0,0,.156-.117Z" transform="translate(11.655 11.655)" fill="none" stroke="#8aa1ac" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+    </g>
+  </g>
+</svg>

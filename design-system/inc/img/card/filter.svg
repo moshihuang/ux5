@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32.709" height="30.72" viewBox="0 0 32.709 30.72">
+    <defs>
+        <style>
+            .cls-1{fill:#24a09a}.cls-2{fill:none;stroke:#24a09a;stroke-miterlimit:10}
+        </style>
+    </defs>
+    <g id="组_1473" transform="translate(-356.571 -86.5)">
+        <path id="矩形_259" d="M0 0H18.818V1.48H0z" class="cls-1" transform="translate(356.571 90.172)"/>
+        <path id="矩形_260" d="M0 0H18.413V1.48H0z" class="cls-1" transform="translate(370.791 101.589)"/>
+        <path id="矩形_261" d="M0 0H2.632V1.48H0z" class="cls-1" transform="translate(386.596 90.172)"/>
+        <path id="矩形_262" d="M0 0H3.587V1.48H0z" class="cls-1" transform="translate(356.727 101.536)"/>
+        <circle id="椭圆_35" cx="3.416" cy="3.416" r="3.416" class="cls-2" transform="translate(380.015 87)"/>
+        <path id="矩形_263" d="M0 0H9.657V1.48H0z" class="cls-1" transform="translate(379.624 112.954)"/>
+        <path id="矩形_264" d="M0 0H11.318V1.48H0z" class="cls-1" transform="translate(356.841 112.901)"/>
+        <circle id="椭圆_36" cx="3.416" cy="3.416" r="3.416" class="cls-2" transform="translate(372.884 109.888)"/>
+        <circle id="椭圆_37" cx="3.416" cy="3.416" r="3.416" class="cls-2" transform="translate(359.927 98.788)"/>
+    </g>
+</svg>

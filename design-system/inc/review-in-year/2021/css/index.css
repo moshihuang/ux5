@@ -1,0 +1,39 @@
+twrbm-general-ag029-010 .c-indexPage {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  background: url(../images/index/bg_3x.jpg) no-repeat center center/480px 960px;
+  overflow: hidden; }
+  twrbm-general-ag029-010 .c-indexPage__msgContainer {
+    padding: 12px 54px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    twrbm-general-ag029-010 .c-indexPage__msgContainer > * {
+      width: 100%;
+      max-width: 252px; }
+  twrbm-general-ag029-010 .c-indexPage__mainImage {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 390px;
+    height: 390px; }
+  twrbm-general-ag029-010 .c-indexPage__footer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 21px; }
+  @media only screen and (min-width: 375px) {
+    twrbm-general-ag029-010 .c-indexPage__mainImage {
+      width: 420px;
+      height: 420px; } }
+  @media (min-height: 800px) {
+      twrbm-general-ag029-010 .c-indexPage__msgContainer {
+        padding: 46px 0 0 0; }
+      twrbm-general-ag029-010 .c-indexPage__footer {
+        bottom: 53px; } }
+  @media only screen and (min-height: 800px) and (min-width: 375px) {
+    twrbm-general-ag029-010 .c-indexPage__mainImage {
+      width: 480px;
+      height: 480px; } }
