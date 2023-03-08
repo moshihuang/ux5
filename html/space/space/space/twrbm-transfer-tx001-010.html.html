@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CTBC</title>
+  <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
+  <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
+  <link rel="stylesheet" href="../../../../index.css">
+  <script type="text/javascript" src="../../../../inc/bundle_lib.js"></script>
+  <script type="text/javascript" src="../../../../inc/bundle_base.js"></script>
+  <style> 
+    /* vi-tab-group radiobtn切換*/
+    .vi-tab-group{
+      display: flex;
+    }
+    .vi-tab-group .vi-radio{
+      width: 50%;
+      position: relative;
+    }
+    .vi-tab-group .vi-radio-mark{
+      width: 100%;
+      background: #f7f7f7;
+      border: 1px solid #DAE1E5;
+      padding: 20px 0;
+    }
+    .vi-tab-group .vi-radio-txt{
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .vi-tab-group .vi-radio .vi-radio-mark{
+      border-radius: 0;
+      overflow: hidden;
+    }
+    .vi-tab-group .vi-radio:first-child .vi-radio-mark{
+      border-radius: 6px 0 0 6px;
+    }
+    .vi-tab-group .vi-radio:last-child .vi-radio-mark{
+      border-radius: 0 6px 6px 0;
+    }
+    .vi-tab-group .vi-radio input:checked + .vi-radio-mark:after{
+      width: 100%;
+      height: 100%;
+      background: #EFFFFE;
+      border-radius: 0;
+    }
+    .vi-tab-group .vi-radio input[type="radio"]:checked + .vi-radio-mark + .vi-radio-txt{
+      color: #009891;
+      font-weight: 900;
+    }
+    /* scan icon */
+    .vi-icon-scan-g{
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDhWNUMxOCAzLjg5NTQzIDE3LjEwNDYgMyAxNiAzSDhDNi44OTU0MyAzIDYgMy44OTU0MyA2IDVWOCIgc3Ryb2tlPSIjMDA5ODkxIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNNiAxNlYxOUM2IDIwLjEwNDYgNi44OTU0MyAyMSA4IDIxSDE2QzE3LjEwNDYgMjEgMTggMjAuMTA0NiAxOCAxOVYxNiIgc3Ryb2tlPSIjMDA5ODkxIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8bGluZSB4MT0iMiIgeTE9IjEyIiB4Mj0iMjIiIHkyPSIxMiIgc3Ryb2tlPSIjMDA5ODkxIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K");
+    }
+    /* search icon */
+    .vi-icon-search{
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAuNCIgY3k9IjkuNCIgcj0iNy40IiBmaWxsPSIjRUZGRkZFIiBzdHJva2U9IiMwMDk4OTEiIHN0cm9rZS13aWR0aD0iMiIvPgo8bWFzayBpZD0ibWFzazBfMTQ1XzI3MjQ3IiBzdHlsZT0ibWFzay10eXBlOmFscGhhIiBtYXNrVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4PSI0IiB5PSIzIiB3aWR0aD0iMTMiIGhlaWdodD0iMTMiPgo8Y2lyY2xlIGN4PSIxMC4zOTk2IiBjeT0iOS40MDAxIiByPSI2LjMiIGZpbGw9IiNFRkZGRkUiLz4KPC9tYXNrPgo8ZyBtYXNrPSJ1cmwoI21hc2swXzE0NV8yNzI0NykiPgo8Y2lyY2xlIGN4PSIxNi42OTk2IiBjeT0iMTEuNDk5OSIgcj0iNy4zNSIgZmlsbD0iI0M5RUJFOSIvPgo8L2c+CjxsaW5lIHgxPSIxNC45NjQiIHkxPSIxNS43MDAyIiB4Mj0iMTkuODQ5OCIgeTI9IjIwLjU4NiIgc3Ryb2tlPSIjMDA5ODkxIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K");
+    }
+    /* recent icon */
+    .vi-icon-recent{
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTggMTVDMTEuODY2IDE1IDE1IDExLjg2NiAxNSA4QzE1IDQuMTM0MDEgMTEuODY2IDEgOCAxQzQuMTM0MDEgMSAxIDQuMTM0MDEgMSA4QzEgMTEuODY2IDQuMTM0MDEgMTUgOCAxNVoiIGZpbGw9IndoaXRlIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTcuMDc4MjkgMTUuNTM0NEM3LjA3ODI5IDE1LjUzNDQgNi4xNDAyOSAxNC4yNTU5IDUuOTUzMzcgMTMuMTk0QzUuNDI2NjcgMTAuMjAyNSA3LjQyNDc5IDcuMzUwMzcgMTAuNDE2NCA2LjgyMzY3QzEyLjU3NDYgNi40NDM2OSAxNC4yNzE5IDYuNjczMyAxNS41Mjc5IDguNDYyMTZDMTMuNTEzMiAxMi44Nzg0IDEwLjQ5ODYgMTQuMDM3OSA3LjA3ODI5IDE1LjUzNDRaIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik04IDE1LjI1QzEyLjAwNDEgMTUuMjUgMTUuMjUgMTIuMDA0MSAxNS4yNSA4QzE1LjI1IDMuOTk1OTQgMTIuMDA0MSAwLjc1IDggMC43NUMzLjk5NTk0IDAuNzUgMC43NSAzLjk5NTk0IDAuNzUgOEMwLjc1IDEyLjAwNDEgMy45OTU5NCAxNS4yNSA4IDE1LjI1WiIgc3Ryb2tlPSIjOUY5RjlGIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNOCA1VjlIMTEuNSIgc3Ryb2tlPSIjOUY5RjlGIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=");
+    }
+    /* right-top icon */
+    .vi-icon-right-top{
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAxNiAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMgMTNMMTIgNCIgc3Ryb2tlPSIjOUY5RjlGIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik01LjUgMy41SDEyLjVWMTAuNSIgc3Ryb2tlPSIjOUY5RjlGIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=");
+    }
+    /* pin icon yellow */
+    .vi-icon-pin-y{
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHZpZXdCb3g9IjAgMCAyOCAyOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1LjQ5NjQgMy44MzY0NUwxNS4yMDE2IDUuODI4NDhMMTMuMDQ1MSA4LjI3MTlDMTMuMDQ1MSA4LjI3MTkgNy4wMTU1OSA3Ljk4OTU0IDQuOTY0NyAxMC4zMTY3TDE4LjA5NCAyMS45MDQxQzIwLjE3MTcgMTkuNjkyOSAxOS4xMTg3IDEzLjYzMjIgMTkuMTE4NyAxMy42MzIyTDIxLjI3NTEgMTEuMTg4OEwyMy4yMTUxIDEwLjY0ODdDMjQuMTcxMSAxMC4zODI1IDI0LjQ1MTQgOS4xNjI0MyAyMy43MDc0IDguNTA1NzRMMTcuNTYxNiAzLjA4MTY5QzE2LjgxNzUgMi40MjUgMTUuNjQxNyAyLjg1NDczIDE1LjQ5NjQgMy44MzY0NVoiIGZpbGw9IiNEREIxNDAiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMi4zNjEyIDE1LjE3MjVDMTIuODc5MiAxNS42Mjk2IDEyLjkyODUgMTYuNDIwMSAxMi40NzE0IDE2LjkzODFMOC4zMzI2NiAyMS42Mjc1QzcuODc1NTIgMjIuMTQ1NSA3LjA4NTAyIDIyLjE5NDggNi41NjcwNSAyMS43Mzc2QzYuMDQ5MDcgMjEuMjgwNSA1Ljk5OTc2IDIwLjQ5IDYuNDU2OTEgMTkuOTcyTDEwLjU5NTYgMTUuMjgyNkMxMS4wNTI3IDE0Ljc2NDYgMTEuODQzMiAxNC43MTUzIDEyLjM2MTIgMTUuMTcyNVoiIGZpbGw9IiNEREIxNDAiLz4KPC9zdmc+Cg==");
+    }
+    /* pin icon white */
+    .vi-icon-pin-w{
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHZpZXdCb3g9IjAgMCAyOCAyOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1LjQ5NjQgMy44MzY0NUwxNS4yMDE2IDUuODI4NDhMMTMuMDQ1MSA4LjI3MTlDMTMuMDQ1MSA4LjI3MTkgNy4wMTU1OSA3Ljk4OTU0IDQuOTY0NyAxMC4zMTY3TDE4LjA5NCAyMS45MDQxQzIwLjE3MTcgMTkuNjkyOSAxOS4xMTg3IDEzLjYzMjIgMTkuMTE4NyAxMy42MzIyTDIxLjI3NTEgMTEuMTg4OEwyMy4yMTUxIDEwLjY0ODdDMjQuMTcxMSAxMC4zODI1IDI0LjQ1MTQgOS4xNjI0MyAyMy43MDc0IDguNTA1NzRMMTcuNTYxNiAzLjA4MTY5QzE2LjgxNzUgMi40MjUgMTUuNjQxNyAyLjg1NDczIDE1LjQ5NjQgMy44MzY0NVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIuMzYxMiAxNS4xNzI1QzEyLjg3OTIgMTUuNjI5NiAxMi45Mjg1IDE2LjQyMDEgMTIuNDcxNCAxNi45MzgxTDguMzMyNjYgMjEuNjI3NUM3Ljg3NTUyIDIyLjE0NTUgNy4wODUwMiAyMi4xOTQ4IDYuNTY3MDUgMjEuNzM3NkM2LjA0OTA3IDIxLjI4MDUgNS45OTk3NiAyMC40OSA2LjQ1NjkxIDE5Ljk3MkwxMC41OTU2IDE1LjI4MjZDMTEuMDUyNyAxNC43NjQ2IDExLjg0MzIgMTQuNzE1MyAxMi4zNjEyIDE1LjE3MjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K");
+    }
+    /* vi-scrollbar-list */
+    .vi-scrollbar-list{
+      position: fixed;
+      z-index: 2;
+      right: 26px;
+      top: 219px;
+    }
+    /* vi-scrollbar-ball */
+    .vi-scrillbar-ball{
+      background: #d9d9d9;
+      position: fixed;
+      width: 34px;
+      height: 34px;
+      border-radius: 100%;
+      top: 219px;
+      right: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* vi-avatar-nickname-account-card-slider 增加 */
+    .vi-avatar-nickname-account-card-slider{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 12px;
+      border-radius: 6px;
+      min-width: 50px;
+      width: 10%;
+      margin-left: 8px;
+    }
+    .vi-avatar-nickname-account-card-slider.delete{
+      background: #ff5441;
+    }
+    .vi-avatar-nickname-account-card-slider.edit{
+      background: #009891;
+    }
+    .vi-avatar-nickname-account-card-slider.disable{
+      background: #acacac;
+    }
+    .vi-avatar-nickname-account-card-slider.pin{
+      background: #009891;
+      margin-left: 0;
+      margin-right: 8px;
+    }
+    .vi-avatar-nickname-account-card-pin{
+      width: 18px;
+      height: 18px;
+      background: #DDB140;
+      border: 1px solid #F5F5F5;
+      border-radius: 100%;
+      position: absolute;
+      right: -3px;
+      bottom: -4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* popover */
+    .vi-popover.vi-popover-xs{
+      width: 150px;
+    }
+    .vi-popover.left{
+      left: 10px;
+      top: -50px;
+    }
+    .vi-popover.left > .arrow {
+      top: 122%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-left: -4px;
+      border-width: 6px;
+      border-top-color: rgba(0, 0, 0, 0.6);
+      border-left-color: transparent;
+    }
+    .vi-popover.left > .arrow:after {
+      border-left-color: transparent;
+    }
+    .vi-popover.right{
+      left: auto;
+      right: 0;
+      top: -50px; 
+    }
+    .vi-popover.right > .arrow {
+      left: auto;
+      top: 122%;
+      right: 50%;
+      margin-left: -4px;
+      border-width: 6px;
+      border-top-color: rgba(0, 0, 0, 0.6);
+      border-right-color: transparent;
+    }
+    .vi-popover.right > .arrow:after {
+      border-right-color: transparent;
+    }
+    /* */
+    .close-pointer{
+      pointer-events: none;
+    }
+    /* vi-input-multiple-group */
+    .vi-input-multiple-group{
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      /* border: 1px solid #DAE1E5; */
+    }
+    .vi-input-multiple-group .vi-input-group:focus-within{
+      border: none;
+    }
+    .vi-input-multiple-group .vi-form-group{
+      margin: 0;
+    }
+    .vi-input-multiple-group .vi-input-group{
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid #DAE1E5;
+      border-left: 1px solid #DAE1E5;
+      border-right: 1px solid #DAE1E5;
+      box-sizing: border-box;
+    }
+    .vi-input-multiple-group .vi-input-group:last-child{
+      border-radius: 0 0 6px 6px;
+    }
+    .vi-input-multiple-group .vi-input-group:first-child{
+      border-radius: 6px 6px 0 0;
+      border-top: 1px solid #DAE1E5;
+    }
+
+    .vi-input-multiple-group .vi-input-group:focus-within{
+      border: 1px solid #009891;
+    }
+
+    /* .vi-input-multiple-group .vi-input-group:last-child:focus-within{
+      border: 1px solid #009891;
+    }
+    .vi-input-multiple-group .vi-input-group:first-child:focus-within{
+      border: 1px solid #009891;
+    } */
+    
+    /* 
+    .vi-input-multiple-group .vi-input-group:not(.hide):first-child:focus-within,
+    .vi-input-multiple-group:first-child:focus-within .vi-input-group:not(.hide) > input:not(:first-child)
+    {
+      border-color: blue;
+      border-radius: 6px 6px 0 0;
+    } 
+    .vi-input-multiple-group .vi-input-group:not(.hide):last-child:focus-within > input,
+    .vi-input-multiple-group:focus-within > .vi-input-group:not(.hide):last-child  {
+      border-color: green;
+      border-radius: 6px;
+    } */
+    /* .vi-input-multiple-group .vi-input-group:not(.hide):focus-within,
+    .vi-input-multiple-group:focus-within .vi-input-group:not(.hide) > input
+    {
+      border-color: red;
+      border-radius: 6px;
+    } */
+
+    /* vi-float-list */
+    .vi-float-list{
+      position: absolute;
+      bottom: -275px;
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #E3E3E3;
+      width: 100%;
+      height: 270px;
+      overflow-y: scroll;
+      z-index: 1;
+      opacity: 1;
+      transform: 0;
+      transition: .5s;
+    }
+    .vi-float-list-hide{
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: .5s;
+    }
+    .vi-float-list .vi-float-list-wrap{
+      background: #000;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+    }
+    .vi-float-list .vi-avatar-nickname-account-card{
+      background: #ffffff;
+      border: none;
+      padding: 0;
+    }
+    .vi-float-list  .avatar-nickname{
+      width: 40px;
+      height: 40px;
+      background: #F5F5F5;
+      border: none;
+    }
+  </style>
+</head>
+<!-- 以上供 dev 快速瀏覽樣式，開發時請拉掉 -->
+
+
+<!-- if scroll, add .vi-page-header-fix -->
+<body class="vi-bg-mint">
+  
+  <div class="toast" id="toast-delete">
+    <span>已成功刪除</span>
+  </div>
+  <div class="toast" id="toast-edit">
+    <span>已儲存編輯</span>
+  </div>
+  <!-- demo 用 header 開發時請拉掉 -->
+  <!-- import { HeaderComponent } from 'app/mb/header/header.component' -->
+  <!-- search <ng-template #headerLinks> -->
+  <header class="">
+    <div class="container-header vi-page-header-normal">
+      <div class="vi-page-header-lt">
+        <button class="vi-btn" ontouchstart="">
+          <span class="vi-icon vi-icon-base icon-page-back"></span>
+        </button>
+      </div>
+      <div class="vi-page-header-ct">
+        <h1 class="vi-page-title">臺幣轉帳</h1>
+      </div>
+      <div class="vi-page-header-rt">
+        <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500" href="">預約記錄</a>
+      </div>
+    </div>
+  </header>
+  <!-- demo 用 header 開發時請拉掉 -->
+
+
+  <!-- EBMW content from here -->
+  <div class="vi-bg-mint">
+    
+    <div class="main_container">
+      
+      <div class="pad_top24">
+        
+        <div class="vi-container">
+          <div class="vi-card">
+            <div class="vi-card-body pad_top16 pad_btm8">
+
+              <!-- 我的帳號 -->
+              <div id="trigger-select-account" class="vi-form-group vi-for-select mt0 mb0">
+                <!-- 只有一個帳號時加入 disabled -->
+                <div class="vi-input-group">
+                  <span class="title large-title">我的帳號</span>
+                    <input placeholder="請選擇帳號" type="text" readonly="readonly"> 
+                  <div class="fake-input flex-column hide">
+                    <div class="dis-flex mb4">
+                      <span class="vi-txt-body-bold vi-txt-b600">活期存款</span>
+                    </div>
+                    <div class="dis-flex vi-txt-body">0000251300001234</div>
+                  </div>
+                </div>
+                 <!--<div class="vi-form-error">dowe</div>--> 
+              </div>
+
+              <!-- 銀行代碼 & 常用帳號 -->
+              <div class="mt16 mb8 rt">
+                <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500" id="target-bankcode">銀行代碼</a>
+                <span class="vi-dashed-divider-vertical ml12 mr16"></span>
+                <a class="btn vi-txt-btn vi-txt-body-bold vi-txt-g500">常用帳號</a>
+              </div>
+
+              <!-- 對方帳號 -->
+              <div class="vi-input-group" id="otherAcc">
+                <span class="title large-title">對方帳號</span>
+                <input type="text" placeholder="銀行代碼\帳號\暱稱" maxlength="12">
+                <a class="vi-icon vi-icon-base icon-input-delete hide"></a>
+                <span class="vi-icon vi-icon-base vi-icon-scan-g"></span>
+              </div>
+
+              <!-- vi-input-multiple-group -->
+              <div class="vi-input-multiple-group hide" id="showBankCode">
+                <div class="vi-form-group vi-for-select">
+                  <div class="vi-input-group">
+                    <span class="title large-title">銀行代碼</span>
+                      <input type="text" readonly="readonly" value="822 中國信託"> 
+                  </div>
+                </div>
+                <div class="vi-input-group">
+                  <span class="title large-title">對方帳號</span>
+                  <input type="text" placeholder="銀行代碼\帳號\暱稱">
+                  <a class="vi-icon vi-icon-base icon-input-delete hide"></a>
+                </div>
+                <div class="vi-input-group">
+                  <span class="title large-title">對方帳號</span>
+                  <input type="text" placeholder="銀行代碼\帳號\暱稱">
+                  <a class="vi-icon vi-icon-base icon-input-delete hide"></a>
+                </div>
+              </div>
+
+              <!-- vi-input-multiple-group -->
+              <div class="vi-input-multiple-group hide" id="showInputValue">
+                <div class="vi-form-group vi-for-select">
+                  <div class="vi-input-group">
+                    <span class="title large-title">銀行代碼</span>
+                      <input type="text" readonly="readonly" placeholder="請選擇銀行代碼"> 
+                  </div>
+                </div>
+                <div class="vi-input-group">
+                  <span class="title large-title">對方帳號</span>
+                  <input type="text" placeholder="銀行代碼\帳號\暱稱" maxlength="12">
+                  <a class="vi-icon vi-icon-base icon-input-delete hide"></a>
+                </div>
+              </div>
+
+              <div class="position-relative">
+                <ul class="vi-float-list vi-float-list-hide pad_16">
+                  <div id="float-list-change1">
+                    <li class="d-flex align-center">
+                      <span class="vi-icon vi-icon-xs vi-icon-recent d-flex align-self-center mr12"></span>
+                      <div class="d-flex flex-column">
+                        <div class="d-flex"><p class="vi-txt-b600 vi-txt-body-bold">❤️房東太太</p><span class="vi-txt-b500 vi-txt-callout">（常用）</span></div>
+                        <p class="vi-txt-b600 vi-txt-callout">808-002912001234591823</p>
+                      </div>
+                    </li>
+                    <li class="d-flex align-center mt16">
+                      <span class="vi-icon vi-icon-xs vi-icon-recent d-flex align-self-center mr12"></span>
+                      <div class="d-flex flex-column">
+                        <div class="d-flex"><p class="vi-txt-b600 vi-txt-body-bold">花旗(台灣)商業銀行</p></div>
+                        <p class="vi-txt-b600 vi-txt-callout">021-002912001234539432</p>
+                      </div>
+                    </li>
+                    <li class="d-flex align-center mt16">
+                      <span class="vi-icon vi-icon-xs vi-icon-recent d-flex align-self-center mr12"></span>
+                      <div class="d-flex flex-column">
+                        <div class="d-flex"><p class="vi-txt-b600 vi-txt-body-bold">我的活期帳戶</p><span class="vi-txt-b500 vi-txt-callout">（本人）</span></div>
+                        <p class="vi-txt-b600 vi-txt-callout">808-002912001234539923</p>
+                      </div>
+                    </li>
+                    <li class="d-flex align-center mt16">
+                      <span class="vi-icon vi-icon-xs vi-icon-recent d-flex align-self-center mr12"></span>
+                      <div class="d-flex flex-column">
+                        <div class="d-flex"><p class="vi-txt-b600 vi-txt-body-bold">國泰世華銀行</p></div>
+                        <p class="vi-txt-b600 vi-txt-callout">013-002912001234501345</p>
+                      </div>
+                    </li>
+                    <li class="d-flex align-center mt16">
+                      <span class="vi-icon vi-icon-xs vi-icon-recent d-flex align-self-center mr12"></span>
+                      <div class="d-flex flex-column">
+                        <div class="d-flex"><p class="vi-txt-b600 vi-txt-body-bold">國泰世華銀行</p></div>
+                        <p class="vi-txt-b600 vi-txt-callout">013-002912001234501345</p>
+                      </div>
+                    </li>
+                  </div>
+                  <div class="hide" id="float-list-change2">
+                    <li class="vi-txt-b500 vi-txt-callout">銀行代號</li>
+                    <li class="d-flex align-center mt8">
+                      <span class="vi-icon vi-icon-xs vi-icon-right-top d-flex align-self-center mr12"></span>
+                      <p class="vi-txt-b600 vi-txt-callout vi-txt-body-bold">822 中國信託</p>
+                    </li>
+                    <li class="d-flex align-center mt16">
+                      <span class="vi-icon vi-icon-xs vi-icon-right-top d-flex align-self-center mr12"></span>
+                      <p class="vi-txt-b600 vi-txt-callout vi-txt-body-bold">808 玉山銀行</p>
+                    </li>
+                    <li class="d-flex align-center mt16">
+                      <span class="vi-icon vi-icon-xs vi-icon-right-top d-flex align-self-center mr12"></span>
+                      <p class="vi-txt-b600 vi-txt-callout vi-txt-body-bold">008 華南銀行</p>
+                    </li>
+                    <li class="d-flex align-center mt16">
+                      <span class="vi-icon vi-icon-xs vi-icon-right-top d-flex align-self-center mr12"></span>
+                      <p class="vi-txt-b600 vi-txt-callout vi-txt-body-bold">018 農業金庫</p>
+                    </li>
+                    <li class="d-flex align-center mt16">
+                      <span class="vi-icon vi-icon-xs vi-icon-right-top d-flex align-self-center mr12"></span>
+                      <p class="vi-txt-b600 vi-txt-callout vi-txt-body-bold">048 王道商業銀行</p>
+                    </li>
+                    <li class="d-flex align-center mt16">
+                      <span class="vi-icon vi-icon-xs vi-icon-right-top d-flex align-self-center mr12"></span>
+                      <p class="vi-txt-b600 vi-txt-callout vi-txt-body-bold">081 匯豐(台灣) 銀行</p>
+                    </li>
+                    <li class="vi-dashed-divider"></li>
+                    <li class="vi-txt-b500 vi-txt-callout">約定/常用帳號</li>
+                    <li>
+                      <div class="vi-avatar-nickname-account-card mt8">
+                        <div class="avatar-nickname position-relative">
+                          <div class="vi-txt-body-bold vi-txt-b500 nickname">我</div>
+                        </div>
+                        <div class="name-account">
+                          <p class="vi-txt-callout  vi-txt-body-bold vi-txt-b600">我的活期帳戶</p>
+                          <span class="vi-txt-callout vi-txt-b600">822-1234234534562256</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="vi-avatar-nickname-account-card mt16">
+                        <div class="avatar-nickname position-relative">
+                          <div class="vi-txt-body-bold vi-txt-b500 nickname">🌝</div>
+                        </div>
+                        <div class="name-account">
+                          <p class="vi-txt-callout  vi-txt-body-bold vi-txt-b600">🌝我的活期帳戶</p>
+                          <span class="vi-txt-callout vi-txt-b600">822-1234234534562256</span>
+                        </div>
+                      </div>
+                    </li>
+                  </div>
+                </ul>
+              </div>
+
+              <!-- 金額 -->
+              <div class="vi-input-group mt16">
+                <span class="title large-title">金額</span>
+                <input type="text" placeholder="請輸入">
+                <a class="vi-icon vi-icon-base icon-input-delete hide"></a>
+              </div>
+              <div class="dis-flex mt8 hide" id="money">
+                <div class="ml-auto vi-txt-b500 vi-txt-callout">金額 3,390</div> 
+              </div>
+
+              <!-- 分隔線 -->
+              <div class="vi-dashed-divider"></div>
+
+              <!-- 分頁按鈕(radio btn)  -->
+              <div class="vi-tab-group mb8">
+                <label class="vi-radio">
+                  <input type="radio" name="tab" value="tabRightNow" checked>
+                  <span class="vi-radio-mark"></span>
+                  <span class="vi-radio-txt">立即</span>
+                </label>
+                <label class="vi-radio">
+                  <input type="radio" name="tab" value="tabReserve">
+                  <span class="vi-radio-mark"></span>
+                  <span class="vi-radio-txt">預約</span>
+                </label>
+              </div>
+              
+              <!-- 註記 --> 
+              <div class="vi-form-group">
+                <div class="vi-input-group">
+                  <span class="title large-title">註記</span>
+                  <input placeholder="非必填" type="text">
+                </div>
+
+                <!-- 勾選 -->
+                <div class="dis-flex align-center mt8">
+                  <label class="vi-checkbox">
+                    <input type="checkbox">
+                    <span class="vi-checkbox-mark"></span>
+                    <span class="vi-checkbox-txt">顯示於雙方明細</span>
+                  </label>
+                  <div class="vi-form-info ml-auto pad_0">0/7</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 下一步 -->
+          <div class="vi-btn-group mt24 mb16">
+            <a class="btn insight vi-btn vi-btn-primary" href="#">下一步</a>
+          </div>
+
+          <!-- 提示文字 -->
+          <div class="vi-txt-body ct">
+            不需填寫帳號也能轉帳！試試<a class="vi-txt-body-bold vi-txt-g500 ml5" href="#">方便轉</a>
+          </div>
+          
+        </div>
+          
+        <div class="vi-container mt16">
+
+          <!-- 注意事項 -->
+          <div class="mb32">
+            <div class="vi-note-accordion">
+              <div class="vi-card-header flex-justify-between collapsed" data-toggle="collapse" href="#collapseNote" role="button" aria-expanded="false">
+                <div class="forAEM base-style break-word mr4">
+                  注意事項
+                </div>
+                <span class="vi-icon vi-icon-xs icon-arrow-up-green"></span>
+              </div>
+              <div class="panel-collapse collapse" id="collapseNote" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                <div class="vi-card-body forAEM base-style break-word">
+                  <ol class="vi-list-ol pad_0">
+                    <li>填寫註記時勾選「顯示於雙方明細」，內容將會同步顯示於對方交易明細，但若對方銀行非中國信託，則顯示內容依對方銀行規定為準。</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="trigger-exit" class="vi-txt-g500 mb16">-&gt; 離開資料確認頁</div>
+          <div id="target-empty-demo" class="vi-txt-g500 mb16">-&gt; 銀行代碼找不到資料</div>
+          <div id="tips-demo-click" class="vi-txt-g500 mb16">-&gt; 第一次進入觸發提示</div>
+          <div id="disable-demo-click" class="vi-txt-g500 mb16">-&gt; disable 編輯視窗</div>
+          <div id="float-click" class="vi-txt-g500 mb16">-&gt; 更換 float list 選項</div>
+        </div>
+      </div>   
+    </div>
+  </div>
+  <!-- main_container -->
+</body>
+<!-- body-wrap -->
+
+</html>
+
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="trigger-exit-modal" class="vi-modal">
+  <div class="vi-modal-backdrop"></div>
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-header-ct">
+        <span class="popup-title">是否要離開此頁</span>
+      </div>
+    </div>
+    <div class="popup-body">
+      <div class="vi-txt-body vi-txt-b600">離開此頁資料會清除，是否確認要前往方便轉功能？</div>
+    </div>
+    <div class="popup-footer">
+      <div class="vi-btn-group">
+        <button class="vi-btn vi-btn-secondary">回轉帳頁</button>
+        <button class="vi-btn vi-btn-primary">前往方便轉</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-account-supercard" class="vi-modal hide">
+  <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">選擇扣款帳號</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+      <div class="super-card-body">
+        <div class="rt vi-txt-body mb4">可用餘額</div>
+        <ul class="vi-list vi-list-px8 vi-list-py8 vi-list-noline vi-list-bg-gray super-card-select-account">
+          <!-- 需綠底加上 active -->
+          <a class="vi-list-item" href="">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="dis-flex align-items-center mb8">
+                  <span class="vi-txt-body-bold vi-txt-b600">活期存款</span>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold"></div>
+              </div>
+            </div>
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body">0000251300001234</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold">
+                  <!-- <span class="currency mr4">USD</span> -->
+                  <span>6,253</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="vi-list-item" href="">
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="dis-flex align-items-center mb8">
+                  <span class="vi-txt-body-bold vi-txt-b600">My Way 數位</span>
+                </div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold"></div>
+              </div>
+            </div>
+            <div class="dis-flex flex-justify-between w-100">
+              <div class="vi-list-lt">
+                <div class="vi-txt-body">0000498827784920</div>
+              </div>
+              <div class="vi-list-rt">
+                <div class="vi-txt-body-bold">
+                  <span>100,000,000</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </ul>
+      </div>
+    </div>
+</div>
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-bankcode-supercard" class="vi-modal hide">
+  <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card ht_100per">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">選擇對象</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+      <div class="super-card-body">
+        <div class="ml-16 mr-16">
+          <!-- 現有版型, 但這裡預設要有 fixed, 請開發再確認是否做的到 -->
+          <div class="nav-scroll fixed-top fixed-position-tab-nav-supercard">
+            <ul class="vi-tab js_anchor_tab">
+              <li class="vi-tab-item active">
+                <a class="vi-tab-link" href="#tab1-1" data-toggle="tab">
+                  <span>銀行代碼</span>
+                </a>
+              </li>
+              <li class="vi-tab-item">
+                <a class="vi-tab-link" href="#tab1-2" data-toggle="tab">
+                  <span>約定/常用</span>
+                </a>
+              </li>
+              <li class="vi-tab-item">
+                <a class="vi-tab-link" href="#tab1-3" data-toggle="tab">
+                  <span>最近轉帳</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-content pad_top24 pad_btm12 fixed-position-tab-content-supercard">
+            <!-- [分頁]銀行代碼 -->
+            <div class="tab-pane active">
+              <div class="ml16 mr16">
+                <!-- 找不到資料的小B -->
+                <div id="target-empty" class="vi-empty hide">
+                  <div class="vi-empty vi-empty-mint vi-search-nodata">
+                    <span></span>
+                    <div class="vi-txt-body vi-txt-b600">找不到帳號喔～</div>
+                  </div>
+                </div>
+                <!-- vi-scrollbar-list 固定-->
+                <ul class="vi-scrollbar-list ct"> 
+                  <li class="vi-txt-b400 vi-txt-callout">熱</li>
+                  <li class="vi-txt-b400 vi-txt-callout pady_4">0</li>
+                  <li class="vi-txt-b400 vi-txt-callout pady_4">1</li>
+                  <li class="vi-txt-b400 vi-txt-callout pady_4">2</li>
+                  <li class="vi-txt-b400 vi-txt-callout pady_4">3</li>
+                  <li class="vi-txt-b400 vi-txt-callout pady_4">4</li>
+                  <li class="vi-txt-b400 vi-txt-callout pady_4">5</li>
+                  <li class="vi-txt-b400 vi-txt-callout pady_4">6</li>
+                  <li class="vi-txt-b400 vi-txt-callout pady_4">7</li>
+                  <li class="vi-txt-b400 vi-txt-callout pady_4">8</li>
+                  <li class="vi-txt-b400 vi-txt-callout pady_4">9</li>
+                </ul>
+                <div class="vi-scrillbar-ball hide">
+                  <p class="vi-txt-callout vi-txt-white"></p>
+                </div>
+                <div id="target-plane">
+                  <!-- 輸入銀行名稱或代碼 -->
+                  <div class="vi-input-group">
+                    <span class="vi-icon vi-icon-base vi-icon-search mr20"></span>
+                    <input type="text" placeholder="輸入銀行名稱或代碼數字">
+                    <a class="vi-icon vi-icon-base icon-input-delete hide"></a>
+                  </div>
+                  <!-- vi-scrollbar-block -->
+                  <div class="mt24">
+                    <div class="vi-scrollbar-block" data-scroll="熱門">
+                      <li class="vi-txt-b500 vi-txt-callout mb12">熱門</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">822 中國信託</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">822 中國信託</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">822 中國信託</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">822 中國信託</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">822 中國信託</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">822 中國信託</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">822 中國信託</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">822 中國信託</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">822 中國信託</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">822 中國信託</li>
+                    </div>
+                    <div class="vi-scrollbar-block" data-scroll="全部">
+                      <li class="vi-txt-b500 vi-txt-callout mb12">全部</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">004 臺灣銀行</li> 
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">005 土地銀行</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">006 合作金庫</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">007 第一銀行</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">008 華南銀行</li>
+                    </div>
+                    <div class="vi-scrollbar-block" data-scroll="1">
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">104 臺灣銀行</li> 
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">105 土地銀行</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">106 合作金庫</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">107 第一銀行</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">108 華南銀行</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">104 臺灣銀行</li> 
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">105 土地銀行</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">106 合作金庫</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">107 第一銀行</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">108 華南銀行</li>
+                    </div>
+                    <div class="vi-scrollbar-block" data-scroll="2">
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">204 臺灣銀行</li> 
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">205 土地銀行</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">206 合作金庫</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">207 第一銀行</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">208 華南銀行</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">204 臺灣銀行</li> 
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">205 土地銀行</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">206 合作金庫</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">207 第一銀行</li>
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">208 華南銀行</li>
+                    </div>
+                    <div class="vi-scrollbar-block" data-scroll="3">
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">300 臺灣銀行</li> 
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">300 土地銀行</li>
+                    </div>
+                    <div class="vi-scrollbar-block" data-scroll="4">
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">400 臺灣銀行</li> 
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">400 土地銀行</li>
+                    </div>
+                    <div class="vi-scrollbar-block" data-scroll="5">
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">500 臺灣銀行</li> 
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">500 土地銀行</li>
+                    </div>
+                    <div class="vi-scrollbar-block" data-scroll="6">
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">600 臺灣銀行</li> 
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">600 土地銀行</li>
+                    </div>
+                    <div class="vi-scrollbar-block" data-scroll="7">
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">700 臺灣銀行</li> 
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">700 土地銀行</li>
+                    </div>
+                    <div class="vi-scrollbar-block" data-scroll="8">
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">800 臺灣銀行</li> 
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">800 土地銀行</li>
+                    </div>
+                    <div class="vi-scrollbar-block" data-scroll="9">
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">900 臺灣銀行</li> 
+                      <li class="vi-txt-g500 vi-txt-body-bold mb24">900 土地銀行</li>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- [分頁]約定/常用 -->
+            <div class="tab-pane">
+              <div class="ml16 mr16">
+                <!-- 輸入關鍵字搜尋 -->
+                <div class="vi-input-group" id="keyword-input">
+                  <span class="vi-icon vi-icon-base vi-icon-search mr20"></span>
+                  <input type="text" placeholder="輸入關鍵字搜尋">
+                  <a class="vi-icon vi-icon-base icon-input-delete hide"></a>
+                </div>
+                <div class="dis-flex" id="target-card">
+                  <div class="ml-auto vi-txt-g500 vi-txt-body-bold mt12">編輯</div>
+                </div>
+                <!-- vi-avatar-nickname -->
+                <div class="vi-avatar-nickname-account-card-wrap mt8">
+                  <div class="dis-flex position-relative">
+                      <!-- 用戶第一次使用提示 -->
+                      <!-- id 是 demo 用的，開發請拉掉 上一層需樣加上 position-relative class 屬性-->
+                      <div id="tips-demo" class="hide">
+                        <!-- popover 右滑提示-->
+                        <div class="popover vi-popover vi-popover-xs left has-close" style="display: block;">
+                          <div class="arrow"></div>
+                          <div class="vi-popover-body">
+                            <div class="vi-txt-footnote vi-txt-white">往右👉滑動牌卡，可以置頂此帳號</div>
+                          </div>
+                        </div>
+                        <!-- popover 左滑提示-->
+                        <div class="popover vi-popover vi-popover-xs right has-close" style="display: block;">
+                          <div class="arrow"></div>
+                          <div class="vi-popover-body">
+                            <div class="vi-txt-footnote vi-txt-white">往左👈滑動牌卡，可以編輯和刪除常用</div>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="vi-avatar-nickname-account-card-slider pin hide">
+                      <span class="vi-icon vi-icon-base vi-icon-pin-w"></span>
+                    </div>
+                    <div class="vi-avatar-nickname-account-card overflow-list wid_100per">
+                      <div class="avatar-nickname position-relative">
+                        <div class="vi-txt-body-bold vi-txt-b500 nickname">我</div>
+                        <div class="vi-avatar-nickname-account-card-pin hide">
+                          <span class="vi-icon vi-icon-xxs vi-icon-pin-w"></span>
+                        </div>
+                      </div>
+                      <div class="name-account vi-txt-ellipsis">
+                        <div class="mb4 name vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                          <span class="vi-txt-body-bold vi-txt-b900">我的活期帳戶</span>
+                        </div>
+                        <div class="account vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                          <span class="vi-txt-callout vi-txt-b500">822-1234234534562256</span>
+                        </div>
+                        <div class="account vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                          <span class="vi-txt-callout vi-txt-b500">中國信託 (本人)</span>
+                        </div>
+                      </div>
+                      <div class="ml-auto">
+                        <div class="vi-tag-group">
+                          <div class="vi-tag vi-tag-b200">
+                            <div class="vi-txt">約定</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vi-avatar-nickname-account-card-slider edit hide">
+                      <p class="vi-txt-white vi-txt-body-bold">編輯</p>
+                    </div>
+                    <div class="vi-avatar-nickname-account-card-slider delete hide">
+                      <p class="vi-txt-white vi-txt-body-bold">刪除</p>
+                    </div>
+                  </div>
+                  <div class="dis-flex">
+                    <div class="vi-avatar-nickname-account-card-slider pin hide">
+                      <span class="vi-icon vi-icon-base vi-icon-pin-w"></span>
+                    </div>
+                    <div class="vi-avatar-nickname-account-card overflow-list wid_100per">
+                      <div class="avatar-nickname position-relative">
+                        <div class="vi-txt-body-bold vi-txt-b500 nickname">我</div>
+                        <div class="vi-avatar-nickname-account-card-pin hide">
+                          <span class="vi-icon vi-icon-xxs vi-icon-pin-w"></span>
+                        </div>
+                      </div>
+                      <div class="name-account vi-txt-ellipsis">
+                        <div class="mb4 name vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                          <span class="vi-txt-body-bold vi-txt-b900">我的活期帳戶2</span>
+                        </div>
+                        <div class="account vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                          <span class="vi-txt-callout vi-txt-b500">822-1234234534562256</span>
+                        </div>
+                        <div class="account vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                          <span class="vi-txt-callout vi-txt-b500">中國信託 (本人)</span>
+                        </div>
+                      </div>
+                      <div class="ml-auto">
+                        <div class="vi-tag-group">
+                          <div class="vi-tag vi-tag-b200">
+                            <div class="vi-txt">約定</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vi-avatar-nickname-account-card-slider edit hide">
+                      <p class="vi-txt-white vi-txt-body-bold">編輯</p>
+                    </div>
+                    <div class="vi-avatar-nickname-account-card-slider delete hide">
+                      <p class="vi-txt-white vi-txt-body-bold">刪除</p>
+                    </div>
+                  </div>
+                  <div class="dis-flex">
+                    <div class="vi-avatar-nickname-account-card-slider pin hide">
+                      <span class="vi-icon vi-icon-base vi-icon-pin-w"></span>
+                    </div>
+                    <div class="vi-avatar-nickname-account-card overflow-list wid_100per">
+                      <div class="avatar-nickname position-relative">
+                        <div class="vi-txt-body-bold vi-txt-b500 nickname">我</div>
+                        <div class="vi-avatar-nickname-account-card-pin hide">
+                          <span class="vi-icon vi-icon-xxs vi-icon-pin-w"></span>
+                        </div>
+                      </div>
+                      <div class="name-account vi-txt-ellipsis">
+                        <div class="mb4 name vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                          <span class="vi-txt-body-bold vi-txt-b900">我的活期帳戶3</span>
+                        </div>
+                        <div class="account vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                          <span class="vi-txt-callout vi-txt-b500">822-1234234534562256</span>
+                        </div>
+                        <div class="account vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                          <span class="vi-txt-callout vi-txt-b500">中國信託 (本人)</span>
+                        </div>
+                      </div>
+                      <div class="ml-auto">
+                        <div class="vi-tag-group">
+                          <div class="vi-tag vi-tag-b200">
+                            <div class="vi-txt">約定</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vi-avatar-nickname-account-card-slider edit hide">
+                      <p class="vi-txt-white vi-txt-body-bold">編輯</p>
+                    </div>
+                    <div class="vi-avatar-nickname-account-card-slider delete hide">
+                      <p class="vi-txt-white vi-txt-body-bold">刪除</p>
+                    </div>
+                  </div>
+                  <div class="dis-flex">
+                    <div class="vi-avatar-nickname-account-card-slider pin hide">
+                      <span class="vi-icon vi-icon-base vi-icon-pin-w"></span>
+                    </div>
+                    <div class="vi-avatar-nickname-account-card overflow-list wid_100per">
+                      <div class="avatar-nickname position-relative">
+                        <div class="vi-txt-body-bold vi-txt-b500 nickname">我</div>
+                        <div class="vi-avatar-nickname-account-card-pin hide">
+                          <span class="vi-icon vi-icon-xxs vi-icon-pin-w"></span>
+                        </div>
+                      </div>
+                      <div class="name-account vi-txt-ellipsis">
+                        <div class="mb4 name vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                          <span class="vi-txt-body-bold vi-txt-b900">我的活期帳戶4</span>
+                        </div>
+                        <div class="account vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                          <span class="vi-txt-callout vi-txt-b500">822-1234234534562256</span>
+                        </div>
+                        <div class="account vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                          <span class="vi-txt-callout vi-txt-b500">中國信託 (本人)</span>
+                        </div>
+                      </div>
+                      <div class="ml-auto">
+                        <div class="vi-tag-group">
+                          <div class="vi-tag vi-tag-b200">
+                            <div class="vi-txt">約定</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vi-avatar-nickname-account-card-slider edit hide">
+                      <p class="vi-txt-white vi-txt-body-bold">編輯</p>
+                    </div>
+                    <div class="vi-avatar-nickname-account-card-slider delete hide">
+                      <p class="vi-txt-white vi-txt-body-bold">刪除</p>
+                    </div>
+                  </div> 
+                  <div class="dis-flex">
+                    <div class="vi-avatar-nickname-account-card-slider pin hide">
+                      <span class="vi-icon vi-icon-base vi-icon-pin-w"></span>
+                    </div>
+                    <div class="vi-avatar-nickname-account-card overflow-list wid_100per">
+                      <div class="avatar-nickname position-relative">
+                        <div class="vi-txt-body-bold vi-txt-b500 nickname">我</div>
+                        <div class="vi-avatar-nickname-account-card-pin hide">
+                          <span class="vi-icon vi-icon-xxs vi-icon-pin-w"></span>
+                        </div>
+                      </div>
+                      <div class="name-account vi-txt-ellipsis">
+                        <div class="mb4 name vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                          <span class="vi-txt-body-bold vi-txt-b900">我的活期帳戶5</span>
+                        </div>
+                        <div class="account vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                          <span class="vi-txt-callout vi-txt-b500">822-1234234534562256</span>
+                        </div>
+                        <div class="account vi-txt-ellipsis vi-txt-ellipsis-1-line">
+                          <span class="vi-txt-callout vi-txt-b500">中國信託 (本人)</span>
+                        </div>
+                      </div>
+                      <div class="ml-auto">
+                        <div class="vi-tag-group">
+                          <div class="vi-tag vi-tag-b200">
+                            <div class="vi-txt">約定</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vi-avatar-nickname-account-card-slider edit hide">
+                      <p class="vi-txt-white vi-txt-body-bold">編輯</p>
+                    </div>
+                    <div class="vi-avatar-nickname-account-card-slider disable hide">
+                      <p class="vi-txt-white vi-txt-body-bold">刪除</p>
+                    </div>
+                  </div>  
+                </div>
+              </div> 
+            </div>
+            <!-- [分頁]最近轉帳 -->
+            <div class="tab-pane">
+                <p>3</p>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- 超人卡片 現有版型 這裡僅示意 -->
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="target-edit-supercard" class="vi-modal hide">
+  <div class="vi-modal-backdrop" data-dismiss="modal"></div>
+    <div class="super-card">
+      <div class="super-card-header">
+        <div class="super-card-header-lt"></div>
+        <div class="super-card-header-ct">
+          <div class="super-card-title">編輯帳號</div>
+        </div>
+        <div class="super-card-header-rt">
+          <button class="vi-modal-close" data-dismiss="modal"></button>
+        </div>
+      </div>
+      <div class="super-card-body">
+        <!-- 暱稱 -->
+        <div class="vi-input-group">
+          <span class="title large-title">暱稱</span>
+          <input type="text" value="🖨 廠商帳號" readonly>
+        </div>
+        <div class="dis-flex align-center mt8">
+          <div class="vi-form-info ml-auto pad_0">5/15</div>
+        </div>
+        <!-- vi-input-multiple-group -->
+        <div class="vi-input-multiple-group mt12">
+          <div class="vi-form-group vi-for-select">
+            <!-- 需要關閉時加上 disabled -->
+            <div class="vi-input-group">
+              <span class="title large-title">銀行代碼</span>
+                <input type="text" readonly="readonly" value="808 玉山銀行"> 
+            </div>
+          </div>
+          <!-- 需要關閉時加上 disabled -->
+          <div class="vi-input-group">
+            <span class="title large-title">暱稱</span>
+            <input type="text" value="🖨 廠商帳號" readonly="readonly">
+          </div>
+        </div>
+        <div class="dis-flex mt8">
+          <div class="vi-txt-callout vi-txt-b500 ml-auto hide" id="edit-txt-disable">此為約定帳號，若需刪除請至臨櫃辦理</div>
+        </div>
+        <!-- 按扭 -->
+        <div class="vi-btn-group mt24 mb24">
+          <button class="vi-btn vi-btn-secondary">取消</button>
+          <button class="vi-btn vi-btn-primary" id="edit-card">確定</button> 
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- id 是 demo 用的，開發請拉掉 -->
+<div id="delete-demo" class="vi-modal">
+  <div class="vi-modal-backdrop"></div>
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-header-ct">
+        <span class="popup-title">刪除常用帳號</span>
+      </div>
+    </div>
+    <div class="popup-body">
+      <div class="vi-txt-body vi-txt-b600">確定要刪除此常用帳號嗎？</div>
+    </div>
+    <div class="popup-footer">
+      <div class="vi-btn-group">
+        <button class="vi-btn vi-btn-secondary">取消</button>
+        <button class="vi-btn vi-btn-primary" id="delete-card">刪除</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- js event demo code, 開發請拉掉 -->
+<script>
+//變更下拉選項
+document.getElementById('float-click').addEventListener('click',()=>{
+  document.getElementById('float-list-change1').classList.add('hide');
+  document.getElementById('float-list-change2').classList.remove('hide');
+})
+
+// 點擊對方帳號
+const otherAccInput = document.getElementById('otherAcc');
+otherAccInput.addEventListener('click',(item)=>{
+  // 捲軸移動至對應位置
+  window.scrollTo({
+    top: otherAccInput.offsetTop + 15,
+    behavior: "smooth"
+  });
+})
+otherAccInput.addEventListener('keyup',(e)=>{
+  // 顯示下拉清單
+  document.querySelector('.vi-float-list').classList.remove('vi-float-list-hide');
+  document.querySelector('.vi-icon-scan-g').classList.add('hide');
+  // 掃描 icon 與 叉叉判別
+  if(e.target.value ===''){
+    document.querySelector('.vi-icon-scan-g').classList.remove('hide');
+  }
+  // 輸入銀行代碼數字為 822
+  if(e.target.value ==='822'){
+    console.log('822');
+    otherAccInput.classList.add('hide');
+    document.getElementById('showBankCode').classList.remove('hide');
+    document.querySelector('.vi-float-list').classList.add('vi-float-list-hide');
+    document.getElementById('showBankCode').children[0].children[0].children[1].focus();
+  }
+  // 輸入控制
+  let inputLength = e.target.value.length;
+  let inputValue = e.target.value;
+  console.log(inputLength);
+  if(inputLength === 12 && inputValue !== '000000000000'){
+    console.log('找無帳號');
+    otherAccInput.classList.add('hide');
+    document.getElementById('showInputValue').classList.remove('hide');
+    document.querySelector('.vi-float-list').classList.add('vi-float-list-hide');
+    document.getElementById('showInputValue').children[1].children[1].value = e.target.value;
+    document.getElementById('showInputValue').children[1].children[1].nextElementSibling.classList.remove('hide');
+
+    document.getElementById('showInputValue').children[1].children[1].focus();
+  }else if(inputLength === 12 && inputValue === '000000000000'){
+    console.log('找到了');
+  }
+
+})
+// 點擊清單後關閉本身
+document.querySelector('.vi-float-list').addEventListener('click',function(){
+  this.classList.add('vi-float-list-hide');
+})
+
+// 點擊卡片編輯
+const editBtn = document.getElementById('target-card');
+const superBody = document.querySelector('#target-bankcode-supercard .super-card-body');
+let isDone = false;
+editBtn.addEventListener('click',()=>{
+  superBody.scrollTo({
+    top: editBtn.offsetTop - 50,
+    behavior: "smooth"
+  });
+  document.querySelector('.vi-tab').classList.toggle('hide');
+  document.querySelector('.nav-scroll').classList.toggle('hide');
+  document.querySelector('.tab-content').classList.toggle('fixed-position-tab-content-supercard');
+  document.querySelector('.tab-content').classList.toggle('pad_top24');
+  document.getElementById('keyword-input').classList.toggle('hide');
+  changeEditText();
+  isDone = !isDone;
+  if( isDone === true ){
+    cards.forEach((item)=>{
+      item.nextElementSibling.classList.remove('hide');
+      item.nextElementSibling.nextElementSibling.classList.remove('hide')
+      item.classList.add('close-pointer');
+      console.log(item);
+    })
+  }else if( isDone === false ){
+    cards.forEach((item)=>{
+      item.nextElementSibling.classList.add('hide');
+      item.nextElementSibling.nextElementSibling.classList.add('hide')
+      item.classList.remove('close-pointer');
+    })
+  }
+})
+function changeEditText(){
+  const cards = document.querySelectorAll('.tab-pane .vi-avatar-nickname-account-card');
+  editBtn.children[0].innerText = editBtn.children[0].innerText === '編輯' ? '完成' : '編輯';
+}  
+
+// 卡片滑動
+const cards = document.querySelectorAll('.tab-pane .vi-avatar-nickname-account-card');
+cards.forEach((item)=>{
+  let touchStartX = 0;
+  let touchEndX = 0;
+  item.addEventListener('touchstart', (e) => {
+      // 找觸發起始值
+      touchStartX = e.touches[0].clientX; 
+      // 點擊卡片取消左右滑功能
+      item.nextElementSibling.classList.add('hide');
+      item.nextElementSibling.nextElementSibling.classList.add('hide');
+      item.previousElementSibling.classList.add('hide');
+      item.childNodes[1].classList.remove('hide');
+    });
+  item.addEventListener('touchmove', (e) => {
+    touchEndX = e.touches[0].clientX;
+    if (touchEndX < touchStartX && (touchStartX - touchEndX) > 30 ) {  
+      console.log('向左滑動');
+      item.nextElementSibling.classList.remove('hide');
+      item.nextElementSibling.nextElementSibling.classList.remove('hide')
+      item.childNodes[1].classList.add('hide')
+    } else if (touchEndX > touchStartX && (touchEndX - touchStartX) > 30) {
+      console.log('向右滑動');
+      item.nextElementSibling.classList.add('hide');
+      item.nextElementSibling.nextElementSibling.classList.add('hide');
+      item.previousElementSibling.classList.remove('hide');
+      item.childNodes[1].classList.remove('hide');
+    }
+  });
+})
+
+// 卡片釘選
+const pins = document.querySelectorAll('.pin');
+pins.forEach((item) => {
+  item.addEventListener('touchstart', (e) => {
+    e.preventDefault;
+    const card = item.parentNode;
+    const container = card.parentNode;
+    // 將 .card 移到容器中第一個位置
+    container.insertBefore(card, container.firstChild); 
+    item.firstElementChild.classList.toggle('vi-icon-pin-w');
+    item.firstElementChild.classList.toggle('vi-icon-pin-y');
+    item.nextElementSibling.childNodes[1].children[1].classList.toggle('hide');
+    item.classList.add('hide');
+  })
+})  
+
+// 銀行代碼找不到資料
+document.getElementById('target-empty-demo').addEventListener('click',()=>{
+  document.getElementById('target-empty').classList.remove('hide');
+  document.getElementById('target-plane').classList.add('hide');
+  document.querySelector('.vi-scrollbar-list').classList.add('hide');
+})
+
+// 判斷輸入格內的叉叉
+document.querySelectorAll('.vi-input-group').forEach((item)=>{
+  item.addEventListener('keyup',(e)=>{
+    if(e.target.value ===''){
+      e.target.nextElementSibling.classList.add('hide');
+      document.querySelector('.vi-float-list').classList.add('vi-float-list-hide');
+    }else{
+      e.target.nextElementSibling.classList.remove('hide');
+    }
+  })
+})
+
+// 點選叉叉輸入清空
+document.querySelectorAll('.icon-input-delete').forEach((item)=>{
+  item.addEventListener('click',(e)=>{
+    e.target.previousElementSibling.value = '';
+    e.target.classList.add('hide');
+    document.querySelector('.vi-float-list').classList.add('vi-float-list-hide');
+  })
+})
+
+// scrollbar
+const scrollList = document.querySelector('.vi-scrollbar-list');
+const scrollListLi = document.querySelectorAll('.vi-scrollbar-list li');
+let output = '';
+let lastOutput ='';
+lastBlockIndex = '';
+scrollList.addEventListener('touchmove' , (e) => {
+  e.preventDefault();
+  let blockIndex = -1;
+  let lastItem = null;
+
+  scrollListLi.forEach((item , index)=>{
+    // 抓取各別 top & bottom
+    const rect = item.getBoundingClientRect();
+    if(e.touches[0].clientY > rect.top && e.touches[0].clientY < rect.bottom){
+      if(lastItem !== item){
+        output = item.innerText;
+        blockIndex = index;
+        lastItem = item;
+      }
+    }
+    // 防止觸發跳動
+    if(output !== lastOutput){
+      lastOutput = output;
+    }
+    // 防止連續觸發抓 offsetTop ，比對當前 index 跟最後的 index 值是否相同
+    if (blockIndex !== -1 && blockIndex !== lastBlockIndex){
+      const blockList = document.querySelectorAll('[data-scroll]');
+      const targetElement = blockList[index];
+      const targetOffset = blockList[index].offsetTop;
+      superBody.scrollTo({
+        top: targetOffset - 5,
+        behavior: "smooth"
+      });
+      lastBlockIndex = blockIndex;
+    }
+  })
+  // 同步數字球體
+  const ballNum = document.querySelector('.vi-scrillbar-ball p');
+  ballNum.innerText = output;
+
+  // 球體會在滑動的手勢出現後一起更新
+  const ball = document.querySelector('.vi-scrillbar-ball');
+  ball.classList.remove('hide');
+})
+scrollList.addEventListener('touchend',()=>{
+  const ball = document.querySelector('.vi-scrillbar-ball');
+  ball.classList.add('hide');
+})
+
+// 我的帳號 demo
+document.querySelectorAll('.vi-list-item').forEach((item) => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('#trigger-select-account input').classList.add('hide');
+    document.querySelector('#trigger-select-account .fake-input').classList.remove('hide');
+    document.querySelector('.vi-list-item').classList.add('active');
+    document.getElementById('target-account-supercard').classList.remove('vi-modal-in');
+    document.getElementById('target-account-supercard').classList.add('hide');
+    document.getElementById('money').classList.remove('hide');
+  });
+});
+
+// 選擇帳號 demo 
+document.getElementById('trigger-select-account').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-account-supercard').classList.toggle('hide');
+  document.getElementById('target-account-supercard').classList.toggle('vi-modal-in');
+});
+
+// 銀行代碼 demo
+document.getElementById('target-bankcode').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('target-bankcode-supercard').classList.toggle('hide');
+  document.getElementById('target-bankcode-supercard').classList.toggle('vi-modal-in');
+  document.querySelector('body').classList.add('overflow-list');
+});
+
+// 點選卡片編輯
+document.querySelectorAll('.edit').forEach((item)=>{
+  item.addEventListener('click',(e)=>{
+    e.preventDefault();
+    document.getElementById('target-edit-supercard').classList.toggle('hide');
+    document.getElementById('target-edit-supercard').classList.toggle('vi-modal-in');
+  })
+  document.getElementById('edit-card').addEventListener('click',()=>{
+    const toastEditSuccess = document.getElementById('toast-edit');
+    toastEditSuccess.classList.add('show');
+    document.getElementById('target-edit-supercard').classList.add('hide');
+    document.getElementById('target-edit-supercard').classList.remove('vi-modal-in');
+    setTimeout(() => {
+      toastEditSuccess.classList.remove('show');
+    }, 1000);
+    item.classList.add('hide');
+    item.nextElementSibling.classList.add('hide');
+    item.previousElementSibling.children[0].classList.remove('hide');
+  })
+})
+
+// 第一次提示 Demo
+document.getElementById('tips-demo-click').addEventListener('click',()=>{
+  document.getElementById('tips-demo').classList.remove('hide');
+})
+
+// disable 編輯觸發
+document.getElementById('disable-demo-click').addEventListener('click',()=>{
+  const muti = document.querySelectorAll('#target-edit-supercard .vi-input-group');
+  muti[1].classList.add('disabled');
+  muti[2].classList.add('disabled');
+  document.getElementById('edit-txt-disable').classList.remove('hide');
+}) 
+
+// 銀行代碼分頁對應畫面
+const tabItems = document.querySelectorAll('.vi-tab-item');
+const tabPanes = document.querySelectorAll('.tab-content .tab-pane');
+for (let i = 0; i < tabItems.length; i++) {
+  tabItems[i].addEventListener('click', function() {
+    // 移除所有tab-pane active
+    for (let j = 0; j < tabPanes.length; j++) {
+      tabPanes[j].classList.remove('active');
+    }
+    // 比對取得tab-item index
+    const index = Array.prototype.indexOf.call(this.parentNode.children,this);
+    // 增加對應的 active
+    tabPanes[index].classList.add('active');
+  });
+}
+
+// scroll fixed header
+let scrollObject = {};
+window.onscroll = setScrollPosition;
+function setScrollPosition(){
+  scrollObject = {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+  if (scrollObject.y > 0) {
+    document.getElementsByTagName('body')[0].classList.add('vi-page-header-fix');
+  } else {
+    document.getElementsByTagName('body')[0].classList.remove('vi-page-header-fix');
+  }
+}
+
+// modal close 
+$('.vi-modal .popup-footer .vi-btn').on('click', function() {
+  $(this).closest('.vi-modal').toggleClass('vi-modal-in');
+});
+
+// vi-modal 
+document.getElementById('trigger-exit').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('trigger-exit-modal').classList.toggle('vi-modal-in');
+});
+
+// vi-modal
+const deleteModal = document.querySelectorAll('.delete');
+deleteModal.forEach((item)=>{
+  item.addEventListener('click',(e)=>{
+    e.preventDefault();
+    // 彈出刪除 modal
+    document.getElementById('delete-demo').classList.toggle('vi-modal-in');
+    // 點刪除就 delete card
+    document.getElementById('delete-card').addEventListener('click',()=>{
+      const card = item.parentNode;
+      console.log(card);
+      card.remove();
+      const toastDeleteSuccess = document.getElementById('toast-delete');
+      toastDeleteSuccess.classList.add('show');
+      setTimeout(() => {
+        toastDeleteSuccess.classList.remove('show');
+      }, 1000);
+    })
+  })
+})
+
+// 超人卡片 close demo，關閉時的動態效果依照現行
+const modalClose = document.getElementsByClassName('vi-modal-close');
+for (var i = 0; i < modalClose.length; i++){
+  modalClose[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    this.closest(".vi-modal").classList.toggle('vi-modal-in');
+    this.closest(".vi-modal").classList.toggle('hide');
+    // 避免銀行代碼捲動時，外部卷軸一起移動
+    document.querySelector('body').classList.remove('overflow-list');
+  });
+}
+
+</script>
