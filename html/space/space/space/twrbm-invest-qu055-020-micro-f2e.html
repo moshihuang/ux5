@@ -854,12 +854,18 @@
 const chartConfig = {
   title: '',
   chart: {
-    spacingRight: 16,
-    width: 600
+    type: 'line',
+    marginRight: 48,
+    selectionMarkerFill: 'none',
+    scrollablePlotArea: {
+      minWidth: 600,
+      opacity: 0,
+      scrollPositionX: 1
+    }
   },
   tooltip: {
     enabled: true,
-    shared: true,
+    outside: false,
     borderWidth: 0,
     backgroundColor: "#ffffff",
     borderRadius: 12,
