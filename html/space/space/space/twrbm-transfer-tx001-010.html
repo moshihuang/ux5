@@ -9,6 +9,7 @@
   <title>CTBC</title>
   <link rel="stylesheet" href="../../../../inc/bundle_lib.css">
   <link rel="stylesheet" href="../../../../inc/bundle_base.css">
+  <link rel="stylesheet" href="../../../../inc/bundle_base_2023.css">
   <link rel="stylesheet" href="../../../../ctbc_css/ctbc.css">
   <link rel="stylesheet" href="../../../../ctbc_css/virtualKeyboard.css">
   <link rel="stylesheet" href="../../../../index.css">
@@ -423,7 +424,7 @@
               <div id="otherAcc">
                 <div class="vi-input-group">
                   <span class="title large-title">對方帳號</span>
-                  <input type="tel" placeholder="銀行代碼/帳號/暱稱" maxlength="12">
+                  <input type="tel" placeholder="銀行代碼/帳號/暱稱" >
                   <a class="vi-icon vi-icon-base icon-input-delete hide"></a>
                   <span class="vi-icon vi-icon-base vi-icon-scan-g"></span>
                 </div>
@@ -443,7 +444,7 @@
                   <div class="vi-form-group">
                     <div class="vi-input-group">
                       <span class="title large-title">對方帳號</span>
-                      <input type="tel" pattern="[0-9]*" placeholder="請輸入銀行帳號" />
+                      <input type="tel"  placeholder="請輸入銀行帳號" />
                       <a class="vi-icon vi-icon-base icon-input-delete hide"></a>
                     </div>
                   </div>
@@ -459,10 +460,12 @@
                         <input type="text" readonly="readonly" placeholder="請選擇銀行代碼"> 
                     </div>
                   </div>
-                  <div class="vi-input-group">
-                    <span class="title large-title">對方帳號</span>
-                    <input type="tel" pattern="[0-9]*" placeholder="請輸入銀行帳號" maxlength="12" value="123456789000">
-                    <a class="vi-icon vi-icon-base icon-input-delete hide"></a>
+                  <div class="vi-form-group">
+                    <div class="vi-input-group">
+                      <span class="title large-title">對方帳號</span>
+                      <input type="tel"  placeholder="請輸入銀行帳號"  value="123456789000">
+                      <a class="vi-icon vi-icon-base icon-input-delete hide"></a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -470,7 +473,7 @@
               <!-- fakeAcc -->
               <div class="vi-input-group hide" id="fakeAcc">
                 <span class="title large-title">對方帳號</span>
-                <input type="text" placeholder="銀行代碼/帳號/暱稱" maxlength="12" class="hide">
+                <input type="text" placeholder="銀行代碼/帳號/暱稱"  class="hide">
                 <div class="fake-input flex-column">
                   <div class="dis-flex mb4">
                     <span class="vi-txt-body-bold vi-txt-b900">自定義名稱</span>
@@ -483,7 +486,7 @@
               <div id="fakeAccValue">
                 <div class="vi-input-group hide">
                   <span class="title large-title">對方帳號</span>
-                  <input type="text" placeholder="銀行代碼/帳號/暱稱" maxlength="12" class="hide">
+                  <input type="text" placeholder="銀行代碼/帳號/暱稱"  class="hide">
                   <div class="fake-input flex-column">
                     <div class="dis-flex mb4">
                       <span class="vi-txt-body-bold vi-txt-b900">Moa</span>
@@ -505,7 +508,7 @@
                   <div class="vi-form-group">
                     <div class="vi-input-group">
                       <span class="title large-title">對方帳號</span>
-                      <input type="tel" pattern="[0-9]*" maxlength="12" value="123456789000">
+                      <input type="tel"   value="123456789000">
                       <a class="vi-icon vi-icon-base icon-input-delete hide"></a>
                     </div>
                   </div>
@@ -621,7 +624,7 @@
               <div class="vi-form-group mt16">
                 <div class="vi-input-group" id="moneyInput">
                   <span class="title large-title">金額</span>
-                  <input type="tel" pattern="[0-9]*" placeholder="請輸入">
+                  <input type="tel"  placeholder="請輸入">
                   <a class="vi-icon vi-icon-base icon-input-delete hide"></a>
                 </div>
               </div>
@@ -1014,12 +1017,12 @@
                   </div>
                 </div>
                 <!-- vi-avatar-nickname -->
-                <div class="vi-avatar-nickname-account-card-wrap overflow-list mt8">
+                <div class="vi-avatar-nickname-account-card-wrap overflow-hidden mt8">
                   <div class="dis-flex position-relative">
                     <div class="vi-avatar-nickname-account-card-slider pin fadeR-hide">
                       <span class="vi-icon vi-icon-base vi-icon-pin-w"></span>
                     </div>
-                    <div class="vi-avatar-nickname-account-card overflow-list wid_100per">
+                    <div class="vi-avatar-nickname-account-card overflow-hidden wid_100per">
                       <div class="avatar-nickname position-relative">
                         <div class="vi-txt-body-bold vi-txt-b500 nickname">我</div>
                         <div class="vi-avatar-nickname-account-card-pin hide">
@@ -1056,7 +1059,7 @@
                     <div class="vi-avatar-nickname-account-card-slider pin fadeR-hide">
                       <span class="vi-icon vi-icon-base vi-icon-pin-w"></span>
                     </div>
-                    <div class="vi-avatar-nickname-account-card overflow-list wid_100per">
+                    <div class="vi-avatar-nickname-account-card overflow-hidden wid_100per">
                       <div class="avatar-nickname position-relative">
                         <div class="vi-txt-body-bold vi-txt-b500 nickname">我</div>
                         <div class="vi-avatar-nickname-account-card-pin hide">
@@ -1093,7 +1096,7 @@
                     <div class="vi-avatar-nickname-account-card-slider pin fadeR-hide">
                       <span class="vi-icon vi-icon-base vi-icon-pin-w"></span>
                     </div>
-                    <div class="vi-avatar-nickname-account-card overflow-list wid_100per">
+                    <div class="vi-avatar-nickname-account-card overflow-hidden wid_100per">
                       <div class="avatar-nickname position-relative">
                         <div class="vi-txt-body-bold vi-txt-b500 nickname">我</div>
                         <div class="vi-avatar-nickname-account-card-pin hide">
@@ -1417,7 +1420,7 @@
             <label>
               <input name="radio1" type="radio">
               <span class="mark top12"></span>
-              <div class="chooese-bg pad-n align-items-center ht_70px">
+              <div class="chooese-bg pad-n align-items-center">
                 <div class="dis-flex align-items-center justify-content-between mt-2">
                   <div class="vi-txt-b600 vi-txt-body-bold">跨轉手續費 5 元</div>
                 </div>
@@ -1437,7 +1440,7 @@
             <label>
               <input name="radio1" type="radio">
               <span class="mark top12"></span>
-              <div class="chooese-bg pad-n align-items-center ht_70px">
+              <div class="chooese-bg pad-n align-items-center">
                 <div class="dis-flex align-items-center justify-content-between mt-2">
                   <div class="vi-txt-b600 vi-txt-body-bold">財富管理優惠 <span class="vi-txt-callout txt_normal">(臨櫃及自動化轉帳)</span></div>
                 </div>
@@ -1457,7 +1460,7 @@
             <label>
               <input name="radio1" type="radio">
               <span class="mark top12"></span>
-              <div class="chooese-bg pad-n align-items-center ht_70px">
+              <div class="chooese-bg pad-n align-items-center">
                 <div class="dis-flex align-items-center justify-content-between mt-2">
                   <div class="vi-txt-b600 vi-txt-body-bold">本次不使用</div>
                 </div>
@@ -1968,34 +1971,55 @@ scrollList.addEventListener('touchend',()=>{
   ball.classList.add('scale-hide');
 })
 
+
+
 // 捲動銀行代碼時也需要更新球體
-document.querySelector('.vi-scrollbar-wrap').addEventListener('touchmove',(e)=>{
-  let blockIndex = -1;
-  let lastItem = null;
-  document.querySelectorAll('.vi-scrollbar-block').forEach((item,index)=>{
-    const rect = item.getBoundingClientRect();
-    if(e.touches[0].clientY > rect.top && e.touches[0].clientY < rect.bottom){
-      if(lastItem !== item){
+
+// document.querySelector('#target-bankcodeTab-supercard .super-card-body').addEventListener('scroll',(e)=>{
+//   let scrollTopY = e.target.scrollTop;
+//   let lastItem = null;
+//   document.querySelectorAll('#target-bankcodeTab-supercard .vi-scrollbar-block').forEach((item,index)=>{
+//     let offsetTop = item.offsetTop;
+//     let offsetBottom = item.offsetTop + item.offsetHeight;
+//     if( scrollTopY > offsetTop && scrollTopY < offsetBottom){
+//       output = item.dataset.scroll;
+//       const ballNum = document.querySelector('.vi-scrillbar-ball p');
+//       ballNum.innerText = output;
+//       ball.classList.remove('scale-hide');
+//     }
+//     setTimeout(() => {
+//       ball.classList.remove('scale-hide');
+//     }, 1000);
+//   })
+// })
+
+
+
+
+
+document.querySelector('#target-plane').addEventListener('touchmove',(e)=>{
+  let scrollTopY = document.querySelector('#target-bankcodeTab-supercard .super-card-body').scrollTop;
+  document.querySelectorAll('#target-bankcodeTab-supercard .vi-scrollbar-block').forEach((item,index)=>{
+    let offsetTop = item.offsetTop;
+    let offsetBottom = item.offsetTop + item.offsetHeight;
+    if( scrollTopY > offsetTop && scrollTopY < offsetBottom ){
         output = item.dataset.scroll;
-        blockIndex = index;
-        lastItem = item;
+        console.log(output);
       }
-    }
-    // 防止觸發跳動
-    if(output !== lastOutput){
-      lastOutput = output;
-    }
-    // 同步數字球體
+    })
+
+    //同步數字球體
     const ballNum = document.querySelector('.vi-scrillbar-ball p');
     ballNum.innerText = output;
-    // 球體會在滑動的手勢出現後一起更新
+    //體會在滑動的手勢出現後一起更新
     ball.classList.remove('scale-hide');
   })
-})
+
+
 document.querySelector('.vi-scrollbar-wrap').addEventListener('touchend',()=>{
   setTimeout(() => {
     ball.classList.add('scale-hide');
-  }, 1000);
+  }, 3000);
 })
 
 
@@ -2109,7 +2133,7 @@ document.getElementById('target-bankcode').addEventListener('click', function(e)
   e.preventDefault();
   document.getElementById('target-bankcodeTab-supercard').classList.toggle('hide');
   document.getElementById('target-bankcodeTab-supercard').classList.toggle('vi-modal-in');
-  document.querySelector('body').classList.add('overflow-list');
+  document.querySelector('body').classList.add('overflow-hidden');
 });
 
 // 點選卡片編輯
@@ -2273,8 +2297,9 @@ for (var i = 0; i < modalClose.length; i++){
     this.closest(".vi-modal").classList.toggle('vi-modal-in');
     this.closest(".vi-modal").classList.toggle('hide');
     // 避免銀行代碼捲動時，外部卷軸一起移動
-    document.querySelector('body').classList.remove('overflow-list');
+    document.querySelector('body').classList.remove('overflow-hidden');
   });
 }
 
 </script>
+
