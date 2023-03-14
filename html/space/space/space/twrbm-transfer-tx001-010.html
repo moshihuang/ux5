@@ -42,16 +42,13 @@
     }
     .vi-tab-group .vi-radio .vi-radio-mark{
       border-radius: 0;
-      border-top: 1px solid #DAE1E5;
-      border-left: 1px solid #DAE1E5;
-      border-bottom: 1px solid #DAE1E5;
+      border: 1px solid #DAE1E5;
       overflow: hidden;
     }
     .vi-tab-group .vi-radio:first-child .vi-radio-mark{
       border-radius: 6px 0 0 6px;
     }
     .vi-tab-group .vi-radio:last-child .vi-radio-mark{
-      border-right: 1px solid #DAE1E5;
       border-radius: 0 6px 6px 0;
     }
     .vi-tab-group .vi-radio input:checked + .vi-radio-mark:after{
@@ -82,6 +79,10 @@
     /* right-top icon */
     .vi-icon-right-top{
       background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAxNiAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMgMTNMMTIgNCIgc3Ryb2tlPSIjOUY5RjlGIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik01LjUgMy41SDEyLjVWMTAuNSIgc3Ryb2tlPSIjOUY5RjlGIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=");
+    }
+    /* vi-icon-triangle-br */
+    .vi-icon-triangle-br{
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyMCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTExLjA3MjMgMS42MjMyMkwxOC44Mjk2IDE1LjEyMzJDMTkuMzEyNSAxNS45NjM3IDE4LjcwNDEgMTcgMTcuNzU3MyAxN0gyLjI0MjY5QzEuMjk1OTIgMTcgMC42ODc0NyAxNS45NjM3IDEuMTcwNDEgMTUuMTIzMkw4LjkyNzcyIDEuNjIzMjJDOS40MDUyMSAwLjc5MjI2IDEwLjU5NDggMC43OTIyNiAxMS4wNzIzIDEuNjIzMjJaIiBmaWxsPSIjRkZGOEYwIiBzdHJva2U9IiM5ODY3NDQiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJNMTkgMTMuNUMxOSAxNi41Mzc2IDE2LjAzNzYgMTcuNSAxMyAxNy41QzkuOTYyNDMgMTcuNSA4IDE2LjUzNzYgOCAxMy41QzggMTAuNDYyNCAxMC40NjI0IDggMTMuNSA4QzE2LjUzNzYgOCAxNi41IDExIDE5IDEzLjVaIiBmaWxsPSIjRkZGMEU2Ii8+CjxwYXRoIGQ9Ik0xMS4wNzIzIDEuNjIzMjJMMTguODI5NiAxNS4xMjMyQzE5LjMxMjUgMTUuOTYzNyAxOC43MDQxIDE3IDE3Ljc1NzMgMTdIMi4yNDI2OUMxLjI5NTkyIDE3IDAuNjg3NDcgMTUuOTYzNyAxLjE3MDQxIDE1LjEyMzJMOC45Mjc3MiAxLjYyMzIyQzkuNDA1MjEgMC43OTIyNiAxMC41OTQ4IDAuNzkyMjYgMTEuMDcyMyAxLjYyMzIyWiIgc3Ryb2tlPSIjOTg2NzQ0IiBzdHJva2Utd2lkdGg9IjIiLz4KPHJlY3QgeD0iOSIgeT0iNiIgd2lkdGg9IjIiIGhlaWdodD0iNSIgcng9IjEiIGZpbGw9IiM5ODY3NDQiLz4KPHJlY3QgeD0iOSIgeT0iMTIiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjOTg2NzQ0Ii8+Cjwvc3ZnPgo=");
     }
     /* plus icon */
     .vi-icon-plus-g{
@@ -657,15 +658,59 @@
                   <span class="vi-radio-txt">預約</span>
                 </label>
               </div>
-              
+              <!-- [Tab] 立即 -->
+              <div data-tab="tabRightNow">
+              </div>
+              <!-- [Tab] 預約 -->
+              <div class="hide" data-tab="tabReserve">
+                <div class="vi-txt-b600 vi-txt-body mt16 mb16">預約週期</div>
+                <div class="vi-radio-group">
+                  <label class="vi-radio">
+                    <input type="radio" name="type1" value="1">
+                    <span class="vi-radio-mark"></span>
+                    <span class="vi-radio-txt">指定日期</span>
+                  </label>
+                  <label class="vi-radio ml12">
+                    <input type="radio" name="type1" value="2">
+                    <span class="vi-radio-mark"></span>
+                    <span class="vi-radio-txt">每月</span>
+                  </label>
+                  <label class="vi-radio ml12">
+                    <input type="radio" name="type1" value="3">
+                    <span class="vi-radio-mark"></span>
+                    <span class="vi-radio-txt">每週</span>
+                  </label>
+                </div>
+                <!-- 轉帳日 -->
+                <div class="vi-form-group">
+                  <div class="vi-input-group">
+                    <span class="title large-title">轉帳日</span>
+                    <input placeholder="請選擇" type="text" readonly="readonly">
+                    <div class="vi-icon vi-icon-base vi-icon-calender"></div>  
+                  </div>
+                </div>
+                <!-- 結束日 -->
+                <div id="trigger-select-account" class="vi-form-group vi-for-select">
+                  <div class="vi-input-group">
+                    <span class="title large-title">結束日</span>
+                      <input placeholder="請選擇" type="text" readonly="readonly">
+                  </div>
+                </div>
+              </div>
+
+              <!-- 分隔線 -->
+              <div class="vi-dashed-divider"></div>
+
               <!-- 優惠方案 -->
               <div class="vi-form-group vi-for-select my-8" id="target-discount">
-                <!-- 只有一個帳號時加入 disabled -->
                 <div class="vi-input-group">
                   <span class="title large-title">優惠方案</span>
                     <input type="text" value="本次不使用">
                 </div>
-                <!--<div class="vi-form-error">dowe</div>--> 
+              </div>
+              <div class="dis-flex mb8">
+                <div class="vi-icon vi-icon-xs vi-icon-triangle-br"></div>
+                <p class="vi-txt-callout vi-txt-br500 ml8">若預約交易當下無「財富管理優惠」次數可使用，需支付轉帳手續費</p>
               </div>
 
               <!-- 註記 --> 
@@ -674,7 +719,6 @@
                   <span class="title large-title">註記</span>
                   <input placeholder="非必填" type="text">
                 </div>
-
                 <!-- 勾選 -->
                 <div class="dis-flex align-center mt8">
                   <label class="vi-checkbox">
@@ -687,7 +731,9 @@
               </div>
             </div>
           </div>
-
+          <div class="mt4 ct">
+            <p class="vi-txt-callout vi-txt-bold vi-txt-br500">本月財富管理優惠剩餘 5 次免費</p>
+          </div>
           <!-- 下一步 -->
           <div class="vi-btn-group mt24 mb16">
             <a class="btn insight vi-btn vi-btn-primary" href="#">下一步</a>
@@ -1596,7 +1642,6 @@
 
 <!-- js event demo code, 開發請拉掉 -->
 <script>
-  
 // 共用
 const showBankCode = document.getElementById('showBankCode');
 const showBankCodeInput = document.querySelectorAll('#showBankCode .vi-input-group')[1].children[1];
@@ -1610,6 +1655,20 @@ const otherAccInput = document.getElementById('otherAcc');
 const addComon = document.querySelector('#addComon'); //加入常用
 const comonSuperCard = document.getElementById('comonSuperCard'); //超人卡片
 let cards = document.querySelectorAll('.vi-avatar-nickname-account-card-wrap .vi-avatar-nickname-account-card');
+
+// vi-tab-group 切換
+document.querySelectorAll('.vi-tab-group input').forEach((item)=>{
+  item.addEventListener('click',function(e){
+    document.querySelectorAll('[data-tab]').forEach(item=>{
+      item.classList.remove('hide');
+      console.log('e.target.value',e.target.value);
+      console.log('item.dataset.tab',item.dataset.tab);
+      if(e.target.value != item.dataset.tab){
+        item.classList.add('hide');
+      }
+    })
+  })
+})
 
 // 預設
 otherAcc.classList.add('hide');
@@ -1683,14 +1742,20 @@ document.getElementById('trigger-otherNum').addEventListener('click',()=>{
   document.getElementById('showBankCode').classList.add('hide');
   showInputValue.classList.remove('hide');
   showInputValue.children[0].children[0].addEventListener('click',()=>{
+    //開啟超人卡片
     document.getElementById('target-bankcode-supercard').classList.toggle('hide');
     document.getElementById('target-bankcode-supercard').classList.toggle('vi-modal-in');
+    // 避免銀行代碼捲動時，外部卷軸一起移動
+    document.querySelector('body').classList.add('overflow-hidden');
     setTimeout(() => {
       showInputValue.children[0].children[0].children[1].value = '822 中國信託';
     }, 2000);
     document.getElementById('target-bankcode-supercard').addEventListener('click',()=>{
+      //關閉超人卡片
       document.getElementById('target-bankcode-supercard').classList.toggle('hide');
       document.getElementById('target-bankcode-supercard').classList.toggle('vi-modal-in');
+      // 避免銀行代碼捲動時，外部卷軸一起移動
+      document.querySelector('body').classList.remove('overflow-hidden');
       document.getElementById('moneyInput').children[1].focus();
     })
   })
@@ -1931,6 +1996,7 @@ let lastOutput ='';
 let lastBlockIndex = '';
 
 scrollList.addEventListener('touchmove' , (e) => {
+  document.querySelector('#target-bankcodeTab-supercard .super-card-body').removeEventListener('scroll',scrollUpdateHandler);
   e.preventDefault();
   let blockIndex = -1;
   let lastItem = null;
@@ -1968,58 +2034,35 @@ scrollList.addEventListener('touchmove' , (e) => {
   ball.classList.remove('scale-hide');
 })
 scrollList.addEventListener('touchend',()=>{
+  document.querySelector('#target-bankcodeTab-supercard .super-card-body').addEventListener('scroll',scrollUpdateHandler);
   ball.classList.add('scale-hide');
 })
-
-
-
 // 捲動銀行代碼時也需要更新球體
-
-// document.querySelector('#target-bankcodeTab-supercard .super-card-body').addEventListener('scroll',(e)=>{
-//   let scrollTopY = e.target.scrollTop;
-//   let lastItem = null;
-//   document.querySelectorAll('#target-bankcodeTab-supercard .vi-scrollbar-block').forEach((item,index)=>{
-//     let offsetTop = item.offsetTop;
-//     let offsetBottom = item.offsetTop + item.offsetHeight;
-//     if( scrollTopY > offsetTop && scrollTopY < offsetBottom){
-//       output = item.dataset.scroll;
-//       const ballNum = document.querySelector('.vi-scrillbar-ball p');
-//       ballNum.innerText = output;
-//       ball.classList.remove('scale-hide');
-//     }
-//     setTimeout(() => {
-//       ball.classList.remove('scale-hide');
-//     }, 1000);
-//   })
-// })
-
-
-
-
-
-document.querySelector('#target-plane').addEventListener('touchmove',(e)=>{
-  let scrollTopY = document.querySelector('#target-bankcodeTab-supercard .super-card-body').scrollTop;
+// 處理數字持續更新
+document.querySelector('#target-bankcodeTab-supercard .super-card-body').addEventListener('scroll',scrollUpdateHandler);
+function scrollUpdateHandler(e){
+  let scrollTopY = e.target.scrollTop;
   document.querySelectorAll('#target-bankcodeTab-supercard .vi-scrollbar-block').forEach((item,index)=>{
     let offsetTop = item.offsetTop;
     let offsetBottom = item.offsetTop + item.offsetHeight;
-    if( scrollTopY > offsetTop && scrollTopY < offsetBottom ){
-        output = item.dataset.scroll;
-        console.log(output);
-      }
-    })
-
-    //同步數字球體
-    const ballNum = document.querySelector('.vi-scrillbar-ball p');
-    ballNum.innerText = output;
-    //體會在滑動的手勢出現後一起更新
-    ball.classList.remove('scale-hide');
+    if( scrollTopY > offsetTop && scrollTopY < offsetBottom){
+      output = item.dataset.scroll;
+      const ballNum = document.querySelector('.vi-scrillbar-ball p');
+      ballNum.innerText = output;
+    }
   })
-
-
+}
+// 手勢持續
+document.querySelector('#target-plane').addEventListener('touchmove',(e)=>{
+  const ballNum = document.querySelector('.vi-scrillbar-ball p');
+  ballNum.innerText = output;
+  ball.classList.remove('scale-hide');
+})
+// 手勢離開
 document.querySelector('.vi-scrollbar-wrap').addEventListener('touchend',()=>{
   setTimeout(() => {
     ball.classList.add('scale-hide');
-  }, 5000);
+  }, 3000);
 })
 
 
@@ -2034,6 +2077,7 @@ let lastOutput1 ='';
 let lastBlockIndex1 = '';
 console.log(output1);
 scrollList1.addEventListener('touchmove' , (e) => {
+  document.querySelector('#target-bankcode-supercard .super-card-body').removeEventListener('scroll',scrollUpdateHandler1);
   e.preventDefault();
   let blockIndex = -1;
   let lastItem = null;
@@ -2071,37 +2115,35 @@ scrollList1.addEventListener('touchmove' , (e) => {
   ball1.classList.remove('scale-hide');
 })
 scrollList1.addEventListener('touchend',()=>{
+  document.querySelector('#target-bankcode-supercard .super-card-body').addEventListener('scroll',scrollUpdateHandler1);
   ball1.classList.add('scale-hide');
 })
-
 // 捲動銀行代碼時也需要更新球體
-document.querySelector('.bankcode.vi-scrollbar-wrap').addEventListener('touchmove',(e)=>{
-  let blockIndex = -1;
-  let lastItem = null;
-  document.querySelectorAll('.bankcode .vi-scrollbar-block').forEach((item,index)=>{
-    const rect = item.getBoundingClientRect();
-    if(e.touches[0].clientY > rect.top && e.touches[0].clientY < rect.bottom){
-      if(lastItem !== item){
-        output1 = item.dataset.bankcode;
-        blockIndex = index;
-        lastItem = item;
-      }
+// 處理數字持續更新
+document.querySelector('#target-bankcode-supercard .super-card-body').addEventListener('scroll',scrollUpdateHandler1);
+function scrollUpdateHandler1(e){
+  let scrollTopY = e.target.scrollTop + 80;
+  document.querySelectorAll('#target-bankcode-supercard .vi-scrollbar-block').forEach((item,index)=>{
+    let offsetTop = item.offsetTop;
+    let offsetBottom = item.offsetTop + item.offsetHeight;
+    if( scrollTopY > offsetTop && scrollTopY < offsetBottom){
+      output1 = item.dataset.bankcode;
+      const ballNum = document.querySelector('.bankcode.vi-scrillbar-ball p');
+      ballNum.innerText = output1;
     }
-    // 防止觸發跳動
-    if(output1 !== lastOutput1){
-      lastOutput1 = output1;
-    }
-    // 同步數字球體
-    const ballNum = document.querySelector('.bankcode.vi-scrillbar-ball p');
-    ballNum.innerText = output1;
-    // 球體會在滑動的手勢出現後一起更新
-    ball1.classList.remove('scale-hide');
   })
+}
+// 手勢持續
+document.querySelector('#target-bankcode-supercard .super-card-body').addEventListener('touchmove',(e)=>{
+  const ballNum = document.querySelector('.bankcode.vi-scrillbar-ball p');
+  ballNum.innerText = output1;
+  ball1.classList.remove('scale-hide');
 })
+// 手勢離開
 document.querySelector('.bankcode.vi-scrollbar-wrap').addEventListener('touchend',()=>{
   setTimeout(() => {
     ball1.classList.add('scale-hide');
-  }, 1000);
+  }, 3000);
 })
 
 
